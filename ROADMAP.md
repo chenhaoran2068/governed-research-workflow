@@ -1,0 +1,42 @@
+# Roadmap
+
+This roadmap records expected sequence, not delivery dates or promises.
+
+## v0.1.0
+
+Planned first public release:
+
+- thin routing skill;
+- five focused references;
+- one workspace marker and eight blank templates;
+- README, contribution, security, license, and ignore-file governance;
+- human-governed default and explicit stop boundaries;
+- no executable helpers.
+
+Release requires material-boundary review, clean-environment validation, a
+maintainer security-report route, and explicit human release approval.
+
+## Planned Candidates
+
+| ID | Candidate | Earliest review | Promotion conditions |
+| --- | --- | --- | --- |
+| REL-002 | Bounded wording, link, template-field, or installation corrections | v0.1.x | Reviewed defect or feedback, material review, regression check, and release note. |
+| REL-003 | Deterministic empty-workspace bootstrap helper | v0.2.0 candidate | Approved specification, explicit destination and overwrite rules, cross-platform tests, partial-failure tests, no-data-copy proof, and execution validation. |
+| REL-004 | Optional structured-record helpers for mode, state, route, or source registration | v0.3.0+ review | Public data model, privacy and migration review, tests, and demonstrated user need. |
+| REL-005 | Contributor issue forms and dependency or security automation | deferred | A maintainer-owned support process and safe disclosure route. |
+| REL-006 | Code of conduct and citation metadata | deferred | Deliberate term selection and maintainable enforcement or credit process. |
+| REL-007 | Broader compatibility statement or 1.0.0 | unscheduled | Repeated clean-install evidence, stable contract, controlled release history, and explicit maintainer decision. |
+
+## Not Public Capability Candidates
+
+- clinical decision support;
+- patient-data processing;
+- autonomous scientific analysis;
+- final scientific conclusions;
+- autonomous compliance approval;
+- autonomous manuscript or submission release;
+- bundled databases, papers, journal instructions, or third-party skills;
+- real-project demonstrations or project-derived content.
+
+Any reconsideration requires a separate scope, rights, privacy, and safety
+decision. It is not an automatic roadmap promotion.

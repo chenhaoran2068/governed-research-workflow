@@ -1,0 +1,37 @@
+# Startup And Routing
+
+## First Response
+
+Identify the workspace or ask for its exact path. Do not search broadly for a
+project by name. For existing-study, legacy-project, manuscript, or revision
+work, require the exact workspace path or project root before reading
+project-local records. A pasted excerpt does not replace that location.
+
+If there is no workspace, explain what minimum records or blank templates are
+needed before proceeding.
+
+Classify the request before drafting, analysis, or project mutation.
+
+## Routes
+
+| Request | First action | Read or use |
+| --- | --- | --- |
+| New study | Identify question, source/access status, unknowns, and mode selection. | assets/study-intake.template.md and assets/feasibility-brief.template.md |
+| Existing study | Identify the exact project root and current authoritative records. | Project-local records supplied by the user; do not infer readiness. |
+| Legacy project | Inventory before migration or normalization. | references/portability-and-release-boundaries.md |
+| Manuscript continuation | Identify authoritative manuscript source, results, claims, and missing evidence. | references/manuscript-and-submission-control.md |
+| Reviewer revision | Preserve reviewer input and identify the manuscript and revision route. | references/manuscript-and-submission-control.md |
+| Declaration or AI-use work | Ask for accountable facts and current target requirements. | references/manuscript-and-submission-control.md |
+| Citation work | Ask for the exact claim, source identity, and support location. | references/evidence-and-citation-control.md |
+| Retrospective learning | Ask for project-local observations and approval scope. | references/portability-and-release-boundaries.md |
+
+## Mixed Requests
+
+When a prompt combines materially different routes, state the routes detected
+and ask the user to select an order or explicitly request an initial routing
+pass. Do not silently combine consequential actions.
+
+## Minimum Route Record
+
+At the end of the startup response, state the route, records consulted,
+unknowns, required human decision, and next allowed action.

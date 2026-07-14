@@ -1,0 +1,4 @@
+interface:
+  display_name: "Governed Research Workflow"
+  short_description: "Human-governed research workflow routing"
+  default_prompt: "Use $governed-research-workflow to start or continue a human-governed research workflow."

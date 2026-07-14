@@ -1,0 +1,38 @@
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Temporary and generated material
+*.tmp
+*.bak
+*.log
+tmp/
+temp/
+dist/
+build/
+
+# Research and private material
+data/
+results/
+manuscripts/
+submissions/
+*.pdf
+*.docx
+*.xlsx
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+credentials/
+secrets/
