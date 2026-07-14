@@ -53,6 +53,35 @@ This release completed material-boundary review and clean-environment
 validation. It is Codex-first and does not claim compatibility with every agent
 or operating system.
 
+## Long-Term Direction (Not Current Release Scope)
+
+The package may evolve from a thin startup skill into a complete, installable
+generic research-collaboration system. In that future design, `SKILL.md`
+remains a small AI entry and routing layer while detailed generic modules live
+in clearly separated rules, workflows, templates, scripts, agent contracts,
+knowledge/source-pointer, example, and test areas.
+
+This direction does not authorize copying a private research workspace into
+the public repository. A public system may contain only independently
+understandable, generic, rights-cleared, privacy-reviewed, and validated
+materials. Real project data, unpublished artifacts, restricted materials,
+credentials, project-local audit records, and private memory remain outside
+the public package.
+
+Future journal support will provide a controlled procedure for retrieving and
+recording current official requirements. It will not treat bundled journal or
+publisher instructions as permanently current facts.
+
+The intended distribution model is:
+
+- a generic public system for external users;
+- separately authorized private lab distributions where needed; and
+- isolated workspaces for real studies.
+
+No release is entitled to claim this complete-system scope until its included
+modules, supported runtimes, tests, and public/private boundary have been
+separately reviewed and released.
+
 ## Planned Candidates
 
 | ID | Candidate | Earliest review | Promotion conditions |
@@ -62,6 +91,7 @@ or operating system.
 | REL-005 | Contributor issue forms and dependency or security automation | deferred | A maintainer-owned support process and safe disclosure route. |
 | REL-006 | Code of conduct and citation metadata | deferred | Deliberate term selection and maintainable enforcement or credit process. |
 | REL-007 | Broader compatibility statement or 1.0.0 | unscheduled | Repeated clean-install evidence, stable contract, controlled release history, and explicit maintainer decision. |
+| REL-008 | Complete generic system-package foundation: modular rules, workflows, templates, tools, agent contracts, knowledge/source pointers, and tests behind the thin entry skill | v0.3.0+ review | Public extraction manifest, privacy/rights review, stable module boundaries, runtime-install design, regression tests, and explicit maintainer approval. |
 
 ## Not Public Capability Candidates
 
