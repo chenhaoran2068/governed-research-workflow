@@ -2,6 +2,20 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
+## Unreleased v0.3.0-system-foundation Candidate
+
+This branch establishes the module boundaries for a future complete generic
+research-collaboration system while keeping `SKILL.md` as the small entry and
+routing layer.
+
+- adds a public `system/` index plus governance, workflow, knowledge,
+  agent-contract, schema, and example module boundaries;
+- retains `references/`, `assets/`, `scripts/`, and `tests/` as the active
+  `v0.2.1` implementation surface;
+- adds no new specialist agent, knowledge corpus, execution authority, or
+  claim of compatibility; and
+- is not a release, tag, or evidence that a full public system already exists.
+
 ## v0.2.1 (released 2026-07-14)
 
 Patch release:
@@ -91,7 +105,7 @@ separately reviewed and released.
 | REL-005 | Contributor issue forms and dependency or security automation | deferred | A maintainer-owned support process and safe disclosure route. |
 | REL-006 | Code of conduct and citation metadata | deferred | Deliberate term selection and maintainable enforcement or credit process. |
 | REL-007 | Broader compatibility statement or 1.0.0 | unscheduled | Repeated clean-install evidence, stable contract, controlled release history, and explicit maintainer decision. |
-| REL-008 | Complete generic system-package foundation: modular rules, workflows, templates, tools, agent contracts, knowledge/source pointers, and tests behind the thin entry skill | v0.3.0+ review | Public extraction manifest, privacy/rights review, stable module boundaries, runtime-install design, regression tests, and explicit maintainer approval. |
+| REL-008 | Complete generic system-package foundation: modular rules, workflows, templates, tools, agent contracts, knowledge/source pointers, and tests behind the thin entry skill | v0.3.0 candidate branch | Module-boundary foundation is drafted; public extraction manifest, privacy/rights review, admitted module content, runtime-install design, regression tests, and explicit maintainer approval remain required. |
 
 ## Not Public Capability Candidates
 

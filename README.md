@@ -5,6 +5,11 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
+The repository is also beginning an unreleased `v0.3.0-system-foundation`
+candidate. The candidate preserves this thin entry skill while establishing a
+modular home for future generic system content. It does not change the scope
+of the current public release.
+
 It is Codex-first. The `v0.1.0` baseline was validated with the current Codex
 workflow on Windows, and `v0.1.1` additionally forward-tested its new
 retrospective route in an isolated Windows Codex session. It makes no
@@ -34,6 +39,22 @@ consequential new-study work, confirm the collaboration mode when asked.
 The skill uses blank assets for an intake, collaboration-mode authorization,
 feasibility brief, evidence register, claim register, reference audit,
 submission route, project retrospective register, and public-boundary review.
+
+## Package Structure
+
+```text
+SKILL.md                 # Stable AI entry and routing instructions
+references/              # Active v0.2.1 route guidance
+assets/                  # Blank output templates and bootstrap assets
+scripts/                 # Explicitly invoked deterministic helpers
+tests/                   # Safety and regression checks
+agents/openai.yaml       # Codex-facing skill metadata
+system/                  # Unreleased v0.3 module architecture
+```
+
+Read `system/INDEX.md` for the future public-system module boundaries. The
+`system/` directories are intentionally foundation-only: no user or agent may
+infer that an empty future module supplies a current capability.
 
 ## Release Status
 
