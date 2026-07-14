@@ -41,6 +41,14 @@ submission route, project retrospective register, and public-boundary review.
 project-retrospective register. It contains only routing instructions,
 references, and blank templates; it has no executable helpers.
 
+The unreleased `v0.2.0` development candidate adds an explicitly invoked
+controlled empty-workspace bootstrap helper. It uses Python 3.11+ standard
+library only, requires a no-write preview and matching human confirmation, and
+creates only an empty generic workspace plus a receipt. It does not process
+data, make research or compliance decisions, or run automatically when the
+skill loads. Public release requires completed tests, public-boundary review,
+and separate maintainer authorization.
+
 ## Boundaries
 
 Do not place restricted data, patient-derived data, credentials, unpublished

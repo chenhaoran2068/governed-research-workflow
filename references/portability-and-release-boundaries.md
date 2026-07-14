@@ -38,3 +38,9 @@ boundary review; clean-environment validation; a real security-report route;
 and explicit approval for repository visibility, tag, and release. A public
 package must never overwrite a private workflow system or installed local
 runtime.
+
+Executable helpers require an additional review of input boundary, destination
+boundary, overwrite behavior, partial-failure cleanup, tests, dependencies,
+platform claims, and whether the helper could read, copy, or expose private
+material. A helper must be independently written for the public package; it
+must not be a wrapper around a private implementation.

@@ -12,7 +12,8 @@ for research projects.
   unpublished manuscripts, reviewer correspondence, source PDFs, author or
   institution details, or copied private workflow records.
 - Do not add executable helpers, dependencies, or compatibility claims without
-  a separately reviewed proposal and tests.
+  an approved scope, explicit safety boundary, and tests. The controlled
+  bootstrap helper is the only v0.2.0 candidate exception under that review.
 - Do not claim that a workflow instruction proves scientific, clinical,
   ethical, legal, or journal correctness.
 

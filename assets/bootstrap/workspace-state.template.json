@@ -1,0 +1,10 @@
+{
+  "authorization_status": "not_authorized",
+  "created_at": null,
+  "notes": "Created by the public controlled bootstrap helper. No workflow gate has passed.",
+  "state": "scaffolded",
+  "workspace_id": null,
+  "workspace_root": null,
+  "workspace_title": null,
+  "workspace_state_schema_version": "1.0.0"
+}

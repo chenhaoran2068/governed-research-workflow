@@ -29,6 +29,13 @@ the collaboration mode before analysis, project creation, or substantial
 generation. Human-governed interactive work is the default, but must still be
 confirmed for the current study.
 
+For an explicitly requested new empty workspace, use the controlled bootstrap
+route in `references/controlled-bootstrap.md`. First run the no-write preview;
+then wait for human approval of that exact plan before invoking the helper with
+the matching plan ID and approval reference. Do not invoke the helper merely
+because this skill triggered. The helper creates an empty scaffold only and
+does not authorize consequential research work.
+
 For existing-study, legacy-project, manuscript, or revision work, require an
 exact workspace path or project root before reading project-local records. A
 pasted excerpt may clarify the task after the root is identified; it does not
@@ -90,6 +97,8 @@ Stop and request accountable evidence or approval before:
   references/manuscript-and-submission-control.md
 - Project retrospective learning and lesson promotion:
   references/retrospective-learning.md
+- Explicit empty-workspace creation:
+  references/controlled-bootstrap.md
 - Public/private separation and legacy boundaries:
   references/portability-and-release-boundaries.md
 

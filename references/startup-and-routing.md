@@ -16,7 +16,7 @@ Classify the request before drafting, analysis, or project mutation.
 
 | Request | First action | Read or use |
 | --- | --- | --- |
-| New study | Identify question, source/access status, unknowns, and mode selection. | assets/study-intake.template.md and assets/feasibility-brief.template.md |
+| New study | Identify question, source/access status, unknowns, and mode selection. If an empty workspace is explicitly requested, preview its bootstrap plan before any creation. | assets/study-intake.template.md, assets/feasibility-brief.template.md, and references/controlled-bootstrap.md when requested |
 | Existing study | Identify the exact project root and current authoritative records. | Project-local records supplied by the user; do not infer readiness. |
 | Legacy project | Inventory before migration or normalization. | references/portability-and-release-boundaries.md |
 | Manuscript continuation | Identify authoritative manuscript source, results, claims, and missing evidence. | references/manuscript-and-submission-control.md |
