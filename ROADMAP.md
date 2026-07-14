@@ -2,9 +2,9 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.1.0
+## v0.1.0 (released 2026-07-14)
 
-Planned first public release:
+Initial public release:
 
 - thin routing skill;
 - five focused references;
@@ -13,8 +13,9 @@ Planned first public release:
 - human-governed default and explicit stop boundaries;
 - no executable helpers.
 
-Release requires material-boundary review, clean-environment validation, a
-maintainer security-report route, and explicit human release approval.
+This release completed material-boundary review and clean-environment
+validation. It is Codex-first and does not claim compatibility with every agent
+or operating system.
 
 ## Planned Candidates
 

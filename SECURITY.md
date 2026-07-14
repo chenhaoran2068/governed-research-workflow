@@ -2,18 +2,22 @@
 
 ## Supported Versions
 
-No public release is currently supported. The first intended release is
-v0.1.0 after clean-environment validation and explicit publication approval.
+The supported public release line begins with `v0.1.0`. Report a suspected
+security issue affecting this version or the current default branch.
 
-## Reporting Before Release
+## Reporting a Vulnerability
 
-Do not send credentials, patient data, restricted data, unpublished research
-material, or personal information to a public issue tracker, pull request, or
-unverified contact channel.
+Use GitHub private vulnerability reporting for this repository:
 
-Before publication, the maintainer must configure and publish a real private
-security-report route, preferably the repository security advisory mechanism
-when available. This file must be updated with that route before release.
+https://github.com/chenhaoran2068/governed-research-workflow/security/advisories/new
+
+Do not report security issues through a public issue, pull request, discussion,
+or comment. Do not include credentials, patient data, restricted data,
+unpublished research material, or personal information in a report.
+
+The maintainer aims to acknowledge a report within seven calendar days. Do not
+publicly disclose a suspected vulnerability while it is under assessment unless
+you have a legal obligation to do so.
 
 ## Scope
 
@@ -26,6 +30,5 @@ study data through a security channel.
 
 ## Disclosure
 
-Do not disclose a suspected vulnerability publicly until the maintainer has had
-a reasonable opportunity to assess and remediate it. The maintainer may issue a
-correction, withdrawal, or release note when public material is affected.
+The maintainer may issue a correction, withdrawal, or release note when public
+material is affected.

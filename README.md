@@ -5,8 +5,9 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-It is intended for Codex first. It does not yet claim verified installation or
-behavior on every agent, platform, or operating system.
+It is Codex-first. Version `v0.1.0` was validated with the current Codex
+workflow on Windows; it makes no compatibility claim for every agent, platform,
+or operating system.
 
 ## Scope
 
@@ -35,8 +36,8 @@ submission route, and public-boundary review.
 
 ## Release Status
 
-This is a pre-release v0.1.0 staging draft. Public installation and triggering
-behavior must pass the documented clean-environment checks before any release.
+`v0.1.0` is the initial public release. It contains only routing instructions,
+references, and blank templates; it has no executable helpers.
 
 ## Boundaries
 
@@ -49,5 +50,4 @@ for contribution boundaries.
 
 ## License
 
-The intended license is Apache-2.0. The final release remains subject to the
-material-level boundary review and explicit release approval.
+Apache-2.0. See [LICENSE](LICENSE).
