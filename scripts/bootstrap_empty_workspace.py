@@ -25,8 +25,8 @@ from pathlib import Path
 from typing import Any
 
 
-TOOL_VERSION = "0.2.0-dev"
-PLAN_SCHEMA_VERSION = "1.0.0"
+TOOL_VERSION = "0.2.1"
+PLAN_SCHEMA_VERSION = "1.1.0"
 STATE_SCHEMA_VERSION = "1.0.0"
 MIN_PYTHON = (3, 11)
 SAFE_WORKSPACE_ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
@@ -97,7 +97,10 @@ def require_supported_python() -> None:
 def safe_workspace_id(title: str) -> str:
     normalized = unicodedata.normalize("NFKD", title).encode("ascii", "ignore").decode("ascii")
     candidate = re.sub(r"[^a-zA-Z0-9]+", "-", normalized).strip("-").lower()
-    return candidate or "research-workspace"
+    if candidate:
+        return candidate
+    title_digest = sha256_bytes(unicodedata.normalize("NFC", title).encode("utf-8"))[:10]
+    return "research-workspace-" + title_digest
 
 
 def is_link_or_reparse_point(path: Path) -> bool:
@@ -112,6 +115,12 @@ def is_link_or_reparse_point(path: Path) -> bool:
         return False
     reparse_attribute = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x0400)
     return bool(attributes & reparse_attribute)
+
+
+def filesystem_identity(path: Path) -> dict[str, int]:
+    """Return the stable identity used to bind a reviewed plan to its root."""
+    metadata = os.stat(path, follow_symlinks=False)
+    return {"device": int(metadata.st_dev), "inode": int(metadata.st_ino)}
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -177,6 +186,15 @@ def validate_workspace_root(raw_root: str) -> Path:
     return resolved
 
 
+def validate_plan_workspace_root(plan: dict[str, Any]) -> Path:
+    workspace_root = validate_workspace_root(str(plan["workspace_root"]))
+    if workspace_root.as_posix() != plan["workspace_root"]:
+        raise BootstrapRefusal("Workspace root no longer resolves to the reviewed location.")
+    if filesystem_identity(workspace_root) != plan["workspace_root_identity"]:
+        raise BootstrapRefusal("Workspace root identity changed after the reviewed preview.")
+    return workspace_root
+
+
 def build_identity(args: argparse.Namespace, workspace_root: Path) -> tuple[str, Path]:
     workspace_id = args.workspace_id or safe_workspace_id(args.title)
     if not SAFE_WORKSPACE_ID.fullmatch(workspace_id):
@@ -222,6 +240,7 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
         "tool_version": TOOL_VERSION,
         "minimum_python": ".".join(str(part) for part in MIN_PYTHON),
         "workspace_root": workspace_root.as_posix(),
+        "workspace_root_identity": filesystem_identity(workspace_root),
         "workspace_id": workspace_id,
         "workspace_title": title,
         "final_workspace_root": final_root.as_posix(),
@@ -293,9 +312,24 @@ def validate_staged_tree(staging_root: Path) -> None:
         raise RuntimeError("Staging file set differs from the allowlisted scaffold.")
 
 
+def remove_staging_tree(staging_root: Path, plan: dict[str, Any]) -> None:
+    if not staging_root.exists():
+        return
+    workspace_root = validate_plan_workspace_root(plan)
+    if is_link_or_reparse_point(staging_root):
+        raise RuntimeError("Refusing to clean a staging path that became a symbolic link or reparse point.")
+    if is_link_or_reparse_point(workspace_root):
+        raise RuntimeError("Refusing to clean staging below a workspace root that became a symbolic link or reparse point.")
+    if staging_root.parent != workspace_root or not staging_root.name.startswith(".grw-bootstrap-"):
+        raise RuntimeError("Refusing to clean an unexpected staging path.")
+    shutil.rmtree(staging_root)
+
+
 def create_workspace(plan: dict[str, Any], approval_reference: str) -> dict[str, Any]:
-    workspace_root = Path(plan["workspace_root"])
-    final_root = Path(plan["final_workspace_root"])
+    workspace_root = validate_plan_workspace_root(plan)
+    final_root = workspace_root / plan["workspace_id"]
+    if final_root.as_posix() != plan["final_workspace_root"]:
+        raise BootstrapRefusal("Final workspace location no longer matches the reviewed preview.")
     if final_root.parent != workspace_root:
         raise BootstrapRefusal("Final workspace no longer has the approved direct-child location.")
     if final_root.exists() or is_link_or_reparse_point(final_root):
@@ -332,12 +366,14 @@ def create_workspace(plan: dict[str, Any], approval_reference: str) -> dict[str,
             json.dumps(receipt, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         )
         validate_staged_tree(staging_root)
+        workspace_root = validate_plan_workspace_root(plan)
+        if final_root.parent != workspace_root:
+            raise BootstrapRefusal("Final workspace no longer has the reviewed direct-child location.")
         if final_root.exists() or is_link_or_reparse_point(final_root):
             raise BootstrapRefusal("Refusing to create or overwrite existing workspace: %s" % final_root)
         staging_root.rename(final_root)
     except Exception:
-        if staging_root.exists():
-            shutil.rmtree(staging_root)
+        remove_staging_tree(staging_root, plan)
         raise
 
     return {

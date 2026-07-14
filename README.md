@@ -37,6 +37,12 @@ submission route, project retrospective register, and public-boundary review.
 
 ## Release Status
 
+`v0.2.1` hardens the controlled bootstrap path. A reviewed plan now binds the
+selected workspace root's filesystem identity, so replacement of that root
+invalidates confirmation. It also uses distinct stable fallback IDs for
+non-ASCII-only titles, and CI dependencies are pinned to reviewed Action
+commits.
+
 `v0.1.1` adds a generic retrospective-learning reference and a blank
 project-retrospective register. It contains only routing instructions,
 references, and blank templates; it has no executable helpers.

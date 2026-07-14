@@ -64,6 +64,16 @@ class BootstrapEmptyWorkspaceTests(unittest.TestCase):
         payload = self.preview()
         self.assertFalse((self.workspace_root / "example-study").exists())
         self.assertEqual(payload["plan"]["workspace_id"], "example-study")
+        self.assertIn("workspace_root_identity", payload["plan"])
+
+    def test_non_ascii_titles_receive_distinct_stable_workspace_ids(self) -> None:
+        module = load_bootstrap_module()
+        first = module.safe_workspace_id("血气研究")
+        second = module.safe_workspace_id("氧合研究")
+        self.assertRegex(first, r"^research-workspace-[0-9a-f]{10}$")
+        self.assertRegex(second, r"^research-workspace-[0-9a-f]{10}$")
+        self.assertNotEqual(first, second)
+        self.assertEqual(first, module.safe_workspace_id("血气研究"))
 
     def test_confirmation_requires_matching_plan_and_approval_reference(self) -> None:
         self.preview()
@@ -125,6 +135,25 @@ class BootstrapEmptyWorkspaceTests(unittest.TestCase):
         result = self.run_command()
         self.assertEqual(result.returncode, 2)
         self.assertEqual(marker.read_text(encoding="utf-8"), "do not overwrite\n")
+
+    def test_replaced_workspace_root_invalidates_the_reviewed_plan(self) -> None:
+        plan = self.preview()["plan"]
+        parked_root = self.workspace_root.parent / "original-workspaces"
+        self.workspace_root.rename(parked_root)
+        self.workspace_root.mkdir()
+
+        result = self.run_command(
+            "--confirm-create",
+            "--plan-id",
+            plan["plan_id"],
+            "--approval-reference",
+            "approval-001",
+        )
+
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("does not match", result.stderr)
+        self.assertEqual(list(self.workspace_root.iterdir()), [])
+        self.assertEqual(list(parked_root.iterdir()), [])
 
     def test_invalid_workspace_id_cannot_escape_selected_root(self) -> None:
         result = subprocess.run(

@@ -11,7 +11,9 @@ claimed only for platforms that have passed the repository test matrix.
 ## Required Interaction
 
 1. Identify the workspace root, title, and safe workspace ID. Do not search
-   drives or choose a location for the user.
+   drives or choose a location for the user. Supply an explicit ID when a
+   human-readable directory name matters; a non-ASCII-only title otherwise
+   receives a stable hash-suffixed fallback ID.
 2. Run a no-write preview. Running without `--confirm-create` is a preview.
 3. Explain the plan and wait for an accountable human to approve that exact
    plan.
@@ -50,6 +52,10 @@ python3 scripts/bootstrap_empty_workspace.py \
   --approval-reference <accountable-approval-reference>
 ```
 
+The reviewed plan also binds the filesystem identity of the selected workspace
+root. Replacing that directory, even with another ordinary directory at the
+same path, changes the plan and requires a new preview and approval.
+
 ## Output Boundary
 
 The helper creates only this generic empty layout:
@@ -83,10 +89,12 @@ submission route.
 ## Refusal And Failure Behavior
 
 The helper refuses an invalid Python version, non-existent or linked workspace
-root (including a Windows reparse point), a destination inside the skill
-package, invalid workspace ID, an existing workspace, a changed plan, missing
-approval reference, path escape, overwrite, or resume request.
+root (including a Windows reparse point), a root whose identity changed after
+preview, a destination inside the skill package, invalid workspace ID, an
+existing workspace, a changed plan, missing approval reference, path escape,
+overwrite, or resume request.
 
 It builds the scaffold in a same-parent staging directory. If construction
 fails, it removes only the staging directory it created and does not leave a
-final workspace root.
+final workspace root. If the staging path itself becomes a link or reparse
+point, it refuses recursive cleanup rather than risk traversing it.

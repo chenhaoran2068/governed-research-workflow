@@ -2,6 +2,19 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
+## v0.2.1 (released 2026-07-14)
+
+Patch release:
+
+- bound reviewed bootstrap plans to the selected root's filesystem identity;
+- hardened Windows reparse-point refusal in the local and public bootstrap
+  designs;
+- added stable, distinct fallback workspace IDs for non-ASCII-only titles;
+- added regression coverage for root replacement, Windows junctions, and
+  non-ASCII titles;
+- pinned CI actions to reviewed full commit SHAs and added a job timeout;
+- corrected released-version wording in contributor guidance.
+
 ## v0.2.0 (released 2026-07-14)
 
 Minor release:
