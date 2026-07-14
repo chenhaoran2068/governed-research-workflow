@@ -2,6 +2,19 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
+## v0.2.0 (released 2026-07-14)
+
+Minor release:
+
+- added an explicitly invoked controlled empty-workspace bootstrap helper;
+- added generic workspace, initial-state, and receipt templates;
+- retained no-write preview, matching human confirmation, no-overwrite, and
+  no-data-copy boundaries;
+- added read-only CI coverage on Windows, Ubuntu, and macOS with Python 3.11
+  and 3.14;
+- added no clinical decision-making, patient-data processing, scientific
+  analysis, compliance certification, or autonomous release capability.
+
 ## v0.1.1 (released 2026-07-14)
 
 Maintenance release:
@@ -32,7 +45,6 @@ or operating system.
 | ID | Candidate | Earliest review | Promotion conditions |
 | --- | --- | --- | --- |
 | REL-002 | Bounded wording, link, template-field, or installation corrections | v0.1.x | Reviewed defect or feedback, material review, regression check, and release note. |
-| REL-003 | Deterministic empty-workspace bootstrap helper | v0.2.0 candidate | Approved public scope: Python 3.11+ standard library, explicit destination/no-overwrite rules, no-write preview, matching approval, partial-failure tests, no-data-copy proof, clean-install validation, public-boundary review, and separate release authorization. CI has passed on Windows, Ubuntu, and macOS with Python 3.11 and 3.14. |
 | REL-004 | Optional structured-record helpers for mode, state, route, or source registration | v0.3.0+ review | Public data model, privacy and migration review, tests, and demonstrated user need. |
 | REL-005 | Contributor issue forms and dependency or security automation | deferred | A maintainer-owned support process and safe disclosure route. |
 | REL-006 | Code of conduct and citation metadata | deferred | Deliberate term selection and maintainable enforcement or credit process. |
