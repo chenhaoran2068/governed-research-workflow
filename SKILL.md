@@ -88,6 +88,8 @@ Stop and request accountable evidence or approval before:
   references/evidence-and-citation-control.md
 - Manuscript, revision, declaration, and submission-route work:
   references/manuscript-and-submission-control.md
+- Project retrospective learning and lesson promotion:
+  references/retrospective-learning.md
 - Public/private separation and legacy boundaries:
   references/portability-and-release-boundaries.md
 

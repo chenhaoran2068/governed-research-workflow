@@ -2,6 +2,16 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
+## v0.1.1 (released 2026-07-14)
+
+Maintenance release:
+
+- added public retrospective-learning guidance;
+- added a blank project retrospective and lesson register;
+- clarified retrospective routing and public/private boundaries;
+- retained the human approval requirement for any lesson promotion;
+- added no executable helper, real-project content, or new compatibility claim.
+
 ## v0.1.0 (released 2026-07-14)
 
 Initial public release:

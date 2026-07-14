@@ -5,9 +5,10 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-It is Codex-first. Version `v0.1.0` was validated with the current Codex
-workflow on Windows; it makes no compatibility claim for every agent, platform,
-or operating system.
+It is Codex-first. The `v0.1.0` baseline was validated with the current Codex
+workflow on Windows, and `v0.1.1` additionally forward-tested its new
+retrospective route in an isolated Windows Codex session. It makes no
+compatibility claim for every agent, platform, or operating system.
 
 ## Scope
 
@@ -32,11 +33,12 @@ consequential new-study work, confirm the collaboration mode when asked.
 
 The skill uses blank assets for an intake, collaboration-mode authorization,
 feasibility brief, evidence register, claim register, reference audit,
-submission route, and public-boundary review.
+submission route, project retrospective register, and public-boundary review.
 
 ## Release Status
 
-`v0.1.0` is the initial public release. It contains only routing instructions,
+`v0.1.1` adds a generic retrospective-learning reference and a blank
+project-retrospective register. It contains only routing instructions,
 references, and blank templates; it has no executable helpers.
 
 ## Boundaries

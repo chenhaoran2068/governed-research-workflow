@@ -23,7 +23,7 @@ Classify the request before drafting, analysis, or project mutation.
 | Reviewer revision | Preserve reviewer input and identify the manuscript and revision route. | references/manuscript-and-submission-control.md |
 | Declaration or AI-use work | Ask for accountable facts and current target requirements. | references/manuscript-and-submission-control.md |
 | Citation work | Ask for the exact claim, source identity, and support location. | references/evidence-and-citation-control.md |
-| Retrospective learning | Ask for project-local observations and approval scope. | references/portability-and-release-boundaries.md |
+| Retrospective learning | Declare the bounded process surface and approval scope before collecting observations. | references/retrospective-learning.md and assets/project-retrospective-and-lesson-register.template.md |
 
 ## Mixed Requests
 

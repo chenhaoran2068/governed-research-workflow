@@ -26,10 +26,10 @@ migrate or silently declare compliance.
 
 ## Retrospective Learning
 
-Keep observations project-local until they are reviewed. A reusable lesson
-needs a stated context, evidence, limitation, candidate wording, and explicit
-promotion decision. Do not automatically promote an observation to shared or
-public guidance.
+Keep observations project-local until they are reviewed. For retrospective
+scope, evidence, promotion, and closure controls, use
+`references/retrospective-learning.md`. Do not automatically promote an
+observation to shared or public guidance.
 
 ## Public Release
 

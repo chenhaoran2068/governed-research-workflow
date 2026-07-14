@@ -2,8 +2,8 @@
 
 ## Supported Versions
 
-The supported public release line begins with `v0.1.0`. Report a suspected
-security issue affecting this version or the current default branch.
+The supported public release line is `v0.1.x`. Report a suspected security
+issue affecting a supported version or the current default branch.
 
 ## Reporting a Vulnerability
 
