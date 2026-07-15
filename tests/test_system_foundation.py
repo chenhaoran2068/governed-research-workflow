@@ -6,6 +6,7 @@ import unittest
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SYSTEM_ROOT = REPOSITORY_ROOT / "system"
+SYSTEM_MANIFEST = REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml"
 MODULE_IDS = tuple(f"{index:02d}" for index in range(13))
 PRIVATE_MARKERS = ("E:\\\\", "C:\\\\Users", "Research1", "PaCO2")
 
@@ -23,18 +24,25 @@ class SystemFoundationTests(unittest.TestCase):
                 f"Missing boundary record for {module_directory.name}",
             )
 
-    def test_candidate_manifest_is_standalone_only(self) -> None:
-        manifest = (SYSTEM_ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
+    def test_candidate_manifest_uses_the_system_package_root(self) -> None:
+        self.assertTrue(SYSTEM_MANIFEST.is_file())
+        self.assertFalse((SYSTEM_ROOT / "SYSTEM_MANIFEST.yaml").exists())
+        manifest = SYSTEM_MANIFEST.read_text(encoding="utf-8")
         self.assertIn("system_id: governed-research-workflow", manifest)
         self.assertIn("  - standalone", manifest)
-        self.assertNotIn("  - framework_integrated", manifest)
+        self.assertIn("  - framework_integrated", manifest)
+        self.assertIn("framework_compatibility:", manifest)
 
     def test_system_tree_has_no_private_workspace_markers(self) -> None:
-        public_text = "\n".join(
-            path.read_text(encoding="utf-8")
-            for path in SYSTEM_ROOT.rglob("*")
-            if path.is_file() and path.suffix in {".md", ".yaml", ".yml", ".json", ".txt"}
-        )
+        public_files = [
+            *(
+                path
+                for path in SYSTEM_ROOT.rglob("*")
+                if path.is_file() and path.suffix in {".md", ".yaml", ".yml", ".json", ".txt"}
+            ),
+            SYSTEM_MANIFEST,
+        ]
+        public_text = "\n".join(path.read_text(encoding="utf-8") for path in public_files)
         for marker in PRIVATE_MARKERS:
             self.assertNotIn(marker, public_text)
 

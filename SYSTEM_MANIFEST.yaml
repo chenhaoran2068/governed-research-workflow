@@ -1,5 +1,6 @@
-# Candidate system manifest. This public candidate currently supports only the
-# standalone profile; framework-integrated support requires separate evidence.
+# Candidate system manifest. Framework integration is validated only against
+# the unreleased Workspace Framework candidate and is not a stable-release
+# compatibility promise until both repositories are formally released.
 manifest_schema_version: 1
 system_id: governed-research-workflow
 system_version: 0.3.0-framework-candidate
@@ -7,7 +8,10 @@ system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:
   - standalone
+  - framework_integrated
 required_dependencies: []
 optional_shared_services: []
+framework_compatibility:
+  supported_framework_versions: ^0.1
 project_ownership_behavior: primary_system
 data_access_boundary: no-data-access-is-granted-by-this-system-manifest

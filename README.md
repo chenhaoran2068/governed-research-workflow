@@ -53,7 +53,7 @@ system/                  # Unreleased v0.3 module architecture
 ```
 
 Read `system/INDEX.md` for the 13-module public-system map and
-`system/SYSTEM_MANIFEST.yaml` for the candidate's declared profile. Current
+`SYSTEM_MANIFEST.yaml` for the candidate's declared profile. Current
 runtime behavior remains the released thin skill plus `references/`,
 `assets/`, `scripts/`, and `tests/`. A module marked foundation is an intended
 boundary, not a current capability.
@@ -79,10 +79,10 @@ skill loads. It passed the repository CI matrix on Windows, Ubuntu, and macOS
 with Python 3.11 and 3.14.
 
 The unreleased `v0.3.0-system-foundation` candidate maps the complete
-13-module architecture while retaining a standalone-only public profile. It
-does not yet claim compatibility with a workspace-framework package, provide
-specialist agents or a knowledge corpus, or change the released `v0.2.1`
-runtime contract.
+13-module architecture and includes candidate-level integration evidence
+against the untagged Workspace Framework candidate. It is not yet a
+stable-release compatibility claim, provides no specialist agents or knowledge
+corpus, and does not change the released `v0.2.1` runtime contract.
 
 ## Boundaries
 
