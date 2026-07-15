@@ -1,4 +1,4 @@
-"""Synthetic installation test for the unreleased framework candidate.
+"""Synthetic installation test for an exact released framework tag.
 
 This test is intentionally read-only outside a temporary directory. It proves
 that the concrete public system can occupy the documented framework locations,
@@ -24,6 +24,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SYSTEM_MANIFEST_PATH = REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml"
 FRAMEWORK_ROOT_VALUE = os.environ.get("FRAMEWORK_REPOSITORY_ROOT")
 FRAMEWORK_ROOT = Path(FRAMEWORK_ROOT_VALUE).resolve() if FRAMEWORK_ROOT_VALUE else None
+FRAMEWORK_RELEASE_TAG = os.environ.get("FRAMEWORK_RELEASE_TAG")
 
 
 class IntegrationContractError(ValueError):
@@ -57,6 +58,9 @@ def validate_candidate_records(
         raise IntegrationContractError("Framework-integrated system requires framework_integrated workspace profile.")
     if "framework_integrated" not in system.get("supported_profiles", []):
         raise IntegrationContractError("System manifest does not declare framework_integrated profile.")
+    expected_framework_version = system.get("framework_compatibility", {}).get("supported_framework_versions")
+    if not expected_framework_version or workspace.get("framework_version") != expected_framework_version:
+        raise IntegrationContractError("Workspace framework version does not match the system compatibility declaration.")
 
     matching_records = [
         record
@@ -73,7 +77,10 @@ def validate_candidate_records(
         raise IntegrationContractError("Synthetic project binding names an unregistered primary system.")
 
 
-@unittest.skipUnless(FRAMEWORK_ROOT_VALUE, "Set FRAMEWORK_REPOSITORY_ROOT to run cross-repository integration tests.")
+@unittest.skipUnless(
+    FRAMEWORK_ROOT_VALUE and FRAMEWORK_RELEASE_TAG,
+    "Set FRAMEWORK_REPOSITORY_ROOT and FRAMEWORK_RELEASE_TAG to run released-framework integration tests.",
+)
 class FrameworkCandidateIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -89,6 +96,23 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
         cls.Registry = Registry
         cls.Resource = Resource
         cls.framework_root = FRAMEWORK_ROOT
+        cls.framework_release_tag = FRAMEWORK_RELEASE_TAG
+        resolved_tag = subprocess.run(
+            ["git", "-C", str(cls.framework_root), "rev-parse", f"{cls.framework_release_tag}^{{commit}}"],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        resolved_head = subprocess.run(
+            ["git", "-C", str(cls.framework_root), "rev-parse", "HEAD"],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if resolved_tag.returncode != 0 or resolved_head.returncode != 0:
+            raise RuntimeError("Unable to resolve the released framework tag in the checked-out repository.")
+        if resolved_tag.stdout.strip() != resolved_head.stdout.strip():
+            raise RuntimeError("Framework checkout does not match the declared released framework tag.")
 
     def setUp(self) -> None:
         self.temporary_directory = tempfile.TemporaryDirectory()
@@ -212,6 +236,7 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
             "contributing_systems": [],
         }
         standalone_workspace = {
+            "framework_version": "0.1.0",
             "workspace_profile": "standalone",
             "registered_systems": [],
         }
@@ -219,6 +244,7 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
             validate_candidate_records(standalone_workspace, system, binding)
 
         unsafe_registration_workspace = {
+            "framework_version": "0.1.0",
             "workspace_profile": "framework_integrated",
             "registered_systems": [
                 {
@@ -234,6 +260,7 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
     def test_rejects_binding_to_an_unregistered_primary_system(self) -> None:
         system = self.load_yaml(SYSTEM_MANIFEST_PATH)
         workspace = {
+            "framework_version": "0.1.0",
             "workspace_profile": "framework_integrated",
             "registered_systems": [
                 {

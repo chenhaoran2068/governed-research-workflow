@@ -79,10 +79,10 @@ skill loads. It passed the repository CI matrix on Windows, Ubuntu, and macOS
 with Python 3.11 and 3.14.
 
 The unreleased `v0.3.0-system-foundation` candidate maps the complete
-13-module architecture and includes candidate-level integration evidence
-against the untagged Workspace Framework candidate. It is not yet a
-stable-release compatibility claim, provides no specialist agents or knowledge
-corpus, and does not change the released `v0.2.1` runtime contract.
+13-module architecture and is awaiting a CI rerun against the exact released
+Workspace Framework `v0.1.0` tag. It is not yet a stable-release compatibility
+claim, provides no specialist agents or knowledge corpus, and does not change
+the released `v0.2.1` runtime contract.
 
 ## Boundaries
 

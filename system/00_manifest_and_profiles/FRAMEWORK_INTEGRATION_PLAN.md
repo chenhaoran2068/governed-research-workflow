@@ -1,7 +1,7 @@
 # Framework Integration Plan
 
-Status: candidate integration validation is implemented. It is not yet a
-stable-release compatibility claim.
+Status: pre-release candidate validation is implemented. Exact released-tag
+validation against Workspace Framework `v0.1.0` is pending CI.
 
 ## Current Position
 
@@ -23,16 +23,16 @@ execute research, or establish any formal release compatibility.
 
 ## Candidate Validation Boundary
 
-Candidate validation uses the Workspace Framework's public candidate branch.
-It proves the package can participate in the declared layout, but does not
-make an untagged framework a stable dependency.
+The earlier candidate validation proved that this package can participate in
+the declared layout, but did not make an untagged framework a stable
+dependency. The current CI must resolve the exact `v0.1.0` tag and prove the
+checkout, workspace manifest, and system compatibility declaration agree.
 
 ## Conditions Before Stable Release Advertising
 
 Before a stable release advertises framework integration, maintainers must:
 
-1. release and tag the reviewed Workspace Framework version, then rerun this
-   cross-repository validation against that exact release;
+1. rerun this cross-repository validation against the released `v0.1.0` tag;
 2. record the released compatible version in `framework_compatibility` and
    release notes;
 3. define how this primary project-owning system behaves when optional shared

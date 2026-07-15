@@ -14,7 +14,8 @@ routing layer.
   schemas and templates; assurance; distribution; and synthetic examples;
 - adds a candidate system manifest and module-boundary records, plus synthetic
   cross-repository framework-integration validation; stable compatibility
-  remains pending a rerun against an exact released framework tag;
+  remains pending the CI rerun against the exact released framework `v0.1.0`
+  tag;
 - retains `references/`, `assets/`, `scripts/`, and `tests/` as the active
   `v0.2.1` implementation surface;
 - adds no new specialist agent, knowledge corpus, execution authority, or

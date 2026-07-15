@@ -12,6 +12,6 @@ supported_profiles:
 required_dependencies: []
 optional_shared_services: []
 framework_compatibility:
-  supported_framework_versions: ^0.1
+  supported_framework_versions: "0.1.0"
 project_ownership_behavior: primary_system
 data_access_boundary: no-data-access-is-granted-by-this-system-manifest
