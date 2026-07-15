@@ -28,7 +28,7 @@ release remains a separate human decision.
 | `08` | agent contracts | foundation only | role-contract boundary |
 | `09` | schemas, records, and templates | active blank-record baseline | `assets/` templates |
 | `10` | assurance, evaluation, and audit | active regression baseline plus candidate cross-repository integration | `tests/` |
-| `11` | distribution, installation, and release | active candidate-release controls; stable workflow release pending human decision | package governance files |
+| `11` | distribution, installation, and release | active candidate-release controls; v0.3 gate defined and not yet passed | package governance files and `V0_3_RELEASE_GATE.md` |
 | `12` | synthetic examples | exact-tag integration test only | no admitted system example yet |
 
 ## Current Resource Map

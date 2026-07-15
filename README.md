@@ -84,6 +84,9 @@ Framework `v0.1.0` tag. That is release evidence, not a workflow release: it
 provides no specialist agents or knowledge corpus and does not change the
 released `v0.2.1` runtime contract.
 
+The candidate's release criteria are documented in
+[`system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md`](system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md).
+
 ## Boundaries
 
 Do not place restricted data, patient-derived data, credentials, unpublished

@@ -111,7 +111,7 @@ separately reviewed and released.
 | REL-005 | Contributor issue forms and dependency or security automation | deferred | A maintainer-owned support process and safe disclosure route. |
 | REL-006 | Code of conduct and citation metadata | deferred | Deliberate term selection and maintainable enforcement or credit process. |
 | REL-007 | Broader compatibility statement or 1.0.0 | unscheduled | Repeated clean-install evidence, stable contract, controlled release history, and explicit maintainer decision. |
-| REL-008 | Complete generic system-package foundation: modular rules, workflows, templates, tools, agent contracts, knowledge/source pointers, and tests behind the thin entry skill | v0.3.0 candidate branch | Module-boundary foundation is drafted; public extraction manifest, privacy/rights review, admitted module content, runtime-install design, regression tests, and explicit maintainer approval remain required. |
+| REL-008 | Bounded system-foundation release | v0.3.0 candidate branch | Complete `system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md`; deferred modules may remain foundation-only only when the release claim excludes them. |
 
 ## Not Public Capability Candidates
 
