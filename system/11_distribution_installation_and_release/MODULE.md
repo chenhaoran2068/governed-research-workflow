@@ -7,8 +7,8 @@ Released tags are immutable public contracts. Candidate branches are not
 releases. A correction requires a new release version rather than rewriting a
 published tag.
 
-This package currently has candidate evidence for a framework-integrated
-profile. It must be rerun against an exact released Workspace Framework tag
-before a stable workflow release advertises that compatibility. Public releases
-must not contain private paths, data, credentials, unpublished material, or
-project audit records.
+This package has candidate evidence for a framework-integrated profile against
+the exact released Workspace Framework `v0.1.0` tag. A stable workflow release
+still requires an explicit maintainer decision. Public releases must not
+contain private paths, data, credentials, unpublished material, or project
+audit records.
