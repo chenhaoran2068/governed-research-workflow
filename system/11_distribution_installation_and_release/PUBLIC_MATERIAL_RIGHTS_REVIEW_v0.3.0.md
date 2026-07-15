@@ -62,6 +62,13 @@ repository .gitignore excludes common research material, generated files,
 credentials, and local configuration, but maintainers must still review staged
 content before every release.
 
+Candidate execution record: at candidate commit 503e270ef1ad852512b524bb4a9345c02d5f27ad,
+the selected current-tree private-path and credential scan returned zero
+matches. A reachable-history scan covered 16 commits and returned zero matches
+for common GitHub-token, AWS-key, private-key, assignment-style secret, and
+known local-path patterns. These are pattern-based checks with the limitations
+described above.
+
 ## Rights And Provenance Limits
 
 This review establishes a technical and documentation-level public boundary.

@@ -33,6 +33,8 @@ Evidence:
   release claim.
 - INSTALL_UPDATE_ROLLBACK.md identifies profile behavior and public package
   lifecycle boundaries.
+- Candidate documentation audit completed at
+  503e270ef1ad852512b524bb4a9345c02d5f27ad.
 
 Next action: review the final release diff and use the same bounded language
 in the GitHub Release notes.
@@ -48,6 +50,9 @@ Evidence:
   reviewed material classes, exceptions, scan results, and limits.
 - .gitignore, CONTRIBUTING.md, SECURITY.md, and SKILL.md prohibit private,
   restricted, and real-project content.
+- The current-tree and 16-commit reachable-history pattern scans reported zero
+  credential and known-private-path matches at
+  503e270ef1ad852512b524bb4a9345c02d5f27ad.
 
 Next action: accountable maintainer confirms contribution authority and no
 applicable institutional, DUA, privacy, employment, or confidentiality block.
@@ -67,6 +72,10 @@ Evidence:
 - The root SYSTEM_MANIFEST.yaml is the expected framework system-manifest
   location and declares standalone plus framework_integrated against Framework
   0.1.0.
+- An isolated lifecycle test cloned candidate
+  503e270ef1ad852512b524bb4a9345c02d5f27ad, ran 23 tests successfully,
+  rolled back to released v0.2.1 and ran 14 tests successfully, then restored
+  the candidate and reran all 23 tests successfully.
 
 Next action: execute the documented clean-install and rollback commands from
 the final release candidate in a temporary directory.
@@ -85,6 +94,9 @@ Evidence:
   a synthetic empty framework workspace, installs synthetic public package
   material, validates manifests, and exercises unsafe-path, wrong-profile,
   version-mismatch, and unregistered-primary-system refusals.
+- Candidate GitHub Actions run 29396558104 completed successfully for all six
+  matrix cells on commit 503e270ef1ad852512b524bb4a9345c02d5f27ad:
+  Windows, Ubuntu, and macOS on Python 3.11 and 3.14.
 
 Limit: the tests prove only the listed technical behavior. They do not prove
 scientific quality, compliance, data access, real project safety, or every
@@ -105,6 +117,10 @@ Evidence:
 - GitHub Actions uses SHA-pinned official checkout and setup-python actions
   with read-only contents permission.
 - The release will include no assets beyond GitHub source archives.
+- GitHub alert APIs were checked with maintainer credentials during candidate
+  review. Dependabot returned 403, code scanning returned 404, and secret
+  scanning was unavailable to the current credential; therefore no claim is
+  made that hosted scanning is enabled or clear.
 
 Next action: run the final history/tree scan, inspect accessible GitHub alerts,
 verify clean status, and approve or reject the candidate integrity evidence.
