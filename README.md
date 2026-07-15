@@ -52,9 +52,11 @@ agents/openai.yaml       # Codex-facing skill metadata
 system/                  # Unreleased v0.3 module architecture
 ```
 
-Read `system/INDEX.md` for the future public-system module boundaries. The
-`system/` directories are intentionally foundation-only: no user or agent may
-infer that an empty future module supplies a current capability.
+Read `system/INDEX.md` for the 13-module public-system map and
+`system/SYSTEM_MANIFEST.yaml` for the candidate's declared profile. Current
+runtime behavior remains the released thin skill plus `references/`,
+`assets/`, `scripts/`, and `tests/`. A module marked foundation is an intended
+boundary, not a current capability.
 
 ## Release Status
 
@@ -75,6 +77,12 @@ creates only an empty generic workspace plus a receipt. It does not process
 data, make research or compliance decisions, or run automatically when the
 skill loads. It passed the repository CI matrix on Windows, Ubuntu, and macOS
 with Python 3.11 and 3.14.
+
+The unreleased `v0.3.0-system-foundation` candidate maps the complete
+13-module architecture while retaining a standalone-only public profile. It
+does not yet claim compatibility with a workspace-framework package, provide
+specialist agents or a knowledge corpus, or change the released `v0.2.1`
+runtime contract.
 
 ## Boundaries
 

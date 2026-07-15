@@ -8,8 +8,12 @@ This branch establishes the module boundaries for a future complete generic
 research-collaboration system while keeping `SKILL.md` as the small entry and
 routing layer.
 
-- adds a public `system/` index plus governance, workflow, knowledge,
-  agent-contract, schema, and example module boundaries;
+- maps all 13 public system modules: manifest and profiles; governance;
+  workspace and bootstrap; workflows; evidence and knowledge; data and
+  provenance; memory and learning; tools and integrations; agent contracts;
+  schemas and templates; assurance; distribution; and synthetic examples;
+- adds a standalone-only candidate system manifest and module-boundary
+  records, without claiming framework-integrated compatibility;
 - retains `references/`, `assets/`, `scripts/`, and `tests/` as the active
   `v0.2.1` implementation surface;
 - adds no new specialist agent, knowledge corpus, execution authority, or
