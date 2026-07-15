@@ -1,7 +1,8 @@
 # Framework Integration Plan
 
-Status: released integration validation passed against the exact released
-Workspace Framework `v0.1.0` tag.
+Status: `v0.3.1` candidate integration validation targets the exact released
+Workspace Framework `v0.1.1` tag. Historical `v0.3.0` evidence remains bound
+to framework `v0.1.0` and is not reused as candidate evidence.
 
 ## Current Position
 
@@ -23,11 +24,11 @@ execute research, or establish any formal release compatibility.
 
 ## Validation Evidence
 
-The release validation proved that this package can participate in
-the declared layout, but did not make an untagged framework a stable
-dependency. The released-tag CI resolves `v0.1.0`, verifies that its commit
-matches the checked-out framework source, and proves that the workspace
-manifest version and system compatibility declaration both equal `0.1.0`.
+Candidate validation must prove that this package can participate in the
+declared layout without making an untagged framework a stable dependency. The
+candidate CI resolves `v0.1.1`, verifies that its commit matches the
+checked-out framework source, and proves that the workspace manifest version
+and system compatibility declaration both equal `0.1.0`.
 
 This test proves a bounded technical integration contract. It does not approve
 scientific quality, compliance, source access, project creation, or a workflow
@@ -35,11 +36,13 @@ release.
 
 ## Conditions Before Stable Release Advertising
 
-Before a stable release advertises framework integration, maintainers must:
+Before a stable release advertises this candidate's framework integration,
+maintainers must:
 
-1. retain the passed cross-repository validation against the released `v0.1.0`
+1. retain the passed cross-repository validation against the released `v0.1.1`
    tag and rerun it if the compatibility contract changes;
-2. retain `0.1.0` in `framework_compatibility` and include the evidence in
+2. retain `0.1.0` in `framework_compatibility`, while identifying the exact
+   tested Framework release tag and commit in the compatibility evidence and
    release notes;
 3. define how this primary project-owning system behaves when optional shared
    services are unavailable;

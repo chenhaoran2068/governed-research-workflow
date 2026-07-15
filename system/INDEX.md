@@ -1,6 +1,7 @@
 # Public System Module Index
 
-Status: public `v0.3.0` bounded system-foundation release.
+Status: `v0.3.1` compatibility-maintenance candidate. The latest public
+release is `v0.3.0`.
 
 ## Purpose
 
@@ -9,8 +10,8 @@ root `SKILL.md` remains the thin AI entry and routing layer. It must load only
 the route and module needed for the current task.
 
 The system has a [system manifest](../SYSTEM_MANIFEST.yaml). It supports
-`standalone` and a validated `framework_integrated` profile. The latter passed
-against the exact released framework `v0.1.0` tag.
+`standalone` and a `framework_integrated` profile whose candidate validation
+targets the exact released framework `v0.1.1` tag.
 
 ## Module Status
 
@@ -27,7 +28,7 @@ against the exact released framework `v0.1.0` tag.
 | `08` | agent contracts | foundation only | role-contract boundary |
 | `09` | schemas, records, and templates | active blank-record baseline | `assets/` templates |
 | `10` | assurance, evaluation, and audit | active regression baseline plus cross-repository integration | `tests/` |
-| `11` | distribution, installation, and release | active release controls; manual lifecycle, material review, integrity, and post-release verification records | package governance files and `V0_3_RELEASE_GATE.md` |
+| `11` | distribution, installation, and release | active release controls; manual lifecycle, material review, integrity, and post-release verification records | package governance files and the v0.3.1 maintenance-candidate record |
 | `12` | synthetic examples | exact-tag integration test only | no admitted system example yet |
 
 ## Current Resource Map
@@ -50,6 +51,6 @@ does not create capability.
 ## Framework Relationship
 
 The system is designed to remain path-independent and standalone. Its
-framework-integrated profile passed cross-repository validation against the
-exact released Workspace Framework `v0.1.0` tag. It must never require a
-private checkout, private credential, or real project workspace.
+framework-integrated profile is being revalidated against the exact released
+Workspace Framework `v0.1.1` tag. It must never require a private checkout,
+private credential, or real project workspace.

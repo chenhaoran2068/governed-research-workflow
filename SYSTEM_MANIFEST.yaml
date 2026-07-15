@@ -1,8 +1,9 @@
-# Public v0.3.0 system manifest. Framework integration has been validated
-# against the released Governed Research Workspace Framework v0.1.0 tag.
+# Unreleased v0.3.1 compatibility-maintenance candidate. The workspace
+# framework-version contract remains 0.1.0; the exact framework release under
+# test is v0.1.1 before any release decision.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.3.0
+system_version: 0.3.1
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

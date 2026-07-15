@@ -2,6 +2,20 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
+## v0.3.1 (unreleased compatibility-maintenance candidate)
+
+This candidate does not add workflow capability. It:
+
+- corrects source-branch wording that incorrectly described the already
+  released `v0.3.0` system foundation as unreleased;
+- retargets the candidate's framework-integrated compatibility claim from the
+  historical `v0.1.0` evidence to an exact `v0.1.1` validation; and
+- adds a candidate record that distinguishes historical release evidence from
+  fresh evidence required for any later patch release.
+
+It must not receive a public tag or Release until the documented maintenance
+candidate checks complete and a human maintainer approves the exact commit.
+
 ## v0.3.0 (released 2026-07-15)
 
 This release establishes the module boundaries for a future complete generic
@@ -14,8 +28,7 @@ routing layer.
   schemas and templates; assurance; distribution; and synthetic examples;
 - adds a system manifest and module-boundary records, plus synthetic
   cross-repository framework-integration validation against the exact released
-  framework `v0.1.0` tag; a stable workflow release remains a separate human
-  decision;
+  framework `v0.1.0` tag;
 - retains `references/`, `assets/`, `scripts/`, and `tests/` as the active
   `v0.2.1` implementation surface;
 - adds manual installation, update, rollback, public-material review,

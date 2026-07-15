@@ -5,10 +5,10 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: public `v0.3.0` bounded system-foundation release. It preserves the
-thin entry skill while establishing a modular home for future generic system
-content. It does not claim a complete research platform or expand the
-human-approval boundaries below.
+Status: unreleased `v0.3.1` compatibility-maintenance candidate. The latest
+public release remains `v0.3.0`. This candidate corrects release-status
+documentation and retests framework integration; it does not add research
+execution authority or expand any human-approval boundary.
 
 It is Codex-first. The `v0.1.0` baseline was validated with the current Codex
 workflow on Windows, and `v0.1.1` additionally forward-tested its new
@@ -78,18 +78,16 @@ data, make research or compliance decisions, or run automatically when the
 skill loads. It passed the repository CI matrix on Windows, Ubuntu, and macOS
 with Python 3.11 and 3.14.
 
-The unreleased `v0.3.0-system-foundation` candidate maps the complete
-13-module architecture and passed CI against the exact released Workspace
-Framework `v0.1.0` tag. That is release evidence, not a workflow release: it
-provides no specialist agents or knowledge corpus and does not change the
-released `v0.2.1` runtime contract.
+`v0.3.0` is the released bounded system-foundation baseline. Its exact
+framework-integration evidence is against Workspace Framework `v0.1.0`.
 
-The candidate's release criteria are documented in
-[`system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md`](system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md).
-Its candidate manual installation, update, and rollback contract is in
-[`system/11_distribution_installation_and_release/INSTALL_UPDATE_ROLLBACK.md`](system/11_distribution_installation_and_release/INSTALL_UPDATE_ROLLBACK.md).
-Do not install this candidate as `v0.3.0` until a matching public tag and
-GitHub Release exist.
+The current `v0.3.1` compatibility-maintenance candidate corrects stale
+candidate wording and changes its claimed integration target to the exact
+released Workspace Framework `v0.1.1` tag. It is not a public release and
+must not be installed as `v0.3.1` until an exact tag, matching GitHub Release,
+fresh tests, and human release approval exist. Its scope and required evidence
+are recorded in
+[`system/11_distribution_installation_and_release/V0_3_1_COMPATIBILITY_MAINTENANCE_CANDIDATE.md`](system/11_distribution_installation_and_release/V0_3_1_COMPATIBILITY_MAINTENANCE_CANDIDATE.md).
 
 ## Boundaries
 
