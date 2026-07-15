@@ -1,6 +1,5 @@
-# Candidate system manifest. Framework integration has been validated against
-# the released Governed Research Workspace Framework v0.1.0 tag. This package
-# remains an unreleased v0.3.0 candidate until its own release gate passes.
+# Public v0.3.0 system manifest. Framework integration has been validated
+# against the released Governed Research Workspace Framework v0.1.0 tag.
 manifest_schema_version: 1
 system_id: governed-research-workflow
 system_version: 0.3.0

@@ -2,7 +2,7 @@
 
 Status: active regression baseline; broader assurance is foundation only.
 
-`tests/` protects the controlled bootstrap helper, candidate module inventory,
+`tests/` protects the controlled bootstrap helper, module inventory,
 and a synthetic cross-repository framework integration. Passing tests prove
 only the tested technical behavior. They do not approve scientific quality,
 compliance, data access, manuscript claims, or a submission package.

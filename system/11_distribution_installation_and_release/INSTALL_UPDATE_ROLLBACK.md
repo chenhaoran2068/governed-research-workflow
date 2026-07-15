@@ -1,13 +1,13 @@
 # Manual Installation, Update, And Rollback
 
-Status: candidate operating contract for the future public v0.3.0 release.
-It is not an automatic installer and does not authorize a research project,
+Status: operating contract for the public v0.3.0 release. It is not an
+automatic installer and does not authorize a research project,
 data access, or workflow transition.
 
 ## Preconditions
 
-- Use a future public v0.3.0 Git tag and GitHub Release, not this candidate
-  branch, for a normal installation.
+- Use the public v0.3.0 Git tag and GitHub Release, not a candidate branch,
+  for a normal installation.
 - Use Git and Python 3.11 or later. Python is required only for the optional
   empty-workspace bootstrap and test commands; the routing documents do not
   grant any execution authority.

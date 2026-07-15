@@ -2,9 +2,9 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## Unreleased v0.3.0-system-foundation Candidate
+## v0.3.0 (released 2026-07-15)
 
-This branch establishes the module boundaries for a future complete generic
+This release establishes the module boundaries for a future complete generic
 research-collaboration system while keeping `SKILL.md` as the small entry and
 routing layer.
 
@@ -12,18 +12,19 @@ routing layer.
   workspace and bootstrap; workflows; evidence and knowledge; data and
   provenance; memory and learning; tools and integrations; agent contracts;
   schemas and templates; assurance; distribution; and synthetic examples;
-- adds a candidate system manifest and module-boundary records, plus synthetic
+- adds a system manifest and module-boundary records, plus synthetic
   cross-repository framework-integration validation against the exact released
   framework `v0.1.0` tag; a stable workflow release remains a separate human
   decision;
 - retains `references/`, `assets/`, `scripts/`, and `tests/` as the active
   `v0.2.1` implementation surface;
-- adds candidate manual installation, update, rollback, public-material review,
+- adds manual installation, update, rollback, public-material review,
   release-integrity policy, and release-evidence records; these records do not
   authorize a merge, tag, or release;
 - adds no new specialist agent, knowledge corpus, execution authority, or
   claim of compatibility; and
-- is not a release, tag, or evidence that a full public system already exists.
+- is a bounded system-foundation release, not evidence that a full public
+  system already exists.
 
 ## v0.2.1 (released 2026-07-14)
 

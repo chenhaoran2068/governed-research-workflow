@@ -1,6 +1,6 @@
 # Examples Module Boundary
 
-Status: candidate cross-repository integration test; no distributable
+Status: released cross-repository integration test; no distributable
 end-to-end public system example is admitted here yet.
 
 `tests/test_framework_candidate_integration.py` constructs a temporary empty

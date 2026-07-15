@@ -5,10 +5,10 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-The repository is also beginning an unreleased `v0.3.0-system-foundation`
-candidate. The candidate preserves this thin entry skill while establishing a
-modular home for future generic system content. It does not change the scope
-of the current public release.
+Status: public `v0.3.0` bounded system-foundation release. It preserves the
+thin entry skill while establishing a modular home for future generic system
+content. It does not claim a complete research platform or expand the
+human-approval boundaries below.
 
 It is Codex-first. The `v0.1.0` baseline was validated with the current Codex
 workflow on Windows, and `v0.1.1` additionally forward-tested its new
@@ -49,12 +49,12 @@ assets/                  # Blank output templates and bootstrap assets
 scripts/                 # Explicitly invoked deterministic helpers
 tests/                   # Safety and regression checks
 agents/openai.yaml       # Codex-facing skill metadata
-system/                  # Unreleased v0.3 module architecture
+system/                  # Public v0.3 module architecture
 ```
 
 Read `system/INDEX.md` for the 13-module public-system map and
-`SYSTEM_MANIFEST.yaml` for the candidate's declared profile. Current
-runtime behavior remains the released thin skill plus `references/`,
+`SYSTEM_MANIFEST.yaml` for its declared profile. Current runtime behavior
+remains the thin skill plus `references/`,
 `assets/`, `scripts/`, and `tests/`. A module marked foundation is an intended
 boundary, not a current capability.
 

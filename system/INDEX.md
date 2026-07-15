@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: unreleased `v0.3.0-system-foundation` candidate.
+Status: public `v0.3.0` bounded system-foundation release.
 
 ## Purpose
 
@@ -8,16 +8,15 @@ This is the modular architecture for a generic governed research system. The
 root `SKILL.md` remains the thin AI entry and routing layer. It must load only
 the route and module needed for the current task.
 
-The candidate has a [system manifest](../SYSTEM_MANIFEST.yaml). It supports
-`standalone` and a candidate-validated `framework_integrated` profile. The
-latter passed against the exact released framework `v0.1.0` tag, but workflow
-release remains a separate human decision.
+The system has a [system manifest](../SYSTEM_MANIFEST.yaml). It supports
+`standalone` and a validated `framework_integrated` profile. The latter passed
+against the exact released framework `v0.1.0` tag.
 
 ## Module Status
 
-| ID | Module | Candidate status | Current public surface |
+| ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | active candidate manifest; exact released-framework validation passed | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | active manifest; exact released-framework validation passed | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline | route references and blank assets |
@@ -27,8 +26,8 @@ release remains a separate human decision.
 | `07` | tools and integrations | active bootstrap tool; exact-tag integration regression test | `scripts/` and tests |
 | `08` | agent contracts | foundation only | role-contract boundary |
 | `09` | schemas, records, and templates | active blank-record baseline | `assets/` templates |
-| `10` | assurance, evaluation, and audit | active regression baseline plus candidate cross-repository integration | `tests/` |
-| `11` | distribution, installation, and release | active candidate-release controls; manual lifecycle, material review, and integrity records are prepared, but human release approval remains pending | package governance files and `V0_3_RELEASE_GATE.md` |
+| `10` | assurance, evaluation, and audit | active regression baseline plus cross-repository integration | `tests/` |
+| `11` | distribution, installation, and release | active release controls; manual lifecycle, material review, integrity, and post-release verification records | package governance files and `V0_3_RELEASE_GATE.md` |
 | `12` | synthetic examples | exact-tag integration test only | no admitted system example yet |
 
 ## Current Resource Map
@@ -50,7 +49,7 @@ does not create capability.
 
 ## Framework Relationship
 
-The system is designed to remain path-independent and standalone. Its candidate
+The system is designed to remain path-independent and standalone. Its
 framework-integrated profile passed cross-repository validation against the
 exact released Workspace Framework `v0.1.0` tag. It must never require a
 private checkout, private credential, or real project workspace.

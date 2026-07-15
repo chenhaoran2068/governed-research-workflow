@@ -1,7 +1,7 @@
 # Tools And Integrations
 
-Status: active controlled bootstrap tool; candidate framework integration is
-test-only and has no installation helper.
+Status: active controlled bootstrap tool; framework integration is test-only
+and has no installation helper.
 
 Current executable tooling is limited to the explicit empty-workspace bootstrap
 helper and its regression tests. It uses no network, credentials, data import,

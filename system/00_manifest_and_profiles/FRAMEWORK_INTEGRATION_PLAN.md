@@ -1,14 +1,13 @@
 # Framework Integration Plan
 
-Status: candidate integration validation passed against the exact released
-Workspace Framework `v0.1.0` tag. A stable workflow release remains pending a
-separate human decision.
+Status: released integration validation passed against the exact released
+Workspace Framework `v0.1.0` tag.
 
 ## Current Position
 
 `../../SYSTEM_MANIFEST.yaml` uses the public Workspace Framework's generic
 system-manifest contract and declares both `standalone` and
-`framework_integrated` for candidate validation. It has no required
+`framework_integrated` for released-profile validation. It has no required
 dependency, optional shared service, absolute workspace path, or
 private-runtime assumption.
 
@@ -24,7 +23,7 @@ execute research, or establish any formal release compatibility.
 
 ## Validation Evidence
 
-The earlier candidate validation proved that this package can participate in
+The release validation proved that this package can participate in
 the declared layout, but did not make an untagged framework a stable
 dependency. The released-tag CI resolves `v0.1.0`, verifies that its commit
 matches the checked-out framework source, and proves that the workspace

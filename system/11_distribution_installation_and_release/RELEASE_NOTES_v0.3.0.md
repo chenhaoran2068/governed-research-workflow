@@ -1,7 +1,7 @@
-# Draft Release Notes: v0.3.0
+# Release Notes: v0.3.0
 
-Status: draft for the future GitHub Release. Do not publish it until R30-G1
-through R30-G6 have passed for the exact intended main commit.
+Status: release-note source. The GitHub Release records the exact final main
+commit, validation links, human authorization, and post-release verification.
 
 ## Bounded System Foundation
 
