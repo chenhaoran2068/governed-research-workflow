@@ -1,9 +1,9 @@
-# Candidate system manifest. Framework integration is validated only against
-# the unreleased Workspace Framework candidate and is not a stable-release
-# compatibility promise until both repositories are formally released.
+# Candidate system manifest. Framework integration has been validated against
+# the released Governed Research Workspace Framework v0.1.0 tag. This package
+# remains an unreleased v0.3.0 candidate until its own release gate passes.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.3.0-framework-candidate
+system_version: 0.3.0
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

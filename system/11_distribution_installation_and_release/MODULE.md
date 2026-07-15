@@ -15,4 +15,7 @@ audit records.
 
 `V0_3_RELEASE_GATE.md` defines the additional contract, boundary,
 installation, validation, integrity, and human-approval evidence required
-before this candidate may become public `v0.3.0`.
+before this candidate may become public `v0.3.0`. The supporting candidate
+records are `INSTALL_UPDATE_ROLLBACK.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.3.0.md`,
+`RELEASE_INTEGRITY_POLICY_v1.md`, and `V0_3_RELEASE_EVIDENCE.md`.

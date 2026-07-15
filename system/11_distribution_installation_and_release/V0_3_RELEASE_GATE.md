@@ -62,6 +62,10 @@ unimplemented capability is available.
 
 ## Required Gates
 
+The candidate evidence and operating records for these gates live beside this
+file. They prepare a release decision; they do not replace R30-G6 human
+authorization or R30-G7 post-release verification.
+
 ### R30-G1: Scope and Contract Freeze
 
 Required evidence:
@@ -190,6 +194,19 @@ next_action:
 `deferred` is permitted only for a capability explicitly excluded from the
 `v0.3.0` release claim. It cannot defer a privacy, rights, integrity, profile,
 or human-approval failure.
+
+## Candidate Evidence Files
+
+- `INSTALL_UPDATE_ROLLBACK.md`: manual profile lifecycle and refusal behavior.
+- `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.3.0.md`: candidate tracked-tree, privacy,
+  provenance, and redistribution review.
+- `RELEASE_INTEGRITY_POLICY_v1.md`: pinned-action, dependency, tag, and
+  immutable-release decision.
+- `RELEASE_NOTES_v0.3.0.md`: draft GitHub Release text with scope,
+  compatibility, limitations, validation placeholders, and rollback route.
+- `V0_3_RELEASE_EVIDENCE.md`: gate-by-gate evidence status. R30-G6 and
+  R30-G7 remain pending until an accountable maintainer authorizes and then
+  verifies an actual release.
 
 ## External Design Basis
 

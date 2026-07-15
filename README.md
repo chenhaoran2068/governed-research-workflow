@@ -86,6 +86,10 @@ released `v0.2.1` runtime contract.
 
 The candidate's release criteria are documented in
 [`system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md`](system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md).
+Its candidate manual installation, update, and rollback contract is in
+[`system/11_distribution_installation_and_release/INSTALL_UPDATE_ROLLBACK.md`](system/11_distribution_installation_and_release/INSTALL_UPDATE_ROLLBACK.md).
+Do not install this candidate as `v0.3.0` until a matching public tag and
+GitHub Release exist.
 
 ## Boundaries
 

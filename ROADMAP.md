@@ -18,6 +18,9 @@ routing layer.
   decision;
 - retains `references/`, `assets/`, `scripts/`, and `tests/` as the active
   `v0.2.1` implementation surface;
+- adds candidate manual installation, update, rollback, public-material review,
+  release-integrity policy, and release-evidence records; these records do not
+  authorize a merge, tag, or release;
 - adds no new specialist agent, knowledge corpus, execution authority, or
   claim of compatibility; and
 - is not a release, tag, or evidence that a full public system already exists.
