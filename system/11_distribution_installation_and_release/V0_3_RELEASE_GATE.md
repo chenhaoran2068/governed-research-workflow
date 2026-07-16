@@ -2,7 +2,7 @@
 
 Status: historical pre-release gate. It prepared the published `v0.3.0`
 release and is retained for traceability; it is not the current gate for the
-unreleased `v0.3.1` candidate.
+later release-gated `v0.3.1` source.
 
 ## Purpose
 
@@ -18,7 +18,7 @@ GitHub Release is available at
 
 The candidate and pending wording below preserves the pre-release gate state
 as historical evidence. It must not be read as the live status of the
-published v0.3.0 release or of the separate v0.3.1 candidate.
+published v0.3.0 release or of the later release-gated v0.3.1 source.
 
 This gate is deliberately narrower than a claim that the package is a complete
 research system. It governs a bounded **system foundation** release: a thin

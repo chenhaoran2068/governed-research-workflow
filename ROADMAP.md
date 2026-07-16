@@ -2,19 +2,20 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.3.1 (unreleased compatibility-maintenance candidate)
+## v0.3.1 (release-gated compatibility-maintenance source)
 
-This candidate does not add workflow capability. It:
+This release-gated source does not add workflow capability. It:
 
 - corrects source-branch wording that incorrectly described the already
   released `v0.3.0` system foundation as unreleased;
 - retargets the candidate's framework-integrated compatibility claim from the
   historical `v0.1.0` evidence to an exact `v0.1.1` validation; and
-- adds a candidate record that distinguishes historical release evidence from
-  fresh evidence required for any later patch release.
+- adds release-gate, public-material, evidence, and release-note records that
+  distinguish historical `v0.3.0` evidence from fresh patch-release evidence.
 
-It must not receive a public tag or Release until the documented maintenance
-candidate checks complete and a human maintainer approves the exact commit.
+It must not receive a public tag or Release until the documented release checks
+complete and a human maintainer approves the exact final commit. Until then,
+the current installation target remains the most recent published tag.
 
 ## v0.3.0 (released 2026-07-15)
 

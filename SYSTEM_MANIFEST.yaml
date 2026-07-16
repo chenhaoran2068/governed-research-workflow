@@ -1,6 +1,7 @@
-# Unreleased v0.3.1 compatibility-maintenance candidate. The workspace
-# framework-version contract remains 0.1.0; the exact framework release under
-# test is v0.1.1 before any release decision.
+# Release-gated v0.3.1 source. It is an installed release only when an exact
+# annotated v0.3.1 tag and matching GitHub Release exist. The workspace
+# framework-contract version remains 0.1.0; v0.1.1 is the exact release
+# validation target for this source revision.
 manifest_schema_version: 1
 system_id: governed-research-workflow
 system_version: 0.3.1
@@ -12,6 +13,8 @@ supported_profiles:
 required_dependencies: []
 optional_shared_services: []
 framework_compatibility:
+  # This schema field denotes the framework contract version, not the exact
+  # framework release used for this source revision's validation.
   supported_framework_versions: "0.1.0"
 project_ownership_behavior: primary_system
 data_access_boundary: no-data-access-is-granted-by-this-system-manifest
