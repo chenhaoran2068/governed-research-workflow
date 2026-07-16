@@ -1,7 +1,8 @@
 # v0.3.1 Compatibility Maintenance Candidate
 
-Status: local candidate only. It is not a public release, tag, installation
-target, or authority to change a real research project.
+Status: publicly visible, unreleased candidate branch. It is not a public
+release, tag, normal installation target, or authority to change a real
+research project.
 
 ## Purpose
 

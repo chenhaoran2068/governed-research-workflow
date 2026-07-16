@@ -39,10 +39,26 @@ class ReleaseControlTests(unittest.TestCase):
     def test_release_gate_preserves_human_and_post_release_stops(self) -> None:
         gate = (RELEASE_ROOT / "V0_3_RELEASE_GATE.md").read_text(encoding="utf-8")
         evidence = (RELEASE_ROOT / "V0_3_RELEASE_EVIDENCE.md").read_text(encoding="utf-8")
+        self.assertIn("Status: historical pre-release gate.", gate)
+        self.assertIn("Status: historical pre-release evidence snapshot.", evidence)
         self.assertIn("R30-G6", gate)
         self.assertIn("R30-G7", gate)
         self.assertIn("Status: pending.", evidence)
         self.assertIn("not applicable until a real release exists", evidence)
+
+    def test_current_records_distinguish_releases_candidates_and_historical_snapshots(self) -> None:
+        security = (REPOSITORY_ROOT / "SECURITY.md").read_text(encoding="utf-8")
+        start_here = (REPOSITORY_ROOT / "assets" / "START_HERE.md").read_text(encoding="utf-8")
+        roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+        integrity = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
+        candidate = (RELEASE_ROOT / "V0_3_1_COMPATIBILITY_MAINTENANCE_CANDIDATE.md").read_text(encoding="utf-8")
+        self.assertIn("`v0.3.x`", security)
+        self.assertIn("released bounded system\nfoundation introduced in `v0.3.0`", start_here)
+        self.assertIn("`REL-008` was completed by the released `v0.3.0`", roadmap)
+        self.assertNotIn("| REL-008 |", roadmap)
+        self.assertIn("Historical v0.3.0\nframework-integration evidence", integrity)
+        self.assertIn("exact Workspace Framework\nv0.1.1", integrity)
+        self.assertIn("Status: publicly visible, unreleased candidate branch.", candidate)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-The supported public release lines are `v0.1.x` and `v0.2.x`. Report a
+The supported public release lines are `v0.1.x`, `v0.2.x`, and `v0.3.x`. Report a
 suspected security issue affecting a supported version or the current default
 branch.
 

@@ -121,6 +121,10 @@ separately reviewed and released.
 
 ## Planned Candidates
 
+Completed planned candidates are recorded in their release sections above.
+`REL-008` was completed by the released `v0.3.0` system-foundation release on
+`2026-07-15`; its historical gate remains available for traceability only.
+
 | ID | Candidate | Earliest review | Promotion conditions |
 | --- | --- | --- | --- |
 | REL-002 | Bounded wording, link, template-field, or installation corrections | v0.1.x | Reviewed defect or feedback, material review, regression check, and release note. |
@@ -128,7 +132,6 @@ separately reviewed and released.
 | REL-005 | Contributor issue forms and dependency or security automation | deferred | A maintainer-owned support process and safe disclosure route. |
 | REL-006 | Code of conduct and citation metadata | deferred | Deliberate term selection and maintainable enforcement or credit process. |
 | REL-007 | Broader compatibility statement or 1.0.0 | unscheduled | Repeated clean-install evidence, stable contract, controlled release history, and explicit maintainer decision. |
-| REL-008 | Bounded system-foundation release | v0.3.0 candidate branch | Complete `system/11_distribution_installation_and_release/V0_3_RELEASE_GATE.md`; deferred modules may remain foundation-only only when the release claim excludes them. |
 
 ## Not Public Capability Candidates
 

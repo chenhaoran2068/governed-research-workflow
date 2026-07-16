@@ -1,7 +1,8 @@
 # Public Material And Rights Review: v0.3.0 Candidate
 
-Status: candidate review completed for the public tracked tree. Final release
-authorization remains a maintainer action under R30-G6.
+Status: historical v0.3.0 candidate review snapshot. The subsequent v0.3.0
+release was published on `2026-07-15`; this record preserves the candidate
+review basis and is not current material or rights evidence for v0.3.1.
 
 ## Scope And Method
 

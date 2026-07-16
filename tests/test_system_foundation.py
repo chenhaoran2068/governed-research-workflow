@@ -1,4 +1,4 @@
-"""Regression checks for the unpublished v0.3 system-foundation layout."""
+"""Regression checks for released v0.3 foundation and v0.3.1 candidate records."""
 
 from pathlib import Path
 import unittest

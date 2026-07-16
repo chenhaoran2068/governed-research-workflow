@@ -1,8 +1,15 @@
 # v0.3.0 Release Evidence Record
 
-Status: pre-release candidate evidence. This record is not an authorization to
-merge, tag, or publish. It must be refreshed against the final proposed
-release commit before R30-G6.
+Status: historical pre-release evidence snapshot. It was prepared before the
+published `v0.3.0` release and is retained to show the candidate-time basis;
+it is not the current status of that release or of the separate v0.3.1
+candidate.
+
+Historical closure: `v0.3.0` was published on `2026-07-15` at annotated tag
+commit `dae037aa1ce939c9403aa04959f63709c50ac4ea`, with its GitHub Release at
+`https://github.com/chenhaoran2068/governed-research-workflow/releases/tag/v0.3.0`.
+The candidate and pending entries below preserve their pre-release meaning and
+must not be treated as live release status.
 
 ## Release Identity Under Review
 

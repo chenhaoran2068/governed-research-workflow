@@ -39,13 +39,16 @@ pinned to reviewed full commit SHAs. Any change to an Action reference must
 identify the upstream release it represents, review the new immutable SHA, and
 rerun the complete matrix.
 
-This package has no runtime Python dependency. Its framework-integration test
-uses validation-only packages declared by the exact Workspace Framework v0.1.0
-release: PyYAML>=6.0.2,<7 and jsonschema>=4.23,<5. Those ranges are not
+This package has no runtime Python dependency. Historical v0.3.0
+framework-integration evidence used validation-only packages declared by the
+exact Workspace Framework v0.1.0 release. The unreleased v0.3.1 candidate
+tests the same declared package ranges against exact Workspace Framework
+v0.1.1: PyYAML>=6.0.2,<7 and jsonschema>=4.23,<5. Those ranges are not
 hash-locked, so test-environment reproducibility is bounded rather than
-bit-for-bit. The release claim must not describe this as a fully locked
-software supply chain. A future release may add lockfiles or hash-verified
-test dependencies only through a reviewed dependency-policy change.
+bit-for-bit. Neither historical nor candidate evidence may be described as a
+fully locked software supply chain. A future release may add lockfiles or
+hash-verified test dependencies only through a reviewed dependency-policy
+change.
 
 Before release, run a tracked-tree and reachable-history secret scan using
 the maintained pattern set, review all dependency and Action changes since the
