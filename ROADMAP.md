@@ -2,20 +2,34 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.3.1 (release-gated compatibility-maintenance source)
+## v0.3.2 (local release-state correction candidate)
 
-This release-gated source does not add workflow capability. It:
+This local candidate does not add workflow capability. It:
 
-- corrects source-branch wording that incorrectly described the already
-  released `v0.3.0` system foundation as unreleased;
-- retargets the candidate's framework-integrated compatibility claim from the
-  historical `v0.1.0` evidence to an exact `v0.1.1` validation; and
-- adds release-gate, public-material, evidence, and release-note records that
-  distinguish historical `v0.3.0` evidence from fresh patch-release evidence.
+- corrects current-facing documents that still describe published `v0.3.1` as
+  release-gated or uninstalled;
+- labels v0.3.1 candidate, gate, material-review, evidence, and release-note
+  files as historical pre-release snapshots; and
+- replaces tests that enforce stale candidate wording with tests that separate
+  current installation guidance from preserved historical evidence.
 
-It must not receive a public tag or Release until the documented release checks
-complete and a human maintainer approves the exact final commit. Until then,
-the current installation target remains the most recent published tag.
+It has no public tag or Release. Until a separate human-approved release
+decision, the normal installation target remains the latest published tag.
+
+## v0.3.1 (released 2026-07-16)
+
+This patch does not add workflow capability. It:
+
+- corrected v0.3.0 candidate wording that had remained in the source branch;
+- validated the framework-integrated profile against the exact released
+  Workspace Framework `v0.1.1` tag while retaining the `0.1.0` framework
+  contract version; and
+- added patch-release material-review, gate, evidence, and release-note
+  records.
+
+The pre-release records for this published version are retained as historical
+snapshots. They are not the current release state or normal installation
+guidance.
 
 ## v0.3.0 (released 2026-07-15)
 

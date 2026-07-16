@@ -1,8 +1,9 @@
 # v0.3.1 Release Evidence Record
 
-Status: pre-release evidence snapshot for v0.3.1. The authoritative release
-identity exists only after R31-G7 creates an annotated tag and matching GitHub
-Release.
+Status: historical pre-release evidence snapshot. It prepared the published
+`v0.3.1` annotated tag and matching GitHub Release on `2026-07-16`. The
+candidate-time wording below is preserved for traceability and is not the
+current release status.
 
 ## Intended Release
 

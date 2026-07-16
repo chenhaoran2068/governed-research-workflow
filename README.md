@@ -5,12 +5,12 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: release-gated source version `0.3.1`. It is not an installed release
-identity unless an exact annotated `v0.3.1` tag and matching GitHub Release
-both exist. Until then, use the latest published tag rather than the `main`
-branch. This patch corrects release-status documentation and retests framework
-integration; it does not add research execution authority or expand any
-human-approval boundary.
+Status: local maintenance candidate version `0.3.2`. It is not a public
+release or normal installation target. Install only an exact annotated tag with
+a matching GitHub Release, never a mutable branch. The current published patch
+baseline is `v0.3.1`; its tag and matching GitHub Release both exist. This
+candidate repairs the released package's stale pre-release wording. It does not
+add research execution authority or expand any human-approval boundary.
 
 It is Codex-first. The `v0.1.0` baseline was validated with the current Codex
 workflow on Windows, and `v0.1.1` additionally forward-tested its new
@@ -83,14 +83,17 @@ with Python 3.11 and 3.14.
 `v0.3.0` is the released bounded system-foundation baseline. Its exact
 framework-integration evidence is against Workspace Framework `v0.1.0`.
 
-The release-gated `v0.3.1` source corrects stale candidate wording and retests
-the framework-integrated profile against the exact released Workspace
-Framework `v0.1.1` tag while retaining the `0.1.0` framework-contract version.
-It becomes a normal installation target only after an exact tag, matching
-GitHub Release, fresh tests, and accountable-human release approval exist. Its
-scope, public-material review, gate, evidence, and release notes are recorded
-under
+`v0.3.1` is the published compatibility and release-governance maintenance
+patch. It corrects earlier v0.3.0 candidate wording and validates the
+framework-integrated profile against the exact released Workspace Framework
+`v0.1.1` tag while retaining the `0.1.0` framework-contract version. Its
+pre-release gate, material review, evidence, and release-note records are
+retained as historical snapshots under
 [`system/11_distribution_installation_and_release/`](system/11_distribution_installation_and_release/).
+
+The local `v0.3.2` maintenance candidate separates current installation
+guidance from those retained historical snapshots. It has no public tag or
+GitHub Release, and must complete its own review before any release decision.
 
 ## Boundaries
 

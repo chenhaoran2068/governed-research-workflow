@@ -1,8 +1,9 @@
 # Public System Module Index
 
-Status: release-gated `v0.3.1` source. It becomes an installation target only
-when an exact annotated `v0.3.1` tag and matching GitHub Release exist; until
-then, users must select the latest published tag rather than `main`.
+Status: local `v0.3.2` maintenance candidate. It is not an installation target
+until an exact annotated `v0.3.2` tag and matching GitHub Release exist. The
+current published patch baseline is `v0.3.1`; users must select an exact
+published tag rather than `main` or a candidate branch.
 
 ## Purpose
 
@@ -29,7 +30,7 @@ contract is validated against the exact released framework `v0.1.1` tag.
 | `08` | agent contracts | foundation only | role-contract boundary |
 | `09` | schemas, records, and templates | active blank-record baseline | `assets/` templates |
 | `10` | assurance, evaluation, and audit | active regression baseline plus cross-repository integration | `tests/` |
-| `11` | distribution, installation, and release | active release controls; manual lifecycle, material review, integrity, and post-release verification records | package governance files and the v0.3.1 release-gate records |
+| `11` | distribution, installation, and release | active release controls; manual lifecycle, material review, integrity, and post-release verification records | package governance files, v0.3.1 historical release snapshots, and the v0.3.2 correction candidate |
 | `12` | synthetic examples | exact-tag integration test only | no admitted system example yet |
 
 ## Current Resource Map

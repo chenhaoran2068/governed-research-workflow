@@ -67,8 +67,8 @@ is unavailable; do not invoke its bootstrap helper in that case.
 
 Framework integration is optional. The v0.3.0 release was validated against
 the exact released Governed Research Workspace Framework v0.1.0 tag. The
-release-gated v0.3.1 source retains the v0.1.0 framework-contract version and
-is separately validated against the exact v0.1.1 tag. Use only the framework
+published v0.3.1 patch retains the v0.1.0 framework-contract version and is
+separately validated against the exact v0.1.1 tag. Use only the framework
 release explicitly named in the selected Workflow release notes and an existing
 empty framework_integrated workspace created under that framework's own
 controlled bootstrap procedure.
@@ -139,12 +139,12 @@ git describe --exact-match --tags HEAD
 python -m unittest discover -s tests -v
 ~~~
 
-The literal v0.3.1 is usable only after a matching annotated tag and GitHub
-Release exist. Otherwise use an existing release tag whose documented profile
-compatibility allows the update. For a framework-integrated installation,
-update the workspace registered_systems.system_version only after the checkout
-and validation succeed. Never change the framework version or project binding
-as a side effect of a Workflow package update.
+The literal v0.3.1 is a published annotated tag with a matching GitHub
+Release. For any later version, use it only after the corresponding tag and
+Release exist. For a framework-integrated installation, update the workspace
+registered_systems.system_version only after the checkout and validation
+succeed. Never change the framework version or project binding as a side effect
+of a Workflow package update.
 
 ## Rollback
 

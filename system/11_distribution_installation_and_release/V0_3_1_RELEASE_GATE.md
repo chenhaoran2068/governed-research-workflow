@@ -1,7 +1,8 @@
 # v0.3.1 Compatibility Maintenance Release Gate
 
-Status: pre-release gate for the release-gated v0.3.1 source. It is a control
-record, not an authorization to tag or publish.
+Status: historical pre-release gate. It prepared the published `v0.3.1`
+annotated tag and matching GitHub Release on `2026-07-16`. The gate conditions
+below preserve their candidate-time meaning and are not a current release stop.
 
 ## Scope
 
