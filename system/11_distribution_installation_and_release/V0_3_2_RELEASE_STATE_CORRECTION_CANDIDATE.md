@@ -39,3 +39,11 @@ runtime, migration, automatic release, or submission capability.
    GitHub Release action.
 
 No item in this file authorizes those actions.
+
+## Release Disposition
+
+The accountable maintainer decided not to publish v0.3.2 as a separate public
+release. This local candidate remains unmerged and unpushed as a reviewed
+input to a future v0.4.0 candidate. No v0.3.2 tag, GitHub Release, or public
+installation claim may be created. Until a later v0.4.0 release is approved,
+v0.3.1 remains the current published patch baseline.
