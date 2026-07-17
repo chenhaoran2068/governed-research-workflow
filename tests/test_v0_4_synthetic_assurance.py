@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 import unittest
 
 
@@ -29,9 +30,9 @@ def canonical_snapshot_bytes(source_bytes: bytes) -> bytes:
 
 
 def current_source_snapshot_sha256() -> str:
-    """Hash source content canonically across supported working-tree line endings."""
+    """Hash only Git-tracked candidate source across supported line endings."""
     result = subprocess.run(
-        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+        ["git", "ls-files", "-z"],
         cwd=REPOSITORY_ROOT,
         check=True,
         capture_output=True,
@@ -42,7 +43,10 @@ def current_source_snapshot_sha256() -> str:
             continue
         digest.update(relative_path)
         digest.update(b"\0")
-        source_bytes = (REPOSITORY_ROOT / relative_path.decode("utf-8")).read_bytes()
+        source_path = REPOSITORY_ROOT / relative_path.decode("utf-8")
+        if not source_path.is_file() or source_path.is_symlink():
+            raise RuntimeError(f"tracked source snapshot entry is not a regular file: {relative_path!r}")
+        source_bytes = source_path.read_bytes()
         # This package contains text records and source code. Normalize only
         # non-binary files so a Windows checkout cannot invalidate the same
         # logical candidate snapshot solely because of CRLF conversion.
@@ -107,7 +111,7 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
         normalized_assurance = re.sub(r"\s+", " ", assurance)
         self.assertIn("Status: local candidate-only synthetic assurance evidence.", assurance)
-        self.assertIn("head commit: `854d6d10910677ebd7988ee61c6ca6a35519e66f`", assurance)
+        self.assertIn("assurance design baseline: `854d6d10910677ebd7988ee61c6ca6a35519e66f`", assurance)
         self.assertRegex(assurance, r"working-tree source snapshot SHA-256: `[0-9a-f]{64}`")
         self.assertIn("No C4 authorization, tag, GitHub Release, push, merge, or runtime installation", assurance)
         self.assertIn("does not prove scientific, clinical, ethics, DUA, legal, security, installation, or release correctness", normalized_assurance)
@@ -119,6 +123,13 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         match = re.search(r"working-tree source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
         self.assertEqual(match.group(1), current_source_snapshot_sha256())
+
+    def test_snapshot_ignores_an_untracked_ci_checkout_directory(self) -> None:
+        baseline = current_source_snapshot_sha256()
+        with tempfile.TemporaryDirectory(prefix="ci-framework-checkout-", dir=REPOSITORY_ROOT) as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            (temporary_path / "framework-marker.txt").write_text("not candidate source\n", encoding="utf-8")
+            self.assertEqual(current_source_snapshot_sha256(), baseline)
 
     def test_snapshot_normalizes_text_line_endings_without_altering_binary_inputs(self) -> None:
         text_crlf = b"first\r\nsecond\r\n"

@@ -20,16 +20,17 @@ or release correctness.
 
 ## Candidate Snapshot Identity
 
-- head commit: `854d6d10910677ebd7988ee61c6ca6a35519e66f`
-- working-tree source snapshot SHA-256: `9716551ae4e6ee489df5b691fb1c1335e58a39684ddebad4a68262000af46fb0`
-- snapshot method: SHA-256 over each `git ls-files --cached --others
-  --exclude-standard -z` repository source file's UTF-8 relative path, a NUL
+- assurance design baseline: `854d6d10910677ebd7988ee61c6ca6a35519e66f`
+- working-tree source snapshot SHA-256: `0488a40e3da47f6b6ff1e0ad9d57ae099def544da46edc1325e3d43a4798ea39`
+- snapshot method: SHA-256 over each `git ls-files -z` Git-tracked repository
+  source file's UTF-8 relative path, a NUL
   separator, normalized source bytes, and a final NUL separator, in byte-sorted
   path order. Text files normalize CRLF and lone-CR line endings to LF; binary
   files containing a NUL byte remain byte-for-byte. This evidence file is
-  excluded so the evidence block does not hash itself. The check therefore
-  requires a Git checkout and includes untracked, non-ignored candidate schema,
-  template, documentation, and test files.
+  excluded so the evidence block does not hash itself. Untracked or ignored
+  directories and files, including CI framework checkouts and interpreter
+  caches, are deliberately excluded. The check therefore requires a Git
+  checkout and hashes only the candidate source controlled by that checkout.
 - framework tag: `v0.1.1`
 - framework resolved commit: `b0e32d7710b70299e633df1316b6924cd87b647b`
 
@@ -60,7 +61,7 @@ fixtures are synthetic placeholders. No fixture is a project record.
   `GRW-CAP-040-02`, `GRW-CAP-040-04`, and `GRW-CAP-040-05` as verified
   candidates; `GRW-CAP-040-03` as verified excluded; `GRW-CAP-040-06` as a
   verified candidate-only assurance route.
-- pass/fail/skip: `76 passed / 0 failed / 0 skipped` on the recorded local run.
+- pass/fail/skip: `77 passed / 0 failed / 0 skipped` on the recorded local run.
 - source-snapshot verification: passed; the synthetic-assurance test recomputes
   the documented snapshot from the current candidate source tree and fails if
   a source change has not been accompanied by an evidence refresh.
