@@ -5,12 +5,54 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: local maintenance candidate version `0.3.2`. It is not a public
-release or normal installation target. Install only an exact annotated tag with
-a matching GitHub Release, never a mutable branch. The current published patch
-baseline is `v0.3.1`; its tag and matching GitHub Release both exist. This
-candidate repairs the released package's stale pre-release wording. It does not
-add research execution authority or expand any human-approval boundary.
+Status: local governance-and-records candidate version `0.4.0`. It is not a
+public release or normal installation target. Install only an exact annotated
+tag with a matching GitHub Release, never a mutable branch. The locally
+recorded current public baseline is `v0.3.1` at
+`0a16e534fb11bc5254bcdd5c2780e09f46cf81d0`. This candidate does not add
+research execution authority or expand any human-approval boundary.
+
+For the current public installation target, retained historical snapshots, and
+the local-only candidate identity, read
+[`CURRENT_RELEASE_STATUS.md`](system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md).
+
+## Capability Truth
+
+This local candidate contains a single machine-checkable capability ledger at
+`system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
+what a future release may claim, what it must not claim, its interface,
+evidence, version, and required human approval. It is a local `v0.4.0`
+candidate record, not a `v0.4.0` release statement: all target-release entries
+remain forbidden from public claim until they are verified, admitted, and
+human-approved for an exact release.
+
+The package manifest and current installation narrative identify this source
+as a local `v0.4.0` candidate. The ledger's `v0.4.0` target remains a planning
+and verification target, not a public release statement or installation claim.
+
+R40-00 through R40-06 have completed local implementation review: the ledger,
+current-versus-historical release boundary, bounded-autonomy authorization
+record, metadata-only provenance register, release-control record contract,
+and synthetic assurance route are present. The role-card and agent-runtime
+route is explicitly excluded from `v0.4.0`. These are verified candidate or
+explicitly excluded records, not admitted public capabilities. Exact-release
+admission, C4 authorization, tagging, and hosted-release verification remain
+separate steps.
+
+README, SKILL, and module documentation explain routes and boundaries. The
+ledger is the single capability truth source when those summaries conflict.
+
+For a future release decision, the local candidate also provides a synthetic
+release-control record contract at
+[`RELEASE_CONTROL.md`](system/11_distribution_installation_and_release/RELEASE_CONTROL.md).
+It separates candidate-review acceptance from C4 authorization of an exact
+commit/tag/Release and from post-release verification. It does not publish or
+certify a release.
+
+The local candidate also has a synthetic cross-record assurance route at
+[`V0_4_SYNTHETIC_ASSURANCE.md`](system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md).
+It tests only empty templates and public package records; it cannot prove
+runtime parity, a hosted release, or release readiness.
 
 It is Codex-first. The `v0.1.0` baseline was validated with the current Codex
 workflow on Windows, and `v0.1.1` additionally forward-tested its new
@@ -30,7 +72,11 @@ The skill supports process routing for:
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or
-release or submit work.
+release or submit work. The local v0.4 candidate also explicitly excludes
+specialist role cards, multi-agent orchestration, delegated authority, hidden
+background work, and agent runtime. One Codex conversation remains the
+interaction model; it may use different review perspectives without creating
+separate agents.
 
 ## Use
 
@@ -91,9 +137,38 @@ pre-release gate, material review, evidence, and release-note records are
 retained as historical snapshots under
 [`system/11_distribution_installation_and_release/`](system/11_distribution_installation_and_release/).
 
-The local `v0.3.2` maintenance candidate separates current installation
-guidance from those retained historical snapshots. It has no public tag or
-GitHub Release, and must complete its own review before any release decision.
+The historical local `v0.3.2` maintenance candidate separated current
+installation guidance from retained historical snapshots. It was not published
+and is retained as an input to this local `v0.4.0` candidate; it is not the
+current candidate identity or an installation target.
+
+## Public Evolution Roadmap
+
+This is a planning summary, not a promise or a statement that a future module
+is already available. The accountable maintainer may split, defer, narrow, or
+supersede a band through a reviewed revision.
+
+- `v0.4.x`: governance records and control foundations; no real-data handling,
+  autonomous research, credentialed network activity, or agent runtime.
+- `v0.5.x`: reviewable workflow and evidence controls; no scientific,
+  compliance, journal, or submission decision by the system.
+- `v0.6.x`: human-reviewed retrospective learning and knowledge promotion; no
+  automatic promotion of project observations.
+- `v0.7.x`: portable profiles, stable interfaces, bounded role contracts, and
+  controlled-tool admission; no delegated authority or multi-agent runtime.
+- `v0.8.x`: dedicated evidence-integrity and supervisory-architecture audit;
+  no perfect-truthfulness claim or AI final academic approval.
+- `v0.9.x`: opt-in multi-machine learning and contribution-governance pilot;
+  no hidden telemetry, automatic upload, or automatic rule promotion.
+- `v0.10.x+`: pre-v1 scope closure and stabilization of every admitted module.
+- `v1.0.0`: stable bounded public-system contract, only after its interface,
+  evidence, support, and release conditions are met.
+- `v1.1+`: separately reviewed post-v1 expansion; this roadmap grants no
+  future capability automatically.
+
+The detailed private planning baseline is not part of this public package.
+The public package will add only generic, rights-cleared, reviewed material
+for a band that has separately passed its release gate.
 
 ## Boundaries
 

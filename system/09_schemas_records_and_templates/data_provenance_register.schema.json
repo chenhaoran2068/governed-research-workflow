@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/data_provenance_register.schema.json",
+  "title": "Metadata-Only Data And Provenance Register Entry",
+  "description": "A generic metadata record. It does not contain, access, process, or authorize data content.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "record_id", "record_revision", "recorded_at", "metadata_only", "object_class", "data_role", "lifecycle_layer", "source", "relationships", "lineage", "governance", "access_and_sharing", "integrity_and_audit", "optional_restricted_or_clinical_awareness"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "data_provenance_register_entry"},
+    "record_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]{2,63}$"},
+    "record_revision": {"type": "integer", "minimum": 1},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "metadata_only": {"const": true},
+    "object_class": {"enum": ["external_source_pointer", "project_source_snapshot", "analysis_ready_dataset", "quality_control_or_derivation_check", "generated_result_metadata", "other_metadata_record"]},
+    "data_role": {"type": "string", "minLength": 1},
+    "lifecycle_layer": {"enum": ["external_source_pointer", "raw_restricted_local", "project_source_snapshot", "analysis_ready_dataset", "quality_control_or_derivation_check", "result_metadata", "other"]},
+    "source": {"$ref": "#/$defs/source"},
+    "relationships": {"$ref": "#/$defs/relationships"},
+    "lineage": {"$ref": "#/$defs/lineage"},
+    "governance": {"$ref": "#/$defs/governance"},
+    "access_and_sharing": {"$ref": "#/$defs/access_and_sharing"},
+    "integrity_and_audit": {"$ref": "#/$defs/integrity_and_audit"},
+    "optional_restricted_or_clinical_awareness": {"$ref": "#/$defs/restricted_clinical_awareness"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"access_and_sharing": {"properties": {"status_claimed": {"const": true}}, "required": ["status_claimed"]}}, "required": ["access_and_sharing"]},
+      "then": {"properties": {"access_and_sharing": {"properties": {"data_access_or_share_evidence_reference": {"type": "string", "minLength": 1}}, "required": ["data_access_or_share_evidence_reference"]}}}
+    },
+    {
+      "if": {"properties": {"optional_restricted_or_clinical_awareness": {"properties": {"applies": {"const": true}}, "required": ["applies"]}}, "required": ["optional_restricted_or_clinical_awareness"]},
+      "then": {"properties": {"optional_restricted_or_clinical_awareness": {"required": ["context_categories", "credentialed_access_may_be_required", "governance_status", "not_a_compliance_determination"]}}}
+    }
+  ],
+  "$defs": {
+    "safe_string": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_system", "locator_kind", "source_pointer_or_redacted_locator", "canonical_project_location", "contains_credentials_or_sensitive_identifiers"],
+      "properties": {
+        "source_system": {"$ref": "#/$defs/safe_string"},
+        "locator_kind": {"enum": ["external_url", "workspace_relative", "redacted_reference", "source_identifier", "not_applicable"]},
+        "source_pointer_or_redacted_locator": {"$ref": "#/$defs/safe_string"},
+        "canonical_project_location": {"type": ["string", "null"]},
+        "contains_credentials_or_sensitive_identifiers": {"const": false}
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entity_description", "source_activity_description", "agent_or_owner_relationship"],
+      "properties": {
+        "entity_description": {"$ref": "#/$defs/safe_string"},
+        "source_activity_description": {"$ref": "#/$defs/safe_string"},
+        "agent_or_owner_relationship": {"$ref": "#/$defs/safe_string"}
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standardization_state", "upstream_record_ids", "downstream_record_ids", "derivation_or_provenance_record_references"],
+      "properties": {
+        "standardization_state": {"enum": ["not_applicable", "source_as_recorded", "standardized_metadata_only", "derived_metadata_only", "unknown"]},
+        "upstream_record_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "downstream_record_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "derivation_or_provenance_record_references": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner_or_approver", "criticality_or_risk_level", "share_policy", "overwrite_policy"],
+      "properties": {
+        "owner_or_approver": {"$ref": "#/$defs/safe_string"},
+        "criticality_or_risk_level": {"enum": ["low", "medium", "high", "unknown"]},
+        "share_policy": {"enum": ["not_applicable", "do_not_share_without_review", "restricted_by_source_terms", "documented_share_path", "unknown"]},
+        "overwrite_policy": {"enum": ["not_applicable", "do_not_overwrite", "versioned_derivation_only", "unknown"]}
+      }
+    },
+    "access_and_sharing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["access_status", "restriction_status", "sharing_status", "online_service_condition_status", "status_claimed", "verification_note", "data_access_or_share_evidence_reference", "verification_hypothesis"],
+      "properties": {
+        "access_status": {"enum": ["not_applicable", "unknown", "documented_access_available", "documented_restricted"]},
+        "restriction_status": {"enum": ["not_applicable", "unknown", "documented_unrestricted", "documented_restricted"]},
+        "sharing_status": {"enum": ["not_applicable", "unknown", "documented_sharing_path", "documented_sharing_restricted"]},
+        "online_service_condition_status": {"enum": ["not_applicable", "unknown", "documented_conditions_apply"]},
+        "status_claimed": {"type": "boolean"},
+        "verification_note": {"$ref": "#/$defs/safe_string"},
+        "data_access_or_share_evidence_reference": {"type": ["string", "null"]},
+        "verification_hypothesis": {"type": ["object", "null"], "additionalProperties": false, "required": ["statement", "status", "not_an_authorization"], "properties": {"statement": {"$ref": "#/$defs/safe_string"}, "status": {"const": "unverified"}, "not_an_authorization": {"const": true}}}
+      }
+    },
+    "integrity_and_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["integrity_check_or_verification_method", "audit_trail_or_provenance_record", "last_verified_date"],
+      "properties": {
+        "integrity_check_or_verification_method": {"$ref": "#/$defs/safe_string"},
+        "audit_trail_or_provenance_record": {"$ref": "#/$defs/safe_string"},
+        "last_verified_date": {"type": ["string", "null"], "format": "date"}
+      }
+    },
+    "restricted_clinical_awareness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applies"],
+      "properties": {
+        "applies": {"type": "boolean"},
+        "context_categories": {"type": "array", "minItems": 1, "items": {"enum": ["patient_derived", "clinical_database", "hospital_data", "ehr", "laboratory", "imaging", "device", "registry", "other_restricted"]}, "uniqueItems": true},
+        "credentialed_access_may_be_required": {"type": "boolean"},
+        "governance_status": {"enum": ["not_applicable", "unknown", "documented_reference_only"]},
+        "governance_evidence_references": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "not_a_compliance_determination": {"const": true}
+      }
+    }
+  }
+}

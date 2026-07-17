@@ -16,3 +16,9 @@ local `v0.3.2` candidate preserves the same bounded contract.
 
 Do not infer framework support merely because a host contains familiar folder
 names or a manifest-looking file.
+
+This local candidate branch adds
+`capability_truth_ledger.json` as the single machine-checkable source for
+capability promises, non-promises, evidence, version, and admission state. It
+does not alter the package manifest's local `v0.3.2` identity, the released
+`v0.3.1` public claim boundary, or admit a `v0.4.0` capability.

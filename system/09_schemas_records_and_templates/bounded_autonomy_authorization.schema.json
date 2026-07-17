@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/bounded_autonomy_authorization.schema.json",
+  "title": "Bounded Autonomy Authorization Record",
+  "description": "A governance record for a human-approved, time-limited task boundary. It is not an executor, permission system, or compliance determination.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "authorization_id", "record_revision", "created_at", "status", "state_transition_history", "task_binding", "purpose", "expected_output", "success_criteria", "risk_assessment", "requester", "accountable_approver", "approval", "scope", "evidence_and_audit", "feedback_and_correction_route", "next_mandatory_human_decision", "budget", "expires_at", "stop_and_escalation_conditions", "conditional_context"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "bounded_autonomy_authorization"},
+    "authorization_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]{2,63}$"},
+    "record_revision": {"type": "integer", "minimum": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["draft", "pending_human_approval", "active", "paused", "reduced_to_human_governed_interactive", "expired", "retired"]},
+    "state_transition_history": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/state_transition"}},
+    "task_binding": {"$ref": "#/$defs/task_binding"},
+    "purpose": {"type": "string", "minLength": 1},
+    "expected_output": {"type": "string", "minLength": 1},
+    "success_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "risk_assessment": {"$ref": "#/$defs/risk_assessment"},
+    "requester": {"type": "string", "minLength": 1},
+    "accountable_approver": {"type": "string", "minLength": 1},
+    "approval": {"$ref": "#/$defs/approval"},
+    "scope": {"$ref": "#/$defs/scope"},
+    "evidence_and_audit": {"$ref": "#/$defs/evidence_and_audit"},
+    "feedback_and_correction_route": {"type": "string", "minLength": 1},
+    "next_mandatory_human_decision": {"type": "string", "minLength": 1},
+    "budget": {"$ref": "#/$defs/budget"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "stop_and_escalation_conditions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "conditional_context": {"$ref": "#/$defs/conditional_context"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "active"}}, "required": ["status"]},
+      "then": {"properties": {"approval": {"properties": {"status": {"const": "approved"}, "reference": {"not": {"const": "not-yet-approved"}, "minLength": 1}, "approved_at": {"type": "string", "format": "date-time"}}, "required": ["status", "reference", "approved_at"]}}}
+    },
+    {
+      "if": {"properties": {"risk_assessment": {"properties": {"level": {"const": "unknown"}}, "required": ["level"]}}, "required": ["risk_assessment"]},
+      "then": {"not": {"properties": {"status": {"const": "active"}}, "required": ["status"]}}
+    },
+    {
+      "if": {"properties": {"conditional_context": {"properties": {"file_write": {"properties": {"requested": {"const": true}}, "required": ["requested"]}}, "required": ["file_write"]}}, "required": ["conditional_context"]},
+      "then": {"properties": {"conditional_context": {"properties": {"file_write": {"required": ["allowed_directories", "overwrite_policy", "rollback_or_recovery_route"]}}}}}
+    },
+    {
+      "if": {"properties": {"conditional_context": {"properties": {"network_or_external_service": {"properties": {"requested": {"const": true}}, "required": ["requested"]}}, "required": ["network_or_external_service"]}}, "required": ["conditional_context"]},
+      "then": {"properties": {"conditional_context": {"properties": {"network_or_external_service": {"properties": {"network_policy": {"const": "manual_only_no_automatic_executor"}}, "required": ["permitted_service_or_source_classes", "credential_boundary", "network_policy"]}}}}}
+    },
+    {
+      "if": {"properties": {"conditional_context": {"properties": {"data_bearing": {"properties": {"contains_data_content": {"const": true}}, "required": ["contains_data_content"]}}, "required": ["data_bearing"]}}, "required": ["conditional_context"]},
+      "then": {"properties": {"conditional_context": {"properties": {"data_bearing": {"required": ["provenance_record_reference", "access_restriction_share_status", "data_content_action_boundary"]}}}}}
+    },
+    {
+      "if": {"properties": {"conditional_context": {"properties": {"data_bearing": {"properties": {"access_restriction_share_status": {"const": "unknown"}}, "required": ["access_restriction_share_status"]}}, "required": ["data_bearing"]}}, "required": ["conditional_context"]},
+      "then": {"properties": {"conditional_context": {"properties": {"data_bearing": {"properties": {"data_content_action_boundary": {"const": "planning_only_no_content_access"}}, "required": ["data_content_action_boundary"]}}}}}
+    },
+    {
+      "if": {"properties": {"conditional_context": {"properties": {"delegation_or_multiple_roles": {"properties": {"requested": {"const": true}}, "required": ["requested"]}}, "required": ["delegation_or_multiple_roles"]}}, "required": ["conditional_context"]},
+      "then": {"properties": {"conditional_context": {"properties": {"delegation_or_multiple_roles": {"properties": {"decision": {"const": "prohibited_v0_4"}}, "required": ["delegation_policy", "named_role_boundary", "accountable_human", "decision"]}}}}, "not": {"properties": {"status": {"const": "active"}}, "required": ["status"]}}
+    },
+    {
+      "if": {"properties": {"conditional_context": {"properties": {"environment_dependent": {"properties": {"requested": {"const": true}}, "required": ["requested"]}}, "required": ["environment_dependent"]}}, "required": ["conditional_context"]},
+      "then": {"properties": {"conditional_context": {"properties": {"environment_dependent": {"required": ["declared_environment_identity"]}}}}}
+    },
+    {
+      "if": {"properties": {"risk_assessment": {"properties": {"level": {"enum": ["medium", "high"]}}, "required": ["level"]}}, "required": ["risk_assessment"]},
+      "then": {"properties": {"risk_assessment": {"required": ["residual_risk_statement", "mandatory_review_checkpoints"]}}}
+    },
+    {
+      "if": {"properties": {"budget": {"properties": {"applicable": {"const": true}}, "required": ["applicable"]}}, "required": ["budget"]},
+      "then": {"properties": {"budget": {"anyOf": [{"required": ["time_limit_minutes"]}, {"required": ["cost_limit"]}, {"required": ["iteration_limit"]}]}}}
+    }
+  ],
+  "$defs": {
+    "state_transition": {"type": "object", "additionalProperties": false, "required": ["at", "from_status", "to_status", "reason", "actor_label"], "properties": {"at": {"type": "string", "format": "date-time"}, "from_status": {"type": ["string", "null"]}, "to_status": {"enum": ["draft", "pending_human_approval", "active", "paused", "reduced_to_human_governed_interactive", "expired", "retired"]}, "reason": {"type": "string", "minLength": 1}, "actor_label": {"type": "string", "minLength": 1}}},
+    "task_binding": {"type": "object", "additionalProperties": false, "required": ["request_reference", "task_summary", "project_or_workspace_reference"], "properties": {"request_reference": {"type": "string", "minLength": 1}, "task_summary": {"type": "string", "minLength": 1}, "project_or_workspace_reference": {"type": "string", "minLength": 1}}},
+    "risk_assessment": {"type": "object", "additionalProperties": false, "required": ["level", "rationale"], "properties": {"level": {"enum": ["low", "medium", "high", "unknown"]}, "rationale": {"type": "string", "minLength": 1}, "residual_risk_statement": {"type": "string", "minLength": 1}, "mandatory_review_checkpoints": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}}},
+    "approval": {"type": "object", "additionalProperties": false, "required": ["status", "reference", "approved_at"], "properties": {"status": {"enum": ["not_granted", "approved", "revoked"]}, "reference": {"type": "string", "minLength": 1}, "approved_at": {"type": ["string", "null"], "format": "date-time"}}},
+    "scope": {"type": "object", "additionalProperties": false, "required": ["exact_scope", "allowed_inputs", "allowed_tool_classes", "allowed_action_classes", "allowed_outputs_and_locations", "excluded_actions"], "properties": {"exact_scope": {"type": "string", "minLength": 1}, "allowed_inputs": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["input_id", "input_class", "known_restriction_state"], "properties": {"input_id": {"type": "string", "minLength": 1}, "input_class": {"type": "string", "minLength": 1}, "known_restriction_state": {"enum": ["not_applicable", "known_unrestricted", "known_restricted", "unknown"]}}}}, "allowed_tool_classes": {"type": "array", "minItems": 1, "items": {"enum": ["reasoning_only", "local_document_editing", "local_test_execution", "manual_public_rule_retrieval"]}}, "allowed_action_classes": {"type": "array", "minItems": 1, "items": {"enum": ["plan", "draft", "audit", "local_write", "local_test", "manual_retrieval_request"]}}, "allowed_outputs_and_locations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "excluded_actions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}}},
+    "evidence_and_audit": {"type": "object", "additionalProperties": false, "required": ["evidence_requirements", "audit_record_location"], "properties": {"evidence_requirements": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "audit_record_location": {"type": "string", "minLength": 1}}},
+    "budget": {"type": "object", "additionalProperties": false, "required": ["applicable"], "properties": {"applicable": {"type": "boolean"}, "time_limit_minutes": {"type": "integer", "minimum": 1}, "cost_limit": {"type": "number", "minimum": 0}, "iteration_limit": {"type": "integer", "minimum": 1}}},
+    "conditional_context": {"type": "object", "additionalProperties": false, "required": ["file_write", "network_or_external_service", "data_bearing", "delegation_or_multiple_roles", "environment_dependent"], "properties": {"file_write": {"type": "object", "additionalProperties": false, "required": ["requested"], "properties": {"requested": {"type": "boolean"}, "allowed_directories": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "overwrite_policy": {"enum": ["forbidden", "preview_then_human_confirm", "not_applicable"]}, "rollback_or_recovery_route": {"type": "string", "minLength": 1}}}, "network_or_external_service": {"type": "object", "additionalProperties": false, "required": ["requested"], "properties": {"requested": {"type": "boolean"}, "permitted_service_or_source_classes": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "credential_boundary": {"type": "string", "minLength": 1}, "network_policy": {"enum": ["not_requested", "manual_only_no_automatic_executor"]}}}, "data_bearing": {"type": "object", "additionalProperties": false, "required": ["contains_data_content"], "properties": {"contains_data_content": {"type": "boolean"}, "provenance_record_reference": {"type": "string", "minLength": 1}, "access_restriction_share_status": {"enum": ["not_applicable", "known_unrestricted", "known_restricted", "unknown"]}, "data_content_action_boundary": {"enum": ["not_applicable", "planning_only_no_content_access", "content_access_requested_requires_separate_data_authority"]}}}, "delegation_or_multiple_roles": {"type": "object", "additionalProperties": false, "required": ["requested"], "properties": {"requested": {"type": "boolean"}, "delegation_policy": {"type": "string", "minLength": 1}, "named_role_boundary": {"type": "string", "minLength": 1}, "accountable_human": {"type": "string", "minLength": 1}, "decision": {"enum": ["not_requested", "prohibited_v0_4"]}}}, "environment_dependent": {"type": "object", "additionalProperties": false, "required": ["requested"], "properties": {"requested": {"type": "boolean"}, "declared_environment_identity": {"type": "string", "minLength": 1}}}}}
+  }
+}

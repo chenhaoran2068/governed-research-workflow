@@ -3,6 +3,14 @@
 Status: active maintainer policy for v0.3.0 and later releases. It defines a
 maintainer-controlled process; it does not authorize an AI to publish.
 
+## Current-Status Routing
+
+`CURRENT_RELEASE_STATUS.md` is the current-facing local status route. It
+separates the locally recorded published `v0.3.1` baseline, retained historical
+records, and the untagged local `v0.4.0` candidate. A candidate-review record,
+passing test, or local branch is not an installation target, GitHub Release, or
+installed-runtime identity.
+
 ## Release Identity
 
 Each public release must be an annotated Git tag that resolves to one exact
@@ -96,3 +104,14 @@ links to concrete commands, review records, and CI runs. The applicable G6
 requires human release authorization, and its G7 requires a real released tag
 and GitHub Release. Neither may be simulated by a green candidate build or an
 untagged source branch.
+
+For the local `v0.4.0` candidate, `RELEASE_CONTROL.md` provides the bounded
+candidate-review record contract. It records whether a later C4 review may be
+requested; it does not authorize a tag, GitHub Release, hosted-control change,
+or public claim.
+
+`v0.4.0` pre-C3 position: no technical immutable-release decision has yet been
+made for this future minor release. The historical v0.3.0/v0.3.1 deferral is
+context, not an automatic v0.4 decision. R40-G6 requires the accountable human
+to choose enablement or a new recorded deferral rationale, with a re-evaluation
+trigger, for the exact final candidate before C4.

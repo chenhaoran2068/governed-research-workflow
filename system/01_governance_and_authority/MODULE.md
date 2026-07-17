@@ -14,3 +14,7 @@ ethics facts, DUA terms, or project-specific approval records here.
 Future generic governance records may be admitted here only after the stated
 review. Current route guidance remains authoritative in `SKILL.md` and
 `references/`.
+
+The local v0.4 candidate adds a bounded-autonomy authorization record for an
+explicit, time-limited human-reviewed task boundary. It does not create an
+executor, tool permission, data authority, or automatic state transition.

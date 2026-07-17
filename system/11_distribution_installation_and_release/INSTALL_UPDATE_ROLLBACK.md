@@ -8,6 +8,9 @@ access, or workflow transition.
 
 - Use an existing exact Git tag and matching GitHub Release, not a mutable
   branch, for a normal installation.
+- Read `CURRENT_RELEASE_STATUS.md` before selecting a tag. A locally retained
+  candidate, historical release record, or capability-ledger target is not a
+  substitute for the current public installation identity.
 - Use Git and Python 3.11 or later. Python is required only for the optional
   empty-workspace bootstrap and test commands; the routing documents do not
   grant any execution authority.

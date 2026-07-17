@@ -1,8 +1,9 @@
 # v0.3.2 Release-State Correction Candidate
 
-Status: local maintenance candidate only. It has no public tag, GitHub Release,
-or normal installation status. The current published patch baseline remains
-`v0.3.1`.
+Status: historical local maintenance candidate, superseded as a release input
+by the local `v0.4.0` candidate. It has no public tag, GitHub Release, or
+normal installation status. The locally recorded current published patch
+baseline remains `v0.3.1`.
 
 ## Purpose
 

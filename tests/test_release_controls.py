@@ -23,22 +23,31 @@ class ReleaseControlTests(unittest.TestCase):
             "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.3.1.md",
             "RELEASE_NOTES_v0.3.1.md",
             "V0_3_2_RELEASE_STATE_CORRECTION_CANDIDATE.md",
+            "CURRENT_RELEASE_STATUS.md",
+            "RELEASE_CONTROL.md",
+            "release_control_record.schema.json",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
 
-    def test_current_candidate_names_the_published_baseline_and_framework_target(self) -> None:
+    def test_current_candidate_and_published_baseline_are_distinct(self) -> None:
         manifest = (REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+        current_status = (RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.3.2", manifest)
+        self.assertIn("system_version: 0.4.0-candidate", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
-        self.assertIn("current published patch\nbaseline is `v0.3.1`", readme)
+        self.assertIn("local governance-and-records candidate version `0.4.0`", readme)
+        self.assertIn("locally\nrecorded current public baseline is `v0.3.1`", readme)
+        self.assertIn("## v0.4.0 (local governance-and-records candidate)", roadmap)
         self.assertIn("## v0.3.1 (released 2026-07-16)", roadmap)
-        self.assertIn("## v0.3.2 (local release-state correction candidate)", roadmap)
+        self.assertIn("## v0.3.2 (historical local release-state correction candidate)", roadmap)
+        self.assertIn("Current public release: `v0.3.1`", current_status)
+        self.assertIn("0a16e534fb11bc5254bcdd5c2780e09f46cf81d0", current_status)
+        self.assertIn("Current local candidate: `v0.4.0`", current_status)
         self.assertIn("ref: v0.1.1", workflow)
         self.assertIn("FRAMEWORK_RELEASE_TAG: v0.1.1", workflow)
         self.assertNotIn("release-gated source version `0.3.1`", readme)
@@ -89,8 +98,14 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("Historical v0.3.0\nframework-integration evidence", integrity)
         self.assertIn("published v0.3.1 patch", integrity)
         self.assertIn("Recorded v0.3.1 decision", integrity)
-        self.assertIn("Status: local maintenance candidate only.", candidate)
-        self.assertIn("current published patch baseline remains\n`v0.3.1`", candidate)
+        self.assertIn("Status: historical local maintenance candidate", candidate)
+        self.assertIn("locally recorded current published patch\nbaseline remains `v0.3.1`", candidate)
+
+    def test_v040_release_control_route_preserves_c4_and_post_release_stops(self) -> None:
+        control = (RELEASE_ROOT / "RELEASE_CONTROL.md").read_text(encoding="utf-8")
+        self.assertIn("Candidate-review acceptance is not C4 authorization", control)
+        self.assertIn("C4 authorization is not\npost-release verification", control)
+        self.assertIn("Before C4, retain `c4_release_authorization_reference` as `null`", control)
 
 
 if __name__ == "__main__":
