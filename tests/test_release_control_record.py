@@ -98,6 +98,15 @@ class ReleaseControlRecordTests(unittest.TestCase):
         self.assert_valid(conflated)
         self.assertIn("candidate review acceptance cannot substitute for C4 authorization", release_claim_refusal_reasons(conflated))
 
+    def test_admitted_scope_record_is_valid_but_still_not_c4_authorization(self) -> None:
+        record = copy.deepcopy(self.template)
+        record["capability_set"]["candidate_outcome"] = "admitted_exact_release_scope"
+        record["capability_set"]["admitted_capability_ids"] = ["GRW-CAP-031-01", "GRW-CAP-040-05"]
+        self.assert_valid(record)
+        reasons = release_claim_refusal_reasons(record)
+        self.assertIn("C4 release authorization is absent", reasons)
+        self.assertIn("post-release verification is absent", reasons)
+
     def test_record_hierarchy_and_current_release_are_not_conflated(self) -> None:
         guidance = GUIDANCE_PATH.read_text(encoding="utf-8")
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))

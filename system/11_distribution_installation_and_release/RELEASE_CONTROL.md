@@ -34,7 +34,11 @@ profile/platform scope, residual risks, and incident/repair route.
 
 `admitted_capability_ids` remains empty until exact-release admission is
 separately established. A candidate record may contain verified-candidate and
-explicitly excluded capabilities without implying public admission.
+explicitly excluded capabilities without implying public admission. Once an
+accountable human has admitted a named future-release scope, set
+`candidate_outcome` to `admitted_exact_release_scope` and list those IDs.
+That still does not create C4 authorization, a tag, a GitHub Release, a normal
+installation target, or an installed-runtime claim.
 
 Unknown, blocked, or revise material-review states block any release claim.
 Technical immutable-release status must be `enabled`, `deferred` with a reason
