@@ -2,16 +2,16 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.4.0 (local governance-and-records candidate)
+## v0.4.0 (unreleased governance-and-records candidate branch)
 
-This local candidate is not a public release or normal installation target. It
+This unreleased candidate branch is not a public release or normal installation target. It
 contains the R40-00 capability truth ledger, R40-01 release-state boundary,
 R40-02 bounded-autonomy authorization record, R40-04 metadata-only provenance
 register, R40-05 release-control record contract, and R40-06 synthetic
 assurance route. R40-03 explicitly excludes named specialist role cards and
 agent runtime from `v0.4.0`.
 
-All non-excluded records remain verified local candidates with public claims
+All non-excluded records remain verified candidate records with public claims
 forbidden. No `v0.4.0` capability becomes publicly claimable until an exact
 candidate commit is verified, the capability is admitted, the accountable
 human approves the exact release, and the tag and GitHub Release are created.
@@ -20,7 +20,7 @@ v0.4.0 explicitly excludes named specialist role cards and agent runtime. A
 future version needs a separately reviewed named-role design before it can
 describe any role card as an available public capability.
 
-The local candidate includes metadata-only provenance records with a generic
+The unreleased candidate includes metadata-only provenance records with a generic
 core and optional restricted or clinical awareness extension. It does not add
 data import, processing, access, compliance, or certification capability.
 
@@ -33,14 +33,15 @@ The candidate includes a synthetic cross-record assurance route. It checks
 only candidate records, empty templates, and public documentation; it does not
 establish an installed runtime, hosted Release, or release readiness.
 
-Before C3 candidate-commit approval, the local preparation records must be
-complete and internally consistent: `V0_4_CAPABILITY_ADMISSION.md`,
+The C3 candidate-branch push and candidate CI are complete. The historical
+pre-C3 preparation records remain useful context and must remain internally
+consistent: `V0_4_CAPABILITY_ADMISSION.md`,
 `V0_4_RELEASE_GATE.md`, `V0_4_RELEASE_EVIDENCE.md`,
 `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.4.0.md`, and
-`RELEASE_NOTES_v0.4.0.md`. They are preparation materials, not a substitute
+`RELEASE_NOTES_v0.4.0.md`. They are historical preparation materials, not a substitute
 for exact-commit evidence or C4 authorization.
 
-Until that later decision, the locally recorded normal installation target is
+Until final exact-release admission and C4, the normal installation target is
 the exact published `v0.3.1` tag. See
 `system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 
@@ -56,7 +57,7 @@ This unpublished historical candidate:
   current installation guidance from preserved historical evidence.
 
 It has no public tag or Release. Its release-state correction work is retained
-as an input to the local `v0.4.0` candidate, not as the current source identity
+as an input to the unreleased `v0.4.0` candidate, not as the current source identity
 or installation target.
 
 ## v0.3.1 (released 2026-07-16)

@@ -1,4 +1,4 @@
-"""Structural and refusal checks for the local v0.4 capability truth ledger."""
+"""Structural and refusal checks for the unreleased v0.4 capability truth ledger."""
 
 from __future__ import annotations
 
@@ -65,7 +65,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
         self.assertEqual(self.ledger["ledger_schema_version"], "1.0.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
-        self.assertEqual(self.ledger["ledger_status"], "local_candidate")
+        self.assertEqual(self.ledger["ledger_status"], "unreleased_candidate")
         self.assertEqual(self.ledger["release_context"]["target_release_version"], "v0.4.0")
         self.assertEqual(self.ledger["release_context"]["current_public_baseline"], "v0.3.1")
         self.assertEqual(self.ledger["release_context"]["candidate_branch"], "v0.4.0-capability-truth-ledger-candidate")
@@ -118,7 +118,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
 
         self.assertFalse(
             any(record["public_claim_status"] == "permitted" for record in self.records),
-            "No v0.4.0 capability is admitted while this is a local candidate.",
+            "No v0.4.0 capability is admitted while this is an unreleased candidate.",
         )
 
     def test_interface_and_evidence_references_are_safe_and_exist_when_verified(self) -> None:
@@ -154,7 +154,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(record["evidence"]["status"], "verified")
         self.assertTrue(record["approval_reference"])
 
-    def test_all_reviewed_r40_records_have_local_acceptance_and_no_c4_authorization(self) -> None:
+    def test_all_reviewed_r40_records_have_unreleased_candidate_acceptance_and_no_c4_authorization(self) -> None:
         reviewed_r40_ids = {
             "GRW-CAP-040-00",
             "GRW-CAP-040-01",
@@ -209,7 +209,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(record["public_claim_status"], "forbidden")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(record["evidence"]["status"], "verified")
-        self.assertIn("local synthetic assurance", record["limitations_and_next_action"].lower())
+        self.assertIn("unreleased-candidate synthetic assurance", record["limitations_and_next_action"].lower())
         self.assertTrue(record["approval_reference"])
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
@@ -243,7 +243,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("forbid", self.ledger["contradiction_refusal_rule"].lower())
         self.assertIn("accountable-human", self.ledger["contradiction_refusal_rule"])
 
-    def test_local_candidate_cannot_claim_a_release(self) -> None:
+    def test_unreleased_candidate_cannot_claim_a_release(self) -> None:
         text = LEDGER_PATH.read_text(encoding="utf-8")
         self.assertIn(
             "no `v0.4.0` capability is admitted",

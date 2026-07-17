@@ -1,6 +1,6 @@
 # Capability Evidence Matrix
 
-Status: local `v0.4.0` candidate assurance record. It is not a public release
+Status: unreleased `v0.4.0` candidate assurance record. It is not a public release
 record and does not admit a `v0.4.0` capability.
 
 The canonical capability facts are in
@@ -19,7 +19,7 @@ those records to expected evidence; it is not a competing capability ledger.
 | `GRW-CAP-040-03` | Verified excluded | Scope text and no-role-card/agent-runtime tests | Future role cards require a separately reviewed named-role design. |
 | `GRW-CAP-040-04` | Verified candidate | Synthetic metadata schema, template, and refusal tests | No data-content handling, access authorization, or compliance claim. |
 | `GRW-CAP-040-05` | Verified candidate | Synthetic release-control schema, template, hierarchy, and refusal tests | No tag, Release, hosted-control change, scan, signing, or certification claim. |
-| `GRW-CAP-040-06` | Verified candidate | Synthetic cross-record, profile, identity, and refusal tests with a local run record | No runtime-parity, hosted-release, compliance, or publication claim. |
+| `GRW-CAP-040-06` | Verified candidate | Synthetic cross-record, profile, identity, and refusal tests with a recorded local run | No runtime-parity, hosted-release, compliance, or publication claim. |
 
 A passing test only verifies the named technical property. It does not approve
 science, clinical work, compliance, rights, a project state, a release, or a

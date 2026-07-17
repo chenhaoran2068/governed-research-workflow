@@ -1,6 +1,6 @@
 # V0.4 Synthetic Assurance
 
-Status: local candidate-only synthetic assurance evidence. It is not a public
+Status: unreleased-candidate-only synthetic assurance evidence. It is not a public
 release record, C4 authorization, installed-runtime verification, or a claim
 that the candidate is ready to publish.
 
@@ -8,7 +8,7 @@ that the candidate is ready to publish.
 
 This route combines only empty templates, synthetic identifiers, public package
 documentation, and local regression tests. It verifies that the v0.4 candidate
-continues to distinguish current public release, local candidate, private
+continues to distinguish current public release, unreleased candidate branch, private
 source, and installed runtime; preserves the human-governed authorization,
 metadata-only provenance, role-card exclusion, and release-control boundaries;
 and records an exact framework reference for the framework-integrated profile.
@@ -21,7 +21,7 @@ or release correctness.
 ## Candidate Snapshot Identity
 
 - assurance design baseline: `854d6d10910677ebd7988ee61c6ca6a35519e66f`
-- working-tree source snapshot SHA-256: `0488a40e3da47f6b6ff1e0ad9d57ae099def544da46edc1325e3d43a4798ea39`
+- working-tree source snapshot SHA-256: `f51dd8787b27ce8840844bed3b4af1dd11f9724156a1a66124f1764173ba7b63`
 - snapshot method: SHA-256 over each `git ls-files -z` Git-tracked repository
   source file's UTF-8 relative path, a NUL
   separator, normalized source bytes, and a final NUL separator, in byte-sorted
@@ -34,7 +34,7 @@ or release correctness.
 - framework tag: `v0.1.1`
 - framework resolved commit: `b0e32d7710b70299e633df1316b6924cd87b647b`
 
-This is a transparent uncommitted candidate snapshot, not an exact release
+This is a transparent unreleased working-tree candidate snapshot, not an exact release
 commit. A later C4 release decision must rerun the required checks from a clean
 exact commit and update the release-control and post-release records.
 
@@ -65,15 +65,17 @@ fixtures are synthetic placeholders. No fixture is a project record.
 - source-snapshot verification: passed; the synthetic-assurance test recomputes
   the documented snapshot from the current candidate source tree and fails if
   a source change has not been accompanied by an evidence refresh.
-- framework-integrated coverage: passed against the pre-existing local,
-  clean Workspace Framework checkout at the exact recorded `v0.1.1` tag and
-  commit. It created only temporary synthetic workspaces and did not perform a
-  network recheck or alter the framework checkout.
+- framework-integrated coverage: passed against a clean Workspace Framework
+  checkout supplied through the documented environment variables at the exact
+  recorded `v0.1.1` tag and commit. It created only temporary synthetic
+  workspaces and did not alter the framework checkout.
 - manual boundary check: passed for synthetic fixture inventory, no private
   workspace markers, no real-data input, no role-card/runtime claim, and no
   publication or runtime-parity claim.
 - executor label: `local deterministic unittest runner; non-agent assurance implementation`
-- actions not performed: No C4 authorization, tag, GitHub Release, push, merge, or runtime installation occurred.
+- actions not performed by this test run: No C4 authorization, tag, GitHub
+  Release, merge, or runtime installation occurred. Candidate-branch push and
+  hosted CI are separately recorded evidence.
 - known limitations: no external platform check, hosted Release check, runtime
   installation, real-project input, real-data operation, secret-scanning
   service, signing, or technical immutable-release setting verification.

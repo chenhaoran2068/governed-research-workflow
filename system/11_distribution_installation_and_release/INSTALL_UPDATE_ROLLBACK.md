@@ -57,7 +57,9 @@ python -m unittest discover -s tests -v
 ~~~
 
 The caller must replace <selected-reviewed-tag> only with an existing, reviewed
-release tag.
+release tag. In a standalone checkout, the three framework-integration tests
+are expected to skip until the documented exact framework environment variables
+are supplied; this is not evidence of framework-integrated compatibility.
 Close and reopen Codex, then begin a new conversation so the installed skill
 metadata can be discovered. The installation does not create a project.
 

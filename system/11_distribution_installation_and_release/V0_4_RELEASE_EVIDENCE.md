@@ -1,6 +1,6 @@
-# v0.4.0 Release Evidence: Pre-C3 Candidate Record
+# v0.4.0 Release Evidence: Historical Pre-C3 Candidate Record
 
-Status: local preparation evidence only. This document does not identify an
+Status: historical pre-C3 preparation evidence only. This document does not identify an
 exact candidate commit and therefore cannot support capability admission, C4
 authorization, tag creation, GitHub Release creation, or runtime installation.
 
@@ -10,9 +10,9 @@ authorization, tag creation, GitHub Release creation, or runtime installation.
 | --- | --- |
 | Intended version | `v0.4.0` |
 | Current public baseline | `v0.3.1`, commit `0a16e534fb11bc5254bcdd5c2780e09f46cf81d0` |
-| Local candidate branch | `v0.4.0-capability-truth-ledger-candidate` |
+| Candidate branch at snapshot | `v0.4.0-capability-truth-ledger-candidate` |
 | Candidate base commit | `854d6d10910677ebd7988ee61c6ca6a35519e66f` |
-| Exact v0.4 candidate commit | not recorded in this pre-C3 snapshot; a later local C3 record must identify any exact candidate commit |
+| Exact v0.4 candidate commit | not recorded in this pre-C3 snapshot; a later exact-candidate record must identify any exact candidate commit |
 | v0.4 public tag / GitHub Release | none |
 | Current installed Codex runtime identity | no v0.4 runtime claim; any runtime identity requires a separate controlled installation receipt |
 
@@ -29,12 +29,12 @@ authorization, tag creation, GitHub Release creation, or runtime installation.
   `2026-07-17`; this confirms the current public baseline but is not a v0.4
   hosted-release claim.
 - The capability ledger, evidence matrix, candidate-admission record, and
-  R40 synthetic-assurance record provide the local candidate evidence map.
+  R40 synthetic-assurance record provide the historical candidate evidence map.
 
 ## Evidence Still Required
 
-Before C3, refresh the local suite after all preparation files are finalized
-and complete the exact worktree material/rights, source-authority, dependency,
+After candidate source changes, refresh the applicable local suite and complete
+the exact worktree material/rights, source-authority, dependency,
 workflow, and public-surface review. Before C4, the following remain required:
 
 1. a clean exact candidate commit and a reviewed candidate-to-baseline diff;

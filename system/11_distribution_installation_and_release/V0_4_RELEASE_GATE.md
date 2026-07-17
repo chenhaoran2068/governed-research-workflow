@@ -1,6 +1,6 @@
 # v0.4.0 Governance-And-Records Release Gate
 
-Status: local pre-C3 gate. It prepares a future `v0.4.0` candidate for human
+Status: historical pre-C3 gate snapshot. It prepared a future `v0.4.0` candidate for human
 review. It does not authorize a commit, push, merge, tag, GitHub Release,
 runtime installation, or public claim.
 
@@ -100,6 +100,6 @@ C3 local commit; the current exact candidate identity must be recorded
 separately in the local C3 implementation record.
 
 No R40-G1 through R40-G7 gate passes automatically because a candidate commit
-exists. C3 and C4 remain distinct: C3 may create and review a local candidate
+exists. C3 and C4 remain distinct: C3 may create and review an unreleased candidate
 commit, while C4 requires the later exact release evidence and explicit human
 authorization.

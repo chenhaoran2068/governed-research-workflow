@@ -35,19 +35,24 @@ class ReleaseControlTests(unittest.TestCase):
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         current_status = (RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md").read_text(encoding="utf-8")
+        integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
         self.assertIn("system_version: 0.4.0-candidate", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
-        self.assertIn("local governance-and-records candidate version `0.4.0`", readme)
+        self.assertIn("unreleased governance-and-records candidate version `0.4.0`", readme)
         self.assertIn("locally\nrecorded current public baseline is `v0.3.1`", readme)
-        self.assertIn("## v0.4.0 (local governance-and-records candidate)", roadmap)
+        self.assertIn("## v0.4.0 (unreleased governance-and-records candidate branch)", roadmap)
         self.assertIn("## v0.3.1 (released 2026-07-16)", roadmap)
         self.assertIn("## v0.3.2 (historical local release-state correction candidate)", roadmap)
         self.assertIn("Current public release: `v0.3.1`", current_status)
         self.assertIn("0a16e534fb11bc5254bcdd5c2780e09f46cf81d0", current_status)
-        self.assertIn("Current local candidate: `v0.4.0`", current_status)
+        self.assertIn("Current unreleased candidate: `v0.4.0`", current_status)
+        self.assertIn(
+            "enabled GitHub technical immutable releases for this repository",
+            integrity_policy,
+        )
         self.assertIn("ref: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
         self.assertIn("FRAMEWORK_RELEASE_TAG: v0.1.1", workflow)
         self.assertIn("FRAMEWORK_EXPECTED_COMMIT: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)

@@ -1,6 +1,6 @@
 # Release Notes: v0.4.0 Draft
 
-Status: local pre-C3 draft. These notes are not published Release notes and do
+Status: historical pre-C3 draft snapshot. These notes are not published Release notes and do
 not authorize a tag, GitHub Release, installation, or public capability claim.
 They must be reconciled with the exact admitted ledger records before C4.
 

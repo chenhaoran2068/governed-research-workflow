@@ -1,7 +1,7 @@
-# Public Material And Rights Review: v0.4.0 Pre-C3 Candidate
+# Public Material And Rights Review: v0.4.0 Historical Pre-C3 Candidate
 
-Status: local pre-C3 preparation record. It reviews the uncommitted candidate
-working tree only. It is not final evidence for an exact commit, a public
+Status: historical pre-C3 preparation record. It reviewed an uncommitted candidate
+working tree at that time. It is not final evidence for an exact commit, a public
 release, or C4 authorization. The review must be repeated after the candidate
 commit is created and before any public release decision.
 
@@ -35,9 +35,9 @@ or absence of every sensitive fact. Terms such as `patient`, `ethics`, `DUA`,
 or database names are acceptable only when used in generic boundary guidance or
 synthetic refusal tests, never as bundled project content.
 
-## Current Pre-C3 Finding
+## Historical Pre-C3 Finding
 
-On `2026-07-17`, the local candidate worktree preparation scan found:
+On `2026-07-17`, the pre-C3 candidate worktree preparation scan found:
 
 - `88` non-`.git` files; largest file `22,641` bytes; no PDF, Office, image,
   archive, or manually attached Release-asset file;
@@ -51,7 +51,7 @@ On `2026-07-17`, the local candidate worktree preparation scan found:
   not content errors); and
 - two newly reachable committed history entries since `v0.3.1`, both authored
   by the same accepted public identity. The current v0.4 work remains
-  uncommitted and therefore is not part of that committed-history result.
+  uncommitted at the time and therefore was not part of that committed-history result.
 
 The package contains no runtime Python dependency or lockfile. Its read-only
 CI workflow has `contents: read` permission and uses full-SHA-pinned

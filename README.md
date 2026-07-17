@@ -5,7 +5,7 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: local governance-and-records candidate version `0.4.0`. It is not a
+Status: unreleased governance-and-records candidate version `0.4.0`. It is not a
 public release or normal installation target. Install only an exact annotated
 tag with a matching GitHub Release, never a mutable branch. The locally
 recorded current public baseline is `v0.3.1` at
@@ -13,21 +13,21 @@ recorded current public baseline is `v0.3.1` at
 research execution authority or expand any human-approval boundary.
 
 For the current public installation target, retained historical snapshots, and
-the local-only candidate identity, read
+the unreleased candidate-branch identity, read
 [`CURRENT_RELEASE_STATUS.md`](system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md).
 
 ## Capability Truth
 
-This local candidate contains a single machine-checkable capability ledger at
+This unreleased candidate source contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
 what a future release may claim, what it must not claim, its interface,
-evidence, version, and required human approval. It is a local `v0.4.0`
+evidence, version, and required human approval. It is an unreleased `v0.4.0`
 candidate record, not a `v0.4.0` release statement: all target-release entries
 remain forbidden from public claim until they are verified, admitted, and
 human-approved for an exact release.
 
 The package manifest and current installation narrative identify this source
-as a local `v0.4.0` candidate. The ledger's `v0.4.0` target remains a planning
+as an unreleased `v0.4.0` candidate branch. The ledger's `v0.4.0` target remains a planning
 and verification target, not a public release statement or installation claim.
 
 R40-00 through R40-06 have completed local implementation review: the ledger,
@@ -42,14 +42,14 @@ separate steps.
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.
 
-For a future release decision, the local candidate also provides a synthetic
+For a future release decision, the unreleased candidate also provides a synthetic
 release-control record contract at
 [`RELEASE_CONTROL.md`](system/11_distribution_installation_and_release/RELEASE_CONTROL.md).
 It separates candidate-review acceptance from C4 authorization of an exact
 commit/tag/Release and from post-release verification. It does not publish or
 certify a release.
 
-The local candidate also has a synthetic cross-record assurance route at
+The unreleased candidate also has a synthetic cross-record assurance route at
 [`V0_4_SYNTHETIC_ASSURANCE.md`](system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md).
 It tests only empty templates and public package records; it cannot prove
 runtime parity, a hosted release, or release readiness.
@@ -72,7 +72,7 @@ The skill supports process routing for:
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or
-release or submit work. The local v0.4 candidate also explicitly excludes
+release or submit work. The unreleased v0.4 candidate also explicitly excludes
 specialist role cards, multi-agent orchestration, delegated authority, hidden
 background work, and agent runtime. One Codex conversation remains the
 interaction model; it may use different review perspectives without creating

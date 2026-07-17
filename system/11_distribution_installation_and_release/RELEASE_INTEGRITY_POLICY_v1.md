@@ -105,13 +105,15 @@ requires human release authorization, and its G7 requires a real released tag
 and GitHub Release. Neither may be simulated by a green candidate build or an
 untagged source branch.
 
-For the local `v0.4.0` candidate, `RELEASE_CONTROL.md` provides the bounded
+For the unreleased `v0.4.0` candidate branch, `RELEASE_CONTROL.md` provides the bounded
 candidate-review record contract. It records whether a later C4 review may be
 requested; it does not authorize a tag, GitHub Release, hosted-control change,
 or public claim.
 
-`v0.4.0` pre-C3 position: no technical immutable-release decision has yet been
-made for this future minor release. The historical v0.3.0/v0.3.1 deferral is
-context, not an automatic v0.4 decision. R40-G6 requires the accountable human
-to choose enablement or a new recorded deferral rationale, with a re-evaluation
-trigger, for the exact final candidate before C4.
+`v0.4.0` current candidate position: on `2026-07-17`, the accountable human
+enabled GitHub technical immutable releases for this repository. The setting
+applies to future Releases, including a possible v0.4.0 Release, but does not
+itself create a tag, GitHub Release, public capability claim, or C4
+authorization. The historical v0.3.0/v0.3.1 deferral remains historical
+context only. Before C4, R40-G6 must verify that the setting remains enabled
+and record that result against the exact final candidate.

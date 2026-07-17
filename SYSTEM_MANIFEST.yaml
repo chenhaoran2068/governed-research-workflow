@@ -1,4 +1,4 @@
-# Local v0.4.0 governance-and-records candidate. It is not an installation
+# Unreleased v0.4.0 governance-and-records candidate branch. It is not an installation
 # target until a matching annotated tag and GitHub Release exist. The locally
 # recorded current public baseline is v0.3.1. The workspace framework-contract
 # version remains 0.1.0; v0.1.1 is the exact framework validation target for

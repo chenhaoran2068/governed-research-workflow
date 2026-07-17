@@ -29,9 +29,9 @@ contract is validated against the exact released framework `v0.1.1` tag.
 | `06` | memory and learning | active retrospective baseline | retrospective reference and asset |
 | `07` | tools and integrations | active bootstrap tool; exact-tag integration regression test | `scripts/` and tests |
 | `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
-| `09` | schemas, records, and templates | blank-record baseline plus local candidate capability and bounded-autonomy schemas | `assets/` templates and candidate schemas |
-| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, and local candidate-only synthetic assurance | `tests/` |
-| `11` | distribution, installation, and release | active release controls plus a local candidate-only release-control record that separates candidate review, C4, and post-release verification | package governance files, current release status, v0.3.1 historical release snapshots, and local v0.3.2/v0.4 candidate records |
+| `09` | schemas, records, and templates | blank-record baseline plus unreleased-candidate capability and bounded-autonomy schemas | `assets/` templates and candidate schemas |
+| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, and unreleased-candidate-only synthetic assurance | `tests/` |
+| `11` | distribution, installation, and release | active release controls plus an unreleased-candidate-only release-control record that separates candidate review, C4, and post-release verification | package governance files, current release status, v0.3.1 historical release snapshots, and historical v0.3.2/unreleased v0.4 candidate records |
 | `12` | synthetic examples | exact-tag integration test plus candidate-only cross-record assurance record | no admitted system example yet |
 
 ## Current Resource Map

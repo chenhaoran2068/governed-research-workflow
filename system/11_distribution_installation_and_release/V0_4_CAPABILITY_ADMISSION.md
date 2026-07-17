@@ -1,6 +1,6 @@
 # v0.4.0 Capability Admission Record
 
-Status: local candidate control record. No `v0.4.0` tag or GitHub Release
+Status: unreleased candidate control record. No `v0.4.0` tag or GitHub Release
 exists, and no `v0.4.0` capability is admitted by this file.
 
 The canonical record is
@@ -33,11 +33,11 @@ ledger state is:
 | Record set | Current state | v0.4.0 public status |
 | --- | --- | --- |
 | `GRW-CAP-031-01` to `GRW-CAP-031-04` | verified re-admission candidates | not automatically re-admitted from `v0.3.1` |
-| `GRW-CAP-040-00`, `040-01`, `040-02`, `040-04`, `040-05`, `040-06` | verified local candidates | not admitted and cannot yet be publicly claimed |
+| `GRW-CAP-040-00`, `040-01`, `040-02`, `040-04`, `040-05`, `040-06` | verified unreleased candidates | not admitted and cannot yet be publicly claimed |
 | `GRW-CAP-040-03` | verified explicit exclusion | role cards and agent runtime are not v0.4.0 scope |
 
 The accountable-human implementation reviews for R40-00 through R40-06 prove
-only that the local candidate work packages were reviewed. They do not choose
+only that the unreleased candidate work packages were reviewed. They do not choose
 the final public capability set, convert `candidate` to `admitted`, or grant
 C4 authority.
 

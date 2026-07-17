@@ -18,7 +18,7 @@
   "properties": {
     "ledger_schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "ledger_id": {"const": "governed-research-workflow-capability-truth-ledger"},
-    "ledger_status": {"enum": ["local_candidate", "release_candidate", "released", "superseded"]},
+    "ledger_status": {"enum": ["unreleased_candidate", "release_candidate", "released", "superseded"]},
     "release_context": {"$ref": "#/$defs/release_context"},
     "target_claim_scope": {"type": "string", "minLength": 1},
     "claim_admission_rule": {"type": "string", "minLength": 1},

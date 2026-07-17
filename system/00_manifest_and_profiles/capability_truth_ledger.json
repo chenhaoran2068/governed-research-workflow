@@ -1,7 +1,7 @@
 {
   "ledger_schema_version": "1.0.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "local_candidate",
+  "ledger_status": "unreleased_candidate",
   "release_context": {
     "target_release_version": "v0.4.0",
     "current_public_baseline": "v0.3.1",
@@ -156,7 +156,7 @@
       },
       "version": {"introduced_version": "v0.4.0", "last_verified_release": null, "target_release": "v0.4.0"},
       "prior_release_history": [],
-      "approval_reference": "accountable-human R40-00 implementation review accepted 2026-07-16; local candidate only; no C4 release authorization",
+      "approval_reference": "accountable-human R40-00 implementation review accepted 2026-07-16; unreleased candidate only; no C4 release authorization",
       "claim_surfaces": ["README.md", "SKILL.md"],
       "contradiction_refusal": "Forbid the affected claim and produce a bounded decision brief when a record, interface, evidence item, or release statement conflicts.",
       "limitations_and_next_action": "No v0.4.0 capability is publicly permitted until its exact implementation, evidence, accountable-human admission, and final release decision are complete."
@@ -177,10 +177,10 @@
       "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_release_controls.py", "identifier": "ReleaseControlTests"}, {"kind": "manual_review", "path": "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md", "identifier": "accountable-human R40-01 implementation review accepted 2026-07-16"}]},
       "version": {"introduced_version": "v0.4.0", "last_verified_release": null, "target_release": "v0.4.0"},
       "prior_release_history": [],
-      "approval_reference": "accountable-human R40-01 implementation review accepted 2026-07-16; local candidate only; no C4 release authorization",
+      "approval_reference": "accountable-human R40-01 implementation review accepted 2026-07-16; unreleased candidate only; no C4 release authorization",
       "claim_surfaces": ["README.md", "SKILL.md", "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md"],
       "contradiction_refusal": "Do not update current installation guidance until exact release identity and historical labels are reviewed.",
-      "limitations_and_next_action": "Verified local candidate only. It remains release_disposition candidate and public_claim_status forbidden until a future exact-release admission and C4 decision."
+      "limitations_and_next_action": "Verified unreleased candidate only. It remains release_disposition candidate and public_claim_status forbidden until a future exact-release admission and C4 decision."
     },
     {
       "capability_id": "GRW-CAP-040-02",
@@ -201,7 +201,7 @@
       "approval_reference": "accountable-human C2 and batch C3 accepted 2026-07-16; accountable-human R40-02 implementation review accepted 2026-07-16; no C4 release authorization",
       "claim_surfaces": ["SKILL.md", "references/bounded-autonomy-authorization.md"],
       "contradiction_refusal": "Refuse an incomplete, expired, out-of-scope, prohibited, or unapproved bounded execution request.",
-      "limitations_and_next_action": "Verified local candidate only. It has no executor, tool grant, data authority, or public claim until later exact-release admission and C4 decision."
+      "limitations_and_next_action": "Verified unreleased candidate only. It has no executor, tool grant, data authority, or public claim until later exact-release admission and C4 decision."
     },
     {
       "capability_id": "GRW-CAP-040-03",
@@ -285,7 +285,7 @@
       "approval_reference": "accountable-human C2 and batch C3 accepted 2026-07-16; accountable-human R40-06 implementation review accepted 2026-07-17; no C4 release authorization",
       "claim_surfaces": ["system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md", "system/10_assurance_evaluation_and_audit/MODULE.md"],
       "contradiction_refusal": "Do not combine candidate-only test evidence with a release, runtime parity, or compliance claim.",
-      "limitations_and_next_action": "Verified only as local synthetic assurance. It does not prove scientific, clinical, ethics, DUA, legal, security, installation, or release correctness; exact-release admission, clean-commit rerun, and C4 remain required."
+      "limitations_and_next_action": "Verified only as unreleased-candidate synthetic assurance. It does not prove scientific, clinical, ethics, DUA, legal, security, installation, or release correctness; exact-release admission, clean-commit rerun, and C4 remain required."
     }
   ]
 }

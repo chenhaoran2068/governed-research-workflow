@@ -1,4 +1,4 @@
-"""Regression checks for v0.4.0 pre-C3 release-preparation boundaries."""
+"""Regression checks for v0.4.0 historical pre-C3 preparation boundaries."""
 
 from __future__ import annotations
 
@@ -13,13 +13,13 @@ LEDGER = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger
 
 
 class V04ReleasePreparationTests(unittest.TestCase):
-    def test_required_pre_c3_documents_exist_and_remain_non_release_material(self) -> None:
+    def test_historical_pre_c3_documents_remain_non_release_material(self) -> None:
         expected = {
             "V0_4_CAPABILITY_ADMISSION.md": "no `v0.4.0` tag or github release",
-            "V0_4_RELEASE_GATE.md": "local pre-c3 gate",
-            "V0_4_RELEASE_EVIDENCE.md": "local preparation evidence only",
-            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.4.0.md": "local pre-c3 preparation record",
-            "RELEASE_NOTES_v0.4.0.md": "local pre-c3 draft",
+            "V0_4_RELEASE_GATE.md": "historical pre-c3 gate snapshot",
+            "V0_4_RELEASE_EVIDENCE.md": "historical pre-c3 preparation evidence only",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.4.0.md": "historical pre-c3 preparation record",
+            "RELEASE_NOTES_v0.4.0.md": "historical pre-c3 draft snapshot",
         }
         for name, boundary in expected.items():
             content = (DIST / name).read_text(encoding="utf-8")

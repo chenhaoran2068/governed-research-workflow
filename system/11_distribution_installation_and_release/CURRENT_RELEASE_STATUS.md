@@ -1,6 +1,6 @@
 # Current Release Status
 
-Status: local current-status record for the `v0.4.0` candidate worktree. It
+Status: current-status record for the unreleased `v0.4.0` candidate branch. It
 does not create a Git tag, GitHub Release, installation, runtime update, or
 public capability claim.
 
@@ -19,14 +19,15 @@ public capability claim.
 
 Normal public installation must select an exact published tag and verify it
 using `INSTALL_UPDATE_ROLLBACK.md`. It must not select `main`, an untagged
-branch, a local candidate, or a historical gate/evidence document.
+branch, an unreleased candidate branch, or a historical gate/evidence document.
 
-## Current Local Candidate
+## Current Unreleased Candidate Branch
 
-- Current local candidate: `v0.4.0`.
-- Local branch: `v0.4.0-capability-truth-ledger-candidate`.
-- Candidate base commit before local candidate changes:
-  `854d6d10910677ebd7988ee61c6ca6a35519e66f`.
+- Current unreleased candidate: `v0.4.0`.
+- Public candidate branch: `v0.4.0-capability-truth-ledger-candidate`.
+- The branch is public for review but has no `v0.4.0` tag or GitHub Release.
+- Exact candidate-commit evidence is recorded separately and must be refreshed
+  after every candidate source change.
 - Public tag or GitHub Release for this candidate: none.
 - Installation status: not an installation target.
 - Capability status: consult the capability truth ledger; a candidate record
@@ -37,14 +38,14 @@ branch, a local candidate, or a historical gate/evidence document.
 - `v0.3.0` and `v0.3.1` candidate, gate, evidence, material-review, and
   release-note documents are retained as historical snapshots.
 - `V0_3_2_RELEASE_STATE_CORRECTION_CANDIDATE.md` is an unpublished historical
-  local candidate retained as input to `v0.4.0`; it is not a current candidate
+  local historical candidate retained as input to `v0.4.0`; it is not a current candidate
   identity or an installation target.
 - Historical records explain past decisions. They do not override this current
   status page, the capability ledger, or a future exact release record.
 
 ## Identity Boundary
 
-This file describes only the public package worktree and its locally recorded
-release facts. It does not prove that a private skill source or an installed
+This file describes only the public package worktree and its recorded release
+facts. It does not prove that a private skill source or an installed
 Codex runtime has been updated. Those identities require their own source
 record, controlled-copy receipt, and verification.

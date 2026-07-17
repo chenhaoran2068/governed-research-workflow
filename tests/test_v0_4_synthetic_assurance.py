@@ -81,7 +81,7 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         skill = (REPOSITORY_ROOT / "SKILL.md").read_text(encoding="utf-8")
         normalized_release = re.sub(r"\s+", " ", current_release)
         self.assertIn("Current public release: `v0.3.1`", current_release)
-        self.assertIn("Current local candidate: `v0.4.0`", current_release)
+        self.assertIn("Current unreleased candidate: `v0.4.0`", current_release)
         self.assertIn("does not prove that a private skill source or an installed Codex runtime has been updated", normalized_release)
         self.assertIn("Do not infer an installed runtime version", skill)
 
@@ -110,10 +110,10 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
     def test_assurance_evidence_is_candidate_only_and_synthetic(self) -> None:
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
         normalized_assurance = re.sub(r"\s+", " ", assurance)
-        self.assertIn("Status: local candidate-only synthetic assurance evidence.", assurance)
+        self.assertIn("Status: unreleased-candidate-only synthetic assurance evidence.", assurance)
         self.assertIn("assurance design baseline: `854d6d10910677ebd7988ee61c6ca6a35519e66f`", assurance)
         self.assertRegex(assurance, r"working-tree source snapshot SHA-256: `[0-9a-f]{64}`")
-        self.assertIn("No C4 authorization, tag, GitHub Release, push, merge, or runtime installation", assurance)
+        self.assertIn("No C4 authorization, tag, GitHub\n  Release, merge, or runtime installation occurred", assurance)
         self.assertIn("does not prove scientific, clinical, ethics, DUA, legal, security, installation, or release correctness", normalized_assurance)
         self.assertNotIn("E:\\", assurance)
         self.assertNotIn("C:\\Users", assurance)
