@@ -5,51 +5,54 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: unreleased governance-and-records candidate version `0.4.0`. It is not a
-public release or normal installation target. Install only an exact annotated
-tag with a matching GitHub Release, never a mutable branch. The locally
-recorded current public baseline is `v0.3.1` at
-`0a16e534fb11bc5254bcdd5c2780e09f46cf81d0`. This candidate does not add
-research execution authority or expand any human-approval boundary.
+Status: release-state-neutral `v0.4.0` source. This source tree does not claim
+that a hosted `v0.4.0` Release already exists. A normal public installation
+target exists only when an exact annotated `v0.4.0` tag and matching GitHub
+Release exist and resolve to the selected source commit. Never install a
+mutable branch. This source does not add research execution authority or
+expand any human-approval boundary.
 
-For the current public installation target, retained historical snapshots, and
-the unreleased candidate-branch identity, read
+For the live release-verification procedure and retained historical snapshots,
+read
 [`CURRENT_RELEASE_STATUS.md`](system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md).
 
 ## Capability Truth
 
-This unreleased candidate source contains a single machine-checkable capability ledger at
+This release-state-neutral source contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-what a future release may claim, what it must not claim, its interface,
-evidence, version, and required human approval. It is an unreleased `v0.4.0`
-candidate record, not a `v0.4.0` release statement. The ledger records the
-accountable-human Option A admission of ten named capabilities for the future
-release scope; that admission is not a tag, GitHub Release, normal
-installation target, runtime claim, or C4 authorization.
+what the `v0.4.0` release source may claim, what it must not claim, its
+interface, evidence, version, and required human approval. The ledger is not
+a live hosted-release statement. It records the accountable-human Option A
+admission of ten named capabilities for the `v0.4.0` release scope; that
+admission is not a tag, GitHub Release, normal installation target, runtime
+claim, or C4 authorization.
 
 The package manifest and current installation narrative identify this source
-as an unreleased `v0.4.0` candidate branch. The ledger's `v0.4.0` target remains a planning
-and verification target, not a public release statement or installation claim.
+as release-state-neutral `v0.4.0` content. The ledger's target is a planning
+and verification boundary, not by itself a public release statement or
+installation claim.
 
-R40-00 through R40-06 have completed local implementation review: the ledger,
+R40-00 through R40-06 have completed implementation review: the ledger,
 current-versus-historical release boundary, bounded-autonomy authorization
 record, metadata-only provenance register, release-control record contract,
 and synthetic assurance route are present. The role-card and agent-runtime
 route is explicitly excluded from `v0.4.0`. The remaining ten records are
-admitted only for the named future-release scope. Exact-commit evidence, C4
-authorization, tagging, and hosted-release verification remain separate steps.
+admitted only for the named release scope. Exact-commit evidence, C4
+authorization, tagging, and hosted-release verification are separate steps;
+the live release-verification rule, rather than this paragraph, decides whether
+they have occurred.
 
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.
 
-For a future release decision, the unreleased candidate also provides a synthetic
+For a release decision, this source also provides a synthetic
 release-control record contract at
 [`RELEASE_CONTROL.md`](system/11_distribution_installation_and_release/RELEASE_CONTROL.md).
 It separates candidate-review acceptance from C4 authorization of an exact
 commit/tag/Release and from post-release verification. It does not publish or
 certify a release.
 
-The unreleased candidate also has a synthetic cross-record assurance route at
+This source also has a synthetic cross-record assurance route at
 [`V0_4_SYNTHETIC_ASSURANCE.md`](system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md).
 It tests only empty templates and public package records; it cannot prove
 runtime parity, a hosted release, or release readiness.
@@ -72,7 +75,7 @@ The skill supports process routing for:
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or
-release or submit work. The unreleased v0.4 candidate also explicitly excludes
+release or submit work. The v0.4.0 scope also explicitly excludes
 specialist role cards, multi-agent orchestration, delegated authority, hidden
 background work, and agent runtime. One Codex conversation remains the
 interaction model; it may use different review perspectives without creating

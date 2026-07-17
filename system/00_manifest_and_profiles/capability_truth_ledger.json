@@ -1,12 +1,11 @@
 {
   "ledger_schema_version": "1.0.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "unreleased_candidate",
+  "ledger_status": "release_source_prepared",
   "release_context": {
-    "target_release_version": "v0.4.0",
-    "current_public_baseline": "v0.3.1",
-    "candidate_branch": "v0.4.0-capability-truth-ledger-candidate",
-    "public_release_exists": false
+    "source_release_version": "v0.4.0",
+    "historical_public_baseline": "v0.3.1",
+    "live_release_identity_rule": "A live public release must be verified from an exact annotated tag and matching GitHub Release; this ledger makes no live hosted-release or installation claim."
   },
   "target_claim_scope": "The public_claim_status field applies only to v0.4.0. Prior released claims are recorded under prior_release_history and are not automatic admissions for v0.4.0.",
   "claim_admission_rule": "A v0.4.0 capability is eligible for final-release communication only when its record is verified, admitted for the named release scope, and has an accountable-human approval reference. Admission alone does not create a tag, GitHub Release, installation target, runtime claim, or C4 authorization.",
@@ -264,7 +263,7 @@
       "approval_reference": "accountable-human C2 and batch C3 accepted 2026-07-16; accountable-human R40-05 implementation review accepted 2026-07-17; accountable-human v0.4.0 Option A capability-set admission accepted 2026-07-17; final exact-commit evidence and no C4 release authorization",
       "claim_surfaces": ["README.md", "SKILL.md", "system/11_distribution_installation_and_release/RELEASE_CONTROL.md"],
       "contradiction_refusal": "Do not release when material review, secret review, rights status, or accountable-human approval is unknown or incomplete.",
-      "limitations_and_next_action": "Admitted only for the named v0.4.0 release scope and verified only with synthetic record and refusal tests. Candidate review is not C4 authorization, C4 is not post-release verification, and no tag, Release, scan, signing, or certification claim is created; final exact-commit evidence and C4 remain required."
+      "limitations_and_next_action": "Admitted only for the named v0.4.0 release scope and verified only with synthetic record and refusal tests. Source preparation is not C4 authorization, C4 is not post-release verification, and this ledger makes no tag, Release, scan, signing, or certification claim; exact-commit evidence and C4 remain separate requirements."
     },
     {
       "capability_id": "GRW-CAP-040-06",
@@ -276,7 +275,7 @@
       "promise": "Exercises verified-candidate or explicitly excluded v0.4.0 records and supported profiles using empty or synthetic inputs with documented refusal cases.",
       "non_promise": "Will not prove scientific validity, clinical readiness, universal safety, or institutional compliance.",
       "approval_owner": "accountable_human",
-      "interface": {"status": "present", "paths": ["tests/test_v0_4_synthetic_assurance.py", "system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md"], "identifiers": ["R40-06 integrated synthetic assurance", "candidate-only synthetic evidence"]},
+      "interface": {"status": "present", "paths": ["tests/test_v0_4_synthetic_assurance.py", "system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md"], "identifiers": ["R40-06 integrated synthetic assurance", "release-source synthetic evidence"]},
       "profile_scope": "both",
       "data_and_external_boundary": ["synthetic_only", "no_external_service_action"],
       "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_v0_4_synthetic_assurance.py", "identifier": "V04SyntheticAssuranceTests"}, {"kind": "run_record", "path": "system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md", "identifier": "Test-Run Evidence"}]},
@@ -284,8 +283,8 @@
       "prior_release_history": [],
       "approval_reference": "accountable-human C2 and batch C3 accepted 2026-07-16; accountable-human R40-06 implementation review accepted 2026-07-17; accountable-human v0.4.0 Option A capability-set admission accepted 2026-07-17; final exact-commit evidence and no C4 release authorization",
       "claim_surfaces": ["system/12_synthetic_examples/V0_4_SYNTHETIC_ASSURANCE.md", "system/10_assurance_evaluation_and_audit/MODULE.md"],
-      "contradiction_refusal": "Do not combine candidate-only test evidence with a release, runtime parity, or compliance claim.",
-      "limitations_and_next_action": "Admitted only for the named v0.4.0 release scope and verified only as unreleased-candidate synthetic assurance. It does not prove scientific, clinical, ethics, DUA, legal, security, installation, or release correctness; final exact-commit rerun and C4 remain required."
+      "contradiction_refusal": "Do not combine source-level test evidence with a hosted release, runtime-parity, or compliance claim.",
+      "limitations_and_next_action": "Admitted only for the named v0.4.0 release scope and verified only as release-source synthetic assurance. It does not prove scientific, clinical, ethics, DUA, legal, security, installation, or release correctness; exact-commit rerun and C4 remain separate requirements."
     }
   ]
 }

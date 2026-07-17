@@ -1,9 +1,9 @@
 # v0.4.0 Capability Admission Record
 
-Status: current unreleased-candidate admission record. No `v0.4.0` tag or GitHub Release
-exists. The named capability scope is admitted for a future
-exact release, but this is not C4 authorization or a current public-release
-claim.
+Status: historical pre-C4 admission record. At the time of this admission
+record, the named capability scope was admitted for a later exact release. It
+was not C4 authorization or a live public-release claim. Current availability
+must always be determined through `CURRENT_RELEASE_STATUS.md`.
 
 The canonical record is
 `../00_manifest_and_profiles/capability_truth_ledger.json`. This file records
@@ -29,7 +29,7 @@ must separately accept the exact commit, tag, notes, and GitHub Release action.
 No passing test, green CI run, branch, candidate record, or AI statement may
 substitute for accountable-human admission or final release approval.
 
-## Current Candidate Disposition
+## Historical Admission Disposition
 
 On 2026-07-17, the accountable human accepted Option A as the `v0.4.0`
 capability-set admission decision. The decision applies to the named scope,
@@ -47,9 +47,10 @@ that the candidate work packages were reviewed. The subsequent Option A
 decision chooses the named capability scope. Neither implementation review nor
 capability admission grants C4 authority.
 
-Before C4, refresh exact-commit material, source, dependency, test, profile,
-and documentation evidence. The existing `v0.3.1` capabilities remain
-historical released baselines, not automatic `v0.4.0` admissions.
+Before C4, the release route required exact-commit material, source,
+dependency, test, profile, and documentation evidence. The existing `v0.3.1`
+capabilities remain historical released baselines, not automatic `v0.4.0`
+admissions.
 
 ## Contradiction Stop
 

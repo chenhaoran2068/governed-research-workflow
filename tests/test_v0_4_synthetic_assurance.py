@@ -1,4 +1,4 @@
-"""Candidate-only integration checks for the v0.4 governance-records route."""
+"""Release-source integration checks for the v0.4 governance-records route."""
 
 from __future__ import annotations
 
@@ -78,12 +78,12 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
             expected_claim = "forbidden" if capability_id == "GRW-CAP-040-03" else "permitted"
             self.assertEqual(record["public_claim_status"], expected_claim)
 
-    def test_current_release_runtime_and_candidate_identities_remain_separate(self) -> None:
+    def test_release_verification_runtime_and_source_identities_remain_separate(self) -> None:
         current_release = CURRENT_RELEASE_PATH.read_text(encoding="utf-8")
         skill = (REPOSITORY_ROOT / "SKILL.md").read_text(encoding="utf-8")
         normalized_release = re.sub(r"\s+", " ", current_release)
-        self.assertIn("Current public release: `v0.3.1`", current_release)
-        self.assertIn("Current unreleased candidate: `v0.4.0`", current_release)
+        self.assertIn("Release Status Verification", current_release)
+        self.assertIn("matching GitHub Release", current_release)
         self.assertIn("does not prove that a private skill source or an installed Codex runtime has been updated", normalized_release)
         self.assertIn("Do not infer an installed runtime version", skill)
 
@@ -109,10 +109,10 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         self.assertEqual(release["post_release_verification_reference"], None)
         self.assertEqual(release["capability_set"]["admitted_capability_ids"], [])
 
-    def test_assurance_evidence_is_candidate_only_and_synthetic(self) -> None:
+    def test_assurance_evidence_is_release_source_only_and_synthetic(self) -> None:
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
         normalized_assurance = re.sub(r"\s+", " ", assurance)
-        self.assertIn("Status: unreleased-candidate-only synthetic assurance evidence.", assurance)
+        self.assertIn("Status: release-source synthetic assurance evidence.", assurance)
         self.assertIn("assurance design baseline: `854d6d10910677ebd7988ee61c6ca6a35519e66f`", assurance)
         self.assertRegex(assurance, r"working-tree source snapshot SHA-256: `[0-9a-f]{64}`")
         self.assertIn("No C4 authorization, tag, GitHub\n  Release, merge, or runtime installation occurred", assurance)

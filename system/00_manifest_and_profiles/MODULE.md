@@ -17,10 +17,10 @@ local `v0.3.2` candidate preserves the same bounded contract.
 Do not infer framework support merely because a host contains familiar folder
 names or a manifest-looking file.
 
-This unreleased candidate branch adds
+The v0.4.0 release source adds
 `capability_truth_ledger.json` as the single machine-checkable source for
 capability promises, non-promises, evidence, version, and admission state. It
 does not alter the package manifest's local `v0.3.2` identity, the released
-`v0.3.1` public claim boundary, or create a `v0.4.0` Release. The ledger now
-records the accountable-human admission of the named future-release scope;
+`v0.3.1` historical public claim boundary, or create a `v0.4.0` Release. The
+ledger records the accountable-human admission of the named release scope;
 final exact-commit evidence and C4 remain separate.

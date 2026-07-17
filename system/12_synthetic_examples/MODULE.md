@@ -10,7 +10,7 @@ distributable system example. Every end-to-end example needs a material-boundary
 review and an explicit statement that it does not establish scientific,
 clinical, regulatory, or journal compliance for a real project.
 
-`V0_4_SYNTHETIC_ASSURANCE.md` records an unreleased-candidate-only cross-record
+`V0_4_SYNTHETIC_ASSURANCE.md` records a release-source cross-record
 assurance run. It uses only empty templates and public documentation, records
 the candidate snapshot and framework identity, and cannot establish runtime
 parity, hosted-release state, or authority to publish.

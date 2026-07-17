@@ -1,11 +1,10 @@
-# Unreleased v0.4.0 governance-and-records candidate branch. It is not an installation
-# target until a matching annotated tag and GitHub Release exist. The locally
-# recorded current public baseline is v0.3.1. The workspace framework-contract
-# version remains 0.1.0; v0.1.1 is the exact framework validation target for
-# this source revision.
+# Release-state-neutral v0.4.0 governance-and-records source. It is an
+# installation target only when a matching annotated tag and GitHub Release can
+# be verified. The workspace framework-contract version remains 0.1.0; v0.1.1
+# is the exact framework validation target for this source revision.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.4.0-candidate
+system_version: 0.4.0-release-source
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

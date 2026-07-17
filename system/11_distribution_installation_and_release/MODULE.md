@@ -1,9 +1,9 @@
 # Distribution, Installation, And Release
 
 Status: active standalone package governance. Historical v0.3.0 and v0.3.1
-release records are retained. The unreleased v0.4.0 governance-and-records
-candidate is not a release or installation target; current routing is owned by
-`CURRENT_RELEASE_STATUS.md`.
+release records are retained. The v0.4.0 governance-and-records source is
+release-state-neutral; normal installation eligibility is determined by the
+exact-tag and matching-Release rule in `CURRENT_RELEASE_STATUS.md`.
 
 Released tags are immutable public contracts by policy. Candidate branches are
 not releases. A correction requires a new release version rather than
@@ -27,8 +27,8 @@ pre-release candidate record for the published patch.
 correction candidate and its required evidence. It is retained as a historical
 input to the v0.4.0 candidate, not as the current package identity.
 
-`V0_4_CAPABILITY_ADMISSION.md` is an unreleased candidate control record. It
-records verified evidence and accountable-human admission for the named future
+`V0_4_CAPABILITY_ADMISSION.md` is a historical pre-C4 control record. It
+records verified evidence and accountable-human admission for the named
 `v0.4.0` scope. It does not create a tag, GitHub Release, current public
 capability claim, installation target, or C4 authorization.
 
@@ -39,8 +39,8 @@ the candidate's proposed scope, evidence, public-material boundary, and future
 release narrative reviewable before C3. They do not create an exact candidate
 commit, tag, hosted Release, runtime installation, or C4 authorization.
 
-`RELEASE_CONTROL.md` and `release_control_record.schema.json` define an unreleased
-candidate-review record for a future release. Candidate-review acceptance, C4
+`RELEASE_CONTROL.md` and `release_control_record.schema.json` define a
+release-control record contract. Candidate-review acceptance, C4
 authorization of an exact commit/tag/Release, and post-release verification are
 separate records. The schema records conditions; it does not publish, scan,
 sign, certify, or change hosted controls.

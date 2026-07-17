@@ -115,7 +115,8 @@ class ReleaseControlRecordTests(unittest.TestCase):
 
         self.assertIn("Candidate-review acceptance is not C4 authorization", guidance)
         self.assertIn("C4 authorization is not\npost-release verification", guidance)
-        self.assertIn("Current public release: `v0.3.1`", current_release)
+        self.assertIn("Normal Public Installation Rule", current_release)
+        self.assertIn("matching GitHub Release", current_release)
         self.assertEqual(r4005["implementation_status"], "verified")
         self.assertEqual(r4005["release_disposition"], "admitted")
         self.assertEqual(r4005["public_claim_status"], "permitted")

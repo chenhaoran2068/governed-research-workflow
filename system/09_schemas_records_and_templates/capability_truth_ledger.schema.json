@@ -18,7 +18,7 @@
   "properties": {
     "ledger_schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "ledger_id": {"const": "governed-research-workflow-capability-truth-ledger"},
-    "ledger_status": {"enum": ["unreleased_candidate", "release_candidate", "released", "superseded"]},
+    "ledger_status": {"enum": ["unreleased_candidate", "release_candidate", "release_source_prepared", "released", "superseded"]},
     "release_context": {"$ref": "#/$defs/release_context"},
     "target_claim_scope": {"type": "string", "minLength": 1},
     "claim_admission_rule": {"type": "string", "minLength": 1},
@@ -39,12 +39,11 @@
     "release_context": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["target_release_version", "current_public_baseline", "candidate_branch", "public_release_exists"],
+      "required": ["source_release_version", "historical_public_baseline", "live_release_identity_rule"],
       "properties": {
-        "target_release_version": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
-        "current_public_baseline": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
-        "candidate_branch": {"type": "string", "minLength": 1},
-        "public_release_exists": {"type": "boolean"}
+        "source_release_version": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "historical_public_baseline": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "live_release_identity_rule": {"type": "string", "minLength": 1}
       }
     },
     "capability": {

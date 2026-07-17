@@ -1,6 +1,6 @@
 # Schemas Module Boundary
 
-Status: active blank-record baseline; the unreleased candidate branch adds one
+Status: active blank-record baseline; the v0.4.0 release source adds one
 formal generic capability-ledger schema for the `v0.4.0` target.
 
 The active baseline is the set of blank human-reviewed records under `assets/`.
@@ -12,8 +12,8 @@ permitted values, compatibility expectation, ownership, and test fixture.
 Do not store live project state, patient-derived data, private identifiers, or
 facts that require study-specific approval in a public schema.
 
-`capability_truth_ledger.schema.json` defines the structure of the unreleased
-candidate's single capability truth source. It does not validate live project
+`capability_truth_ledger.schema.json` defines the structure of the
+release-state-neutral capability truth source. It does not validate live project
 state, create a capability, or grant approval.
 
 `bounded_autonomy_authorization.schema.json` defines a synthetic, human-reviewed
