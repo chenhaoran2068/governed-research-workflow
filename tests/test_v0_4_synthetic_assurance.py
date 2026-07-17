@@ -84,8 +84,9 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
     def test_framework_profile_uses_exact_tag_and_recorded_resolved_commit(self) -> None:
         workflow = WORKFLOW_PATH.read_text(encoding="utf-8")
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
-        self.assertIn("ref: v0.1.1", workflow)
+        self.assertIn("ref: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
         self.assertIn("FRAMEWORK_RELEASE_TAG: v0.1.1", workflow)
+        self.assertIn("FRAMEWORK_EXPECTED_COMMIT: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
         self.assertIn("framework tag: `v0.1.1`", assurance)
         self.assertIn("framework resolved commit: `b0e32d7710b70299e633df1316b6924cd87b647b`", assurance)
 

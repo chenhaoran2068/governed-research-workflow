@@ -21,7 +21,7 @@ or release correctness.
 ## Candidate Snapshot Identity
 
 - head commit: `854d6d10910677ebd7988ee61c6ca6a35519e66f`
-- working-tree source snapshot SHA-256: `620efe8024b6201ef01be624b698ca31d5e3e57ecfa1a6d680b82e1309d2e66d`
+- working-tree source snapshot SHA-256: `9716551ae4e6ee489df5b691fb1c1335e58a39684ddebad4a68262000af46fb0`
 - snapshot method: SHA-256 over each `git ls-files --cached --others
   --exclude-standard -z` repository source file's UTF-8 relative path, a NUL
   separator, normalized source bytes, and a final NUL separator, in byte-sorted

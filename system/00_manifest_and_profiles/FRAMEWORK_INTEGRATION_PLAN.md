@@ -26,10 +26,11 @@ execute research, or establish any formal release compatibility.
 
 Published v0.3.1 validation proves that this package can participate in the
 declared layout without making an untagged framework a stable dependency. Its
-CI resolved `v0.1.1`, verified that its commit matched the checked-out
-framework source, and proved that the workspace manifest version and system
-compatibility declaration both equal `0.1.0`. A later candidate must repeat
-this evidence for its own exact source revision.
+CI uses `v0.1.1` as the compatibility label but checks out and verifies the
+recorded framework commit `b0e32d7710b70299e633df1316b6924cd87b647b`; it also
+proves that the workspace manifest version and system compatibility declaration
+both equal `0.1.0`. A later candidate must repeat this evidence for its own
+exact source revision.
 
 This test proves a bounded technical integration contract. It does not approve
 scientific quality, compliance, source access, project creation, or a workflow
