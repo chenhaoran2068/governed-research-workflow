@@ -1,7 +1,15 @@
 # Release Integrity Policy
 
-Status: candidate policy for v0.3.0 and later releases. It defines a
+Status: active maintainer policy for v0.3.0 and later releases. It defines a
 maintainer-controlled process; it does not authorize an AI to publish.
+
+## Current-Status Routing
+
+`CURRENT_RELEASE_STATUS.md` is the current-facing local status route. It
+separates the locally recorded published `v0.3.1` baseline, retained historical
+records, and the untagged local `v0.4.0` candidate. A candidate-review record,
+passing test, or local branch is not an installation target, GitHub Release, or
+installed-runtime identity.
 
 ## Release Identity
 
@@ -44,12 +52,12 @@ rerun the complete matrix.
 
 This package has no runtime Python dependency. Historical v0.3.0
 framework-integration evidence used validation-only packages declared by the
-exact Workspace Framework v0.1.0 release. The release-gated v0.3.1 source
-retains the v0.1.0 framework-contract version and tests the same declared
-package ranges against exact Workspace Framework v0.1.1:
+exact Workspace Framework v0.1.0 release. The published v0.3.1 patch retains
+the v0.1.0 framework-contract version and tested the same declared package
+ranges against exact Workspace Framework v0.1.1:
 PyYAML>=6.0.2,<7 and jsonschema>=4.23,<5. Those ranges are not hash-locked, so
 test-environment reproducibility is bounded rather than bit-for-bit. Neither
-historical nor release-gated evidence may be described as a fully locked
+historical nor current release evidence may be described as a fully locked
 software supply chain. A future release may add lockfiles or hash-verified test
 dependencies only through a reviewed dependency-policy change.
 
@@ -64,21 +72,20 @@ Security or any particular secret-scanning setting is enabled.
 
 Historical decision: technical immutable releases were deferred for v0.3.0.
 
-Proposed v0.3.1 decision: retain the same deferral and immutable-by-policy
-process unless the accountable maintainer explicitly enables GitHub technical
-immutable releases before R31-G6. This is not a completed v0.3.1 decision
-until that human approval is recorded.
+Recorded v0.3.1 decision: retain the same deferral and immutable-by-policy
+process. GitHub technical immutable releases were not enabled before the
+human-approved v0.3.1 release decision.
 
 Rationale:
 
 - all prior public releases in this repository currently report as mutable;
-- v0.3.0 and the proposed v0.3.1 distribute no binary assets, packages, or
+- v0.3.0 and v0.3.1 distribute no binary assets, packages, or
   data, only a tagged source archive and documented skill/system material; and
 - enabling a repository-level irreversible-release setting needs a deliberate
   maintainer operating and incident-withdrawal process, not an automatic
   change made while preparing this candidate.
 
-Compensating controls for v0.3.0 and a deferred-v0.3.1 decision are: an
+Compensating controls for v0.3.0 and the deferred v0.3.1 decision are: an
 annotated exact tag, clean-tree and history checks, SHA-pinned Actions, final
 matrix CI on main, explicit human authorization, published release notes with
 commit identity, post-release tag verification, and a no-retag/no-silent-rewrite
@@ -95,5 +102,18 @@ immutable.
 The release evidence record may mark technical gates as passed only when it
 links to concrete commands, review records, and CI runs. The applicable G6
 requires human release authorization, and its G7 requires a real released tag
-and GitHub Release. Neither may be simulated by a green candidate build or a
-release-gated source branch.
+and GitHub Release. Neither may be simulated by a green candidate build or an
+untagged source branch.
+
+For the unreleased `v0.4.0` candidate branch, `RELEASE_CONTROL.md` provides the bounded
+candidate-review record contract. It records whether a later C4 review may be
+requested; it does not authorize a tag, GitHub Release, hosted-control change,
+or public claim.
+
+`v0.4.0` current candidate position: on `2026-07-17`, the accountable human
+enabled GitHub technical immutable releases for this repository. The setting
+applies to future Releases, including a possible v0.4.0 Release, but does not
+itself create a tag, GitHub Release, public capability claim, or C4
+authorization. The historical v0.3.0/v0.3.1 deferral remains historical
+context only. Before C4, R40-G6 must verify that the setting remains enabled
+and record that result against the exact final candidate.

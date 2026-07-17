@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release_control_record",
+  "release_control_id": "SYNTHETIC-RCR-0001",
+  "record_revision": 1,
+  "created_at": "2026-07-16T00:00:00Z",
+  "status": "candidate_reviewed",
+  "candidate_identity": {
+    "candidate_version": "0.4.0",
+    "exact_commit": "0000000000000000000000000000000000000000",
+    "branch_state": "local_candidate_only",
+    "intended_tag": "v0.4.0",
+    "intended_github_release": "SYNTHETIC v0.4.0 release only; not created"
+  },
+  "capability_set": {
+    "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "candidate_outcome": "verified_candidate_or_explicitly_excluded_only",
+    "verified_candidate_capability_ids": ["GRW-CAP-040-00", "GRW-CAP-040-01", "GRW-CAP-040-02", "GRW-CAP-040-04"],
+    "excluded_capability_ids": ["GRW-CAP-040-03"],
+    "admitted_capability_ids": []
+  },
+  "material_reviews": {
+    "public_material_rights_review": "pass",
+    "private_material_secret_review": "pass",
+    "review_references": ["SYNTHETIC-PUBLIC-BOUNDARY-REVIEW-0001"]
+  },
+  "dependency_and_source_authority": {
+    "source_authority_review": "pass",
+    "framework_integrated_behavior_claimed": false,
+    "framework_tag": null,
+    "framework_commit": null,
+    "review_reference": "SYNTHETIC-SOURCE-AUTHORITY-REVIEW-0001"
+  },
+  "release_integrity_posture": {
+    "technical_immutable_release_status": "deferred",
+    "deferral_or_unavailability_reason": "Synthetic example only; no repository setting has been changed.",
+    "reevaluation_trigger": "Before any later C4 decision for an exact public release.",
+    "release_assets": ["source archive only in this synthetic example"],
+    "integrity_or_attestation_evidence_references": ["SYNTHETIC-INTEGRITY-EVIDENCE-0001"],
+    "unverified_properties": ["No technical immutable-release setting or attestation is asserted by this template."]
+  },
+  "supported_scope": {
+    "profiles": ["standalone"],
+    "platforms": ["synthetic-only"],
+    "approved_scope_statement": "Synthetic candidate-review record only; it is not a release approval or compatibility claim."
+  },
+  "residual_risks": ["Candidate review cannot substitute for C4 authorization or post-release verification."],
+  "incident_and_repair_route": "Stop release activity, preserve evidence, notify the accountable human, and create a new corrective candidate rather than rewriting a published release.",
+  "candidate_review_acceptance_reference": "SYNTHETIC-CANDIDATE-REVIEW-ACCEPTANCE-0001",
+  "c4_release_authorization_reference": null,
+  "post_release_verification_reference": null,
+  "post_release_verification_plan_reference": "system/11_distribution_installation_and_release/RELEASE_CONTROL.md#post-release-route",
+  "record_hierarchy_references": {
+    "capability_truth_ledger": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "current_release_status": "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
+    "candidate_review_record": "SYNTHETIC-CANDIDATE-REVIEW-ACCEPTANCE-0001",
+    "c4_authorization_record": "not-yet-authorized",
+    "post_release_record": "not-yet-released"
+  }
+}

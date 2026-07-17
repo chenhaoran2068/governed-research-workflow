@@ -1,8 +1,8 @@
 # Framework Integration Plan
 
-Status: `v0.3.1` candidate integration validation targets the exact released
+Status: published `v0.3.1` integration validation targets the exact released
 Workspace Framework `v0.1.1` tag. Historical `v0.3.0` evidence remains bound
-to framework `v0.1.0` and is not reused as candidate evidence.
+to framework `v0.1.0` and is not reused as evidence for a later version.
 
 ## Current Position
 
@@ -24,20 +24,22 @@ execute research, or establish any formal release compatibility.
 
 ## Validation Evidence
 
-Candidate validation must prove that this package can participate in the
-declared layout without making an untagged framework a stable dependency. The
-candidate CI resolves `v0.1.1`, verifies that its commit matches the
-checked-out framework source, and proves that the workspace manifest version
-and system compatibility declaration both equal `0.1.0`.
+Published v0.3.1 validation proves that this package can participate in the
+declared layout without making an untagged framework a stable dependency. Its
+CI uses `v0.1.1` as the compatibility label but checks out and verifies the
+recorded framework commit `b0e32d7710b70299e633df1316b6924cd87b647b`; it also
+proves that the workspace manifest version and system compatibility declaration
+both equal `0.1.0`. A later candidate must repeat this evidence for its own
+exact source revision.
 
 This test proves a bounded technical integration contract. It does not approve
 scientific quality, compliance, source access, project creation, or a workflow
 release.
 
-## Conditions Before Stable Release Advertising
+## Conditions Before Later Release Advertising
 
-Before a stable release advertises this candidate's framework integration,
-maintainers must:
+Before a later stable release advertises framework integration, maintainers
+must:
 
 1. retain the passed cross-repository validation against the released `v0.1.1`
    tag and rerun it if the compatibility contract changes;

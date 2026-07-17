@@ -1,4 +1,4 @@
-"""Synthetic installation test for an exact released framework tag.
+"""Synthetic installation test for an exact framework commit and release label.
 
 This test is intentionally read-only outside a temporary directory. It proves
 that the concrete public system can occupy the documented framework locations,
@@ -25,6 +25,7 @@ SYSTEM_MANIFEST_PATH = REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml"
 FRAMEWORK_ROOT_VALUE = os.environ.get("FRAMEWORK_REPOSITORY_ROOT")
 FRAMEWORK_ROOT = Path(FRAMEWORK_ROOT_VALUE).resolve() if FRAMEWORK_ROOT_VALUE else None
 FRAMEWORK_RELEASE_TAG = os.environ.get("FRAMEWORK_RELEASE_TAG")
+FRAMEWORK_EXPECTED_COMMIT = os.environ.get("FRAMEWORK_EXPECTED_COMMIT")
 
 
 class IntegrationContractError(ValueError):
@@ -78,8 +79,8 @@ def validate_candidate_records(
 
 
 @unittest.skipUnless(
-    FRAMEWORK_ROOT_VALUE and FRAMEWORK_RELEASE_TAG,
-    "Set FRAMEWORK_REPOSITORY_ROOT and FRAMEWORK_RELEASE_TAG to run released-framework integration tests.",
+    FRAMEWORK_ROOT_VALUE and FRAMEWORK_RELEASE_TAG and FRAMEWORK_EXPECTED_COMMIT,
+    "Set FRAMEWORK_REPOSITORY_ROOT, FRAMEWORK_RELEASE_TAG, and FRAMEWORK_EXPECTED_COMMIT to run integration tests.",
 )
 class FrameworkCandidateIntegrationTests(unittest.TestCase):
     @classmethod
@@ -97,22 +98,17 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
         cls.Resource = Resource
         cls.framework_root = FRAMEWORK_ROOT
         cls.framework_release_tag = FRAMEWORK_RELEASE_TAG
-        resolved_tag = subprocess.run(
-            ["git", "-C", str(cls.framework_root), "rev-parse", f"{cls.framework_release_tag}^{{commit}}"],
-            text=True,
-            capture_output=True,
-            check=False,
-        )
+        cls.framework_expected_commit = FRAMEWORK_EXPECTED_COMMIT
         resolved_head = subprocess.run(
             ["git", "-C", str(cls.framework_root), "rev-parse", "HEAD"],
             text=True,
             capture_output=True,
             check=False,
         )
-        if resolved_tag.returncode != 0 or resolved_head.returncode != 0:
-            raise RuntimeError("Unable to resolve the released framework tag in the checked-out repository.")
-        if resolved_tag.stdout.strip() != resolved_head.stdout.strip():
-            raise RuntimeError("Framework checkout does not match the declared released framework tag.")
+        if resolved_head.returncode != 0:
+            raise RuntimeError("Unable to resolve the checked-out framework commit.")
+        if resolved_head.stdout.strip() != cls.framework_expected_commit:
+            raise RuntimeError("Framework checkout does not match the declared exact framework commit.")
 
     def setUp(self) -> None:
         self.temporary_directory = tempfile.TemporaryDirectory()

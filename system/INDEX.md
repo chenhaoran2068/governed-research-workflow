@@ -1,8 +1,10 @@
 # Public System Module Index
 
-Status: release-gated `v0.3.1` source. It becomes an installation target only
-when an exact annotated `v0.3.1` tag and matching GitHub Release exist; until
-then, users must select the latest published tag rather than `main`.
+Status: local `v0.4.0` governance-and-records candidate. It is not an
+installation target until an exact annotated `v0.4.0` tag and matching GitHub
+Release exist. The locally recorded current published baseline is `v0.3.1`;
+users must select an exact published tag rather than `main` or a candidate
+branch. See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 
 ## Purpose
 
@@ -23,14 +25,14 @@ contract is validated against the exact released framework `v0.1.1` tag.
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline | route references and blank assets |
 | `04` | evidence, requirements, and knowledge | active guidance; no knowledge corpus | evidence/citation references |
-| `05` | data and provenance | foundation only | public data boundary |
+| `05` | data and provenance | metadata-only register candidate; no data handling | public data boundary and provenance route |
 | `06` | memory and learning | active retrospective baseline | retrospective reference and asset |
 | `07` | tools and integrations | active bootstrap tool; exact-tag integration regression test | `scripts/` and tests |
-| `08` | agent contracts | foundation only | role-contract boundary |
-| `09` | schemas, records, and templates | active blank-record baseline | `assets/` templates |
-| `10` | assurance, evaluation, and audit | active regression baseline plus cross-repository integration | `tests/` |
-| `11` | distribution, installation, and release | active release controls; manual lifecycle, material review, integrity, and post-release verification records | package governance files and the v0.3.1 release-gate records |
-| `12` | synthetic examples | exact-tag integration test only | no admitted system example yet |
+| `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
+| `09` | schemas, records, and templates | blank-record baseline plus unreleased-candidate capability and bounded-autonomy schemas | `assets/` templates and candidate schemas |
+| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, and unreleased-candidate-only synthetic assurance | `tests/` |
+| `11` | distribution, installation, and release | active release controls plus an unreleased-candidate-only release-control record that separates candidate review, C4, and post-release verification | package governance files, current release status, v0.3.1 historical release snapshots, and historical v0.3.2/unreleased v0.4 candidate records |
+| `12` | synthetic examples | exact-tag integration test plus candidate-only cross-record assurance record | admitted future-release scope; no public release example yet |
 
 ## Current Resource Map
 

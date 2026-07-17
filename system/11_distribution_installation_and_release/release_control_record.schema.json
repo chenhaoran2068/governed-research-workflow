@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/release_control_record.schema.json",
+  "title": "Release Control Record",
+  "description": "A candidate-review and release-control record. It is not a release action, security certification, rights opinion, or C4 authorization by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "release_control_id", "record_revision", "created_at", "status", "candidate_identity", "capability_set", "material_reviews", "dependency_and_source_authority", "release_integrity_posture", "supported_scope", "residual_risks", "incident_and_repair_route", "candidate_review_acceptance_reference", "c4_release_authorization_reference", "post_release_verification_reference", "post_release_verification_plan_reference", "record_hierarchy_references"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "release_control_record"},
+    "release_control_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]{2,63}$"},
+    "record_revision": {"type": "integer", "minimum": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["draft", "candidate_evidence_incomplete", "candidate_reviewed", "c4_authorized", "released", "post_release_verified", "withdrawn", "superseded"]},
+    "candidate_identity": {"$ref": "#/$defs/candidate_identity"},
+    "capability_set": {"$ref": "#/$defs/capability_set"},
+    "material_reviews": {"$ref": "#/$defs/material_reviews"},
+    "dependency_and_source_authority": {"$ref": "#/$defs/dependency_and_source_authority"},
+    "release_integrity_posture": {"$ref": "#/$defs/release_integrity_posture"},
+    "supported_scope": {"$ref": "#/$defs/supported_scope"},
+    "residual_risks": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "incident_and_repair_route": {"type": "string", "minLength": 1},
+    "candidate_review_acceptance_reference": {"type": ["string", "null"], "minLength": 1},
+    "c4_release_authorization_reference": {"type": ["string", "null"], "minLength": 1},
+    "post_release_verification_reference": {"type": ["string", "null"], "minLength": 1},
+    "post_release_verification_plan_reference": {"type": "string", "minLength": 1},
+    "record_hierarchy_references": {"$ref": "#/$defs/record_hierarchy_references"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"enum": ["candidate_reviewed", "c4_authorized", "released", "post_release_verified"]}}, "required": ["status"]},
+      "then": {"properties": {"material_reviews": {"properties": {"public_material_rights_review": {"const": "pass"}, "private_material_secret_review": {"const": "pass"}}, "required": ["public_material_rights_review", "private_material_secret_review"]}, "candidate_review_acceptance_reference": {"type": "string", "minLength": 1}}, "required": ["candidate_review_acceptance_reference"]}
+    },
+    {
+      "if": {"properties": {"dependency_and_source_authority": {"properties": {"framework_integrated_behavior_claimed": {"const": true}}, "required": ["framework_integrated_behavior_claimed"]}}, "required": ["dependency_and_source_authority"]},
+      "then": {"properties": {"dependency_and_source_authority": {"required": ["framework_tag", "framework_commit"], "properties": {"framework_tag": {"type": "string", "minLength": 1}, "framework_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}}}}}
+    },
+    {
+      "if": {"properties": {"status": {"enum": ["c4_authorized", "released", "post_release_verified"]}}, "required": ["status"]},
+      "then": {"properties": {"candidate_identity": {"properties": {"branch_state": {"const": "exact_release_commit"}}, "required": ["branch_state"]}, "c4_release_authorization_reference": {"type": "string", "minLength": 1}}, "required": ["c4_release_authorization_reference"]}
+    },
+    {
+      "if": {"properties": {"status": {"const": "post_release_verified"}}, "required": ["status"]},
+      "then": {"properties": {"post_release_verification_reference": {"type": "string", "minLength": 1}}, "required": ["post_release_verification_reference"]}
+    }
+  ],
+  "$defs": {
+    "candidate_identity": {"type": "object", "additionalProperties": false, "required": ["candidate_version", "exact_commit", "branch_state", "intended_tag", "intended_github_release"], "properties": {"candidate_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"}, "exact_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "branch_state": {"enum": ["local_candidate_only", "remote_candidate_branch", "main_candidate", "exact_release_commit"]}, "intended_tag": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"}, "intended_github_release": {"type": "string", "minLength": 1}}},
+    "capability_set": {"type": "object", "additionalProperties": false, "required": ["capability_ledger_reference", "candidate_outcome", "verified_candidate_capability_ids", "excluded_capability_ids", "admitted_capability_ids"], "properties": {"capability_ledger_reference": {"type": "string", "minLength": 1}, "candidate_outcome": {"enum": ["verified_candidate_or_explicitly_excluded_only", "admitted_exact_release_scope"]}, "verified_candidate_capability_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^GRW-CAP-[0-9]{3}-[0-9]{2}$"}}, "excluded_capability_ids": {"type": "array", "items": {"type": "string", "pattern": "^GRW-CAP-[0-9]{3}-[0-9]{2}$"}}, "admitted_capability_ids": {"type": "array", "items": {"type": "string", "pattern": "^GRW-CAP-[0-9]{3}-[0-9]{2}$"}}}},
+    "material_reviews": {"type": "object", "additionalProperties": false, "required": ["public_material_rights_review", "private_material_secret_review", "review_references"], "properties": {"public_material_rights_review": {"enum": ["not_started", "pass", "revise", "blocked", "unknown"]}, "private_material_secret_review": {"enum": ["not_started", "pass", "revise", "blocked", "unknown"]}, "review_references": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}}},
+    "dependency_and_source_authority": {"type": "object", "additionalProperties": false, "required": ["source_authority_review", "framework_integrated_behavior_claimed", "framework_tag", "framework_commit", "review_reference"], "properties": {"source_authority_review": {"enum": ["not_started", "pass", "revise", "blocked", "unknown"]}, "framework_integrated_behavior_claimed": {"type": "boolean"}, "framework_tag": {"type": ["string", "null"]}, "framework_commit": {"type": ["string", "null"]}, "review_reference": {"type": "string", "minLength": 1}}},
+    "release_integrity_posture": {"type": "object", "additionalProperties": false, "required": ["technical_immutable_release_status", "deferral_or_unavailability_reason", "reevaluation_trigger", "release_assets", "integrity_or_attestation_evidence_references", "unverified_properties"], "properties": {"technical_immutable_release_status": {"enum": ["enabled", "deferred", "unavailable", "unknown"]}, "deferral_or_unavailability_reason": {"type": "string", "minLength": 1}, "reevaluation_trigger": {"type": "string", "minLength": 1}, "release_assets": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "integrity_or_attestation_evidence_references": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "unverified_properties": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}}},
+    "supported_scope": {"type": "object", "additionalProperties": false, "required": ["profiles", "platforms", "approved_scope_statement"], "properties": {"profiles": {"type": "array", "minItems": 1, "items": {"enum": ["standalone", "framework_integrated"]}}, "platforms": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "approved_scope_statement": {"type": "string", "minLength": 1}}},
+    "record_hierarchy_references": {"type": "object", "additionalProperties": false, "required": ["capability_truth_ledger", "current_release_status", "candidate_review_record", "c4_authorization_record", "post_release_record"], "properties": {"capability_truth_ledger": {"type": "string", "minLength": 1}, "current_release_status": {"type": "string", "minLength": 1}, "candidate_review_record": {"type": "string", "minLength": 1}, "c4_authorization_record": {"type": "string", "minLength": 1}, "post_release_record": {"type": "string", "minLength": 1}}}
+  }
+}

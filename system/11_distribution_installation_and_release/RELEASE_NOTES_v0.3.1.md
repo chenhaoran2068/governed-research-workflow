@@ -1,8 +1,8 @@
 # Release Notes: v0.3.1
 
-Status: prepared release-note source. It becomes a public release statement
-only if annotated tag `v0.3.1` and a matching GitHub Release are created from
-the exact final tested commit.
+Status: historical release-note source for the published `v0.3.1` tag and
+matching GitHub Release. It preserves the pre-publication wording and is not
+the release note for a later version.
 
 ## Scope
 

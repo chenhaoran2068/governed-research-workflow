@@ -8,6 +8,9 @@ access, or workflow transition.
 
 - Use an existing exact Git tag and matching GitHub Release, not a mutable
   branch, for a normal installation.
+- Read `CURRENT_RELEASE_STATUS.md` before selecting a tag. A locally retained
+  candidate, historical release record, or capability-ledger target is not a
+  substitute for the current public installation identity.
 - Use Git and Python 3.11 or later. Python is required only for the optional
   empty-workspace bootstrap and test commands; the routing documents do not
   grant any execution authority.
@@ -54,7 +57,9 @@ python -m unittest discover -s tests -v
 ~~~
 
 The caller must replace <selected-reviewed-tag> only with an existing, reviewed
-release tag.
+release tag. In a standalone checkout, the three framework-integration tests
+are expected to skip until the documented exact framework environment variables
+are supplied; this is not evidence of framework-integrated compatibility.
 Close and reopen Codex, then begin a new conversation so the installed skill
 metadata can be discovered. The installation does not create a project.
 
@@ -67,8 +72,8 @@ is unavailable; do not invoke its bootstrap helper in that case.
 
 Framework integration is optional. The v0.3.0 release was validated against
 the exact released Governed Research Workspace Framework v0.1.0 tag. The
-release-gated v0.3.1 source retains the v0.1.0 framework-contract version and
-is separately validated against the exact v0.1.1 tag. Use only the framework
+published v0.3.1 patch retains the v0.1.0 framework-contract version and is
+separately validated against the exact v0.1.1 tag. Use only the framework
 release explicitly named in the selected Workflow release notes and an existing
 empty framework_integrated workspace created under that framework's own
 controlled bootstrap procedure.
@@ -139,12 +144,12 @@ git describe --exact-match --tags HEAD
 python -m unittest discover -s tests -v
 ~~~
 
-The literal v0.3.1 is usable only after a matching annotated tag and GitHub
-Release exist. Otherwise use an existing release tag whose documented profile
-compatibility allows the update. For a framework-integrated installation,
-update the workspace registered_systems.system_version only after the checkout
-and validation succeed. Never change the framework version or project binding
-as a side effect of a Workflow package update.
+The literal v0.3.1 is a published annotated tag with a matching GitHub
+Release. For any later version, use it only after the corresponding tag and
+Release exist. For a framework-integrated installation, update the workspace
+registered_systems.system_version only after the checkout and validation
+succeed. Never change the framework version or project binding as a side effect
+of a Workflow package update.
 
 ## Rollback
 

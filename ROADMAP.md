@@ -2,20 +2,80 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.3.1 (release-gated compatibility-maintenance source)
+## v0.4.0 (unreleased governance-and-records candidate branch)
 
-This release-gated source does not add workflow capability. It:
+This unreleased candidate branch is not a public release or normal installation target. It
+contains the R40-00 capability truth ledger, R40-01 release-state boundary,
+R40-02 bounded-autonomy authorization record, R40-04 metadata-only provenance
+register, R40-05 release-control record contract, and R40-06 synthetic
+assurance route. R40-03 explicitly excludes named specialist role cards and
+agent runtime from `v0.4.0`.
 
-- corrects source-branch wording that incorrectly described the already
-  released `v0.3.0` system foundation as unreleased;
-- retargets the candidate's framework-integrated compatibility claim from the
-  historical `v0.1.0` evidence to an exact `v0.1.1` validation; and
-- adds release-gate, public-material, evidence, and release-note records that
-  distinguish historical `v0.3.0` evidence from fresh patch-release evidence.
+The accountable human has admitted ten named capabilities for the future
+`v0.4.0` release scope: `GRW-CAP-031-01` through `031-04`, and
+`GRW-CAP-040-00`, `040-01`, `040-02`, `040-04`, `040-05`, and `040-06`.
+Admission does not make this branch a public release or installation target.
+Before a `v0.4.0` public claim, final exact-commit evidence, C4 authorization,
+the tag, and the GitHub Release remain required.
 
-It must not receive a public tag or Release until the documented release checks
-complete and a human maintainer approves the exact final commit. Until then,
-the current installation target remains the most recent published tag.
+v0.4.0 explicitly excludes named specialist role cards and agent runtime. A
+future version needs a separately reviewed named-role design before it can
+describe any role card as an available public capability.
+
+The unreleased candidate includes metadata-only provenance records with a generic
+core and optional restricted or clinical awareness extension. It does not add
+data import, processing, access, compliance, or certification capability.
+
+It includes candidate-only release-control record definitions that distinguish
+candidate review, C4 authorization, and post-release verification. These
+records do not create a tag, GitHub Release, hosted-control change, or public
+release claim.
+
+The candidate includes a synthetic cross-record assurance route. It checks
+only candidate records, empty templates, and public documentation; it does not
+establish an installed runtime, hosted Release, or release readiness.
+
+The C3 candidate-branch push and candidate CI are complete. The historical
+pre-C3 preparation records remain useful context and must remain internally
+consistent: `V0_4_CAPABILITY_ADMISSION.md`,
+`V0_4_RELEASE_GATE.md`, `V0_4_RELEASE_EVIDENCE.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.4.0.md`, and
+`RELEASE_NOTES_v0.4.0.md`. They are historical preparation materials, not a substitute
+for exact-commit evidence or C4 authorization.
+
+Until final exact-release admission and C4, the normal installation target is
+the exact published `v0.3.1` tag. See
+`system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
+
+## v0.3.2 (historical local release-state correction candidate)
+
+This unpublished historical candidate:
+
+- corrects current-facing documents that still describe published `v0.3.1` as
+  release-gated or uninstalled;
+- labels v0.3.1 candidate, gate, material-review, evidence, and release-note
+  files as historical pre-release snapshots; and
+- replaces tests that enforce stale candidate wording with tests that separate
+  current installation guidance from preserved historical evidence.
+
+It has no public tag or Release. Its release-state correction work is retained
+as an input to the unreleased `v0.4.0` candidate, not as the current source identity
+or installation target.
+
+## v0.3.1 (released 2026-07-16)
+
+This patch does not add workflow capability. It:
+
+- corrected v0.3.0 candidate wording that had remained in the source branch;
+- validated the framework-integrated profile against the exact released
+  Workspace Framework `v0.1.1` tag while retaining the `0.1.0` framework
+  contract version; and
+- added patch-release material-review, gate, evidence, and release-note
+  records.
+
+The pre-release records for this published version are retained as historical
+snapshots. They are not the current release state or normal installation
+guidance.
 
 ## v0.3.0 (released 2026-07-15)
 

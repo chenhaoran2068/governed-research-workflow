@@ -1,28 +1,27 @@
 # v0.3.1 Compatibility Maintenance Candidate
 
-Status: release-gated public source on `main`. It is not a public release, tag,
-or normal installation target until an exact annotated `v0.3.1` tag and a
-matching GitHub Release exist. It is no longer a branch that is separate from
-`main`, and its merge into `main` did not itself authorize a release or any
-change to a real research project.
+Status: historical pre-release candidate snapshot. It prepared the published
+`v0.3.1` annotated tag and matching GitHub Release on `2026-07-16`. It is
+retained to show the candidate-time scope and evidence requirements; it is not
+the current installation guidance or the status of a later candidate.
 
 ## Purpose
 
 Prepare a narrowly scoped patch release after the published v0.3.0
 source-branch documentation was found to retain stale wording that described
 the already released system foundation as an unreleased candidate. The
-release-gated source also replaces its prospective framework-integrated claim
+pre-release source also replaced its prospective framework-integrated claim
 with a new test against the exact released Governed Research Workspace
 Framework v0.1.1 tag.
 
 Historical v0.3.0 evidence remains evidence only for v0.3.0 and framework
-v0.1.0. It must not be reused as evidence for this candidate.
+v0.1.0. It was not reused as evidence for the v0.3.1 release.
 
 ## Intended Scope
 
 - Correct current-branch release-status wording without rewriting the published
   v0.3.0 tag.
-- Set SYSTEM_MANIFEST.yaml to release-gated version 0.3.1 while preserving its
+- Set SYSTEM_MANIFEST.yaml to source version 0.3.1 while preserving its
   workspace framework-contract version at 0.1.0. Record framework release tag
   v0.1.1 and commit b0e32d7710b70299e633df1316b6924cd87b647b as the exact
   test subject in the compatibility evidence.

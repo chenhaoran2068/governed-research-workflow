@@ -1,4 +1,4 @@
-"""Regression checks for released v0.3 foundation and v0.3.1 release-gated records."""
+"""Regression checks for the released v0.3 foundation and v0.3.1 records."""
 
 from pathlib import Path
 import unittest
