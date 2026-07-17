@@ -1,10 +1,10 @@
 # Public System Module Index
 
-Status: local `v0.4.0` governance-and-records candidate. It is not an
-installation target until an exact annotated `v0.4.0` tag and matching GitHub
-Release exist. The locally recorded current published baseline is `v0.3.1`;
-users must select an exact published tag rather than `main` or a candidate
-branch. See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
+Status: release-state-neutral `v0.4.0` governance-and-records source. It is
+an installation target only when an exact annotated `v0.4.0` tag and matching
+GitHub Release can be verified. Users must select an exact published tag rather
+than `main` or another mutable branch. See
+`11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 
 ## Purpose
 
@@ -29,10 +29,10 @@ contract is validated against the exact released framework `v0.1.1` tag.
 | `06` | memory and learning | active retrospective baseline | retrospective reference and asset |
 | `07` | tools and integrations | active bootstrap tool; exact-tag integration regression test | `scripts/` and tests |
 | `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
-| `09` | schemas, records, and templates | blank-record baseline plus unreleased-candidate capability and bounded-autonomy schemas | `assets/` templates and candidate schemas |
-| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, and unreleased-candidate-only synthetic assurance | `tests/` |
-| `11` | distribution, installation, and release | active release controls plus an unreleased-candidate-only release-control record that separates candidate review, C4, and post-release verification | package governance files, current release status, v0.3.1 historical release snapshots, and historical v0.3.2/unreleased v0.4 candidate records |
-| `12` | synthetic examples | exact-tag integration test plus candidate-only cross-record assurance record | admitted future-release scope; no public release example yet |
+| `09` | schemas, records, and templates | blank-record baseline plus release-source capability and bounded-autonomy schemas | `assets/` templates and schemas |
+| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, and release-source synthetic assurance | `tests/` |
+| `11` | distribution, installation, and release | active release controls plus a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, v0.3.1 historical release snapshots, and historical v0.3.2/v0.4 preparation records |
+| `12` | synthetic examples | exact-tag integration test plus release-source cross-record assurance record | admitted release scope; no end-to-end public research example |
 
 ## Current Resource Map
 

@@ -1,6 +1,6 @@
 # Capability Evidence Matrix
 
-Status: unreleased `v0.4.0` candidate assurance record. It is not a public release record.
+Status: `v0.4.0` release-source assurance record. It is not by itself a public Release record.
 Capability admission is decided only by the canonical ledger
 and does not make this branch an installation target or grant C4 authority.
 

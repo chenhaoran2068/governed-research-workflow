@@ -1,4 +1,4 @@
-"""Regression checks for v0.4.0 historical pre-C3 preparation boundaries."""
+"""Regression checks for v0.4.0 historical pre-release boundaries."""
 
 from __future__ import annotations
 
@@ -13,9 +13,9 @@ LEDGER = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger
 
 
 class V04ReleasePreparationTests(unittest.TestCase):
-    def test_historical_pre_c3_documents_remain_non_release_material(self) -> None:
+    def test_historical_pre_release_documents_remain_non_release_material(self) -> None:
         expected = {
-            "V0_4_CAPABILITY_ADMISSION.md": "no `v0.4.0` tag or github release",
+            "V0_4_CAPABILITY_ADMISSION.md": "historical pre-c4 admission record",
             "V0_4_RELEASE_GATE.md": "historical pre-c3 gate snapshot",
             "V0_4_RELEASE_EVIDENCE.md": "historical pre-c3 preparation evidence only",
             "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.4.0.md": "historical pre-c3 preparation record",
@@ -33,7 +33,7 @@ class V04ReleasePreparationTests(unittest.TestCase):
         self.assertIn("C3 and C4 remain distinct", content)
         self.assertIn("exact candidate commit", content)
 
-    def test_candidate_ledger_records_exact_option_a_admission_without_a_release(self) -> None:
+    def test_release_source_ledger_records_exact_option_a_admission_without_a_release(self) -> None:
         capabilities = json.loads(LEDGER.read_text(encoding="utf-8"))["capabilities"]
         admitted_ids = {
             "GRW-CAP-031-01",

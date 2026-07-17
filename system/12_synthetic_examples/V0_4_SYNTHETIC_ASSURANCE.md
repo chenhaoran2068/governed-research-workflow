@@ -1,14 +1,14 @@
 # V0.4 Synthetic Assurance
 
-Status: unreleased-candidate-only synthetic assurance evidence. It is not a public
-release record, C4 authorization, installed-runtime verification, or a claim
-that the candidate is ready to publish.
+Status: release-source synthetic assurance evidence. It is not by itself a
+public Release record, C4 authorization, installed-runtime verification, or a
+claim that any hosted release is ready to publish.
 
 ## Scope
 
 This route combines only empty templates, synthetic identifiers, public package
-documentation, and local regression tests. It verifies that the v0.4 candidate
-continues to distinguish current public release, unreleased candidate branch, private
+documentation, and local regression tests. It verifies that the v0.4 release
+source continues to distinguish live tag-and-Release verification, private
 source, and installed runtime; preserves the human-governed authorization,
 metadata-only provenance, role-card exclusion, and release-control boundaries;
 and records an exact framework reference for the framework-integrated profile.
@@ -18,10 +18,10 @@ external service, installed runtime, or hosted GitHub state. Passing this route
 does not prove scientific, clinical, ethics, DUA, legal, security, installation,
 or release correctness.
 
-## Candidate Snapshot Identity
+## Release-Source Snapshot Identity
 
 - assurance design baseline: `854d6d10910677ebd7988ee61c6ca6a35519e66f`
-- working-tree source snapshot SHA-256: `e36e3fc71914643fb59c0c7118a8710e4be917f7fc1a9e62c1b83fcb845f29f1`
+- working-tree source snapshot SHA-256: `8d5687b7c389994ec9d7e4699d4e5f42a900531c76b7d7e82c82aabaac311a25`
 - snapshot method: SHA-256 over each `git ls-files -z` Git-tracked repository
   source file's UTF-8 relative path, a NUL
   separator, normalized source bytes, and a final NUL separator, in byte-sorted
@@ -30,13 +30,14 @@ or release correctness.
   excluded so the evidence block does not hash itself. Untracked or ignored
   directories and files, including CI framework checkouts and interpreter
   caches, are deliberately excluded. The check therefore requires a Git
-  checkout and hashes only the candidate source controlled by that checkout.
+  checkout and hashes only the source controlled by that checkout.
 - framework tag: `v0.1.1`
 - framework resolved commit: `b0e32d7710b70299e633df1316b6924cd87b647b`
 
-This is a transparent unreleased working-tree candidate snapshot, not an exact release
-commit. A later C4 release decision must rerun the required checks from a clean
-exact commit and update the release-control and post-release records.
+This is a transparent working-tree release-source snapshot, not an exact
+release-identity record. A C4 release decision must rerun the required checks
+from a clean exact commit and update the release-control and post-release
+records.
 
 ## Synthetic Fixture Inventory
 
@@ -59,9 +60,9 @@ fixtures are synthetic placeholders. No fixture is a project record.
   `tests/TEST_DEPENDENCY_PROVENANCE.md`; no package runtime dependency added.
 - tested capability set: `GRW-CAP-040-00`, `GRW-CAP-040-01`,
   `GRW-CAP-040-02`, `GRW-CAP-040-04`, and `GRW-CAP-040-05` as verified
-  candidates; `GRW-CAP-040-03` as verified excluded; `GRW-CAP-040-06` as a
-  verified candidate-only assurance route.
-- pass/fail/skip: `77 passed / 0 failed / 0 skipped` on the recorded local run.
+  release-source records; `GRW-CAP-040-03` as verified excluded; and
+  `GRW-CAP-040-06` as a verified release-source assurance route.
+- pass/fail/skip: `79 passed / 0 failed / 3 skipped` on the recorded local run.
 - source-snapshot verification: passed; the synthetic-assurance test recomputes
   the documented snapshot from the current candidate source tree and fails if
   a source change has not been accompanied by an evidence refresh.
@@ -79,7 +80,7 @@ fixtures are synthetic placeholders. No fixture is a project record.
 - known limitations: no external platform check, hosted Release check, runtime
   installation, real-project input, real-data operation, secret-scanning
   service, signing, or technical immutable-release setting verification.
-- next safe action: submit the candidate-only evidence for human review. A
+- next safe action: submit the release-source evidence for human review. A
   later exact-release decision must refresh all evidence from a clean commit,
   rerun integrated framework tests, and obtain C4 separately.
 

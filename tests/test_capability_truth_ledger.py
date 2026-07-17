@@ -1,4 +1,4 @@
-"""Structural and refusal checks for the unreleased v0.4 capability truth ledger."""
+"""Structural and refusal checks for the v0.4 release-source capability ledger."""
 
 from __future__ import annotations
 
@@ -68,11 +68,10 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
         self.assertEqual(self.ledger["ledger_schema_version"], "1.0.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
-        self.assertEqual(self.ledger["ledger_status"], "unreleased_candidate")
-        self.assertEqual(self.ledger["release_context"]["target_release_version"], "v0.4.0")
-        self.assertEqual(self.ledger["release_context"]["current_public_baseline"], "v0.3.1")
-        self.assertEqual(self.ledger["release_context"]["candidate_branch"], "v0.4.0-capability-truth-ledger-candidate")
-        self.assertFalse(self.ledger["release_context"]["public_release_exists"])
+        self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.4.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.3.1")
+        self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("only to v0.4.0", self.ledger["target_claim_scope"])
         self.assertIn("prior_release_history", self.ledger["target_claim_scope"])
         self.assertEqual(
@@ -227,7 +226,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(record["evidence"]["status"], "verified")
-        self.assertIn("unreleased-candidate synthetic assurance", record["limitations_and_next_action"].lower())
+        self.assertIn("release-source synthetic assurance", record["limitations_and_next_action"].lower())
         self.assertTrue(record["approval_reference"])
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
@@ -261,17 +260,19 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("forbid", self.ledger["contradiction_refusal_rule"].lower())
         self.assertIn("accountable-human", self.ledger["contradiction_refusal_rule"])
 
-    def test_unreleased_candidate_cannot_claim_a_release(self) -> None:
+    def test_release_source_cannot_claim_a_hosted_release(self) -> None:
         text = LEDGER_PATH.read_text(encoding="utf-8")
         admission_record = ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower()
         self.assertIn("option a", admission_record)
         self.assertIn("not c4 authorization", admission_record)
-        self.assertIn("not a public release", EVIDENCE_MATRIX_PATH.read_text(encoding="utf-8"))
+        self.assertIn("not by itself a public release", EVIDENCE_MATRIX_PATH.read_text(encoding="utf-8").lower())
         skill = (REPOSITORY_ROOT / "SKILL.md").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("capability_truth_ledger.json", skill)
         self.assertIn("capability_truth_ledger.json", readme)
-        self.assertNotIn("v0.4.0 is released", "\n".join((text, skill, readme)))
+        combined = "\n".join((text, skill, readme)).lower()
+        self.assertIn("does not claim", combined)
+        self.assertNotIn("v0.4.0 is released", combined)
 
 
 if __name__ == "__main__":

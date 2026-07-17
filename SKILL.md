@@ -12,16 +12,16 @@ submission service.
 Do not infer missing study facts, create a final scientific conclusion, certify
 compliance, or release or submit material.
 
-For exact unreleased candidate capability status, consult
+For exact release-source capability status, consult
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. A planned,
-candidate, forbidden, unknown, or contradictory ledger entry does not
+forbidden, unknown, or contradictory ledger entry does not
 authorize a behavior. The ledger does not replace the accountable-human
 approval required for consequential work.
 
-For current public installation identity, historical release records, and the
-unreleased candidate-branch boundary, consult
+For live public installation identity, historical release records, and the
+exact-tag and matching-Release verification rule, consult
 `system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
-Do not infer an installed runtime version from a public tag, candidate branch,
+Do not infer an installed runtime version from a public tag, mutable branch,
 or capability-ledger entry.
 
 For a future release review, consult
@@ -74,7 +74,7 @@ collaboration-mode worksheet helps the human choose; it does not replace the
 canonical record. The record does not authorize data access, a network action,
 delegation, a release, or a submission.
 
-The unreleased v0.4 candidate explicitly excludes specialist role cards, delegated
+The v0.4.0 release scope explicitly excludes specialist role cards, delegated
 authority, parallel-agent orchestration, hidden background work, and agent
 runtime. One Codex conversation may switch review perspective when useful, but
 that is not a multi-agent deployment or a tool grant.

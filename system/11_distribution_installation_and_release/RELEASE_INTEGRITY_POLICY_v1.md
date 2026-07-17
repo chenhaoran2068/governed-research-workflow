@@ -5,11 +5,11 @@ maintainer-controlled process; it does not authorize an AI to publish.
 
 ## Current-Status Routing
 
-`CURRENT_RELEASE_STATUS.md` is the current-facing local status route. It
-separates the locally recorded published `v0.3.1` baseline, retained historical
-records, and the untagged local `v0.4.0` candidate. A candidate-review record,
-passing test, or local branch is not an installation target, GitHub Release, or
-installed-runtime identity.
+`CURRENT_RELEASE_STATUS.md` is the current-facing release-verification route.
+It separates the live exact-tag and matching-Release check from retained
+historical records and the release-state-neutral `v0.4.0` source. A
+candidate-review record, passing test, local branch, or source tree is not an
+installation target, GitHub Release, or installed-runtime identity.
 
 ## Release Identity
 
@@ -105,13 +105,13 @@ requires human release authorization, and its G7 requires a real released tag
 and GitHub Release. Neither may be simulated by a green candidate build or an
 untagged source branch.
 
-For the unreleased `v0.4.0` candidate branch, `RELEASE_CONTROL.md` provides the bounded
+For the `v0.4.0` release source, `RELEASE_CONTROL.md` provides the bounded
 candidate-review record contract. It records whether a later C4 review may be
 requested; it does not authorize a tag, GitHub Release, hosted-control change,
 or public claim.
 
-`v0.4.0` current candidate position: on `2026-07-17`, the accountable human
-enabled GitHub technical immutable releases for this repository. The setting
+`v0.4.0` release-source integrity position: on `2026-07-17`, the accountable
+human enabled GitHub technical immutable releases for this repository. The setting
 applies to future Releases, including a possible v0.4.0 Release, but does not
 itself create a tag, GitHub Release, public capability claim, or C4
 authorization. The historical v0.3.0/v0.3.1 deferral remains historical

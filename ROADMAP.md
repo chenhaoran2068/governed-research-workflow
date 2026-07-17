@@ -2,38 +2,39 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.4.0 (unreleased governance-and-records candidate branch)
+## v0.4.0 (governance-and-records release-source scope)
 
-This unreleased candidate branch is not a public release or normal installation target. It
-contains the R40-00 capability truth ledger, R40-01 release-state boundary,
+This release-state-neutral source declares the R40-00 capability truth ledger,
+R40-01 release-state boundary,
 R40-02 bounded-autonomy authorization record, R40-04 metadata-only provenance
 register, R40-05 release-control record contract, and R40-06 synthetic
 assurance route. R40-03 explicitly excludes named specialist role cards and
 agent runtime from `v0.4.0`.
 
-The accountable human has admitted ten named capabilities for the future
-`v0.4.0` release scope: `GRW-CAP-031-01` through `031-04`, and
+The accountable human has admitted ten named capabilities for the `v0.4.0`
+release scope: `GRW-CAP-031-01` through `031-04`, and
 `GRW-CAP-040-00`, `040-01`, `040-02`, `040-04`, `040-05`, and `040-06`.
-Admission does not make this branch a public release or installation target.
-Before a `v0.4.0` public claim, final exact-commit evidence, C4 authorization,
-the tag, and the GitHub Release remain required.
+Admission does not by itself create a public release or installation target.
+An exact commit becomes a normal public installation target only when its
+annotated `v0.4.0` tag and matching GitHub Release can be verified. The
+source tree does not state that this has happened.
 
 v0.4.0 explicitly excludes named specialist role cards and agent runtime. A
 future version needs a separately reviewed named-role design before it can
 describe any role card as an available public capability.
 
-The unreleased candidate includes metadata-only provenance records with a generic
+This source includes metadata-only provenance records with a generic
 core and optional restricted or clinical awareness extension. It does not add
 data import, processing, access, compliance, or certification capability.
 
-It includes candidate-only release-control record definitions that distinguish
+It includes release-control record definitions that distinguish
 candidate review, C4 authorization, and post-release verification. These
 records do not create a tag, GitHub Release, hosted-control change, or public
 release claim.
 
-The candidate includes a synthetic cross-record assurance route. It checks
-only candidate records, empty templates, and public documentation; it does not
-establish an installed runtime, hosted Release, or release readiness.
+It includes a synthetic cross-record assurance route. It checks only source
+records, empty templates, and public documentation; it does not establish an
+installed runtime, hosted Release, or release readiness.
 
 The C3 candidate-branch push and candidate CI are complete. The historical
 pre-C3 preparation records remain useful context and must remain internally
@@ -43,8 +44,8 @@ consistent: `V0_4_CAPABILITY_ADMISSION.md`,
 `RELEASE_NOTES_v0.4.0.md`. They are historical preparation materials, not a substitute
 for exact-commit evidence or C4 authorization.
 
-Until final exact-release admission and C4, the normal installation target is
-the exact published `v0.3.1` tag. See
+At every point in the release lifecycle, determine the normal installation
+target using the exact-tag and matching-Release verification procedure in
 `system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 
 ## v0.3.2 (historical local release-state correction candidate)
@@ -59,7 +60,7 @@ This unpublished historical candidate:
   current installation guidance from preserved historical evidence.
 
 It has no public tag or Release. Its release-state correction work is retained
-as an input to the unreleased `v0.4.0` candidate, not as the current source identity
+as an input to the v0.4.0 release source, not as the current source identity
 or installation target.
 
 ## v0.3.1 (released 2026-07-16)
