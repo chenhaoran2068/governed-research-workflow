@@ -33,14 +33,28 @@ class V04ReleasePreparationTests(unittest.TestCase):
         self.assertIn("C3 and C4 remain distinct", content)
         self.assertIn("exact candidate commit", content)
 
-    def test_candidate_ledger_is_not_admitted_or_publicly_claimable(self) -> None:
+    def test_candidate_ledger_records_exact_option_a_admission_without_a_release(self) -> None:
         capabilities = json.loads(LEDGER.read_text(encoding="utf-8"))["capabilities"]
+        admitted_ids = {
+            "GRW-CAP-031-01",
+            "GRW-CAP-031-02",
+            "GRW-CAP-031-03",
+            "GRW-CAP-031-04",
+            "GRW-CAP-040-00",
+            "GRW-CAP-040-01",
+            "GRW-CAP-040-02",
+            "GRW-CAP-040-04",
+            "GRW-CAP-040-05",
+            "GRW-CAP-040-06",
+        }
         for capability in capabilities:
-            self.assertEqual(capability["public_claim_status"], "forbidden")
             if capability["capability_id"] == "GRW-CAP-040-03":
                 self.assertEqual(capability["release_disposition"], "excluded")
+                self.assertEqual(capability["public_claim_status"], "forbidden")
             else:
-                self.assertEqual(capability["release_disposition"], "candidate")
+                self.assertIn(capability["capability_id"], admitted_ids)
+                self.assertEqual(capability["release_disposition"], "admitted")
+                self.assertEqual(capability["public_claim_status"], "permitted")
 
 
 if __name__ == "__main__":

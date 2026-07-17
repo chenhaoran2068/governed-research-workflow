@@ -7,6 +7,8 @@ import re
 import unittest
 from pathlib import Path, PurePosixPath
 
+from jsonschema import Draft202012Validator
+
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
@@ -27,6 +29,7 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-040-05",
     "GRW-CAP-040-06",
 }
+OPTION_A_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {"GRW-CAP-040-03"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -78,6 +81,13 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         )
         self.assertIn("capability", self.schema["$defs"])
 
+    def test_canonical_ledger_validates_against_its_schema(self) -> None:
+        errors = sorted(
+            Draft202012Validator(self.schema).iter_errors(self.ledger),
+            key=lambda error: list(error.absolute_path),
+        )
+        self.assertEqual(errors, [], "\n".join(error.message for error in errors))
+
     def test_records_are_complete_unique_and_use_controlled_values(self) -> None:
         identifiers = [record["capability_id"] for record in self.records]
         self.assertEqual(set(identifiers), EXPECTED_CAPABILITY_IDS)
@@ -116,10 +126,12 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             else:
                 self.assertEqual(record["public_claim_status"], "forbidden")
 
-        self.assertFalse(
-            any(record["public_claim_status"] == "permitted" for record in self.records),
-            "No v0.4.0 capability is admitted while this is an unreleased candidate.",
-        )
+        permitted_ids = {
+            record["capability_id"]
+            for record in self.records
+            if record["public_claim_status"] == "permitted"
+        }
+        self.assertEqual(permitted_ids, OPTION_A_ADMITTED_IDS)
 
     def test_interface_and_evidence_references_are_safe_and_exist_when_verified(self) -> None:
         for record in self.records:
@@ -145,16 +157,16 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             else:
                 self.assertEqual(record["public_claim_status"], "forbidden")
 
-    def test_r4001_is_verified_candidate_but_not_admitted_or_publicly_claimable(self) -> None:
+    def test_r4001_is_verified_and_admitted_for_future_release_scope(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-040-01")
         self.assertEqual(record["implementation_status"], "verified")
-        self.assertEqual(record["release_disposition"], "candidate")
-        self.assertEqual(record["public_claim_status"], "forbidden")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(record["evidence"]["status"], "verified")
         self.assertTrue(record["approval_reference"])
 
-    def test_all_reviewed_r40_records_have_unreleased_candidate_acceptance_and_no_c4_authorization(self) -> None:
+    def test_all_reviewed_r40_records_preserve_option_a_and_no_c4_authorization(self) -> None:
         reviewed_r40_ids = {
             "GRW-CAP-040-00",
             "GRW-CAP-040-01",
@@ -170,43 +182,49 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIsInstance(record["approval_reference"], str)
             self.assertIn("implementation review accepted", record["approval_reference"])
             self.assertIn("no C4 release authorization", record["approval_reference"])
+            if record["capability_id"] == "GRW-CAP-040-03":
+                self.assertEqual(record["release_disposition"], "excluded")
+                self.assertIn("Option A exclusion retained", record["approval_reference"])
+            else:
+                self.assertEqual(record["release_disposition"], "admitted")
+                self.assertIn("Option A capability-set admission accepted", record["approval_reference"])
 
-    def test_r4002_is_verified_candidate_but_not_an_executor_or_public_claim(self) -> None:
+    def test_r4002_is_admitted_but_not_an_executor_or_tool_grant(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-040-02")
         self.assertEqual(record["implementation_status"], "verified")
-        self.assertEqual(record["release_disposition"], "candidate")
-        self.assertEqual(record["public_claim_status"], "forbidden")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(record["evidence"]["status"], "verified")
         self.assertIn("does not grant autonomy", record["non_promise"].lower())
         self.assertTrue(record["approval_reference"])
 
-    def test_r4004_is_verified_candidate_but_not_data_processing_or_compliance_claim(self) -> None:
+    def test_r4004_is_admitted_but_not_data_processing_or_compliance_claim(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-040-04")
         self.assertEqual(record["implementation_status"], "verified")
-        self.assertEqual(record["release_disposition"], "candidate")
-        self.assertEqual(record["public_claim_status"], "forbidden")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(record["evidence"]["status"], "verified")
         self.assertIn("will not access", record["non_promise"].lower())
         self.assertIn("does not access data", record["limitations_and_next_action"].lower())
         self.assertTrue(record["approval_reference"])
 
-    def test_r4005_is_verified_candidate_but_not_c4_or_release_claim(self) -> None:
+    def test_r4005_is_admitted_but_not_c4_or_release_claim(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-040-05")
         self.assertEqual(record["implementation_status"], "verified")
-        self.assertEqual(record["release_disposition"], "candidate")
-        self.assertEqual(record["public_claim_status"], "forbidden")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(record["evidence"]["status"], "verified")
         self.assertIn("not c4 authorization", record["limitations_and_next_action"].lower())
         self.assertTrue(record["approval_reference"])
 
-    def test_r4006_is_verified_candidate_only_synthetic_assurance(self) -> None:
+    def test_r4006_is_admitted_but_remains_synthetic_assurance_only(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-040-06")
         self.assertEqual(record["implementation_status"], "verified")
-        self.assertEqual(record["release_disposition"], "candidate")
-        self.assertEqual(record["public_claim_status"], "forbidden")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(record["evidence"]["status"], "verified")
         self.assertIn("unreleased-candidate synthetic assurance", record["limitations_and_next_action"].lower())
@@ -245,10 +263,9 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
 
     def test_unreleased_candidate_cannot_claim_a_release(self) -> None:
         text = LEDGER_PATH.read_text(encoding="utf-8")
-        self.assertIn(
-            "no `v0.4.0` capability is admitted",
-            ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower(),
-        )
+        admission_record = ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower()
+        self.assertIn("option a", admission_record)
+        self.assertIn("not c4 authorization", admission_record)
         self.assertIn("not a public release", EVIDENCE_MATRIX_PATH.read_text(encoding="utf-8"))
         skill = (REPOSITORY_ROOT / "SKILL.md").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")

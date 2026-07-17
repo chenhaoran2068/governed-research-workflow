@@ -30,8 +30,9 @@ branch, an unreleased candidate branch, or a historical gate/evidence document.
   after every candidate source change.
 - Public tag or GitHub Release for this candidate: none.
 - Installation status: not an installation target.
-- Capability status: consult the capability truth ledger; a candidate record
-  does not admit a capability or authorize a public claim.
+- Capability status: consult the capability truth ledger. It records a named
+  future-release admission scope, but that admission does not create a current
+  public-release claim, installation target, runtime update, or C4 authority.
 
 ## Historical Records
 

@@ -11,10 +11,12 @@ register, R40-05 release-control record contract, and R40-06 synthetic
 assurance route. R40-03 explicitly excludes named specialist role cards and
 agent runtime from `v0.4.0`.
 
-All non-excluded records remain verified candidate records with public claims
-forbidden. No `v0.4.0` capability becomes publicly claimable until an exact
-candidate commit is verified, the capability is admitted, the accountable
-human approves the exact release, and the tag and GitHub Release are created.
+The accountable human has admitted ten named capabilities for the future
+`v0.4.0` release scope: `GRW-CAP-031-01` through `031-04`, and
+`GRW-CAP-040-00`, `040-01`, `040-02`, `040-04`, `040-05`, and `040-06`.
+Admission does not make this branch a public release or installation target.
+Before a `v0.4.0` public claim, final exact-commit evidence, C4 authorization,
+the tag, and the GitHub Release remain required.
 
 v0.4.0 explicitly excludes named specialist role cards and agent runtime. A
 future version needs a separately reviewed named-role design before it can

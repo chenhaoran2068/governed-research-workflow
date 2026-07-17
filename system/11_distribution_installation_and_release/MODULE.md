@@ -28,9 +28,9 @@ correction candidate and its required evidence. It is retained as a historical
 input to the v0.4.0 candidate, not as the current package identity.
 
 `V0_4_CAPABILITY_ADMISSION.md` is an unreleased candidate control record. It
-requires verified evidence and accountable-human admission before a capability
-can be claimed for a future `v0.4.0` release. It does not create a tag, GitHub
-Release, or public capability claim.
+records verified evidence and accountable-human admission for the named future
+`v0.4.0` scope. It does not create a tag, GitHub Release, current public
+capability claim, installation target, or C4 authorization.
 
 `V0_4_RELEASE_GATE.md`, `V0_4_RELEASE_EVIDENCE.md`,
 `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.4.0.md`, and

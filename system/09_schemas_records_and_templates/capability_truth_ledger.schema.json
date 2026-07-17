@@ -139,7 +139,7 @@
             "additionalProperties": false,
             "required": ["kind", "path", "identifier"],
             "properties": {
-              "kind": {"enum": ["test", "manual_review", "integration", "release_record"]},
+              "kind": {"enum": ["test", "manual_review", "integration", "release_record", "run_record"]},
               "path": {"type": "string", "minLength": 1},
               "identifier": {"type": "string", "minLength": 1}
             }

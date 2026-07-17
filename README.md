@@ -22,9 +22,10 @@ This unreleased candidate source contains a single machine-checkable capability 
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
 what a future release may claim, what it must not claim, its interface,
 evidence, version, and required human approval. It is an unreleased `v0.4.0`
-candidate record, not a `v0.4.0` release statement: all target-release entries
-remain forbidden from public claim until they are verified, admitted, and
-human-approved for an exact release.
+candidate record, not a `v0.4.0` release statement. The ledger records the
+accountable-human Option A admission of ten named capabilities for the future
+release scope; that admission is not a tag, GitHub Release, normal
+installation target, runtime claim, or C4 authorization.
 
 The package manifest and current installation narrative identify this source
 as an unreleased `v0.4.0` candidate branch. The ledger's `v0.4.0` target remains a planning
@@ -34,10 +35,9 @@ R40-00 through R40-06 have completed local implementation review: the ledger,
 current-versus-historical release boundary, bounded-autonomy authorization
 record, metadata-only provenance register, release-control record contract,
 and synthetic assurance route are present. The role-card and agent-runtime
-route is explicitly excluded from `v0.4.0`. These are verified candidate or
-explicitly excluded records, not admitted public capabilities. Exact-release
-admission, C4 authorization, tagging, and hosted-release verification remain
-separate steps.
+route is explicitly excluded from `v0.4.0`. The remaining ten records are
+admitted only for the named future-release scope. Exact-commit evidence, C4
+authorization, tagging, and hosted-release verification remain separate steps.
 
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.

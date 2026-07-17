@@ -21,4 +21,6 @@ This unreleased candidate branch adds
 `capability_truth_ledger.json` as the single machine-checkable source for
 capability promises, non-promises, evidence, version, and admission state. It
 does not alter the package manifest's local `v0.3.2` identity, the released
-`v0.3.1` public claim boundary, or admit a `v0.4.0` capability.
+`v0.3.1` public claim boundary, or create a `v0.4.0` Release. The ledger now
+records the accountable-human admission of the named future-release scope;
+final exact-commit evidence and C4 remain separate.

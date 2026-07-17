@@ -61,20 +61,22 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         cls.ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
         cls.records = {record["capability_id"]: record for record in cls.ledger["capabilities"]}
 
-    def test_preceding_v04_outcomes_are_verified_candidates_or_explicitly_excluded(self) -> None:
+    def test_preceding_v04_outcomes_are_admitted_or_explicitly_excluded(self) -> None:
         expected = {
-            "GRW-CAP-040-00": "candidate",
-            "GRW-CAP-040-01": "candidate",
-            "GRW-CAP-040-02": "candidate",
+            "GRW-CAP-040-00": "admitted",
+            "GRW-CAP-040-01": "admitted",
+            "GRW-CAP-040-02": "admitted",
             "GRW-CAP-040-03": "excluded",
-            "GRW-CAP-040-04": "candidate",
-            "GRW-CAP-040-05": "candidate",
+            "GRW-CAP-040-04": "admitted",
+            "GRW-CAP-040-05": "admitted",
+            "GRW-CAP-040-06": "admitted",
         }
         for capability_id, disposition in expected.items():
             record = self.records[capability_id]
             self.assertEqual(record["implementation_status"], "verified")
             self.assertEqual(record["release_disposition"], disposition)
-            self.assertEqual(record["public_claim_status"], "forbidden")
+            expected_claim = "forbidden" if capability_id == "GRW-CAP-040-03" else "permitted"
+            self.assertEqual(record["public_claim_status"], expected_claim)
 
     def test_current_release_runtime_and_candidate_identities_remain_separate(self) -> None:
         current_release = CURRENT_RELEASE_PATH.read_text(encoding="utf-8")

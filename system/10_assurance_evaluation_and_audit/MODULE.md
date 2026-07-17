@@ -12,8 +12,9 @@ behavior, failure cases, and a statement of what the test does not establish.
 
 The unreleased candidate branch adds a deterministic capability-ledger test and an
 evidence matrix for the `v0.4.0` target. They verify record completeness,
-refusal conditions, and safe references; they do not admit a release or
-establish scientific, clinical, compliance, or publication truth.
+refusal conditions, and safe references. They do not create a release or
+establish scientific, clinical, compliance, or publication truth; capability
+admission remains a separate accountable-human ledger decision.
 
 Release-control tests validate only synthetic record structure and refusal
 paths. They do not scan a repository, verify GitHub settings, create a tag, or

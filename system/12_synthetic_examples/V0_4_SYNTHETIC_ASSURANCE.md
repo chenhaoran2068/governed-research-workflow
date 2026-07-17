@@ -21,7 +21,7 @@ or release correctness.
 ## Candidate Snapshot Identity
 
 - assurance design baseline: `854d6d10910677ebd7988ee61c6ca6a35519e66f`
-- working-tree source snapshot SHA-256: `f51dd8787b27ce8840844bed3b4af1dd11f9724156a1a66124f1764173ba7b63`
+- working-tree source snapshot SHA-256: `401f56b2fa308d9281cf852232ddd39b2337c8f21bf7edf48f788b8bfc495424`
 - snapshot method: SHA-256 over each `git ls-files -z` Git-tracked repository
   source file's UTF-8 relative path, a NUL
   separator, normalized source bytes, and a final NUL separator, in byte-sorted
