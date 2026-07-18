@@ -1,12 +1,12 @@
-# Unreleased v0.6.0 candidate content derived from published v0.5.1. The
-# candidate adds only metadata-only workflow/evidence control records. This
-# manifest never proves that a selected version is installed or released:
-# verify an exact annotated tag and matching GitHub Release at installation
-# time. The workspace framework-contract version remains 0.1.0; the v0.6
-# candidate validation target is released framework v0.1.2.
+# v0.6.0 workflow/evidence-control release-source content derived from
+# published v0.5.1. The admitted scope adds only metadata-only workflow/evidence
+# control records. This manifest never proves that a selected version is
+# installed or released: verify an exact annotated tag and matching GitHub
+# Release at installation time. The workspace framework-contract version remains
+# 0.1.0; the v0.6 validation target is released framework v0.1.2.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.6.0-workflow-evidence-controls-candidate
+system_version: 0.6.0-workflow-evidence-controls-release-source
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

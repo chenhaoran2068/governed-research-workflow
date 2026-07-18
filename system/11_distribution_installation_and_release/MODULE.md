@@ -57,8 +57,8 @@ sign, certify, or change hosted controls.
 
 `V0_6_RELEASE_GATE.md`, `V0_6_RELEASE_EVIDENCE.md`,
 `V0_6_CAPABILITY_ADMISSION.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.6.0.md`,
-and `RELEASE_NOTES_v0.6.0.md` are local, unreleased candidate materials. They
-include a pre-C4 accountable-human admission of `GRW-CAP-060-01` for the named
-v0.6.0 release scope. That admission does not create a hosted public claim,
-installation target, or remote action authority. Exact current identities must
-still pass the applicable reviews and C4.
+and `RELEASE_NOTES_v0.6.0.md` are v0.6 release-source materials. They include
+an accountable-human admission of `GRW-CAP-060-01` for the named v0.6.0 release
+scope. That admission does not create a hosted public claim, installation
+target, or remote action authority. Exact current identities, tag/Release
+verification, and C4 remain separate evidence classes.

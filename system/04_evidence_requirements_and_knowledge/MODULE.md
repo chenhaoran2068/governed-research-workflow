@@ -13,7 +13,7 @@ Do not bundle restricted datasets, credentials, private notes, copyrighted
 full-text material without redistribution rights, or journal requirements as
 permanently current facts.
 
-The unreleased v0.6 candidate may record a safe evidence pointer and a
+The admitted v0.6 release scope may record a safe evidence pointer and a
 declared assertion/evidence relationship. It never opens that pointer target,
 retrieves source content, or decides that a citation semantically supports a
 claim.

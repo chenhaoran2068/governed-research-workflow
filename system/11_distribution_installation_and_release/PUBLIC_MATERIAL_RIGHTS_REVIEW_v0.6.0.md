@@ -1,9 +1,9 @@
 # v0.6.0 Public Material And Rights Review
 
-Status: pending exact-candidate review. This checklist is not a rights opinion,
-security certification, C4 authorization, or public Release evidence.
+Status: v0.6 release-source review checklist. This checklist is not a rights
+opinion, security certification, C4 authorization, or public Release evidence.
 
-Before C4, review the exact candidate commit and newly reachable history for:
+Before C4, review the exact source commit and newly reachable history for:
 
 - real project, patient-derived, restricted, credentialed, or unpublished
   material;

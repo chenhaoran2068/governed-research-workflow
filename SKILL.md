@@ -99,9 +99,9 @@ only with one explicit review root, bundle path, and optional baseline path.
 The validator is read-only and metadata-only: it does not open pointers,
 access data, establish source support, verify a human identity or real
 authorization, advance a Gate, or make a scientific/compliance/submission/
-release decision. An admission recorded in an unreleased candidate source, a
-candidate branch, or an unadmitted ledger state is not permission to offer
-this route as a released capability.
+release decision. A source file, branch, admission record, or unadmitted ledger
+state is not permission to offer this route as a released capability without
+the selected version's exact tag and matching GitHub Release.
 
 ## Governed Work Loop
 

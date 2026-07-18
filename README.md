@@ -5,15 +5,15 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: local unreleased `v0.6.0` candidate content derived from published
-`v0.5.1`. `v0.5.0` remains the published metadata-only provenance-register
-capability baseline, and `v0.5.1` is its published release-state-maintenance
-patch. This source tree does not itself prove the release or installation
-identity of any selected version. A normal public installation target exists
-only when an exact annotated tag and matching GitHub Release resolve to the
-selected source commit. Never install a mutable branch. The v0.6 candidate
-does not add research execution authority or expand any human-approval
-boundary.
+Status: `v0.6.0` workflow/evidence-control release-source content derived from
+published `v0.5.1`. `v0.5.0` remains the published metadata-only
+provenance-register capability baseline, and `v0.5.1` is its published
+release-state-maintenance patch. This source tree does not itself prove the
+release or installation identity of any selected version. A normal public
+installation target exists only when an exact annotated tag and matching
+GitHub Release resolve to the selected source commit. Never install a mutable
+branch. The v0.6 scope does not add research execution authority or expand any
+human-approval boundary.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -24,19 +24,17 @@ read
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
 the historical `v0.4.0` and published `v0.5.0` capability baselines, plus the
-admitted scope of the local `v0.6.0` release candidate. It records each
+admitted `v0.6.0` release scope. It records each
 capability's interface, evidence, version, and required human approval. The
 ledger is not an installed-runtime statement. Neither a historical admission
-nor a v0.6 candidate admission alone proves a local installation, runtime
-identity, hosted Release, or a future C4 authorization.
+nor a v0.6 scope admission alone proves a local installation, runtime identity,
+hosted Release, or C4 authorization.
 
-The package manifest and current installation narrative identify this source
-as unreleased `v0.6.0` candidate content. `GRW-CAP-060-01` is verified and
-accountable-human admitted for the named v0.6.0 release scope, but it is not
-published or an installation target. It may be described only as an admitted
-candidate capability until a later exact final commit has successful remote CI,
-C4 authorization, an immutable tag, and a matching GitHub Release. Admission
-is not by itself an installation claim or C4 authorization.
+The package manifest identifies this source as `v0.6.0` release-source content.
+`GRW-CAP-060-01` is verified and accountable-human admitted for the named
+v0.6.0 release scope. Admission is not by itself an installation claim, hosted
+Release claim, or C4 authorization. Public availability for any selected
+version remains determined only by the exact-tag-and-matching-Release rule.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
 boundary, bounded-autonomy authorization record, metadata-only provenance
@@ -92,12 +90,12 @@ provenance register-set index and explicit structural validator. It does not rea
 data, source locators, URLs, or credentials; it does not infer access,
 permission, compliance, provenance truth, or scientific suitability.
 
-The unreleased but admitted v0.6 candidate adds only a metadata-only
-workflow/evidence control bundle, optional baseline comparison, and read-only
-structural validation. It records declared relationships and revision impact;
-it does not open sources, establish semantic support, prove a human
-authorization, prevent a same-authority rewrite, or decide scientific,
-compliance, Gate, submission, or release status.
+The admitted v0.6 release scope adds only a metadata-only workflow/evidence
+control bundle, optional baseline comparison, and read-only structural
+validation. It records declared relationships and revision impact; it does not
+open sources, establish semantic support, prove a human authorization, prevent
+a same-authority rewrite, or decide scientific, compliance, Gate, submission,
+or release status.
 
 ## Use
 
@@ -118,7 +116,7 @@ assets/                  # Blank output templates and bootstrap assets
 scripts/                 # Explicitly invoked deterministic helpers
 tests/                   # Safety and regression checks
 agents/openai.yaml       # Codex-facing skill metadata
-system/                  # Public 13-module architecture and candidate records
+system/                  # Public 13-module architecture and release-source records
 ```
 
 Read `system/INDEX.md` for the 13-module public-system map and
@@ -174,8 +172,8 @@ release-state wording only; it does not change that capability contract.
 
 `v0.5.1` is the published release-state-maintenance patch for the v0.5.0
 capability contract. It is verified independently by its exact annotated tag
-and matching GitHub Release; it is not evidence that this v0.6 candidate, a
-private source, or an installed runtime is current.
+and matching GitHub Release; it is not evidence that this v0.6 release source,
+a private source, or an installed runtime is current.
 
 ## Public Evolution Roadmap
 
@@ -191,9 +189,9 @@ supersede a band through a reviewed revision.
   compliance decision.
 - `v0.5.x`: only corrections or compatibility maintenance for the released
   `v0.5.0` contract.
-- `v0.6.0`: local unreleased candidate for reviewable workflow and evidence
-  controls; no scientific, compliance, journal, or submission decision by the
-  system.
+- `v0.6.0`: reviewable workflow and evidence controls release source; public
+  availability requires the exact-tag-and-matching-Release rule, and the
+  system makes no scientific, compliance, journal, or submission decision.
 - `v0.7.x`: human-reviewed retrospective learning and knowledge promotion; no
   automatic promotion of project observations.
 - `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and

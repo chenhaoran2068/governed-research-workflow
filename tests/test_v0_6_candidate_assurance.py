@@ -1,4 +1,4 @@
-"""Assurance checks for the local-only v0.6 workflow/evidence candidate."""
+"""Assurance checks for the v0.6 workflow/evidence release source."""
 
 from __future__ import annotations
 
@@ -25,17 +25,17 @@ SYNTHETIC_ASSURANCE_RELATIVE_PATH = SYNTHETIC_ASSURANCE_PATH.relative_to(REPOSIT
 
 
 class V06CandidateAssuranceTests(unittest.TestCase):
-    def test_candidate_identity_is_distinct_from_the_published_v051_base(self) -> None:
+    def test_release_source_identity_is_distinct_from_the_published_v051_base(self) -> None:
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
         readme = README_PATH.read_text(encoding="utf-8")
         roadmap = ROADMAP_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.6.0-workflow-evidence-controls-candidate", manifest)
-        self.assertIn("local unreleased `v0.6.0` candidate", readme)
-        self.assertIn("`v0.5.1` is its published release-state-maintenance", readme)
-        self.assertIn("## v0.6.0 (unreleased workflow/evidence-control candidate)", roadmap)
+        self.assertIn("system_version: 0.6.0-workflow-evidence-controls-release-source", manifest)
+        self.assertIn("`v0.6.0` workflow/evidence-control release-source", readme)
+        self.assertIn("release-state-maintenance patch", readme)
+        self.assertIn("## v0.6.0 (workflow/evidence-control release source)", roadmap)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)
 
-    def test_candidate_is_admitted_for_scope_but_not_released_or_installed(self) -> None:
+    def test_release_source_scope_is_admitted_but_not_an_installation_claim(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
         record = next(record for record in ledger["capabilities"] if record["capability_id"] == "GRW-CAP-060-01")
         self.assertEqual(record["implementation_status"], "verified")
@@ -43,14 +43,15 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["version"]["target_release"], "v0.6.0")
         self.assertIsNone(record["version"]["last_verified_release"])
-        self.assertIn("not published", record["limitations_and_next_action"].lower())
-        self.assertIn("not an installed-runtime claim", record["limitations_and_next_action"].lower())
+        self.assertIn("not an installation target", record["limitations_and_next_action"].lower())
+        self.assertIn("installed-runtime claim", record["limitations_and_next_action"].lower())
         evidence_map = EVIDENCE_MAP_PATH.read_text(encoding="utf-8").lower()
         self.assertIn("verified and admitted", evidence_map)
-        self.assertIn("unpublished and not an installation target", evidence_map)
-        self.assertIn("not the\ncanonical capability truth ledger", EVIDENCE_MAP_PATH.read_text(encoding="utf-8"))
+        normalized_evidence_map = " ".join(EVIDENCE_MAP_PATH.read_text(encoding="utf-8").lower().split())
+        self.assertIn("neither this map nor any source file establishes public availability", normalized_evidence_map)
+        self.assertIn("not the canonical capability", EVIDENCE_MAP_PATH.read_text(encoding="utf-8").replace("\n", " "))
 
-    def test_candidate_interfaces_are_present_and_metadata_only(self) -> None:
+    def test_release_source_interfaces_are_present_and_metadata_only(self) -> None:
         required_paths = (
             "system/09_schemas_records_and_templates/workflow_evidence_control_bundle.schema.json",
             "system/09_schemas_records_and_templates/workflow_evidence_control_baseline.schema.json",
@@ -67,20 +68,20 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertIn("metadata-only", reference)
         self.assertIn("does not", reference)
 
-    def test_release_and_runtime_boundaries_remain_pending(self) -> None:
-        candidate_records = (
+    def test_release_and_runtime_boundaries_remain_separate(self) -> None:
+        source_records = (
             "V0_6_RELEASE_GATE.md",
             "V0_6_RELEASE_EVIDENCE.md",
             "V0_6_CAPABILITY_ADMISSION.md",
             "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.6.0.md",
             "RELEASE_NOTES_v0.6.0.md",
         )
-        candidate_text = "\n".join((RELEASE_ROOT / name).read_text(encoding="utf-8") for name in candidate_records).lower()
-        self.assertIn("not published", candidate_text)
-        self.assertIn("not a public-release claim", candidate_text)
-        self.assertIn("not authorize", candidate_text)
-        self.assertIn("not authorize", candidate_text)
-        self.assertIn("runtime-installation", candidate_text)
+        source_text = "\n".join((RELEASE_ROOT / name).read_text(encoding="utf-8") for name in source_records).lower()
+        normalized_source_text = " ".join(source_text.split())
+        self.assertIn("does not itself establish publication", normalized_source_text)
+        self.assertIn("not a public-release claim", source_text)
+        self.assertIn("not authorize", source_text)
+        self.assertIn("runtime-installation", source_text)
 
     def test_current_framework_validation_target_is_v012_and_historical_v04_evidence_is_not_rewritten(self) -> None:
         workflow = WORKFLOW_PATH.read_text(encoding="utf-8")
@@ -91,15 +92,15 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertIn("Workspace Framework `v0.1.2`", plan)
         self.assertIn("framework tag: `v0.1.1`", historical_v04)
 
-    def test_v06_candidate_assurance_uses_the_existing_tracked_source_snapshot_method(self) -> None:
+    def test_v06_release_source_assurance_uses_the_existing_tracked_source_snapshot_method(self) -> None:
         assurance = SYNTHETIC_ASSURANCE_PATH.read_text(encoding="utf-8")
-        match = re.search(r"candidate source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
+        match = re.search(r"source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
         self.assertEqual(match.group(1), source_snapshot_sha256(SYNTHETIC_ASSURANCE_RELATIVE_PATH))
         self.assertIn("This assurance file\n  is excluded from its own digest", assurance)
 
-    def test_candidate_surfaces_have_no_private_path_or_release_claim(self) -> None:
-        candidate_paths = (
+    def test_release_source_surfaces_have_no_private_path_or_release_claim(self) -> None:
+        source_paths = (
             README_PATH,
             ROADMAP_PATH,
             SKILL_PATH,
@@ -107,10 +108,10 @@ class V06CandidateAssuranceTests(unittest.TestCase):
             REPOSITORY_ROOT / "references" / "workflow-evidence-control-records.md",
             REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_6_SYNTHETIC_ASSURANCE.md",
         )
-        candidate_text = "\n".join(path.read_text(encoding="utf-8") for path in candidate_paths)
-        self.assertIsNone(re.search(r"(?i)(?:[a-z]:\\|/(?:home|users)/)", candidate_text))
-        self.assertNotIn("v0.6.0 is published", candidate_text.lower())
-        self.assertNotIn("v0.6.0 provides an agent runtime", candidate_text.lower())
+        source_text = "\n".join(path.read_text(encoding="utf-8") for path in source_paths)
+        self.assertIsNone(re.search(r"(?i)(?:[a-z]:\\|/(?:home|users)/)", source_text))
+        self.assertNotIn("v0.6.0 is published", source_text.lower())
+        self.assertNotIn("v0.6.0 provides an agent runtime", source_text.lower())
 
 
 if __name__ == "__main__":

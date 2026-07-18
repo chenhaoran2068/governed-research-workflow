@@ -1,4 +1,4 @@
-"""Structural and refusal checks for the v0.6 release-candidate capability ledger."""
+"""Structural and refusal checks for the v0.6 release-source capability ledger."""
 
 from __future__ import annotations
 
@@ -72,11 +72,11 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
         self.assertEqual(self.ledger["ledger_schema_version"], "1.1.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
-        self.assertEqual(self.ledger["ledger_status"], "release_candidate")
+        self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
         self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.6.0")
         self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.5.1")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("v0.6.0 candidate", self.ledger["target_claim_scope"])
+        self.assertIn("admitted v0.6.0 release scope", self.ledger["target_claim_scope"])
         self.assertIn("historical baseline facts", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -253,7 +253,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("admitted", admission)
         self.assertIn("published at immutable `v0.5.0`", admission)
 
-    def test_r6001_is_admitted_for_candidate_scope_without_release_or_runtime_claim(self) -> None:
+    def test_r6001_is_admitted_for_release_source_scope_without_release_or_runtime_claim(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-060-01")
         self.assertEqual(record["implementation_status"], "verified")
         self.assertEqual(record["release_disposition"], "admitted")
@@ -262,10 +262,10 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIsNone(record["version"]["last_verified_release"])
         self.assertIn("read-only", record["promise"].lower())
         self.assertIn("does not open data", record["non_promise"].lower())
-        self.assertIn("not published", record["limitations_and_next_action"].lower())
+        self.assertIn("not an installation target", record["limitations_and_next_action"].lower())
         self.assertIn("not an installed-runtime claim", record["limitations_and_next_action"].lower())
         admission = V06_ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower()
-        self.assertIn("pre-c4 accountable-human admission record", admission)
+        self.assertIn("accountable-human release-scope admission record", admission)
         self.assertIn("admitted `grw-cap-060-01`", admission)
         self.assertIn("does not authorize a push", admission)
 

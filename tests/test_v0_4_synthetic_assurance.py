@@ -93,12 +93,12 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         self.assertIn("does not prove that a private skill source or an installed Codex runtime has been updated", normalized_release)
         self.assertIn("Do not infer an installed runtime version", skill)
 
-    def test_v04_framework_profile_evidence_remains_historical_while_current_candidate_targets_v012(self) -> None:
+    def test_v04_framework_profile_evidence_remains_historical_while_current_source_targets_v012(self) -> None:
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
         framework_plan = FRAMEWORK_PLAN_PATH.read_text(encoding="utf-8")
         self.assertIn("framework tag: `v0.1.1`", assurance)
         self.assertIn("framework resolved commit: `b0e32d7710b70299e633df1316b6924cd87b647b`", assurance)
-        self.assertIn("unreleased v0.6 candidate", framework_plan)
+        self.assertIn("v0.6 release source retains integration evidence", framework_plan)
         self.assertIn("Workspace Framework `v0.1.2`", framework_plan)
         self.assertIn("97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8", framework_plan)
 
