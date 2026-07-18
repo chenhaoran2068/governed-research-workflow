@@ -12,7 +12,7 @@ submission service.
 Do not infer missing study facts, create a final scientific conclusion, certify
 compliance, or release or submit material.
 
-For exact release-source capability status, consult
+For exact capability-contract status, consult
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. A planned,
 forbidden, unknown, or contradictory ledger entry does not
 authorize a behavior. The ledger does not replace the accountable-human

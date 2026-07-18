@@ -26,24 +26,27 @@ class ReleaseControlTests(unittest.TestCase):
             "CURRENT_RELEASE_STATUS.md",
             "RELEASE_CONTROL.md",
             "release_control_record.schema.json",
+            "RELEASE_NOTES_v0.5.1.md",
+            "V0_5_1_RELEASE_STATE_MAINTENANCE.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
 
-    def test_v050_historical_and_release_source_materials_preserve_boundaries(self) -> None:
+    def test_v050_historical_pre_c4_materials_preserve_boundaries(self) -> None:
         expected = {
             "V0_5_RELEASE_GATE.md": "historical pre-c3 candidate gate",
             "V0_5_RELEASE_EVIDENCE.md": "historical pre-c3 preparation evidence only",
             "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.5.0.md": "historical pre-c3 preparation record",
-            "V0_5_CAPABILITY_ADMISSION.md": "release-source admission record",
-            "RELEASE_NOTES_v0.5.0.md": "release-source draft",
+            "V0_5_CAPABILITY_ADMISSION.md": "historical pre-c4 admission record",
+            "RELEASE_NOTES_v0.5.0.md": "historical pre-c4 draft snapshot",
         }
         for name, boundary in expected.items():
             content = (RELEASE_ROOT / name).read_text(encoding="utf-8").lower()
             self.assertIn(boundary, content)
-            self.assertNotIn("v0.5.0 has been released", content)
+        current_status = (RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md").read_text(encoding="utf-8")
+        self.assertIn("Published v0.5.0 Baseline", current_status)
 
-    def test_release_source_and_live_release_verification_are_distinct(self) -> None:
+    def test_maintenance_source_and_live_release_verification_are_distinct(self) -> None:
         manifest = (REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
@@ -51,16 +54,17 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.5.0-release-source", manifest)
+        self.assertIn("system_version: 0.5.1-release-state-maintenance", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
-        self.assertIn("release-source `v0.5.0` content", readme)
-        self.assertIn("## v0.5.0 (release-source metadata-only provenance register set)", roadmap)
+        self.assertIn("`v0.5.0` is the published", readme)
+        self.assertIn("## v0.5.1 (release-state maintenance)", roadmap)
+        self.assertIn("## v0.5.0 (published metadata-only provenance register set)", roadmap)
         self.assertIn("## v0.4.0 (published governance-and-records baseline)", roadmap)
         self.assertIn("## v0.3.1 (released 2026-07-16)", roadmap)
         self.assertIn("## v0.3.2 (historical local release-state correction candidate)", roadmap)
-        self.assertIn("`v0.5.0` release-source", current_status)
+        self.assertIn("Published v0.5.0 Baseline", current_status)
         self.assertIn("matching GitHub Release", current_status)
         self.assertIn("GitHub technical immutable releases are enabled", integrity_policy)
         self.assertIn("ref: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
@@ -70,6 +74,26 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertNotIn("current public baseline is `v0.3.1`", readme)
         self.assertNotIn("v0.3.1 (release-gated compatibility-maintenance source)", roadmap)
         self.assertNotIn("unreleased Workspace Framework candidate", manifest)
+
+    def test_current_records_cannot_describe_the_published_v050_baseline_as_unreleased(self) -> None:
+        current_paths = (
+            REPOSITORY_ROOT / "README.md",
+            REPOSITORY_ROOT / "ROADMAP.md",
+            REPOSITORY_ROOT / "SECURITY.md",
+            REPOSITORY_ROOT / "SKILL.md",
+            REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml",
+            REPOSITORY_ROOT / "system" / "INDEX.md",
+            REPOSITORY_ROOT / "system" / "05_data_and_provenance" / "MODULE.md",
+            REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json",
+            RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md",
+            RELEASE_ROOT / "MODULE.md",
+            RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md",
+        )
+        current_text = "\n".join(path.read_text(encoding="utf-8").lower() for path in current_paths)
+        self.assertIn("published v0.5.0", current_text)
+        self.assertIn("exact annotated tag", current_text)
+        self.assertNotIn("no tag or github release exists", current_text)
+        self.assertNotIn("v0.5.0 is release-source content, not a hosted release", current_text)
 
     def test_historical_v031_records_are_labeled_without_erasing_history(self) -> None:
         candidate = (RELEASE_ROOT / "V0_3_1_COMPATIBILITY_MAINTENANCE_CANDIDATE.md").read_text(encoding="utf-8")

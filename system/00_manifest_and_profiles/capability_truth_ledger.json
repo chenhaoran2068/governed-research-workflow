@@ -1,14 +1,14 @@
 {
   "ledger_schema_version": "1.0.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "release_source_prepared",
+  "ledger_status": "released",
   "release_context": {
     "source_release_version": "v0.5.0",
     "historical_public_baseline": "v0.4.0",
-    "live_release_identity_rule": "A live v0.5.0 public release must be verified from an exact annotated tag and matching GitHub Release; this release-source ledger makes no live hosted-release or installation claim."
+    "live_release_identity_rule": "The published v0.5.0 public release is verified only from its exact annotated tag and matching GitHub Release. This ledger describes capability scope and does not prove an installed runtime or authorize a future release."
   },
-  "target_claim_scope": "The public_claim_status field applies to the named v0.5.0 release-source scope. Prior released v0.4.0 claims remain in prior_release_history as historical baseline facts and are not automatic admissions for v0.5.0.",
-  "claim_admission_rule": "A v0.5.0 capability is eligible for final-release communication only when its record is verified, admitted for the named release scope, and has an accountable-human approval reference. Admission alone does not create a tag, GitHub Release, installation target, runtime claim, or C4 authorization.",
+  "target_claim_scope": "The public_claim_status field applies to the published v0.5.0 capability scope. Prior released v0.4.0 claims remain in prior_release_history as historical baseline facts and are not automatic admissions for later capabilities.",
+  "claim_admission_rule": "A capability may be described for a named published release only when its record is verified, admitted for that release scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
     "conflicting_records_and_exact_locations",
@@ -324,11 +324,11 @@
       },
       "version": {
         "introduced_version": "v0.5.0",
-        "last_verified_release": null,
+        "last_verified_release": "v0.5.0",
         "target_release": "v0.5.0"
       },
       "prior_release_history": [],
-      "approval_reference": "accountable-human v0.5 release-scope admission and generic-tree Apache-2.0 publication-authority confirmation accepted 2026-07-18; exact final-commit review and C4 remain required",
+      "approval_reference": "accountable-human v0.5 release-scope admission and generic-tree Apache-2.0 publication-authority confirmation accepted 2026-07-18; v0.5.0 later completed exact final-commit review and C4 publication",
       "claim_surfaces": [
         "SKILL.md",
         "system/05_data_and_provenance/MODULE.md",
@@ -336,7 +336,7 @@
         "system/11_distribution_installation_and_release/V0_5_CAPABILITY_ADMISSION.md"
       ],
       "contradiction_refusal": "When the index, entry schema, path boundary, relationship declaration, or access statement conflicts or is unknown, reject the affected structural claim and do not infer a data action or approval.",
-      "limitations_and_next_action": "This is an admitted release-source capability, not a hosted release or installation claim. Exact final-commit review, C4 authorization, publication, post-release verification, and any separate local runtime installation remain required. It has no real-data, network, compliance, or runtime-installation authority."
+      "limitations_and_next_action": "This is an admitted and published v0.5.0 capability, not an installed-runtime claim. Any local runtime installation remains a separate controlled action. It has no real-data, network, compliance, or runtime-installation authority."
     }
   ]
 }

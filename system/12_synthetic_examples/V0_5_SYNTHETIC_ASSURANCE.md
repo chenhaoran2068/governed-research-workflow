@@ -1,14 +1,15 @@
 # V0.5 Synthetic Assurance
 
-Status: release-source synthetic assurance evidence. It is not an exact
-final-commit identity, public Release record, C4 authorization,
-installed-runtime verification, or claim that a hosted release is ready.
+Status: historical pre-C4 synthetic assurance evidence. It is not an exact
+final-commit identity, public Release record, C4 authorization, or
+installed-runtime verification. It preserves the candidate evidence used
+before the later v0.5.0 publication.
 
 ## Scope
 
 This route combines only public package documentation, blank templates,
 synthetic metadata fixtures, and local regression tests. It checks the
-release-source boundaries for `GRW-CAP-050-01`: metadata-only input, explicit
+historical candidate boundaries for `GRW-CAP-050-01`: metadata-only input, explicit
 read-only validator invocation, safe paths, structural schema checks, no
 unlisted-file read, dependency-version refusal, and current-versus-historical
 release separation.
@@ -21,7 +22,7 @@ correctness.
 
 ## Release-Source Snapshot Identity
 
-- working-tree source snapshot SHA-256: `1e1698c6c61fc197c875ce7f379421dc1e2f4828051e551177a59b1be9732456`
+- working-tree source snapshot SHA-256: `05b06daed6f0d6c77ca7bf6578d24fe7844ec48d651954777ed430cef120507f`
 - snapshot method: SHA-256 over each `git ls-files -z` Git-tracked repository
   source file's UTF-8 relative path, a NUL separator, normalized source bytes,
   and a final NUL separator, in byte-sorted path order. Text files normalize
@@ -32,9 +33,9 @@ correctness.
 - framework tag: `v0.1.1`
 - framework resolved commit: `b0e32d7710b70299e633df1316b6924cd87b647b`
 
-This is a transparent candidate-source snapshot. A later exact C3 candidate
-commit and C4 decision must rerun the required checks and record their own
-exact identities.
+This is a transparent historical candidate-source snapshot. The later v0.5.0
+publication used separate exact-commit and C4 evidence. Any future release
+must rerun the required checks and record its own exact identities.
 
 ## Synthetic Evidence Boundaries
 

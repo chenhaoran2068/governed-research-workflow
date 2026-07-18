@@ -1,4 +1,4 @@
-"""Structural and refusal checks for the v0.5 release-source capability ledger."""
+"""Structural and refusal checks for the published v0.5 capability ledger."""
 
 from __future__ import annotations
 
@@ -70,11 +70,11 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
         self.assertEqual(self.ledger["ledger_schema_version"], "1.0.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
-        self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
+        self.assertEqual(self.ledger["ledger_status"], "released")
         self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.5.0")
         self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.4.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("v0.5.0 release-source scope", self.ledger["target_claim_scope"])
+        self.assertIn("published v0.5.0 capability scope", self.ledger["target_claim_scope"])
         self.assertIn("prior_release_history", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -232,7 +232,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("release-source synthetic assurance", record["limitations_and_next_action"].lower())
         self.assertTrue(record["approval_reference"])
 
-    def test_r5001_is_verified_and_admitted_for_the_named_release_source_scope(self) -> None:
+    def test_r5001_is_verified_and_admitted_for_the_published_scope(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-050-01")
         self.assertEqual(record["implementation_status"], "verified")
         self.assertEqual(record["release_disposition"], "admitted")
@@ -240,11 +240,12 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(record["evidence"]["status"], "verified")
         self.assertEqual(record["version"]["target_release"], "v0.5.0")
         self.assertIn("does not access", record["non_promise"].lower())
-        self.assertIn("c4", record["limitations_and_next_action"].lower())
+        self.assertIn("published v0.5.0", record["limitations_and_next_action"].lower())
+        self.assertIn("not an installed-runtime claim", record["limitations_and_next_action"].lower())
         admission = V05_ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower()
-        self.assertIn("release-source admission record", admission)
+        self.assertIn("historical pre-c4 admission record", admission)
         self.assertIn("admitted", admission)
-        self.assertIn("not c4 authorization", admission)
+        self.assertIn("published at immutable `v0.5.0`", admission)
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
         planned_records = [
@@ -277,19 +278,20 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("forbid", self.ledger["contradiction_refusal_rule"].lower())
         self.assertIn("accountable-human", self.ledger["contradiction_refusal_rule"])
 
-    def test_release_source_cannot_claim_a_hosted_v050_release(self) -> None:
+    def test_published_v050_capability_does_not_claim_a_runtime_installation(self) -> None:
         text = LEDGER_PATH.read_text(encoding="utf-8")
         admission_record = ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower()
         self.assertIn("option a", admission_record)
-        self.assertIn("not c4 authorization", admission_record)
+        self.assertIn("historical pre-c4 admission record", admission_record)
         self.assertIn("not by itself a public release", EVIDENCE_MATRIX_PATH.read_text(encoding="utf-8").lower())
         skill = (REPOSITORY_ROOT / "SKILL.md").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("capability_truth_ledger.json", skill)
         self.assertIn("capability_truth_ledger.json", readme)
         combined = "\n".join((text, skill, readme)).lower()
-        self.assertIn("does not claim", combined)
-        self.assertNotIn("v0.5.0 is released", combined)
+        self.assertIn("published v0.5.0", combined)
+        self.assertIn("does not prove", combined)
+        self.assertNotIn("no tag or github release exists", combined)
 
 
 if __name__ == "__main__":
