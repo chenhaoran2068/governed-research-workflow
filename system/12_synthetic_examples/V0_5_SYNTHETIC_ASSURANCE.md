@@ -21,7 +21,7 @@ correctness.
 
 ## Release-Source Snapshot Identity
 
-- working-tree source snapshot SHA-256: `f7a9858066d701ad82d2df0ea6f07c54d92ae926c80fe7fff987ef5117c1fd68`
+- working-tree source snapshot SHA-256: `1e1698c6c61fc197c875ce7f379421dc1e2f4828051e551177a59b1be9732456`
 - snapshot method: SHA-256 over each `git ls-files -z` Git-tracked repository
   source file's UTF-8 relative path, a NUL separator, normalized source bytes,
   and a final NUL separator, in byte-sorted path order. Text files normalize

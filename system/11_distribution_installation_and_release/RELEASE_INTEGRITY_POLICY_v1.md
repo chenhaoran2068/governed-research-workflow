@@ -67,9 +67,11 @@ change and M48 revalidation.
 Before release, run a tracked-tree and reachable-history secret scan using
 the maintained pattern set, review all dependency and Action changes since the
 previous release, and check GitHub security alerts available to the
-maintainer. The public API did not expose a security_and_analysis status in
-this candidate review, so this policy does not claim that GitHub Advanced
-Security or any particular secret-scanning setting is enabled.
+maintainer. At the 2026-07-18 release-source review, the repository reported
+Secret Scanning and Secret Scanning Push Protection enabled, with zero open
+Secret Scanning alerts. Dependabot security updates and Dependabot alerts were
+disabled, so this policy does not claim continuous dependency-alert coverage,
+GitHub Advanced Security, or full supply-chain lock.
 
 ## Immutable Release Decision
 

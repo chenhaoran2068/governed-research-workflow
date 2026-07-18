@@ -116,6 +116,8 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("Historical v0.3.0 framework-integration evidence", integrity)
         self.assertIn("The published v0.3.1", integrity)
         self.assertIn("Historical v0.3.1 decision", integrity)
+        self.assertIn("Secret Scanning and Secret Scanning Push Protection enabled", integrity)
+        self.assertIn("Dependabot security updates and Dependabot alerts were", integrity)
         self.assertIn("Status: historical local maintenance candidate", candidate)
         self.assertIn("locally recorded current published patch\nbaseline remains `v0.3.1`", candidate)
 
