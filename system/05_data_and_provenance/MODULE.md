@@ -1,6 +1,6 @@
 # Data And Provenance
 
-Status: v0.4.0 released metadata-only register plus a v0.5.0 release-source
+Status: v0.4.0 released metadata-only register plus a published v0.5.0
 metadata-only register set.
 
 This public system does not process patient-derived data, restricted data, or
@@ -17,8 +17,8 @@ unknowns, and verification references only. It does not establish access,
 ethics, consent, DUA, privacy, institutional, clinical, legal, or regulatory
 compliance, and it does not process data content.
 
-The v0.5.0 release source adds a bounded register-index contract and an explicitly
-invoked read-only structural validator for v0.4-compatible entry records. It
+The published v0.5.0 baseline adds a bounded register-index contract and an
+explicitly invoked read-only structural validator for v0.4-compatible entry records. It
 checks only supplied metadata JSON, safe entry paths, identity uniqueness, and
 declared reciprocal relationships. It neither reads data content nor proves
 that a declared source, derivation, permission, or restriction is true.

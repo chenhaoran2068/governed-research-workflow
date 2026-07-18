@@ -1,9 +1,11 @@
-# Release Notes: v0.5.0 Release-Source Draft
+# Release Notes: v0.5.0 Historical Pre-C4 Draft Snapshot
 
-Status: release-source draft. These are not published GitHub Release notes and
-do not authorize a tag, GitHub Release, installation, or C4. They must be
-reconciled with the exact final-commit evidence and C4 decision before
-publication.
+Status: historical pre-C4 draft snapshot. The immutable v0.5.0 GitHub Release
+was published using this draft before its status wording was corrected. Its
+pre-C4 statements below are retained as evidence of the historical review
+state, not as current release or installation guidance. Use
+`CURRENT_RELEASE_STATUS.md` and the exact tag plus matching GitHub Release to
+verify a selected installation target.
 
 ## Intended Scope
 

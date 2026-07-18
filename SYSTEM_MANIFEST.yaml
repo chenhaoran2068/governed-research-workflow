@@ -1,11 +1,12 @@
-# v0.5.0 release-source content derived from the released v0.4.0 baseline.
-# It is not an installation target until a matching annotated v0.5.0 tag and
-# GitHub Release can be verified. The workspace framework-contract version
-# remains 0.1.0; v0.1.1 is the exact framework validation target for this
-# release-source revision.
+# v0.5.1 release-state maintenance content. The v0.5.0 provenance-register
+# capability is a published public baseline. This manifest never proves that
+# any selected version is installed or released: verify an exact annotated tag
+# and matching GitHub Release at installation time. The workspace
+# framework-contract version remains 0.1.0; v0.1.1 is the exact framework
+# validation target retained for this maintenance revision.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.5.0-release-source
+system_version: 0.5.1-release-state-maintenance
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

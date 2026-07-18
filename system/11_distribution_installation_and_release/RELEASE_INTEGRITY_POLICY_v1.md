@@ -7,8 +7,8 @@ maintainer-controlled process; it does not authorize an AI to publish.
 
 `CURRENT_RELEASE_STATUS.md` is the current-facing release-verification route.
 It separates the live exact-tag and matching-Release check from retained
-historical records and the `v0.5.0` release source. A candidate-review
-record, passing test, local branch, or source tree is not an
+historical records and the published `v0.5.0` capability baseline. A
+candidate-review record, passing test, local branch, or source tree is not an
 installation target, GitHub Release, or installed-runtime identity.
 
 ## Release Identity
@@ -55,19 +55,19 @@ declared by the exact Workspace Framework v0.1.0 release. The published v0.3.1
 patch retained the v0.1.0 framework-contract version and tested the same
 declared package ranges against exact Workspace Framework v0.1.1.
 
-The v0.5 release source adds direct runtime dependency `jsonschema==4.26.0` for
+The published v0.5 baseline adds direct runtime dependency `jsonschema==4.26.0` for
 the explicitly invoked metadata-only register-set validator. It is pinned at
 the direct-dependency level in `requirements.txt`, but its platform-specific
-transitive dependency resolution is not hash-locked. The release source must not be
-described as a fully locked software supply chain. The exact resolved local and
-CI environments must be recorded in v0.5 release evidence. Any dependency,
+transitive dependency resolution is not hash-locked. The v0.5 baseline must not
+be described as a fully locked software supply chain. The exact resolved local
+and CI environments are recorded in v0.5 release evidence. Any dependency,
 range, extra, lockfile, or runtime-use change requires a reviewed candidate
 change and M48 revalidation.
 
 Before release, run a tracked-tree and reachable-history secret scan using
 the maintained pattern set, review all dependency and Action changes since the
 previous release, and check GitHub security alerts available to the
-maintainer. At the 2026-07-18 release-source review, the repository reported
+maintainer. At the 2026-07-18 v0.5 release review, the repository reported
 Secret Scanning and Secret Scanning Push Protection enabled, with zero open
 Secret Scanning alerts. Dependabot security updates and Dependabot alerts were
 disabled, so this policy does not claim continuous dependency-alert coverage,
@@ -117,6 +117,6 @@ On `2026-07-17`, the accountable human enabled GitHub technical immutable
 releases for this repository. GitHub technical immutable releases are enabled
 for future Releases. The setting applied to future Releases and is
 part of the published `v0.4.0` release posture; it does not retroactively
-change earlier v0.3.0/v0.3.1 Releases. Before any v0.5 C4 decision, the
-release evidence must verify that the setting remains enabled and record the
-result against the exact final candidate.
+change earlier v0.3.0/v0.3.1 Releases. Every future C4 decision must verify
+that the setting remains enabled and record the result against the exact final
+candidate.

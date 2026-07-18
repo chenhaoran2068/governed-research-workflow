@@ -1,9 +1,9 @@
 # Release Status Verification
 
-Status: current release-verification rule plus `v0.5.0` release-source
-boundary. The published `v0.4.0` tag/Release is the historical public baseline
-for this worktree. This record does not assert that a hosted `v0.5.0` Release
-or runtime update exists.
+Status: active, version-neutral release-verification rule. The published
+`v0.5.0` tag/Release is the metadata-only provenance-register baseline. This
+record does not prove that any selected version is installed in a private skill
+source or Codex runtime.
 
 ## Normal Public Installation Rule
 
@@ -21,16 +21,28 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
-## v0.5.0 Release-Source Scope
+## Published v0.5.0 Baseline
 
-- This release source contains one accountable-human-admitted metadata-only
-  Data And Provenance Register Set capability. Admission is not a tag, GitHub
-  Release, installation target, runtime claim, or C4 authorization.
-- A v0.5.0 checkout becomes a normal public installation target only if the
-  normal public installation rule is later satisfied for its exact final
-  commit.
-- A hosted release must not be inferred from `main`, a branch, a green CI run,
-  a capability ledger, or an AI statement.
+- `v0.5.0` is publicly released at annotated tag
+  `v0.5.0`, target commit
+  `14c37ae1eecb5f12cee385a331ee5233265ca778`, with a matching immutable
+  GitHub Release.
+- It contains one accountable-human-admitted metadata-only Data And Provenance
+  Register Set capability. Capability admission is not an installed-runtime
+  claim and does not authorize a future release.
+- The immutable v0.5.0 Release retains some pre-C4 source wording. That
+  wording is a historical snapshot, not a current release-state authority.
+  Verify the exact tag and matching Release at the time of any installation.
+
+## v0.5.1 Maintenance Source
+
+- This source corrects release-state wording without changing the v0.5.0
+  capability contract, validator, schemas, dependency, data boundary,
+  permissions, or CI architecture.
+- Whether a selected v0.5.1 checkout is a published installation target is
+  determined only by the normal public installation rule. Do not infer it from
+  this source tree, `main`, a candidate branch, a green CI run, a ledger, or an
+  AI statement.
 
 ## v0.4.0 Historical Public Baseline
 

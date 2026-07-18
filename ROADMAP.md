@@ -2,30 +2,37 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.5.0 (release-source metadata-only provenance register set)
+## v0.5.1 (release-state maintenance)
 
-This release-source tree contains one accountable-human-admitted capability,
+This maintenance revision corrects current-facing release-state wording after
+the immutable `v0.5.0` publication. It does not alter the provenance-register
+set validator, schemas, dependency, data boundary, permissions, or CI
+architecture. A selected version is an installation target only after its own
+exact annotated tag and matching GitHub Release are externally verified.
+
+## v0.5.0 (published metadata-only provenance register set)
+
+This published baseline contains one accountable-human-admitted capability,
 `GRW-CAP-050-01`: a bounded register index for v0.4-compatible metadata
 records and an explicitly invoked read-only structural validator. It checks
 only the supplied index and listed metadata JSON entries for schema shape,
 safe paths, unique identities, and reciprocal declared lineage relationships.
 
-The release source does not read data content, locate a source, resolve a URL,
+The capability does not read data content, locate a source, resolve a URL,
 contact a service, use credentials, calculate a data hash, infer permission,
 or decide provenance truth, access, ethics, consent, DUA, privacy, legal,
 clinical, scientific, Gate, submission, or release status. It requires the
 fixed direct dependency `jsonschema==4.26.0` only for JSON Schema validation.
 
-`GRW-CAP-050-01` is verified and admitted for the named v0.5.0 release-source
-scope. It is not an installation target and has no tag, GitHub Release, C4
-authorization, or installed-runtime claim. Before publication, it still
-requires exact final-commit material/dependency review, two full post-repair
-reviews, Windows/Ubuntu/macOS CI, exact C4 authorization, immutable tag/Release
-creation, and post-release verification.
+`GRW-CAP-050-01` is verified and admitted for the published v0.5.0 scope. Its
+capability record is not an installed-runtime claim. The v0.5.0 tag and
+matching GitHub Release must still be verified at the time of any installation;
+future maintenance releases require their own exact-commit review, CI, C4,
+immutable tag/Release, and post-release verification.
 
-This release source also corrects the current `SECURITY.md` supported-version
-table in its later exact release material. This does not alter the immutable v0.4.0
-Release.
+The immutable v0.5.0 Release retains some pre-C4 static wording. This v0.5.1
+maintenance revision records that limitation and corrects the current-source
+guidance without modifying the historical tag.
 
 ## Planned After v0.5.0 (not current capability)
 

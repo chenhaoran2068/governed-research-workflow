@@ -63,7 +63,7 @@ def current_source_snapshot_sha256() -> str:
 
 
 def current_v05_source_snapshot_sha256() -> str:
-    """Return the v0.5 release-source snapshot representation."""
+    """Return the v0.5 historical-source snapshot representation."""
     return source_snapshot_sha256(V05_ASSURANCE_RELATIVE_PATH)
 
 
@@ -140,13 +140,13 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         self.assertIn("v0.4", assurance.lower())
         self.assertNotEqual(match.group(1), current_source_snapshot_sha256())
 
-    def test_v05_release_source_assurance_uses_its_own_tracked_source_snapshot(self) -> None:
+    def test_v05_historical_assurance_uses_its_own_tracked_source_snapshot(self) -> None:
         assurance = V05_ASSURANCE_PATH.read_text(encoding="utf-8")
         match = re.search(r"working-tree source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
         self.assertEqual(match.group(1), current_v05_source_snapshot_sha256())
-        self.assertIn("Status: release-source synthetic assurance evidence.", assurance)
-        self.assertIn("not an exact final-commit identity", re.sub(r"\s+", " ", assurance))
+        self.assertIn("Status: historical pre-C4 synthetic assurance evidence.", assurance)
+        self.assertIn("historical candidate-source snapshot", re.sub(r"\s+", " ", assurance))
 
     def test_snapshot_ignores_an_untracked_ci_checkout_directory(self) -> None:
         baseline = current_source_snapshot_sha256()
