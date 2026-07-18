@@ -2,49 +2,62 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.4.0 (governance-and-records release-source scope)
+## v0.5.0 (unreleased metadata-only provenance register-set candidate)
 
-This release-state-neutral source declares the R40-00 capability truth ledger,
-R40-01 release-state boundary,
-R40-02 bounded-autonomy authorization record, R40-04 metadata-only provenance
-register, R40-05 release-control record contract, and R40-06 synthetic
-assurance route. R40-03 explicitly excludes named specialist role cards and
-agent runtime from `v0.4.0`.
+This local candidate adds one proposed capability,
+`GRW-CAP-050-01`: a bounded register index for v0.4-compatible metadata
+records and an explicitly invoked read-only structural validator. It checks
+only the supplied index and listed metadata JSON entries for schema shape,
+safe paths, unique identities, and reciprocal declared lineage relationships.
 
-The accountable human has admitted ten named capabilities for the `v0.4.0`
-release scope: `GRW-CAP-031-01` through `031-04`, and
-`GRW-CAP-040-00`, `040-01`, `040-02`, `040-04`, `040-05`, and `040-06`.
-Admission does not by itself create a public release or installation target.
-An exact commit becomes a normal public installation target only when its
-annotated `v0.4.0` tag and matching GitHub Release can be verified. The
-source tree does not state that this has happened.
+The candidate does not read data content, locate a source, resolve a URL,
+contact a service, use credentials, calculate a data hash, infer permission,
+or decide provenance truth, access, ethics, consent, DUA, privacy, legal,
+clinical, scientific, Gate, submission, or release status. It requires the
+fixed direct dependency `jsonschema==4.26.0` only for JSON Schema validation.
 
-v0.4.0 explicitly excludes named specialist role cards and agent runtime. A
-future version needs a separately reviewed named-role design before it can
-describe any role card as an available public capability.
+`GRW-CAP-050-01` is verified locally but remains a candidate with public claim
+forbidden. It is not an installation target and has no tag, GitHub Release,
+C4 authorization, or installed-runtime claim. Before any publication, it
+requires exact capability admission, material/dependency review, two full
+post-repair reviews, Windows/Ubuntu/macOS CI, exact C4 authorization, immutable
+tag/Release creation, and post-release verification.
 
-This source includes metadata-only provenance records with a generic
-core and optional restricted or clinical awareness extension. It does not add
-data import, processing, access, compliance, or certification capability.
+The candidate also corrects the current `SECURITY.md` supported-version table
+in its later exact release material. This does not alter the immutable v0.4.0
+Release.
 
-It includes release-control record definitions that distinguish
-candidate review, C4 authorization, and post-release verification. These
-records do not create a tag, GitHub Release, hosted-control change, or public
-release claim.
+## Planned After v0.5.0 (not current capability)
 
-It includes a synthetic cross-record assurance route. It checks only source
-records, empty templates, and public documentation; it does not establish an
-installed runtime, hosted Release, or release readiness.
+- `v0.5.x`: corrective or compatibility maintenance only for the released
+  v0.5.0 contract.
+- `v0.6.0`: reviewable workflow and evidence controls; it will not make
+  scientific, compliance, journal, or submission decisions.
+- `v0.7.x`: human-reviewed project learning and knowledge promotion; no
+  automatic promotion from a project observation to a shared rule.
+- `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and
+  controlled-tool admission; no delegated authority or multi-agent runtime.
+- `v0.9.x`: evidence-integrity and supervisory-architecture audit; no
+  perfect-truthfulness claim or AI final academic approval.
+- `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;
+  no hidden telemetry, automatic upload, or automatic rule promotion.
+- `v0.11.x+`: pre-v1 scope closure and stabilization. `v1.0.0` is a later
+  evidence-and-stability threshold, not an automatic feature deadline.
 
-The C3 candidate-branch push and candidate CI are complete. The historical
-pre-C3 preparation records remain useful context and must remain internally
-consistent: `V0_4_CAPABILITY_ADMISSION.md`,
-`V0_4_RELEASE_GATE.md`, `V0_4_RELEASE_EVIDENCE.md`,
-`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.4.0.md`, and
-`RELEASE_NOTES_v0.4.0.md`. They are historical preparation materials, not a substitute
-for exact-commit evidence or C4 authorization.
+## v0.4.0 (published governance-and-records baseline)
 
-At every point in the release lifecycle, determine the normal installation
+`v0.4.0` introduced the R40 capability truth ledger, release-state boundary,
+bounded-autonomy authorization record, metadata-only single-entry provenance
+register, release-control record contract, and synthetic assurance route. It
+explicitly excludes named specialist role cards and agent runtime.
+
+The release's capability admission, gate, evidence, rights review, and release
+notes remain historical snapshots under
+`system/11_distribution_installation_and_release/`. They explain the v0.4.0
+decision but do not override the current exact-tag and matching-Release
+verification procedure.
+
+At every point in the release lifecycle, determine a normal installation
 target using the exact-tag and matching-Release verification procedure in
 `system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 

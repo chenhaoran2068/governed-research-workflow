@@ -30,6 +30,19 @@ class ReleaseControlTests(unittest.TestCase):
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
 
+    def test_v050_pre_c3_materials_preserve_candidate_boundaries(self) -> None:
+        expected = {
+            "V0_5_RELEASE_GATE.md": "pre-c3 candidate gate",
+            "V0_5_RELEASE_EVIDENCE.md": "pre-c3 preparation evidence only",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.5.0.md": "pre-c3 preparation record",
+            "V0_5_CAPABILITY_ADMISSION.md": "candidate decision record",
+            "RELEASE_NOTES_v0.5.0.md": "pre-c3 draft snapshot",
+        }
+        for name, boundary in expected.items():
+            content = (RELEASE_ROOT / name).read_text(encoding="utf-8").lower()
+            self.assertIn(boundary, content)
+            self.assertNotIn("v0.5.0 has been released", content)
+
     def test_release_source_and_live_release_verification_are_distinct(self) -> None:
         manifest = (REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
@@ -38,19 +51,18 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.4.0-release-source", manifest)
+        self.assertIn("system_version: 0.5.0-candidate", manifest)
+        self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
-        self.assertIn("release-state-neutral `v0.4.0` source", readme)
-        self.assertIn("## v0.4.0 (governance-and-records release-source scope)", roadmap)
+        self.assertIn("unreleased local `v0.5.0` candidate", readme)
+        self.assertIn("## v0.5.0 (unreleased metadata-only provenance register-set candidate)", roadmap)
+        self.assertIn("## v0.4.0 (published governance-and-records baseline)", roadmap)
         self.assertIn("## v0.3.1 (released 2026-07-16)", roadmap)
         self.assertIn("## v0.3.2 (historical local release-state correction candidate)", roadmap)
-        self.assertIn("Status: release-state-neutral source record for the `v0.4.0` release scope.", current_status)
+        self.assertIn("local `v0.5.0` candidate", current_status)
         self.assertIn("matching GitHub Release", current_status)
-        self.assertIn(
-            "enabled GitHub technical immutable releases for this repository",
-            integrity_policy,
-        )
+        self.assertIn("GitHub technical immutable releases are enabled", integrity_policy)
         self.assertIn("ref: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
         self.assertIn("FRAMEWORK_RELEASE_TAG: v0.1.1", workflow)
         self.assertIn("FRAMEWORK_EXPECTED_COMMIT: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
@@ -97,12 +109,13 @@ class ReleaseControlTests(unittest.TestCase):
         candidate = (RELEASE_ROOT / "V0_3_2_RELEASE_STATE_CORRECTION_CANDIDATE.md").read_text(encoding="utf-8")
 
         self.assertIn("`v0.3.x`", security)
-        self.assertIn("released bounded system\nfoundation introduced in `v0.3.0`", start_here)
+        self.assertIn("`v0.4.x`", security)
+        self.assertIn("released bounded system baseline\nthrough `v0.4.0`", start_here)
         self.assertIn("`REL-008` was completed by the released `v0.3.0`", roadmap)
         self.assertNotIn("| REL-008 |", roadmap)
-        self.assertIn("Historical v0.3.0\nframework-integration evidence", integrity)
-        self.assertIn("published v0.3.1 patch", integrity)
-        self.assertIn("Recorded v0.3.1 decision", integrity)
+        self.assertIn("Historical v0.3.0 framework-integration evidence", integrity)
+        self.assertIn("The published v0.3.1", integrity)
+        self.assertIn("Historical v0.3.1 decision", integrity)
         self.assertIn("Status: historical local maintenance candidate", candidate)
         self.assertIn("locally recorded current published patch\nbaseline remains `v0.3.1`", candidate)
 

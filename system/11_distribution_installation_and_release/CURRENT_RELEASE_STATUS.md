@@ -1,9 +1,9 @@
 # Release Status Verification
 
-Status: release-state-neutral source record for the `v0.4.0` release scope. It
-does not itself assert which version is currently hosted, installed, or
-available. It does not create a Git tag, GitHub Release, runtime update, or
-public capability claim.
+Status: current release-verification rule plus local `v0.5.0` candidate
+boundary. The published `v0.4.0` tag/Release is the historical public baseline
+for this worktree. This record does not assert that a hosted `v0.5.0` Release,
+runtime update, or public capability claim exists.
 
 ## Normal Public Installation Rule
 
@@ -21,9 +21,20 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
-## v0.4.0 Release-Source Scope
+## v0.5.0 Candidate Scope
 
-- This source defines the `v0.4.0` governance-and-records capability scope.
+- This local candidate proposes one metadata-only Data And Provenance Register
+  Set capability. It is not a tag, GitHub Release, installation target,
+  runtime claim, or C4 authorization.
+- A v0.5.0 checkout becomes a normal public installation target only if the
+  normal public installation rule is later satisfied for its exact candidate
+  commit.
+- The candidate must not be inferred from `main`, a branch, a green CI run, a
+  capability ledger, or an AI statement.
+
+## v0.4.0 Historical Public Baseline
+
+- The published `v0.4.0` release defines the governance-and-records baseline.
 - The canonical capability ledger records ten accountable-human-admitted
   capabilities and one explicit exclusion. Admission is not a hosted-release,
   installation, runtime, or C4 claim.

@@ -1,6 +1,7 @@
 """Regression checks for the released v0.3 foundation and v0.3.1 records."""
 
 from pathlib import Path
+import re
 import unittest
 
 
@@ -8,7 +9,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SYSTEM_ROOT = REPOSITORY_ROOT / "system"
 SYSTEM_MANIFEST = REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml"
 MODULE_IDS = tuple(f"{index:02d}" for index in range(13))
-PRIVATE_MARKERS = ("E:\\\\", "C:\\\\Users", "Research1", "PaCO2")
+PRIVATE_PATH_PATTERN = r"(?i)(?:[a-z]:\\|/(?:home|users)/)"
 
 
 class SystemFoundationTests(unittest.TestCase):
@@ -43,8 +44,7 @@ class SystemFoundationTests(unittest.TestCase):
             SYSTEM_MANIFEST,
         ]
         public_text = "\n".join(path.read_text(encoding="utf-8") for path in public_files)
-        for marker in PRIVATE_MARKERS:
-            self.assertNotIn(marker, public_text)
+        self.assertIsNone(re.search(PRIVATE_PATH_PATTERN, public_text))
 
 
 if __name__ == "__main__":

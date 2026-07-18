@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "data_provenance_register_set_index",
+  "register_id": "REPLACE_WITH_REGISTER_ID",
+  "register_revision": 1,
+  "recorded_at": "2026-01-01T00:00:00Z",
+  "metadata_only": true,
+  "entry_contract": {
+    "record_type": "data_provenance_register_entry",
+    "schema_version": "1.0.0"
+  },
+  "validation_boundary": {
+    "structural_validation_only": true,
+    "not_an_access_or_compliance_determination": true
+  },
+  "entries": []
+}

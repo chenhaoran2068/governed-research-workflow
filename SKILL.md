@@ -84,6 +84,12 @@ For generic data provenance metadata, use
 authorization, or unknown status does not authorize data access, copying,
 processing, sharing, publication, or release.
 
+For an explicitly requested **set** of metadata-only provenance records, use
+`references/data-provenance-register-set.md`. Invoke its validator only when
+the user supplies one explicit index path and requests structural validation.
+The validator reads metadata JSON only; it does not open source locators or
+data files, grant access, or determine compliance.
+
 ## Governed Work Loop
 
 For consequential outputs, use a bounded loop:

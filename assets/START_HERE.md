@@ -12,10 +12,10 @@ Governed Research Workflow skill.
 5. Keep restricted data, credentials, unpublished work, and private records
    outside this public skill workspace.
 
-The optional `system/` directory contains the released bounded system
-foundation introduced in `v0.3.0`. Read only an admitted module explicitly
-linked by the active route. Do not infer capability from a foundation-only
-module boundary file.
+The optional `system/` directory contains the released bounded system baseline
+through `v0.4.0` and any separately marked local candidate records. Read only
+an admitted module explicitly linked by the active route. Do not infer a
+capability, installation target, or release state from a module boundary file.
 
 This marker does not approve analysis, protocol changes, compliance claims,
 release, or submission.

@@ -135,8 +135,9 @@ class BoundedAutonomyAuthorizationTests(unittest.TestCase):
         self.assertTrue(GUIDANCE_PATH.is_file())
         self.assert_valid(self.template)
         dependency_record = DEPENDENCY_RECORD_PATH.read_text(encoding="utf-8")
-        self.assertIn("jsonschema >=4.23,<5", dependency_record)
-        self.assertEqual(version("jsonschema").split(".")[0], "4")
+        self.assertIn("`jsonschema`", dependency_record)
+        self.assertIn("`4.26.0`", dependency_record)
+        self.assertEqual(version("jsonschema"), "4.26.0")
 
     def test_complete_approved_synthetic_record_validates(self) -> None:
         self.assert_valid(active_record())

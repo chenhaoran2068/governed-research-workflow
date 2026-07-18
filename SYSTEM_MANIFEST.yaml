@@ -1,16 +1,18 @@
-# Release-state-neutral v0.4.0 governance-and-records source. It is an
-# installation target only when a matching annotated tag and GitHub Release can
-# be verified. The workspace framework-contract version remains 0.1.0; v0.1.1
-# is the exact framework validation target for this source revision.
+# Local v0.5.0 candidate source derived from the released v0.4.0 baseline.
+# It is not an installation target until a matching annotated v0.5.0 tag and
+# GitHub Release can be verified. The workspace framework-contract version
+# remains 0.1.0; v0.1.1 is the exact framework validation target for this
+# candidate revision.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.4.0-release-source
+system_version: 0.5.0-candidate
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:
   - standalone
   - framework_integrated
-required_dependencies: []
+required_dependencies:
+  - jsonschema==4.26.0
 optional_shared_services: []
 framework_compatibility:
   # This schema field denotes the framework contract version, not the exact

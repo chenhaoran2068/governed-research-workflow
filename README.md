@@ -5,12 +5,12 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: release-state-neutral `v0.4.0` source. This source tree does not claim
-that a hosted `v0.4.0` Release already exists. A normal public installation
-target exists only when an exact annotated `v0.4.0` tag and matching GitHub
-Release exist and resolve to the selected source commit. Never install a
-mutable branch. This source does not add research execution authority or
-expand any human-approval boundary.
+Status: unreleased local `v0.5.0` candidate derived from the published
+`v0.4.0` baseline. This source tree does not claim that a hosted `v0.5.0`
+Release exists. A normal public installation target exists only when an exact
+annotated `v0.5.0` tag and matching GitHub Release exist and resolve to the
+selected source commit. Never install a mutable branch. This candidate does
+not add research execution authority or expand any human-approval boundary.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -18,9 +18,9 @@ read
 
 ## Capability Truth
 
-This release-state-neutral source contains a single machine-checkable capability ledger at
+This candidate source contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-what the `v0.4.0` release source may claim, what it must not claim, its
+what the `v0.5.0` candidate may claim, what it must not claim, its
 interface, evidence, version, and required human approval. The ledger is not
 a live hosted-release statement. It records the accountable-human Option A
 admission of ten named capabilities for the `v0.4.0` release scope; that
@@ -28,19 +28,19 @@ admission is not a tag, GitHub Release, normal installation target, runtime
 claim, or C4 authorization.
 
 The package manifest and current installation narrative identify this source
-as release-state-neutral `v0.4.0` content. The ledger's target is a planning
-and verification boundary, not by itself a public release statement or
-installation claim.
+as `v0.5.0-candidate` content. The ledger's target is a planning and
+verification boundary, not by itself a public release statement or installation
+claim.
 
-R40-00 through R40-06 have completed implementation review: the ledger,
-current-versus-historical release boundary, bounded-autonomy authorization
-record, metadata-only provenance register, release-control record contract,
-and synthetic assurance route are present. The role-card and agent-runtime
-route is explicitly excluded from `v0.4.0`. The remaining ten records are
-admitted only for the named release scope. Exact-commit evidence, C4
-authorization, tagging, and hosted-release verification are separate steps;
-the live release-verification rule, rather than this paragraph, decides whether
-they have occurred.
+The v0.4 baseline includes the ledger, current-versus-historical release
+boundary, bounded-autonomy authorization record, metadata-only provenance
+register, release-control record contract, and synthetic assurance route. The
+role-card and agent-runtime route remains explicitly excluded. This v0.5
+candidate adds one forbidden-until-admitted capability: a metadata-only
+provenance register set with an explicit read-only validator. Exact-commit
+evidence, exact-release admission, C4 authorization, tagging, and hosted-
+release verification remain separate steps; the live release-verification rule,
+rather than this paragraph, decides whether any future release has occurred.
 
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.
@@ -81,6 +81,11 @@ background work, and agent runtime. One Codex conversation remains the
 interaction model; it may use different review perspectives without creating
 separate agents.
 
+The v0.5.0 candidate additionally provides only a metadata-only provenance
+register-set index and explicit structural validator. It does not read real
+data, source locators, URLs, or credentials; it does not infer access,
+permission, compliance, provenance truth, or scientific suitability.
+
 ## Use
 
 Ask the agent to use the skill when beginning or continuing a research task.
@@ -95,12 +100,12 @@ submission route, project retrospective register, and public-boundary review.
 
 ```text
 SKILL.md                 # Stable AI entry and routing instructions
-references/              # Active v0.2.1 route guidance
+references/              # Active route guidance and bounded metadata controls
 assets/                  # Blank output templates and bootstrap assets
 scripts/                 # Explicitly invoked deterministic helpers
 tests/                   # Safety and regression checks
 agents/openai.yaml       # Codex-facing skill metadata
-system/                  # Public v0.3 module architecture
+system/                  # Public 13-module architecture and candidate records
 ```
 
 Read `system/INDEX.md` for the 13-module public-system map and
@@ -142,8 +147,17 @@ retained as historical snapshots under
 
 The historical local `v0.3.2` maintenance candidate separated current
 installation guidance from retained historical snapshots. It was not published
-and is retained as an input to this local `v0.4.0` candidate; it is not the
-current candidate identity or an installation target.
+and is retained as an input to the published `v0.4.0` release source; it is
+not the current candidate identity or an installation target.
+
+`v0.4.0` is the published governance-and-records release. It remains a
+historical public baseline for this candidate and is never modified in place.
+
+`v0.5.0` is currently an unreleased candidate. Its only proposed new
+capability is a metadata-only Data And Provenance Register Set. The release
+must still complete exact-commit review, cross-platform CI, material and
+dependency review, exact capability admission, C4 authorization, immutable
+tag/Release creation, and post-release verification.
 
 ## Public Evolution Roadmap
 
@@ -151,19 +165,25 @@ This is a planning summary, not a promise or a statement that a future module
 is already available. The accountable maintainer may split, defer, narrow, or
 supersede a band through a reviewed revision.
 
-- `v0.4.x`: governance records and control foundations; no real-data handling,
-  autonomous research, credentialed network activity, or agent runtime.
-- `v0.5.x`: reviewable workflow and evidence controls; no scientific,
+- `v0.4.0`: published governance records and control foundations; no real-data
+  handling, autonomous research, credentialed network activity, or agent
+  runtime.
+- `v0.5.0`: metadata-only provenance register set; no data-content handling,
+  source-locator access, credentialed network activity, or permission/
+  compliance decision.
+- `v0.5.x`: only corrections or compatibility maintenance for the released
+  `v0.5.0` contract.
+- `v0.6.0`: reviewable workflow and evidence controls; no scientific,
   compliance, journal, or submission decision by the system.
-- `v0.6.x`: human-reviewed retrospective learning and knowledge promotion; no
+- `v0.7.x`: human-reviewed retrospective learning and knowledge promotion; no
   automatic promotion of project observations.
-- `v0.7.x`: portable profiles, stable interfaces, bounded role contracts, and
+- `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and
   controlled-tool admission; no delegated authority or multi-agent runtime.
-- `v0.8.x`: dedicated evidence-integrity and supervisory-architecture audit;
+- `v0.9.x`: dedicated evidence-integrity and supervisory-architecture audit;
   no perfect-truthfulness claim or AI final academic approval.
-- `v0.9.x`: opt-in multi-machine learning and contribution-governance pilot;
+- `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;
   no hidden telemetry, automatic upload, or automatic rule promotion.
-- `v0.10.x+`: pre-v1 scope closure and stabilization of every admitted module.
+- `v0.11.x+`: pre-v1 scope closure and stabilization of every admitted module.
 - `v1.0.0`: stable bounded public-system contract, only after its interface,
   evidence, support, and release conditions are met.
 - `v1.1+`: separately reviewed post-v1 expansion; this roadmap grants no

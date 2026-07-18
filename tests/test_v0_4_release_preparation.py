@@ -51,6 +51,9 @@ class V04ReleasePreparationTests(unittest.TestCase):
             if capability["capability_id"] == "GRW-CAP-040-03":
                 self.assertEqual(capability["release_disposition"], "excluded")
                 self.assertEqual(capability["public_claim_status"], "forbidden")
+            elif capability["capability_id"] == "GRW-CAP-050-01":
+                self.assertEqual(capability["release_disposition"], "candidate")
+                self.assertEqual(capability["public_claim_status"], "forbidden")
             else:
                 self.assertIn(capability["capability_id"], admitted_ids)
                 self.assertEqual(capability["release_disposition"], "admitted")

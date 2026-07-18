@@ -16,10 +16,12 @@ LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capabil
 CURRENT_RELEASE_PATH = REPOSITORY_ROOT / "system" / "11_distribution_installation_and_release" / "CURRENT_RELEASE_STATUS.md"
 WORKFLOW_PATH = REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml"
 ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_4_SYNTHETIC_ASSURANCE.md"
+V05_ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_5_SYNTHETIC_ASSURANCE.md"
 AUTHORIZATION_TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "bounded-autonomy-authorization.template.json"
 PROVENANCE_TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "data-provenance-register.template.json"
 RELEASE_TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "release-control-record.template.json"
 ASSURANCE_RELATIVE_PATH = ASSURANCE_PATH.relative_to(REPOSITORY_ROOT).as_posix().encode("utf-8")
+V05_ASSURANCE_RELATIVE_PATH = V05_ASSURANCE_PATH.relative_to(REPOSITORY_ROOT).as_posix().encode("utf-8")
 
 
 def canonical_snapshot_bytes(source_bytes: bytes) -> bytes:
@@ -29,8 +31,8 @@ def canonical_snapshot_bytes(source_bytes: bytes) -> bytes:
     return source_bytes.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
 
 
-def current_source_snapshot_sha256() -> str:
-    """Hash only Git-tracked candidate source across supported line endings."""
+def source_snapshot_sha256(excluded_relative_path: bytes) -> str:
+    """Hash tracked source while excluding one self-referential evidence file."""
     result = subprocess.run(
         ["git", "ls-files", "-z"],
         cwd=REPOSITORY_ROOT,
@@ -39,7 +41,7 @@ def current_source_snapshot_sha256() -> str:
     )
     digest = hashlib.sha256()
     for relative_path in sorted(path for path in result.stdout.split(b"\0") if path):
-        if relative_path == ASSURANCE_RELATIVE_PATH:
+        if relative_path == excluded_relative_path:
             continue
         digest.update(relative_path)
         digest.update(b"\0")
@@ -53,6 +55,16 @@ def current_source_snapshot_sha256() -> str:
         digest.update(canonical_snapshot_bytes(source_bytes))
         digest.update(b"\0")
     return digest.hexdigest()
+
+
+def current_source_snapshot_sha256() -> str:
+    """Return the v0.4 historical-source snapshot representation."""
+    return source_snapshot_sha256(ASSURANCE_RELATIVE_PATH)
+
+
+def current_v05_source_snapshot_sha256() -> str:
+    """Return the v0.5 candidate-source snapshot representation."""
+    return source_snapshot_sha256(V05_ASSURANCE_RELATIVE_PATH)
 
 
 class V04SyntheticAssuranceTests(unittest.TestCase):
@@ -120,18 +132,30 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         self.assertNotIn("E:\\", assurance)
         self.assertNotIn("C:\\Users", assurance)
 
-    def test_assurance_snapshot_matches_the_current_candidate_source_tree(self) -> None:
+    def test_historical_v04_assurance_snapshot_is_well_formed_but_not_reused_for_v05(self) -> None:
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
         match = re.search(r"working-tree source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
-        self.assertEqual(match.group(1), current_source_snapshot_sha256())
+        self.assertRegex(match.group(1), r"^[0-9a-f]{64}$")
+        self.assertIn("v0.4", assurance.lower())
+        self.assertNotEqual(match.group(1), current_source_snapshot_sha256())
+
+    def test_v05_candidate_assurance_uses_its_own_tracked_source_snapshot(self) -> None:
+        assurance = V05_ASSURANCE_PATH.read_text(encoding="utf-8")
+        match = re.search(r"working-tree source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
+        self.assertIsNotNone(match)
+        self.assertEqual(match.group(1), current_v05_source_snapshot_sha256())
+        self.assertIn("Status: pre-C3 candidate synthetic assurance evidence.", assurance)
+        self.assertIn("not an exact candidate-commit identity", re.sub(r"\s+", " ", assurance))
 
     def test_snapshot_ignores_an_untracked_ci_checkout_directory(self) -> None:
         baseline = current_source_snapshot_sha256()
+        v05_baseline = current_v05_source_snapshot_sha256()
         with tempfile.TemporaryDirectory(prefix="ci-framework-checkout-", dir=REPOSITORY_ROOT) as temporary_directory:
             temporary_path = Path(temporary_directory)
             (temporary_path / "framework-marker.txt").write_text("not candidate source\n", encoding="utf-8")
             self.assertEqual(current_source_snapshot_sha256(), baseline)
+            self.assertEqual(current_v05_source_snapshot_sha256(), v05_baseline)
 
     def test_snapshot_normalizes_text_line_endings_without_altering_binary_inputs(self) -> None:
         text_crlf = b"first\r\nsecond\r\n"
