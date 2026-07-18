@@ -23,18 +23,20 @@ read
 
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-what the published `v0.5.0` capability baseline may claim and must not claim,
-its interface, evidence, version, and required human approval. The ledger is
-not an installed-runtime statement. It records the accountable-human Option A
-admission of ten named capabilities for the `v0.4.0` release scope and the
-metadata-only register-set capability for `v0.5.0`; neither admission alone
-proves a local installation, runtime identity, or a future C4 authorization.
+the historical `v0.4.0` and published `v0.5.0` capability baselines, plus the
+admitted scope of the local `v0.6.0` release candidate. It records each
+capability's interface, evidence, version, and required human approval. The
+ledger is not an installed-runtime statement. Neither a historical admission
+nor a v0.6 candidate admission alone proves a local installation, runtime
+identity, hosted Release, or a future C4 authorization.
 
 The package manifest and current installation narrative identify this source
-as unreleased `v0.6.0` candidate content. `GRW-CAP-060-01` is not yet in the
-ledger and may not be claimed as publicly available until it is verified,
-admitted for one exact release, and separately published. A capability
-admission is not by itself an installation claim or C4 authorization.
+as unreleased `v0.6.0` candidate content. `GRW-CAP-060-01` is verified and
+accountable-human admitted for the named v0.6.0 release scope, but it is not
+published or an installation target. It may be described only as an admitted
+candidate capability until a later exact final commit has successful remote CI,
+C4 authorization, an immutable tag, and a matching GitHub Release. Admission
+is not by itself an installation claim or C4 authorization.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
 boundary, bounded-autonomy authorization record, metadata-only provenance
@@ -90,12 +92,12 @@ provenance register-set index and explicit structural validator. It does not rea
 data, source locators, URLs, or credentials; it does not infer access,
 permission, compliance, provenance truth, or scientific suitability.
 
-The unreleased v0.6 candidate adds only a metadata-only workflow/evidence
-control bundle, optional baseline comparison, and read-only structural
-validation. It records declared relationships and revision impact; it does not
-open sources, establish semantic support, prove a human authorization, prevent
-a same-authority rewrite, or decide scientific, compliance, Gate, submission,
-or release status.
+The unreleased but admitted v0.6 candidate adds only a metadata-only
+workflow/evidence control bundle, optional baseline comparison, and read-only
+structural validation. It records declared relationships and revision impact;
+it does not open sources, establish semantic support, prove a human
+authorization, prevent a same-authority rewrite, or decide scientific,
+compliance, Gate, submission, or release status.
 
 ## Use
 

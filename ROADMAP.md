@@ -26,10 +26,10 @@ support, verify a human identity or actual authorization, prevent a process
 with equivalent write authority from changing both a bundle and baseline, or
 make a scientific, compliance, Gate, submission, or release decision.
 
-The capability is not admitted in the ledger, not published, and not an
-installation target. Exact candidate review, capability admission, remote CI,
-C4 authorization, immutable tag/Release, and post-release verification remain
-separate required steps.
+The capability is verified and accountable-human admitted for the named v0.6.0
+release scope, but it is not published or an installation target. Exact
+candidate review, remote CI, C4 authorization, immutable tag/Release, and
+post-release verification remain separate required steps.
 
 ## v0.5.0 (published metadata-only provenance register set)
 

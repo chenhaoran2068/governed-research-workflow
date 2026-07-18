@@ -1,14 +1,14 @@
 {
-  "ledger_schema_version": "1.0.0",
+  "ledger_schema_version": "1.1.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "released",
+  "ledger_status": "release_candidate",
   "release_context": {
-    "source_release_version": "v0.5.0",
-    "historical_public_baseline": "v0.4.0",
-    "live_release_identity_rule": "The published v0.5.0 public release is verified only from its exact annotated tag and matching GitHub Release. This ledger describes capability scope and does not prove an installed runtime or authorize a future release."
+    "source_release_version": "v0.6.0",
+    "historical_public_baseline": "v0.5.1",
+    "live_release_identity_rule": "The published v0.5.1 public release is verified only from its exact annotated tag and matching GitHub Release. This v0.6.0 ledger is a release-candidate capability record: its admission describes a named release scope but does not prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field applies to the published v0.5.0 capability scope. Prior released v0.4.0 claims remain in prior_release_history as historical baseline facts and are not automatic admissions for later capabilities.",
-  "claim_admission_rule": "A capability may be described for a named published release only when its record is verified, admitted for that release scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, or authorize a future C4 decision.",
+  "target_claim_scope": "The public_claim_status field records admitted release scope for the local v0.6.0 candidate. It does not establish public availability until an exact final commit has a matching immutable tag and GitHub Release. Published v0.4.0, v0.5.0, and v0.5.1 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
+  "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
     "conflicting_records_and_exact_locations",
@@ -337,6 +337,62 @@
       ],
       "contradiction_refusal": "When the index, entry schema, path boundary, relationship declaration, or access statement conflicts or is unknown, reject the affected structural claim and do not infer a data action or approval.",
       "limitations_and_next_action": "This is an admitted and published v0.5.0 capability, not an installed-runtime claim. Any local runtime installation remains a separate controlled action. It has no real-data, network, compliance, or runtime-installation authority."
+    },
+    {
+      "capability_id": "GRW-CAP-060-01",
+      "public_name": "Reviewable Workflow And Evidence Control Records",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides an opt-in, metadata-only six-record bundle for declared assertions, evidence references, assertion/evidence relations, verification events, human decision records, and revision/downstream-impact records, plus optional canonical baseline comparison and explicit read-only structural validation of supplied JSON inputs.",
+      "non_promise": "Does not open data, source, pointer, URL, or service targets; establish source truth or semantic support; verify human identity or actual authorization; decide compliance, Gate, submission, or release status; prevent a same-authority rewrite; provide agent runtime; or perform scientific work.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "system/09_schemas_records_and_templates/workflow_evidence_control_bundle.schema.json",
+          "system/09_schemas_records_and_templates/workflow_evidence_control_baseline.schema.json",
+          "assets/workflow-evidence-control-bundle.template.json",
+          "assets/workflow-evidence-control-baseline.template.json",
+          "scripts/validate_workflow_evidence_control_bundle.py",
+          "references/workflow-evidence-control-records.md"
+        ],
+        "identifiers": [
+          "workflow_evidence_control_bundle",
+          "workflow_evidence_control_baseline",
+          "validate_workflow_evidence_control_bundle.py",
+          "assertion_record",
+          "evidence_reference_record",
+          "assertion_evidence_relation_record",
+          "verification_event_record",
+          "human_decision_record",
+          "revision_and_impact_record"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_workflow_evidence_control_bundle.py", "identifier": "WorkflowEvidenceControlBundleTests"},
+          {"kind": "test", "path": "tests/test_v0_6_candidate_assurance.py", "identifier": "V06CandidateAssuranceTests"},
+          {"kind": "integration", "path": "tests/test_framework_candidate_integration.py", "identifier": "FrameworkCandidateIntegrationTests"},
+          {"kind": "manual_review", "path": "system/11_distribution_installation_and_release/V0_6_CAPABILITY_ADMISSION.md", "identifier": "accountable-human v0.6.0 release-scope admission accepted 2026-07-18"}
+        ]
+      },
+      "version": {"introduced_version": "v0.6.0", "last_verified_release": null, "target_release": "v0.6.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human v0.6.0 release-scope admission accepted 2026-07-18; no C4 release authorization, immutable tag, GitHub Release, or runtime installation is granted by this admission",
+      "claim_surfaces": [
+        "README.md",
+        "ROADMAP.md",
+        "SKILL.md",
+        "references/workflow-evidence-control-records.md",
+        "system/11_distribution_installation_and_release/V0_6_CAPABILITY_ADMISSION.md"
+      ],
+      "contradiction_refusal": "When a declared record relationship, prerequisite state, path boundary, baseline identity, or human-decision representation conflicts or is unknown, reject the affected structural claim and do not infer source truth, approval, data action, Gate passage, or release readiness.",
+      "limitations_and_next_action": "Admitted only for the named v0.6.0 release scope in this local release-candidate source. It is not published, not an installation target, and not an installed-runtime claim. Exact final-commit evidence, successful remote CI, C4 authorization, immutable tag/Release, post-release verification, and any separate local adoption remain required."
     }
   ]
 }

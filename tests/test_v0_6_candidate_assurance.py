@@ -35,14 +35,20 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertIn("## v0.6.0 (unreleased workflow/evidence-control candidate)", roadmap)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)
 
-    def test_candidate_is_not_admitted_in_the_canonical_capability_ledger(self) -> None:
+    def test_candidate_is_admitted_for_scope_but_not_released_or_installed(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        capability_ids = {record["capability_id"] for record in ledger["capabilities"]}
-        self.assertNotIn("GRW-CAP-060-01", capability_ids)
+        record = next(record for record in ledger["capabilities"] if record["capability_id"] == "GRW-CAP-060-01")
+        self.assertEqual(record["implementation_status"], "verified")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
+        self.assertEqual(record["version"]["target_release"], "v0.6.0")
+        self.assertIsNone(record["version"]["last_verified_release"])
+        self.assertIn("not published", record["limitations_and_next_action"].lower())
+        self.assertIn("not an installed-runtime claim", record["limitations_and_next_action"].lower())
         evidence_map = EVIDENCE_MAP_PATH.read_text(encoding="utf-8").lower()
-        self.assertIn("not admitted", evidence_map)
-        self.assertIn("not publicly claimable", evidence_map)
-        self.assertIn("not the canonical\ncapability truth ledger", EVIDENCE_MAP_PATH.read_text(encoding="utf-8"))
+        self.assertIn("verified and admitted", evidence_map)
+        self.assertIn("unpublished and not an installation target", evidence_map)
+        self.assertIn("not the\ncanonical capability truth ledger", EVIDENCE_MAP_PATH.read_text(encoding="utf-8"))
 
     def test_candidate_interfaces_are_present_and_metadata_only(self) -> None:
         required_paths = (
@@ -71,7 +77,8 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         )
         candidate_text = "\n".join((RELEASE_ROOT / name).read_text(encoding="utf-8") for name in candidate_records).lower()
         self.assertIn("not published", candidate_text)
-        self.assertIn("not a capability\nadmission", candidate_text)
+        self.assertIn("not a public-release claim", candidate_text)
+        self.assertIn("not authorize", candidate_text)
         self.assertIn("not authorize", candidate_text)
         self.assertIn("runtime-installation", candidate_text)
 

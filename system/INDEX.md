@@ -24,14 +24,14 @@ framework `v0.1.2` tag.
 | `00` | manifest and profiles | active manifest; v0.6 candidate validation targets an exact released framework | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
-| `03` | workflows | active baseline plus unreleased v0.6 record-control candidate | route references and blank assets |
-| `04` | evidence, requirements, and knowledge | active guidance plus unreleased pointer/relation-record candidate; no knowledge corpus | evidence/citation references |
+| `03` | workflows | active baseline plus admitted but unreleased v0.6 record-control candidate | route references and blank assets |
+| `04` | evidence, requirements, and knowledge | active guidance plus admitted but unreleased pointer/relation-record candidate; no knowledge corpus | evidence/citation references |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline | retrospective reference and asset |
-| `07` | tools and integrations | active bootstrap tool, published v0.5 validator, and unreleased v0.6 read-only validator candidate | `scripts/` and tests |
+| `07` | tools and integrations | active bootstrap tool, published v0.5 validator, and admitted but unreleased v0.6 read-only validator candidate | `scripts/` and tests |
 | `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
-| `09` | schemas, records, and templates | blank-record baseline plus unreleased v0.6 six-record and baseline-manifest schemas | `assets/` templates and schemas |
-| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, retained assurance, and unreleased v0.6 synthetic checks | `tests/` |
+| `09` | schemas, records, and templates | blank-record baseline plus admitted but unreleased v0.6 six-record and baseline-manifest schemas | `assets/` templates and schemas |
+| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, retained assurance, and admitted but unreleased v0.6 synthetic checks | `tests/` |
 | `11` | distribution, installation, and release | active release controls plus a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical v0.3/v0.4/v0.5 preparation records |
 | `12` | synthetic examples | exact-tag integration test plus v0.4/v0.5 history and v0.6 candidate assurance | synthetic fixtures and assurance only; no end-to-end public research example |
 

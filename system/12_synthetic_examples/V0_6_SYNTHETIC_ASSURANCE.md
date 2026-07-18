@@ -43,7 +43,7 @@ record.
   integration-test environment variables;
 - local result: `120 passed / 0 failed / 0 skipped` on the candidate source
   snapshot named below, using Python `3.13.14` on Windows;
-- candidate source snapshot SHA-256: `2171ee41713fb6e8d864c40f7c035a08c966067d0030788208530f4e99d94b88`;
+- candidate source snapshot SHA-256: `effb110fda008abc9068e2f5e9cb22eb6af01cb935210c67350d06fc4a6bc047`;
 - snapshot method: the existing tested tracked-source snapshot helper hashes
   byte-sorted `git ls-files -z` relative paths and source bytes, normalizing
   text line endings while preserving NUL-containing bytes. This assurance file
