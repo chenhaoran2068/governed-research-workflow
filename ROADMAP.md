@@ -1,14 +1,35 @@
 # Roadmap
 
-This roadmap records expected sequence, not delivery dates or promises.
+This roadmap records expected sequence, not delivery dates or promises. The
+current worktree is an unreleased v0.6 candidate; the current published patch
+is v0.5.1 and must be verified by its exact tag and matching GitHub Release.
 
-## v0.5.1 (release-state maintenance)
+## v0.5.1 (published release-state maintenance)
 
 This maintenance revision corrects current-facing release-state wording after
 the immutable `v0.5.0` publication. It does not alter the provenance-register
 set validator, schemas, dependency, data boundary, permissions, or CI
 architecture. A selected version is an installation target only after its own
 exact annotated tag and matching GitHub Release are externally verified.
+
+## v0.6.0 (unreleased workflow/evidence-control candidate)
+
+The local v0.6 candidate proposes one metadata-only capability,
+`GRW-CAP-060-01`: an opt-in six-record Workflow And Evidence Control Bundle,
+optional canonical JSON baseline comparison, blank templates, synthetic
+fixtures, and an explicitly invoked read-only structural validator.
+
+It records declared assertions, evidence references, relationships, scoped
+verification, human decision records, and revision/downstream-impact states.
+It does not read data or source content, open URLs, establish semantic source
+support, verify a human identity or actual authorization, prevent a process
+with equivalent write authority from changing both a bundle and baseline, or
+make a scientific, compliance, Gate, submission, or release decision.
+
+The capability is verified and accountable-human admitted for the named v0.6.0
+release scope, but it is not published or an installation target. Exact
+candidate review, remote CI, C4 authorization, immutable tag/Release, and
+post-release verification remain separate required steps.
 
 ## v0.5.0 (published metadata-only provenance register set)
 
@@ -38,8 +59,6 @@ guidance without modifying the historical tag.
 
 - `v0.5.x`: corrective or compatibility maintenance only for the released
   v0.5.0 contract.
-- `v0.6.0`: reviewable workflow and evidence controls; it will not make
-  scientific, compliance, journal, or submission decisions.
 - `v0.7.x`: human-reviewed project learning and knowledge promotion; no
   automatic promotion from a project observation to a shared rule.
 - `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and

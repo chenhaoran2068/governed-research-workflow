@@ -2,7 +2,10 @@
 
 Status: published `v0.3.1` integration validation targets the exact released
 Workspace Framework `v0.1.1` tag. Historical `v0.3.0` evidence remains bound
-to framework `v0.1.0` and is not reused as evidence for a later version.
+to framework `v0.1.0` and is not reused as evidence for a later version. The
+unreleased v0.6 candidate must repeat integration evidence against released
+Workspace Framework `v0.1.2` at commit
+`97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`.
 
 ## Current Position
 
@@ -34,15 +37,17 @@ exact source revision.
 
 This test proves a bounded technical integration contract. It does not approve
 scientific quality, compliance, source access, project creation, or a workflow
-release.
+release. The v0.6 candidate's later rerun is candidate evidence only until its
+exact commit and C4 record are reviewed.
 
 ## Conditions Before Later Release Advertising
 
 Before a later stable release advertises framework integration, maintainers
 must:
 
-1. retain the passed cross-repository validation against the released `v0.1.1`
-   tag and rerun it if the compatibility contract changes;
+1. retain the historical passed cross-repository validation against the
+   released `v0.1.1` tag, and rerun the v0.6 candidate against `v0.1.2` at
+   `97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`;
 2. retain `0.1.0` in `framework_compatibility`, while identifying the exact
    tested Framework release tag and commit in the compatibility evidence and
    release notes;

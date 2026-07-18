@@ -90,6 +90,19 @@ the user supplies one explicit index path and requests structural validation.
 The validator reads metadata JSON only; it does not open source locators or
 data files, grant access, or determine compliance.
 
+For an explicitly requested workflow/evidence-control bundle, first resolve
+the selected version to its exact public tag and matching GitHub Release, then
+check the capability ledger for an admitted `GRW-CAP-060-01` record. Only if
+both conditions hold, use
+`references/workflow-evidence-control-records.md` and invoke its validator
+only with one explicit review root, bundle path, and optional baseline path.
+The validator is read-only and metadata-only: it does not open pointers,
+access data, establish source support, verify a human identity or real
+authorization, advance a Gate, or make a scientific/compliance/submission/
+release decision. An admission recorded in an unreleased candidate source, a
+candidate branch, or an unadmitted ledger state is not permission to offer
+this route as a released capability.
+
 ## Governed Work Loop
 
 For consequential outputs, use a bounded loop:
@@ -137,6 +150,9 @@ Stop and request accountable evidence or approval before:
   references/controlled-bootstrap.md
 - Public/private separation and legacy boundaries:
   references/portability-and-release-boundaries.md
+- Metadata-only workflow/evidence control records, when admitted for the
+  selected release:
+  references/workflow-evidence-control-records.md
 
 Use the blank assets only after explaining their role and obtaining any required
 user decision. Do not populate them with invented facts.

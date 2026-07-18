@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "workflow_evidence_control_baseline",
+  "baseline_id": "WORKFLOW_EVIDENCE_BASELINE_TEMPLATE",
+  "bundle_id": "WORKFLOW_EVIDENCE_TEMPLATE",
+  "bundle_revision": 1,
+  "identity_method_id": "workflow_evidence_control_canonical_json_sha256_v1",
+  "canonical_content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "identity_scope_statement": "Template placeholder only. Replace this digest with the canonical UTF-8 JSON SHA-256 of one explicit bundle before comparison.",
+  "produced_at": "2026-01-01T00:00:00Z",
+  "producer_reference": "template-placeholder"
+}

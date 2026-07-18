@@ -1,0 +1,289 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/workflow_evidence_control_bundle.schema.json",
+  "title": "Metadata-Only Workflow And Evidence Control Bundle",
+  "description": "A bounded metadata record bundle. Structural validity never establishes truth, authorization, compliance, scientific validity, or release readiness.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "bundle_id",
+    "bundle_revision",
+    "recorded_at",
+    "metadata_only",
+    "record_contract",
+    "validation_boundary",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "workflow_evidence_control_bundle"},
+    "bundle_id": {"$ref": "#/$defs/identifier"},
+    "bundle_revision": {"type": "integer", "minimum": 1},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "metadata_only": {"const": true},
+    "record_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_contract_version", "allowed_record_types"],
+      "properties": {
+        "record_contract_version": {"const": "1.0.0"},
+        "allowed_record_types": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "assertion_record",
+              "evidence_reference_record",
+              "assertion_evidence_relation_record",
+              "verification_event_record",
+              "human_decision_record",
+              "revision_and_impact_record"
+            ]
+          }
+        }
+      }
+    },
+    "validation_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "structural_validation_only",
+        "no_data_or_pointer_target_access",
+        "no_external_service_action",
+        "not_truth_or_approval_determination"
+      ],
+      "properties": {
+        "structural_validation_only": {"const": true},
+        "no_data_or_pointer_target_access": {"const": true},
+        "no_external_service_action": {"const": true},
+        "not_truth_or_approval_determination": {"const": true}
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/record"}
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]{2,63}$"
+    },
+    "actor_class": {
+      "enum": ["ai", "human", "machine", "external_source", "unknown"]
+    },
+    "safe_pointer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pointer_type", "pointer_value", "content_not_read"],
+      "properties": {
+        "pointer_type": {
+          "enum": ["citation_id", "doi", "pmid", "public_url", "local_reference_id", "opaque_reference", "unknown"]
+        },
+        "pointer_value": {"type": "string", "minLength": 1, "maxLength": 512},
+        "content_not_read": {"const": true}
+      }
+    },
+    "record": {
+      "oneOf": [
+        {"$ref": "#/$defs/assertion_record"},
+        {"$ref": "#/$defs/evidence_reference_record"},
+        {"$ref": "#/$defs/assertion_evidence_relation_record"},
+        {"$ref": "#/$defs/verification_event_record"},
+        {"$ref": "#/$defs/human_decision_record"},
+        {"$ref": "#/$defs/revision_and_impact_record"}
+      ]
+    },
+    "assertion_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id", "record_type", "record_revision", "recorded_at",
+        "assertion_summary", "assertion_type", "actor_class", "lifecycle",
+        "version_label", "declared_scope", "limitations"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/identifier"},
+        "record_type": {"const": "assertion_record"},
+        "record_revision": {"type": "integer", "minimum": 1},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "assertion_summary": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "assertion_type": {"enum": ["claim", "requirement", "process", "observation", "unknown"]},
+        "actor_class": {"$ref": "#/$defs/actor_class"},
+        "lifecycle": {"enum": ["draft", "current", "superseded", "withdrawn"]},
+        "version_label": {"type": "string", "minLength": 1, "maxLength": 128},
+        "declared_scope": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "evidence_reference_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id", "record_type", "record_revision", "recorded_at",
+        "source_role", "canonical_pointer", "version_or_date",
+        "exact_locator", "access_restriction_state", "availability_currentness",
+        "limitation"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/identifier"},
+        "record_type": {"const": "evidence_reference_record"},
+        "record_revision": {"type": "integer", "minimum": 1},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "source_role": {"enum": ["scholarly_source", "official_documentation", "policy", "project_record", "method_record", "unknown"]},
+        "canonical_pointer": {"$ref": "#/$defs/safe_pointer"},
+        "version_or_date": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "value"],
+          "properties": {
+            "status": {"enum": ["known", "unknown"]},
+            "value": {"type": ["string", "null"], "maxLength": 256}
+          },
+          "allOf": [
+            {"if": {"properties": {"status": {"const": "known"}}, "required": ["status"]}, "then": {"properties": {"value": {"type": "string", "minLength": 1}}, "required": ["value"]}},
+            {"if": {"properties": {"status": {"const": "unknown"}}, "required": ["status"]}, "then": {"properties": {"value": {"type": "null"}}, "required": ["value"]}}
+          ]
+        },
+        "exact_locator": {"type": ["string", "null"], "maxLength": 512},
+        "access_restriction_state": {"enum": ["unknown", "public", "restricted", "not_applicable"]},
+        "availability_currentness": {"enum": ["identified", "missing", "unknown", "current", "stale", "conflicting", "superseded"]},
+        "limitation": {"type": "string", "minLength": 1, "maxLength": 1000}
+      }
+    },
+    "assertion_evidence_relation_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id", "record_type", "record_revision", "recorded_at",
+        "assertion_id", "evidence_id", "relation_kind", "declared_support_scope",
+        "assessment_state", "prerequisite_status", "assessor_actor_class",
+        "limitation", "invalidation_reference"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/identifier"},
+        "record_type": {"const": "assertion_evidence_relation_record"},
+        "record_revision": {"type": "integer", "minimum": 1},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "assertion_id": {"$ref": "#/$defs/identifier"},
+        "evidence_id": {"$ref": "#/$defs/identifier"},
+        "relation_kind": {"enum": ["claim_support", "citation_support", "authority_basis", "gate_basis", "submission_requirement", "source_refresh"]},
+        "declared_support_scope": {"enum": ["exact", "bounded", "general", "unknown"]},
+        "assessment_state": {"enum": ["unassessed", "declared_by_ai", "declared_by_human", "human_assessed", "invalidated"]},
+        "prerequisite_status": {"enum": ["not_required", "pending", "satisfied", "blocked"]},
+        "assessor_actor_class": {"$ref": "#/$defs/actor_class"},
+        "limitation": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "invalidation_reference": {"type": ["string", "null"], "maxLength": 256}
+      },
+      "allOf": [
+        {"if": {"properties": {"assessment_state": {"const": "invalidated"}}, "required": ["assessment_state"]}, "then": {"properties": {"prerequisite_status": {"not": {"const": "satisfied"}}}}}
+      ]
+    },
+    "verification_event_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id", "record_type", "record_revision", "recorded_at",
+        "target_record_ids", "check_method_id", "check_method_version",
+        "input_record_ids", "checking_actor_class", "result", "diagnostic_pointer",
+        "positive_scope", "explicit_non_claims"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/identifier"},
+        "record_type": {"const": "verification_event_record"},
+        "record_revision": {"type": "integer", "minimum": 1},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "target_record_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+        "check_method_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "check_method_version": {"type": "string", "minLength": 1, "maxLength": 128},
+        "input_record_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+        "checking_actor_class": {"$ref": "#/$defs/actor_class"},
+        "result": {"enum": ["not_run", "machine_pass", "machine_fail", "not_applicable"]},
+        "diagnostic_pointer": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/safe_pointer"}]},
+        "positive_scope": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "explicit_non_claims": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["source_semantic_support", "human_approval", "gate_passage", "compliance", "scientific_truth", "release_readiness"]}
+        }
+      }
+    },
+    "human_decision_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id", "record_type", "record_revision", "recorded_at",
+        "target_record_ids", "decision_type", "decision_maker_actor_class",
+        "accountable_human_reference", "decision_basis_record_ids", "outcome",
+        "rationale_or_limitations", "review_or_expiry_condition",
+        "record_only_not_identity_or_authorization_proof"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/identifier"},
+        "record_type": {"const": "human_decision_record"},
+        "record_revision": {"type": "integer", "minimum": 1},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "target_record_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+        "decision_type": {"enum": ["review", "approval", "rejection", "hold", "acceptance", "other"]},
+        "decision_maker_actor_class": {"const": "human"},
+        "accountable_human_reference": {"type": "string", "minLength": 1, "maxLength": 256},
+        "decision_basis_record_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+        "outcome": {"enum": ["recorded", "approved", "rejected", "held", "expired"]},
+        "rationale_or_limitations": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "review_or_expiry_condition": {"type": "string", "minLength": 1, "maxLength": 512},
+        "record_only_not_identity_or_authorization_proof": {"const": true}
+      }
+    },
+    "revision_and_impact_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id", "record_type", "record_revision", "recorded_at",
+        "changed_object_id", "creation_mode", "predecessor_reference",
+        "prior_version_or_safe_identity", "new_version_or_safe_identity",
+        "change_type", "reason", "initiator_actor_class",
+        "allowed_write_scope_reference", "authorization", "affected_downstream_object_ids",
+        "downstream_impact_state", "supersession_or_invalidation_reference"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/identifier"},
+        "record_type": {"const": "revision_and_impact_record"},
+        "record_revision": {"type": "integer", "minimum": 1},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "changed_object_id": {"$ref": "#/$defs/identifier"},
+        "creation_mode": {"enum": ["initial_creation", "revision"]},
+        "predecessor_reference": {"type": ["string", "null"], "maxLength": 256},
+        "prior_version_or_safe_identity": {"type": ["string", "null"], "maxLength": 512},
+        "new_version_or_safe_identity": {"type": "string", "minLength": 1, "maxLength": 512},
+        "change_type": {"enum": ["initial_creation", "correction", "source_refresh", "supersession", "invalidation", "other"]},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "initiator_actor_class": {"$ref": "#/$defs/actor_class"},
+        "allowed_write_scope_reference": {"type": "string", "minLength": 1, "maxLength": 256},
+        "authorization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "reference"],
+          "properties": {
+            "state": {"enum": ["not_required", "pending", "approved", "rejected", "unknown"]},
+            "reference": {"type": ["string", "null"], "maxLength": 256}
+          },
+          "allOf": [
+            {"if": {"properties": {"state": {"const": "approved"}}, "required": ["state"]}, "then": {"properties": {"reference": {"type": "string", "minLength": 1}}, "required": ["reference"]}}
+          ]
+        },
+        "affected_downstream_object_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+        "downstream_impact_state": {"enum": ["proposed", "authorized", "applied", "downstream_unassessed", "downstream_reassessment_required", "downstream_reassessed", "blocked", "superseded"]},
+        "supersession_or_invalidation_reference": {"type": ["string", "null"], "maxLength": 256}
+      },
+      "allOf": [
+        {"if": {"properties": {"creation_mode": {"const": "initial_creation"}}, "required": ["creation_mode"]}, "then": {"properties": {"predecessor_reference": {"type": "null"}, "prior_version_or_safe_identity": {"type": "null"}, "change_type": {"const": "initial_creation"}, "reason": {"const": "initial_creation"}}}},
+        {"if": {"properties": {"creation_mode": {"const": "revision"}}, "required": ["creation_mode"]}, "then": {"properties": {"predecessor_reference": {"type": "string", "minLength": 1}, "prior_version_or_safe_identity": {"type": "string", "minLength": 1}}, "required": ["predecessor_reference", "prior_version_or_safe_identity"]}}
+      ]
+    }
+  }
+}

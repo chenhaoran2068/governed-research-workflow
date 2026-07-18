@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           repository: chenhaoran2068/governed-research-workspace-framework
-          ref: b0e32d7710b70299e633df1316b6924cd87b647b
+          ref: 97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8
           path: _framework_release
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
@@ -36,6 +36,6 @@ jobs:
       - name: Run standalone and cross-repository integration tests
         env:
           FRAMEWORK_REPOSITORY_ROOT: ${{ github.workspace }}/_framework_release
-          FRAMEWORK_RELEASE_TAG: v0.1.1
-          FRAMEWORK_EXPECTED_COMMIT: b0e32d7710b70299e633df1316b6924cd87b647b
+          FRAMEWORK_RELEASE_TAG: v0.1.2
+          FRAMEWORK_EXPECTED_COMMIT: 97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8
         run: python -m unittest discover -s tests -v

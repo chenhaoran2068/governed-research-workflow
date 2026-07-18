@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "workflow_evidence_control_bundle",
+  "bundle_id": "WORKFLOW_EVIDENCE_TEMPLATE",
+  "bundle_revision": 1,
+  "recorded_at": "2026-01-01T00:00:00Z",
+  "metadata_only": true,
+  "record_contract": {
+    "record_contract_version": "1.0.0",
+    "allowed_record_types": [
+      "assertion_record",
+      "evidence_reference_record",
+      "assertion_evidence_relation_record",
+      "verification_event_record",
+      "human_decision_record",
+      "revision_and_impact_record"
+    ]
+  },
+  "validation_boundary": {
+    "structural_validation_only": true,
+    "no_data_or_pointer_target_access": true,
+    "no_external_service_action": true,
+    "not_truth_or_approval_determination": true
+  },
+  "records": []
+}

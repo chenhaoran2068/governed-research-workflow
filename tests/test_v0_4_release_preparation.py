@@ -33,9 +33,10 @@ class V04ReleasePreparationTests(unittest.TestCase):
         self.assertIn("C3 and C4 remain distinct", content)
         self.assertIn("exact candidate commit", content)
 
-    def test_ledger_preserves_option_a_admission_with_a_published_v050_baseline(self) -> None:
+    def test_ledger_preserves_v04_option_a_and_v05_history_in_the_v06_candidate(self) -> None:
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
-        self.assertEqual(ledger["ledger_status"], "released")
+        self.assertEqual(ledger["ledger_status"], "release_candidate")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.5.1")
         capabilities = ledger["capabilities"]
         admitted_ids = {
             "GRW-CAP-031-01",
@@ -49,6 +50,7 @@ class V04ReleasePreparationTests(unittest.TestCase):
             "GRW-CAP-040-05",
             "GRW-CAP-040-06",
             "GRW-CAP-050-01",
+            "GRW-CAP-060-01",
         }
         for capability in capabilities:
             if capability["capability_id"] == "GRW-CAP-040-03":
@@ -58,6 +60,11 @@ class V04ReleasePreparationTests(unittest.TestCase):
                 self.assertIn(capability["capability_id"], admitted_ids)
                 self.assertEqual(capability["release_disposition"], "admitted")
                 self.assertEqual(capability["public_claim_status"], "permitted")
+
+        v05_record = next(record for record in capabilities if record["capability_id"] == "GRW-CAP-050-01")
+        self.assertEqual(v05_record["version"]["last_verified_release"], "v0.5.0")
+        v06_record = next(record for record in capabilities if record["capability_id"] == "GRW-CAP-060-01")
+        self.assertIsNone(v06_record["version"]["last_verified_release"])
 
 
 if __name__ == "__main__":

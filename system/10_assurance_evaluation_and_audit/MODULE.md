@@ -24,3 +24,10 @@ replace the C4 and post-release checks required for an actual publication.
 the release-verification rule, synthetic templates, profile identity, and
 refusal paths. Its run record is source-level evidence, not an installed
 runtime, hosted Release, or release-readiness claim.
+
+The unreleased v0.6 candidate adds
+`V0_6_CANDIDATE_EVIDENCE_MAP.md` and
+`tests/test_v0_6_candidate_assurance.py`. They keep candidate implementation
+evidence separate from the canonical capability ledger until an accountable
+human reviews one exact candidate commit. They do not admit a capability,
+authorize C4, or make a public-release or runtime claim.

@@ -1,10 +1,10 @@
 # Public System Module Index
 
-Status: `v0.5.1` release-state maintenance content. The v0.5.0
-provenance-register-set baseline is published. This index does not itself prove
-that a selected version is an installation target: users must verify an exact
-annotated tag and matching GitHub Release rather than install `main` or another
-mutable branch. See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
+Status: unreleased `v0.6.0` candidate content derived from published `v0.5.1`.
+The candidate is not an installation target. This index does not prove that a
+selected version is released: users must verify an exact annotated tag and
+matching GitHub Release rather than install `main` or another mutable branch.
+See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 
 ## Purpose
 
@@ -14,25 +14,26 @@ the route and module needed for the current task.
 
 The system has a [system manifest](../SYSTEM_MANIFEST.yaml). It supports
 `standalone` and a `framework_integrated` profile whose `0.1.0` framework
-contract is validated against the exact released framework `v0.1.1` tag.
+contract must be validated for this candidate against the exact released
+framework `v0.1.2` tag.
 
 ## Module Status
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | active manifest; exact released-framework validation passed | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | active manifest; v0.6 candidate validation targets an exact released framework | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
-| `03` | workflows | active baseline | route references and blank assets |
-| `04` | evidence, requirements, and knowledge | active guidance; no knowledge corpus | evidence/citation references |
+| `03` | workflows | active baseline plus admitted but unreleased v0.6 record-control candidate | route references and blank assets |
+| `04` | evidence, requirements, and knowledge | active guidance plus admitted but unreleased pointer/relation-record candidate; no knowledge corpus | evidence/citation references |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline | retrospective reference and asset |
-| `07` | tools and integrations | active bootstrap tool plus published v0.5 read-only validator; exact-tag integration regression test | `scripts/` and tests |
+| `07` | tools and integrations | active bootstrap tool, published v0.5 validator, and admitted but unreleased v0.6 read-only validator candidate | `scripts/` and tests |
 | `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
-| `09` | schemas, records, and templates | blank-record baseline plus capability, bounded-autonomy, and metadata-only register-set schemas | `assets/` templates and schemas |
-| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, and retained synthetic assurance records | `tests/` |
+| `09` | schemas, records, and templates | blank-record baseline plus admitted but unreleased v0.6 six-record and baseline-manifest schemas | `assets/` templates and schemas |
+| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, retained assurance, and admitted but unreleased v0.6 synthetic checks | `tests/` |
 | `11` | distribution, installation, and release | active release controls plus a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical v0.3/v0.4/v0.5 preparation records |
-| `12` | synthetic examples | exact-tag integration test plus v0.4 and v0.5 historical assurance records | synthetic fixtures and assurance only; no end-to-end public research example |
+| `12` | synthetic examples | exact-tag integration test plus v0.4/v0.5 history and v0.6 candidate assurance | synthetic fixtures and assurance only; no end-to-end public research example |
 
 ## Current Resource Map
 
@@ -54,7 +55,7 @@ does not create capability.
 ## Framework Relationship
 
 The system is designed to remain path-independent and standalone. Its
-framework-integrated profile retains a `0.1.0` framework contract and is
-validated against the exact released Workspace Framework `v0.1.1` tag. It must
-never require a private checkout, private credential, or real project
-workspace.
+framework-integrated profile retains a `0.1.0` framework contract. The v0.6
+candidate must validate against the exact released Workspace Framework `v0.1.2`
+tag before release; it must never require a private checkout, private
+credential, or real project workspace.

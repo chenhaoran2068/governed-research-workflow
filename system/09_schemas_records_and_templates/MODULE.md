@@ -28,3 +28,10 @@ import, copy, hash, analyze, share, or authorize data content.
 defines a candidate-review and release-control record. It does not create a
 Git tag or GitHub Release, grant C4 authorization, or certify security, rights,
 or compliance sufficiency.
+
+The unreleased v0.6 candidate adds `workflow_evidence_control_bundle.schema.json`
+and `workflow_evidence_control_baseline.schema.json`. They define an opt-in
+metadata-only six-record bundle and a caller-supplied comparison manifest.
+They do not read source content, prove truth or approval, protect a baseline,
+or prevent a writer with equivalent access from changing both a bundle and its
+comparison manifest.
