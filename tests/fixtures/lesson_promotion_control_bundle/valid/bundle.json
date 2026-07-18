@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "bundle_type": "lesson_promotion_control_bundle",
+  "bundle_id": "synthetic-learning-promotion-bundle",
+  "metadata_only": true,
+  "restricted_content_included": false,
+  "promotion_control": {"automated_promotion": false},
+  "records": [
+    {
+      "record_id": "OBS-001",
+      "record_type": "observation",
+      "observation_class": "recorded_process_fact",
+      "summary": "Synthetic validation observation only.",
+      "scope": "Synthetic package assurance.",
+      "evidence_references": ["synthetic://tests/lesson-promotion"],
+      "content_boundary": "metadata_only"
+    },
+    {
+      "record_id": "LC-001",
+      "record_type": "lesson_candidate",
+      "observation_ids": ["OBS-001"],
+      "candidate_statement": "Use a declared human decision before integration.",
+      "applicability": "Synthetic workflow-control demonstration only.",
+      "exclusions": ["No real project conclusion."],
+      "proposed_integration_target": "synthetic://shared-rule/example",
+      "lifecycle_status": "integrated",
+      "human_decision_id": "HD-001",
+      "integration_verification_id": "IV-001",
+      "superseded_by_candidate_id": null
+    },
+    {
+      "record_id": "HD-001",
+      "record_type": "human_decision",
+      "candidate_id": "LC-001",
+      "disposition": "approve_for_integration",
+      "accountable_human_reference": "synthetic://accountable-human/reference",
+      "decision_basis_references": ["synthetic://review/basis"],
+      "decision_date": "2026-07-19",
+      "representation": "recorded_accountable_human_decision_not_identity_verified"
+    },
+    {
+      "record_id": "IV-001",
+      "record_type": "integration_verification",
+      "candidate_id": "LC-001",
+      "human_decision_id": "HD-001",
+      "target_reference": "synthetic://shared-rule/example",
+      "validation_evidence_references": ["synthetic://tests/integration"],
+      "integration_status": "verified",
+      "non_claim": "does_not_prove_target_correctness_or_future_compliance"
+    },
+    {
+      "record_id": "LC-000",
+      "record_type": "lesson_candidate",
+      "observation_ids": ["OBS-001"],
+      "candidate_statement": "Superseded synthetic candidate.",
+      "applicability": "Synthetic workflow-control demonstration only.",
+      "exclusions": [],
+      "proposed_integration_target": "synthetic://shared-rule/example",
+      "lifecycle_status": "superseded",
+      "human_decision_id": "HD-000",
+      "integration_verification_id": null,
+      "superseded_by_candidate_id": "LC-001"
+    },
+    {
+      "record_id": "HD-000",
+      "record_type": "human_decision",
+      "candidate_id": "LC-000",
+      "disposition": "supersede",
+      "accountable_human_reference": "synthetic://accountable-human/reference",
+      "decision_basis_references": ["synthetic://review/basis"],
+      "decision_date": "2026-07-19",
+      "representation": "recorded_accountable_human_decision_not_identity_verified"
+    },
+    {
+      "record_id": "CE-001",
+      "record_type": "change_event",
+      "candidate_id": "LC-000",
+      "human_decision_id": "HD-000",
+      "change_type": "supersession",
+      "reason": "Synthetic replacement for test coverage.",
+      "successor_candidate_id": "LC-001"
+    }
+  ]
+}

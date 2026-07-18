@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "bundle_type": "lesson_promotion_control_bundle",
+  "bundle_id": "replace-with-bundle-id",
+  "metadata_only": true,
+  "restricted_content_included": false,
+  "promotion_control": {
+    "automated_promotion": false
+  },
+  "records": []
+}

@@ -32,8 +32,9 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-040-06",
     "GRW-CAP-050-01",
     "GRW-CAP-060-01",
+    "GRW-CAP-070-01",
 }
-V06_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {"GRW-CAP-040-03"}
+RELEASED_OR_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {"GRW-CAP-040-03"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -70,13 +71,13 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         cls.records = cls.ledger["capabilities"]
 
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
-        self.assertEqual(self.ledger["ledger_schema_version"], "1.1.0")
+        self.assertEqual(self.ledger["ledger_schema_version"], "1.2.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.6.1")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.5.1")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.7.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.6.1")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("admitted v0.6.0 release scope", self.ledger["target_claim_scope"])
+        self.assertIn("v0.7.0 lesson-promotion record scope", self.ledger["target_claim_scope"])
         self.assertIn("historical baseline facts", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -116,7 +117,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-                "v0.6.0" if record["capability_id"] == "GRW-CAP-060-01"
+                "v0.7.0" if record["capability_id"] == "GRW-CAP-070-01"
+                else "v0.6.0" if record["capability_id"] == "GRW-CAP-060-01"
                 else "v0.5.0" if record["capability_id"] == "GRW-CAP-050-01"
                 else "v0.4.0"
             )
@@ -139,7 +141,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             for record in self.records
             if record["public_claim_status"] == "permitted"
         }
-        self.assertEqual(permitted_ids, V06_ADMITTED_IDS)
+        self.assertEqual(permitted_ids, RELEASED_OR_ADMITTED_IDS)
 
     def test_interface_and_evidence_references_are_safe_and_exist_when_verified(self) -> None:
         for record in self.records:
@@ -259,7 +261,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(record["release_disposition"], "admitted")
         self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["version"]["target_release"], "v0.6.0")
-        self.assertIsNone(record["version"]["last_verified_release"])
+        self.assertEqual(record["version"]["last_verified_release"], "v0.6.0")
         self.assertIn("read-only", record["promise"].lower())
         self.assertIn("does not open data", record["non_promise"].lower())
         self.assertIn("not an installation target", record["limitations_and_next_action"].lower())
@@ -268,6 +270,16 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("accountable-human release-scope admission record", admission)
         self.assertIn("admitted `grw-cap-060-01`", admission)
         self.assertIn("does not authorize a push", admission)
+
+    def test_r7001_scope_and_selected_version_status_remain_distinct(self) -> None:
+        record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-070-01")
+        self.assertEqual(record["implementation_status"], "verified")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
+        self.assertEqual(record["version"]["target_release"], "v0.7.0")
+        self.assertEqual(record["version"]["last_verified_release"], "v0.7.0")
+        self.assertIn("automatically promote", record["non_promise"].lower())
+        self.assertIn("exact immutable tag and matching github release", record["limitations_and_next_action"].lower())
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
         planned_records = [

@@ -1,4 +1,4 @@
-"""Assurance checks for v0.6 capability scope and v0.6.1 maintenance source."""
+"""Historical assurance checks for the released v0.6 capability scope."""
 
 from __future__ import annotations
 
@@ -6,9 +6,6 @@ import json
 import re
 import unittest
 from pathlib import Path
-
-from tests.test_v0_4_synthetic_assurance import source_snapshot_sha256
-
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
@@ -21,18 +18,17 @@ WORKFLOW_PATH = REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml"
 EVIDENCE_MAP_PATH = REPOSITORY_ROOT / "system" / "10_assurance_evaluation_and_audit" / "V0_6_CANDIDATE_EVIDENCE_MAP.md"
 RELEASE_ROOT = REPOSITORY_ROOT / "system" / "11_distribution_installation_and_release"
 SYNTHETIC_ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_6_SYNTHETIC_ASSURANCE.md"
-SYNTHETIC_ASSURANCE_RELATIVE_PATH = SYNTHETIC_ASSURANCE_PATH.relative_to(REPOSITORY_ROOT).as_posix().encode("utf-8")
 
 
 class V06CandidateAssuranceTests(unittest.TestCase):
-    def test_maintenance_source_identity_retains_the_v06_capability_scope(self) -> None:
+    def test_v07_release_source_retains_the_historical_v06_capability_scope(self) -> None:
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
         readme = README_PATH.read_text(encoding="utf-8")
         roadmap = ROADMAP_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.6.1-release-state-maintenance-source", manifest)
-        self.assertIn("`v0.6.1` release-state-maintenance source", readme)
-        self.assertIn("v0.6 workflow/evidence-control capability scope", " ".join(readme.split()))
-        self.assertIn("## v0.6.1 (release-state maintenance source)", roadmap)
+        self.assertIn("system_version: 0.7.0-learning-promotion-release-source", manifest)
+        self.assertIn("`v0.7.0` release source", readme)
+        self.assertIn("v0.6 workflow/evidence control scope", " ".join(readme.split()))
+        self.assertIn("## v0.7.0 (human-reviewed lesson-promotion release source)", roadmap)
         self.assertIn("## v0.6.0 (workflow/evidence-control release source)", roadmap)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)
 
@@ -43,7 +39,7 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertEqual(record["release_disposition"], "admitted")
         self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["version"]["target_release"], "v0.6.0")
-        self.assertIsNone(record["version"]["last_verified_release"])
+        self.assertEqual(record["version"]["last_verified_release"], "v0.6.0")
         self.assertIn("not an installation target", record["limitations_and_next_action"].lower())
         self.assertIn("installed-runtime claim", record["limitations_and_next_action"].lower())
         evidence_map = EVIDENCE_MAP_PATH.read_text(encoding="utf-8").lower()
@@ -93,12 +89,13 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertIn("Workspace Framework `v0.1.2`", plan)
         self.assertIn("framework tag: `v0.1.1`", historical_v04)
 
-    def test_v06_release_source_assurance_uses_the_existing_tracked_source_snapshot_method(self) -> None:
+    def test_v06_release_source_assurance_remains_a_frozen_historical_snapshot(self) -> None:
         assurance = SYNTHETIC_ASSURANCE_PATH.read_text(encoding="utf-8")
         match = re.search(r"source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
-        self.assertEqual(match.group(1), source_snapshot_sha256(SYNTHETIC_ASSURANCE_RELATIVE_PATH))
+        self.assertEqual(len(match.group(1)), 64)
         self.assertIn("This assurance file is excluded from its own digest", " ".join(assurance.split()))
+        self.assertNotIn("v0.7.0", assurance)
 
     def test_release_source_surfaces_have_no_private_path_or_release_claim(self) -> None:
         source_paths = (

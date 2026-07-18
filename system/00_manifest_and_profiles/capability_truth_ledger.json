@@ -1,13 +1,13 @@
 {
-  "ledger_schema_version": "1.1.0",
+  "ledger_schema_version": "1.2.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v0.6.1",
-    "historical_public_baseline": "v0.5.1",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.6.1 release-state-maintenance source retains an admitted v0.6.0 named release scope but does not prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v0.7.0",
+    "historical_public_baseline": "v0.6.1",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.7.0 release source retains historical released capability facts and an admitted v0.7.0 lesson-promotion record scope but does not prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records admitted v0.6.0 release scope in this v0.6.1 release-state-maintenance source ledger. It does not establish public availability for a selected source commit; availability requires a matching immutable tag and GitHub Release. Published v0.4.0, v0.5.0, v0.5.1, and v0.6.0 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes and the accountable-human-admitted v0.7.0 lesson-promotion record scope. It does not establish public availability for a selected source commit; availability requires a matching immutable tag and GitHub Release. Published v0.4.0 through v0.6.1 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -381,7 +381,7 @@
           {"kind": "manual_review", "path": "system/11_distribution_installation_and_release/V0_6_CAPABILITY_ADMISSION.md", "identifier": "accountable-human v0.6.0 release-scope admission accepted 2026-07-18"}
         ]
       },
-      "version": {"introduced_version": "v0.6.0", "last_verified_release": null, "target_release": "v0.6.0"},
+      "version": {"introduced_version": "v0.6.0", "last_verified_release": "v0.6.0", "target_release": "v0.6.0"},
       "prior_release_history": [],
       "approval_reference": "accountable-human v0.6.0 release-scope admission accepted 2026-07-18; this admission does not itself grant C4 authorization, create an immutable tag or GitHub Release, or install a runtime",
       "claim_surfaces": [
@@ -392,7 +392,57 @@
         "system/11_distribution_installation_and_release/V0_6_CAPABILITY_ADMISSION.md"
       ],
       "contradiction_refusal": "When a declared record relationship, prerequisite state, path boundary, baseline identity, or human-decision representation conflicts or is unknown, reject the affected structural claim and do not infer source truth, approval, data action, Gate passage, or release readiness.",
-      "limitations_and_next_action": "Admitted only for the named v0.6.0 release scope in this release-source ledger. Admission is not an installation target and not an installed-runtime claim. A selected source commit is publicly available only when it has an exact immutable tag and matching GitHub Release; any local adoption remains a separate controlled action."
+      "limitations_and_next_action": "Verified in the named v0.6.0 public Release. This historical capability fact is not an installation target and not an installed-runtime claim. A selected source commit is publicly available only when it has an exact immutable tag and matching GitHub Release; any local adoption remains a separate controlled action."
+    },
+    {
+      "capability_id": "GRW-CAP-070-01",
+      "public_name": "Human-Reviewed Lesson Promotion Control Records",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Release-source implementation provides an opt-in, metadata-only bundle for bounded observations, lesson candidates, represented accountable-human decisions, separately recorded integration verification, and visible correction, withdrawal, or supersession events, plus explicit read-only structural validation of a supplied JSON bundle.",
+      "non_promise": "Does not read project content or data; follow references, URLs, or pointers; verify a human identity or actual authority; automatically promote, reject, withdraw, correct, or integrate a lesson; modify a rule, workflow, template, checklist, skill, runtime, or public Release; or decide science, compliance, Gate, submission, or release status.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "system/09_schemas_records_and_templates/lesson_promotion_control_bundle.schema.json",
+          "assets/lesson-promotion-control-bundle.template.json",
+          "scripts/validate_lesson_promotion_control_bundle.py",
+          "references/lesson-promotion-control-records.md"
+        ],
+        "identifiers": [
+          "lesson_promotion_control_bundle",
+          "validate_lesson_promotion_control_bundle.py",
+          "observation",
+          "lesson_candidate",
+          "human_decision",
+          "integration_verification",
+          "change_event"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_lesson_promotion_control_bundle.py", "identifier": "LessonPromotionControlBundleTests"},
+          {"kind": "manual_review", "path": "system/11_distribution_installation_and_release/V0_7_CAPABILITY_ADMISSION.md", "identifier": "accountable-human v0.7.0 release-scope admission accepted 2026-07-19"}
+        ]
+      },
+      "version": {"introduced_version": "v0.7.0", "last_verified_release": "v0.7.0", "target_release": "v0.7.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human authorized v0.7.0 completion, including C2/C3 implementation and v0.7.0 release-scope admission, 2026-07-19; this historical admission does not itself establish an exact immutable tag, GitHub Release, or runtime installation",
+      "claim_surfaces": [
+        "README.md",
+        "ROADMAP.md",
+        "SKILL.md",
+        "references/lesson-promotion-control-records.md",
+        "system/11_distribution_installation_and_release/V0_7_CAPABILITY_ADMISSION.md"
+      ],
+      "contradiction_refusal": "When an observation, candidate status, represented human decision, integration verification, correction event, path boundary, or release identity conflicts or is unknown, reject the affected structural claim and do not infer a human approval, an integration result, a shared rule, or public availability.",
+      "limitations_and_next_action": "Admitted only for the named v0.7.0 release scope in this release source. Public availability for any selected version is determined only by its exact immutable tag and matching GitHub Release; local runtime adoption remains a separate controlled action."
     }
   ]
 }

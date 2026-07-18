@@ -103,6 +103,16 @@ release decision. A source file, branch, admission record, or unadmitted ledger
 state is not permission to offer this route as a released capability without
 the selected version's exact tag and matching GitHub Release.
 
+For an explicitly requested lesson-promotion control bundle, first resolve the
+selected version to its exact public tag and matching GitHub Release, then
+check the capability ledger for an admitted `GRW-CAP-070-01` record. Only if
+both conditions hold, use `references/lesson-promotion-control-records.md` and
+invoke its validator only with one explicit review root and bundle path. The
+validator is read-only and metadata-only: it neither opens project material nor
+follows a reference; it does not verify a human identity or actual authority,
+automatically promote or integrate a lesson, modify a target, or decide any
+scientific, compliance, Gate, submission, or release question.
+
 ## Governed Work Loop
 
 For consequential outputs, use a bounded loop:
@@ -146,6 +156,8 @@ Stop and request accountable evidence or approval before:
   references/manuscript-and-submission-control.md
 - Project retrospective learning and lesson promotion:
   references/retrospective-learning.md
+- Metadata-only lesson-promotion control records, when admitted for the
+  selected release: references/lesson-promotion-control-records.md
 - Explicit empty-workspace creation:
   references/controlled-bootstrap.md
 - Public/private separation and legacy boundaries:
