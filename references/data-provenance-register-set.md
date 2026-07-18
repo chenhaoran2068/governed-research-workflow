@@ -39,10 +39,12 @@ python scripts/validate_data_provenance_register_set.py path/to/register-index.j
 It writes one JSON result to standard output and creates no output files. Exit
 code `0` is `valid`, `1` is `invalid`, and `2` is `not_assessed`.
 
-The index and every listed entry must be regular JSON files. Absolute paths,
-`..` traversal, symlinks, Windows reparse points, missing files, duplicate
-IDs, duplicate paths, self-links, duplicate links, missing targets, and
-asymmetric upstream/downstream links are refused.
+The index file itself and every listed entry must be regular JSON files. The
+explicit index may be reached through a system-managed parent alias; the
+validator resolves it to a canonical root before evaluating listed entries.
+Absolute paths, `..` traversal, entry symlinks, Windows entry reparse points,
+missing files, duplicate IDs, duplicate paths, self-links, duplicate links,
+missing targets, and asymmetric upstream/downstream links are refused.
 
 ## Relationship Check
 

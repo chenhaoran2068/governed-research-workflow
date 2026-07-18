@@ -184,6 +184,22 @@ class DataProvenanceRegisterSetTests(TestCase):
         self.write_json(index_path, index)
         self.assert_issue(VALIDATOR_MODULE.validate_register_set(index_path), "unsafe_entry_path")
 
+    def test_allows_a_canonicalized_index_parent_but_refuses_a_linked_index_file(self) -> None:
+        temporary_directory, root = self.copy_valid_fixture()
+        self.addCleanup(temporary_directory.cleanup)
+        linked_parent = Path(temporary_directory.name) / "linked-register-parent"
+        linked_index = Path(temporary_directory.name) / "linked-index.json"
+        try:
+            os.symlink(root, linked_parent, target_is_directory=True)
+            os.symlink(root / "register-index.json", linked_index)
+        except OSError as error:
+            self.skipTest(f"symbolic link creation is unavailable in this test environment: {error}")
+        self.assertEqual(
+            VALIDATOR_MODULE.validate_register_set(linked_parent / "register-index.json")["result"],
+            "valid",
+        )
+        self.assert_issue(VALIDATOR_MODULE.validate_register_set(linked_index), "unsafe_index_path")
+
     def test_cli_emits_machine_readable_result_and_expected_exit_status(self) -> None:
         completed = subprocess.run(
             [sys.executable, str(SCRIPT_PATH), str(VALID_FIXTURE / "register-index.json")],

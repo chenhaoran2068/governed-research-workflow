@@ -101,6 +101,11 @@ def _contains_indirection(path: Path, *, stop_at: Path | None = None) -> bool:
         current = current.parent
 
 
+def _is_direct_indirection(path: Path) -> bool:
+    """Refuse only a supplied path that is itself a link or reparse point."""
+    return path.is_symlink() or _is_reparse_point(path)
+
+
 def _load_json(path: Path) -> tuple[dict[str, Any] | None, ValidationIssue | None]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -189,7 +194,10 @@ def validate_register_set(index_path: Path) -> dict[str, Any]:
         return _result_from_issues([dependency_issue], 0)
 
     requested_index = index_path.expanduser()
-    if _contains_indirection(requested_index):
+    # An explicit index may live under a system-managed alias such as macOS
+    # /var. Resolve it to a canonical root, but never follow an index file that
+    # is itself a symbolic link or Windows reparse point.
+    if _is_direct_indirection(requested_index):
         return _result_from_issues(
             [ValidationIssue("unsafe_index_path", "The index path must not use a symbolic link or Windows reparse point.")],
             0,
