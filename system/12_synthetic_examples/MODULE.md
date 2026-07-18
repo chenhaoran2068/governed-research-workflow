@@ -16,10 +16,10 @@ assurance run. It uses only empty templates and public documentation, records
 the candidate snapshot and framework identity, and cannot establish runtime
 parity, hosted-release state, or authority to publish.
 
-`V0_5_SYNTHETIC_ASSURANCE.md` records the analogous pre-C3 candidate route for
+`V0_5_SYNTHETIC_ASSURANCE.md` records the analogous release-source route for
 the metadata-only provenance register set. It hashes only Git-tracked source,
 excludes its own evidence file, and uses synthetic metadata fixtures. It is not
-an exact candidate-commit identity, C4 authorization, hosted Release claim, or
+an exact final-commit identity, C4 authorization, hosted Release claim, or
 runtime-installation record.
 
 Do not include real study data, manuscript text, reviewer correspondence,

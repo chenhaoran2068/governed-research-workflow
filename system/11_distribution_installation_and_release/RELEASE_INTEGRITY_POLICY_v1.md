@@ -7,8 +7,8 @@ maintainer-controlled process; it does not authorize an AI to publish.
 
 `CURRENT_RELEASE_STATUS.md` is the current-facing release-verification route.
 It separates the live exact-tag and matching-Release check from retained
-historical records and the unreleased local `v0.5.0` candidate. A candidate-
-review record, passing test, local branch, or source tree is not an
+historical records and the `v0.5.0` release source. A candidate-review
+record, passing test, local branch, or source tree is not an
 installation target, GitHub Release, or installed-runtime identity.
 
 ## Release Identity
@@ -55,10 +55,10 @@ declared by the exact Workspace Framework v0.1.0 release. The published v0.3.1
 patch retained the v0.1.0 framework-contract version and tested the same
 declared package ranges against exact Workspace Framework v0.1.1.
 
-The v0.5 candidate adds direct runtime dependency `jsonschema==4.26.0` for
+The v0.5 release source adds direct runtime dependency `jsonschema==4.26.0` for
 the explicitly invoked metadata-only register-set validator. It is pinned at
 the direct-dependency level in `requirements.txt`, but its platform-specific
-transitive dependency resolution is not hash-locked. The candidate must not be
+transitive dependency resolution is not hash-locked. The release source must not be
 described as a fully locked software supply chain. The exact resolved local and
 CI environments must be recorded in v0.5 release evidence. Any dependency,
 range, extra, lockfile, or runtime-use change requires a reviewed candidate

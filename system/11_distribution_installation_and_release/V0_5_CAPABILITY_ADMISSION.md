@@ -1,36 +1,30 @@
 # v0.5.0 Capability Admission Record
 
-Status: candidate decision record. `GRW-CAP-050-01` is verified candidate
-content with public claim forbidden. It is not admitted for a release, is not
-C4 authorization, and does not create a tag, GitHub Release, installation
-target, runtime claim, or public availability statement.
+Status: release-source admission record. On 2026-07-18, the accountable human
+admitted `GRW-CAP-050-01` for the named `v0.5.0` release-source scope and
+confirmed authority to publish the generic source tree under Apache-2.0. This
+record is not C4 authorization and does not create a tag, GitHub Release,
+installation target, runtime claim, public availability statement, or a legal
+or compliance certification.
 
-## Admission Rule
+## Admission Basis And Effect
 
-`GRW-CAP-050-01` may be admitted for one exact `v0.5.0` release only when:
+`GRW-CAP-050-01` is verified and has current interface/evidence references in
+the capability ledger. The accountable-human admission permits release-source
+documentation to identify the bounded metadata-only capability as admitted.
+It does not permit the AI to publish, and it does not replace the exact
+final-commit material, dependency, workflow, documentation, CI, C4, or
+post-release review.
 
-1. its ledger record is `implementation_status: verified`;
-2. its ledger record has current evidence and interface references for the
-   exact candidate commit;
-3. the final material, dependency, workflow, documentation, and CI review are
-   complete for that same commit; and
-4. an accountable human explicitly records admission or exclusion after seeing
-   the exact capability scope and residual risks.
+## Admitted Disposition
 
-Admission makes the named capability eligible for final-release communication.
-It does not create C4 authorization or any live release/install/runtime claim.
-No passing test, green CI run, candidate branch, or AI statement substitutes
-for accountable-human admission.
-
-## Candidate Disposition
-
-| Capability | Candidate state | Current public status |
+| Capability | Release-source state | Current hosted-release status |
 | --- | --- | --- |
-| `GRW-CAP-050-01` | verified candidate, pending exact-commit review | forbidden until an accountable human admits it for the named exact release and separately authorizes C4 |
+| `GRW-CAP-050-01` | verified and admitted for the named v0.5.0 scope | no tag or GitHub Release exists until a separate C4 decision and post-release verification |
 
 ## Contradiction Stop
 
-If the ledger, README, roadmap, schema, validator, tests, candidate evidence,
-or version identity conflict, do not admit or advertise the capability. Present
-the evidence, unresolved items, and bounded alternatives to the accountable
-human for decision.
+If the ledger, README, roadmap, schema, validator, tests, release-source
+evidence, or version identity conflict, stop the affected claim or
+consequential action. Present the evidence, unresolved items, and bounded
+alternatives to the accountable human for decision.

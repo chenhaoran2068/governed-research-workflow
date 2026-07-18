@@ -5,11 +5,11 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: unreleased local `v0.5.0` candidate derived from the published
+Status: release-source `v0.5.0` content derived from the published
 `v0.4.0` baseline. This source tree does not claim that a hosted `v0.5.0`
 Release exists. A normal public installation target exists only when an exact
 annotated `v0.5.0` tag and matching GitHub Release exist and resolve to the
-selected source commit. Never install a mutable branch. This candidate does
+selected source commit. Never install a mutable branch. This release source does
 not add research execution authority or expand any human-approval boundary.
 
 For the live release-verification procedure and retained historical snapshots,
@@ -18,9 +18,9 @@ read
 
 ## Capability Truth
 
-This candidate source contains a single machine-checkable capability ledger at
+This release-source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-what the `v0.5.0` candidate may claim, what it must not claim, its
+what the named `v0.5.0` release-source scope may claim, what it must not claim, its
 interface, evidence, version, and required human approval. The ledger is not
 a live hosted-release statement. It records the accountable-human Option A
 admission of ten named capabilities for the `v0.4.0` release scope; that
@@ -28,19 +28,19 @@ admission is not a tag, GitHub Release, normal installation target, runtime
 claim, or C4 authorization.
 
 The package manifest and current installation narrative identify this source
-as `v0.5.0-candidate` content. The ledger's target is a planning and
-verification boundary, not by itself a public release statement or installation
-claim.
+as `v0.5.0-release-source` content. The ledger's release-scope admission is
+not by itself a public release statement, installation claim, or C4
+authorization.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
 boundary, bounded-autonomy authorization record, metadata-only provenance
 register, release-control record contract, and synthetic assurance route. The
 role-card and agent-runtime route remains explicitly excluded. This v0.5
-candidate adds one forbidden-until-admitted capability: a metadata-only
-provenance register set with an explicit read-only validator. Exact-commit
-evidence, exact-release admission, C4 authorization, tagging, and hosted-
-release verification remain separate steps; the live release-verification rule,
-rather than this paragraph, decides whether any future release has occurred.
+release source adds one admitted metadata-only provenance register set with an
+explicit read-only validator. Exact-final-commit evidence, C4 authorization,
+tagging, and hosted-release verification remain separate steps; the live
+release-verification rule, rather than this paragraph, decides whether any
+future release has occurred.
 
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.
@@ -81,7 +81,7 @@ background work, and agent runtime. One Codex conversation remains the
 interaction model; it may use different review perspectives without creating
 separate agents.
 
-The v0.5.0 candidate additionally provides only a metadata-only provenance
+The v0.5.0 release source additionally provides only a metadata-only provenance
 register-set index and explicit structural validator. It does not read real
 data, source locators, URLs, or credentials; it does not infer access,
 permission, compliance, provenance truth, or scientific suitability.
@@ -151,12 +151,12 @@ and is retained as an input to the published `v0.4.0` release source; it is
 not the current candidate identity or an installation target.
 
 `v0.4.0` is the published governance-and-records release. It remains a
-historical public baseline for this candidate and is never modified in place.
+historical public baseline for this release source and is never modified in place.
 
-`v0.5.0` is currently an unreleased candidate. Its only proposed new
-capability is a metadata-only Data And Provenance Register Set. The release
-must still complete exact-commit review, cross-platform CI, material and
-dependency review, exact capability admission, C4 authorization, immutable
+`v0.5.0` is release-source content, not a hosted release. Its one
+accountable-human-admitted capability is a metadata-only Data And Provenance
+Register Set. The release must still complete exact-final-commit review,
+cross-platform CI, material and dependency review, C4 authorization, immutable
 tag/Release creation, and post-release verification.
 
 ## Public Evolution Roadmap

@@ -1,9 +1,9 @@
 # Release Status Verification
 
-Status: current release-verification rule plus local `v0.5.0` candidate
+Status: current release-verification rule plus `v0.5.0` release-source
 boundary. The published `v0.4.0` tag/Release is the historical public baseline
-for this worktree. This record does not assert that a hosted `v0.5.0` Release,
-runtime update, or public capability claim exists.
+for this worktree. This record does not assert that a hosted `v0.5.0` Release
+or runtime update exists.
 
 ## Normal Public Installation Rule
 
@@ -21,16 +21,16 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
-## v0.5.0 Candidate Scope
+## v0.5.0 Release-Source Scope
 
-- This local candidate proposes one metadata-only Data And Provenance Register
-  Set capability. It is not a tag, GitHub Release, installation target,
-  runtime claim, or C4 authorization.
+- This release source contains one accountable-human-admitted metadata-only
+  Data And Provenance Register Set capability. Admission is not a tag, GitHub
+  Release, installation target, runtime claim, or C4 authorization.
 - A v0.5.0 checkout becomes a normal public installation target only if the
-  normal public installation rule is later satisfied for its exact candidate
+  normal public installation rule is later satisfied for its exact final
   commit.
-- The candidate must not be inferred from `main`, a branch, a green CI run, a
-  capability ledger, or an AI statement.
+- A hosted release must not be inferred from `main`, a branch, a green CI run,
+  a capability ledger, or an AI statement.
 
 ## v0.4.0 Historical Public Baseline
 

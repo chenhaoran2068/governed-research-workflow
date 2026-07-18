@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: local `v0.5.0` provenance-register-set candidate derived from the
+Status: `v0.5.0` provenance-register-set release-source content derived from the
 released `v0.4.0` baseline. It is not an installation target until an exact
 annotated `v0.5.0` tag and matching GitHub Release can be verified. Users must
 select an exact published tag rather than `main` or another mutable branch. See
@@ -25,14 +25,14 @@ contract is validated against the exact released framework `v0.1.1` tag.
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline | route references and blank assets |
 | `04` | evidence, requirements, and knowledge | active guidance; no knowledge corpus | evidence/citation references |
-| `05` | data and provenance | v0.4 metadata-only register plus v0.5 candidate register set; no data handling | public data boundary, provenance routes, and read-only validator |
+| `05` | data and provenance | v0.4 metadata-only register plus v0.5 release-source register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline | retrospective reference and asset |
-| `07` | tools and integrations | active bootstrap tool plus v0.5 candidate read-only validator; exact-tag integration regression test | `scripts/` and tests |
+| `07` | tools and integrations | active bootstrap tool plus v0.5 release-source read-only validator; exact-tag integration regression test | `scripts/` and tests |
 | `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
 | `09` | schemas, records, and templates | blank-record baseline plus capability, bounded-autonomy, and metadata-only register-set schemas | `assets/` templates and schemas |
 | `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, and release-source synthetic assurance | `tests/` |
-| `11` | distribution, installation, and release | active release controls plus a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical v0.3/v0.4 records, and v0.5 pre-C3 candidate materials |
-| `12` | synthetic examples | exact-tag integration test plus v0.4 historical and v0.5 candidate assurance records | synthetic fixtures and assurance only; no end-to-end public research example |
+| `11` | distribution, installation, and release | active release controls plus a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical v0.3/v0.4 records, and v0.5 historical preparation plus release-source materials |
+| `12` | synthetic examples | exact-tag integration test plus v0.4 historical and v0.5 release-source assurance records | synthetic fixtures and assurance only; no end-to-end public research example |
 
 ## Current Resource Map
 

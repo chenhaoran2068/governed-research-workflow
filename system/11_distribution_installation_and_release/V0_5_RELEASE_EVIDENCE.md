@@ -1,10 +1,12 @@
-# v0.5.0 Release Evidence: Pre-C3 Candidate Record
+# v0.5.0 Release Evidence: Historical Pre-C3 Candidate Record
 
-Status: pre-C3 preparation evidence only. This document does not identify an
-exact candidate commit and therefore cannot support capability admission, C4
-authorization, tag creation, GitHub Release creation, or runtime installation.
+Status: historical pre-C3 preparation evidence only. It documents the state
+before the D50 admission and does not identify an exact final commit. It cannot
+establish the current admission state, C4 authorization, tag creation, GitHub
+Release creation, or runtime installation; use the current ledger and
+`V0_5_CAPABILITY_ADMISSION.md` for the release-source state.
 
-## Candidate Context
+## Historical Candidate Context
 
 | Field | Current value |
 | --- | --- |
@@ -16,11 +18,12 @@ authorization, tag creation, GitHub Release creation, or runtime installation.
 | v0.5 public tag / GitHub Release | none |
 | Installed Codex runtime identity | no v0.5 runtime claim; a separate controlled-installation receipt is required |
 
-## Current Local Evidence Inputs
+## Historical Local Evidence Inputs
 
-- The proposed capability is `GRW-CAP-050-01`, a metadata-only register index
-  and explicit read-only structural validator. It remains verified candidate
-  content with public claim forbidden until a later exact-release admission.
+- At this historical snapshot, the proposed capability was `GRW-CAP-050-01`,
+  a metadata-only register index and explicit read-only structural validator.
+  It was then candidate content with public claim forbidden; that historical
+  status is superseded by the later release-source admission record.
 - The current local suite passed `97` tests with `0` failures using local
   Python `3.11.9`, `jsonschema==4.26.0`, and Workspace Framework `v0.1.1` at
   exact commit `b0e32d7710b70299e633df1316b6924cd87b647b`.

@@ -1,13 +1,13 @@
 {
   "ledger_schema_version": "1.0.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "unreleased_candidate",
+  "ledger_status": "release_source_prepared",
   "release_context": {
     "source_release_version": "v0.5.0",
     "historical_public_baseline": "v0.4.0",
-    "live_release_identity_rule": "A live v0.5.0 public release must be verified from an exact annotated tag and matching GitHub Release; this candidate ledger makes no live hosted-release or installation claim."
+    "live_release_identity_rule": "A live v0.5.0 public release must be verified from an exact annotated tag and matching GitHub Release; this release-source ledger makes no live hosted-release or installation claim."
   },
-  "target_claim_scope": "The public_claim_status field applies to the v0.5.0 candidate. Prior released v0.4.0 claims remain in prior_release_history as historical baseline facts and are not automatic admissions for v0.5.0.",
+  "target_claim_scope": "The public_claim_status field applies to the named v0.5.0 release-source scope. Prior released v0.4.0 claims remain in prior_release_history as historical baseline facts and are not automatic admissions for v0.5.0.",
   "claim_admission_rule": "A v0.5.0 capability is eligible for final-release communication only when its record is verified, admitted for the named release scope, and has an accountable-human approval reference. Admission alone does not create a tag, GitHub Release, installation target, runtime claim, or C4 authorization.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -291,8 +291,8 @@
       "public_name": "Metadata-only Data And Provenance Register Set",
       "capability_class": "record",
       "implementation_status": "verified",
-      "release_disposition": "candidate",
-      "public_claim_status": "forbidden",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
       "promise": "Organizes a bounded set of v0.4-compatible metadata entries and checks supplied JSON Schema conformance, safe listed paths, unique identities, and reciprocal declared lineage without touching data content.",
       "non_promise": "Does not access, locate, import, copy, hash, clean, analyse, share, publish, or prove the truth, authorization, quality, access, compliance, or scientific use of any described data.",
       "approval_owner": "accountable_human",
@@ -328,14 +328,15 @@
         "target_release": "v0.5.0"
       },
       "prior_release_history": [],
-      "approval_reference": "accountable-human delegated v0.5 execution direction recorded 2026-07-18; v0.5 Charter candidate R1 limits implementation; exact-release admission and C4 remain required",
+      "approval_reference": "accountable-human v0.5 release-scope admission and generic-tree Apache-2.0 publication-authority confirmation accepted 2026-07-18; exact final-commit review and C4 remain required",
       "claim_surfaces": [
         "SKILL.md",
         "system/05_data_and_provenance/MODULE.md",
-        "references/data-provenance-register-set.md"
+        "references/data-provenance-register-set.md",
+        "system/11_distribution_installation_and_release/V0_5_CAPABILITY_ADMISSION.md"
       ],
       "contradiction_refusal": "When the index, entry schema, path boundary, relationship declaration, or access statement conflicts or is unknown, reject the affected structural claim and do not infer a data action or approval.",
-      "limitations_and_next_action": "This is a verified local candidate only. It remains forbidden for v0.5 public claim until exact-release admission, release-material review, C4 authorization, publication, and post-release verification are complete. It has no real-data, network, compliance, or runtime-installation authority."
+      "limitations_and_next_action": "This is an admitted release-source capability, not a hosted release or installation claim. Exact final-commit review, C4 authorization, publication, post-release verification, and any separate local runtime installation remain required. It has no real-data, network, compliance, or runtime-installation authority."
     }
   ]
 }

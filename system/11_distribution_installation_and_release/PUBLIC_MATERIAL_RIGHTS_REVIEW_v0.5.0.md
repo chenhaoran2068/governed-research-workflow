@@ -1,8 +1,11 @@
 # Public Material And Rights Review: v0.5.0 Pre-C3 Candidate
 
-Status: pre-C3 preparation record. It defines the required exact-commit review
-and does not clear any uncommitted or future candidate tree for publication,
-C4 authorization, or a hosted Release.
+Status: historical pre-C3 preparation record. It defines the required
+exact-commit review and does not clear any uncommitted or future candidate tree
+for publication, C4 authorization, or a hosted Release. It is not the current
+D50 publication-authority decision; that bounded accountable-human decision is
+recorded in `V0_5_CAPABILITY_ADMISSION.md` and remains subject to final
+exact-commit re-review before C4.
 
 ## Public Boundary
 

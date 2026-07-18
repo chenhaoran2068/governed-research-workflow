@@ -2,29 +2,29 @@
 
 This roadmap records expected sequence, not delivery dates or promises.
 
-## v0.5.0 (unreleased metadata-only provenance register-set candidate)
+## v0.5.0 (release-source metadata-only provenance register set)
 
-This local candidate adds one proposed capability,
+This release-source tree contains one accountable-human-admitted capability,
 `GRW-CAP-050-01`: a bounded register index for v0.4-compatible metadata
 records and an explicitly invoked read-only structural validator. It checks
 only the supplied index and listed metadata JSON entries for schema shape,
 safe paths, unique identities, and reciprocal declared lineage relationships.
 
-The candidate does not read data content, locate a source, resolve a URL,
+The release source does not read data content, locate a source, resolve a URL,
 contact a service, use credentials, calculate a data hash, infer permission,
 or decide provenance truth, access, ethics, consent, DUA, privacy, legal,
 clinical, scientific, Gate, submission, or release status. It requires the
 fixed direct dependency `jsonschema==4.26.0` only for JSON Schema validation.
 
-`GRW-CAP-050-01` is verified locally but remains a candidate with public claim
-forbidden. It is not an installation target and has no tag, GitHub Release,
-C4 authorization, or installed-runtime claim. Before any publication, it
-requires exact capability admission, material/dependency review, two full
-post-repair reviews, Windows/Ubuntu/macOS CI, exact C4 authorization, immutable
-tag/Release creation, and post-release verification.
+`GRW-CAP-050-01` is verified and admitted for the named v0.5.0 release-source
+scope. It is not an installation target and has no tag, GitHub Release, C4
+authorization, or installed-runtime claim. Before publication, it still
+requires exact final-commit material/dependency review, two full post-repair
+reviews, Windows/Ubuntu/macOS CI, exact C4 authorization, immutable tag/Release
+creation, and post-release verification.
 
-The candidate also corrects the current `SECURITY.md` supported-version table
-in its later exact release material. This does not alter the immutable v0.4.0
+This release source also corrects the current `SECURITY.md` supported-version
+table in its later exact release material. This does not alter the immutable v0.4.0
 Release.
 
 ## Planned After v0.5.0 (not current capability)

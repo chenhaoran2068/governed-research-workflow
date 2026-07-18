@@ -1,6 +1,6 @@
 # v0.5.0 Metadata-Only Provenance Register-Set Release Gate
 
-Status: pre-C3 candidate gate. This document defines evidence required before
+Status: historical pre-C3 candidate gate. This document defined evidence before
 an accountable human can consider a later `v0.5.0` publication. It does not
 authorize a commit, push, merge, tag, GitHub Release, installation, runtime
 update, or public capability claim.

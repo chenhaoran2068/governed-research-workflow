@@ -3,9 +3,9 @@
 ## Supported Versions
 
 The supported public release lines are `v0.1.x`, `v0.2.x`, `v0.3.x`, and
-`v0.4.x`. The unreleased v0.5 candidate is not a public support line; report a
-suspected issue affecting it through the current default branch route until an
-exact v0.5 Release is published.
+`v0.4.x`. The v0.5.0 release-source tree is not yet a public support line;
+report a suspected issue affecting it through the current default branch route
+until an exact v0.5.0 tag and matching GitHub Release are published.
 
 ## Reporting a Vulnerability
 

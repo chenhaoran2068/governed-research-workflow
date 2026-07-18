@@ -1,8 +1,8 @@
 # Distribution, Installation, And Release
 
 Status: active standalone package governance. Historical v0.3.0, v0.3.1, and
-v0.4.0 release records are retained. The local v0.5.0 provenance-register-set
-candidate is not an installation target; normal installation eligibility is
+v0.4.0 release records are retained. The v0.5.0 provenance-register-set
+release source is not an installation target; normal installation eligibility is
 determined by the exact-tag and matching-Release rule in
 `CURRENT_RELEASE_STATUS.md`.
 
@@ -40,12 +40,12 @@ the candidate's proposed scope, evidence, public-material boundary, and future
 release narrative reviewable before C3. They do not create an exact candidate
 commit, tag, hosted Release, runtime installation, or C4 authorization.
 
-`V0_5_RELEASE_GATE.md`, `V0_5_RELEASE_EVIDENCE.md`,
-`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.5.0.md`, `V0_5_CAPABILITY_ADMISSION.md`,
-and `RELEASE_NOTES_v0.5.0.md` are active pre-C3 candidate materials. They
-describe a proposed metadata-only provenance register set and preserve the
-separate exact-commit, capability-admission, C4, and post-release boundaries.
-They do not make a v0.5.0 public availability or installation claim.
+`V0_5_RELEASE_GATE.md`, `V0_5_RELEASE_EVIDENCE.md`, and
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.5.0.md` are historical pre-C3 preparation
+records. `V0_5_CAPABILITY_ADMISSION.md`, `RELEASE_NOTES_v0.5.0.md`, and
+the current ledger describe the admitted v0.5.0 release-source scope. They
+preserve separate exact-final-commit, C4, and post-release boundaries and do
+not make a v0.5.0 public availability or installation claim.
 
 `RELEASE_CONTROL.md` and `release_control_record.schema.json` define a
 release-control record contract. Candidate-review acceptance, C4

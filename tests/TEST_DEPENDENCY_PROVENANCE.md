@@ -1,6 +1,6 @@
 # Dependency Provenance
 
-The v0.5 candidate adds one direct runtime dependency for the explicitly
+The v0.5 release source adds one direct runtime dependency for the explicitly
 invoked, metadata-only register-set validator:
 
 - package: `jsonschema`;

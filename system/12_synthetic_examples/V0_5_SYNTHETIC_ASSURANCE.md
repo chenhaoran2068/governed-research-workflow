@@ -1,14 +1,14 @@
 # V0.5 Synthetic Assurance
 
-Status: pre-C3 candidate synthetic assurance evidence. It is not an exact
-candidate-commit identity, public Release record, C4 authorization,
+Status: release-source synthetic assurance evidence. It is not an exact
+final-commit identity, public Release record, C4 authorization,
 installed-runtime verification, or claim that a hosted release is ready.
 
 ## Scope
 
 This route combines only public package documentation, blank templates,
 synthetic metadata fixtures, and local regression tests. It checks the
-candidate boundaries for `GRW-CAP-050-01`: metadata-only input, explicit
+release-source boundaries for `GRW-CAP-050-01`: metadata-only input, explicit
 read-only validator invocation, safe paths, structural schema checks, no
 unlisted-file read, dependency-version refusal, and current-versus-historical
 release separation.
@@ -19,9 +19,9 @@ does not prove data existence, access, permission, provenance truth, ethics,
 DUA, privacy, legal, scientific, security, installation, or release
 correctness.
 
-## Candidate-Source Snapshot Identity
+## Release-Source Snapshot Identity
 
-- working-tree source snapshot SHA-256: `c39bef78dfbff19f8a54254ebe894c03e74aac8c46f022034c8e323e9250270b`
+- working-tree source snapshot SHA-256: `f7a9858066d701ad82d2df0ea6f07c54d92ae926c80fe7fff987ef5117c1fd68`
 - snapshot method: SHA-256 over each `git ls-files -z` Git-tracked repository
   source file's UTF-8 relative path, a NUL separator, normalized source bytes,
   and a final NUL separator, in byte-sorted path order. Text files normalize

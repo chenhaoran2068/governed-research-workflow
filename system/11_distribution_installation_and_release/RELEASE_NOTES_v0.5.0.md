@@ -1,13 +1,13 @@
-# Release Notes: v0.5.0 Draft
+# Release Notes: v0.5.0 Release-Source Draft
 
-Status: pre-C3 draft snapshot. These notes are not published Release notes and
-do not authorize a commit, tag, GitHub Release, installation, or public
-capability claim. They must be reconciled with the exact admitted ledger,
-candidate evidence, and C4 decision before publication.
+Status: release-source draft. These are not published GitHub Release notes and
+do not authorize a tag, GitHub Release, installation, or C4. They must be
+reconciled with the exact final-commit evidence and C4 decision before
+publication.
 
 ## Intended Scope
 
-v0.5.0 is intended to add one bounded capability:
+v0.5.0 has one accountable-human-admitted bounded capability:
 `GRW-CAP-050-01`, a metadata-only Data And Provenance Register Set. It
 provides a register-index schema, blank index template, synthetic valid and
 invalid examples, compatibility guidance, and an explicitly invoked read-only
@@ -21,7 +21,7 @@ appropriate.
 
 ## Intended Boundaries
 
-The candidate does not read data content, locate a source, resolve a URL,
+The release source does not read data content, locate a source, resolve a URL,
 contact a service, use credentials, hash, copy, clean, analyse, upload, or
 share data. It does not decide data permission, ethics, consent, DUA, privacy,
 legal compliance, provenance truth, scientific suitability, project state,
