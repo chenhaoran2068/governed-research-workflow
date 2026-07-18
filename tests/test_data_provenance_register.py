@@ -15,7 +15,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = REPOSITORY_ROOT / "system" / "09_schemas_records_and_templates" / "data_provenance_register.schema.json"
 TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "data-provenance-register.template.json"
 GUIDANCE_PATH = REPOSITORY_ROOT / "references" / "data-provenance-register.md"
-PRIVATE_MARKERS = ("E:\\Chenhaoran", "C:\\Users\\", "Data_Raw\\", "Instances\\")
+PRIVATE_PATH_PATTERN = r"(?i)(?:[a-z]:\\|/(?:home|users)/)"
 
 
 def data_action_refusal_reasons(record: dict, requested_action: str) -> list[str]:
@@ -103,8 +103,7 @@ class DataProvenanceRegisterTests(unittest.TestCase):
 
     def test_public_template_and_guidance_have_no_private_workspace_markers(self) -> None:
         text = TEMPLATE_PATH.read_text(encoding="utf-8") + "\n" + GUIDANCE_PATH.read_text(encoding="utf-8")
-        for marker in PRIVATE_MARKERS:
-            self.assertNotIn(marker, text)
+        self.assertIsNone(re.search(PRIVATE_PATH_PATTERN, text))
         self.assertIsNone(re.search(r"(?i)(password\s*[=:]|api[_-]?key\s*[=:]|authorization:\s*bearer)", text))
 
     def test_guidance_separates_metadata_from_task_authorization_and_compliance(self) -> None:

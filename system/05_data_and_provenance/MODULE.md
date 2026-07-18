@@ -1,6 +1,7 @@
 # Data And Provenance
 
-Status: foundation plus v0.4.0 release-source metadata-only register.
+Status: v0.4.0 released metadata-only register plus a v0.5.0 release-source
+metadata-only register set.
 
 This public system does not process patient-derived data, restricted data, or
 clinical databases. It may route a user to record data authority, provenance,
@@ -10,8 +11,14 @@ Future public content may define generic records or validation procedures only
 after privacy, rights, provenance, and test review. It must not bundle raw data,
 credentialed access instructions, institution-specific policy, or project data.
 
-The v0.4.0 release source adds a generic Data And Provenance Register and an
+The released v0.4.0 scope adds a generic Data And Provenance Register and an
 optional restricted or clinical awareness extension. It records metadata,
 unknowns, and verification references only. It does not establish access,
 ethics, consent, DUA, privacy, institutional, clinical, legal, or regulatory
 compliance, and it does not process data content.
+
+The v0.5.0 release source adds a bounded register-index contract and an explicitly
+invoked read-only structural validator for v0.4-compatible entry records. It
+checks only supplied metadata JSON, safe entry paths, identity uniqueness, and
+declared reciprocal relationships. It neither reads data content nor proves
+that a declared source, derivation, permission, or restriction is true.

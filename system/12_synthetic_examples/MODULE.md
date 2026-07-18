@@ -1,7 +1,8 @@
 # Examples Module Boundary
 
-Status: released cross-repository integration test; no distributable
-end-to-end public system example is admitted here yet.
+Status: released cross-repository integration test plus a local v0.5 synthetic
+assurance candidate; no distributable end-to-end public system example is
+admitted here yet.
 
 `tests/test_framework_candidate_integration.py` constructs a temporary empty
 workspace, installs this public package as synthetic test material, registers
@@ -14,6 +15,12 @@ clinical, regulatory, or journal compliance for a real project.
 assurance run. It uses only empty templates and public documentation, records
 the candidate snapshot and framework identity, and cannot establish runtime
 parity, hosted-release state, or authority to publish.
+
+`V0_5_SYNTHETIC_ASSURANCE.md` records the analogous release-source route for
+the metadata-only provenance register set. It hashes only Git-tracked source,
+excludes its own evidence file, and uses synthetic metadata fixtures. It is not
+an exact final-commit identity, C4 authorization, hosted Release claim, or
+runtime-installation record.
 
 Do not include real study data, manuscript text, reviewer correspondence,
 submission records, project memory, or identifiable case details.

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "data_provenance_register_entry",
+  "record_id": "DATASET_META",
+  "record_revision": 1,
+  "recorded_at": "2026-01-01T00:00:00Z",
+  "metadata_only": true,
+  "object_class": "analysis_ready_dataset",
+  "data_role": "synthetic analysis-ready dataset identity metadata",
+  "lifecycle_layer": "analysis_ready_dataset",
+  "source": {
+    "source_system": "synthetic metadata-only derivation",
+    "locator_kind": "redacted_reference",
+    "source_pointer_or_redacted_locator": "synthetic://metadata-only/DATASET_META",
+    "canonical_project_location": null,
+    "contains_credentials_or_sensitive_identifiers": false
+  },
+  "relationships": {
+    "entity_description": "Synthetic downstream metadata entity.",
+    "source_activity_description": "Synthetic declared derivation metadata only.",
+    "agent_or_owner_relationship": "Synthetic owner role."
+  },
+  "lineage": {
+    "standardization_state": "derived_metadata_only",
+    "upstream_record_ids": ["SOURCE_META"],
+    "downstream_record_ids": [],
+    "derivation_or_provenance_record_references": ["SYNTHETIC-PROV-0002"]
+  },
+  "governance": {
+    "owner_or_approver": "synthetic-owner-role",
+    "criticality_or_risk_level": "unknown",
+    "share_policy": "unknown",
+    "overwrite_policy": "versioned_derivation_only"
+  },
+  "access_and_sharing": {
+    "access_status": "unknown",
+    "restriction_status": "unknown",
+    "sharing_status": "unknown",
+    "online_service_condition_status": "unknown",
+    "status_claimed": false,
+    "verification_note": "Synthetic unknown status remains non-approval.",
+    "data_access_or_share_evidence_reference": null,
+    "verification_hypothesis": {
+      "statement": "Source conditions require separate verification.",
+      "status": "unverified",
+      "not_an_authorization": true
+    }
+  },
+  "integrity_and_audit": {
+    "integrity_check_or_verification_method": "Validate metadata JSON only.",
+    "audit_trail_or_provenance_record": "SYNTHETIC-AUDIT-0002",
+    "last_verified_date": null
+  },
+  "optional_restricted_or_clinical_awareness": {"applies": false}
+}

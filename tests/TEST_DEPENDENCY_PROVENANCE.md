@@ -1,14 +1,22 @@
-# Test Dependency Provenance
+# Dependency Provenance
 
-The public package has no runtime Python dependency for its routing documents.
-The candidate test suite uses `jsonschema` only to validate public JSON Schema
-fixtures and records.
+The v0.5 release source adds one direct runtime dependency for the explicitly
+invoked, metadata-only register-set validator:
 
-- observed local test environment: Python `3.13.14`, `jsonschema` `4.26.0`;
-- accepted test-time compatibility range: `jsonschema >=4.23,<5`;
-- purpose: structural validation of synthetic records only;
-- not a package runtime requirement, downloader, network client, or credential
-  dependency.
+- package: `jsonschema`;
+- required version: `4.26.0` exactly, declared in `requirements.txt`;
+- purpose: validate supplied metadata JSON against the package's released
+  Draft 2020-12 schemas;
+- supported Python baseline: `3.11+`; GitHub CI covers Python `3.11` and
+  `3.14` on Windows, Ubuntu, and macOS;
+- package source and verification: official documentation and PyPI project
+  metadata reviewed on `2026-07-18`;
+- license expression reported by PyPI: `MIT`;
+- excluded uses: downloader, network client, credential handler, data reader,
+  data processor, compliance decision engine, or tool grant.
 
-Any new dependency, range expansion, lockfile, or runtime use requires a
-separate reviewed change.
+The dependency's transitive packages are resolved by the package installer for
+the selected platform. The v0.5 release review must record the exact resolved
+environment used for local and CI validation. A dependency version change,
+range expansion, lockfile, extra, or new runtime use requires a separately
+reviewed candidate change and M48 revalidation.

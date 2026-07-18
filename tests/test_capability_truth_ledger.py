@@ -1,4 +1,4 @@
-"""Structural and refusal checks for the v0.4 release-source capability ledger."""
+"""Structural and refusal checks for the v0.5 release-source capability ledger."""
 
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capabil
 SCHEMA_PATH = REPOSITORY_ROOT / "system" / "09_schemas_records_and_templates" / "capability_truth_ledger.schema.json"
 EVIDENCE_MATRIX_PATH = REPOSITORY_ROOT / "system" / "10_assurance_evaluation_and_audit" / "CAPABILITY_EVIDENCE_MATRIX.md"
 ADMISSION_RECORD_PATH = REPOSITORY_ROOT / "system" / "11_distribution_installation_and_release" / "V0_4_CAPABILITY_ADMISSION.md"
+V05_ADMISSION_RECORD_PATH = REPOSITORY_ROOT / "system" / "11_distribution_installation_and_release" / "V0_5_CAPABILITY_ADMISSION.md"
 
 EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-031-01",
@@ -28,8 +29,9 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-040-04",
     "GRW-CAP-040-05",
     "GRW-CAP-040-06",
+    "GRW-CAP-050-01",
 }
-OPTION_A_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {"GRW-CAP-040-03"}
+V05_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {"GRW-CAP-040-03"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -69,10 +71,10 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(self.ledger["ledger_schema_version"], "1.0.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.4.0")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.3.1")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.5.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.4.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("only to v0.4.0", self.ledger["target_claim_scope"])
+        self.assertIn("v0.5.0 release-source scope", self.ledger["target_claim_scope"])
         self.assertIn("prior_release_history", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -111,7 +113,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["profile_scope"], profile_scopes)
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
-            self.assertEqual(record["version"]["target_release"], "v0.4.0")
+            expected_target = "v0.5.0" if record["capability_id"] == "GRW-CAP-050-01" else "v0.4.0"
+            self.assertEqual(record["version"]["target_release"], expected_target)
 
     def test_public_claim_requires_verified_admitted_human_approved_evidence(self) -> None:
         for record in self.records:
@@ -130,7 +133,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             for record in self.records
             if record["public_claim_status"] == "permitted"
         }
-        self.assertEqual(permitted_ids, OPTION_A_ADMITTED_IDS)
+        self.assertEqual(permitted_ids, V05_ADMITTED_IDS)
 
     def test_interface_and_evidence_references_are_safe_and_exist_when_verified(self) -> None:
         for record in self.records:
@@ -229,6 +232,20 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("release-source synthetic assurance", record["limitations_and_next_action"].lower())
         self.assertTrue(record["approval_reference"])
 
+    def test_r5001_is_verified_and_admitted_for_the_named_release_source_scope(self) -> None:
+        record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-050-01")
+        self.assertEqual(record["implementation_status"], "verified")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
+        self.assertEqual(record["evidence"]["status"], "verified")
+        self.assertEqual(record["version"]["target_release"], "v0.5.0")
+        self.assertIn("does not access", record["non_promise"].lower())
+        self.assertIn("c4", record["limitations_and_next_action"].lower())
+        admission = V05_ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower()
+        self.assertIn("release-source admission record", admission)
+        self.assertIn("admitted", admission)
+        self.assertIn("not c4 authorization", admission)
+
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
         planned_records = [
             record
@@ -260,7 +277,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("forbid", self.ledger["contradiction_refusal_rule"].lower())
         self.assertIn("accountable-human", self.ledger["contradiction_refusal_rule"])
 
-    def test_release_source_cannot_claim_a_hosted_release(self) -> None:
+    def test_release_source_cannot_claim_a_hosted_v050_release(self) -> None:
         text = LEDGER_PATH.read_text(encoding="utf-8")
         admission_record = ADMISSION_RECORD_PATH.read_text(encoding="utf-8").lower()
         self.assertIn("option a", admission_record)
@@ -272,7 +289,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("capability_truth_ledger.json", readme)
         combined = "\n".join((text, skill, readme)).lower()
         self.assertIn("does not claim", combined)
-        self.assertNotIn("v0.4.0 is released", combined)
+        self.assertNotIn("v0.5.0 is released", combined)
 
 
 if __name__ == "__main__":

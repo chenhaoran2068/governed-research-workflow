@@ -7,8 +7,8 @@ maintainer-controlled process; it does not authorize an AI to publish.
 
 `CURRENT_RELEASE_STATUS.md` is the current-facing release-verification route.
 It separates the live exact-tag and matching-Release check from retained
-historical records and the release-state-neutral `v0.4.0` source. A
-candidate-review record, passing test, local branch, or source tree is not an
+historical records and the `v0.5.0` release source. A candidate-review
+record, passing test, local branch, or source tree is not an
 installation target, GitHub Release, or installed-runtime identity.
 
 ## Release Identity
@@ -50,35 +50,40 @@ pinned to reviewed full commit SHAs. Any change to an Action reference must
 identify the upstream release it represents, review the new immutable SHA, and
 rerun the complete matrix.
 
-This package has no runtime Python dependency. Historical v0.3.0
-framework-integration evidence used validation-only packages declared by the
-exact Workspace Framework v0.1.0 release. The published v0.3.1 patch retains
-the v0.1.0 framework-contract version and tested the same declared package
-ranges against exact Workspace Framework v0.1.1:
-PyYAML>=6.0.2,<7 and jsonschema>=4.23,<5. Those ranges are not hash-locked, so
-test-environment reproducibility is bounded rather than bit-for-bit. Neither
-historical nor current release evidence may be described as a fully locked
-software supply chain. A future release may add lockfiles or hash-verified test
-dependencies only through a reviewed dependency-policy change.
+Historical v0.3.0 framework-integration evidence used validation-only packages
+declared by the exact Workspace Framework v0.1.0 release. The published v0.3.1
+patch retained the v0.1.0 framework-contract version and tested the same
+declared package ranges against exact Workspace Framework v0.1.1.
+
+The v0.5 release source adds direct runtime dependency `jsonschema==4.26.0` for
+the explicitly invoked metadata-only register-set validator. It is pinned at
+the direct-dependency level in `requirements.txt`, but its platform-specific
+transitive dependency resolution is not hash-locked. The release source must not be
+described as a fully locked software supply chain. The exact resolved local and
+CI environments must be recorded in v0.5 release evidence. Any dependency,
+range, extra, lockfile, or runtime-use change requires a reviewed candidate
+change and M48 revalidation.
 
 Before release, run a tracked-tree and reachable-history secret scan using
 the maintained pattern set, review all dependency and Action changes since the
 previous release, and check GitHub security alerts available to the
-maintainer. The public API did not expose a security_and_analysis status in
-this candidate review, so this policy does not claim that GitHub Advanced
-Security or any particular secret-scanning setting is enabled.
+maintainer. At the 2026-07-18 release-source review, the repository reported
+Secret Scanning and Secret Scanning Push Protection enabled, with zero open
+Secret Scanning alerts. Dependabot security updates and Dependabot alerts were
+disabled, so this policy does not claim continuous dependency-alert coverage,
+GitHub Advanced Security, or full supply-chain lock.
 
 ## Immutable Release Decision
 
-Historical decision: technical immutable releases were deferred for v0.3.0.
+Historical v0.3.0 decision: technical immutable releases were deferred.
 
-Recorded v0.3.1 decision: retain the same deferral and immutable-by-policy
+Historical v0.3.1 decision: retain the same deferral and immutable-by-policy
 process. GitHub technical immutable releases were not enabled before the
 human-approved v0.3.1 release decision.
 
-Rationale:
+Historical v0.3 rationale:
 
-- all prior public releases in this repository currently report as mutable;
+- v0.1.x through v0.3.1 public releases then reported as mutable;
 - v0.3.0 and v0.3.1 distribute no binary assets, packages, or
   data, only a tagged source archive and documented skill/system material; and
 - enabling a repository-level irreversible-release setting needs a deliberate
@@ -91,11 +96,9 @@ matrix CI on main, explicit human authorization, published release notes with
 commit identity, post-release tag verification, and a no-retag/no-silent-rewrite
 policy.
 
-This is not equivalent to GitHub technical immutability. The accountable
-maintainer must reconsider enablement before every later minor release and
-record either enablement or an updated deferral rationale. A future decision
-to enable it does not retroactively make earlier releases technically
-immutable.
+The v0.3 compensating controls were not equivalent to GitHub technical
+immutability. Their historical deferral does not prevent later enablement and
+does not retroactively make v0.3 releases technically immutable.
 
 ## Integrity Evidence Boundary
 
@@ -105,15 +108,15 @@ requires human release authorization, and its G7 requires a real released tag
 and GitHub Release. Neither may be simulated by a green candidate build or an
 untagged source branch.
 
-For the `v0.4.0` release source, `RELEASE_CONTROL.md` provides the bounded
-candidate-review record contract. It records whether a later C4 review may be
-requested; it does not authorize a tag, GitHub Release, hosted-control change,
-or public claim.
+For the released `v0.4.0` scope, `RELEASE_CONTROL.md` remains the bounded
+candidate-review record contract that was used before its exact C4 decision.
+It is historical preparation material and did not itself authorize a tag,
+GitHub Release, hosted-control change, or public claim.
 
-`v0.4.0` release-source integrity position: on `2026-07-17`, the accountable
-human enabled GitHub technical immutable releases for this repository. The setting
-applies to future Releases, including a possible v0.4.0 Release, but does not
-itself create a tag, GitHub Release, public capability claim, or C4
-authorization. The historical v0.3.0/v0.3.1 deferral remains historical
-context only. Before C4, R40-G6 must verify that the setting remains enabled
-and record that result against the exact final candidate.
+On `2026-07-17`, the accountable human enabled GitHub technical immutable
+releases for this repository. GitHub technical immutable releases are enabled
+for future Releases. The setting applied to future Releases and is
+part of the published `v0.4.0` release posture; it does not retroactively
+change earlier v0.3.0/v0.3.1 Releases. Before any v0.5 C4 decision, the
+release evidence must verify that the setting remains enabled and record the
+result against the exact final candidate.

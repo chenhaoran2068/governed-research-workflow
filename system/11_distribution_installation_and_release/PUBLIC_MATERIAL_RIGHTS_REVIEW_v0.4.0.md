@@ -42,7 +42,8 @@ On `2026-07-17`, the pre-C3 candidate worktree preparation scan found:
 - `88` non-`.git` files; largest file `22,641` bytes; no PDF, Office, image,
   archive, or manually attached Release-asset file;
 - no match for the maintained private-key, GitHub-token, cloud-key, OpenAI-key,
-  connection-string, or `E:\` / `C:\Users\` private-workspace-path patterns;
+  connection-string, Windows drive-qualified, or user-home private-workspace
+  path patterns;
 - one email identity only: `chr17302561945@outlook.com`, the existing public
   Git author identity previously accepted by the accountable maintainer;
 - no `.gitattributes`/Git-LFS configuration and no Git submodules;

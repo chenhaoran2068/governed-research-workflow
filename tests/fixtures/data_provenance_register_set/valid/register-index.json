@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "data_provenance_register_set_index",
+  "register_id": "SYNTHETIC_REGISTER_SET",
+  "register_revision": 1,
+  "recorded_at": "2026-01-01T00:00:00Z",
+  "metadata_only": true,
+  "entry_contract": {
+    "record_type": "data_provenance_register_entry",
+    "schema_version": "1.0.0"
+  },
+  "validation_boundary": {
+    "structural_validation_only": true,
+    "not_an_access_or_compliance_determination": true
+  },
+  "entries": [
+    {"record_id": "SOURCE_META", "entry_path": "entries/SOURCE_META.json"},
+    {"record_id": "DATASET_META", "entry_path": "entries/DATASET_META.json"}
+  ]
+}

@@ -1,0 +1,3 @@
+# Runtime dependency for the explicitly invoked metadata-only register-set validator.
+# Review and update only through a versioned release decision.
+jsonschema==4.26.0

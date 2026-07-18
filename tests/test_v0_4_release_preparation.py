@@ -46,6 +46,7 @@ class V04ReleasePreparationTests(unittest.TestCase):
             "GRW-CAP-040-04",
             "GRW-CAP-040-05",
             "GRW-CAP-040-06",
+            "GRW-CAP-050-01",
         }
         for capability in capabilities:
             if capability["capability_id"] == "GRW-CAP-040-03":
