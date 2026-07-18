@@ -5,14 +5,13 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: `v0.6.1` release-state-maintenance source retaining the v0.6
-workflow/evidence-control capability scope. This source removes a dynamic
-"current published version" assertion from roadmap guidance; it does not alter
-the v0.6 capability, validator, schemas, dependency, permissions, CI, or
-human-approval boundaries. This source tree does not itself prove the release
-or installation identity of any selected version. A normal public installation
-target exists only when an exact annotated tag and matching GitHub Release
-resolve to the selected source commit. Never install a mutable branch.
+Status: `v0.7.0` candidate source retaining the released v0.6 workflow/evidence
+control scope and adding a candidate human-reviewed lesson-promotion control
+record contract. The candidate does not alter the v0.6 contract. This source
+tree does not itself prove the release or installation identity of any selected
+version. A normal public installation target exists only when an exact
+annotated tag and matching GitHub Release resolve to the selected source
+commit. Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -22,18 +21,20 @@ read
 
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-the historical `v0.4.0` and published `v0.5.0` capability baselines, plus the
-admitted `v0.6.0` release scope. It records each
+the historical `v0.4.0`, `v0.5.0`, and `v0.6.0` capability baselines, plus a
+candidate `v0.7.0` lesson-promotion scope. It records each
 capability's interface, evidence, version, and required human approval. The
 ledger is not an installed-runtime statement. Neither a historical admission
 nor a v0.6 scope admission alone proves a local installation, runtime identity,
 hosted Release, or C4 authorization.
 
-The package manifest identifies this source as `v0.6.1` release-state
-maintenance content. `GRW-CAP-060-01` remains verified and
-accountable-human admitted for its named v0.6.0 release scope. Admission is not
-by itself an installation claim, hosted Release claim, or C4 authorization.
-Public availability for any selected version remains determined only by the
+The package manifest identifies this source as `v0.7.0` candidate content.
+`GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
+`GRW-CAP-070-01` is admitted only for its named v0.7.0 release scope and is
+not yet publicly available. Neither historical verification nor candidate
+admission is an installation claim, hosted Release claim, or C4 authorization.
+Public
+availability for any selected version remains determined only by the
 exact-tag-and-matching-Release rule.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
@@ -96,6 +97,13 @@ validation. It records declared relationships and revision impact; it does not
 open sources, establish semantic support, prove a human authorization, prevent
 a same-authority rewrite, or decide scientific, compliance, Gate, submission,
 or release status.
+
+The v0.7 candidate adds only a metadata-only lesson-promotion control bundle:
+bounded observations, lesson candidates, represented human decisions, separate
+integration verification, and visible correction, withdrawal, or supersession
+events. It cannot automatically promote a lesson, modify any target, read
+project material, or prove a human identity, actual authority, or target
+correctness.
 
 ## Use
 

@@ -33,10 +33,10 @@ class V04ReleasePreparationTests(unittest.TestCase):
         self.assertIn("C3 and C4 remain distinct", content)
         self.assertIn("exact candidate commit", content)
 
-    def test_ledger_preserves_v04_option_a_and_v05_history_in_the_v06_release_source(self) -> None:
+    def test_ledger_preserves_historical_v04_option_a_and_v05_v06_history_in_the_v07_candidate(self) -> None:
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
         self.assertEqual(ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.5.1")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.6.1")
         capabilities = ledger["capabilities"]
         admitted_ids = {
             "GRW-CAP-031-01",
@@ -56,6 +56,9 @@ class V04ReleasePreparationTests(unittest.TestCase):
             if capability["capability_id"] == "GRW-CAP-040-03":
                 self.assertEqual(capability["release_disposition"], "excluded")
                 self.assertEqual(capability["public_claim_status"], "forbidden")
+            elif capability["capability_id"] == "GRW-CAP-070-01":
+                self.assertEqual(capability["release_disposition"], "admitted")
+                self.assertEqual(capability["public_claim_status"], "permitted")
             else:
                 self.assertIn(capability["capability_id"], admitted_ids)
                 self.assertEqual(capability["release_disposition"], "admitted")
@@ -64,7 +67,7 @@ class V04ReleasePreparationTests(unittest.TestCase):
         v05_record = next(record for record in capabilities if record["capability_id"] == "GRW-CAP-050-01")
         self.assertEqual(v05_record["version"]["last_verified_release"], "v0.5.0")
         v06_record = next(record for record in capabilities if record["capability_id"] == "GRW-CAP-060-01")
-        self.assertIsNone(v06_record["version"]["last_verified_release"])
+        self.assertEqual(v06_record["version"]["last_verified_release"], "v0.6.0")
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ class V05ReleaseStateMaintenanceTests(unittest.TestCase):
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
         readme = README_PATH.read_text(encoding="utf-8")
         release_status = CURRENT_RELEASE_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.6.1-release-state-maintenance-source", manifest)
+        self.assertIn("system_version: 0.7.0-learning-promotion-candidate-source", manifest)
         self.assertIn("`v0.5.0` is the published", readme)
         self.assertIn("Published v0.5.0 Baseline", release_status)
         self.assertIn("14c37ae1eecb5f12cee385a331ee5233265ca778", release_status)

@@ -6,6 +6,8 @@ to framework `v0.1.0` and is not reused as evidence for a later version. The
 v0.6 release source retains integration evidence against released
 Workspace Framework `v0.1.2` at commit
 `97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`.
+The v0.7 candidate must repeat that bounded technical integration check for its
+own exact source commit before any later Release advertising.
 
 ## Current Position
 
