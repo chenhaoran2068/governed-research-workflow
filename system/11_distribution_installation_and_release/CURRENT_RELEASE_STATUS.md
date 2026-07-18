@@ -6,6 +6,10 @@ Status: active, version-neutral release-verification rule. The published
 not prove that any selected version is installed in a private skill source or
 Codex runtime.
 
+This record never declares a latest or current public version. Its versioned
+entries are bounded historical facts; the only live public-availability check
+for a selected version is the exact-tag-and-matching-Release procedure below.
+
 ## Normal Public Installation Rule
 
 A normal public installation target exists only when all of the following can
@@ -47,7 +51,7 @@ verify the exact tag and matching Release at the time of installation.
   public installation rule is verified at installation time. Do not infer a
   private source or Codex runtime update from the hosted Release.
 
-## v0.6 Release-Source Scope
+## v0.6 Capability Scope
 
 - The v0.6 release source records an accountable-human-admitted scope for
   `GRW-CAP-060-01`. Source admission is not a public Release, installation

@@ -1,9 +1,9 @@
 # Public System Module Index
 
-Status: `v0.6.0` release-source content derived from published `v0.5.1`. This
-index does not prove that a selected version is released: users must verify an
-exact annotated tag and matching GitHub Release rather than install `main` or
-another mutable branch.
+Status: `v0.6.1` release-state-maintenance source retaining the v0.6
+workflow/evidence-control scope. This index does not prove that a selected
+version is released: users must verify an exact annotated tag and matching
+GitHub Release rather than install `main` or another mutable branch.
 See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 
 ## Purpose
@@ -32,7 +32,7 @@ framework `v0.1.2` tag.
 | `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
 | `09` | schemas, records, and templates | blank-record baseline plus admitted v0.6 six-record and baseline-manifest schemas | `assets/` templates and schemas |
 | `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, retained assurance, and admitted v0.6 synthetic checks | `tests/` |
-| `11` | distribution, installation, and release | active release controls plus a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical v0.3/v0.4/v0.5 preparation records |
+| `11` | distribution, installation, and release | active release controls, v0.6.1 current-state-assertion control, and a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical preparation records |
 | `12` | synthetic examples | exact-tag integration test plus v0.4/v0.5 history and v0.6 source assurance | synthetic fixtures and assurance only; no end-to-end public research example |
 
 ## Current Resource Map

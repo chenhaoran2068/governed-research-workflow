@@ -4,7 +4,8 @@ Status: active standalone package governance. Historical v0.3.0, v0.3.1,
 v0.4.0, and pre-C4 v0.5.0 records are retained. The v0.5.0
 provenance-register-set baseline and v0.5.1 maintenance patch are published;
 normal installation eligibility for every selected version is determined by the
-exact-tag and matching-Release rule in `CURRENT_RELEASE_STATUS.md`.
+exact-tag and matching-Release rule in `CURRENT_RELEASE_STATUS.md`. Current
+source materials must not declare a latest or current public version.
 
 Released tags are immutable public contracts by policy. Candidate branches are
 not releases. A correction requires a new release version rather than
@@ -62,3 +63,8 @@ an accountable-human admission of `GRW-CAP-060-01` for the named v0.6.0 release
 scope. That admission does not create a hosted public claim, installation
 target, or remote action authority. Exact current identities, tag/Release
 verification, and C4 remain separate evidence classes.
+
+`V0_6_1_RELEASE_STATE_MAINTENANCE.md` and `RELEASE_NOTES_v0.6.1.md` define a
+bounded maintenance source that removes a dynamic current-version assertion
+from source guidance and adds the current-state assertion control. They do not
+alter the v0.6 capability contract or historical immutable releases.

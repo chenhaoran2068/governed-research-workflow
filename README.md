@@ -5,15 +5,14 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: `v0.6.0` workflow/evidence-control release-source content derived from
-published `v0.5.1`. `v0.5.0` remains the published metadata-only
-provenance-register capability baseline, and `v0.5.1` is its published
-release-state-maintenance patch. This source tree does not itself prove the
-release or installation identity of any selected version. A normal public
-installation target exists only when an exact annotated tag and matching
-GitHub Release resolve to the selected source commit. Never install a mutable
-branch. The v0.6 scope does not add research execution authority or expand any
-human-approval boundary.
+Status: `v0.6.1` release-state-maintenance source retaining the v0.6
+workflow/evidence-control capability scope. This source removes a dynamic
+"current published version" assertion from roadmap guidance; it does not alter
+the v0.6 capability, validator, schemas, dependency, permissions, CI, or
+human-approval boundaries. This source tree does not itself prove the release
+or installation identity of any selected version. A normal public installation
+target exists only when an exact annotated tag and matching GitHub Release
+resolve to the selected source commit. Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -30,11 +29,12 @@ ledger is not an installed-runtime statement. Neither a historical admission
 nor a v0.6 scope admission alone proves a local installation, runtime identity,
 hosted Release, or C4 authorization.
 
-The package manifest identifies this source as `v0.6.0` release-source content.
-`GRW-CAP-060-01` is verified and accountable-human admitted for the named
-v0.6.0 release scope. Admission is not by itself an installation claim, hosted
-Release claim, or C4 authorization. Public availability for any selected
-version remains determined only by the exact-tag-and-matching-Release rule.
+The package manifest identifies this source as `v0.6.1` release-state
+maintenance content. `GRW-CAP-060-01` remains verified and
+accountable-human admitted for its named v0.6.0 release scope. Admission is not
+by itself an installation claim, hosted Release claim, or C4 authorization.
+Public availability for any selected version remains determined only by the
+exact-tag-and-matching-Release rule.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
 boundary, bounded-autonomy authorization record, metadata-only provenance

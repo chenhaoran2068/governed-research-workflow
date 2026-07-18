@@ -1,9 +1,21 @@
 # Roadmap
 
-This roadmap records expected sequence, not delivery dates or promises. The
-current source tree contains the admitted v0.6 workflow/evidence-control scope;
-the current published patch is v0.5.1 and must be verified by its exact tag
-and matching GitHub Release.
+This roadmap records expected sequence, not delivery dates, promises, or a
+live public-release identity. It describes source scope and historical release
+context only; it does not declare a current published version. Verify any
+selected public version through its exact annotated tag and matching GitHub
+Release.
+
+## v0.6.1 (release-state maintenance source)
+
+This maintenance source removes the prior dynamic assertion that `v0.5.1` was
+the current published patch. It adds a source-level regression control against
+reintroducing a current/latest public-version assertion in current-facing
+documentation.
+
+It does not alter `GRW-CAP-060-01`, the six-record Workflow And Evidence
+Control Bundle, its validator, schemas, templates, dependency, data boundary,
+permissions, CI architecture, or local-runtime installation behavior.
 
 ## v0.5.1 (published release-state maintenance)
 
@@ -56,7 +68,7 @@ The immutable v0.5.0 Release retains some pre-C4 static wording. This v0.5.1
 maintenance revision records that limitation and corrects the current-source
 guidance without modifying the historical tag.
 
-## Planned After v0.5.0 (not current capability)
+## Planned After v0.6 (not current capability)
 
 - `v0.5.x`: corrective or compatibility maintenance only for the released
   v0.5.0 contract.

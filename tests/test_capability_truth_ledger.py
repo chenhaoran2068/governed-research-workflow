@@ -73,7 +73,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(self.ledger["ledger_schema_version"], "1.1.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.6.0")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.6.1")
         self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.5.1")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("admitted v0.6.0 release scope", self.ledger["target_claim_scope"])
