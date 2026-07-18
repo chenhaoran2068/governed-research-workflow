@@ -1,12 +1,12 @@
 # v0.6.0 Workflow And Evidence Control Release Gate
 
-Status: local pre-C4 candidate gate. It defines required evidence before a
-future v0.6.0 publication. It does not authorize push, merge, tag, GitHub
-Release, local installation, runtime update, or a public capability claim.
+Status: v0.6 release-source gate. It defines evidence that must be independently
+reviewed before C4 publication. It does not authorize a tag, GitHub Release,
+local installation, runtime update, or a public capability claim.
 
 ## Intended Scope
 
-The only proposed v0.6.0 capability is `GRW-CAP-060-01`: a metadata-only
+The only admitted v0.6.0 capability is `GRW-CAP-060-01`: a metadata-only
 Workflow And Evidence Control Bundle with exactly six record types, optional
 canonical baseline comparison, blank templates, synthetic fixtures, and an
 explicitly invoked read-only validator.
@@ -19,10 +19,10 @@ proof history.
 
 ## Required Gates
 
-### P60-G1: Exact Candidate And Compatibility Identity
+### P60-G1: Exact Source And Compatibility Identity
 
-- A clean exact local candidate commit exists on the named candidate branch.
-- Candidate version, base `v0.5.1` commit, intended `v0.6.0` tag, candidate
+- A clean exact source commit exists for C4 review.
+- Source version, base `v0.5.1` commit, intended `v0.6.0` tag, source
   snapshot, and diff resolve to one identity.
 - v0.4/v0.5 schemas, templates, fixtures, and published release history remain
   unchanged and valid without migration.
@@ -34,7 +34,7 @@ proof history.
 - Until that admission, the capability ledger must not describe it as
   permitted or released.
 - README, ROADMAP, SKILL, manifest, module maps, references, tests, and notes
-  distinguish the v0.6 candidate from published v0.5.1.
+  distinguish the v0.6 release source from published v0.5.1.
 - Capability admission remains separate from C4 authorization.
 
 ### P60-G3: Input, Privacy, Rights, And Boundary Review
@@ -60,16 +60,16 @@ proof history.
 
 ### P60-G5: Technical And Cross-Repository Evidence
 
-- The complete local suite passes for the exact candidate with no required
+- The complete local suite passes for the exact source with no required
   check silently skipped.
 - The framework-integrated profile validates against Workspace Framework
   `v0.1.2` at `97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`.
-- The exact intended candidate commit receives successful GitHub CI on Windows,
+- The exact intended source commit receives successful GitHub CI on Windows,
   Ubuntu, and macOS with supported Python 3.11 and 3.14.
 
 ### P60-G6: C4 And Post-Release Verification
 
-- An exact C4 package names the reviewed candidate commit, target tag,
+- An exact C4 package names the reviewed source commit, target tag,
   Release notes, CI evidence, capability admission, release-control record,
   residual risks, and post-release checks.
 - Only after the accountable human separately approves that exact package may

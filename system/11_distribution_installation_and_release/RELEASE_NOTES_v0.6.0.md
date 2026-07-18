@@ -1,10 +1,11 @@
-# Release Notes: v0.6.0 Candidate Draft
+# Release Notes: v0.6.0
 
-Status: local draft for a future exact candidate commit. It is not published
-Release notes and must be re-reviewed after the exact candidate identity,
-capability admission, CI, and C4 decision are known.
+Status: release-notes source. This file describes the v0.6.0 scope and does
+not itself establish publication, installation eligibility, C4 authorization,
+or runtime identity. Verify a selected version through its exact annotated tag
+and matching GitHub Release.
 
-## Proposed Addition
+## Addition
 
 - metadata-only Workflow And Evidence Control Bundle contract with six typed
   records;

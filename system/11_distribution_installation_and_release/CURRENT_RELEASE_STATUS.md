@@ -47,14 +47,17 @@ verify the exact tag and matching Release at the time of installation.
   public installation rule is verified at installation time. Do not infer a
   private source or Codex runtime update from the hosted Release.
 
-## Unreleased v0.6 Candidate
+## v0.6 Release-Source Scope
 
-- The local branch `v0.6.0-workflow-evidence-controls-candidate` is not a
-  public Release, installation target, capability admission, or runtime claim.
-- It must first complete exact candidate review, capability admission, remote
-  CI, C4 authorization, immutable tag/Release, and post-release verification.
-- A local candidate branch cannot alter the published v0.5.0/v0.5.1 identity
-  or authorize a private source/runtime update.
+- The v0.6 release source records an accountable-human-admitted scope for
+  `GRW-CAP-060-01`. Source admission is not a public Release, installation
+  target, or runtime claim.
+- The retained branch `v0.6.0-workflow-evidence-controls-candidate` is source
+  history only. It cannot alter published identity or authorize a private
+  source/runtime update.
+- A selected v0.6 version becomes an installation target only when the normal
+  public installation rule above is independently verified for that exact tag
+  and matching GitHub Release.
 
 ## v0.4.0 Historical Public Baseline
 

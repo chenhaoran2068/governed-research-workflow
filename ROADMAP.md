@@ -1,8 +1,9 @@
 # Roadmap
 
 This roadmap records expected sequence, not delivery dates or promises. The
-current worktree is an unreleased v0.6 candidate; the current published patch
-is v0.5.1 and must be verified by its exact tag and matching GitHub Release.
+current source tree contains the admitted v0.6 workflow/evidence-control scope;
+the current published patch is v0.5.1 and must be verified by its exact tag
+and matching GitHub Release.
 
 ## v0.5.1 (published release-state maintenance)
 
@@ -12,9 +13,9 @@ set validator, schemas, dependency, data boundary, permissions, or CI
 architecture. A selected version is an installation target only after its own
 exact annotated tag and matching GitHub Release are externally verified.
 
-## v0.6.0 (unreleased workflow/evidence-control candidate)
+## v0.6.0 (workflow/evidence-control release source)
 
-The local v0.6 candidate proposes one metadata-only capability,
+The v0.6 release source defines one metadata-only capability,
 `GRW-CAP-060-01`: an opt-in six-record Workflow And Evidence Control Bundle,
 optional canonical JSON baseline comparison, blank templates, synthetic
 fixtures, and an explicitly invoked read-only structural validator.
@@ -27,9 +28,9 @@ with equivalent write authority from changing both a bundle and baseline, or
 make a scientific, compliance, Gate, submission, or release decision.
 
 The capability is verified and accountable-human admitted for the named v0.6.0
-release scope, but it is not published or an installation target. Exact
-candidate review, remote CI, C4 authorization, immutable tag/Release, and
-post-release verification remain separate required steps.
+release scope. Its source admission does not establish public availability or
+an installation target. The exact annotated tag and matching GitHub Release
+remain the sole live public-availability evidence for a selected version.
 
 ## v0.5.0 (published metadata-only provenance register set)
 

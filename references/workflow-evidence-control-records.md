@@ -1,11 +1,11 @@
 # Workflow And Evidence Control Records
 
-Status: unreleased but accountable-human-admitted `v0.6.0` candidate guidance.
-This reference describes a metadata-only structural-record contract only when
-`GRW-CAP-060-01` is admitted in the selected version's ledger and that version
-independently resolves to a matching public tag and GitHub Release. A local
-candidate branch, admission alone, a template, a validator, a test result, or
-this document does not itself make the capability publicly available.
+Status: `v0.6.0` release-source guidance for an accountable-human-admitted
+scope. This reference describes a metadata-only structural-record contract only
+when `GRW-CAP-060-01` is admitted in the selected version's ledger and that
+version independently resolves to a matching public tag and GitHub Release. A
+branch, admission alone, a template, a validator, a test result, or this
+document does not itself make the capability publicly available.
 
 ## Purpose
 

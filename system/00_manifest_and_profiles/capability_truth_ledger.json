@@ -1,13 +1,13 @@
 {
   "ledger_schema_version": "1.1.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "release_candidate",
+  "ledger_status": "release_source_prepared",
   "release_context": {
     "source_release_version": "v0.6.0",
     "historical_public_baseline": "v0.5.1",
-    "live_release_identity_rule": "The published v0.5.1 public release is verified only from its exact annotated tag and matching GitHub Release. This v0.6.0 ledger is a release-candidate capability record: its admission describes a named release scope but does not prove a hosted release, installed runtime, or C4 authorization."
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.6.0 release-source ledger records an admitted named release scope but does not prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records admitted release scope for the local v0.6.0 candidate. It does not establish public availability until an exact final commit has a matching immutable tag and GitHub Release. Published v0.4.0, v0.5.0, and v0.5.1 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records admitted v0.6.0 release scope in this release-source ledger. It does not establish public availability for a selected source commit; availability requires a matching immutable tag and GitHub Release. Published v0.4.0, v0.5.0, and v0.5.1 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -383,7 +383,7 @@
       },
       "version": {"introduced_version": "v0.6.0", "last_verified_release": null, "target_release": "v0.6.0"},
       "prior_release_history": [],
-      "approval_reference": "accountable-human v0.6.0 release-scope admission accepted 2026-07-18; no C4 release authorization, immutable tag, GitHub Release, or runtime installation is granted by this admission",
+      "approval_reference": "accountable-human v0.6.0 release-scope admission accepted 2026-07-18; this admission does not itself grant C4 authorization, create an immutable tag or GitHub Release, or install a runtime",
       "claim_surfaces": [
         "README.md",
         "ROADMAP.md",
@@ -392,7 +392,7 @@
         "system/11_distribution_installation_and_release/V0_6_CAPABILITY_ADMISSION.md"
       ],
       "contradiction_refusal": "When a declared record relationship, prerequisite state, path boundary, baseline identity, or human-decision representation conflicts or is unknown, reject the affected structural claim and do not infer source truth, approval, data action, Gate passage, or release readiness.",
-      "limitations_and_next_action": "Admitted only for the named v0.6.0 release scope in this local release-candidate source. It is not published, not an installation target, and not an installed-runtime claim. Exact final-commit evidence, successful remote CI, C4 authorization, immutable tag/Release, post-release verification, and any separate local adoption remain required."
+      "limitations_and_next_action": "Admitted only for the named v0.6.0 release scope in this release-source ledger. Admission is not an installation target and not an installed-runtime claim. A selected source commit is publicly available only when it has an exact immutable tag and matching GitHub Release; any local adoption remains a separate controlled action."
     }
   ]
 }
