@@ -1,8 +1,9 @@
 # V0.6 Synthetic Assurance
 
-Status: v0.6 release-source synthetic assurance record. It records source-level
-test evidence and is not a public Release, C4 authorization, hosted CI result,
-or installed-runtime verification.
+Status: v0.6 capability synthetic-assurance record retained by the v0.6.1
+release-state-maintenance source. It records source-level test evidence and is
+not a public Release, C4 authorization, hosted CI result, or installed-runtime
+verification.
 
 ## Scope
 
@@ -39,13 +40,14 @@ admission, C4 authorization, a GitHub Release, or a runtime-install record.
 - command: `python -m unittest discover -s tests -v`, with the exact local
   Workspace Framework `v0.1.2` checkout supplied only through the documented
   integration-test environment variables;
-- local result: `121 passed / 0 failed / 0 skipped` on the release-source
-  snapshot named below, using Python `3.13.14` on Windows;
-- source snapshot SHA-256: `4b2a7b966c21694729eae4ef1f331c3083284ce6c8112d7bef949f5b28421db8`;
+- local result: `123 passed / 0 failed / 0 skipped` on the v0.6.1
+  maintenance-source snapshot named below, using Python `3.13.14` on Windows;
+- source snapshot SHA-256: `3dcce7b92b89e383fac5124cf0778ad2217b32372684cdc84fa5a24815723ef9`;
 - snapshot method: the existing tested tracked-source snapshot helper hashes
   byte-sorted `git ls-files -z` relative paths and source bytes, normalizing
-  text line endings while preserving NUL-containing bytes. This assurance file
-  is excluded from its own digest;
+  text line endings while preserving NUL-containing bytes. Each intended
+  candidate file must be staged before this calculation because untracked files
+  are not snapshot inputs. This assurance file is excluded from its own digest;
 - source-result boundary: a recorded local test result verifies only the
   named synthetic technical checks. It does not prove any hosted CI outcome,
   source truth, human authorization, compliance, release eligibility, or

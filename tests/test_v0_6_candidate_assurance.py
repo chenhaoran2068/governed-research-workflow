@@ -1,4 +1,4 @@
-"""Assurance checks for the v0.6 workflow/evidence release source."""
+"""Assurance checks for v0.6 capability scope and v0.6.1 maintenance source."""
 
 from __future__ import annotations
 
@@ -25,13 +25,14 @@ SYNTHETIC_ASSURANCE_RELATIVE_PATH = SYNTHETIC_ASSURANCE_PATH.relative_to(REPOSIT
 
 
 class V06CandidateAssuranceTests(unittest.TestCase):
-    def test_release_source_identity_is_distinct_from_the_published_v051_base(self) -> None:
+    def test_maintenance_source_identity_retains_the_v06_capability_scope(self) -> None:
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
         readme = README_PATH.read_text(encoding="utf-8")
         roadmap = ROADMAP_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.6.0-workflow-evidence-controls-release-source", manifest)
-        self.assertIn("`v0.6.0` workflow/evidence-control release-source", readme)
-        self.assertIn("release-state-maintenance patch", readme)
+        self.assertIn("system_version: 0.6.1-release-state-maintenance-source", manifest)
+        self.assertIn("`v0.6.1` release-state-maintenance source", readme)
+        self.assertIn("v0.6 workflow/evidence-control capability scope", " ".join(readme.split()))
+        self.assertIn("## v0.6.1 (release-state maintenance source)", roadmap)
         self.assertIn("## v0.6.0 (workflow/evidence-control release source)", roadmap)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)
 
@@ -97,7 +98,7 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         match = re.search(r"source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
         self.assertEqual(match.group(1), source_snapshot_sha256(SYNTHETIC_ASSURANCE_RELATIVE_PATH))
-        self.assertIn("This assurance file\n  is excluded from its own digest", assurance)
+        self.assertIn("This assurance file is excluded from its own digest", " ".join(assurance.split()))
 
     def test_release_source_surfaces_have_no_private_path_or_release_claim(self) -> None:
         source_paths = (
@@ -112,6 +113,38 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertIsNone(re.search(r"(?i)(?:[a-z]:\\|/(?:home|users)/)", source_text))
         self.assertNotIn("v0.6.0 is published", source_text.lower())
         self.assertNotIn("v0.6.0 provides an agent runtime", source_text.lower())
+
+    def test_current_source_docs_do_not_make_dynamic_public_version_claims(self) -> None:
+        current_paths = (
+            README_PATH,
+            ROADMAP_PATH,
+            SKILL_PATH,
+            MANIFEST_PATH,
+            REPOSITORY_ROOT / "system" / "INDEX.md",
+            RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md",
+            RELEASE_ROOT / "RELEASE_CONTROL.md",
+            RELEASE_ROOT / "MODULE.md",
+            RELEASE_ROOT / "V0_6_1_RELEASE_STATE_MAINTENANCE.md",
+            RELEASE_ROOT / "RELEASE_NOTES_v0.6.1.md",
+        )
+        source_text = "\n".join(path.read_text(encoding="utf-8").lower() for path in current_paths)
+        for prohibited in (
+            "current published patch is",
+            "current published version is",
+            "current public baseline is",
+            "current stable release is",
+            "current release is",
+            "currently published version is",
+            "latest published tag is",
+            "latest published version is",
+            "latest release is",
+        ):
+            self.assertNotIn(prohibited, source_text)
+        self.assertIn("does not declare a current published version", ROADMAP_PATH.read_text(encoding="utf-8"))
+        release_control = (RELEASE_ROOT / "RELEASE_CONTROL.md").read_text(encoding="utf-8")
+        self.assertIn("Current-State Assertion Control", release_control)
+        self.assertIn("Candidate Snapshot Completeness", release_control)
+        self.assertIn("git ls-files", release_control)
 
 
 if __name__ == "__main__":

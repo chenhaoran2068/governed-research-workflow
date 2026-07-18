@@ -3,11 +3,11 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v0.6.0",
+    "source_release_version": "v0.6.1",
     "historical_public_baseline": "v0.5.1",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.6.0 release-source ledger records an admitted named release scope but does not prove a hosted release, installed runtime, or C4 authorization."
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.6.1 release-state-maintenance source retains an admitted v0.6.0 named release scope but does not prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records admitted v0.6.0 release scope in this release-source ledger. It does not establish public availability for a selected source commit; availability requires a matching immutable tag and GitHub Release. Published v0.4.0, v0.5.0, and v0.5.1 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records admitted v0.6.0 release scope in this v0.6.1 release-state-maintenance source ledger. It does not establish public availability for a selected source commit; availability requires a matching immutable tag and GitHub Release. Published v0.4.0, v0.5.0, v0.5.1, and v0.6.0 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [

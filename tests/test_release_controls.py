@@ -33,6 +33,8 @@ class ReleaseControlTests(unittest.TestCase):
             "V0_6_CAPABILITY_ADMISSION.md",
             "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.6.0.md",
             "RELEASE_NOTES_v0.6.0.md",
+            "V0_6_1_RELEASE_STATE_MAINTENANCE.md",
+            "RELEASE_NOTES_v0.6.1.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -59,7 +61,7 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.6.0-workflow-evidence-controls-release-source", manifest)
+        self.assertIn("system_version: 0.6.1-release-state-maintenance-source", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
@@ -79,6 +81,39 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertNotIn("current public baseline is `v0.3.1`", readme)
         self.assertNotIn("v0.3.1 (release-gated compatibility-maintenance source)", roadmap)
         self.assertNotIn("unreleased Workspace Framework candidate", manifest)
+
+    def test_current_source_guidance_cannot_name_a_live_public_version(self) -> None:
+        current_paths = (
+            REPOSITORY_ROOT / "README.md",
+            REPOSITORY_ROOT / "ROADMAP.md",
+            REPOSITORY_ROOT / "SKILL.md",
+            REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml",
+            REPOSITORY_ROOT / "system" / "INDEX.md",
+            RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md",
+            RELEASE_ROOT / "RELEASE_CONTROL.md",
+            RELEASE_ROOT / "MODULE.md",
+            RELEASE_ROOT / "V0_6_1_RELEASE_STATE_MAINTENANCE.md",
+            RELEASE_ROOT / "RELEASE_NOTES_v0.6.1.md",
+        )
+        current_text = "\n".join(path.read_text(encoding="utf-8").lower() for path in current_paths)
+        for prohibited in (
+            "current published patch is",
+            "current published version is",
+            "current public baseline is",
+            "current stable release is",
+            "current release is",
+            "currently published version is",
+            "latest published tag is",
+            "latest published version is",
+            "latest release is",
+        ):
+            self.assertNotIn(prohibited, current_text)
+        self.assertIn("does not declare a current published version", (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8"))
+        control = (RELEASE_ROOT / "RELEASE_CONTROL.md").read_text(encoding="utf-8")
+        self.assertIn("Current-State Assertion Control", control)
+        self.assertIn("release-blocking documentation defect", control)
+        self.assertIn("Candidate Snapshot Completeness", control)
+        self.assertIn("git ls-files", control)
 
     def test_current_records_cannot_describe_the_published_v050_baseline_as_unreleased(self) -> None:
         current_paths = (

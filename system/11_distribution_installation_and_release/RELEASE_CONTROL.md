@@ -25,6 +25,31 @@ Candidate-review acceptance is not C4 authorization. C4 authorization is not
 post-release verification. A local or remote candidate branch is not a
 released version.
 
+## Current-State Assertion Control
+
+Before C4, review each current-facing source document, including the README,
+roadmap, manifest, module index, capability ledger, release-status rule,
+release notes, and relevant tests. A current-facing source document must not
+declare that an exact version is the current, latest, or otherwise live public
+release. It may describe its own source scope and explicitly labeled historical
+tags or releases.
+
+The only live public-availability statement is the exact annotated-tag and
+matching-GitHub-Release check for the selected version. Treat a dynamic
+current-version assertion as a release-blocking documentation defect. If it is
+found after an immutable release, retain the historical release and make a
+separate maintenance correction; never rewrite the tag or hosted Release.
+
+## Candidate Snapshot Completeness
+
+Before calculating a candidate source snapshot or recording final local test
+evidence, stage exactly the intended public candidate files without committing
+them. Confirm that the worktree has no unstaged candidate change and no
+untracked public candidate file. The tracked-source snapshot deliberately uses
+`git ls-files`; it cannot prove the identity of a new file that remains
+untracked. Recalculate the snapshot after staging, and repeat affected tests
+after any subsequent candidate-file change.
+
 ## Candidate Review Requirements
 
 Record the exact candidate identity, capability-ledger outcome, public and
