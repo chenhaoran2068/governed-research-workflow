@@ -21,14 +21,14 @@ SYNTHETIC_ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" 
 
 
 class V06CandidateAssuranceTests(unittest.TestCase):
-    def test_v07_candidate_retains_the_historical_v06_capability_scope(self) -> None:
+    def test_v07_release_source_retains_the_historical_v06_capability_scope(self) -> None:
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
         readme = README_PATH.read_text(encoding="utf-8")
         roadmap = ROADMAP_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.7.0-learning-promotion-candidate-source", manifest)
-        self.assertIn("`v0.7.0` candidate source", readme)
+        self.assertIn("system_version: 0.7.0-learning-promotion-release-source", manifest)
+        self.assertIn("`v0.7.0` release source", readme)
         self.assertIn("v0.6 workflow/evidence control scope", " ".join(readme.split()))
-        self.assertIn("## v0.7.0 (candidate human-reviewed lesson promotion)", roadmap)
+        self.assertIn("## v0.7.0 (human-reviewed lesson-promotion release source)", roadmap)
         self.assertIn("## v0.6.0 (workflow/evidence-control release source)", roadmap)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)
 

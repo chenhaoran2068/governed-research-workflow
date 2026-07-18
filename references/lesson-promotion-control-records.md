@@ -1,10 +1,10 @@
 # Lesson Promotion Control Records
 
-Status: v0.7 candidate guidance. This route is available as a public capability
-only when the selected version's exact immutable tag and matching GitHub
-Release exist and its ledger admits `GRW-CAP-070-01`. A branch, template,
-validator, candidate document, or test result alone is not public availability
-or authorization to promote a lesson.
+Status: v0.7 release-source guidance. This route is available as a public
+capability only when the selected version's exact immutable tag and matching
+GitHub Release exist and its ledger admits `GRW-CAP-070-01`. A branch,
+template, validator, source document, or test result alone is not public
+availability or authorization to promote a lesson.
 
 ## Purpose And Boundary
 

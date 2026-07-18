@@ -1,6 +1,6 @@
 # Memory And Learning
 
-Status: active retrospective-learning baseline with a v0.7 candidate public
+Status: active retrospective-learning baseline with a v0.7 release-source
 lesson-promotion control record contract.
 
 Use `references/retrospective-learning.md` and the blank retrospective register

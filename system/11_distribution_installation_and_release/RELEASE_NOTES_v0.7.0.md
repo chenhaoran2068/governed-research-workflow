@@ -1,11 +1,11 @@
 # Release Notes: v0.7.0
 
-Status: candidate Release-notes source. This file describes the proposed v0.7
+Status: Release-notes source. This file describes the v0.7
 scope and does not itself establish publication, installation eligibility, C4
 authorization, or runtime identity. Verify a selected version through its
 exact annotated tag and matching GitHub Release.
 
-## Proposed Addition
+## Addition
 
 - metadata-only Human-Reviewed Lesson Promotion Control Records with five
   typed records: observations, lesson candidates, represented human decisions,

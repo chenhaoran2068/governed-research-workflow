@@ -1,8 +1,9 @@
 # v0.7.0 Lesson Promotion Control Release Gate
 
-Status: v0.7 candidate gate. It defines evidence that must be reviewed before
-C4 publication. It does not authorize a tag, GitHub Release, local
-installation, runtime update, or public capability claim.
+Status: historical pre-C4 v0.7 release-source gate. It defines the evidence
+that had to be reviewed before C4 publication. It does not establish a selected
+tag, GitHub Release, local installation, runtime update, or public capability
+claim.
 
 ## Intended Scope
 
@@ -24,7 +25,7 @@ submission, or release status.
 
 - A clean exact source commit exists for C4 review.
 - The v0.6.1 public baseline, intended `v0.7.0` tag, source snapshot, diff,
-  and candidate record resolve to one explicit identity.
+  and source preparation record resolved to one explicit identity.
 - Released v0.4-v0.6 schemas, templates, fixtures, and historical release
   records remain valid without migration or rewrite.
 
@@ -33,7 +34,7 @@ submission, or release status.
 - `GRW-CAP-070-01` is admitted only for the named v0.7.0 release scope; this
   admission remains distinct from public availability and C4 authorization.
 - README, ROADMAP, SKILL, manifest, module map, guidance, tests, and notes
-  describe the branch as a candidate before publication.
+  distinguish release-source scope from selected-version tag/Release status.
 - Capability admission is distinct from C4 authorization.
 
 ### P70-G3: Metadata, Privacy, Rights, And Boundary Review

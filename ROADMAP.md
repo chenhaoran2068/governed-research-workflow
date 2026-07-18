@@ -6,21 +6,21 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
-## v0.7.0 (candidate human-reviewed lesson promotion)
+## v0.7.0 (human-reviewed lesson-promotion release source)
 
-The v0.7 candidate introduces one proposed metadata-only capability,
+The v0.7 release source defines one metadata-only capability,
 `GRW-CAP-070-01`: a human-reviewed lesson-promotion control bundle with five
 record types, a blank template, synthetic fixtures, and an explicitly invoked
 read-only structural validator. It makes an observation, candidate, represented
 human decision, integration verification, and correction/withdrawal/
 supersession event distinguishable.
 
-The candidate does not access project material, follow references, prove a
+The release source does not access project material, follow references, prove a
 human identity or authority, automatically promote or integrate a lesson,
 modify a target rule, or decide scientific, compliance, Gate, submission, or
-release status. Candidate implementation is not a public capability claim;
-only later exact-tag-and-matching-Release verification can establish public
-availability for a selected version.
+release status. Capability admission is not public availability; only
+exact-tag-and-matching-Release verification can establish public availability
+for a selected version.
 
 ## v0.6.1 (release-state maintenance source)
 

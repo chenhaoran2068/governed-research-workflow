@@ -1,12 +1,12 @@
-# V0.7 Candidate Synthetic Assurance
+# V0.7 Release-Source Synthetic Assurance
 
-Status: candidate synthetic-assurance evidence. It records local source-level
+Status: release-source synthetic-assurance evidence. It records local source-level
 test evidence only. It is not a public Release, capability admission, C4
 authorization, hosted-CI outcome, or installed-runtime verification.
 
 ## Scope
 
-The v0.7 candidate combines only generic schemas, blank templates, one
+The v0.7 release source combines only generic schemas, blank templates, one
 read-only validator, synthetic bundles, public documentation, and regression
 tests. It checks explicit input-path safety, duplicate-key refusal,
 automatic-promotion refusal, cross-record candidate/decision/integration
@@ -19,12 +19,12 @@ or compliance decision, or prove public availability or runtime identity.
 
 ## Local Source Test Evidence
 
-This block was completed from the staged candidate tree before its exact-commit
-review. The source snapshot excludes this file only, because the file records
-its own digest; every other intended candidate file was staged before
-calculation.
+This block was completed from the staged release-source tree before its
+exact-commit review. The source snapshot excludes this file only, because the
+file records its own digest; every other intended release-source file was
+staged before calculation.
 
-- source snapshot SHA-256: `f09719290290502d2de1d77c7e1af8331cc1d126403c3b05e52bf304db0e07e6`;
+- source snapshot SHA-256: `40ee245ab08c26b6f3abe5c0bfa75ef27f12d82f3d82ed7ae9649102fbe409a3`;
 - snapshot method: the established tracked-source helper hashes byte-sorted
   `git ls-files -z` relative paths and source bytes, normalizing text line
   endings while preserving NUL-containing bytes; and

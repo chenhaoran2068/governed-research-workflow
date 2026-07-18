@@ -271,15 +271,15 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("admitted `grw-cap-060-01`", admission)
         self.assertIn("does not authorize a push", admission)
 
-    def test_r7001_is_admitted_for_scope_but_cannot_be_publicly_available_or_installed(self) -> None:
+    def test_r7001_scope_and_selected_version_status_remain_distinct(self) -> None:
         record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-070-01")
         self.assertEqual(record["implementation_status"], "verified")
         self.assertEqual(record["release_disposition"], "admitted")
         self.assertEqual(record["public_claim_status"], "permitted")
         self.assertEqual(record["version"]["target_release"], "v0.7.0")
-        self.assertIsNone(record["version"]["last_verified_release"])
+        self.assertEqual(record["version"]["last_verified_release"], "v0.7.0")
         self.assertIn("automatically promote", record["non_promise"].lower())
-        self.assertIn("not publicly available", record["limitations_and_next_action"].lower())
+        self.assertIn("exact immutable tag and matching github release", record["limitations_and_next_action"].lower())
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
         planned_records = [
