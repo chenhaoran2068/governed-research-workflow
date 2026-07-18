@@ -1,8 +1,8 @@
 # Examples Module Boundary
 
-Status: released cross-repository integration test plus a local v0.5 synthetic
-assurance candidate; no distributable end-to-end public system example is
-admitted here yet.
+Status: released cross-repository integration test, retained v0.4/v0.5
+synthetic-assurance history, and a local v0.6 candidate route; no
+distributable end-to-end public system example is admitted here yet.
 
 `tests/test_framework_candidate_integration.py` constructs a temporary empty
 workspace, installs this public package as synthetic test material, registers
@@ -21,6 +21,11 @@ the metadata-only provenance register set. It hashes only Git-tracked source,
 excludes its own evidence file, and uses synthetic metadata fixtures. It is not
 an exact final-commit identity, C4 authorization, hosted Release claim, or
 runtime-installation record.
+
+The unreleased v0.6 candidate uses a six-record synthetic bundle and optional
+baseline fixture. Their structural validation is not source-content review,
+human-identity verification, authorization proof, tamper-proof storage, or a
+real-study workflow demonstration.
 
 Do not include real study data, manuscript text, reviewer correspondence,
 submission records, project memory, or identifiable case details.

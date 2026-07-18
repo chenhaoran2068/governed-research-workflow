@@ -1,9 +1,10 @@
 # Release Status Verification
 
 Status: active, version-neutral release-verification rule. The published
-`v0.5.0` tag/Release is the metadata-only provenance-register baseline. This
-record does not prove that any selected version is installed in a private skill
-source or Codex runtime.
+`v0.5.0` tag/Release is the metadata-only provenance-register baseline and
+`v0.5.1` is its published release-state-maintenance patch. This record does
+not prove that any selected version is installed in a private skill source or
+Codex runtime.
 
 ## Normal Public Installation Rule
 
@@ -36,13 +37,24 @@ verify the exact tag and matching Release at the time of installation.
 
 ## v0.5.1 Maintenance Source
 
-- This source corrects release-state wording without changing the v0.5.0
+- v0.5.1 is published at annotated tag `v0.5.1`, target commit
+  `36ad824f0df6ed73610c6886edd76c38472793ab`, with a matching immutable
+  GitHub Release.
+- It corrects release-state wording without changing the v0.5.0
   capability contract, validator, schemas, dependency, data boundary,
   permissions, or CI architecture.
-- Whether a selected v0.5.1 checkout is a published installation target is
-  determined only by the normal public installation rule. Do not infer it from
-  this source tree, `main`, a candidate branch, a green CI run, a ledger, or an
-  AI statement.
+- A selected v0.5.1 checkout is an installation target only when the normal
+  public installation rule is verified at installation time. Do not infer a
+  private source or Codex runtime update from the hosted Release.
+
+## Unreleased v0.6 Candidate
+
+- The local branch `v0.6.0-workflow-evidence-controls-candidate` is not a
+  public Release, installation target, capability admission, or runtime claim.
+- It must first complete exact candidate review, capability admission, remote
+  CI, C4 authorization, immutable tag/Release, and post-release verification.
+- A local candidate branch cannot alter the published v0.5.0/v0.5.1 identity
+  or authorize a private source/runtime update.
 
 ## v0.4.0 Historical Public Baseline
 

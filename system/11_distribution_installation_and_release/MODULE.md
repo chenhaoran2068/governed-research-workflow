@@ -2,9 +2,9 @@
 
 Status: active standalone package governance. Historical v0.3.0, v0.3.1,
 v0.4.0, and pre-C4 v0.5.0 records are retained. The v0.5.0
-provenance-register-set baseline is published; normal installation eligibility
-for every selected version is determined by the exact-tag and matching-Release
-rule in `CURRENT_RELEASE_STATUS.md`.
+provenance-register-set baseline and v0.5.1 maintenance patch are published;
+normal installation eligibility for every selected version is determined by the
+exact-tag and matching-Release rule in `CURRENT_RELEASE_STATUS.md`.
 
 Released tags are immutable public contracts by policy. Candidate branches are
 not releases. A correction requires a new release version rather than
@@ -54,3 +54,10 @@ release-control record contract. Candidate-review acceptance, C4
 authorization of an exact commit/tag/Release, and post-release verification are
 separate records. The schema records conditions; it does not publish, scan,
 sign, certify, or change hosted controls.
+
+`V0_6_RELEASE_GATE.md`, `V0_6_RELEASE_EVIDENCE.md`,
+`V0_6_CAPABILITY_ADMISSION.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.6.0.md`,
+and `RELEASE_NOTES_v0.6.0.md` are local, unreleased candidate materials. They
+do not admit `GRW-CAP-060-01`, create a public claim, or authorize a remote
+action until their exact current identities have passed the applicable human
+reviews and C4.

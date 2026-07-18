@@ -14,14 +14,13 @@ import unittest
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
 CURRENT_RELEASE_PATH = REPOSITORY_ROOT / "system" / "11_distribution_installation_and_release" / "CURRENT_RELEASE_STATUS.md"
-WORKFLOW_PATH = REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml"
 ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_4_SYNTHETIC_ASSURANCE.md"
 V05_ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_5_SYNTHETIC_ASSURANCE.md"
+FRAMEWORK_PLAN_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "FRAMEWORK_INTEGRATION_PLAN.md"
 AUTHORIZATION_TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "bounded-autonomy-authorization.template.json"
 PROVENANCE_TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "data-provenance-register.template.json"
 RELEASE_TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "release-control-record.template.json"
 ASSURANCE_RELATIVE_PATH = ASSURANCE_PATH.relative_to(REPOSITORY_ROOT).as_posix().encode("utf-8")
-V05_ASSURANCE_RELATIVE_PATH = V05_ASSURANCE_PATH.relative_to(REPOSITORY_ROOT).as_posix().encode("utf-8")
 
 
 def canonical_snapshot_bytes(source_bytes: bytes) -> bytes:
@@ -62,11 +61,6 @@ def current_source_snapshot_sha256() -> str:
     return source_snapshot_sha256(ASSURANCE_RELATIVE_PATH)
 
 
-def current_v05_source_snapshot_sha256() -> str:
-    """Return the v0.5 historical-source snapshot representation."""
-    return source_snapshot_sha256(V05_ASSURANCE_RELATIVE_PATH)
-
-
 class V04SyntheticAssuranceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -99,14 +93,14 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         self.assertIn("does not prove that a private skill source or an installed Codex runtime has been updated", normalized_release)
         self.assertIn("Do not infer an installed runtime version", skill)
 
-    def test_framework_profile_uses_exact_tag_and_recorded_resolved_commit(self) -> None:
-        workflow = WORKFLOW_PATH.read_text(encoding="utf-8")
+    def test_v04_framework_profile_evidence_remains_historical_while_current_candidate_targets_v012(self) -> None:
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
-        self.assertIn("ref: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
-        self.assertIn("FRAMEWORK_RELEASE_TAG: v0.1.1", workflow)
-        self.assertIn("FRAMEWORK_EXPECTED_COMMIT: b0e32d7710b70299e633df1316b6924cd87b647b", workflow)
+        framework_plan = FRAMEWORK_PLAN_PATH.read_text(encoding="utf-8")
         self.assertIn("framework tag: `v0.1.1`", assurance)
         self.assertIn("framework resolved commit: `b0e32d7710b70299e633df1316b6924cd87b647b`", assurance)
+        self.assertIn("unreleased v0.6 candidate", framework_plan)
+        self.assertIn("Workspace Framework `v0.1.2`", framework_plan)
+        self.assertIn("97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8", framework_plan)
 
     def test_synthetic_records_preserve_cross_record_refusal_boundaries(self) -> None:
         authorization = json.loads(AUTHORIZATION_TEMPLATE_PATH.read_text(encoding="utf-8"))
@@ -144,18 +138,16 @@ class V04SyntheticAssuranceTests(unittest.TestCase):
         assurance = V05_ASSURANCE_PATH.read_text(encoding="utf-8")
         match = re.search(r"working-tree source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
-        self.assertEqual(match.group(1), current_v05_source_snapshot_sha256())
+        self.assertRegex(match.group(1), r"^[0-9a-f]{64}$")
         self.assertIn("Status: historical pre-C4 synthetic assurance evidence.", assurance)
         self.assertIn("historical candidate-source snapshot", re.sub(r"\s+", " ", assurance))
 
     def test_snapshot_ignores_an_untracked_ci_checkout_directory(self) -> None:
         baseline = current_source_snapshot_sha256()
-        v05_baseline = current_v05_source_snapshot_sha256()
         with tempfile.TemporaryDirectory(prefix="ci-framework-checkout-", dir=REPOSITORY_ROOT) as temporary_directory:
             temporary_path = Path(temporary_directory)
             (temporary_path / "framework-marker.txt").write_text("not candidate source\n", encoding="utf-8")
             self.assertEqual(current_source_snapshot_sha256(), baseline)
-            self.assertEqual(current_v05_source_snapshot_sha256(), v05_baseline)
 
     def test_snapshot_normalizes_text_line_endings_without_altering_binary_inputs(self) -> None:
         text_crlf = b"first\r\nsecond\r\n"

@@ -5,13 +5,15 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: `v0.5.1` release-state maintenance content. `v0.5.0` is the published
-metadata-only provenance-register baseline. This source tree does not itself
-prove the release or installation identity of any selected version. A normal
-public installation target exists only when an exact annotated tag and matching
-GitHub Release resolve to the selected source commit. Never install a mutable
-branch. This maintenance revision does not add research execution authority or
-expand any human-approval boundary.
+Status: local unreleased `v0.6.0` candidate content derived from published
+`v0.5.1`. `v0.5.0` remains the published metadata-only provenance-register
+capability baseline, and `v0.5.1` is its published release-state-maintenance
+patch. This source tree does not itself prove the release or installation
+identity of any selected version. A normal public installation target exists
+only when an exact annotated tag and matching GitHub Release resolve to the
+selected source commit. Never install a mutable branch. The v0.6 candidate
+does not add research execution authority or expand any human-approval
+boundary.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -29,8 +31,10 @@ metadata-only register-set capability for `v0.5.0`; neither admission alone
 proves a local installation, runtime identity, or a future C4 authorization.
 
 The package manifest and current installation narrative identify this source
-as `v0.5.1-release-state-maintenance` content. A capability admission is not
-by itself an installation claim or C4 authorization.
+as unreleased `v0.6.0` candidate content. `GRW-CAP-060-01` is not yet in the
+ledger and may not be claimed as publicly available until it is verified,
+admitted for one exact release, and separately published. A capability
+admission is not by itself an installation claim or C4 authorization.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
 boundary, bounded-autonomy authorization record, metadata-only provenance
@@ -85,6 +89,13 @@ The published v0.5.0 baseline additionally provides only a metadata-only
 provenance register-set index and explicit structural validator. It does not read real
 data, source locators, URLs, or credentials; it does not infer access,
 permission, compliance, provenance truth, or scientific suitability.
+
+The unreleased v0.6 candidate adds only a metadata-only workflow/evidence
+control bundle, optional baseline comparison, and read-only structural
+validation. It records declared relationships and revision impact; it does not
+open sources, establish semantic support, prove a human authorization, prevent
+a same-authority rewrite, or decide scientific, compliance, Gate, submission,
+or release status.
 
 ## Use
 
@@ -159,6 +170,11 @@ baseline. Its historical preparation records are retained under
 exact-tag and matching-Release verification rule. `v0.5.1` corrects
 release-state wording only; it does not change that capability contract.
 
+`v0.5.1` is the published release-state-maintenance patch for the v0.5.0
+capability contract. It is verified independently by its exact annotated tag
+and matching GitHub Release; it is not evidence that this v0.6 candidate, a
+private source, or an installed runtime is current.
+
 ## Public Evolution Roadmap
 
 This is a planning summary, not a promise or a statement that a future module
@@ -173,8 +189,9 @@ supersede a band through a reviewed revision.
   compliance decision.
 - `v0.5.x`: only corrections or compatibility maintenance for the released
   `v0.5.0` contract.
-- `v0.6.0`: reviewable workflow and evidence controls; no scientific,
-  compliance, journal, or submission decision by the system.
+- `v0.6.0`: local unreleased candidate for reviewable workflow and evidence
+  controls; no scientific, compliance, journal, or submission decision by the
+  system.
 - `v0.7.x`: human-reviewed retrospective learning and knowledge promotion; no
   automatic promotion of project observations.
 - `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and

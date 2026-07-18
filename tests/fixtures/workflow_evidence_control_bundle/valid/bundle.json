@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "workflow_evidence_control_bundle",
+  "bundle_id": "SYNTHETIC_WORKFLOW_EVIDENCE_001",
+  "bundle_revision": 1,
+  "recorded_at": "2026-07-18T00:00:00Z",
+  "metadata_only": true,
+  "record_contract": {
+    "record_contract_version": "1.0.0",
+    "allowed_record_types": [
+      "assertion_record",
+      "evidence_reference_record",
+      "assertion_evidence_relation_record",
+      "verification_event_record",
+      "human_decision_record",
+      "revision_and_impact_record"
+    ]
+  },
+  "validation_boundary": {
+    "structural_validation_only": true,
+    "no_data_or_pointer_target_access": true,
+    "no_external_service_action": true,
+    "not_truth_or_approval_determination": true
+  },
+  "records": [
+    {
+      "record_id": "ASSERTION_001",
+      "record_type": "assertion_record",
+      "record_revision": 1,
+      "recorded_at": "2026-07-18T00:00:00Z",
+      "assertion_summary": "Synthetic assertion used only to test the public metadata contract.",
+      "assertion_type": "claim",
+      "actor_class": "ai",
+      "lifecycle": "current",
+      "version_label": "v1",
+      "declared_scope": "Synthetic validator assurance only.",
+      "limitations": ["This record does not establish truth."]
+    },
+    {
+      "record_id": "EVIDENCE_001",
+      "record_type": "evidence_reference_record",
+      "record_revision": 1,
+      "recorded_at": "2026-07-18T00:00:00Z",
+      "source_role": "official_documentation",
+      "canonical_pointer": {
+        "pointer_type": "opaque_reference",
+        "pointer_value": "SYNTHETIC-EVIDENCE-001",
+        "content_not_read": true
+      },
+      "version_or_date": {"status": "known", "value": "synthetic-v1"},
+      "exact_locator": "Synthetic section 1",
+      "access_restriction_state": "unknown",
+      "availability_currentness": "current",
+      "limitation": "The validator does not open or assess this pointer target."
+    },
+    {
+      "record_id": "RELATION_001",
+      "record_type": "assertion_evidence_relation_record",
+      "record_revision": 1,
+      "recorded_at": "2026-07-18T00:00:00Z",
+      "assertion_id": "ASSERTION_001",
+      "evidence_id": "EVIDENCE_001",
+      "relation_kind": "citation_support",
+      "declared_support_scope": "exact",
+      "assessment_state": "human_assessed",
+      "prerequisite_status": "satisfied",
+      "assessor_actor_class": "human",
+      "limitation": "Declared support is not semantic entailment proof.",
+      "invalidation_reference": null
+    },
+    {
+      "record_id": "VERIFY_001",
+      "record_type": "verification_event_record",
+      "record_revision": 1,
+      "recorded_at": "2026-07-18T00:00:00Z",
+      "target_record_ids": ["RELATION_001"],
+      "check_method_id": "synthetic-structural-check",
+      "check_method_version": "1.0.0",
+      "input_record_ids": ["RELATION_001"],
+      "checking_actor_class": "machine",
+      "result": "machine_pass",
+      "diagnostic_pointer": null,
+      "positive_scope": "Required synthetic fields and references were structurally checked.",
+      "explicit_non_claims": [
+        "source_semantic_support",
+        "human_approval",
+        "gate_passage",
+        "compliance",
+        "scientific_truth",
+        "release_readiness"
+      ]
+    },
+    {
+      "record_id": "DECISION_001",
+      "record_type": "human_decision_record",
+      "record_revision": 1,
+      "recorded_at": "2026-07-18T00:00:00Z",
+      "target_record_ids": ["ASSERTION_001"],
+      "decision_type": "review",
+      "decision_maker_actor_class": "human",
+      "accountable_human_reference": "SYNTHETIC-HUMAN-001",
+      "decision_basis_record_ids": ["RELATION_001"],
+      "outcome": "approved",
+      "rationale_or_limitations": "Synthetic field example only; identity and real authorization are not proven.",
+      "review_or_expiry_condition": "Review again if the synthetic assertion changes.",
+      "record_only_not_identity_or_authorization_proof": true
+    },
+    {
+      "record_id": "REVISION_001",
+      "record_type": "revision_and_impact_record",
+      "record_revision": 1,
+      "recorded_at": "2026-07-18T00:00:00Z",
+      "changed_object_id": "ASSERTION_001",
+      "creation_mode": "initial_creation",
+      "predecessor_reference": null,
+      "prior_version_or_safe_identity": null,
+      "new_version_or_safe_identity": "v1",
+      "change_type": "initial_creation",
+      "reason": "initial_creation",
+      "initiator_actor_class": "human",
+      "allowed_write_scope_reference": "SYNTHETIC-WRITE-SCOPE-001",
+      "authorization": {"state": "not_required", "reference": null},
+      "affected_downstream_object_ids": [],
+      "downstream_impact_state": "applied",
+      "supersession_or_invalidation_reference": null
+    }
+  ]
+}
