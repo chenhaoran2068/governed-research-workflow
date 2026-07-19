@@ -1,7 +1,7 @@
 # v0.8.0 Dependency, Workflow, And Repository-Control Review
 
-Status: active candidate technical-review record. It records current evidence
-and visible limitations for v0.8 preparation. It does not certify a hosted
+Status: pre-C4 technical-review record. It records current evidence and
+visible limitations for the v0.8 release source. It does not certify a hosted
 setting, dependency security, C4 authorization, or publication.
 
 ## Dependency And Workflow Surface
@@ -16,11 +16,16 @@ setting, dependency security, C4 authorization, or publication.
   Framework `v0.1.2` commit
   `97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`.
 
-## Remote Candidate Evidence
+## Historical And Protected-Main Evidence
 
 GitHub Actions run `29680656435` passed all six contexts for implementation
 commit `49102f9da068b290e311f63437351d1e1ce220e7`. This evidence must be
-repeated for the exact candidate named by the separate C3 record.
+repeated for each later exact source change.
+
+GitHub Actions run `29682538847` passed all six contexts for the reviewed
+protected-main commit `d896a3f455b37e8c8d757db3687b8b6f13e84d4e`. A later C4
+record must still name the exact final release object after any corrective
+candidate change.
 
 ## Repository Controls And Known Limitations
 
@@ -30,10 +35,11 @@ repeated for the exact candidate named by the separate C3 record.
   zero open secret-scanning alerts.
 - Dependabot alerts are disabled and code scanning has no analysis configured.
   They are residual visibility limitations, not passing security controls.
-- The current authenticated read-only API scope cannot independently retrieve
-  the repository's immutable-release or Actions SHA-pinning settings. Their
-  current settings must be reconfirmed through GitHub settings or a properly
-  scoped maintainer token before C4; do not infer them from this record.
+- GitHub's immutable-release API reported enabled during this review. The
+  current token cannot independently retrieve the platform-level Actions
+  SHA-pinning setting, although this repository's workflow itself uses full
+  action SHAs. Reconfirm both the final workflow tree and hosted setting before
+  C4; do not infer a platform setting from this record.
 
 ## C4 Refresh Requirement
 

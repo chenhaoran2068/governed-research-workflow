@@ -24,9 +24,9 @@ source revision, it is not itself a hosted Release or installation target;
 verify a selected version through its exact annotated tag and matching GitHub
 Release.
 
-## v0.8.0 (candidate portability, role-contract, and helper-admission source)
+## v0.8.0 (pre-C4 portability, role-contract, and helper-admission release source)
 
-This source adds three candidate records: evidence for the existing public
+This source adds three release-scope-admitted records: evidence for the existing public
 `standalone` and `framework_integrated` profiles; two non-runnable role
 contracts for structural record review and boundary auditing; and a bounded
 admission record for the existing empty-workspace bootstrap helper.
@@ -35,15 +35,15 @@ The source adds no coordinator, external-evidence retrieval role, agent
 runtime, delegation, multi-agent orchestration, generic writer, new helper,
 data-content action, network action, or automatic Release/runtime update. A
 role contract is not M53 authorization, helper admission, per-run confirmation,
-data/share authority, or an AI approval. Candidate records remain forbidden for
-public capability claims until later validation, accountable-human admission,
-exact-commit review, and C4 evidence.
+data/share authority, or an AI approval. Scope admission does not establish
+public availability until an exact tag, matching GitHub Release, and C4
+evidence exist.
 
-The corresponding candidate release gate, evidence, rights review, dependency
-and workflow review, release-control record, and release-notes source are kept
-under `system/11_distribution_installation_and_release/`. They record
-preparation and remaining decisions only; they are not a tag, GitHub Release,
-or installation claim.
+The corresponding pre-C4 release gate, evidence, rights review, dependency and
+workflow review, release-control record, and release-notes source are kept
+under `system/11_distribution_installation_and_release/`. They record review,
+scope admission, and the remaining C4 decision only; they are not a tag,
+GitHub Release, or installation claim.
 
 ## v0.7.0 (historical human-reviewed lesson-promotion release source)
 

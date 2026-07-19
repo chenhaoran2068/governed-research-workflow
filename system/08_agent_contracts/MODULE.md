@@ -1,6 +1,6 @@
 # Specialist Agent-Contract Boundary
 
-Status: v0.8 candidate source. This directory contains two non-runnable role contract records.
+Status: v0.8 pre-C4 release source. This directory contains two release-scope-admitted, non-runnable role contract records.
 No runnable specialist agent is defined here.
 This is not a runnable specialist-agent surface.
 No role card, agent runtime, delegated authority, external-retrieval worker,

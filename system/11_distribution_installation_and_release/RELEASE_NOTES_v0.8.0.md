@@ -1,11 +1,11 @@
 # Release Notes Source: v0.8.0 Portability, Role-Contract, And Helper-Admission Controls
 
-Status: candidate release-notes source. It describes the proposed v0.8.0 scope
-and does not itself establish publication, installation eligibility, C4
-authorization, or runtime identity. Verify a selected version through its exact
-annotated tag and matching GitHub Release.
+Status: pre-C4 release-notes source. It describes the release-scope-admitted
+v0.8.0 content and does not itself establish publication, installation
+eligibility, C4 authorization, or runtime identity. Verify a selected version
+through its exact annotated tag and matching GitHub Release.
 
-## Proposed Changes
+## Release-Source Changes
 
 - records the public `standalone` and `framework_integrated` profile boundary,
   while keeping Private Lab Extended outside public support;
@@ -29,5 +29,5 @@ data/share evidence, helper admission, or per-run write confirmation.
 
 Install only a selected version whose exact annotated tag and matching GitHub
 Release resolve to the same reviewed commit. Do not install `main`, an
-untagged candidate branch, or an unreceipted local copy. A public release does
+untagged branch, or an unreceipted local copy. A public release does
 not establish a private canonical source or installed Codex runtime identity.

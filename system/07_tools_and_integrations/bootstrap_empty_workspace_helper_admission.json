@@ -3,11 +3,11 @@
   "record_type": "controlled_helper_admission",
   "helper_id": "bootstrap_empty_workspace",
   "helper_version": "1.0.0",
-  "record_revision": 2,
-  "admission_status": "candidate",
+  "record_revision": 3,
+  "admission_status": "admitted",
   "owner": "accountable_human",
   "purpose": "Provide a reviewable bounded contract for the existing explicit helper that creates one allowlisted empty workspace scaffold after a no-write preview and matching accountable-human confirmation.",
-  "source_identity": {"repository_relative_path": "scripts/bootstrap_empty_workspace.py", "content_hash_algorithm": "sha256_utf8_lf_v1", "sha256": "603aed58d0aed8ea1d76f23082b5d819d7c4f200906253e60766cf5572f42f63", "identity_scope": "Candidate source-text identity only: strict UTF-8 decoding, CRLF/CR-to-LF newline canonicalization, then SHA-256. It is not a public Release, installed-runtime, or per-run authorization identity."},
+  "source_identity": {"repository_relative_path": "scripts/bootstrap_empty_workspace.py", "content_hash_algorithm": "sha256_utf8_lf_v1", "sha256": "603aed58d0aed8ea1d76f23082b5d819d7c4f200906253e60766cf5572f42f63", "identity_scope": "Release-scope source-text identity only: strict UTF-8 decoding, CRLF/CR-to-LF newline canonicalization, then SHA-256. It is not a public Release, installed-runtime, or per-run authorization identity."},
   "supported_profiles": ["standalone", "framework_integrated"],
   "input_boundary": {"workspace_root": "caller-selected existing physical root outside the skill package", "workspace_target": "one new direct-child target", "automatic_location_selection_permitted": false, "root_or_ancestor_link_or_reparse_point_permitted": false},
   "allowed_action_boundary": {"allowed_action": "preview and, only after matching confirmation, create an allowlisted empty scaffold", "scope": "new empty workspace only"},
@@ -19,7 +19,7 @@
   "audit_and_receipt_boundary": {"preview_plan_identity_recorded": true, "approval_reference_recorded": true, "bootstrap_receipt_created_after_success": true, "generated_file_hashes_recorded": true},
   "evidence_references": ["tests/test_bootstrap_empty_workspace.py", "tests/test_controlled_helper_admission.py", "tests/test_v0_8_synthetic_assurance.py", "references/controlled-bootstrap.md"],
   "known_limitations": ["A same-authority user can bypass package controls outside this helper.", "This admission record does not enforce operating-system permissions.", "Framework-integrated profile listing does not install a system into a Framework workspace or prove real-project framework integration."],
-  "accountable_human_admission": {"status": "not_granted", "reference": null},
+  "accountable_human_admission": {"status": "granted", "reference": "accountable-human accepted GRW-CAP-080-03 for v0.8.0 release scope during pull-request #10 review on 2026-07-19; this is not C4 authorization or a per-run confirmation"},
   "explicit_non_claims": ["This is not a per-run preview confirmation or a human approval for a specific filesystem target.", "This is not M53 bounded-autonomy authorization, data-access authority, compliance determination, Gate authority, Release authority, submission authority, runtime-installation authority, or operating-system enforcement."],
   "compatibility": {"older_package_behavior": "unsupported_metadata_no_behavior_change", "framework_installation_claim": false}
 }

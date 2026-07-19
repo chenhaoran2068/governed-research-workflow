@@ -1,13 +1,14 @@
 # v0.8.0 Portability, Role-Contract, And Helper-Admission Release Gate
 
-Status: active v0.8 candidate release-preparation gate. It states the evidence
-required before a later C4 decision. It does not admit a capability, identify
-the final release commit, authorize a pull-request merge, create a tag or
-GitHub Release, or establish a local installation or runtime identity.
+Status: pre-C4 release-gate record. It records the evidence and
+scope reviewed before a later C4 decision. It does not identify the final
+release commit, authorize C4, create a tag or GitHub Release, or establish a
+local installation or runtime identity.
 
 ## Intended Scope
 
-The proposed v0.8.0 scope contains exactly these three candidate capabilities:
+The release-scope-admitted v0.8.0 scope contains exactly these three bounded
+capabilities:
 
 - `GRW-CAP-080-01`: profile-scoped portability and failure-boundary evidence
   for the public `standalone` and `framework_integrated` profiles only;
@@ -25,24 +26,22 @@ data, contact an external service, use credentials, or update a local runtime.
 
 ### P80-G1: Exact Source And Compatibility Identity
 
-- The implementation evidence currently refers to remote candidate commit
+- Historical implementation evidence refers to candidate commit
   `49102f9da068b290e311f63437351d1e1ce220e7`, based on public `v0.7.1`
   commit `39d88408c2059d4c736303a1ae9aa509797c3ad4`.
-- Release-preparation material requires a clean exact C3 candidate commit,
-  tracked-source snapshot, and reviewed diff before C4. The package source does
-  not self-identify that commit; the separate C3 record names the selected
-  exact candidate identity. The implementation commit is not automatically the
-  C4 identity.
+- The protected-main review later passed for
+  `d896a3f455b37e8c8d757db3687b8b6f13e84d4e`. A later C4 record must name
+  the exact final release identity after any subsequent corrective source
+  change; package source files do not self-identify that future commit.
 - Published v0.4 through v0.7 records, schemas, templates, and released
   capability meanings remain readable without migration or rewrite.
 
 ### P80-G2: Capability Admission And Claim Truth
 
-- The accountable human must explicitly admit or exclude each of
-  `GRW-CAP-080-01` through `GRW-CAP-080-03` for the named v0.8.0 release
-  scope after reviewing the exact candidate evidence.
-- Until that admission is recorded, the capability ledger remains candidate
-  and public claims remain forbidden.
+- The accountable human admitted `GRW-CAP-080-01` through `GRW-CAP-080-03`
+  for the named v0.8.0 release scope after reviewing pull request #10.
+- This release-scope admission is recorded in the capability ledger and does
+  not establish a hosted Release or installed runtime.
 - Admission is distinct from C4 authorization, an exact tag, a GitHub Release,
   installation eligibility, and runtime identity.
 
@@ -72,8 +71,8 @@ data, contact an external service, use credentials, or update a local runtime.
 
 ### P80-G5: Technical, Dependency, And Cross-Repository Evidence
 
-- Re-run the complete local suite after the final candidate source is staged.
-- Re-run the exact final candidate through GitHub CI on Windows, Ubuntu, and
+- Re-run the complete local suite after the final release source is staged.
+- Re-run the exact final release source through GitHub CI on Windows, Ubuntu, and
   macOS with Python 3.11 and 3.14.
 - Any framework-integrated claim must remain bound to Workspace Framework
   `v0.1.2` at commit `97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`.

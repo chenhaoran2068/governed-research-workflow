@@ -18,14 +18,14 @@ class V071HistoricalMaintenanceTests(unittest.TestCase):
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         index = (REPOSITORY_ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.8.0-portability-role-helper-admission-candidate-source", manifest)
-        self.assertIn("Status: v0.8 candidate source", readme)
-        self.assertIn("## v0.8.0 (candidate portability, role-contract, and helper-admission source)", roadmap)
+        self.assertIn("system_version: 0.8.0-portability-role-helper-admission-pre-c4-source", manifest)
+        self.assertIn("Status: v0.8 pre-C4 release source", readme)
+        self.assertIn("## v0.8.0 (pre-C4 portability, role-contract, and helper-admission release source)", roadmap)
         self.assertIn("## v0.7.1 (release-state and control-hardening maintenance source)", roadmap)
         self.assertIn("## v0.7.0 (historical human-reviewed lesson-promotion release source)", roadmap)
         self.assertIn("## Planned After v0.7 (not current capability)", roadmap)
         self.assertNotIn("v0.7.x: candidate", roadmap.lower())
-        self.assertIn("Status: v0.8 candidate source", index)
+        self.assertIn("Status: v0.8 pre-C4 release source", index)
 
     def test_maintenance_keeps_the_v070_capability_identity_and_boundary(self) -> None:
         ledger_path = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"

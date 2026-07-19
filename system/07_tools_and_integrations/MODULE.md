@@ -1,8 +1,8 @@
 # Tools And Integrations
 
-Status: v0.8 candidate source retains one controlled bootstrap helper and adds
-only its candidate helper-admission record. Framework integration is test-only
-and has no installation helper.
+Status: v0.8 pre-C4 release source retains one controlled bootstrap helper and
+adds only its release-scope helper-admission record. Framework integration is
+test-only and has no installation helper.
 
 Current executable tooling is limited to the explicit empty-workspace bootstrap
 helper and its regression tests. It uses no network, credentials, data import,
