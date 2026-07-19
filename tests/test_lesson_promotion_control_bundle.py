@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 import importlib.util
 import json
 import os
@@ -60,6 +61,7 @@ class LessonPromotionControlBundleTests(unittest.TestCase):
         Draft202012Validator.check_schema(schema)
         errors = list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(template))
         self.assertEqual(errors, [])
+        self.assertEqual(template["schema_version"], "1.1.0")
         self.assertTrue(template["metadata_only"])
         self.assertFalse(template["restricted_content_included"])
         self.assertFalse(template["promotion_control"]["automated_promotion"])
@@ -99,6 +101,93 @@ class LessonPromotionControlBundleTests(unittest.TestCase):
         result = validator.validate_bundle(self.root, "bundle.json")
         self.assertEqual(result["result"], "invalid")
         self.assertTrue(any(issue["code"] == "integration_decision_mismatch" for issue in result["issues"]))
+
+    def test_v11_correction_requires_separate_linked_human_decision(self) -> None:
+        bundle = self._bundle()
+        bundle["schema_version"] = "1.1.0"
+        for record in bundle["records"]:
+            if record["record_id"] == "LC-001":
+                record["decision_history_ids"] = ["HD-001", "HD-002"]
+            elif record["record_id"] == "LC-000":
+                record["decision_history_ids"] = ["HD-000"]
+        bundle["records"].extend([
+            {
+                "record_id": "HD-002",
+                "record_type": "human_decision",
+                "candidate_id": "LC-001",
+                "disposition": "confirm_correction",
+                "accountable_human_reference": "synthetic://accountable-human/correction-review",
+                "decision_basis_references": ["synthetic://review/correction-basis"],
+                "decision_date": "2026-07-19",
+                "representation": "recorded_accountable_human_decision_not_identity_verified"
+            },
+            {
+                "record_id": "CE-002",
+                "record_type": "change_event",
+                "candidate_id": "LC-001",
+                "human_decision_id": "HD-002",
+                "change_type": "correction",
+                "reason": "Synthetic correction with separate human review.",
+                "successor_candidate_id": None,
+                "event_date": "2026-07-19"
+            }
+        ])
+        self._write(bundle)
+        self.assertEqual(validator.validate_bundle(self.root, "bundle.json")["result"], "valid")
+
+        missing_history = deepcopy(bundle)
+        for record in missing_history["records"]:
+            if record["record_id"] == "LC-001":
+                record.pop("decision_history_ids")
+        self._write(missing_history)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "missing_decision_history" for issue in result["issues"]))
+
+        unlinked_correction = deepcopy(bundle)
+        for record in unlinked_correction["records"]:
+            if record["record_id"] == "LC-001":
+                record["decision_history_ids"] = ["HD-001"]
+        self._write(unlinked_correction)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "correction_decision_not_in_history" for issue in result["issues"]))
+
+        missing_event_date = deepcopy(bundle)
+        for record in missing_event_date["records"]:
+            if record["record_id"] == "CE-002":
+                record.pop("event_date")
+        self._write(missing_event_date)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "missing_correction_event_date" for issue in result["issues"]))
+
+        reused_original_decision = deepcopy(bundle)
+        for record in reused_original_decision["records"]:
+            if record["record_id"] == "CE-002":
+                record["human_decision_id"] = "HD-001"
+        self._write(reused_original_decision)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "correction_disposition_mismatch" for issue in result["issues"]))
+
+    def test_root_with_symbolic_link_ancestor_is_refused_when_supported(self) -> None:
+        actual_parent = self.root / "actual-parent"
+        physical_root = actual_parent / "review-root"
+        physical_root.mkdir(parents=True)
+        shutil.copyfile(FIXTURE_PATH, physical_root / "bundle.json")
+        linked_parent = self.root / "linked-parent"
+        try:
+            linked_parent.symlink_to(actual_parent, target_is_directory=True)
+        except OSError as error:
+            self.skipTest(f"symbolic-link creation unavailable: {error}")
+        try:
+            result = validator.validate_bundle(linked_parent / "review-root", "bundle.json")
+            self.assertEqual(result["result"], "invalid")
+            self.assertTrue(any(issue["code"] == "unsafe_root_path" for issue in result["issues"]))
+        finally:
+            if linked_parent.exists() or linked_parent.is_symlink():
+                linked_parent.unlink()
 
     def test_supersession_cycle_is_refused(self) -> None:
         bundle = self._bundle()

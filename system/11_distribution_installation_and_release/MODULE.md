@@ -68,3 +68,16 @@ verification, and C4 remain separate evidence classes.
 bounded maintenance source that removes a dynamic current-version assertion
 from source guidance and adds the current-state assertion control. They do not
 alter the v0.6 capability contract or historical immutable releases.
+
+`V0_7_CAPABILITY_ADMISSION.md`, `V0_7_RELEASE_GATE.md`,
+`V0_7_RELEASE_EVIDENCE.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.7.0.md`, and
+`RELEASE_NOTES_v0.7.0.md` retain the historical v0.7.0 lesson-promotion
+release evidence and scope. They do not create a current runtime or authorize
+another release.
+
+`V0_7_1_RELEASE_STATE_MAINTENANCE.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.7.1.md`, and `RELEASE_NOTES_v0.7.1.md`
+define a bounded maintenance source that aligns current navigation and future
+roadmap wording with the retained v0.7.0 historical fact, hardens read-only
+review-root path checks, and adds a backward-compatible correction-review
+record form. They do not alter historical immutable releases.

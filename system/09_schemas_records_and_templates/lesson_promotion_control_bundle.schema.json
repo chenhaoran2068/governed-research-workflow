@@ -14,7 +14,7 @@
     "records"
   ],
   "properties": {
-    "schema_version": {"const": "1.0.0"},
+    "schema_version": {"enum": ["1.0.0", "1.1.0"]},
     "bundle_type": {"const": "lesson_promotion_control_bundle"},
     "bundle_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,127}$"},
     "metadata_only": {"const": true},
@@ -62,7 +62,8 @@
         "lifecycle_status": {"enum": ["local_only", "under_review", "deferred", "rejected", "approved_for_integration", "integrated", "withdrawn", "superseded"]},
         "human_decision_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
         "integration_verification_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
-        "superseded_by_candidate_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]}
+        "superseded_by_candidate_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "decision_history_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}}
       }
     },
     "human_decision": {
@@ -73,7 +74,7 @@
         "record_id": {"$ref": "#/$defs/identifier"},
         "record_type": {"const": "human_decision"},
         "candidate_id": {"$ref": "#/$defs/identifier"},
-        "disposition": {"enum": ["keep_local", "defer", "reject", "approve_for_integration", "withdraw", "supersede"]},
+        "disposition": {"enum": ["keep_local", "defer", "reject", "approve_for_integration", "withdraw", "supersede", "confirm_correction"]},
         "accountable_human_reference": {"$ref": "#/$defs/reference"},
         "decision_basis_references": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/reference"}},
         "decision_date": {"type": "string", "format": "date"},
@@ -106,7 +107,8 @@
         "human_decision_id": {"$ref": "#/$defs/identifier"},
         "change_type": {"enum": ["correction", "withdrawal", "supersession"]},
         "reason": {"type": "string", "minLength": 1, "maxLength": 2000},
-        "successor_candidate_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]}
+        "successor_candidate_id": {"anyOf": [{"$ref": "#/$defs/identifier"}, {"type": "null"}]},
+        "event_date": {"type": "string", "format": "date"}
       }
     },
     "record": {

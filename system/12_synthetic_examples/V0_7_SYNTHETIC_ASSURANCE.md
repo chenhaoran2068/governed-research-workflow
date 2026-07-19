@@ -1,8 +1,10 @@
 # V0.7 Release-Source Synthetic Assurance
 
-Status: release-source synthetic-assurance evidence. It records local source-level
-test evidence only. It is not a public Release, capability admission, C4
-authorization, hosted-CI outcome, or installed-runtime verification.
+Status: historical v0.7.0 release-source synthetic-assurance snapshot. It
+records the local source-level test evidence used before the v0.7.0 exact-commit
+review. It is retained as historical evidence only; it is not a public Release,
+capability admission, C4 authorization, hosted-CI outcome, current-source
+identity, or installed-runtime verification.
 
 ## Scope
 

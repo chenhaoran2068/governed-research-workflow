@@ -54,8 +54,9 @@ remain visible. They are not positive authorization or satisfied prerequisites.
 
 ## Explicit Read-Only Validation
 
-Invoke the validator only for an explicit, safe review root and explicit
-relative JSON inputs:
+Invoke the validator only for an explicit, absolute physical review root and
+explicit relative JSON inputs. The root must contain neither `..` segments nor
+a symbolic-link or Windows-reparse-point component anywhere in its path:
 
 ```text
 python scripts/validate_workflow_evidence_control_bundle.py \
@@ -65,11 +66,11 @@ python scripts/validate_workflow_evidence_control_bundle.py \
 ```
 
 The validator reads only the supplied bundle and optional baseline below
-`--root`. It rejects absolute paths, parent traversal, symbolic links, Windows
-reparse points, non-regular files, malformed JSON, duplicate JSON keys, and
-unapproved contract versions. It does not scan the review root, write any
-file, create a baseline, follow a URL, open a pointer target, read data, or
-contact a service.
+`--root`. It rejects unsafe review-root paths, absolute paths, parent traversal,
+symbolic links, Windows reparse points, non-regular files, malformed JSON,
+duplicate JSON keys, and unapproved contract versions. It does not scan the
+review root, write any file, create a baseline, follow a URL, open a pointer
+target, read data, or contact a service.
 
 Its output separates:
 

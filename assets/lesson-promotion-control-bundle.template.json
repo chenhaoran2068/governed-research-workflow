@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "bundle_type": "lesson_promotion_control_bundle",
   "bundle_id": "replace-with-bundle-id",
   "metadata_only": true,

@@ -6,7 +6,24 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
-## v0.7.0 (human-reviewed lesson-promotion release source)
+## v0.7.1 (release-state and control-hardening maintenance source)
+
+This maintenance source corrects current roadmap and navigation records after
+the immutable v0.7.0 publication. It makes the future roadmap begin after
+v0.7, adds regression controls against listing v0.7 as an uncompleted future
+candidate, aligns active source metadata with the retained historical v0.7.0
+capability scope, hardens supplied-root indirection refusal, and adds a
+backward-compatible schema `1.1.0` correction-review representation.
+
+It does not add a new `GRW-CAP-070-01` capability category, data-content
+handling, external access, new dependency, write helper, role card, agent
+runtime, or local installation behavior. It strengthens the existing
+metadata-only validator contract and keeps schema `1.0.0` readable. Like every
+source revision, it is not itself a hosted Release or installation target;
+verify a selected version through its exact annotated tag and matching GitHub
+Release.
+
+## v0.7.0 (historical human-reviewed lesson-promotion release source)
 
 The v0.7 release source defines one metadata-only capability,
 `GRW-CAP-070-01`: a human-reviewed lesson-promotion control bundle with five
@@ -84,12 +101,10 @@ The immutable v0.5.0 Release retains some pre-C4 static wording. This v0.5.1
 maintenance revision records that limitation and corrects the current-source
 guidance without modifying the historical tag.
 
-## Planned After v0.6 (not current capability)
+## Planned After v0.7 (not current capability)
 
 - `v0.5.x`: corrective or compatibility maintenance only for the released
   v0.5.0 contract.
-- `v0.7.x`: candidate human-reviewed project learning and knowledge promotion;
-  no automatic promotion from a project observation to a shared rule.
 - `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and
   controlled-tool admission; no delegated authority or multi-agent runtime.
 - `v0.9.x`: evidence-integrity and supervisory-architecture audit; no

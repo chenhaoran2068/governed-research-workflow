@@ -1,9 +1,11 @@
 # Public System Module Index
 
-Status: `v0.6.1` release-state-maintenance source retaining the v0.6
-workflow/evidence-control scope. This index does not prove that a selected
-version is released: users must verify an exact annotated tag and matching
-GitHub Release rather than install `main` or another mutable branch.
+Status: `v0.7.1` control-hardening maintenance source retaining the historical
+v0.7.0 lesson-promotion scope and prior workflow/evidence controls. It adds
+only read-only validation hardening and a backward-compatible correction-review
+record form. This index does not prove that a selected version is released:
+users must verify an exact annotated tag and matching GitHub Release rather
+than install `main` or another mutable branch.
 See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
 
 ## Purpose
@@ -21,19 +23,19 @@ framework `v0.1.2` tag.
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | active manifest; v0.6 source validation targets an exact released framework | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | active manifest; v0.7.1 control-hardening source retains exact released framework validation | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline plus admitted v0.6 record-control scope | route references and blank assets |
 | `04` | evidence, requirements, and knowledge | active guidance plus admitted v0.6 pointer/relation-record scope; no knowledge corpus | evidence/citation references |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
-| `06` | memory and learning | active retrospective baseline | retrospective reference and asset |
-| `07` | tools and integrations | active bootstrap tool, published v0.5 validator, and admitted v0.6 read-only validator scope | `scripts/` and tests |
+| `06` | memory and learning | active retrospective baseline plus historical v0.7 lesson-promotion record scope | retrospective reference and asset |
+| `07` | tools and integrations | active bootstrap tool, published v0.5 validator, historical v0.6 validator scope, and historical v0.7 lesson-promotion validator scope | `scripts/` and tests |
 | `08` | agent contracts | v0.4 explicit exclusion: no role cards or agent runtime | future role-contract boundary only |
-| `09` | schemas, records, and templates | blank-record baseline plus admitted v0.6 six-record and baseline-manifest schemas | `assets/` templates and schemas |
-| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, retained assurance, and admitted v0.6 synthetic checks | `tests/` |
-| `11` | distribution, installation, and release | active release controls, v0.6.1 current-state-assertion control, and a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical preparation records |
-| `12` | synthetic examples | exact-tag integration test plus v0.4/v0.5 history and v0.6 source assurance | synthetic fixtures and assurance only; no end-to-end public research example |
+| `09` | schemas, records, and templates | blank-record baseline plus historical v0.6 six-record and v0.7 lesson-promotion schemas | `assets/` templates and schemas |
+| `10` | assurance, evaluation, and audit | active regression baseline, cross-repository integration, retained assurance, and v0.6/v0.7 synthetic checks | `tests/` |
+| `11` | distribution, installation, and release | active release controls, v0.7.1 control-hardening maintenance, and a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical preparation records |
+| `12` | synthetic examples | exact-tag integration test plus v0.4/v0.5 history and v0.6/v0.7 source assurance | synthetic fixtures and assurance only; no end-to-end public research example |
 
 ## Current Resource Map
 
@@ -55,7 +57,7 @@ does not create capability.
 ## Framework Relationship
 
 The system is designed to remain path-independent and standalone. Its
-framework-integrated profile retains a `0.1.0` framework contract. The v0.6
-source validates against the exact released Workspace Framework `v0.1.2` tag;
-it must never require a private checkout, private
+framework-integrated profile retains a `0.1.0` framework contract. The
+v0.7.1 control-hardening source retains validation against the exact released
+Workspace Framework `v0.1.2` tag; it must never require a private checkout, private
 credential, or real project workspace.

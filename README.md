@@ -5,13 +5,15 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: `v0.7.0` release source retaining the released v0.6 workflow/evidence
-control scope and adding a human-reviewed lesson-promotion control record
-contract. It does not alter the v0.6 contract. This source tree does not itself
-prove the release or installation identity of any selected version. A normal
-public installation target exists only when an exact annotated tag and matching
-GitHub Release resolve to the selected source commit. Never install a mutable
-branch.
+Status: `v0.7.1` control-hardening maintenance source retaining the historical
+v0.7.0 lesson-promotion control scope and prior workflow/evidence controls. It
+hardens read-only review-root path handling and adds a backward-compatible
+schema `1.1.0` form for separately recorded correction review; it adds no data,
+network, agent, or autonomous-execution capability. This source tree does not
+itself prove the release or installation identity of any selected version. A
+normal public installation target exists only when an exact annotated tag and
+matching GitHub Release resolve to the selected source commit. Never install a
+mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -22,13 +24,14 @@ read
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
 the historical `v0.4.0`, `v0.5.0`, and `v0.6.0` capability baselines, plus a
-`v0.7.0` lesson-promotion scope. It records each
+historical `v0.7.0` lesson-promotion scope. It records each
 capability's interface, evidence, version, and required human approval. The
 ledger is not an installed-runtime statement. Neither a historical admission
 nor a v0.6 scope admission alone proves a local installation, runtime identity,
 hosted Release, or C4 authorization.
 
-The package manifest identifies this source as `v0.7.0` release-source content.
+The package manifest identifies this source as `v0.7.1` control-hardening
+maintenance-source content.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` is admitted only for its named v0.7.0 release scope. Neither
 historical verification nor scope admission is an installation claim, hosted
@@ -103,6 +106,12 @@ integration verification, and visible correction, withdrawal, or supersession
 events. It cannot automatically promote a lesson, modify any target, read
 project material, or prove a human identity, actual authority, or target
 correctness.
+
+The v0.7.1 maintenance source preserves that scope while requiring supplied
+review roots to be physical absolute paths with no link or reparse-point
+component. It also permits schema `1.1.0` correction records to distinguish a
+later `confirm_correction` decision from the candidate's original lifecycle
+decision. Historical schema `1.0.0` bundles remain readable.
 
 ## Use
 
@@ -199,8 +208,8 @@ supersede a band through a reviewed revision.
 - `v0.6.0`: reviewable workflow and evidence controls release source; public
   availability requires the exact-tag-and-matching-Release rule, and the
   system makes no scientific, compliance, journal, or submission decision.
-- `v0.7.x`: human-reviewed retrospective learning and knowledge promotion; no
-  automatic promotion of project observations.
+- `v0.7.0`: historical human-reviewed retrospective learning and knowledge
+  promotion scope; no automatic promotion of project observations.
 - `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and
   controlled-tool admission; no delegated authority or multi-agent runtime.
 - `v0.9.x`: dedicated evidence-integrity and supervisory-architecture audit;

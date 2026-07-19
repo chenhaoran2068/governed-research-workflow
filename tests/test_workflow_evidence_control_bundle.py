@@ -245,6 +245,21 @@ class WorkflowEvidenceControlBundleTests(unittest.TestCase):
         self.assert_issue(VALIDATOR_MODULE.validate_bundle(root, "linked-bundle.json"), "unsafe_input_path")
         self.assert_issue(VALIDATOR_MODULE.validate_bundle(root, "bundle.json", "linked-baseline.json"), "unsafe_input_path")
 
+    def test_refuses_root_with_symbolic_link_ancestor_when_supported(self) -> None:
+        temporary_directory = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary_directory.cleanup)
+        actual_parent = Path(temporary_directory.name) / "actual-parent"
+        physical_root = actual_parent / "review-root"
+        shutil.copytree(VALID_FIXTURE, physical_root)
+        linked_parent = Path(temporary_directory.name) / "linked-parent"
+        try:
+            os.symlink(actual_parent, linked_parent, target_is_directory=True)
+        except OSError as error:
+            self.skipTest(f"symbolic link creation is unavailable in this test environment: {error}")
+        result = VALIDATOR_MODULE.validate_bundle(linked_parent / "review-root", "bundle.json", "baseline.json")
+        self.assertEqual(result["structural_status"], "invalid")
+        self.assertIn("unsafe_root_path", {issue["code"] for issue in result["issues"]})
+
     def test_does_not_read_unlisted_sentinel_enumerate_root_or_create_output(self) -> None:
         temporary_directory, root = self.copy_valid_fixture()
         self.addCleanup(temporary_directory.cleanup)

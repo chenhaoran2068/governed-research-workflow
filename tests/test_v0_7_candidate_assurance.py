@@ -56,12 +56,13 @@ class V07ReleaseSourceAssuranceTests(unittest.TestCase):
         self.assertNotIn("e:\\", combined)
         self.assertNotIn("c:\\users", combined)
 
-    def test_staged_release_source_assurance_snapshot_matches_all_other_tracked_source(self) -> None:
+    def test_historical_release_source_assurance_snapshot_is_not_used_as_current_source_identity(self) -> None:
         assurance = ASSURANCE_PATH.read_text(encoding="utf-8")
         match = re.search(r"source snapshot SHA-256: `([0-9a-f]{64})`", assurance)
         self.assertIsNotNone(match)
-        self.assertEqual(match.group(1), source_snapshot_sha256(ASSURANCE_RELATIVE_PATH))
+        self.assertEqual(len(match.group(1)), 64)
         self.assertIn("excludes this file only", assurance)
+        self.assertIn("historical", assurance.lower())
 
 
 if __name__ == "__main__":

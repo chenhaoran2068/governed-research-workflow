@@ -36,6 +36,13 @@ class ReleaseControlTests(unittest.TestCase):
             "V0_6_1_RELEASE_STATE_MAINTENANCE.md",
             "RELEASE_NOTES_v0.6.1.md",
             "V0_7_CAPABILITY_ADMISSION.md",
+            "V0_7_RELEASE_GATE.md",
+            "V0_7_RELEASE_EVIDENCE.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.7.0.md",
+            "RELEASE_NOTES_v0.7.0.md",
+            "V0_7_1_RELEASE_STATE_MAINTENANCE.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.7.1.md",
+            "RELEASE_NOTES_v0.7.1.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -62,13 +69,14 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.7.0-learning-promotion-release-source", manifest)
+        self.assertIn("system_version: 0.7.1-control-hardening-maintenance-source", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
         self.assertIn("`v0.5.0` is the published", readme)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)
-        self.assertIn("## v0.7.0 (human-reviewed lesson-promotion release source)", roadmap)
+        self.assertIn("## v0.7.1 (release-state and control-hardening maintenance source)", roadmap)
+        self.assertIn("## v0.7.0 (historical human-reviewed lesson-promotion release source)", roadmap)
         self.assertIn("## v0.5.0 (published metadata-only provenance register set)", roadmap)
         self.assertIn("## v0.4.0 (published governance-and-records baseline)", roadmap)
         self.assertIn("## v0.3.1 (released 2026-07-16)", roadmap)
