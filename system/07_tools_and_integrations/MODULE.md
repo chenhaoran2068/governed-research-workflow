@@ -12,7 +12,9 @@ or external connector.
 identity, allowed empty-scaffold action, write/recovery/confirmation boundaries,
 limitations, and evidence. Admission is not a per-run approval, M53
 authorization, data authority, C4 authorization, or runtime-installation
-authority. The helper does not become a generic writer.
+authority. Its current Python source identity uses the declared,
+cross-platform `sha256_utf8_lf_v1` text rule; the helper does not become a
+generic writer.
 
 The cross-repository integration test has no account, network, data-import, or
 installation capability at runtime. Any future integration helper must declare

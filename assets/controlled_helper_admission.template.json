@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "record_type": "controlled_helper_admission",
   "helper_id": "synthetic_bounded_helper",
   "helper_version": "1.0.0",
@@ -7,7 +7,7 @@
   "admission_status": "draft",
   "owner": "replace-with-accountable-owner",
   "purpose": "Replace with one narrow generic helper purpose.",
-  "source_identity": {"repository_relative_path": "scripts/example_helper.py", "sha256": "0000000000000000000000000000000000000000000000000000000000000000", "identity_scope": "Synthetic template only; a source path and hash do not create public Release or per-run authority."},
+  "source_identity": {"repository_relative_path": "scripts/example_helper.py", "content_hash_algorithm": "sha256_utf8_lf_v1", "sha256": "0000000000000000000000000000000000000000000000000000000000000000", "identity_scope": "Synthetic template only. sha256_utf8_lf_v1 requires strict UTF-8 decoding and LF newline canonicalization before SHA-256. A source path and hash do not create public Release or per-run authority."},
   "supported_profiles": ["standalone", "framework_integrated"],
   "input_boundary": {"caller_selected_input_only": true, "automatic_discovery_permitted": false},
   "allowed_action_boundary": {"description": "Replace with one narrow action class only."},

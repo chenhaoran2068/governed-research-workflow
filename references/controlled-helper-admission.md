@@ -3,7 +3,8 @@
 This reference describes the generic v0.8 helper-admission record. It states
 the bounded contract and evidence for a named helper. It is not a per-run approval.
 It does not authorize a particular run or grant data access. It is not a public
-Release and does not create a local runtime installation. It is not a public Release.
+Release and does not create a local runtime installation.
+It is not a public Release.
 
 ## Initial Scope
 
@@ -25,6 +26,19 @@ credentials or the network, call an external service, analyze research,
 change a project Gate, create a manuscript, release or submit material,
 install a runtime, overwrite a target, resume a prior write, or delete user
 content.
+
+## Source Identity
+
+The current helper is a UTF-8 Python source file. Its admission record uses
+`sha256_utf8_lf_v1`: decode the source strictly as UTF-8, normalize `CRLF` and
+bare `CR` line endings to `LF`, encode as UTF-8, then calculate SHA-256. This
+makes identity stable across an allowed Git text checkout that represents the
+same source with Windows CRLF or Unix LF line endings.
+
+This is a source-text identity rule, not a universal file-hashing rule. It must
+reject non-UTF-8 input for this helper and does not permit ignoring any other
+content change. A different helper must explicitly declare and test its own
+source-identity algorithm; it cannot silently inherit this text rule.
 
 ## Non-Substitution Rule
 

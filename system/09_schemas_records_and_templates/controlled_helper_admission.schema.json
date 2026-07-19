@@ -31,7 +31,7 @@
     "compatibility"
   ],
   "properties": {
-    "schema_version": {"const": "1.0.0"},
+    "schema_version": {"const": "1.1.0"},
     "record_type": {"const": "controlled_helper_admission"},
     "helper_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{2,63}$"},
     "helper_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
@@ -42,9 +42,10 @@
     "source_identity": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["repository_relative_path", "sha256", "identity_scope"],
+      "required": ["repository_relative_path", "content_hash_algorithm", "sha256", "identity_scope"],
       "properties": {
         "repository_relative_path": {"type": "string", "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$)).+"},
+        "content_hash_algorithm": {"enum": ["sha256_raw_bytes_v1", "sha256_utf8_lf_v1"]},
         "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "identity_scope": {"type": "string", "minLength": 1}
       }

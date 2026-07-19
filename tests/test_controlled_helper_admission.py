@@ -17,6 +17,20 @@ TEMPLATE_PATH = REPOSITORY_ROOT / "assets" / "controlled_helper_admission.templa
 RECORD_PATH = REPOSITORY_ROOT / "system" / "07_tools_and_integrations" / "bootstrap_empty_workspace_helper_admission.json"
 SCRIPT_PATH = REPOSITORY_ROOT / "scripts" / "bootstrap_empty_workspace.py"
 REFERENCE_PATH = REPOSITORY_ROOT / "references" / "controlled-helper-admission.md"
+CANONICAL_TEXT_HASH_ALGORITHM = "sha256_utf8_lf_v1"
+
+
+def canonical_utf8_lf_source_bytes(raw_bytes: bytes) -> bytes:
+    """Return the declared cross-platform source-text identity bytes."""
+    try:
+        decoded = raw_bytes.decode("utf-8", errors="strict")
+    except UnicodeDecodeError as error:
+        raise ValueError("sha256_utf8_lf_v1 requires strict UTF-8 source text.") from error
+    return decoded.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+
+
+def source_identity_digest(raw_bytes: bytes) -> str:
+    return hashlib.sha256(canonical_utf8_lf_source_bytes(raw_bytes)).hexdigest()
 
 
 class ControlledHelperAdmissionTests(unittest.TestCase):
@@ -39,12 +53,21 @@ class ControlledHelperAdmissionTests(unittest.TestCase):
         self.assertEqual(self.record["admission_status"], "candidate")
         self.assertEqual(self.record["accountable_human_admission"], {"status": "not_granted", "reference": None})
 
-    def test_source_identity_matches_unchanged_bootstrap_bytes(self) -> None:
-        digest = hashlib.sha256(SCRIPT_PATH.read_bytes()).hexdigest()
+    def test_source_identity_matches_canonical_bootstrap_source_text(self) -> None:
+        digest = source_identity_digest(SCRIPT_PATH.read_bytes())
         identity = self.record["source_identity"]
         self.assertEqual(identity["repository_relative_path"], "scripts/bootstrap_empty_workspace.py")
+        self.assertEqual(identity["content_hash_algorithm"], CANONICAL_TEXT_HASH_ALGORITHM)
         self.assertEqual(identity["sha256"], digest)
         self.assertIn("not a public Release", identity["identity_scope"])
+
+    def test_canonical_source_identity_is_stable_across_text_line_endings(self) -> None:
+        lf = b"def example():\n    return 'stable'\n"
+        crlf = lf.replace(b"\n", b"\r\n")
+        self.assertNotEqual(hashlib.sha256(lf).hexdigest(), hashlib.sha256(crlf).hexdigest())
+        self.assertEqual(source_identity_digest(lf), source_identity_digest(crlf))
+        with self.assertRaisesRegex(ValueError, "strict UTF-8"):
+            source_identity_digest(b"\xff\xfe")
 
     def test_admission_preserves_preview_write_and_recovery_controls(self) -> None:
         confirmation = self.record["confirmation_boundary"]
@@ -70,6 +93,10 @@ class ControlledHelperAdmissionTests(unittest.TestCase):
         invalid_hash = copy.deepcopy(self.record)
         invalid_hash["source_identity"]["sha256"] = "not-a-sha256"
         self.assertNotEqual(list(self.validator.iter_errors(invalid_hash)), [])
+
+        unsupported_hash_algorithm = copy.deepcopy(self.record)
+        unsupported_hash_algorithm["source_identity"]["content_hash_algorithm"] = "sha256_any_bytes"
+        self.assertNotEqual(list(self.validator.iter_errors(unsupported_hash_algorithm)), [])
 
         missing_confirmation = copy.deepcopy(self.record)
         del missing_confirmation["confirmation_boundary"]
