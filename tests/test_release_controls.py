@@ -184,6 +184,9 @@ class ReleaseControlTests(unittest.TestCase):
 
         self.assertIn("`v0.3.x`", security)
         self.assertIn("`v0.4.x`", security)
+        self.assertIn("`v0.5.x`", security)
+        self.assertIn("`v0.6.x`", security)
+        self.assertIn("`v0.7.x`", security)
         self.assertIn("released bounded system baseline\nthrough `v0.4.0`", start_here)
         self.assertIn("`REL-008` was completed by the released `v0.3.0`", roadmap)
         self.assertNotIn("| REL-008 |", roadmap)

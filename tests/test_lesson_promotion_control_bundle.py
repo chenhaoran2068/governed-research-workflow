@@ -173,6 +173,43 @@ class LessonPromotionControlBundleTests(unittest.TestCase):
         self.assertEqual(result["result"], "invalid")
         self.assertTrue(any(issue["code"] == "correction_disposition_mismatch" for issue in result["issues"]))
 
+        missing_correction_event = deepcopy(bundle)
+        missing_correction_event["records"] = [record for record in missing_correction_event["records"] if record["record_id"] != "CE-002"]
+        self._write(missing_correction_event)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "missing_correction_event_for_decision" for issue in result["issues"]))
+
+    def test_v10_rejects_v11_only_correction_fields(self) -> None:
+        bundle = self._bundle()
+
+        decision_history = deepcopy(bundle)
+        for record in decision_history["records"]:
+            if record["record_id"] == "LC-001":
+                record["decision_history_ids"] = ["HD-001"]
+        self._write(decision_history)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "schema_validation" for issue in result["issues"]))
+
+        correction_disposition = deepcopy(bundle)
+        for record in correction_disposition["records"]:
+            if record["record_id"] == "HD-001":
+                record["disposition"] = "confirm_correction"
+        self._write(correction_disposition)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "schema_validation" for issue in result["issues"]))
+
+        event_date = deepcopy(bundle)
+        for record in event_date["records"]:
+            if record["record_id"] == "CE-001":
+                record["event_date"] = "2026-07-19"
+        self._write(event_date)
+        result = validator.validate_bundle(self.root, "bundle.json")
+        self.assertEqual(result["result"], "invalid")
+        self.assertTrue(any(issue["code"] == "schema_validation" for issue in result["issues"]))
+
     def test_root_with_symbolic_link_ancestor_is_refused_when_supported(self) -> None:
         actual_parent = self.root / "actual-parent"
         physical_root = actual_parent / "review-root"

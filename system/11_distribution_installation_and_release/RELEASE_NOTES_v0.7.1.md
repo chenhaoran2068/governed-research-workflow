@@ -21,9 +21,9 @@ source for the historical v0.7.0 lesson-promotion control scope.
   mutable maintenance source;
 - refuses supplied review roots containing a symbolic-link or Windows
   reparse-point component, including an indirect ancestor; and
-- adds a backward-compatible schema `1.1.0` representation in which a
-  correction names a separate `confirm_correction` decision in the candidate's
-  decision history.
+- adds a schema `1.1.0`-only representation in which a correction names a
+  separate `confirm_correction` decision in the candidate's decision history;
+  schema `1.0.0` remains readable but rejects that newer form.
 
 ## What Did Not Change
 

@@ -13,7 +13,8 @@ the immutable v0.7.0 publication. It makes the future roadmap begin after
 v0.7, adds regression controls against listing v0.7 as an uncompleted future
 candidate, aligns active source metadata with the retained historical v0.7.0
 capability scope, hardens supplied-root indirection refusal, and adds a
-backward-compatible schema `1.1.0` correction-review representation.
+backward-compatible schema `1.1.0` correction-review representation that is
+explicitly rejected when declared as schema `1.0.0`.
 
 It does not add a new `GRW-CAP-070-01` capability category, data-content
 handling, external access, new dependency, write helper, role card, agent

@@ -32,6 +32,8 @@ class V071ControlHardeningMaintenanceTests(unittest.TestCase):
         record = next(item for item in ledger["capabilities"] if item["capability_id"] == "GRW-CAP-070-01")
 
         self.assertEqual(ledger["release_context"]["source_release_version"], "v0.7.1")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.7.0")
+        self.assertIn("Published v0.4.0 through v0.7.0", ledger["target_claim_scope"])
         self.assertEqual(record["version"]["introduced_version"], "v0.7.0")
         self.assertEqual(record["version"]["target_release"], "v0.7.0")
         self.assertEqual(record["version"]["last_verified_release"], "v0.7.0")

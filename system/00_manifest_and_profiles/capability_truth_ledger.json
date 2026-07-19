@@ -4,10 +4,10 @@
   "ledger_status": "release_source_prepared",
   "release_context": {
     "source_release_version": "v0.7.1",
-    "historical_public_baseline": "v0.6.1",
+    "historical_public_baseline": "v0.7.0",
     "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.7.1 control-hardening maintenance source retains historical released capability facts and the admitted v0.7.0 lesson-promotion record scope, hardens supplied review-root handling and correction-decision representation, but does not prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes and the accountable-human-admitted v0.7.0 lesson-promotion record scope. It does not establish public availability for a selected source commit; availability requires a matching immutable tag and GitHub Release. Published v0.4.0 through v0.6.1 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes and the accountable-human-admitted v0.7.0 lesson-promotion record scope. It does not establish public availability for a selected source commit; availability requires a matching immutable tag and GitHub Release. Published v0.4.0 through v0.7.0 facts remain historical baseline facts and are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [

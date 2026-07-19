@@ -109,9 +109,10 @@ correctness.
 
 The v0.7.1 maintenance source preserves that scope while requiring supplied
 review roots to be physical absolute paths with no link or reparse-point
-component. It also permits schema `1.1.0` correction records to distinguish a
+component. It permits only schema `1.1.0` correction records to distinguish a
 later `confirm_correction` decision from the candidate's original lifecycle
-decision. Historical schema `1.0.0` bundles remain readable.
+decision. Historical schema `1.0.0` bundles remain readable but reject the
+schema `1.1.0` correction form.
 
 ## Use
 

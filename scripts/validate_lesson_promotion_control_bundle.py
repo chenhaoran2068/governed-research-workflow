@@ -206,6 +206,16 @@ def _cross_record_issues(records: dict[str, dict[str, Any]], schema_version: str
                 decision_ids.update(candidate.get("decision_history_ids", []))
             if candidate is not None and record_id not in decision_ids:
                 issues.append(ValidationIssue("unlinked_human_decision", "A human decision must be linked from its candidate.", record_id))
+            if schema_version == "1.1.0" and record["disposition"] == "confirm_correction":
+                correction_events = [
+                    event for event in records.values()
+                    if event["record_type"] == "change_event"
+                    and event["candidate_id"] == record["candidate_id"]
+                    and event["human_decision_id"] == record_id
+                    and event["change_type"] == "correction"
+                ]
+                if not correction_events:
+                    issues.append(ValidationIssue("missing_correction_event_for_decision", "A v1.1 confirm_correction decision requires a matching correction event.", record_id))
         elif record["record_type"] == "integration_verification":
             candidate, candidate_issues = _record_of_type(records, record["candidate_id"], "lesson_candidate", record_id, "candidate_id")
             decision, decision_issues = _record_of_type(records, record["human_decision_id"], "human_decision", record_id, "human_decision_id")

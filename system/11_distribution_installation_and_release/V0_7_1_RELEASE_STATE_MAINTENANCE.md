@@ -21,8 +21,8 @@ This revision does not add data-content access, external-service action, a
 write helper, automatic promotion, target mutation, a role card, agent runtime,
 new dependency, or local Codex runtime installation behavior. It preserves the
 five record types and historical schema `1.0.0` readability while strengthening
-the existing validator and adding optional schema `1.1.0` correction-review
-fields. It does not modify the immutable v0.7.0 tag or GitHub Release.
+the existing validator and adding schema `1.1.0`-only correction-review fields.
+It does not modify the immutable v0.7.0 tag or GitHub Release.
 
 ## Stable Rule
 

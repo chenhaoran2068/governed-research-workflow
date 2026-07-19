@@ -30,6 +30,41 @@
       "items": {"$ref": "#/$defs/record"}
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"schema_version": {"const": "1.0.0"}},
+        "required": ["schema_version"]
+      },
+      "then": {
+        "not": {
+          "properties": {
+            "records": {
+              "contains": {
+                "anyOf": [
+                  {
+                    "required": ["record_type", "decision_history_ids"],
+                    "properties": {"record_type": {"const": "lesson_candidate"}}
+                  },
+                  {
+                    "required": ["record_type", "disposition"],
+                    "properties": {
+                      "record_type": {"const": "human_decision"},
+                      "disposition": {"const": "confirm_correction"}
+                    }
+                  },
+                  {
+                    "required": ["record_type", "event_date"],
+                    "properties": {"record_type": {"const": "change_event"}}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
     "identifier": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,127}$"},
     "reference": {"type": "string", "minLength": 1, "maxLength": 512},

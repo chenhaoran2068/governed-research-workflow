@@ -42,13 +42,15 @@ need the matching decision and change event. A correction, withdrawal, or
 supersession must remain visible rather than silently replacing an earlier
 record.
 
-Schema `1.0.0` remains readable for historical bundles. New correction records
-should use schema `1.1.0`: the candidate retains its lifecycle decision in
-`human_decision_id`, lists all relevant decisions in `decision_history_ids`,
-and a correction event names a separate `confirm_correction` decision and its
-`event_date`. This makes the original approval distinguishable from later human
-review of a correction. It still represents a decision; it does not verify the
-reviewer's identity, authority, or intent.
+Schema `1.0.0` remains readable for historical bundles. It rejects the
+`decision_history_ids`, `confirm_correction`, and `event_date` form reserved for
+schema `1.1.0`. New correction records must declare schema `1.1.0`: the
+candidate retains its lifecycle decision in `human_decision_id`, lists all
+relevant decisions in `decision_history_ids`, and a correction event names a
+separate `confirm_correction` decision and its `event_date`. This makes the
+original approval distinguishable from later human review of a correction. It
+still represents a decision; it does not verify the reviewer's identity,
+authority, or intent.
 
 ## Explicit Read-Only Validation
 
