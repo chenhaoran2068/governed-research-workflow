@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -103,8 +104,8 @@ class ControlledHelperAdmissionTests(unittest.TestCase):
         self.assertNotEqual(list(self.validator.iter_errors(missing_confirmation)), [])
 
     def test_admission_is_not_per_run_or_runtime_authority(self) -> None:
-        combined = " ".join(self.record["explicit_non_claims"]).lower() + " " + REFERENCE_PATH.read_text(encoding="utf-8").lower()
-        for required in ("not a per-run", "not m53", "not a generic writer", "not a public release", "not a per-run approval"):
+        combined = re.sub(r"\s+", " ", " ".join(self.record["explicit_non_claims"]).lower() + " " + REFERENCE_PATH.read_text(encoding="utf-8").lower())
+        for required in ("not a per-run", "not m53", "no generic writer", "not a public release", "not a per-run approval"):
             self.assertIn(required, combined)
 
 

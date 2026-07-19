@@ -1,10 +1,9 @@
 # Controlled Helper Admission
 
 This reference describes the generic v0.8 helper-admission record. It states
-the bounded contract and evidence for a named helper. It is not a per-run approval.
-It does not authorize a particular run or grant data access. It is not a public
-Release and does not create a local runtime installation.
-It is not a public Release.
+the bounded contract and evidence for a named helper. It is not a per-run
+approval, does not authorize a particular run or grant data access, and is not
+a public Release or a local runtime installation.
 
 ## Initial Scope
 
@@ -20,8 +19,8 @@ limited to a new empty workspace scaffold:
 5. it writes only its allowlisted empty scaffold through owned staging, then
    records a receipt and generated-file hashes.
 
-It is no generic writer: it is not a generic writer and never becomes one. It
-cannot read/copy/hash data, access
+It has no generic writer capability and never becomes one. It cannot
+read/copy/hash data, access
 credentials or the network, call an external service, analyze research,
 change a project Gate, create a manuscript, release or submit material,
 install a runtime, overwrite a target, resume a prior write, or delete user

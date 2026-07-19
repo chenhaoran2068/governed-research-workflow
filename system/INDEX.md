@@ -34,7 +34,7 @@ framework `v0.1.2` tag.
 | `08` | agent contracts | candidate non-runnable role contracts; no role cards or agent runtime | two role-contract records and boundary guidance |
 | `09` | schemas, records, and templates | blank-record baseline plus candidate role-contract and helper-admission schemas | `assets/` templates and schemas |
 | `10` | assurance, evaluation, and audit | regression baseline, cross-repository integration, retained assurance, and candidate v0.8 structural tests | `tests/` |
-| `11` | distribution, installation, and release | active release controls, v0.7.1 control-hardening maintenance, and a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical preparation records |
+| `11` | distribution, installation, and release | active release controls, v0.7.1 control-hardening maintenance, v0.8 candidate preparation, and a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical and active preparation records |
 | `12` | synthetic examples | exact-tag integration test plus retained assurance and candidate v0.8 synthetic-contract tests | synthetic fixtures and assurance only; no end-to-end public research example |
 
 ## Current Resource Map

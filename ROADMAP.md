@@ -39,6 +39,12 @@ data/share authority, or an AI approval. Candidate records remain forbidden for
 public capability claims until later validation, accountable-human admission,
 exact-commit review, and C4 evidence.
 
+The corresponding candidate release gate, evidence, rights review, dependency
+and workflow review, release-control record, and release-notes source are kept
+under `system/11_distribution_installation_and_release/`. They record
+preparation and remaining decisions only; they are not a tag, GitHub Release,
+or installation claim.
+
 ## v0.7.0 (historical human-reviewed lesson-promotion release source)
 
 The v0.7 release source defines one metadata-only capability,

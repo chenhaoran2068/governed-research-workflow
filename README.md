@@ -19,6 +19,14 @@ For the live release-verification procedure and retained historical snapshots,
 read
 [`CURRENT_RELEASE_STATUS.md`](system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md).
 
+The v0.8 release-preparation records are
+[`V0_8_RELEASE_GATE.md`](system/11_distribution_installation_and_release/V0_8_RELEASE_GATE.md),
+[`V0_8_RELEASE_EVIDENCE.md`](system/11_distribution_installation_and_release/V0_8_RELEASE_EVIDENCE.md),
+and
+[`V0_8_RELEASE_CONTROL_CANDIDATE.json`](system/11_distribution_installation_and_release/V0_8_RELEASE_CONTROL_CANDIDATE.json).
+They describe candidate evidence and remaining human decisions; they do not
+create a tag, Release, installation target, or runtime claim.
+
 ## Capability Truth
 
 This source tree contains a single machine-checkable capability ledger at
