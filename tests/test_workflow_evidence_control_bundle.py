@@ -52,7 +52,7 @@ class WorkflowEvidenceControlBundleTests(unittest.TestCase):
 
     def copy_valid_fixture(self) -> tuple[tempfile.TemporaryDirectory[str], Path]:
         temporary_directory = tempfile.TemporaryDirectory()
-        root = Path(temporary_directory.name) / "workflow-evidence"
+        root = Path(temporary_directory.name).resolve() / "workflow-evidence"
         shutil.copytree(VALID_FIXTURE, root)
         return temporary_directory, root
 
@@ -248,10 +248,11 @@ class WorkflowEvidenceControlBundleTests(unittest.TestCase):
     def test_refuses_root_with_symbolic_link_ancestor_when_supported(self) -> None:
         temporary_directory = tempfile.TemporaryDirectory()
         self.addCleanup(temporary_directory.cleanup)
-        actual_parent = Path(temporary_directory.name) / "actual-parent"
+        physical_temporary_root = Path(temporary_directory.name).resolve()
+        actual_parent = physical_temporary_root / "actual-parent"
         physical_root = actual_parent / "review-root"
         shutil.copytree(VALID_FIXTURE, physical_root)
-        linked_parent = Path(temporary_directory.name) / "linked-parent"
+        linked_parent = physical_temporary_root / "linked-parent"
         try:
             os.symlink(actual_parent, linked_parent, target_is_directory=True)
         except OSError as error:

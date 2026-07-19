@@ -32,7 +32,9 @@ spec.loader.exec_module(validator)
 class LessonPromotionControlBundleTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temp_dir = tempfile.TemporaryDirectory()
-        self.root = Path(self.temp_dir.name)
+        # macOS commonly exposes temporary directories through /var, a system link to
+        # /private/var. The validator rightly requires a physical review root.
+        self.root = Path(self.temp_dir.name).resolve()
         self.bundle_path = self.root / "bundle.json"
         shutil.copyfile(FIXTURE_PATH, self.bundle_path)
 
