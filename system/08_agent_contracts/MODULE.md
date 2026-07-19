@@ -1,24 +1,27 @@
 # Specialist Agent-Contract Boundary
 
-Status: v0.4 explicit exclusion; this directory defines no named role card,
-runnable specialist agent, agent runtime, delegated authority, or parallel
-agent orchestration.
+Status: v0.8 candidate source. This directory contains two non-runnable role contract records.
+No runnable specialist agent is defined here.
+This is not a runnable specialist-agent surface.
+No role card, agent runtime, delegated authority, external-retrieval worker,
+coordinator, or parallel-agent orchestration is defined here.
 
-A future specialist-agent contract must define: purpose, owner, trigger,
-required authoritative inputs, allowed outputs, prohibited actions, stop
-conditions, human approval points, audit record, tool dependencies, and tests.
+The two records are `record_validation_reviewer` and
+`audit_boundary_reviewer`. Each defines purpose, owner, trigger, authoritative
+inputs, allowed outputs, prohibited actions, stop conditions, human decision
+points, audit record, tool/action boundary, memory boundary, non-claims, and
+tests. They are generic records, not software actors.
 
-Examples of possible future roles include citation audit, external evidence
-capture, manuscript boundary review, and submission-route preparation. A role
-description alone does not authorize autonomous research, clinical,
-compliance, release, or submission decisions.
+The current interaction model remains one Codex conversation that may change
+review perspective as needed. A role description alone does not authorize
+autonomous research, clinical, compliance, release, submission, data access,
+network retrieval, or file action.
 
-The current interaction model is one Codex conversation that may change review
-perspective as needed. That convenience must not be described as an operating
-role card, separate agent, or additional tool permission. A future role card
-requires its own name, purpose, owner, authoritative inputs, allowed outputs,
-prohibited actions, stop conditions, human approval points, audit record, tool
-dependencies, and tests before a later version can consider admission.
+The records do not replace M53 bounded-autonomy authorization, controlled
+helper admission, a per-run write confirmation, data/share evidence, C4, or
+any accountable-human decision. A later role card, coordinator, external
+evidence retrieval role, runtime, or multi-agent design requires a separate
+scope, threat model, tools boundary, tests, and human review.
 
 Keep Codex UI metadata in `agents/openai.yaml`; do not place it here. The root
 `SKILL.md` is the current thin entry and routing contract, not a specialist

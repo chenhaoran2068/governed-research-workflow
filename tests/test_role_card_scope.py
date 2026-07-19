@@ -1,4 +1,4 @@
-"""Scope tests for the explicit v0.4 role-card and agent-runtime exclusion."""
+"""Regression tests separating v0.8 role contracts from excluded runtimes."""
 
 from __future__ import annotations
 
@@ -12,8 +12,10 @@ LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capabil
 
 
 class RoleCardScopeTests(unittest.TestCase):
-    def test_no_role_card_or_agent_runtime_artifact_is_present(self) -> None:
+    def test_role_contract_records_exist_but_no_role_card_or_agent_runtime_is_present(self) -> None:
         agent_module = REPOSITORY_ROOT / "system" / "08_agent_contracts"
+        self.assertTrue((agent_module / "role_contracts" / "record_validation_reviewer.json").is_file())
+        self.assertTrue((agent_module / "role_contracts" / "audit_boundary_reviewer.json").is_file())
         self.assertFalse((agent_module / "role_cards").exists())
         self.assertFalse((agent_module / "runtime").exists())
         self.assertFalse((REPOSITORY_ROOT / "role_cards").exists())
@@ -26,10 +28,10 @@ class RoleCardScopeTests(unittest.TestCase):
         module = (REPOSITORY_ROOT / "system" / "08_agent_contracts" / "MODULE.md").read_text(encoding="utf-8")
 
         for text in (readme, skill, roadmap, module):
-            self.assertIn("role card", text.lower())
+            self.assertIn("role contract", text.lower())
         self.assertIn("One Codex conversation", readme)
         self.assertIn("One Codex conversation", skill)
-        self.assertIn("not be described as an operating", module)
+        self.assertIn("not a runnable", module)
         self.assertIn("agent runtime", module)
 
     def test_ledger_marks_role_cards_as_verified_excluded_and_not_publicly_claimable(self) -> None:

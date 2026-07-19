@@ -35,3 +35,10 @@ metadata-only six-record bundle and a caller-supplied comparison manifest.
 They do not read source content, prove truth or approval, protect a baseline,
 or prevent a writer with equivalent access from changing both a bundle and its
 comparison manifest.
+
+The v0.8 candidate source adds `role_contract.schema.json` and
+`controlled_helper_admission.schema.json`. The first describes a non-runnable
+review-perspective boundary; the second describes a bounded generic helper
+contract. Neither schema creates an agent runtime, grants a tool, authorizes a
+task, authorizes data access, confirms a filesystem write, or approves a
+Release. Their blank templates are synthetic records, not live state.

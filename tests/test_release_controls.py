@@ -43,6 +43,13 @@ class ReleaseControlTests(unittest.TestCase):
             "V0_7_1_RELEASE_STATE_MAINTENANCE.md",
             "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.7.1.md",
             "RELEASE_NOTES_v0.7.1.md",
+            "V0_8_RELEASE_GATE.md",
+            "V0_8_RELEASE_EVIDENCE.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.8.0.md",
+            "V0_8_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V0_8_CAPABILITY_ADMISSION.md",
+            "V0_8_RELEASE_CONTROL_CANDIDATE.json",
+            "RELEASE_NOTES_v0.8.0.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -69,7 +76,7 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.7.1-control-hardening-maintenance-source", manifest)
+        self.assertIn("system_version: 0.8.0-portability-role-helper-admission-candidate-source", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
@@ -187,6 +194,7 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("`v0.5.x`", security)
         self.assertIn("`v0.6.x`", security)
         self.assertIn("`v0.7.x`", security)
+        self.assertIn("`v0.8.x`", security)
         self.assertIn("released bounded system baseline\nthrough `v0.4.0`", start_here)
         self.assertIn("`REL-008` was completed by the released `v0.3.0`", roadmap)
         self.assertNotIn("| REL-008 |", roadmap)

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "governed_role_contract",
+  "role_id": "audit_boundary_reviewer",
+  "contract_version": "1.0.0",
+  "record_revision": 1,
+  "contract_status": "reviewed",
+  "role_name": "Audit Boundary Reviewer",
+  "purpose": "Compare caller-supplied public/package records, versions, claims, or evidence references and report declared inconsistency, missing evidence, stale version, or non-authority boundary issues.",
+  "trigger_conditions": ["The caller names this review perspective.", "The caller supplies only declared public/package records, versions, claims, or evidence references.", "The requested output is a bounded finding list, not an edit or conflict decision."],
+  "accountable_owner": "accountable_human",
+  "authoritative_inputs": {"allowed_input_classes": ["caller_supplied_public_package_record", "caller_supplied_public_claim", "caller_supplied_evidence_reference"], "automatic_discovery_permitted": false, "unlisted_or_undisclosed_input_policy": "stop_and_escalate"},
+  "allowed_outputs": {"output_classes": ["bounded_finding_list"], "may_mutate": false, "may_issue_action_command": false},
+  "prohibited_actions": ["Do not retrieve network material or open an undeclared/private source.", "Do not edit the audited object or resolve a conflict without a human choice.", "Do not invoke a helper.", "Do not infer scientific truth, access permission, compliance, ethics, DUA, human identity, or authorization.", "Do not approve a Gate, Release, submission, or another role."],
+  "tool_and_action_boundary": {"network_access": false, "credential_access": false, "external_service_access": false, "data_content_access": false, "file_write": false, "helper_invocation": false, "project_state_change": false, "release_or_submission_action": false},
+  "memory_and_retention_boundary": {"persistent_memory_store_created": false, "unrecorded_private_memory_as_authority": false},
+  "human_decision_points": ["A human selects the records and evidence references to compare.", "A human chooses the repair or disposition when a contradiction is found.", "A human decides any Release, installation, scientific, compliance, Gate, or submission consequence."],
+  "stop_and_escalation_conditions": ["Stop if a source is undisclosed, private, external, or requires network retrieval.", "Stop if the request asks to edit, publish, install, or resolve a conflict without a human choice.", "Stop if evidence is missing or an authoritative record contradicts another record; report the bounded conflict and options instead."],
+  "audit_record_requirements": {"must_be_recorded": true, "record_location_policy": "Record the declared compared inputs, findings, unknowns, options, and accountable-human decision point in a caller-designated permitted audit record."},
+  "explicit_non_claims": ["This is not an agent runtime.", "This is not delegated authority or an independent AI actor.", "This is not a tool grant, M53 bounded-autonomy authorization, helper admission, or per-run write confirmation.", "This is not external evidence retrieval.", "This is not data-access authority.", "This is not a compliance determination.", "This is not a Gate transition.", "This is not a Release authority.", "This is not a submission authority or an automatic task initiator."],
+  "evidence_references": ["tests/test_role_contracts.py", "tests/test_v0_8_synthetic_assurance.py"],
+  "compatibility": {"supported_profiles": ["standalone", "framework_integrated"], "older_package_behavior": "unsupported_metadata_no_behavior_change"}
+}

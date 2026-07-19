@@ -81,3 +81,14 @@ define a bounded maintenance source that aligns current navigation and future
 roadmap wording with the retained v0.7.0 historical fact, hardens read-only
 review-root path checks, and adds a backward-compatible correction-review
 record form. They do not alter historical immutable releases.
+
+`V0_8_RELEASE_GATE.md`, `V0_8_RELEASE_EVIDENCE.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.8.0.md`,
+`V0_8_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
+`V0_8_CAPABILITY_ADMISSION.md`, `V0_8_RELEASE_CONTROL_CANDIDATE.json`, and
+`RELEASE_NOTES_v0.8.0.md` are active v0.8 candidate release-preparation
+materials. They cover only the candidate profile-boundary, non-runnable
+role-contract, and existing bootstrap-helper-admission scope. They retain
+explicit outstanding human capability-admission, exact-final-commit, C4, and
+post-release-verification decisions; none is a tag, GitHub Release,
+installation target, or runtime claim.

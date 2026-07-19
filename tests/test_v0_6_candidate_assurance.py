@@ -21,13 +21,14 @@ SYNTHETIC_ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" 
 
 
 class V06CandidateAssuranceTests(unittest.TestCase):
-    def test_v071_control_hardening_source_retains_the_historical_v06_capability_scope(self) -> None:
+    def test_v08_source_retains_the_historical_v06_capability_scope(self) -> None:
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
         readme = README_PATH.read_text(encoding="utf-8")
         roadmap = ROADMAP_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.7.1-control-hardening-maintenance-source", manifest)
-        self.assertIn("`v0.7.1` control-hardening maintenance source", readme)
-        self.assertIn("prior workflow/evidence controls", " ".join(readme.split()))
+        self.assertIn("system_version: 0.8.0-portability-role-helper-admission-candidate-source", manifest)
+        self.assertIn("Status: v0.8 candidate source", readme)
+        self.assertIn("retaining the released v0.4-v0.7 control scopes", " ".join(readme.split()))
+        self.assertIn("## v0.8.0 (candidate portability, role-contract, and helper-admission source)", roadmap)
         self.assertIn("## v0.7.1 (release-state and control-hardening maintenance source)", roadmap)
         self.assertIn("## v0.7.0 (historical human-reviewed lesson-promotion release source)", roadmap)
         self.assertIn("## v0.6.0 (workflow/evidence-control release source)", roadmap)

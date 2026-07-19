@@ -1,4 +1,4 @@
-"""Regression controls for v0.7.1 release-state and control hardening."""
+"""Regression controls preserving v0.7.1 history in the v0.8 source."""
 
 from __future__ import annotations
 
@@ -11,29 +11,30 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = REPOSITORY_ROOT / "system" / "11_distribution_installation_and_release"
 
 
-class V071ControlHardeningMaintenanceTests(unittest.TestCase):
-    def test_current_source_identifies_maintenance_without_reclassifying_v070(self) -> None:
+class V071HistoricalMaintenanceTests(unittest.TestCase):
+    def test_current_v08_source_retains_v071_history_without_reclassifying_v070(self) -> None:
         manifest = (REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         index = (REPOSITORY_ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.7.1-control-hardening-maintenance-source", manifest)
-        self.assertIn("`v0.7.1` control-hardening maintenance source", readme)
+        self.assertIn("system_version: 0.8.0-portability-role-helper-admission-candidate-source", manifest)
+        self.assertIn("Status: v0.8 candidate source", readme)
+        self.assertIn("## v0.8.0 (candidate portability, role-contract, and helper-admission source)", roadmap)
         self.assertIn("## v0.7.1 (release-state and control-hardening maintenance source)", roadmap)
         self.assertIn("## v0.7.0 (historical human-reviewed lesson-promotion release source)", roadmap)
         self.assertIn("## Planned After v0.7 (not current capability)", roadmap)
         self.assertNotIn("v0.7.x: candidate", roadmap.lower())
-        self.assertIn("Status: `v0.7.1` control-hardening maintenance source", index)
+        self.assertIn("Status: v0.8 candidate source", index)
 
     def test_maintenance_keeps_the_v070_capability_identity_and_boundary(self) -> None:
         ledger_path = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
         record = next(item for item in ledger["capabilities"] if item["capability_id"] == "GRW-CAP-070-01")
 
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.7.1")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.7.0")
-        self.assertIn("Published v0.4.0 through v0.7.0", ledger["target_claim_scope"])
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.8.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.7.1")
+        self.assertIn("released historical scopes through v0.7.1", ledger["target_claim_scope"])
         self.assertEqual(record["version"]["introduced_version"], "v0.7.0")
         self.assertEqual(record["version"]["target_release"], "v0.7.0")
         self.assertEqual(record["version"]["last_verified_release"], "v0.7.0")

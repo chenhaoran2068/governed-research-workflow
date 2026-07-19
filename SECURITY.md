@@ -3,7 +3,7 @@
 ## Supported Versions
 
 The supported public release lines are `v0.1.x`, `v0.2.x`, `v0.3.x`,
-`v0.4.x`, `v0.5.x`, `v0.6.x`, and `v0.7.x`. Do not infer support,
+`v0.4.x`, `v0.5.x`, `v0.6.x`, `v0.7.x`, and `v0.8.x`. Do not infer support,
 installation, or a current runtime from a mutable branch, candidate, or local
 worktree. For any selected version, verify the exact annotated tag and matching
 GitHub Release first. The immutable `v0.5.0` Release contains retained pre-C4
