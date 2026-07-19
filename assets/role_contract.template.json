@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "governed_role_contract",
+  "role_id": "synthetic_review_role",
+  "contract_version": "1.0.0",
+  "record_revision": 1,
+  "contract_status": "draft",
+  "role_name": "Synthetic Review Role",
+  "purpose": "Replace with one bounded review purpose.",
+  "trigger_conditions": ["Use only after a caller supplies an allowed input class and asks for this bounded review."],
+  "accountable_owner": "replace-with-accountable-owner",
+  "authoritative_inputs": {"allowed_input_classes": ["caller_supplied_synthetic_structured_record"], "automatic_discovery_permitted": false, "unlisted_or_undisclosed_input_policy": "stop_and_escalate"},
+  "allowed_outputs": {"output_classes": ["structural_validation_report"], "may_mutate": false, "may_issue_action_command": false},
+  "prohibited_actions": ["No record mutation, helper invocation, data-content access, approval, Gate transition, release, submission, or automatic task initiation."],
+  "tool_and_action_boundary": {"network_access": false, "credential_access": false, "external_service_access": false, "data_content_access": false, "file_write": false, "helper_invocation": false, "project_state_change": false, "release_or_submission_action": false},
+  "memory_and_retention_boundary": {"persistent_memory_store_created": false, "unrecorded_private_memory_as_authority": false},
+  "human_decision_points": ["Escalate when an authoritative input is missing, unknown, private, or outside the declared input class."],
+  "stop_and_escalation_conditions": ["Stop when the request would require a prohibited action or a human decision."],
+  "audit_record_requirements": {"must_be_recorded": true, "record_location_policy": "Use a caller-designated permitted review record; this template creates no storage location."},
+  "explicit_non_claims": ["This record is not an agent runtime, delegated authority, tool grant, task authorization, data-access authorization, compliance determination, Gate transition, release authority, submission authority, or automatic task initiator."],
+  "evidence_references": ["synthetic-template-only"],
+  "compatibility": {"supported_profiles": ["standalone", "framework_integrated"], "older_package_behavior": "unsupported_metadata_no_behavior_change"}
+}

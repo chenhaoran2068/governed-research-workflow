@@ -74,10 +74,20 @@ collaboration-mode worksheet helps the human choose; it does not replace the
 canonical record. The record does not authorize data access, a network action,
 delegation, a release, or a submission.
 
-The v0.4.0 release scope explicitly excludes specialist role cards, delegated
-authority, parallel-agent orchestration, hidden background work, and agent
-runtime. One Codex conversation may switch review perspective when useful, but
-that is not a multi-agent deployment or a tool grant.
+Specialist role cards, delegated authority, parallel-agent orchestration,
+hidden background work, and agent runtime remain excluded. The v0.8 source
+also contains two non-runnable role-contract records. A role contract only
+defines a bounded review perspective; it is not a second agent, a tool grant,
+M53 authorization, helper admission, or per-run write confirmation. One Codex conversation
+may switch review perspective when useful, but that is not a
+multi-agent deployment or an additional permission.
+
+Do not offer a v0.8 role-contract or helper-admission route as a released
+capability unless the selected exact tag and matching GitHub Release exist and
+the capability ledger marks the relevant record as permitted. When those
+conditions are met, read `references/role-contracts.md` or
+`references/controlled-helper-admission.md` before using the named bounded
+review perspective or discussing the bootstrap admission boundary.
 
 For generic data provenance metadata, use
 `references/data-provenance-register.md`. A source pointer, template, task
@@ -165,6 +175,10 @@ Stop and request accountable evidence or approval before:
 - Metadata-only workflow/evidence control records, when admitted for the
   selected release:
   references/workflow-evidence-control-records.md
+- Bounded non-runnable role contracts, when admitted for the selected release:
+  references/role-contracts.md
+- Controlled bootstrap-helper admission, when admitted for the selected
+  release: references/controlled-helper-admission.md
 
 Use the blank assets only after explaining their role and obtaining any required
 user decision. Do not populate them with invented facts.

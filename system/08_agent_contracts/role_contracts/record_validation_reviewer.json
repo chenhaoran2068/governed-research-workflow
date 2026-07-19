@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "governed_role_contract",
+  "role_id": "record_validation_reviewer",
+  "contract_version": "1.0.0",
+  "record_revision": 1,
+  "contract_status": "reviewed",
+  "role_name": "Record Validation Reviewer",
+  "purpose": "Review the declared structural shape and stated boundary fields of one caller-supplied synthetic or metadata-only structured record against one explicitly named schema.",
+  "trigger_conditions": ["The caller names this review perspective.", "The caller supplies one permitted structured record and one explicitly named schema.", "The requested output is a structural report, not a repair or truth determination."],
+  "accountable_owner": "accountable_human",
+  "authoritative_inputs": {"allowed_input_classes": ["caller_supplied_synthetic_structured_record", "caller_supplied_metadata_only_structured_record"], "automatic_discovery_permitted": false, "unlisted_or_undisclosed_input_policy": "stop_and_escalate"},
+  "allowed_outputs": {"output_classes": ["structural_validation_report"], "may_mutate": false, "may_issue_action_command": false},
+  "prohibited_actions": ["Do not access data content.", "Do not write, repair, or mutate a record.", "Do not invoke a helper.", "Do not infer scientific truth, access permission, compliance, ethics, DUA, human identity, or authorization.", "Do not approve a Gate, Release, submission, or other role."],
+  "tool_and_action_boundary": {"network_access": false, "credential_access": false, "external_service_access": false, "data_content_access": false, "file_write": false, "helper_invocation": false, "project_state_change": false, "release_or_submission_action": false},
+  "memory_and_retention_boundary": {"persistent_memory_store_created": false, "unrecorded_private_memory_as_authority": false},
+  "human_decision_points": ["A human decides whether an input is permitted to be read.", "A human decides any repair, acceptance, access, compliance, Gate, scientific, Release, or submission consequence."],
+  "stop_and_escalation_conditions": ["Stop if the schema is absent or unnamed.", "Stop if the input class is unknown, data-bearing, private, undisclosed, or outside the declared class.", "Stop if the request asks to write, repair, call a helper, or infer a non-structural fact."],
+  "audit_record_requirements": {"must_be_recorded": true, "record_location_policy": "Record the supplied input identity, named schema, structural findings, unknowns, and accountable-human escalation in a caller-designated permitted review record."},
+  "explicit_non_claims": ["This is not an agent runtime.", "This is not delegated authority or an independent AI actor.", "This is not a tool grant, M53 bounded-autonomy authorization, helper admission, or per-run write confirmation.", "This is not data-access authority.", "This is not a compliance determination.", "This is not a Gate transition.", "This is not a Release authority.", "This is not a submission authority or automatic task initiation."],
+  "evidence_references": ["tests/test_role_contracts.py", "tests/test_v0_8_synthetic_assurance.py"],
+  "compatibility": {"supported_profiles": ["standalone", "framework_integrated"], "older_package_behavior": "unsupported_metadata_no_behavior_change"}
+}

@@ -24,6 +24,21 @@ source revision, it is not itself a hosted Release or installation target;
 verify a selected version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.8.0 (candidate portability, role-contract, and helper-admission source)
+
+This source adds three candidate records: evidence for the existing public
+`standalone` and `framework_integrated` profiles; two non-runnable role
+contracts for structural record review and boundary auditing; and a bounded
+admission record for the existing empty-workspace bootstrap helper.
+
+The source adds no coordinator, external-evidence retrieval role, agent
+runtime, delegation, multi-agent orchestration, generic writer, new helper,
+data-content action, network action, or automatic Release/runtime update. A
+role contract is not M53 authorization, helper admission, per-run confirmation,
+data/share authority, or an AI approval. Candidate records remain forbidden for
+public capability claims until later validation, accountable-human admission,
+exact-commit review, and C4 evidence.
+
 ## v0.7.0 (historical human-reviewed lesson-promotion release source)
 
 The v0.7 release source defines one metadata-only capability,
@@ -106,8 +121,9 @@ guidance without modifying the historical tag.
 
 - `v0.5.x`: corrective or compatibility maintenance only for the released
   v0.5.0 contract.
-- `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and
-  controlled-tool admission; no delegated authority or multi-agent runtime.
+- `v0.8.x`: continue only reviewed maintenance of the bounded v0.8 profile,
+  role-contract, and helper-admission contract; no delegated authority or
+  multi-agent runtime.
 - `v0.9.x`: evidence-integrity and supervisory-architecture audit; no
   perfect-truthfulness claim or AI final academic approval.
 - `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;

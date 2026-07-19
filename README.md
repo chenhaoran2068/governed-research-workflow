@@ -5,15 +5,15 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: `v0.7.1` control-hardening maintenance source retaining the historical
-v0.7.0 lesson-promotion control scope and prior workflow/evidence controls. It
-hardens read-only review-root path handling and adds a backward-compatible
-schema `1.1.0` form for separately recorded correction review; it adds no data,
-network, agent, or autonomous-execution capability. This source tree does not
-itself prove the release or installation identity of any selected version. A
-normal public installation target exists only when an exact annotated tag and
-matching GitHub Release resolve to the selected source commit. Never install a
-mutable branch.
+Status: v0.8 candidate source retaining the released v0.4-v0.7 control scopes
+and adding only candidate profile-boundary evidence, non-runnable role-contract
+records, and a bounded admission record for the existing empty-workspace
+bootstrap. It adds no data access, network action, coordinator, external
+evidence retrieval role, agent runtime, delegation, multi-agent orchestration,
+or generic writer. This source tree does not itself prove the release or
+installation identity of any selected version. A normal public installation
+target exists only when an exact annotated tag and matching GitHub Release
+resolve to the selected source commit. Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -23,20 +23,21 @@ read
 
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-the historical `v0.4.0`, `v0.5.0`, and `v0.6.0` capability baselines, plus a
-historical `v0.7.0` lesson-promotion scope. It records each
-capability's interface, evidence, version, and required human approval. The
-ledger is not an installed-runtime statement. Neither a historical admission
-nor a v0.6 scope admission alone proves a local installation, runtime identity,
-hosted Release, or C4 authorization.
+historical released capability facts through `v0.7.1` and three v0.8 candidate
+records. It records each capability's interface, evidence, version, and
+required human approval. The ledger is not an installed-runtime statement.
+Candidate implementation alone proves neither capability admission, local
+installation, runtime identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as `v0.7.1` control-hardening
-maintenance-source content.
+The package manifest identifies this source as v0.8 candidate content.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
-`GRW-CAP-070-01` is admitted only for its named v0.7.0 release scope. Neither
-historical verification nor scope admission is an installation claim, hosted
-Release claim, or C4 authorization. Public availability for any selected
-version remains determined only by the exact-tag-and-matching-Release rule.
+`GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
+records remain candidate and publicly forbidden until later validation,
+accountable-human capability admission, exact-commit review, and C4 evidence.
+Neither historical verification nor a candidate record is an installation
+claim, hosted Release claim, or C4 authorization. Public availability for any
+selected version remains determined only by the exact-tag-and-matching-Release
+rule.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
 boundary, bounded-autonomy authorization record, metadata-only provenance
@@ -81,11 +82,22 @@ The skill supports process routing for:
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or
-release or submit work. The v0.4.0 scope also explicitly excludes
-specialist role cards, multi-agent orchestration, delegated authority, hidden
-background work, and agent runtime. One Codex conversation remains the
-interaction model; it may use different review perspectives without creating
-separate agents.
+release or submit work. Specialist role cards, multi-agent orchestration,
+delegated authority, hidden background work, and agent runtime remain
+excluded. One Codex conversation remains the interaction model; it may use
+different review perspectives without creating separate agents.
+
+The v0.8 candidate source contains two non-runnable role contracts:
+`record_validation_reviewer` and `audit_boundary_reviewer`. They are
+documentation records for caller-supplied bounded review only, not separate AI
+actors or permission grants. They cannot replace M53 authorization, helper
+admission, per-run write confirmation, or data/share evidence. The candidate
+source also records the existing bootstrap helper's bounded admission contract;
+it does not add a generic writer or a new helper.
+
+The Workspace Framework's Private Lab Extended category is a private
+descriptive overlay, not a v0.8 public profile, portability promise, or
+service-discovery fallback.
 
 The published v0.5.0 baseline additionally provides only a metadata-only
 provenance register-set index and explicit structural validator. It does not read real
@@ -211,8 +223,10 @@ supersede a band through a reviewed revision.
   system makes no scientific, compliance, journal, or submission decision.
 - `v0.7.0`: historical human-reviewed retrospective learning and knowledge
   promotion scope; no automatic promotion of project observations.
-- `v0.8.x`: portable profiles, stable interfaces, bounded role contracts, and
-  controlled-tool admission; no delegated authority or multi-agent runtime.
+- `v0.8.0`: candidate source for portable profile boundaries, bounded
+  non-runnable role contracts, and controlled bootstrap-helper admission; no
+  delegated authority, external-evidence retrieval role, generic writer, or
+  multi-agent runtime. Candidate records are not a public availability claim.
 - `v0.9.x`: dedicated evidence-integrity and supervisory-architecture audit;
   no perfect-truthfulness claim or AI final academic approval.
 - `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;

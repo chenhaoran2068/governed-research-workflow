@@ -1,12 +1,13 @@
-# v0.7.1 control-hardening maintenance source retaining the historical v0.7.0
-# metadata-only lesson-promotion record scope and its prior workflow/evidence
-# controls. It adds no data, network, or autonomous-execution capability. This
+# v0.8.0 candidate source retains the v0.4-v0.7 metadata-only control scopes
+# and adds only profile-boundary evidence, non-runnable role-contract records,
+# and a candidate admission record for the existing empty-workspace bootstrap.
+# It adds no data, network, agent runtime, delegation, or generic writer. This
 # manifest never proves that a selected version is installed or released:
 # verify an exact annotated tag and matching GitHub Release at installation
 # time. The workspace framework-contract version remains 0.1.0.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.7.1-control-hardening-maintenance-source
+system_version: 0.8.0-portability-role-helper-admission-candidate-source
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:
