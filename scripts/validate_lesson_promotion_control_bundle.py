@@ -118,8 +118,13 @@ def _load_json(path: Path) -> tuple[dict[str, Any] | None, ValidationIssue | Non
 
 def _resolve_root(root_argument: Path) -> tuple[Path | None, ValidationIssue | None]:
     requested = root_argument.expanduser()
-    if _is_direct_indirection(requested):
-        return None, ValidationIssue("unsafe_root_path", "--root must not be a symbolic link or Windows reparse point.")
+    if not requested.is_absolute() or ".." in requested.parts:
+        return None, ValidationIssue("unsafe_root_path", "--root must be an absolute physical path without parent-traversal segments.")
+    current = Path(requested.anchor)
+    for component in requested.parts[1:]:
+        current = current / component
+        if _is_direct_indirection(current):
+            return None, ValidationIssue("unsafe_root_path", "--root must not contain a symbolic link or Windows reparse point.")
     try:
         root = requested.resolve(strict=True)
     except (FileNotFoundError, OSError):
@@ -190,14 +195,27 @@ def _record_of_type(records: dict[str, dict[str, Any]], record_id: str | None, e
     return record, []
 
 
-def _cross_record_issues(records: dict[str, dict[str, Any]]) -> list[ValidationIssue]:
+def _cross_record_issues(records: dict[str, dict[str, Any]], schema_version: str) -> list[ValidationIssue]:
     issues: list[ValidationIssue] = []
     for record_id, record in records.items():
         if record["record_type"] == "human_decision":
             candidate, candidate_issues = _record_of_type(records, record["candidate_id"], "lesson_candidate", record_id, "candidate_id")
             issues.extend(candidate_issues)
-            if candidate is not None and candidate["human_decision_id"] != record_id:
+            decision_ids = {candidate["human_decision_id"]} if candidate is not None else set()
+            if candidate is not None and schema_version == "1.1.0":
+                decision_ids.update(candidate.get("decision_history_ids", []))
+            if candidate is not None and record_id not in decision_ids:
                 issues.append(ValidationIssue("unlinked_human_decision", "A human decision must be linked from its candidate.", record_id))
+            if schema_version == "1.1.0" and record["disposition"] == "confirm_correction":
+                correction_events = [
+                    event for event in records.values()
+                    if event["record_type"] == "change_event"
+                    and event["candidate_id"] == record["candidate_id"]
+                    and event["human_decision_id"] == record_id
+                    and event["change_type"] == "correction"
+                ]
+                if not correction_events:
+                    issues.append(ValidationIssue("missing_correction_event_for_decision", "A v1.1 confirm_correction decision requires a matching correction event.", record_id))
         elif record["record_type"] == "integration_verification":
             candidate, candidate_issues = _record_of_type(records, record["candidate_id"], "lesson_candidate", record_id, "candidate_id")
             decision, decision_issues = _record_of_type(records, record["human_decision_id"], "human_decision", record_id, "human_decision_id")
@@ -216,6 +234,13 @@ def _cross_record_issues(records: dict[str, dict[str, Any]]) -> list[ValidationI
                 issues.append(ValidationIssue("withdrawal_disposition_mismatch", "A withdrawal event requires disposition withdraw.", record_id))
             if record["change_type"] == "supersession" and decision is not None and decision["disposition"] != "supersede":
                 issues.append(ValidationIssue("supersession_disposition_mismatch", "A supersession event requires disposition supersede.", record_id))
+            if record["change_type"] == "correction" and schema_version == "1.1.0":
+                if decision is not None and decision["disposition"] != "confirm_correction":
+                    issues.append(ValidationIssue("correction_disposition_mismatch", "A v1.1 correction event requires disposition confirm_correction.", record_id))
+                if candidate is not None and record["human_decision_id"] not in candidate.get("decision_history_ids", []):
+                    issues.append(ValidationIssue("correction_decision_not_in_history", "A v1.1 correction decision must be listed in the candidate decision history.", record_id))
+                if "event_date" not in record:
+                    issues.append(ValidationIssue("missing_correction_event_date", "A v1.1 correction event requires event_date.", record_id))
             if record["change_type"] == "supersession" and candidate is not None and record["successor_candidate_id"] != candidate["superseded_by_candidate_id"]:
                 issues.append(ValidationIssue("supersession_successor_mismatch", "A supersession event must name the candidate's declared successor.", record_id))
             if record["change_type"] != "supersession" and record["successor_candidate_id"] is not None:
@@ -223,6 +248,16 @@ def _cross_record_issues(records: dict[str, dict[str, Any]]) -> list[ValidationI
     for record_id, record in records.items():
         if record["record_type"] != "lesson_candidate":
             continue
+        if schema_version == "1.1.0":
+            history = record.get("decision_history_ids")
+            if not isinstance(history, list):
+                issues.append(ValidationIssue("missing_decision_history", "A v1.1 lesson candidate requires decision_history_ids.", record_id))
+                history = []
+            if len(history) != len(set(history)):
+                issues.append(ValidationIssue("duplicate_decision_history", "decision_history_ids must not repeat a decision.", record_id))
+            decision_id = record["human_decision_id"]
+            if decision_id is not None and decision_id not in history:
+                issues.append(ValidationIssue("current_decision_missing_from_history", "The current human decision must be listed in decision_history_ids.", record_id))
         for observation_id in record["observation_ids"]:
             observation, reference_issues = _record_of_type(records, observation_id, "observation", record_id, "observation_ids")
             issues.extend(reference_issues)
@@ -369,7 +404,7 @@ def validate_bundle(root_argument: Path, bundle_relative_path: str) -> dict[str,
         records, index_issues = _record_index(bundle["records"])
         issues.extend(index_issues)
         if not issues:
-            issues.extend(_cross_record_issues(records))
+            issues.extend(_cross_record_issues(records, bundle["schema_version"]))
     return _result(issues, len(records))
 
 

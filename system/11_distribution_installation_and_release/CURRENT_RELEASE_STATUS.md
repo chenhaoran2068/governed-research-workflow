@@ -1,10 +1,9 @@
 # Release Status Verification
 
-Status: active, version-neutral release-verification rule. The published
-`v0.5.0` tag/Release is the metadata-only provenance-register baseline and
-`v0.5.1` is its published release-state-maintenance patch. This record does
-not prove that any selected version is installed in a private skill source or
-Codex runtime.
+Status: active, version-neutral release-verification rule. Historical v0.5,
+v0.6, and v0.7 tags/Releases are retained below as bounded facts. This record
+does not prove that any selected version is installed in a private skill source
+or Codex runtime.
 
 This record never declares a latest or current public version. Its versioned
 entries are bounded historical facts; the only live public-availability check
@@ -62,6 +61,21 @@ verify the exact tag and matching Release at the time of installation.
 - A selected v0.6 version becomes an installation target only when the normal
   public installation rule above is independently verified for that exact tag
   and matching GitHub Release.
+
+## v0.7 Historical Capability Scope
+
+- `v0.7.0` is publicly released at annotated tag `v0.7.0`, target commit
+  `a1a1bba3bca87aa7fa3107f3bd6e2d8ee53af7dc`, with a matching immutable
+  GitHub Release.
+- It contains the metadata-only `GRW-CAP-070-01` human-reviewed
+  lesson-promotion control record scope. Its admission does not establish a
+  private source, installed runtime, automatic promotion, target-rule change,
+  data access, or another release authorization.
+- `v0.7.1` is a control-hardening maintenance source that corrects current
+  navigation and roadmap wording, rejects review roots containing indirection,
+  and adds a backward-compatible correction-review record form without adding
+  a new capability category. It becomes a normal installation target only if
+  its own exact tag and matching GitHub Release are verified at selection time.
 
 ## v0.4.0 Historical Public Baseline
 

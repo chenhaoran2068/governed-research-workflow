@@ -1,11 +1,12 @@
-# v0.7.0 release source retaining the released v0.6 metadata-only workflow
-# and evidence-control records while adding human-reviewed lesson-promotion
-# records. This manifest never proves that a selected version is installed or
-# released: verify an exact annotated tag and matching GitHub Release at
-# installation time. The workspace framework-contract version remains 0.1.0.
+# v0.7.1 control-hardening maintenance source retaining the historical v0.7.0
+# metadata-only lesson-promotion record scope and its prior workflow/evidence
+# controls. It adds no data, network, or autonomous-execution capability. This
+# manifest never proves that a selected version is installed or released:
+# verify an exact annotated tag and matching GitHub Release at installation
+# time. The workspace framework-contract version remains 0.1.0.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.7.0-learning-promotion-release-source
+system_version: 0.7.1-control-hardening-maintenance-source
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

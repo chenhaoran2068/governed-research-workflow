@@ -185,8 +185,13 @@ def _schema_issues(instance: dict[str, Any], schema: dict[str, Any], subject: st
 
 def _resolve_root(root_argument: Path) -> tuple[Path | None, ValidationIssue | None]:
     requested = root_argument.expanduser()
-    if _is_direct_indirection(requested):
-        return None, ValidationIssue("unsafe_root_path", "--root must not itself be a symbolic link or Windows reparse point.")
+    if not requested.is_absolute() or ".." in requested.parts:
+        return None, ValidationIssue("unsafe_root_path", "--root must be an absolute physical path without parent-traversal segments.")
+    current = Path(requested.anchor)
+    for component in requested.parts[1:]:
+        current = current / component
+        if _is_direct_indirection(current):
+            return None, ValidationIssue("unsafe_root_path", "--root must not contain a symbolic link or Windows reparse point.")
     try:
         root = requested.resolve(strict=True)
     except (FileNotFoundError, OSError):

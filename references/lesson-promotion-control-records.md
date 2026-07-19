@@ -42,10 +42,21 @@ need the matching decision and change event. A correction, withdrawal, or
 supersession must remain visible rather than silently replacing an earlier
 record.
 
+Schema `1.0.0` remains readable for historical bundles. It rejects the
+`decision_history_ids`, `confirm_correction`, and `event_date` form reserved for
+schema `1.1.0`. New correction records must declare schema `1.1.0`: the
+candidate retains its lifecycle decision in `human_decision_id`, lists all
+relevant decisions in `decision_history_ids`, and a correction event names a
+separate `confirm_correction` decision and its `event_date`. This makes the
+original approval distinguishable from later human review of a correction. It
+still represents a decision; it does not verify the reviewer's identity,
+authority, or intent.
+
 ## Explicit Read-Only Validation
 
-Invoke only for a human-supplied review root and one explicit portable relative
-bundle path:
+Invoke only for a human-supplied absolute physical review root and one explicit
+portable relative bundle path. The root must contain neither `..` segments nor
+a symbolic-link or Windows-reparse-point component anywhere in its path:
 
 ```text
 python scripts/validate_lesson_promotion_control_bundle.py \
@@ -54,10 +65,11 @@ python scripts/validate_lesson_promotion_control_bundle.py \
 ```
 
 The validator reads only the selected JSON input and its bundled schema. It
-rejects absolute paths, parent traversal, symbolic links, Windows reparse
-points, non-regular files, malformed JSON, duplicate keys, wrong schema
-versions, duplicate IDs, invalid references, automatic-promotion declarations,
-and incompatible lifecycle/decision/integration/change-event combinations.
+rejects unsafe review-root paths, absolute paths, parent traversal, symbolic
+links, Windows reparse points, non-regular files, malformed JSON, duplicate
+keys, wrong schema versions, duplicate IDs, invalid references,
+automatic-promotion declarations, and incompatible
+lifecycle/decision/integration/change-event combinations.
 It neither enumerates the review root nor writes a file.
 
 It never follows a reference, opens a URL or pointer target, reads data,

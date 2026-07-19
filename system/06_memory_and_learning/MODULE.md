@@ -1,7 +1,8 @@
 # Memory And Learning
 
-Status: active retrospective-learning baseline with a v0.7 release-source
-lesson-promotion control record contract.
+Status: active retrospective-learning baseline retaining the historical v0.7.0
+lesson-promotion control record contract through the v0.7.1 control-hardening
+maintenance source.
 
 Use `references/retrospective-learning.md` and the blank retrospective register
 only after a bounded project observation is available. Project observations are
