@@ -1,7 +1,8 @@
 # v0.8.0 Public Material And Rights Review
 
-Status: active candidate material-review record. It records the result of the
-implementation-source review and the exact final-tree checks still required.
+Status: pre-C4 material-review record. It records the implementation and
+protected-main review baseline; each later source change requires the affected
+exact-tree checks to be repeated.
 It does not certify legal, institutional, clinical, ethics, privacy, DUA, or
 security compliance, and it does not authorize C4 publication.
 
@@ -33,10 +34,11 @@ human.
 
 ## Required Human Confirmation And Exact-Tree Refresh
 
-Before C4, the accountable human must confirm that the exact final generic
-tree may be publicly released under Apache-2.0 and that no employment,
+On 2026-07-19, the accountable human confirmed that the reviewed generic tree
+may be publicly released under Apache-2.0 and identified no employment,
 institutional, confidentiality, copyright, contributor, or other restriction
-blocks that publication.
+blocking that publication. This confirmation does not replace the required
+exact-tree refresh after any subsequent source change.
 
 The exact final tracked tree, newly reachable history, generated source
 archive, release notes, and planned Release assets must then be scanned again.

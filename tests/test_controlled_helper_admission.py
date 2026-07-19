@@ -46,13 +46,15 @@ class ControlledHelperAdmissionTests(unittest.TestCase):
         errors = sorted(self.validator.iter_errors(record), key=lambda error: list(error.absolute_path))
         self.assertEqual(errors, [], "\n".join(error.message for error in errors))
 
-    def test_schema_template_and_candidate_record_are_valid(self) -> None:
+    def test_schema_template_and_release_scope_admission_record_are_valid(self) -> None:
         self.assertEqual(self.schema["$id"], "https://github.com/chenhaoran2068/governed-research-workflow/schemas/controlled_helper_admission.schema.json")
         self.assert_valid(self.template)
         self.assert_valid(self.record)
         self.assertEqual(self.record["helper_id"], "bootstrap_empty_workspace")
-        self.assertEqual(self.record["admission_status"], "candidate")
-        self.assertEqual(self.record["accountable_human_admission"], {"status": "not_granted", "reference": None})
+        self.assertEqual(self.record["admission_status"], "admitted")
+        self.assertEqual(self.record["accountable_human_admission"]["status"], "granted")
+        self.assertIn("GRW-CAP-080-03", self.record["accountable_human_admission"]["reference"])
+        self.assertIn("not C4", self.record["accountable_human_admission"]["reference"])
 
     def test_source_identity_matches_canonical_bootstrap_source_text(self) -> None:
         digest = source_identity_digest(SCRIPT_PATH.read_bytes())

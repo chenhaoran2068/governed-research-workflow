@@ -2,45 +2,50 @@
   "schema_version": "1.0.0",
   "record_type": "release_control_record",
   "release_control_id": "GRW-V080-RCR-001",
-  "record_revision": 1,
+  "record_revision": 2,
   "created_at": "2026-07-19T00:00:00Z",
-  "status": "candidate_evidence_incomplete",
+  "status": "candidate_reviewed",
   "candidate_identity": {
     "candidate_version": "0.8.0",
-    "exact_commit": "49102f9da068b290e311f63437351d1e1ce220e7",
-    "branch_state": "remote_candidate_branch",
+    "exact_commit": "d896a3f455b37e8c8d757db3687b8b6f13e84d4e",
+    "branch_state": "main_candidate",
     "intended_tag": "v0.8.0",
-    "intended_github_release": "v0.8.0 GitHub Release is not created; a later exact post-merge commit and C4 authorization are required."
+    "intended_github_release": "v0.8.0 GitHub Release is not created. This is a reviewed pre-C4 main record, not the later exact C4 release identity."
   },
   "capability_set": {
     "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
-    "candidate_outcome": "verified_candidate_or_explicitly_excluded_only",
+    "candidate_outcome": "admitted_exact_release_scope",
     "verified_candidate_capability_ids": [
       "GRW-CAP-080-01",
       "GRW-CAP-080-02",
       "GRW-CAP-080-03"
     ],
     "excluded_capability_ids": [],
-    "admitted_capability_ids": []
+    "admitted_capability_ids": [
+      "GRW-CAP-080-01",
+      "GRW-CAP-080-02",
+      "GRW-CAP-080-03"
+    ]
   },
   "material_reviews": {
-    "public_material_rights_review": "not_started",
-    "private_material_secret_review": "not_started",
+    "public_material_rights_review": "pass",
+    "private_material_secret_review": "pass",
     "review_references": [
-      "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.8.0.md"
+      "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.8.0.md",
+      "system/11_distribution_installation_and_release/V0_8_RELEASE_EVIDENCE.md"
     ]
   },
   "dependency_and_source_authority": {
-    "source_authority_review": "not_started",
+    "source_authority_review": "pass",
     "framework_integrated_behavior_claimed": true,
     "framework_tag": "v0.1.2",
     "framework_commit": "97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8",
     "review_reference": "system/11_distribution_installation_and_release/V0_8_DEPENDENCY_AND_WORKFLOW_REVIEW.md"
   },
   "release_integrity_posture": {
-    "technical_immutable_release_status": "unknown",
-    "deferral_or_unavailability_reason": "A prior governance decision requested immutable releases, but this preparation review cannot read that repository setting with the current authenticated API scope.",
-    "reevaluation_trigger": "Before C4, confirm the repository setting through GitHub settings or a properly scoped maintainer token.",
+    "technical_immutable_release_status": "enabled",
+    "deferral_or_unavailability_reason": "GitHub's immutable-release API reported enabled during the pre-C4 review. Platform-level Actions SHA-pinning policy was not readable with the available token, although the repository workflow itself uses full action SHAs.",
+    "reevaluation_trigger": "Before C4, reconfirm immutable-release availability and inspect the final workflow tree; any policy or source change restarts the affected review.",
     "release_assets": [
       "GitHub-generated source archive only unless a later C4 review explicitly approves another reviewed asset."
     ],
@@ -48,7 +53,7 @@
       "system/11_distribution_installation_and_release/V0_8_DEPENDENCY_AND_WORKFLOW_REVIEW.md"
     ],
     "unverified_properties": [
-      "The final source snapshot, final post-merge commit, immutable-release setting, Actions SHA-pinning setting, C4 authorization, hosted tag, and hosted Release are not established by this candidate record."
+      "The final C4 release commit, C4 authorization, hosted tag, matching GitHub Release, Release-asset verification, installed-runtime identity, and platform-level Actions SHA-pinning policy are not established by this pre-C4 record."
     ]
   },
   "supported_scope": {
@@ -61,23 +66,23 @@
       "Ubuntu with Python 3.11 and 3.14",
       "macOS with Python 3.11 and 3.14"
     ],
-    "approved_scope_statement": "Candidate scope only: profile-boundary evidence, two non-runnable role-contract records, and an admission record for the existing bootstrap helper."
+    "approved_scope_statement": "Release-scope-admitted only: profile-boundary evidence, two non-runnable role-contract records, and an admission record for the existing bootstrap helper. This is not C4 authorization or a hosted Release claim."
   },
   "residual_risks": [
-    "This record names an implementation candidate, not the final release candidate.",
-    "Human capability admission, exact-tree material/rights confirmation, final source review, C4 authorization, and post-release verification remain absent.",
+    "This record names a reviewed pre-C4 main commit, not the final exact C4 release identity.",
+    "C4 authorization, final source review after any subsequent change, tag/Release creation, and post-release verification remain absent.",
     "Dependabot alerts are disabled and code scanning is not configured.",
-    "Immutable-release and Actions SHA-pinning settings require direct C4-time confirmation."
+    "The repository workflow uses SHA-pinned Actions, while platform-level Actions SHA-pinning enforcement remains unreadable with the available token and requires C4-time confirmation."
   ],
   "incident_and_repair_route": "Stop release activity, preserve the exact evidence, notify the accountable human, and create a new corrective candidate. Never rewrite a published tag or Release.",
-  "candidate_review_acceptance_reference": null,
+  "candidate_review_acceptance_reference": "accountable-human reviewed and accepted pull-request #10 scope on 2026-07-19; three v0.8 capabilities admitted for release scope only",
   "c4_release_authorization_reference": null,
   "post_release_verification_reference": null,
   "post_release_verification_plan_reference": "system/11_distribution_installation_and_release/RELEASE_CONTROL.md#post-release-route",
   "record_hierarchy_references": {
     "capability_truth_ledger": "system/00_manifest_and_profiles/capability_truth_ledger.json",
     "current_release_status": "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
-    "candidate_review_record": "accountable-human v0.8.0 proposed-scope acceptance recorded 2026-07-19; exact-release admission remains pending",
+    "candidate_review_record": "accountable-human v0.8.0 release-scope admission recorded 2026-07-19 after pull-request #10 review; it remains separate from C4",
     "c4_authorization_record": "not-yet-authorized",
     "post_release_record": "not-yet-released"
   }

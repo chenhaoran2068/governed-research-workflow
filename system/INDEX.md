@@ -1,9 +1,9 @@
 # Public System Module Index
 
-Status: v0.8 candidate source retaining historical v0.4-v0.7 controls and
-adding only profile-boundary evidence, non-runnable role contracts, and a
-candidate bootstrap-helper admission record. This index does not prove that a
-selected version is released:
+Status: v0.8 pre-C4 release source retaining historical v0.4-v0.7 controls and
+adding only release-scope-admitted profile-boundary evidence, non-runnable role
+contracts, and a bounded bootstrap-helper admission record. This index does
+not prove that a selected version is released:
 users must verify an exact annotated tag and matching GitHub Release rather
 than install `main` or another mutable branch.
 See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
@@ -23,19 +23,19 @@ framework `v0.1.2` tag.
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | v0.8 candidate retains the two public profiles and exact released framework validation | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | v0.8 pre-C4 release source retains the two public profiles and exact released framework validation | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline plus admitted v0.6 record-control scope | route references and blank assets |
 | `04` | evidence, requirements, and knowledge | active guidance plus admitted v0.6 pointer/relation-record scope; no knowledge corpus | evidence/citation references |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline plus historical v0.7 lesson-promotion record scope | retrospective reference and asset |
-| `07` | tools and integrations | active bootstrap plus candidate admission record; no new helper or generic writer | `scripts/`, admission record, and tests |
-| `08` | agent contracts | candidate non-runnable role contracts; no role cards or agent runtime | two role-contract records and boundary guidance |
-| `09` | schemas, records, and templates | blank-record baseline plus candidate role-contract and helper-admission schemas | `assets/` templates and schemas |
-| `10` | assurance, evaluation, and audit | regression baseline, cross-repository integration, retained assurance, and candidate v0.8 structural tests | `tests/` |
-| `11` | distribution, installation, and release | active release controls, v0.7.1 control-hardening maintenance, v0.8 candidate preparation, and a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical and active preparation records |
-| `12` | synthetic examples | exact-tag integration test plus retained assurance and candidate v0.8 synthetic-contract tests | synthetic fixtures and assurance only; no end-to-end public research example |
+| `07` | tools and integrations | active bootstrap plus release-scope admission record; no new helper or generic writer | `scripts/`, admission record, and tests |
+| `08` | agent contracts | release-scope-admitted non-runnable role contracts; no role cards or agent runtime | two role-contract records and boundary guidance |
+| `09` | schemas, records, and templates | blank-record baseline plus v0.8 role-contract and helper-admission schemas | `assets/` templates and schemas |
+| `10` | assurance, evaluation, and audit | regression baseline, cross-repository integration, retained assurance, and v0.8 structural tests | `tests/` |
+| `11` | distribution, installation, and release | active release controls, v0.7.1 control-hardening maintenance, v0.8 pre-C4 release records, and a release-control record that separates candidate review, C4, and post-release verification | package governance files, release verification, historical and active preparation records |
+| `12` | synthetic examples | exact-tag integration test plus retained assurance and v0.8 synthetic-contract tests | synthetic fixtures and assurance only; no end-to-end public research example |
 
 ## Current Resource Map
 
@@ -58,6 +58,6 @@ does not create capability.
 
 The system is designed to remain path-independent and standalone. Its
 framework-integrated profile retains a `0.1.0` framework contract. The
-v0.8 candidate source retains validation against the exact released Workspace
+v0.8 pre-C4 release source retains validation against the exact released Workspace
 Framework `v0.1.2` tag; it must never require a private checkout, private
 credential, or real project workspace.

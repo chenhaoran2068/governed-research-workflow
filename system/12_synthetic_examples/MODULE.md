@@ -27,7 +27,7 @@ baseline fixture. Their structural validation is not source-content review,
 human-identity verification, authorization proof, tamper-proof storage, or a
 real-study workflow demonstration.
 
-The v0.8 candidate source uses only synthetic record contracts and test inputs
+The v0.8 pre-C4 release source uses only synthetic record contracts and test inputs
 for profile, role-contract, helper-admission, and cross-control coverage. It
 does not add a public end-to-end agent example, a multi-agent simulation, or a
 real-workspace demonstration.

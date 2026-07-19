@@ -32,8 +32,8 @@ implementation evidence separate from the canonical capability ledger and live
 release identity. They do not authorize C4 or make a public-release or runtime
 claim.
 
-The v0.8 candidate source adds structural role-contract and helper-admission
+The v0.8 pre-C4 release source adds structural role-contract and helper-admission
 tests, profile-boundary tests, and synthetic cross-control assurance. They
-prove only candidate-source JSON shape and declared refusal boundaries. They
-do not admit a capability, create a runtime, approve a helper run, prove data
-authority, or create a Release.
+prove only release-source JSON shape and declared refusal boundaries. They do
+not create a runtime, approve a helper run, prove data authority, establish a
+hosted Release, or authorize C4.
