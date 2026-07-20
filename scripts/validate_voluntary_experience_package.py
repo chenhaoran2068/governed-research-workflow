@@ -190,8 +190,19 @@ def validate_experience_package(manifest_path: Path) -> dict[str, Any]:
         return _result("not_assessed", [dependency_issue], 0)
     requested = manifest_path.expanduser()
     lexical_requested = requested if requested.is_absolute() else Path.cwd() / requested
-    if _contains_indirection(lexical_requested):
-        return _result("refused_boundary", [ValidationIssue("refused_boundary", "The explicit manifest path must not traverse a symbolic link or reparse point.")], 0)
+    # Check the manifest and its declared package root before resolving.  Do not
+    # walk through operating-system path aliases such as macOS /var -> /private/var.
+    if _contains_indirection(lexical_requested, stop_at=lexical_requested.parent):
+        return _result(
+            "refused_boundary",
+            [
+                ValidationIssue(
+                    "refused_boundary",
+                    "The explicit manifest or its direct package-root directory must not be a symbolic link or reparse point.",
+                )
+            ],
+            0,
+        )
     try:
         manifest_path = requested.resolve(strict=True)
     except (FileNotFoundError, OSError):
