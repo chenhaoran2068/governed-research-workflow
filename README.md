@@ -5,12 +5,11 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.9.0 integrity-audit source retaining the v0.4-v0.8 bounded control
-scopes and adding a finite, metadata-only integrity-audit bundle, correction/
-reassessment linkage, and operational-integrity preflight records. It adds no
-data access, network action, coordinator, external evidence retrieval role,
-agent runtime, delegation, multi-agent orchestration, generic writer, recovery
-executor, or release decision. This source tree does not itself prove the
+Status: v0.10.0 voluntary-experience-package candidate retaining v0.4-v0.9
+bounded controls and adding one finite metadata-only experience-package
+contract. It adds no intake, upload, network action, real-content handling,
+data access, coordinator, agent runtime, delegation, multi-agent orchestration,
+generic writer, recovery executor, or release decision. This source tree does not itself prove the
 release or installation identity of any selected version. A normal public
 installation target exists only when an exact annotated tag and matching
 GitHub Release resolve to the selected source commit. Never install a mutable
@@ -40,7 +39,7 @@ evidence, version, and required human approval. The ledger is not an
 installed-runtime statement. Release-scope admission proves neither local
 installation, runtime identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as v0.9.0 integrity-audit content.
+The package manifest identifies this source as v0.10.0 voluntary-experience-package candidate content.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
 records remain verified and admitted for their named v0.8.0 scope. Neither
@@ -143,6 +142,15 @@ output. It does not inspect hosts, Git, worktrees, receipts, runtime state,
 data content, project folders, or external services; it does not execute
 recovery, decide a conflict, establish truth or authorization, or create a
 Release claim.
+
+The v0.10.0 candidate adds one voluntary metadata-only experience-package
+contract. Its explicit validator reads one named manifest and the five JSON
+records named by that manifest. It never scans the package directory, accepts a
+contribution, creates an intake, uploads content, verifies consent/rights,
+promotes a rule, or executes correction/withdrawal. A structural pass is not
+evidence of truth, safe content, rights, consent, human review, cross-device
+transfer, or recall of earlier copies. See
+[`references/voluntary-experience-package.md`](references/voluntary-experience-package.md).
 
 ## Use
 
@@ -253,8 +261,10 @@ supersede a band through a reviewed revision.
   reassessment linkage, and operational-preflight records; no hosted-state
   verification, perfect-truthfulness claim, AI final academic approval,
   recovery executor, or data/project access.
-- `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;
-  no hidden telemetry, automatic upload, or automatic rule promotion.
+- `v0.10.0`: candidate voluntary metadata-only experience-package contract;
+  no intake, upload, real contribution handling, Computer B validation,
+  automatic review/promotion, or withdrawal executor. `v0.10.1+` may consider
+  those deferred questions only under a new reviewed Charter.
 - `v0.11.x+`: pre-v1 scope closure and stabilization of every admitted module.
 - `v1.0.0`: stable bounded public-system contract, only after its interface,
   evidence, support, and release conditions are met.

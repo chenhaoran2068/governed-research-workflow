@@ -14,16 +14,16 @@ RELEASE_ROOT = ROOT / "system" / "11_distribution_installation_and_release"
 
 
 class V09ReleasePreparationTests(unittest.TestCase):
-    def test_current_source_identity_is_v09_without_a_live_release_claim(self) -> None:
+    def test_v09_history_is_retained_while_current_source_moves_forward(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.9.0-integrity-audit-source", manifest)
-        self.assertIn("Status: v0.9.0 integrity-audit source", readme)
+        self.assertIn("system_version: 0.10.0-voluntary-experience-package-candidate", manifest)
+        self.assertIn("Status: v0.10.0 voluntary-experience-package candidate", readme)
         self.assertIn("## v0.9.0 (integrity-audit source)", roadmap)
-        self.assertIn("Status: v0.9.0 integrity-audit source", index)
+        self.assertIn("Status: v0.10.0 voluntary-experience-package candidate", index)
         combined = "\n".join((manifest, readme, roadmap, index)).lower()
         self.assertNotIn("v0.9.0 is published", combined)
         self.assertNotIn("v0.9.0 is installed", combined)

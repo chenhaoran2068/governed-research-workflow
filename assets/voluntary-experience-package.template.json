@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "voluntary_experience_package",
+  "package_id": "EXPERIENCE_PACKAGE_TEMPLATE",
+  "package_revision": 1,
+  "metadata_only": true,
+  "restricted_content_included": false,
+  "automated_upload_or_submission": false,
+  "automated_promotion": false,
+  "records": {
+    "observation_record": "records/observation.json",
+    "contribution_scope_record": "records/contribution-scope.json",
+    "redaction_and_rights_record": "records/redaction-and-rights.json",
+    "maintainer_review_record": "records/maintainer-review.json",
+    "correction_or_withdrawal_record": "records/correction-or-withdrawal.json"
+  },
+  "explicit_non_claims": ["truth", "identity", "consent_or_authority", "rights_or_compliance", "safe_content", "acceptance_or_publication", "withdrawal_execution_or_recall", "cross_machine_transfer", "network_upload_or_intake", "automatic_promotion"],
+  "compatibility": {"minimum_reader_version": "1.0.0", "existing_records_unchanged": true}
+}

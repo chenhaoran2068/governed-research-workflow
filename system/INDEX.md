@@ -1,7 +1,8 @@
 # Public System Module Index
 
-Status: v0.9.0 integrity-audit source retaining historical v0.4-v0.8 controls
-and adding finite metadata-only integrity-audit records. This index does not
+Status: v0.10.0 voluntary-experience-package candidate retaining historical
+v0.4-v0.9 controls and adding a finite metadata-only experience-package
+contract. This index does not
 prove that a selected version is released:
 users must verify an exact annotated tag and matching GitHub Release rather
 than install `main` or another mutable branch.
@@ -28,11 +29,11 @@ framework `v0.1.2` tag.
 | `03` | workflows | active baseline plus admitted v0.6 record-control scope | route references and blank assets |
 | `04` | evidence, requirements, and knowledge | active guidance plus admitted v0.6 pointer/relation-record scope; no knowledge corpus | evidence/citation references |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
-| `06` | memory and learning | active retrospective baseline plus historical v0.7 lesson-promotion record scope | retrospective reference and asset |
-| `07` | tools and integrations | active bootstrap plus release-scope admission record; no new helper or generic writer | `scripts/`, admission record, and tests |
+| `06` | memory and learning | active retrospective baseline plus historical v0.7 promotion and v0.10 package-review boundaries | retrospective/promotion and experience-package references |
+| `07` | tools and integrations | active bootstrap plus explicit read-only validators; no new writer or intake helper | `scripts/`, admission records, and tests |
 | `08` | agent contracts | release-scope-admitted non-runnable role contracts; no role cards or agent runtime | two role-contract records and boundary guidance |
-| `09` | schemas, records, and templates | blank-record baseline plus v0.8 role-contract/helper-admission schemas and v0.9 integrity-audit bundle schema | `assets/` templates and schemas |
-| `10` | assurance, evaluation, and audit | regression baseline, cross-repository integration, retained assurance, v0.8 structural tests, and v0.9 synthetic audit controls | `tests/` |
+| `09` | schemas, records, and templates | blank-record baseline plus v0.8/v0.9 controls and v0.10 experience-package schema | `assets/` templates and schemas |
+| `10` | assurance, evaluation, and audit | regression baseline plus v0.10 synthetic path/no-write/receipt simulation controls | `tests/` |
 | `11` | distribution, installation, and release | active release controls, historical v0.7.1/v0.8 records, and v0.9 release-preparation records that separate candidate review, C4, and post-release verification | package governance files, release verification, historical and active preparation records |
 | `12` | synthetic examples | exact-tag integration test plus retained assurance and v0.8 synthetic-contract tests | synthetic fixtures and assurance only; no end-to-end public research example |
 

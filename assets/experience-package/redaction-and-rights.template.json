@@ -1,0 +1,8 @@
+{
+  "record_id": "RIGHTS_TEMPLATE",
+  "record_type": "experience_redaction_and_rights",
+  "redaction_representation": "reviewed_not_verified",
+  "rights_representation": "reviewed_not_verified",
+  "known_limitations": ["The package format cannot verify that all prohibited content was identified."],
+  "prohibited_content_check_representation": "performed_not_verified"
+}

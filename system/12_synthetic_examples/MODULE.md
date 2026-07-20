@@ -37,5 +37,10 @@ and no-write/negative structural tests. They do not validate a real record,
 hosted Release, worktree, receipt, runtime, human authorization, or recovery
 outcome.
 
+The v0.10 candidate adds one synthetic experience package and a same-host
+clean-environment receive simulation. It copies only the manifest-declared
+synthetic records. This is not a public intake, external contributor test,
+Computer B test, or evidence that unlisted files were checked.
+
 Do not include real study data, manuscript text, reviewer correspondence,
 submission records, project memory, or identifiable case details.

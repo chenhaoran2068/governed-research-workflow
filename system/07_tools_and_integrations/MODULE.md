@@ -22,3 +22,9 @@ installation capability at runtime. Any future integration helper must declare
 its inputs, outputs, permissions, source boundary, confirmation behavior,
 failure mode, audit record, and tests. A skill or system package cannot grant
 underlying source-system access.
+
+The v0.10 candidate's experience-package validator is an explicit read-only
+checker, not a helper admission or intake tool. It reads one selected manifest
+and its five declared metadata records, reports to standard output, and never
+writes, discovers a directory, sends a request, or handles real contribution
+content.
