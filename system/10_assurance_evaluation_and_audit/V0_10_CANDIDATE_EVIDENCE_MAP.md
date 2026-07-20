@@ -16,3 +16,14 @@ Release, or installed runtime.
 Before remote C3, repeat affected local tests on an exact candidate commit.
 Before C4, repeat local and cross-platform CI evidence, public-material,
 rights/privacy, dependency, release-control, and exact-final-identity reviews.
+
+## Local Verification Snapshot
+
+| Field | Value |
+| --- | --- |
+| Reviewed implementation commit | `c3095d0bab9da8ddf3ae8c86dc93b9cc28fa2d5c` |
+| Command | `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p test_*.py` |
+| Result | `203` passed; `3` existing environment-dependent skips; no failures |
+| Hygiene | No `__pycache__`, `.pyc`, or `.pyo` artifact after the run; `git diff --check HEAD^ HEAD` passed. |
+| Static boundary review | New public surface contained no local identity/credential marker; new validator contained no network, recursive discovery, or write executor. |
+| Limitation | This is local evidence for `c3095d0...`, not remote CI, protected-main, C4, hosted Release, installed runtime, Computer B, or real contribution evidence. |

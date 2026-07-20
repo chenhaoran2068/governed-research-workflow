@@ -53,6 +53,14 @@ class V010ReleasePreparationTests(unittest.TestCase):
         self.assertEqual(record["candidate_identity"]["branch_state"], "local_candidate_only")
         self.assertIsNone(record["c4_release_authorization_reference"])
 
+    def test_local_evidence_is_bound_to_the_reviewed_implementation_not_a_release(self) -> None:
+        evidence = (ROOT / "system" / "10_assurance_evaluation_and_audit" / "V0_10_CANDIDATE_EVIDENCE_MAP.md").read_text(encoding="utf-8")
+        release_evidence = (RELEASE / "V0_10_RELEASE_EVIDENCE.md").read_text(encoding="utf-8")
+        self.assertIn("c3095d0bab9da8ddf3ae8c86dc93b9cc28fa2d5c", evidence)
+        self.assertIn("203", evidence)
+        self.assertIn("not remote ci", evidence.lower())
+        self.assertIn("exact remote candidate", release_evidence.lower())
+
     def test_public_surface_is_generic_and_validator_has_no_network_or_write_executor(self) -> None:
         for relative in PUBLIC_FILES:
             content = (ROOT / relative).read_text(encoding="utf-8")
