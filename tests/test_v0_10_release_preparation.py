@@ -56,11 +56,14 @@ class V010ReleasePreparationTests(unittest.TestCase):
     def test_local_evidence_is_bound_to_the_reviewed_implementation_not_a_release(self) -> None:
         evidence = (ROOT / "system" / "10_assurance_evaluation_and_audit" / "V0_10_CANDIDATE_EVIDENCE_MAP.md").read_text(encoding="utf-8")
         release_evidence = (RELEASE / "V0_10_RELEASE_EVIDENCE.md").read_text(encoding="utf-8")
+        dependency_review = (RELEASE / "V0_10_DEPENDENCY_AND_WORKFLOW_REVIEW.md").read_text(encoding="utf-8")
         self.assertIn("c3095d0bab9da8ddf3ae8c86dc93b9cc28fa2d5c", evidence)
         self.assertIn("203", evidence)
         self.assertIn("204", evidence)
         self.assertIn("29738250097", evidence)
         self.assertIn("c3-remote candidate", release_evidence.lower())
+        self.assertIn("29738250097", dependency_review)
+        self.assertNotIn("ci must be repeated after c3-remote push", dependency_review.lower())
 
     def test_public_surface_is_generic_and_validator_has_no_network_or_write_executor(self) -> None:
         for relative in PUBLIC_FILES:
