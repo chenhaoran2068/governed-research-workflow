@@ -6,6 +6,20 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.10.0 (voluntary-experience-package candidate)
+
+This candidate adds one finite metadata-only experience-package contract. It
+contains a root manifest, five generic records, blank templates, synthetic
+fixtures, and one explicit read-only validator. It may structurally read the
+manifest and exactly its five named records; it does not enumerate a directory
+or inspect an unlisted attachment.
+
+It does not create an intake, transfer a real contribution, process real
+content, identify a person, verify consent/rights, accept/promote/publicize a
+package, or execute correction/withdrawal. Same-host clean-environment receipt
+is synthetic local assurance, not Computer B or cross-device validation. A
+future v0.10.1-or-later Charter would be required for those deferred actions.
+
 ## v0.9.0 (integrity-audit source)
 
 This source adds three bounded record/control capabilities: a finite
@@ -165,8 +179,12 @@ guidance without modifying the historical tag.
 - `v0.8.x`: continue only reviewed maintenance of the bounded v0.8 profile,
   role-contract, and helper-admission contract; no delegated authority or
   multi-agent runtime.
-- `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;
-  no hidden telemetry, automatic upload, or automatic rule promotion.
+- `v0.10.0`: voluntary metadata-only experience-package candidate; no intake,
+  upload, real-content handling, Computer B validation, automatic review/
+  promotion, or withdrawal executor.
+- `v0.10.1+`: only separately chartered pilot expansion, such as a private
+  intake or true multi-machine validation; no hidden telemetry, automatic
+  upload, or automatic rule promotion.
 - `v0.11.x+`: pre-v1 scope closure and stabilization. `v1.0.0` is a later
   evidence-and-stability threshold, not an automatic feature deadline.
 

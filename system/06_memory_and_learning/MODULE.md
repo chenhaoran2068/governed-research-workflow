@@ -19,3 +19,11 @@ a lesson, changes a shared rule, or publishes project history.
 
 This module does not provide a shared private-memory store or publish project
 history.
+
+The v0.10 candidate adds a generic voluntary metadata-only experience-package
+format for later human review. It can record representations about scope,
+redaction/rights, a manual-review state, and correction/withdrawal handling.
+It is not a collection endpoint, consent verifier, automatic promotion path,
+or deletion/recall system. A package can enter the v0.7 promotion route only
+after its separate accountable-human decision; a package validator cannot
+create that decision.

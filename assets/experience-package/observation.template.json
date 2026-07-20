@@ -1,0 +1,8 @@
+{
+  "record_id": "OBSERVATION_TEMPLATE",
+  "record_type": "experience_observation",
+  "generic_summary": "Describe a generic process observation without personal, project, data, manuscript, credential, or restricted content.",
+  "scope": "State the narrow process context and exclusions.",
+  "evidence_reference_labels": ["human-maintained-reference-label"],
+  "content_boundary": "metadata_only"
+}

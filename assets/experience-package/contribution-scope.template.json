@@ -1,0 +1,9 @@
+{
+  "record_id": "SCOPE_TEMPLATE",
+  "record_type": "experience_contribution_scope",
+  "voluntary_representation": true,
+  "intended_use_category": "private_maintainer_review",
+  "prohibited_content_acknowledged": true,
+  "retention_and_withdrawal_limitation_acknowledged": true,
+  "representation_limit": "author_representation_not_identity_or_consent_verification"
+}

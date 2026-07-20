@@ -1,0 +1,9 @@
+{
+  "record_id": "REVIEW_TEMPLATE",
+  "record_type": "experience_maintainer_review",
+  "review_state": "not_reviewed",
+  "accountable_human_reference": null,
+  "decision_basis_references": [],
+  "automatic_promotion": false,
+  "representation_limit": "review_record_not_acceptance_publication_or_promotion"
+}
