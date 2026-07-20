@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release_control_record",
+  "release_control_id": "GRW-V081-RCR-001",
+  "record_revision": 1,
+  "created_at": "2026-07-20T00:00:00Z",
+  "status": "candidate_evidence_incomplete",
+  "candidate_identity": {
+    "candidate_version": "0.8.1",
+    "exact_commit": "0000000000000000000000000000000000000000",
+    "branch_state": "local_candidate_only",
+    "intended_tag": "v0.8.1",
+    "intended_github_release": "Candidate source snapshot only. The all-zero exact_commit sentinel means unresolved, not a Git commit, tag, or GitHub Release claim."
+  },
+  "capability_set": {
+    "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "candidate_outcome": "verified_candidate_or_explicitly_excluded_only",
+    "verified_candidate_capability_ids": [
+      "GRW-CAP-080-01",
+      "GRW-CAP-080-02",
+      "GRW-CAP-080-03"
+    ],
+    "excluded_capability_ids": [],
+    "admitted_capability_ids": []
+  },
+  "material_reviews": {
+    "public_material_rights_review": "not_started",
+    "private_material_secret_review": "not_started",
+    "review_references": [
+      "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.8.1.md"
+    ]
+  },
+  "dependency_and_source_authority": {
+    "source_authority_review": "not_started",
+    "framework_integrated_behavior_claimed": false,
+    "framework_tag": null,
+    "framework_commit": null,
+    "review_reference": "system/11_distribution_installation_and_release/V0_8_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md"
+  },
+  "release_integrity_posture": {
+    "technical_immutable_release_status": "unknown",
+    "deferral_or_unavailability_reason": "Candidate-only source record; platform state and exact release identity require later exact-candidate review.",
+    "reevaluation_trigger": "Before C4, verify the exact candidate commit, current repository release settings, workflow tree, and approved release assets.",
+    "release_assets": [
+      "No candidate asset is approved. A later C4 review must identify any exact Release asset."
+    ],
+    "integrity_or_attestation_evidence_references": [
+      "system/11_distribution_installation_and_release/V0_8_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md"
+    ],
+    "unverified_properties": [
+      "Exact candidate commit, hosted CI, protected-main commit, C4 authorization, tag, matching GitHub Release, release assets, and installed-runtime identity are not established."
+    ]
+  },
+  "supported_scope": {
+    "profiles": [
+      "standalone",
+      "framework_integrated"
+    ],
+    "platforms": [
+      "Windows, Ubuntu, and macOS verification remains required for the future exact candidate."
+    ],
+    "approved_scope_statement": "Maintenance-only source correction for dependency wording, current/historical lifecycle wording, and installation-version semantics. It adds no capability and is not C4 authorization or a hosted Release claim."
+  },
+  "residual_risks": [
+    "The all-zero exact_commit field is an explicit unresolved sentinel required by the unchanged schema; it must never be treated as a Git object or release evidence.",
+    "The exact candidate diff, material review, source-authority review, local tests, hosted CI, C4 authorization, tag/Release, and local adoption remain incomplete.",
+    "Historical v0.8.0 pre-C4 records must remain labeled historical and cannot replace v0.8.1 evidence."
+  ],
+  "incident_and_repair_route": "Stop release activity, preserve exact evidence, notify the accountable human, and prepare a new corrective candidate. Never rewrite a published tag or Release.",
+  "candidate_review_acceptance_reference": null,
+  "c4_release_authorization_reference": null,
+  "post_release_verification_reference": null,
+  "post_release_verification_plan_reference": "system/11_distribution_installation_and_release/RELEASE_CONTROL.md#post-release-route",
+  "record_hierarchy_references": {
+    "capability_truth_ledger": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "current_release_status": "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
+    "candidate_review_record": "unresolved candidate-only source record",
+    "c4_authorization_record": "not-yet-authorized",
+    "post_release_record": "not-yet-released"
+  }
+}

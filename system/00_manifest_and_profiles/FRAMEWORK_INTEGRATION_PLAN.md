@@ -14,9 +14,10 @@ through its exact annotated tag and matching GitHub Release.
 
 `../../SYSTEM_MANIFEST.yaml` uses the public Workspace Framework's generic
 system-manifest contract and declares both `standalone` and
-`framework_integrated` for released-profile validation. It has no required
-dependency, optional shared service, absolute workspace path, or
-private-runtime assumption.
+`framework_integrated` for released-profile validation. Explicitly invoked
+structural validators require only the direct package dependency
+`jsonschema==4.26.0`; they do not require the Workspace Framework, an optional
+shared service, an absolute workspace path, or a private-runtime assumption.
 
 The cross-repository integration test bootstraps an empty framework workspace,
 places this concrete system package at `Systems/governed-research-workflow/`,

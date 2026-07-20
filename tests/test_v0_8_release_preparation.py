@@ -1,4 +1,4 @@
-"""Regression checks for v0.8 pre-C4 release material."""
+"""Regression checks preserving historical v0.8 pre-C4 release material."""
 
 from __future__ import annotations
 
@@ -62,9 +62,9 @@ class V08ReleasePreparationTests(unittest.TestCase):
         module = (RELEASE_ROOT / "MODULE.md").read_text(encoding="utf-8")
 
         self.assertIn("V0_8_RELEASE_GATE.md", readme)
-        self.assertIn("pre-C4 release gate", roadmap)
+        self.assertIn("historical pre-C4", roadmap)
         self.assertIn("`v0.8.x`", security)
-        self.assertIn("active v0.8 pre-C4 release materials", module)
+        self.assertIn("historical v0.8.0 pre-C4 release materials", module)
         self.assertNotIn("v0.8.0 is the current release", (readme + roadmap + module).lower())
 
 

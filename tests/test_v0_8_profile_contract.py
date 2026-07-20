@@ -1,4 +1,4 @@
-"""Public-profile boundary tests for the v0.8 pre-C4 release source."""
+"""Public-profile boundary tests retained by the v0.8.1 maintenance source."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ PRIVATE_PATH_PATTERN = r"(?i)(?:[a-z]:\\|/(?:home|users)/)"
 class V08ProfileContractTests(unittest.TestCase):
     def test_manifest_retains_exactly_two_public_profiles_and_no_service(self) -> None:
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.8.0-portability-role-helper-admission-pre-c4-source", manifest)
+        self.assertIn("system_version: 0.8.1-dependency-lifecycle-maintenance-source", manifest)
         self.assertEqual(re.findall(r"^  - ([a-z_]+)$", manifest, flags=re.MULTILINE), ["standalone", "framework_integrated"])
         self.assertIn("optional_shared_services: []", manifest)
         self.assertNotIn("private_lab_extended", manifest.lower())

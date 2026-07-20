@@ -91,7 +91,9 @@ git clone --branch <selected-reviewed-tag> --depth 1 https://github.com/chenhaor
    Do not copy private package files or install it through a hidden global
    path.
 3. Confirm that Systems/governed-research-workflow/SYSTEM_MANIFEST.yaml
-   exists and that its system_version is the exact selected release version.
+   exists. Record the `system_version` declared by that exact selected Release;
+   it is a source identity and need not be textually identical to the Git tag.
+   The exact tag and matching GitHub Release remain independently required.
 4. Add exactly one workspace-relative registration to
    WORKSPACE_MANIFEST.yaml:
 
@@ -99,7 +101,7 @@ git clone --branch <selected-reviewed-tag> --depth 1 https://github.com/chenhaor
 registered_systems:
   - system_id: governed-research-workflow
     path: Systems/governed-research-workflow
-    system_version: <selected-release-version>
+     system_version: <declared-system-version-from-selected-release-manifest>
 ~~~
 
 5. Confirm that the workspace manifest uses workspace_profile:

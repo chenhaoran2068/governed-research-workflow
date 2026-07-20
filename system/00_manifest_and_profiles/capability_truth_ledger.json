@@ -3,11 +3,11 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v0.8.0",
-    "historical_public_baseline": "v0.7.1",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.8 pre-C4 release source retains historical released capability facts and records release-scope admission for bounded profile evidence, non-runnable role contracts, and the controlled-bootstrap admission record. It does not prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v0.8.1",
+    "historical_public_baseline": "v0.8.0",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.8.1 maintenance source retains historical released capability facts, including v0.8.0 profile evidence, non-runnable role contracts, and the controlled-bootstrap admission record. It does not prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.7.1 and three v0.8 release-scope-admitted capabilities. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.8.0, including three v0.8 release-scope-admitted capabilities. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -458,9 +458,9 @@
       "profile_scope": "both",
       "data_and_external_boundary": ["synthetic_only", "no_external_service_action"],
       "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_v0_8_profile_contract.py", "identifier": "V08ProfileContractTests"}, {"kind": "integration", "path": "system/11_distribution_installation_and_release/V0_8_RELEASE_EVIDENCE.md", "identifier": "protected-main CI and exact framework v0.1.2 review"}]},
-      "version": {"introduced_version": "v0.8.0", "last_verified_release": null, "target_release": "v0.8.0"},
+      "version": {"introduced_version": "v0.8.0", "last_verified_release": "v0.8.0", "target_release": "v0.8.0"},
       "prior_release_history": [],
-      "approval_reference": "accountable-human accepted the three-item v0.8 scope during pull-request #10 review on 2026-07-19; release-scope admission is recorded separately from the still-required C4 decision",
+      "approval_reference": "accountable-human accepted the three-item v0.8 scope during pull-request #10 review on 2026-07-19; subsequent C4 publication completed the bounded public v0.8.0 release, whose selected-version identity remains subject to exact annotated tag and matching GitHub Release verification",
       "claim_surfaces": ["README.md", "ROADMAP.md", "SYSTEM_MANIFEST.yaml"],
       "contradiction_refusal": "Forbid a profile claim when profile identifiers, private-service assumptions, Framework identity, or boundary evidence conflict or are unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.8.0 release scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, universal compatibility, private-lab support, or C4 authorization."
@@ -479,9 +479,9 @@
       "profile_scope": "both",
       "data_and_external_boundary": ["metadata_only", "synthetic_only", "no_external_service_action"],
       "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_role_contracts.py", "identifier": "RoleContractTests"}, {"kind": "test", "path": "tests/test_v0_8_synthetic_assurance.py", "identifier": "V08SyntheticAssuranceTests"}]},
-      "version": {"introduced_version": "v0.8.0", "last_verified_release": null, "target_release": "v0.8.0"},
+      "version": {"introduced_version": "v0.8.0", "last_verified_release": "v0.8.0", "target_release": "v0.8.0"},
       "prior_release_history": [],
-      "approval_reference": "accountable-human accepted the three-item v0.8 scope during pull-request #10 review on 2026-07-19; release-scope admission is recorded separately from the still-required C4 decision",
+      "approval_reference": "accountable-human accepted the three-item v0.8 scope during pull-request #10 review on 2026-07-19; subsequent C4 publication completed the bounded public v0.8.0 release, whose selected-version identity remains subject to exact annotated tag and matching GitHub Release verification",
       "claim_surfaces": ["README.md", "SKILL.md", "references/role-contracts.md", "system/08_agent_contracts/MODULE.md"],
       "contradiction_refusal": "Forbid the affected role claim or action when the role contract, M53 authorization, helper admission, per-run confirmation, or declared input boundary is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.8.0 release scope. It remains a non-runnable review perspective and does not establish an agent runtime, tool grant, M53 authorization, hosted Release, installed runtime, or C4 authorization."
@@ -500,9 +500,9 @@
       "profile_scope": "both",
       "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
       "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_controlled_helper_admission.py", "identifier": "ControlledHelperAdmissionTests"}, {"kind": "test", "path": "tests/test_v0_8_synthetic_assurance.py", "identifier": "V08SyntheticAssuranceTests"}]},
-      "version": {"introduced_version": "v0.8.0", "last_verified_release": null, "target_release": "v0.8.0"},
+      "version": {"introduced_version": "v0.8.0", "last_verified_release": "v0.8.0", "target_release": "v0.8.0"},
       "prior_release_history": [],
-      "approval_reference": "accountable-human accepted the three-item v0.8 scope during pull-request #10 review on 2026-07-19; helper release-scope admission is recorded separately from the still-required C4 decision",
+      "approval_reference": "accountable-human accepted the three-item v0.8 scope during pull-request #10 review on 2026-07-19; subsequent C4 publication completed the bounded public v0.8.0 release, whose selected-version identity remains subject to exact annotated tag and matching GitHub Release verification",
       "claim_surfaces": ["README.md", "SKILL.md", "references/controlled-helper-admission.md", "system/07_tools_and_integrations/MODULE.md"],
       "contradiction_refusal": "Forbid a helper claim or run when admission, source identity, preview, plan identity, filesystem boundary, per-run confirmation, or data/network boundary conflicts or is unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.8.0 release scope. It does not create a new helper or generic writer and cannot establish per-run approval, a hosted tag, matching GitHub Release, installed runtime, or C4 authorization."

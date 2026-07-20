@@ -1,4 +1,4 @@
-"""Cross-control assurance for the v0.8 pre-C4 release source only."""
+"""Cross-control assurance preserving the historical v0.8 source scope."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ HELPER_REFERENCE_PATH = REPOSITORY_ROOT / "references" / "controlled-helper-admi
 
 
 class V08SyntheticAssuranceTests(unittest.TestCase):
-    def test_release_scope_capabilities_are_admitted_but_not_hosted_release_claims(self) -> None:
+    def test_published_v08_scope_capabilities_remain_distinct_from_hosted_identity_claims(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
         records = {record["capability_id"]: record for record in ledger["capabilities"]}
         self.assertEqual(
@@ -28,8 +28,9 @@ class V08SyntheticAssuranceTests(unittest.TestCase):
             self.assertEqual(record["public_claim_status"], "permitted")
             self.assertEqual(record["evidence"]["status"], "verified")
             self.assertEqual(record["version"]["target_release"], "v0.8.0")
-            self.assertIsNone(record["version"]["last_verified_release"])
+            self.assertEqual(record["version"]["last_verified_release"], "v0.8.0")
             self.assertIn("pull-request #10", record["approval_reference"])
+            self.assertIn("subsequent C4 publication completed", record["approval_reference"])
             self.assertIn("C4", record["limitations_and_next_action"])
 
     def test_role_m53_helper_and_per_run_controls_remain_non_substitutable(self) -> None:
