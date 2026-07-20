@@ -1,13 +1,14 @@
-# v0.10.0 Capability Admission
+# v0.10.0 Capability Admission: Historical Pre-C4 Snapshot
 
-Status: accountable-human C2 scope admission for a local candidate. This is not
-C3-remote evidence, a pull request, protected-main approval, C4 authorization,
-a Git tag, GitHub Release, or installed-runtime statement.
+Status: historical accountable-human C2 scope-admission snapshot for the former
+local candidate. It is not C3-remote evidence, a pull request, protected-main
+approval, C4 authorization, a Git tag, GitHub Release, or installed-runtime
+statement.
 
 ## Exact Admitted Candidate Scope
 
 Admit only `GRW-CAP-100-01`, **Voluntary Metadata-Only Experience Package
-Contract**, for the v0.10.0 candidate source.
+Contract**, for the former v0.10.0 candidate source.
 
 The admitted interface is limited to the versioned schema, five blank generic
 record templates, one generic trial package, one explicit read-only validator,

@@ -5,7 +5,7 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.10.0 voluntary-experience-package candidate retaining v0.4-v0.9
+Status: v0.10.0 voluntary-experience-package release source retaining v0.4-v0.9
 bounded controls and adding one finite metadata-only experience-package
 contract. It adds no intake, upload, network action, real-content handling,
 data access, coordinator, agent runtime, delegation, multi-agent orchestration,
@@ -39,7 +39,8 @@ evidence, version, and required human approval. The ledger is not an
 installed-runtime statement. Release-scope admission proves neither local
 installation, runtime identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as v0.10.0 voluntary-experience-package candidate content.
+The package manifest identifies this source as v0.10.0
+voluntary-experience-package release-source content.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
 records remain verified and admitted for their named v0.8.0 scope. Neither
@@ -143,7 +144,7 @@ data content, project folders, or external services; it does not execute
 recovery, decide a conflict, establish truth or authorization, or create a
 Release claim.
 
-The v0.10.0 candidate adds one voluntary metadata-only experience-package
+The v0.10.0 release source adds one voluntary metadata-only experience-package
 contract. Its explicit validator reads one named manifest and the five JSON
 records named by that manifest. It never scans the package directory, accepts a
 contribution, creates an intake, uploads content, verifies consent/rights,
@@ -261,7 +262,7 @@ supersede a band through a reviewed revision.
   reassessment linkage, and operational-preflight records; no hosted-state
   verification, perfect-truthfulness claim, AI final academic approval,
   recovery executor, or data/project access.
-- `v0.10.0`: candidate voluntary metadata-only experience-package contract;
+- `v0.10.0`: voluntary metadata-only experience-package release source;
   no intake, upload, real contribution handling, Computer B validation,
   automatic review/promotion, or withdrawal executor. `v0.10.1+` may consider
   those deferred questions only under a new reviewed Charter.

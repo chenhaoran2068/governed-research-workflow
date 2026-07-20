@@ -1,7 +1,8 @@
 # v0.10.0 Public Material, Rights, And Boundary Review
 
-Status: local candidate review. It is not legal advice, a privacy/compliance
-certification, C4 authorization, or a hosted-Release statement.
+Status: historical local candidate material-review snapshot. It is not legal
+advice, a privacy/compliance certification, C4 authorization, or a hosted-
+Release statement.
 
 ## Reviewed Public Surface
 

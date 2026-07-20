@@ -1,7 +1,7 @@
 # v0.10.0 Dependency And Workflow Review
 
-Status: source/dependency review plus a recorded C3-remote CI result for
-`3edf684a94ab8becc958ea451e3b1f1e5a565990`. This document is not C4
+Status: historical source/dependency review plus a recorded C3-remote CI result
+for `3edf684a94ab8becc958ea451e3b1f1e5a565990`. This snapshot is not C4
 authorization, a protected-main identity, a tag, GitHub Release, or runtime
 installation evidence. Any later commit requires affected evidence to be
 repeated under M48.

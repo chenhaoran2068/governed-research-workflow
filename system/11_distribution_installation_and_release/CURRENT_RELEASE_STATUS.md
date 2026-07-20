@@ -39,6 +39,19 @@ verify the exact tag and matching Release at the time of installation.
   exact tag and matching GitHub Release. This scope entry does not prove that
   the tag, Release, private source, or installed Codex runtime exists.
 
+## v0.10 Release-Source Scope
+
+- The v0.10 source contains one finite metadata-only voluntary experience-
+  package contract and its explicit read-only structural validator. It does not
+  add intake, upload, real-content handling, cross-device transfer, automatic
+  review/promotion, or correction/withdrawal execution.
+- The named v0.10 candidate-admission, gate, material-review, dependency,
+  release-control, and evidence files preserve historical pre-C4 snapshots.
+  They do not determine a selected version's current hosted availability.
+- A selected v0.10 checkout is a normal installation target only when the
+  normal public installation rule above verifies its exact tag and matching
+  GitHub Release.
+
 ## Published v0.8.0 Historical Scope
 
 - `v0.8.0` is a bounded public release whose selected-version identity must be

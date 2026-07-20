@@ -1,8 +1,8 @@
-# v0.10.0 Candidate Evidence Map
+# v0.10.0 Candidate Evidence Map: Historical Pre-C4 Snapshot
 
-Status: candidate evidence map. It records a bounded local snapshot and one
-exact C3-remote CI result. It does not prove a protected-main commit, C4
-authorization, hosted Release, or installed runtime.
+Status: historical candidate evidence map. It records a bounded local snapshot
+and one exact C3-remote CI result. It does not prove a protected-main commit,
+C4 authorization, hosted Release, or installed runtime.
 
 | Claim | Evidence | Limit |
 | --- | --- | --- |

@@ -1,4 +1,4 @@
-# v0.10.0 voluntary-experience-package candidate retains the v0.4-v0.9 bounded
+# v0.10.0 release source retains the v0.4-v0.9 bounded
 # control scopes and adds one metadata-only local package contract. It adds no
 # intake, network action, data access, agent runtime, delegation, generic
 # writer, recovery executor, or release decision. This manifest never proves
@@ -8,7 +8,7 @@
 # time. The workspace framework-contract version remains 0.1.0.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.10.0-voluntary-experience-package-candidate
+system_version: 0.10.0
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

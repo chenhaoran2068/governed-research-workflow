@@ -1,7 +1,8 @@
-# v0.10.0 Release Notes Candidate
+# v0.10.0 Release Notes
 
-Status: candidate notes. They describe intended scope only and do not claim a
-tag, GitHub Release, installation target, or runtime update.
+Status: versioned release-source notes. This file describes scope only and does
+not by itself prove a tag, matching GitHub Release, installation target, or
+runtime update.
 
 ## Added
 
