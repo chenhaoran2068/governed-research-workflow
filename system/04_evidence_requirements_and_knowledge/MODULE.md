@@ -18,7 +18,7 @@ declared assertion/evidence relationship. It never opens that pointer target,
 retrieves source content, or decides that a citation semantically supports a
 claim.
 
-The local-only v0.9 candidate may record a supplied metadata reference as an
+The v0.9 integrity-audit source may record a supplied metadata reference as an
 audit observation or finding input. It cannot open that reference, determine
 whether it proves a source claim, independently verify a hosted Release, or
 replace accountable-human evidence review.

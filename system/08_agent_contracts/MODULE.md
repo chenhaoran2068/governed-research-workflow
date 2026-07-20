@@ -1,6 +1,6 @@
 # Specialist Agent-Contract Boundary
 
-Status: v0.8.1 maintenance source. This directory retains two historical
+Status: v0.9.0 integrity-audit source. This directory retains two historical
 v0.8.0 release-scope-admitted, non-runnable role contract records.
 No runnable specialist agent is defined here.
 This is not a runnable specialist-agent surface.

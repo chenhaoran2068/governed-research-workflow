@@ -100,3 +100,13 @@ candidate-only v0.8.1 maintenance records. They cover dependency wording,
 current-versus-historical lifecycle wording, and installation-version semantics
 only. They do not establish a candidate commit, hosted test result, tag,
 GitHub Release, installation target, or runtime identity.
+
+`V0_9_CAPABILITY_ADMISSION.md`, `V0_9_RELEASE_GATE.md`,
+`V0_9_RELEASE_EVIDENCE.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.9.0.md`,
+`V0_9_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
+`V0_9_RELEASE_CONTROL_CANDIDATE.json`, and `RELEASE_NOTES_v0.9.0.md` are
+v0.9.0 release-preparation records. They cover only the admitted
+metadata-only integrity-audit, correction/reassessment, and operational-
+preflight scope. They do not establish an exact remote candidate, hosted CI,
+protected-main result, C4 authorization, tag, GitHub Release, installation
+target, or runtime identity.

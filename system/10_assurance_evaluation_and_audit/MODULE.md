@@ -38,8 +38,8 @@ prove only release-source JSON shape and declared refusal boundaries. They do
 not create a runtime, approve a helper run, prove data authority, establish a
 hosted Release, or authorize C4.
 
-The local-only v0.9 candidate adds a finite metadata-only integrity-audit
-bundle, a read-only structural validator, and a synthetic candidate evidence
+The v0.9 integrity-audit source adds a finite metadata-only integrity-audit
+bundle, a read-only structural validator, and a retained candidate evidence
 map. They may surface declared identity conflicts, correction/reassessment
 links, and operational-preflight limitations. They do not inspect a host,
 runtime, receipt, worktree, data payload, project folder, or external service;

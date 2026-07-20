@@ -18,23 +18,17 @@ SCHEMA_PATH = RELEASE_ROOT / "release_control_record.schema.json"
 
 
 class V081DependencyAndLifecycleMaintenanceTests(unittest.TestCase):
-    def test_current_source_identity_and_historical_v080_scope_are_separate(self) -> None:
-        manifest = MANIFEST_PATH.read_text(encoding="utf-8")
-        readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
+    def test_historical_v080_scope_remains_separate_from_later_source_identity(self) -> None:
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
-        index = (REPOSITORY_ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.8.1-dependency-lifecycle-maintenance-source", manifest)
-        self.assertIn("Status: v0.8.1 maintenance source", readme)
         self.assertIn("## v0.8.1 (dependency and lifecycle maintenance source)", roadmap)
         self.assertIn("## v0.8.0 (historical pre-C4 portability, role-contract, and helper-admission source)", roadmap)
-        self.assertIn("Status: v0.8.1 maintenance source", index)
         self.assertIn("historical v0.8.0 pre-C4 release materials", (RELEASE_ROOT / "MODULE.md").read_text(encoding="utf-8"))
 
-    def test_ledger_preserves_v081_capabilities_while_adding_unreleased_v09_candidates(self) -> None:
+    def test_ledger_preserves_v081_capabilities_while_adding_admitted_v09_scope(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertEqual(ledger["ledger_status"], "unreleased_candidate")
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.8.1")
+        self.assertEqual(ledger["ledger_status"], "release_source_prepared")
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.9.0")
         self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.8.1")
         self.assertIn("released historical scopes through v0.8.1", ledger["target_claim_scope"])
         records = {record["capability_id"]: record for record in ledger["capabilities"]}
@@ -50,8 +44,8 @@ class V081DependencyAndLifecycleMaintenanceTests(unittest.TestCase):
 
         for capability_id in ("GRW-CAP-090-01", "GRW-CAP-090-02", "GRW-CAP-090-03"):
             self.assertEqual(records[capability_id]["implementation_status"], "verified")
-            self.assertEqual(records[capability_id]["release_disposition"], "candidate")
-            self.assertEqual(records[capability_id]["public_claim_status"], "forbidden")
+            self.assertEqual(records[capability_id]["release_disposition"], "admitted")
+            self.assertEqual(records[capability_id]["public_claim_status"], "permitted")
             self.assertIsNone(records[capability_id]["version"]["last_verified_release"])
 
     def test_installation_records_declared_system_version_without_literal_tag_equality(self) -> None:
@@ -72,7 +66,7 @@ class V081DependencyAndLifecycleMaintenanceTests(unittest.TestCase):
         )
         combined = "\n".join(path.read_text(encoding="utf-8") for path in current_modules)
         self.assertNotIn("v0.8 pre-C4 release source", combined)
-        self.assertIn("v0.8.1 maintenance source", combined)
+        self.assertIn("v0.9.0 integrity-audit source", combined)
         self.assertIn("historical v0.8.0 pre-C4", combined)
 
     def test_candidate_records_are_complete_but_do_not_claim_release_or_runtime(self) -> None:

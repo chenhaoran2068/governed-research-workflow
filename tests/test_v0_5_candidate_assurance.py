@@ -25,14 +25,12 @@ class V05ReleaseStateMaintenanceTests(unittest.TestCase):
         cls.records = {record["capability_id"]: record for record in cls.ledger["capabilities"]}
 
     def test_historical_v050_baseline_and_installation_identity_are_separate(self) -> None:
-        manifest = MANIFEST_PATH.read_text(encoding="utf-8")
         readme = README_PATH.read_text(encoding="utf-8")
         release_status = CURRENT_RELEASE_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.8.1-dependency-lifecycle-maintenance-source", manifest)
         self.assertIn("`v0.5.0` is the published", readme)
         self.assertIn("Published v0.5.0 Baseline", release_status)
         self.assertIn("14c37ae1eecb5f12cee385a331ee5233265ca778", release_status)
-        combined = "\n".join((manifest, readme, release_status)).lower()
+        combined = "\n".join((readme, release_status)).lower()
         normalized = re.sub(r"\s+", " ", combined)
         self.assertIn("exact annotated tag and matching", combined)
         self.assertIn("does not itself prove", normalized)

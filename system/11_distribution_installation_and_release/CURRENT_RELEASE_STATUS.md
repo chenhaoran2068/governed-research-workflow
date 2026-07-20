@@ -25,6 +25,20 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## v0.9.0 Integrity-Audit Scope
+
+- `v0.9.0` adds three bounded metadata-only controls: a finite integrity-audit
+  bundle, correction/reassessment linkage, and operational-integrity preflight
+  records.
+- Its explicit validator reads only one named bundle and the bundled schema.
+  It does not inspect or verify a host, Release, Git repository, worktree,
+  receipt, runtime, data object, project directory, external service, or human
+  authorization; it neither executes recovery nor changes any record.
+- A selected v0.9.0 checkout becomes a normal installation target only after
+  the normal public installation rule above is independently verified for its
+  exact tag and matching GitHub Release. This scope entry does not prove that
+  the tag, Release, private source, or installed Codex runtime exists.
+
 ## Published v0.8.0 Historical Scope
 
 - `v0.8.0` is a bounded public release whose selected-version identity must be

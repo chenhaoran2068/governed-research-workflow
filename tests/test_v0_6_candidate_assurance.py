@@ -21,13 +21,9 @@ SYNTHETIC_ASSURANCE_PATH = REPOSITORY_ROOT / "system" / "12_synthetic_examples" 
 
 
 class V06CandidateAssuranceTests(unittest.TestCase):
-    def test_v08_source_retains_the_historical_v06_capability_scope(self) -> None:
-        manifest = MANIFEST_PATH.read_text(encoding="utf-8")
-        readme = README_PATH.read_text(encoding="utf-8")
+    def test_later_source_retains_the_historical_v06_capability_scope(self) -> None:
         roadmap = ROADMAP_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 0.8.1-dependency-lifecycle-maintenance-source", manifest)
-        self.assertIn("Status: v0.8.1 maintenance source", readme)
-        self.assertIn("retaining the released v0.4-v0.8 bounded control scopes", " ".join(readme.split()))
+        self.assertIn("## v0.9.0 (integrity-audit source)", roadmap)
         self.assertIn("## v0.8.0 (historical pre-C4 portability, role-contract, and helper-admission source)", roadmap)
         self.assertIn("## v0.7.1 (release-state and control-hardening maintenance source)", roadmap)
         self.assertIn("## v0.7.0 (historical human-reviewed lesson-promotion release source)", roadmap)

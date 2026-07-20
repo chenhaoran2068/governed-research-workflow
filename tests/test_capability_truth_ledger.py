@@ -1,4 +1,4 @@
-"""Structural and refusal checks for the v0.6 release-source capability ledger."""
+"""Structural and refusal checks for the capability truth ledger."""
 
 from __future__ import annotations
 
@@ -42,12 +42,9 @@ EXPECTED_CAPABILITY_IDS = {
 }
 RELEASED_OR_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {
     "GRW-CAP-040-03",
-    "GRW-CAP-090-01",
-    "GRW-CAP-090-02",
-    "GRW-CAP-090-03",
 }
 V08_RELEASE_SCOPE_IDS = {"GRW-CAP-080-01", "GRW-CAP-080-02", "GRW-CAP-080-03"}
-V09_CANDIDATE_IDS = {"GRW-CAP-090-01", "GRW-CAP-090-02", "GRW-CAP-090-03"}
+V09_SCOPE_IDS = {"GRW-CAP-090-01", "GRW-CAP-090-02", "GRW-CAP-090-03"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -86,11 +83,11 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
         self.assertEqual(self.ledger["ledger_schema_version"], "1.3.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
-        self.assertEqual(self.ledger["ledger_status"], "unreleased_candidate")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.8.1")
+        self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.9.0")
         self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.8.1")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("three v0.9 candidate capabilities", self.ledger["target_claim_scope"])
+        self.assertIn("three v0.9.0 capability scopes admitted", self.ledger["target_claim_scope"])
         self.assertIn("Historical facts", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -130,7 +127,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-                "v0.9.0" if record["capability_id"] in V09_CANDIDATE_IDS
+                "v0.9.0" if record["capability_id"] in V09_SCOPE_IDS
                 else
                 "v0.8.0" if record["capability_id"] in V08_RELEASE_SCOPE_IDS
                 else "v0.7.0" if record["capability_id"] == "GRW-CAP-070-01"
@@ -314,20 +311,20 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn("hosted", record["limitations_and_next_action"].lower())
             self.assertIn("c4", record["limitations_and_next_action"].lower())
 
-    def test_v09_candidate_scope_is_locally_verified_but_not_admitted_or_publicly_claimed(self) -> None:
+    def test_v09_scope_is_admitted_but_not_a_release_or_runtime_claim(self) -> None:
         records = {record["capability_id"]: record for record in self.records}
-        self.assertEqual(set(records).intersection(V09_CANDIDATE_IDS), V09_CANDIDATE_IDS)
-        for capability_id in V09_CANDIDATE_IDS:
+        self.assertEqual(set(records).intersection(V09_SCOPE_IDS), V09_SCOPE_IDS)
+        for capability_id in V09_SCOPE_IDS:
             record = records[capability_id]
             self.assertEqual(record["implementation_status"], "verified")
-            self.assertEqual(record["release_disposition"], "candidate")
-            self.assertEqual(record["public_claim_status"], "forbidden")
+            self.assertEqual(record["release_disposition"], "admitted")
+            self.assertEqual(record["public_claim_status"], "permitted")
             self.assertEqual(record["evidence"]["status"], "verified")
             self.assertTrue(record["evidence"]["references"])
             self.assertEqual(record["version"]["target_release"], "v0.9.0")
             self.assertIsNone(record["version"]["last_verified_release"])
-            self.assertIn("no admission", record["approval_reference"].lower())
-            self.assertIn("uncommitted local candidate", record["limitations_and_next_action"].lower())
+            self.assertIn("three-item v0.9.0 scope", record["approval_reference"].lower())
+            self.assertIn("does not establish c3-remote evidence", record["limitations_and_next_action"].lower())
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
         planned_records = [
