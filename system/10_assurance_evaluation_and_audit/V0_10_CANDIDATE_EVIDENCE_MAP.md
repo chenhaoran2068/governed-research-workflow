@@ -1,8 +1,8 @@
 # v0.10.0 Candidate Evidence Map
 
-Status: local candidate evidence map. It describes required evidence and does
-not prove a remote candidate, protected-main commit, C4 authorization, hosted
-Release, or installed runtime.
+Status: candidate evidence map. It records a bounded local snapshot and one
+exact C3-remote CI result. It does not prove a protected-main commit, C4
+authorization, hosted Release, or installed runtime.
 
 | Claim | Evidence | Limit |
 | --- | --- | --- |
@@ -13,8 +13,8 @@ Release, or installed runtime.
 | Same-host receive simulation | Explicit-copy test of named synthetic records | Not Computer B, cross-device, upload, or external-user evidence. |
 | Public capability boundary | Ledger, admission record, reference, README, ROADMAP tests | Does not create a Release or local installation. |
 
-Before remote C3, repeat affected local tests on an exact candidate commit.
-Before C4, repeat local and cross-platform CI evidence, public-material,
+Before C4, repeat affected local and cross-platform CI evidence for any commit
+that follows the recorded remote candidate, then complete public-material,
 rights/privacy, dependency, release-control, and exact-final-identity reviews.
 
 ## Local Verification Snapshot
@@ -27,3 +27,13 @@ rights/privacy, dependency, release-control, and exact-final-identity reviews.
 | Hygiene | No `__pycache__`, `.pyc`, or `.pyo` artifact after the run; `git diff --check HEAD^ HEAD` passed. |
 | Static boundary review | New public surface contained no local identity/credential marker; new validator contained no network, recursive discovery, or write executor. |
 | Limitation | This is local evidence for `c3095d0...`, not remote CI, protected-main, C4, hosted Release, installed runtime, Computer B, or real contribution evidence. |
+
+## C3-Remote Verification Snapshot
+
+| Field | Value |
+| --- | --- |
+| Exact candidate | `3edf684a94ab8becc958ea451e3b1f1e5a565990` |
+| Branch | `v0.10.0-voluntary-experience-package-candidate` |
+| Local result | `204` passed; `3` existing environment-dependent skips; no failures |
+| Remote result | [GitHub Actions run 29738250097](https://github.com/chenhaoran2068/governed-research-workflow/actions/runs/29738250097) succeeded on Windows, Ubuntu, and macOS with Python 3.11 and 3.14. |
+| Limitation | This does not validate this later evidence-map revision, protected `main`, C4, a tag/Release, Computer B, real transfer, or a local runtime installation. |

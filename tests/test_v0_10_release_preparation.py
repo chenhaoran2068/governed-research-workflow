@@ -44,13 +44,13 @@ class V010ReleasePreparationTests(unittest.TestCase):
         self.assertIn("not c3-remote evidence", admission)
         self.assertIn("does not prove a hosted release", admission)
 
-    def test_release_control_is_valid_and_leaves_final_identity_unresolved(self) -> None:
+    def test_release_control_is_valid_and_records_only_c3_remote_identity(self) -> None:
         schema = json.loads((RELEASE / "release_control_record.schema.json").read_text(encoding="utf-8"))
         record = json.loads((RELEASE / "V0_10_RELEASE_CONTROL_CANDIDATE.json").read_text(encoding="utf-8"))
         errors = list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(record))
         self.assertEqual(errors, [], "\n".join(error.message for error in errors))
-        self.assertEqual(record["candidate_identity"]["exact_commit"], "0" * 40)
-        self.assertEqual(record["candidate_identity"]["branch_state"], "local_candidate_only")
+        self.assertEqual(record["candidate_identity"]["exact_commit"], "3edf684a94ab8becc958ea451e3b1f1e5a565990")
+        self.assertEqual(record["candidate_identity"]["branch_state"], "remote_candidate_branch")
         self.assertIsNone(record["c4_release_authorization_reference"])
 
     def test_local_evidence_is_bound_to_the_reviewed_implementation_not_a_release(self) -> None:
@@ -58,8 +58,9 @@ class V010ReleasePreparationTests(unittest.TestCase):
         release_evidence = (RELEASE / "V0_10_RELEASE_EVIDENCE.md").read_text(encoding="utf-8")
         self.assertIn("c3095d0bab9da8ddf3ae8c86dc93b9cc28fa2d5c", evidence)
         self.assertIn("203", evidence)
-        self.assertIn("not remote ci", evidence.lower())
-        self.assertIn("exact remote candidate", release_evidence.lower())
+        self.assertIn("204", evidence)
+        self.assertIn("29738250097", evidence)
+        self.assertIn("c3-remote candidate", release_evidence.lower())
 
     def test_public_surface_is_generic_and_validator_has_no_network_or_write_executor(self) -> None:
         for relative in PUBLIC_FILES:
