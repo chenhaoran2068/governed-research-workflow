@@ -84,6 +84,20 @@ class VoluntaryExperiencePackageTests(TestCase):
         self.write_json(manifest_path, manifest)
         self.assert_result(VALIDATOR.validate_experience_package(manifest_path), "refused_boundary", "refused_boundary")
 
+    def test_refuses_manifest_path_under_a_linked_directory(self) -> None:
+        temporary_directory, root = self.copy_fixture()
+        self.addCleanup(temporary_directory.cleanup)
+        linked_root = root.parent / "linked-package"
+        try:
+            linked_root.symlink_to(root, target_is_directory=True)
+        except OSError:
+            self.skipTest("symbolic-link creation is unavailable in this environment")
+        self.assert_result(
+            VALIDATOR.validate_experience_package(linked_root / "experience-package.json"),
+            "refused_boundary",
+            "refused_boundary",
+        )
+
     def test_rejects_duplicate_ids_and_invalid_review_or_withdrawal_states(self) -> None:
         temporary_directory, root = self.copy_fixture()
         self.addCleanup(temporary_directory.cleanup)

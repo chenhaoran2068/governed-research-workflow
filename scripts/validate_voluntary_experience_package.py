@@ -189,8 +189,9 @@ def validate_experience_package(manifest_path: Path) -> dict[str, Any]:
     if dependency_issue is not None:
         return _result("not_assessed", [dependency_issue], 0)
     requested = manifest_path.expanduser()
-    if requested.is_symlink() or _is_reparse_point(requested):
-        return _result("refused_boundary", [ValidationIssue("refused_boundary", "The explicit manifest path must not be a symbolic link or reparse point.")], 0)
+    lexical_requested = requested if requested.is_absolute() else Path.cwd() / requested
+    if _contains_indirection(lexical_requested):
+        return _result("refused_boundary", [ValidationIssue("refused_boundary", "The explicit manifest path must not traverse a symbolic link or reparse point.")], 0)
     try:
         manifest_path = requested.resolve(strict=True)
     except (FileNotFoundError, OSError):
