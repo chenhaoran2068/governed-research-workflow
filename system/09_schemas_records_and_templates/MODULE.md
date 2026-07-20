@@ -42,3 +42,10 @@ review-perspective boundary; the second describes a bounded generic helper
 contract. Neither schema creates an agent runtime, grants a tool, authorizes a
 task, authorizes data access, confirms a filesystem write, or approves a
 Release. Their blank templates are synthetic records, not live state.
+
+The local-only v0.9 candidate adds `integrity_audit_bundle.schema.json`. It
+defines an opt-in finite metadata record containing audit scope, observations,
+findings, harness identity, correction/reassessment links, and operational
+preflight descriptions. It validates no live repository, receipt, runtime,
+hosted Release, source content, data content, authorization, or scientific
+fact; it cannot make history append-only or tamper-proof.

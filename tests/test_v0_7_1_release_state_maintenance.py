@@ -33,8 +33,8 @@ class V071HistoricalMaintenanceTests(unittest.TestCase):
         record = next(item for item in ledger["capabilities"] if item["capability_id"] == "GRW-CAP-070-01")
 
         self.assertEqual(ledger["release_context"]["source_release_version"], "v0.8.1")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.8.0")
-        self.assertIn("released historical scopes through v0.8.0", ledger["target_claim_scope"])
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.8.1")
+        self.assertIn("released historical scopes through v0.8.1", ledger["target_claim_scope"])
         self.assertEqual(record["version"]["introduced_version"], "v0.7.0")
         self.assertEqual(record["version"]["target_release"], "v0.7.0")
         self.assertEqual(record["version"]["last_verified_release"], "v0.7.0")

@@ -1,13 +1,13 @@
 {
   "ledger_schema_version": "1.3.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "release_source_prepared",
+  "ledger_status": "unreleased_candidate",
   "release_context": {
     "source_release_version": "v0.8.1",
-    "historical_public_baseline": "v0.8.0",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.8.1 maintenance source retains historical released capability facts, including v0.8.0 profile evidence, non-runnable role contracts, and the controlled-bootstrap admission record. It does not prove a hosted release, installed runtime, or C4 authorization."
+    "historical_public_baseline": "v0.8.1",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This local v0.9.0 candidate retains historical released capability facts through v0.8.1 and adds three unadmitted candidate records. It does not prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.8.0, including three v0.8 release-scope-admitted capabilities. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.8.1 and three v0.9 candidate capabilities whose public claims remain forbidden. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -506,6 +506,69 @@
       "claim_surfaces": ["README.md", "SKILL.md", "references/controlled-helper-admission.md", "system/07_tools_and_integrations/MODULE.md"],
       "contradiction_refusal": "Forbid a helper claim or run when admission, source identity, preview, plan identity, filesystem boundary, per-run confirmation, or data/network boundary conflicts or is unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.8.0 release scope. It does not create a new helper or generic writer and cannot establish per-run approval, a hosted tag, matching GitHub Release, installed runtime, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-090-01",
+      "public_name": "Metadata-Only Integrity-Audit Bundle",
+      "capability_class": "assurance",
+      "implementation_status": "verified",
+      "release_disposition": "candidate",
+      "public_claim_status": "forbidden",
+      "promise": "Candidate source provides one finite metadata-only bundle schema, synthetic template, and explicit read-only structural validator for declared audit observations, findings, and harness metadata.",
+      "non_promise": "Does not establish truth, approval, hosted Release state, installed runtime identity, data access, compliance, scientific validity, Gate readiness, submission readiness, tamper-proof history, or a Release.",
+      "approval_owner": "accountable_human",
+      "interface": {"status": "present", "paths": ["system/09_schemas_records_and_templates/integrity_audit_bundle.schema.json", "assets/integrity-audit-bundle.template.json", "references/integrity-audit-bundle.md", "scripts/validate_integrity_audit_bundle.py", "tests/test_integrity_audit_bundle.py"], "identifiers": ["governed_integrity_audit_bundle", "validate_integrity_audit_bundle"]},
+      "profile_scope": "both",
+      "data_and_external_boundary": ["metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_integrity_audit_bundle.py", "identifier": "IntegrityAuditBundleTests"}, {"kind": "test", "path": "tests/test_v0_9_synthetic_assurance.py", "identifier": "V09SyntheticAssuranceTests"}, {"kind": "run_record", "path": "system/10_assurance_evaluation_and_audit/V0_9_CANDIDATE_EVIDENCE_MAP.md", "identifier": "Local Verification Snapshot"}]},
+      "version": {"introduced_version": "v0.9.0", "last_verified_release": null, "target_release": "v0.9.0"},
+      "prior_release_history": [],
+      "approval_reference": "Accountable-human accepted v0.9 Charter C2 and local-only C3 scope on 2026-07-20; no admission, C3-remote, C4, hosted Release, or local adoption authorization exists.",
+      "claim_surfaces": ["references/integrity-audit-bundle.md", "system/10_assurance_evaluation_and_audit/MODULE.md"],
+      "contradiction_refusal": "Forbid the affected audit claim when the explicit bundle path, schema, declared scope, record identities, checker boundary, or required structural relation is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Verified only in an uncommitted local candidate. It remains unadmitted and publicly unclaimable until accountable-human review of an exact candidate commit and later C3-remote evidence."
+    },
+    {
+      "capability_id": "GRW-CAP-090-02",
+      "public_name": "Correction And Reassessment Linkage",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "candidate",
+      "public_claim_status": "forbidden",
+      "promise": "Candidate source can structurally require a visible link from a closed finding to a later identity, supplied human-disposition reference, and re-review outcome.",
+      "non_promise": "Does not make a correction, authenticate a human, choose a disposition, approve residual risk, close a finding automatically, or rewrite historical records.",
+      "approval_owner": "accountable_human",
+      "interface": {"status": "present", "paths": ["system/09_schemas_records_and_templates/integrity_audit_bundle.schema.json", "references/integrity-audit-bundle.md", "tests/test_integrity_audit_bundle.py"], "identifiers": ["correction_reassessment_link", "latest_rereview_outcome"]},
+      "profile_scope": "both",
+      "data_and_external_boundary": ["metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_integrity_audit_bundle.py", "identifier": "IntegrityAuditBundleTests"}, {"kind": "run_record", "path": "system/10_assurance_evaluation_and_audit/V0_9_CANDIDATE_EVIDENCE_MAP.md", "identifier": "Local Verification Snapshot"}]},
+      "version": {"introduced_version": "v0.9.0", "last_verified_release": null, "target_release": "v0.9.0"},
+      "prior_release_history": [],
+      "approval_reference": "Accountable-human accepted v0.9 Charter C2 and local-only C3 scope on 2026-07-20; no admission, C3-remote, C4, hosted Release, or local adoption authorization exists.",
+      "claim_surfaces": ["references/integrity-audit-bundle.md", "system/04_evidence_requirements_and_knowledge/MODULE.md"],
+      "contradiction_refusal": "Forbid a closed-finding representation when the original finding, affected identity, disposition reference, later identity, required re-review, or remaining limitations are missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Verified only in an uncommitted local candidate. It records linkage rather than an authoritative correction and remains unadmitted until exact-commit and later review evidence exist."
+    },
+    {
+      "capability_id": "GRW-CAP-090-03",
+      "public_name": "Operational-Integrity Preflight Records",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "candidate",
+      "public_claim_status": "forbidden",
+      "promise": "Candidate source can structurally record a post-install outer-package change or a worktree-recovery preflight and require refusal-safe declared dispositions.",
+      "non_promise": "Does not replace an installation receipt, prove a runtime installation, execute Git recovery, delete a worktree, alter a repository, or guarantee append-only or tamper-proof history.",
+      "approval_owner": "accountable_human",
+      "interface": {"status": "present", "paths": ["system/09_schemas_records_and_templates/integrity_audit_bundle.schema.json", "references/integrity-audit-bundle.md", "tests/test_integrity_audit_bundle.py"], "identifiers": ["post_install_outer_change", "worktree_recovery_preflight"]},
+      "profile_scope": "both",
+      "data_and_external_boundary": ["metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {"status": "verified", "references": [{"kind": "test", "path": "tests/test_integrity_audit_bundle.py", "identifier": "IntegrityAuditBundleTests"}, {"kind": "run_record", "path": "system/10_assurance_evaluation_and_audit/V0_9_CANDIDATE_EVIDENCE_MAP.md", "identifier": "Local Verification Snapshot"}]},
+      "version": {"introduced_version": "v0.9.0", "last_verified_release": null, "target_release": "v0.9.0"},
+      "prior_release_history": [],
+      "approval_reference": "Accountable-human accepted v0.9 Charter C2 and local-only C3 scope on 2026-07-20; no admission, C3-remote, C4, hosted Release, or local adoption authorization exists.",
+      "claim_surfaces": ["references/integrity-audit-bundle.md", "system/10_assurance_evaluation_and_audit/V0_9_CANDIDATE_EVIDENCE_MAP.md"],
+      "contradiction_refusal": "Forbid recovery, cleanup, installation, or current-runtime claims when preflight state, receipt reference, runtime comparison, authorization, or physical worktree state is missing, conflicting, active, locked, or unknown.",
+      "limitations_and_next_action": "Verified only in an uncommitted local candidate. It is a metadata-only preflight record, not a maintenance executor, and remains unadmitted until exact-commit and later review evidence exist."
     }
   ]
 }

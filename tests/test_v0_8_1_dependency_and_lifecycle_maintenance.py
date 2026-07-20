@@ -31,12 +31,12 @@ class V081DependencyAndLifecycleMaintenanceTests(unittest.TestCase):
         self.assertIn("Status: v0.8.1 maintenance source", index)
         self.assertIn("historical v0.8.0 pre-C4 release materials", (RELEASE_ROOT / "MODULE.md").read_text(encoding="utf-8"))
 
-    def test_ledger_preserves_capabilities_but_updates_only_source_context(self) -> None:
+    def test_ledger_preserves_v081_capabilities_while_adding_unreleased_v09_candidates(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertEqual(ledger["ledger_status"], "release_source_prepared")
+        self.assertEqual(ledger["ledger_status"], "unreleased_candidate")
         self.assertEqual(ledger["release_context"]["source_release_version"], "v0.8.1")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.8.0")
-        self.assertIn("released historical scopes through v0.8.0", ledger["target_claim_scope"])
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.8.1")
+        self.assertIn("released historical scopes through v0.8.1", ledger["target_claim_scope"])
         records = {record["capability_id"]: record for record in ledger["capabilities"]}
         self.assertEqual(
             set(records).intersection({"GRW-CAP-080-01", "GRW-CAP-080-02", "GRW-CAP-080-03"}),
@@ -47,6 +47,12 @@ class V081DependencyAndLifecycleMaintenanceTests(unittest.TestCase):
             self.assertEqual(records[capability_id]["version"]["last_verified_release"], "v0.8.0")
             self.assertIn("subsequent C4 publication completed", records[capability_id]["approval_reference"])
             self.assertNotIn("v0.8.1", records[capability_id]["approval_reference"])
+
+        for capability_id in ("GRW-CAP-090-01", "GRW-CAP-090-02", "GRW-CAP-090-03"):
+            self.assertEqual(records[capability_id]["implementation_status"], "verified")
+            self.assertEqual(records[capability_id]["release_disposition"], "candidate")
+            self.assertEqual(records[capability_id]["public_claim_status"], "forbidden")
+            self.assertIsNone(records[capability_id]["version"]["last_verified_release"])
 
     def test_installation_records_declared_system_version_without_literal_tag_equality(self) -> None:
         install = (RELEASE_ROOT / "INSTALL_UPDATE_ROLLBACK.md").read_text(encoding="utf-8")
