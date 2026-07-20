@@ -24,9 +24,26 @@ source revision, it is not itself a hosted Release or installation target;
 verify a selected version through its exact annotated tag and matching GitHub
 Release.
 
-## v0.8.0 (pre-C4 portability, role-contract, and helper-admission release source)
+## v0.8.1 (dependency and lifecycle maintenance source)
 
-This source adds three release-scope-admitted records: evidence for the existing public
+This maintenance source retains the v0.8.0 bounded capability scope without
+adding a capability, dependency version, validator behavior, schema, template,
+profile, framework contract, helper, role, agent runtime, data action, network
+action, or CI architecture.
+
+It corrects direct-dependency wording, separates current source guidance from
+historical v0.8.0 pre-C4 records, and clarifies that framework-integrated
+installation compares the selected Release's declared `system_version` rather
+than requiring literal equality with its Git tag. It still requires an exact
+annotated tag and matching GitHub Release for any selected public version.
+
+The v0.8.1 candidate records are planning and source-review material only.
+They do not establish a candidate commit, hosted test result, tag, GitHub
+Release, installation target, or runtime identity.
+
+## v0.8.0 (historical pre-C4 portability, role-contract, and helper-admission source)
+
+This historical pre-C4 source record added three release-scope-admitted records: evidence for the existing public
 `standalone` and `framework_integrated` profiles; two non-runnable role
 contracts for structural record review and boundary auditing; and a bounded
 admission record for the existing empty-workspace bootstrap helper.
@@ -40,10 +57,11 @@ public availability until an exact tag, matching GitHub Release, and C4
 evidence exist.
 
 The corresponding pre-C4 release gate, evidence, rights review, dependency and
-workflow review, release-control record, and release-notes source are kept
-under `system/11_distribution_installation_and_release/`. They record review,
-scope admission, and the remaining C4 decision only; they are not a tag,
-GitHub Release, or installation claim.
+workflow review, release-control record, and release-notes source are retained
+under `system/11_distribution_installation_and_release/` as historical
+snapshots. They record the review, scope admission, and later C4 decision at
+that point; they do not override selected-version tag/Release verification or
+create an installation claim.
 
 ## v0.7.0 (historical human-reviewed lesson-promotion release source)
 

@@ -86,8 +86,17 @@ record form. They do not alter historical immutable releases.
 `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.8.0.md`,
 `V0_8_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
 `V0_8_CAPABILITY_ADMISSION.md`, `V0_8_RELEASE_CONTROL_CANDIDATE.json`, and
-`RELEASE_NOTES_v0.8.0.md` are active v0.8 pre-C4 release materials. They cover
-only the release-scope-admitted profile-boundary, non-runnable role-contract,
-and existing bootstrap-helper-admission scope. They retain the outstanding
-exact-final-commit, C4, and post-release-verification decisions; none is a tag,
-GitHub Release, installation target, or runtime claim.
+`RELEASE_NOTES_v0.8.0.md` are historical v0.8.0 pre-C4 release materials. They
+cover only the release-scope-admitted profile-boundary, non-runnable
+role-contract, and existing bootstrap-helper-admission scope recorded at that
+time. They do not override the selected-version tag/Release rule or create an
+installation/runtime claim.
+
+`V0_8_1_RELEASE_GATE.md`, `V0_8_1_RELEASE_EVIDENCE.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.8.1.md`,
+`V0_8_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
+`V0_8_1_RELEASE_CONTROL_CANDIDATE.json`, and `RELEASE_NOTES_v0.8.1.md` are
+candidate-only v0.8.1 maintenance records. They cover dependency wording,
+current-versus-historical lifecycle wording, and installation-version semantics
+only. They do not establish a candidate commit, hosted test result, tag,
+GitHub Release, installation target, or runtime identity.

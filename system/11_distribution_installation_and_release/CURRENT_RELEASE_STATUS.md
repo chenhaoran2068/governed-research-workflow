@@ -25,6 +25,19 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## Published v0.8.0 Historical Scope
+
+- `v0.8.0` is a bounded public release whose selected-version identity must be
+  verified by its exact annotated tag and matching immutable GitHub Release.
+- It retains three admitted records: public `standalone` and
+  `framework_integrated` profile-boundary evidence, two non-runnable role
+  contracts, and a bounded admission record for the existing empty-workspace
+  bootstrap helper.
+- Its pre-C4 gate, evidence, rights-review, dependency/workflow-review,
+  release-control, and release-notes files are historical snapshots. They do
+  not establish the identity of a later maintenance source, private canonical
+  source, or installed Codex runtime.
+
 ## Published v0.5.0 Baseline
 
 - `v0.5.0` is publicly released at annotated tag

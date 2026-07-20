@@ -33,10 +33,10 @@ class V04ReleasePreparationTests(unittest.TestCase):
         self.assertIn("C3 and C4 remain distinct", content)
         self.assertIn("exact candidate commit", content)
 
-    def test_ledger_preserves_historical_v04_option_a_and_v05_v06_history_in_the_v08_release_source(self) -> None:
+    def test_ledger_preserves_historical_v04_option_a_and_v05_v06_history_in_the_v081_maintenance_source(self) -> None:
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
         self.assertEqual(ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.7.1")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.8.0")
         capabilities = ledger["capabilities"]
         admitted_ids = {
             "GRW-CAP-031-01",

@@ -1,4 +1,4 @@
-"""Cross-control assurance for the v0.8 pre-C4 release source only."""
+"""Cross-control assurance preserving the historical v0.8 source scope."""
 
 from __future__ import annotations
 

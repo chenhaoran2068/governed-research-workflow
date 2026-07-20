@@ -5,8 +5,8 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.8 pre-C4 release source retaining the released v0.4-v0.7 control
-scopes and adding release-scope-admitted profile-boundary evidence,
+Status: v0.8.1 maintenance source retaining the released v0.4-v0.8 bounded
+control scopes, including historical v0.8.0 profile-boundary evidence,
 non-runnable role-contract records, and a bounded admission record for the
 existing empty-workspace bootstrap. It adds no data access, network action, coordinator, external
 evidence retrieval role, agent runtime, delegation, multi-agent orchestration,
@@ -19,32 +19,32 @@ For the live release-verification procedure and retained historical snapshots,
 read
 [`CURRENT_RELEASE_STATUS.md`](system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md).
 
-The v0.8 release-preparation records are
+The v0.8.0 release-preparation records are historical pre-C4 snapshots:
 [`V0_8_RELEASE_GATE.md`](system/11_distribution_installation_and_release/V0_8_RELEASE_GATE.md),
 [`V0_8_RELEASE_EVIDENCE.md`](system/11_distribution_installation_and_release/V0_8_RELEASE_EVIDENCE.md),
 and
 [`V0_8_RELEASE_CONTROL_CANDIDATE.json`](system/11_distribution_installation_and_release/V0_8_RELEASE_CONTROL_CANDIDATE.json).
-They describe reviewed evidence, release-scope admission, and the still
-required C4 decision; they do not create a tag, Release, installation target,
-or runtime claim.
+They describe the evidence, release-scope admission, and later C4 decision
+available at that time. They do not override the selected-version
+exact-tag-and-matching-Release rule or create a current installation/runtime
+claim.
 
 ## Capability Truth
 
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-historical released capability facts through `v0.7.1` and three v0.8
+historical released capability facts through `v0.8.0`, including three v0.8
 release-scope-admitted records. It records each capability's interface,
 evidence, version, and required human approval. The ledger is not an
 installed-runtime statement. Release-scope admission proves neither local
 installation, runtime identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as v0.8 pre-C4 release content.
+The package manifest identifies this source as v0.8.1 maintenance content.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
-records are verified and admitted for their named v0.8.0 scope, but no v0.8
-tag, matching GitHub Release, installed runtime, or C4 authorization exists.
-Neither historical verification nor scope admission is an installation claim,
-hosted Release claim, or C4 authorization. Public availability for any selected
+records remain verified and admitted for their named v0.8.0 scope. Neither
+historical verification nor scope admission is an installation claim, hosted
+Release claim, or C4 authorization. Public availability for any selected
 version remains determined only by the exact-tag-and-matching-Release rule.
 
 The v0.4 baseline includes the ledger, current-versus-historical release
@@ -95,7 +95,8 @@ delegated authority, hidden background work, and agent runtime remain
 excluded. One Codex conversation remains the interaction model; it may use
 different review perspectives without creating separate agents.
 
-The v0.8 pre-C4 release source contains two non-runnable role contracts:
+This v0.8.1 maintenance source retains two historical v0.8.0 non-runnable role
+contracts:
 `record_validation_reviewer` and `audit_boundary_reviewer`. They are
 documentation records for caller-supplied bounded review only, not separate AI
 actors or permission grants. They cannot replace M53 authorization, helper
@@ -231,10 +232,14 @@ supersede a band through a reviewed revision.
   system makes no scientific, compliance, journal, or submission decision.
 - `v0.7.0`: historical human-reviewed retrospective learning and knowledge
   promotion scope; no automatic promotion of project observations.
-- `v0.8.0`: pre-C4 release source for portable profile boundaries, bounded
-  non-runnable role contracts, and controlled bootstrap-helper admission; no
-  delegated authority, external-evidence retrieval role, generic writer, or
-  multi-agent runtime. Scope admission is not a public-availability claim.
+- `v0.8.0`: historical pre-C4 source record for portable profile boundaries,
+  bounded non-runnable role contracts, and controlled bootstrap-helper
+  admission; no delegated authority, external-evidence retrieval role, generic
+  writer, or multi-agent runtime. Scope admission is not a public-availability
+  claim.
+- `v0.8.1`: maintenance source for dependency wording, current-versus-historical
+  lifecycle wording, and installation-version semantics; no capability or
+  behavior change. A source tree is not a hosted Release or runtime claim.
 - `v0.9.x`: dedicated evidence-integrity and supervisory-architecture audit;
   no perfect-truthfulness claim or AI final academic approval.
 - `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;
