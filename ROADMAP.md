@@ -6,6 +6,23 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.9.0 (integrity-audit source)
+
+This source adds three bounded record/control capabilities: a finite
+metadata-only integrity-audit bundle, correction/reassessment linkage, and
+operational-integrity preflight records. It provides one explicit read-only
+validator that reads a named bundle and the bundled schema, then writes a
+bounded structural result only to standard output.
+
+It does not contact a host, run Git, inspect a worktree, receipt, runtime,
+data payload, project directory, or external service. It cannot establish
+truth, human identity or authorization, hosted Release state, tamper-proof
+history, access, compliance, Gate/submission readiness, or an AI approval. It
+does not execute recovery, delete a worktree, alter a receipt, add a generic
+writer, or add an agent runtime. Like every source revision, it is not itself a
+hosted Release or installation target; verify a selected version through its
+exact annotated tag and matching GitHub Release.
+
 ## v0.7.1 (release-state and control-hardening maintenance source)
 
 This maintenance source corrects current roadmap and navigation records after
@@ -148,8 +165,6 @@ guidance without modifying the historical tag.
 - `v0.8.x`: continue only reviewed maintenance of the bounded v0.8 profile,
   role-contract, and helper-admission contract; no delegated authority or
   multi-agent runtime.
-- `v0.9.x`: evidence-integrity and supervisory-architecture audit; no
-  perfect-truthfulness claim or AI final academic approval.
 - `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;
   no hidden telemetry, automatic upload, or automatic rule promotion.
 - `v0.11.x+`: pre-v1 scope closure and stabilization. `v1.0.0` is a later

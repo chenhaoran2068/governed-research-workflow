@@ -3,12 +3,14 @@
 ## Supported Versions
 
 The supported public release lines are `v0.1.x`, `v0.2.x`, `v0.3.x`,
-`v0.4.x`, `v0.5.x`, `v0.6.x`, `v0.7.x`, and `v0.8.x`. Do not infer support,
-installation, or a current runtime from a mutable branch, candidate, or local
-worktree. For any selected version, verify the exact annotated tag and matching
-GitHub Release first. The immutable `v0.5.0` Release contains retained pre-C4
-wording; use this rule and the GitHub tag/Release identity rather than that
-historical wording.
+`v0.4.x`, `v0.5.x`, `v0.6.x`, `v0.7.x`, and `v0.8.x`. The v0.9 source becomes
+a supported public release line only for a selected v0.9 version that satisfies
+the exact-tag-and-matching-Release rule. Do not infer support, installation,
+or a current runtime from a mutable branch, candidate, or local worktree. For
+any selected version, verify the exact annotated tag and matching GitHub Release
+first. The immutable `v0.5.0` Release contains retained pre-C4 wording; use
+this rule and the GitHub tag/Release identity rather than that historical
+wording.
 
 ## Reporting a Vulnerability
 

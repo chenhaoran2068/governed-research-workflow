@@ -5,15 +5,16 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.8.1 maintenance source retaining the released v0.4-v0.8 bounded
-control scopes, including historical v0.8.0 profile-boundary evidence,
-non-runnable role-contract records, and a bounded admission record for the
-existing empty-workspace bootstrap. It adds no data access, network action, coordinator, external
-evidence retrieval role, agent runtime, delegation, multi-agent orchestration,
-or generic writer. This source tree does not itself prove the release or
-installation identity of any selected version. A normal public installation
-target exists only when an exact annotated tag and matching GitHub Release
-resolve to the selected source commit. Never install a mutable branch.
+Status: v0.9.0 integrity-audit source retaining the v0.4-v0.8 bounded control
+scopes and adding a finite, metadata-only integrity-audit bundle, correction/
+reassessment linkage, and operational-integrity preflight records. It adds no
+data access, network action, coordinator, external evidence retrieval role,
+agent runtime, delegation, multi-agent orchestration, generic writer, recovery
+executor, or release decision. This source tree does not itself prove the
+release or installation identity of any selected version. A normal public
+installation target exists only when an exact annotated tag and matching
+GitHub Release resolve to the selected source commit. Never install a mutable
+branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -39,7 +40,7 @@ evidence, version, and required human approval. The ledger is not an
 installed-runtime statement. Release-scope admission proves neither local
 installation, runtime identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as v0.8.1 maintenance content.
+The package manifest identifies this source as v0.9.0 integrity-audit content.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
 records remain verified and admitted for their named v0.8.0 scope. Neither
@@ -95,8 +96,7 @@ delegated authority, hidden background work, and agent runtime remain
 excluded. One Codex conversation remains the interaction model; it may use
 different review perspectives without creating separate agents.
 
-This v0.8.1 maintenance source retains two historical v0.8.0 non-runnable role
-contracts:
+This v0.9.0 source retains two historical v0.8.0 non-runnable role contracts:
 `record_validation_reviewer` and `audit_boundary_reviewer`. They are
 documentation records for caller-supplied bounded review only, not separate AI
 actors or permission grants. They cannot replace M53 authorization, helper
@@ -134,6 +134,15 @@ component. It permits only schema `1.1.0` correction records to distinguish a
 later `confirm_correction` decision from the candidate's original lifecycle
 decision. Historical schema `1.0.0` bundles remain readable but reject the
 schema `1.1.0` correction form.
+
+The v0.9.0 integrity-audit source adds only a finite caller-supplied,
+metadata-only audit bundle, correction/reassessment linkage, and operational
+preflight descriptions. Its explicit validator reads one named JSON bundle and
+the bundled schema, and writes only a bounded structural result to standard
+output. It does not inspect hosts, Git, worktrees, receipts, runtime state,
+data content, project folders, or external services; it does not execute
+recovery, decide a conflict, establish truth or authorization, or create a
+Release claim.
 
 ## Use
 
@@ -240,8 +249,10 @@ supersede a band through a reviewed revision.
 - `v0.8.1`: maintenance source for dependency wording, current-versus-historical
   lifecycle wording, and installation-version semantics; no capability or
   behavior change. A source tree is not a hosted Release or runtime claim.
-- `v0.9.x`: dedicated evidence-integrity and supervisory-architecture audit;
-  no perfect-truthfulness claim or AI final academic approval.
+- `v0.9.0`: finite metadata-only integrity-audit bundle, correction/
+  reassessment linkage, and operational-preflight records; no hosted-state
+  verification, perfect-truthfulness claim, AI final academic approval,
+  recovery executor, or data/project access.
 - `v0.10.x`: opt-in multi-machine learning and contribution-governance pilot;
   no hidden telemetry, automatic upload, or automatic rule promotion.
 - `v0.11.x+`: pre-v1 scope closure and stabilization of every admitted module.

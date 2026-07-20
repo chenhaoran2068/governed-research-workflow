@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "governed_integrity_audit_bundle",
+  "bundle_id": "TEMPLATE_AUDIT_BUNDLE",
+  "bundle_revision": 1,
+  "metadata_only": true,
+  "restricted_content_included": false,
+  "audit_scope": {
+    "objective": "Replace all TEMPLATE values with a bounded metadata-only structural audit objective.",
+    "baseline_identity": "TEMPLATE_BASELINE_IDENTITY",
+    "declared_input_record_ids": [
+      "TEMPLATE_OBS_ONE",
+      "TEMPLATE_OBS_TWO",
+      "TEMPLATE_HARNESS"
+    ],
+    "allowed_checker": {
+      "checker_id": "validate_integrity_audit_bundle",
+      "checker_version": "1.0.0"
+    },
+    "excluded_surfaces": [
+      "data content",
+      "external services",
+      "Git operations",
+      "filesystem writes"
+    ],
+    "permitted_tool_boundary": {
+      "read_only": true,
+      "network_action": false,
+      "filesystem_write": false,
+      "git_operation": false
+    },
+    "release_evidence_boundary": "supplied_metadata_only",
+    "explicit_non_claims": [
+      "scientific truth",
+      "human authorization",
+      "hosted Release verification",
+      "tamper-proof history",
+      "data access",
+      "compliance",
+      "Gate or submission readiness"
+    ]
+  },
+  "audit_observations": [
+    {
+      "observation_id": "TEMPLATE_OBS_ONE",
+      "subject_reference": "TEMPLATE_SUBJECT_ONE",
+      "observation_state": "unknown",
+      "observed_by_actor_class": "unknown",
+      "evidence_reference_ids": ["TEMPLATE_EVIDENCE_ONE"],
+      "limitation": "Template placeholder; no source, person, host, or authorization was inspected."
+    },
+    {
+      "observation_id": "TEMPLATE_OBS_TWO",
+      "subject_reference": "TEMPLATE_SUBJECT_TWO",
+      "observation_state": "out_of_scope",
+      "observed_by_actor_class": "machine",
+      "evidence_reference_ids": ["TEMPLATE_EVIDENCE_TWO"],
+      "limitation": "Template placeholder; only declared metadata may be assessed."
+    }
+  ],
+  "audit_findings": [
+    {
+      "finding_id": "TEMPLATE_FINDING",
+      "observation_ids": ["TEMPLATE_OBS_ONE", "TEMPLATE_OBS_TWO"],
+      "affected_identity": "TEMPLATE_AFFECTED_IDENTITY",
+      "finding_class": "evidence_limitation",
+      "rationale": "Template records an evidence limitation, not an approval, correction, or factual conclusion.",
+      "stop_required": false,
+      "required_human_decision": "Decide whether a separately authorized review is needed before any consequential action.",
+      "status": "open"
+    }
+  ],
+  "audit_harness": {
+    "harness_id": "TEMPLATE_HARNESS",
+    "checker_id": "validate_integrity_audit_bundle",
+    "checker_version": "1.0.0",
+    "fixture_class": "synthetic",
+    "fixture_identity": "TEMPLATE_FIXTURE_IDENTITY",
+    "environment_identity": "TEMPLATE_ENVIRONMENT",
+    "expected_claim": "The named checker can evaluate this finite template's declared structural relationships.",
+    "evaluation_variability": "deterministic",
+    "attempt_budget": {
+      "status": "not_applicable",
+      "maximum_attempts": null
+    },
+    "validity_status": "not_assessed",
+    "result": "not_assessed",
+    "validity_checks": ["Replace all TEMPLATE values before relying on the record."],
+    "skipped_checks": ["No external host, data, Git state, or human identity check is performed."],
+    "known_blind_spots": ["Structural validity does not establish truth, authority, or current state."],
+    "explicit_non_claims": [
+      "scientific truth",
+      "human authorization",
+      "hosted Release verification",
+      "tamper-proof history",
+      "data access",
+      "compliance",
+      "Gate or submission readiness"
+    ]
+  },
+  "correction_reassessment_links": [],
+  "operational_integrity_records": [],
+  "explicit_non_claims": [
+    "scientific_truth",
+    "human_authorization",
+    "hosted_release_verification",
+    "tamper_proof_history",
+    "data_access",
+    "compliance",
+    "gate_or_submission_readiness"
+  ],
+  "compatibility": {
+    "minimum_reader_version": "1.0.0",
+    "existing_records_unchanged": true
+  }
+}

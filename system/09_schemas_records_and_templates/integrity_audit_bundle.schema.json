@@ -1,0 +1,429 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/integrity_audit_bundle.schema.json",
+  "title": "Governed Integrity Audit Bundle",
+  "description": "A finite metadata-only structural audit bundle. It does not establish truth, approval, hosted Release state, or tamper-proof history.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "bundle_id",
+    "bundle_revision",
+    "metadata_only",
+    "restricted_content_included",
+    "audit_scope",
+    "audit_observations",
+    "audit_findings",
+    "audit_harness",
+    "correction_reassessment_links",
+    "operational_integrity_records",
+    "explicit_non_claims",
+    "compatibility"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "governed_integrity_audit_bundle"},
+    "bundle_id": {"$ref": "#/$defs/id"},
+    "bundle_revision": {"type": "integer", "minimum": 1},
+    "metadata_only": {"const": true},
+    "restricted_content_included": {"const": false},
+    "audit_scope": {"$ref": "#/$defs/audit_scope"},
+    "audit_observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/audit_observation"}
+    },
+    "audit_findings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/audit_finding"}
+    },
+    "audit_harness": {"$ref": "#/$defs/audit_harness"},
+    "correction_reassessment_links": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/correction_reassessment_link"}
+    },
+    "operational_integrity_records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/operational_integrity_record"}
+    },
+    "explicit_non_claims": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "scientific_truth",
+          "human_authorization",
+          "hosted_release_verification",
+          "tamper_proof_history",
+          "data_access",
+          "compliance",
+          "gate_or_submission_readiness"
+        ]
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_reader_version", "existing_records_unchanged"],
+      "properties": {
+        "minimum_reader_version": {"const": "1.0.0"},
+        "existing_records_unchanged": {"const": true}
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]{2,63}$"
+    },
+    "short_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "audit_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objective",
+        "baseline_identity",
+        "declared_input_record_ids",
+        "allowed_checker",
+        "excluded_surfaces",
+        "permitted_tool_boundary",
+        "release_evidence_boundary",
+        "explicit_non_claims"
+      ],
+      "properties": {
+        "objective": {"$ref": "#/$defs/short_text"},
+        "baseline_identity": {"$ref": "#/$defs/short_text"},
+        "declared_input_record_ids": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "allowed_checker": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["checker_id", "checker_version"],
+          "properties": {
+            "checker_id": {"type": "string", "minLength": 1, "maxLength": 128},
+            "checker_version": {"type": "string", "minLength": 1, "maxLength": 128}
+          }
+        },
+        "excluded_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "permitted_tool_boundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["read_only", "network_action", "filesystem_write", "git_operation"],
+          "properties": {
+            "read_only": {"const": true},
+            "network_action": {"const": false},
+            "filesystem_write": {"const": false},
+            "git_operation": {"const": false}
+          }
+        },
+        "release_evidence_boundary": {"const": "supplied_metadata_only"},
+        "explicit_non_claims": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "audit_observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observation_id",
+        "subject_reference",
+        "observation_state",
+        "observed_by_actor_class",
+        "evidence_reference_ids",
+        "limitation"
+      ],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/id"},
+        "subject_reference": {"$ref": "#/$defs/short_text"},
+        "observation_state": {
+          "enum": ["match", "mismatch", "missing", "stale", "unknown", "out_of_scope"]
+        },
+        "observed_by_actor_class": {
+          "enum": ["machine", "human", "ai", "unknown"]
+        },
+        "evidence_reference_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "limitation": {"$ref": "#/$defs/short_text"}
+      }
+    },
+    "audit_finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_id",
+        "observation_ids",
+        "affected_identity",
+        "finding_class",
+        "rationale",
+        "stop_required",
+        "required_human_decision",
+        "status"
+      ],
+      "properties": {
+        "finding_id": {"$ref": "#/$defs/id"},
+        "observation_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "affected_identity": {"$ref": "#/$defs/short_text"},
+        "finding_class": {
+          "enum": [
+            "stop_required",
+            "reassessment_required",
+            "evidence_limitation",
+            "informational"
+          ]
+        },
+        "rationale": {"$ref": "#/$defs/short_text"},
+        "stop_required": {"type": "boolean"},
+        "required_human_decision": {"$ref": "#/$defs/short_text"},
+        "status": {"enum": ["open", "held", "reassessed", "closed"]}
+      }
+    },
+    "audit_harness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "harness_id",
+        "checker_id",
+        "checker_version",
+        "fixture_class",
+        "fixture_identity",
+        "environment_identity",
+        "expected_claim",
+        "evaluation_variability",
+        "attempt_budget",
+        "validity_status",
+        "result",
+        "validity_checks",
+        "skipped_checks",
+        "known_blind_spots",
+        "explicit_non_claims"
+      ],
+      "properties": {
+        "harness_id": {"$ref": "#/$defs/id"},
+        "checker_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "checker_version": {"type": "string", "minLength": 1, "maxLength": 128},
+        "fixture_class": {"enum": ["synthetic", "caller_supplied_metadata"]},
+        "fixture_identity": {"$ref": "#/$defs/short_text"},
+        "environment_identity": {"$ref": "#/$defs/short_text"},
+        "expected_claim": {"$ref": "#/$defs/short_text"},
+        "evaluation_variability": {"enum": ["deterministic", "variable", "unknown"]},
+        "attempt_budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "maximum_attempts"],
+          "properties": {
+            "status": {"enum": ["not_applicable", "bounded", "unknown"]},
+            "maximum_attempts": {"type": ["integer", "null"], "minimum": 1}
+          },
+          "allOf": [
+            {"if": {"properties": {"status": {"const": "bounded"}}, "required": ["status"]}, "then": {"properties": {"maximum_attempts": {"type": "integer", "minimum": 1}}, "required": ["maximum_attempts"]}},
+            {"if": {"properties": {"status": {"enum": ["not_applicable", "unknown"]}}, "required": ["status"]}, "then": {"properties": {"maximum_attempts": {"type": "null"}}, "required": ["maximum_attempts"]}}
+          ]
+        },
+        "validity_status": {"enum": ["valid", "invalid", "inconclusive", "not_assessed"]},
+        "result": {"enum": ["passed", "failed", "skipped", "not_assessed"]},
+        "validity_checks": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "skipped_checks": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "known_blind_spots": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "explicit_non_claims": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "allOf": [
+        {"if": {"properties": {"evaluation_variability": {"const": "variable"}}, "required": ["evaluation_variability"]}, "then": {"properties": {"attempt_budget": {"properties": {"status": {"const": "bounded"}}, "required": ["status"]}}, "required": ["attempt_budget"]}}
+      ]
+    },
+    "correction_reassessment_link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "link_id",
+        "prior_finding_id",
+        "prior_affected_identity",
+        "human_disposition_reference",
+        "later_changed_identity",
+        "allowed_write_scope_reference",
+        "direct_downstream_references",
+        "prior_evidence_limited",
+        "required_reruns",
+        "skipped_checks",
+        "residual_risks",
+        "latest_rereview_outcome"
+      ],
+      "properties": {
+        "link_id": {"$ref": "#/$defs/id"},
+        "prior_finding_id": {"$ref": "#/$defs/id"},
+        "prior_affected_identity": {"$ref": "#/$defs/short_text"},
+        "human_disposition_reference": {"$ref": "#/$defs/short_text"},
+        "later_changed_identity": {"$ref": "#/$defs/short_text"},
+        "allowed_write_scope_reference": {"$ref": "#/$defs/short_text"},
+        "direct_downstream_references": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "prior_evidence_limited": {"const": true},
+        "required_reruns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "skipped_checks": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "residual_risks": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "latest_rereview_outcome": {
+          "enum": ["pending", "reviewed", "held", "not_assessed"]
+        }
+      }
+    },
+    "operational_integrity_record": {
+      "oneOf": [
+        {"$ref": "#/$defs/post_install_outer_change"},
+        {"$ref": "#/$defs/worktree_recovery_preflight"}
+      ]
+    },
+    "post_install_outer_change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "record_type",
+        "recorded_at",
+        "owner_reference",
+        "original_receipt_reference",
+        "prior_outer_identity",
+        "prior_runtime_leaf_identity",
+        "later_outer_identity",
+        "changed_file_classification",
+        "change_reason",
+        "runtime_leaf_comparison_method",
+        "runtime_leaf_comparison_scope",
+        "runtime_leaf_comparison_result",
+        "human_disposition_reference",
+        "does_not_replace_receipt",
+        "does_not_establish_later_installation"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/id"},
+        "record_type": {"const": "post_install_outer_change"},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "owner_reference": {"$ref": "#/$defs/short_text"},
+        "original_receipt_reference": {"$ref": "#/$defs/short_text"},
+        "prior_outer_identity": {"$ref": "#/$defs/short_text"},
+        "prior_runtime_leaf_identity": {"$ref": "#/$defs/short_text"},
+        "later_outer_identity": {"$ref": "#/$defs/short_text"},
+        "changed_file_classification": {"$ref": "#/$defs/short_text"},
+        "change_reason": {"$ref": "#/$defs/short_text"},
+        "runtime_leaf_comparison_method": {"$ref": "#/$defs/short_text"},
+        "runtime_leaf_comparison_scope": {"$ref": "#/$defs/short_text"},
+        "runtime_leaf_comparison_result": {
+          "enum": ["runtime_leaf_unchanged", "runtime_leaf_mismatch", "not_assessed"]
+        },
+        "human_disposition_reference": {"$ref": "#/$defs/short_text"},
+        "does_not_replace_receipt": {"const": true},
+        "does_not_establish_later_installation": {"const": true}
+      }
+    },
+    "worktree_recovery_preflight": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "record_type",
+        "repository_owner",
+        "repository_anchor_reference",
+        "owner_relative_metadata_path",
+        "resolved_target_reference",
+        "worktree_list_observation",
+        "worktree_listed_state",
+        "physical_worktree_state",
+        "worktree_changes_state",
+        "dry_run_observation",
+        "protected_evidence_references",
+        "human_authorization_reference",
+        "recovery_disposition"
+      ],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/id"},
+        "record_type": {"const": "worktree_recovery_preflight"},
+        "repository_owner": {"$ref": "#/$defs/short_text"},
+        "repository_anchor_reference": {"$ref": "#/$defs/short_text"},
+        "owner_relative_metadata_path": {
+          "type": "string",
+          "pattern": "^(?!.*\\\\)(?!/)(?!.*(^|/)\\.\\.(/|$)).+$"
+        },
+        "resolved_target_reference": {"$ref": "#/$defs/short_text"},
+        "worktree_list_observation": {"$ref": "#/$defs/short_text"},
+        "worktree_listed_state": {"enum": ["active", "locked", "prunable", "unknown"]},
+        "physical_worktree_state": {"enum": ["present", "missing", "unknown"]},
+        "worktree_changes_state": {"enum": ["clean", "changed", "unknown", "not_applicable"]},
+        "dry_run_observation": {"$ref": "#/$defs/short_text"},
+        "protected_evidence_references": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/short_text"}
+        },
+        "human_authorization_reference": {"$ref": "#/$defs/short_text"},
+        "recovery_disposition": {
+          "enum": ["stop", "preflight_only", "separately_authorized_maintenance"]
+        }
+      }
+    }
+  }
+}

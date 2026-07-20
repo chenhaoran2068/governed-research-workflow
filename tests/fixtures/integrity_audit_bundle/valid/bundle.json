@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "governed_integrity_audit_bundle",
+  "bundle_id": "SYNTHETIC_AUDIT_BUNDLE",
+  "bundle_revision": 1,
+  "metadata_only": true,
+  "restricted_content_included": false,
+  "audit_scope": {
+    "objective": "Validate a finite synthetic metadata-only integrity audit bundle.",
+    "baseline_identity": "synthetic-baseline-001",
+    "declared_input_record_ids": ["OBS_RELEASE", "OBS_RUNTIME", "HARNESS_AUDIT"],
+    "allowed_checker": {
+      "checker_id": "validate_integrity_audit_bundle",
+      "checker_version": "1.0.0"
+    },
+    "excluded_surfaces": ["real data", "external services", "Git operations", "filesystem writes"],
+    "permitted_tool_boundary": {
+      "read_only": true,
+      "network_action": false,
+      "filesystem_write": false,
+      "git_operation": false
+    },
+    "release_evidence_boundary": "supplied_metadata_only",
+    "explicit_non_claims": [
+      "scientific truth",
+      "human authorization",
+      "hosted Release verification",
+      "tamper-proof history",
+      "data access",
+      "compliance",
+      "Gate or submission readiness"
+    ]
+  },
+  "audit_observations": [
+    {
+      "observation_id": "OBS_RELEASE",
+      "subject_reference": "synthetic supplied Release reference",
+      "observation_state": "unknown",
+      "observed_by_actor_class": "machine",
+      "evidence_reference_ids": ["SYNTHETIC_RELEASE_REFERENCE"],
+      "limitation": "The checker did not contact a hosting service."
+    },
+    {
+      "observation_id": "OBS_RUNTIME",
+      "subject_reference": "synthetic declared runtime identity",
+      "observation_state": "out_of_scope",
+      "observed_by_actor_class": "machine",
+      "evidence_reference_ids": ["SYNTHETIC_RUNTIME_REFERENCE"],
+      "limitation": "The checker did not read a runtime, receipt, or private source."
+    }
+  ],
+  "audit_findings": [
+    {
+      "finding_id": "FINDING_LIMITATION",
+      "observation_ids": ["OBS_RELEASE", "OBS_RUNTIME"],
+      "affected_identity": "synthetic declared identity set",
+      "finding_class": "evidence_limitation",
+      "rationale": "Supplied metadata alone cannot establish hosted Release or installed-runtime state.",
+      "stop_required": false,
+      "required_human_decision": "Decide whether a separately authorized independent review is needed.",
+      "status": "open"
+    }
+  ],
+  "audit_harness": {
+    "harness_id": "HARNESS_AUDIT",
+    "checker_id": "validate_integrity_audit_bundle",
+    "checker_version": "1.0.0",
+    "fixture_class": "synthetic",
+    "fixture_identity": "tests/fixtures/integrity_audit_bundle/valid/bundle.json",
+    "environment_identity": "synthetic-test-environment",
+    "expected_claim": "The named checker validates declared structural relationships in this synthetic bundle.",
+    "evaluation_variability": "deterministic",
+    "attempt_budget": {
+      "status": "not_applicable",
+      "maximum_attempts": null
+    },
+    "validity_status": "valid",
+    "result": "passed",
+    "validity_checks": ["schema validation", "cross-record validation", "no-write sentinel check"],
+    "skipped_checks": ["No external verification was requested."],
+    "known_blind_spots": ["Structural validation cannot establish truth or authority."],
+    "explicit_non_claims": [
+      "scientific truth",
+      "human authorization",
+      "hosted Release verification",
+      "tamper-proof history",
+      "data access",
+      "compliance",
+      "Gate or submission readiness"
+    ]
+  },
+  "correction_reassessment_links": [],
+  "operational_integrity_records": [
+    {
+      "record_id": "POST_INSTALL_EVENT",
+      "record_type": "post_install_outer_change",
+      "recorded_at": "2026-07-20T00:00:00Z",
+      "owner_reference": "synthetic-owner",
+      "original_receipt_reference": "synthetic-receipt-reference",
+      "prior_outer_identity": "synthetic-outer-identity-before",
+      "prior_runtime_leaf_identity": "synthetic-runtime-leaf-identity-before",
+      "later_outer_identity": "synthetic-outer-identity-after",
+      "changed_file_classification": "synthetic documentation-only description",
+      "change_reason": "Synthetic candidate test event.",
+      "runtime_leaf_comparison_method": "synthetic comparison method not executed",
+      "runtime_leaf_comparison_scope": "synthetic runtime leaf only",
+      "runtime_leaf_comparison_result": "not_assessed",
+      "human_disposition_reference": "synthetic-human-disposition-reference",
+      "does_not_replace_receipt": true,
+      "does_not_establish_later_installation": true
+    },
+    {
+      "record_id": "WORKTREE_PREFLIGHT",
+      "record_type": "worktree_recovery_preflight",
+      "repository_owner": "synthetic-owner",
+      "repository_anchor_reference": "synthetic-repository-anchor",
+      "owner_relative_metadata_path": "worktrees/synthetic-item",
+      "resolved_target_reference": "synthetic resolved target reference",
+      "worktree_list_observation": "Synthetic worktree list observation.",
+      "worktree_listed_state": "active",
+      "physical_worktree_state": "present",
+      "worktree_changes_state": "unknown",
+      "dry_run_observation": "Synthetic listed worktree remains active; no maintenance action is permitted.",
+      "protected_evidence_references": ["synthetic-worktree-list-observation"],
+      "human_authorization_reference": "synthetic-preflight-review-reference",
+      "recovery_disposition": "stop"
+    }
+  ],
+  "explicit_non_claims": [
+    "scientific_truth",
+    "human_authorization",
+    "hosted_release_verification",
+    "tamper_proof_history",
+    "data_access",
+    "compliance",
+    "gate_or_submission_readiness"
+  ],
+  "compatibility": {
+    "minimum_reader_version": "1.0.0",
+    "existing_records_unchanged": true
+  }
+}

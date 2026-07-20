@@ -32,5 +32,10 @@ and test inputs for profile, role-contract, helper-admission, and cross-control 
 does not add a public end-to-end agent example, a multi-agent simulation, or a
 real-workspace demonstration.
 
+The v0.9.0 integrity-audit source adds only synthetic finite-bundle fixtures
+and no-write/negative structural tests. They do not validate a real record,
+hosted Release, worktree, receipt, runtime, human authorization, or recovery
+outcome.
+
 Do not include real study data, manuscript text, reviewer correspondence,
 submission records, project memory, or identifiable case details.

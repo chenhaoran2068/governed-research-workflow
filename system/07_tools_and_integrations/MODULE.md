@@ -1,8 +1,9 @@
 # Tools And Integrations
 
-Status: v0.8.1 maintenance source retains the historical v0.8.0 controlled
-bootstrap helper and its release-scope helper-admission record. Framework
-integration is test-only and has no installation helper.
+Status: v0.9.0 integrity-audit source retains the historical v0.8.0 controlled
+bootstrap helper and its release-scope helper-admission record. The v0.9
+validator is read-only and does not add a helper admission or write surface.
+Framework integration is test-only and has no installation helper.
 
 Current executable tooling is limited to the explicit empty-workspace bootstrap
 helper and its regression tests. It uses no network, credentials, data import,
