@@ -50,7 +50,7 @@ preflight descriptions. It validates no live repository, receipt, runtime,
 hosted Release, source content, data content, authorization, or scientific
 fact; it cannot make history append-only or tamper-proof.
 
-The v0.10 candidate adds `voluntary_experience_package.schema.json` and five
+The v0.10 release source adds `voluntary_experience_package.schema.json` and five
 blank generic record templates. They model only represented scope,
 redaction/rights, human review, and correction/withdrawal metadata. They do
 not verify identity, consent, rights, privacy, content safety, acceptance,

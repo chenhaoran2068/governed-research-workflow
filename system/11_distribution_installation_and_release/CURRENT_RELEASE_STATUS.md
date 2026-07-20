@@ -46,8 +46,10 @@ verify the exact tag and matching Release at the time of installation.
   add intake, upload, real-content handling, cross-device transfer, automatic
   review/promotion, or correction/withdrawal execution.
 - The named v0.10 candidate-admission, gate, material-review, dependency,
-  release-control, and evidence files preserve historical pre-C4 snapshots.
-  They do not determine a selected version's current hosted availability.
+  release-control, and evidence files, including
+  `V0_10_RELEASE_CONTROL_CANDIDATE.json`, preserve historical pre-C4
+  snapshots. They do not determine a selected version's current hosted
+  availability.
 - A selected v0.10 checkout is a normal installation target only when the
   normal public installation rule above verifies its exact tag and matching
   GitHub Release.
