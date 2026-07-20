@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: v0.10.0 voluntary-experience-package candidate retaining historical
+Status: v0.10.0 voluntary-experience-package release source retaining historical
 v0.4-v0.9 controls and adding a finite metadata-only experience-package
 contract. This index does not
 prove that a selected version is released:

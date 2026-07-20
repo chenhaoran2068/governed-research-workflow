@@ -5,9 +5,9 @@
   "release_context": {
     "source_release_version": "v0.10.0",
     "historical_public_baseline": "v0.9.0",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.10.0 candidate retains historical released capability facts through v0.9.0 and records one accountable-human-admitted v0.10.0 capability scope. It does not prove a hosted release, installed runtime, or C4 authorization."
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.10.0 release source retains historical released capability facts through v0.9.0 and records one accountable-human-admitted v0.10.0 capability scope. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.9.0 and one v0.10.0 capability scope admitted for this candidate. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.9.0 and one v0.10.0 capability scope admitted for this release source. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -577,7 +577,7 @@
       "implementation_status": "verified",
       "release_disposition": "admitted",
       "public_claim_status": "permitted",
-      "promise": "Candidate source provides one finite metadata-only experience-package schema, blank templates, synthetic trial package, and explicit read-only structural validator for declared contribution scope, rights representation, manual review, and correction/withdrawal metadata.",
+      "promise": "This release source provides one finite metadata-only experience-package schema, blank templates, synthetic trial package, and explicit read-only structural validator for declared contribution scope, rights representation, manual review, and correction/withdrawal metadata.",
       "non_promise": "Does not collect, upload, identify, authenticate, accept, reject, promote, share, erase, recall, or verify a real experience package, its content, consent, rights, or safe transfer.",
       "approval_owner": "accountable_human",
       "interface": {"status": "present", "paths": ["system/09_schemas_records_and_templates/voluntary_experience_package.schema.json", "assets/voluntary-experience-package.template.json", "assets/experience-package/observation.template.json", "assets/experience-package/contribution-scope.template.json", "assets/experience-package/redaction-and-rights.template.json", "assets/experience-package/maintainer-review.template.json", "assets/experience-package/correction-or-withdrawal.template.json", "references/voluntary-experience-package.md", "scripts/validate_voluntary_experience_package.py", "tests/test_voluntary_experience_package.py"], "identifiers": ["voluntary_experience_package", "validate_voluntary_experience_package"]},
@@ -589,7 +589,7 @@
       "approval_reference": "The accountable human preauthorized exact v0.10 C2 scope in the active bounded Goal authorization on 2026-07-20; admission remains distinct from remote CI, C4, a hosted Release, and local adoption.",
       "claim_surfaces": ["README.md", "ROADMAP.md", "references/voluntary-experience-package.md", "system/06_memory_and_learning/MODULE.md"],
       "contradiction_refusal": "Forbid the affected package claim when the explicit manifest, named-record containment, representation-only boundary, review state, withdrawal linkage, or required synthetic evidence is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "Admitted only for the named v0.10.0 candidate scope. It does not establish a hosted tag, matching GitHub Release, true multi-machine transfer, real contribution intake, installed runtime, or C4 authorization."
+      "limitations_and_next_action": "Admitted only for the named v0.10.0 release-source scope. It does not by itself establish a hosted tag, matching GitHub Release, true multi-machine transfer, real contribution intake, installed runtime, or C4 authorization."
     }
   ]
 }

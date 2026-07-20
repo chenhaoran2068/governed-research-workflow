@@ -1,7 +1,7 @@
 # v0.10.0 Release Gate
 
-Status: candidate gate. No gate row, local test, CI result, branch, or pull
-request is C4 authorization or a hosted-Release claim.
+Status: historical pre-C4 candidate gate. No gate row, local test, CI result,
+branch, or pull request is C4 authorization or a hosted-Release claim.
 
 | Gate | Required closure evidence |
 | --- | --- |

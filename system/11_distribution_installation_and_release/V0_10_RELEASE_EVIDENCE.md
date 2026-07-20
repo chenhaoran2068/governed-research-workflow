@@ -1,9 +1,9 @@
-# v0.10.0 Release Evidence: Candidate Preparation
+# v0.10.0 Release Evidence: Historical Candidate Preparation
 
-Status: C3-remote candidate evidence is recorded below for one exact commit.
-It is not C4 authorization, a tag, GitHub Release, protected-main evidence, or
-runtime-installation evidence. Any later commit requires affected evidence to
-be repeated under M48.
+Status: historical C3-remote candidate evidence is recorded below for one exact
+commit. It is not C4 authorization, a tag, GitHub Release, protected-main
+evidence, or runtime-installation evidence. Any later commit requires affected
+evidence to be repeated under M48.
 
 | Field | Value |
 | --- | --- |
@@ -12,10 +12,10 @@ be repeated under M48.
 | Reviewed implementation commit | `c3095d0bab9da8ddf3ae8c86dc93b9cc28fa2d5c` |
 | Exact C3-remote candidate | `3edf684a94ab8becc958ea451e3b1f1e5a565990` on `v0.10.0-voluntary-experience-package-candidate` |
 | Remote CI | [run 29738250097](https://github.com/chenhaoran2068/governed-research-workflow/actions/runs/29738250097): success on Windows, Ubuntu, and macOS with Python 3.11 and 3.14 |
-| Evidence refresh | This document revision records the preceding remote result; its own later candidate commit must receive a fresh affected-test and remote-CI result before C4 review. |
+| Evidence refresh | This historical document records the preceding remote result. Any later commit requires fresh affected-test and remote-CI evidence before C4 review. |
 | Capability | `GRW-CAP-100-01` only |
 | Framework evidence | existing v0.1.2 exact framework integration evidence must be retained/repeated |
-| C4 identity | deliberately unresolved until protected-main merge and separate C4 approval |
+| C4 identity | deliberately absent from this historical pre-C4 snapshot |
 
 Local evidence must include the complete regression suite, dedicated package
 tests, static public-boundary review, schema validation, no-write behavior, and

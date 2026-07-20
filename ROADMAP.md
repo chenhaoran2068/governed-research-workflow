@@ -6,10 +6,10 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
-## v0.10.0 (voluntary-experience-package candidate)
+## v0.10.0 (voluntary metadata-only experience package)
 
-This candidate adds one finite metadata-only experience-package contract. It
-contains a root manifest, five generic records, blank templates, synthetic
+This release source adds one finite metadata-only experience-package contract.
+It contains a root manifest, five generic records, blank templates, synthetic
 fixtures, and one explicit read-only validator. It may structurally read the
 manifest and exactly its five named records; it does not enumerate a directory
 or inspect an unlisted attachment.
@@ -179,7 +179,8 @@ guidance without modifying the historical tag.
 - `v0.8.x`: continue only reviewed maintenance of the bounded v0.8 profile,
   role-contract, and helper-admission contract; no delegated authority or
   multi-agent runtime.
-- `v0.10.0`: voluntary metadata-only experience-package candidate; no intake,
+- `v0.10.0`: voluntary metadata-only experience-package release source; no
+  intake,
   upload, real-content handling, Computer B validation, automatic review/
   promotion, or withdrawal executor.
 - `v0.10.1+`: only separately chartered pilot expansion, such as a private

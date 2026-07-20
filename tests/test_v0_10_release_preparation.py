@@ -1,4 +1,4 @@
-"""Release-preparation checks for the bounded v0.10 candidate."""
+"""Release-state and preparation checks for the bounded v0.10 source."""
 
 from __future__ import annotations
 
@@ -24,13 +24,21 @@ FORBIDDEN_MARKERS = ("E:" + chr(92) + "Chen" + "haoran", "C:" + chr(92) + "Us" +
 
 
 class V010ReleasePreparationTests(unittest.TestCase):
-    def test_current_candidate_identity_and_historical_baseline_are_separate(self) -> None:
+    def test_release_source_identity_and_historical_baseline_are_separate(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+        index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
-        self.assertIn("system_version: 0.10.0-voluntary-experience-package-candidate", manifest)
+        current_surface = "\n".join((manifest, readme, roadmap, index, json.dumps(ledger))).lower()
+        self.assertIn("system_version: 0.10.0", manifest)
+        self.assertIn("v0.10.0 voluntary-experience-package release source", readme)
+        self.assertIn("## v0.10.0 (voluntary metadata-only experience package)", roadmap)
+        self.assertIn("v0.10.0 voluntary-experience-package release source", index)
         self.assertEqual(ledger["release_context"]["source_release_version"], "v0.10.0")
         self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.9.0")
-        self.assertNotIn("v0.10.0 is published", "\n".join((manifest, json.dumps(ledger))).lower())
+        self.assertNotIn("voluntary-experience-package candidate", current_surface)
+        self.assertNotIn("v0.10.0 is published", current_surface)
 
     def test_capability_admission_is_single_and_not_c4(self) -> None:
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
@@ -41,6 +49,7 @@ class V010ReleasePreparationTests(unittest.TestCase):
         self.assertIsNone(record["version"]["last_verified_release"])
         self.assertIn("does not collect", record["non_promise"].lower())
         admission = " ".join((RELEASE / "V0_10_CAPABILITY_ADMISSION.md").read_text(encoding="utf-8").lower().split())
+        self.assertIn("historical accountable-human c2 scope-admission snapshot", admission)
         self.assertIn("not c3-remote evidence", admission)
         self.assertIn("does not prove a hosted release", admission)
 
@@ -61,9 +70,20 @@ class V010ReleasePreparationTests(unittest.TestCase):
         self.assertIn("203", evidence)
         self.assertIn("204", evidence)
         self.assertIn("29738250097", evidence)
-        self.assertIn("c3-remote candidate", release_evidence.lower())
+        self.assertIn("historical c3-remote candidate", release_evidence.lower())
         self.assertIn("29738250097", dependency_review)
         self.assertNotIn("ci must be repeated after c3-remote push", dependency_review.lower())
+
+    def test_current_notes_are_time_neutral_and_pre_c4_records_are_historical(self) -> None:
+        release_notes = (RELEASE / "RELEASE_NOTES_v0.10.0.md").read_text(encoding="utf-8").lower()
+        gate = (RELEASE / "V0_10_RELEASE_GATE.md").read_text(encoding="utf-8").lower()
+        rights_review = (RELEASE / "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.0.md").read_text(encoding="utf-8").lower()
+        current_status = (RELEASE / "CURRENT_RELEASE_STATUS.md").read_text(encoding="utf-8").lower()
+        self.assertNotIn("release notes candidate", release_notes)
+        self.assertIn("versioned release-source notes", release_notes)
+        self.assertIn("historical pre-c4 candidate gate", gate)
+        self.assertIn("historical local candidate material-review snapshot", rights_review)
+        self.assertIn("v0.10 release-source scope", current_status)
 
     def test_public_surface_is_generic_and_validator_has_no_network_or_write_executor(self) -> None:
         for relative in PUBLIC_FILES:
