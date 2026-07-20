@@ -288,7 +288,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("automatically promote", record["non_promise"].lower())
         self.assertIn("exact immutable tag and matching github release", record["limitations_and_next_action"].lower())
 
-    def test_v08_release_scope_is_admitted_but_not_a_hosted_release_or_runtime_claim(self) -> None:
+    def test_v08_published_scope_remains_distinct_from_release_or_runtime_identity(self) -> None:
         records = {record["capability_id"]: record for record in self.records}
         self.assertEqual(set(records).intersection(V08_RELEASE_SCOPE_IDS), V08_RELEASE_SCOPE_IDS)
         for capability_id in V08_RELEASE_SCOPE_IDS:
@@ -298,9 +298,10 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertEqual(record["public_claim_status"], "permitted")
             self.assertEqual(record["evidence"]["status"], "verified")
             self.assertEqual(record["version"]["target_release"], "v0.8.0")
-            self.assertIsNone(record["version"]["last_verified_release"])
+            self.assertEqual(record["version"]["last_verified_release"], "v0.8.0")
             self.assertIn("pull-request #10", record["approval_reference"])
-            self.assertIn("separately from the still-required C4 decision", record["approval_reference"])
+            self.assertIn("subsequent C4 publication completed", record["approval_reference"])
+            self.assertIn("exact annotated tag and matching GitHub Release", record["approval_reference"])
             self.assertIn("hosted", record["limitations_and_next_action"].lower())
             self.assertIn("c4", record["limitations_and_next_action"].lower())
 

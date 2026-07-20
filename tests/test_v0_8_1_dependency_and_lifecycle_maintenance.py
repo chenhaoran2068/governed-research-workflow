@@ -44,6 +44,9 @@ class V081DependencyAndLifecycleMaintenanceTests(unittest.TestCase):
         )
         for capability_id in ("GRW-CAP-080-01", "GRW-CAP-080-02", "GRW-CAP-080-03"):
             self.assertEqual(records[capability_id]["version"]["target_release"], "v0.8.0")
+            self.assertEqual(records[capability_id]["version"]["last_verified_release"], "v0.8.0")
+            self.assertIn("subsequent C4 publication completed", records[capability_id]["approval_reference"])
+            self.assertNotIn("v0.8.1", records[capability_id]["approval_reference"])
 
     def test_installation_records_declared_system_version_without_literal_tag_equality(self) -> None:
         install = (RELEASE_ROOT / "INSTALL_UPDATE_ROLLBACK.md").read_text(encoding="utf-8")

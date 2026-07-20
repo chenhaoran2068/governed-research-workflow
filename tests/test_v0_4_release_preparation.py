@@ -62,7 +62,7 @@ class V04ReleasePreparationTests(unittest.TestCase):
             elif capability["capability_id"].startswith("GRW-CAP-080-"):
                 self.assertEqual(capability["release_disposition"], "admitted")
                 self.assertEqual(capability["public_claim_status"], "permitted")
-                self.assertIsNone(capability["version"]["last_verified_release"])
+                self.assertEqual(capability["version"]["last_verified_release"], "v0.8.0")
             else:
                 self.assertIn(capability["capability_id"], admitted_ids)
                 self.assertEqual(capability["release_disposition"], "admitted")
