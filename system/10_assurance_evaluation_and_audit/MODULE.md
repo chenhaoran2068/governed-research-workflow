@@ -47,7 +47,7 @@ they do not execute recovery, select a conflict winner, or establish truth,
 human authorization, hosted Release state, tamper-proof history, or a Release
 claim.
 
-The v0.10 candidate adds synthetic package validation, unsafe-path/refusal,
+The v0.10 release source adds synthetic package validation, unsafe-path/refusal,
 no-write, non-substitution, and same-host clean-environment receipt tests.
 They do not test real content, a remote intake, an external user, or a second
 computer. They do not prove that a package is true, safe, consented, or ready

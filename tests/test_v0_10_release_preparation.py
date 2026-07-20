@@ -79,11 +79,24 @@ class V010ReleasePreparationTests(unittest.TestCase):
         gate = (RELEASE / "V0_10_RELEASE_GATE.md").read_text(encoding="utf-8").lower()
         rights_review = (RELEASE / "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.0.md").read_text(encoding="utf-8").lower()
         current_status = (RELEASE / "CURRENT_RELEASE_STATUS.md").read_text(encoding="utf-8").lower()
+        module_paths = (
+            "system/06_memory_and_learning/MODULE.md",
+            "system/07_tools_and_integrations/MODULE.md",
+            "system/09_schemas_records_and_templates/MODULE.md",
+            "system/10_assurance_evaluation_and_audit/MODULE.md",
+            "system/12_synthetic_examples/MODULE.md",
+        )
+        module_text = "\n".join((ROOT / path).read_text(encoding="utf-8").lower() for path in module_paths)
+        release_control = json.loads((RELEASE / "V0_10_RELEASE_CONTROL_CANDIDATE.json").read_text(encoding="utf-8"))
         self.assertNotIn("release notes candidate", release_notes)
         self.assertIn("versioned release-source notes", release_notes)
         self.assertIn("historical pre-c4 candidate gate", gate)
         self.assertIn("historical local candidate material-review snapshot", rights_review)
         self.assertIn("v0.10 release-source scope", current_status)
+        self.assertIn("v0_10_release_control_candidate.json", current_status)
+        self.assertNotIn("the v0.10 candidate", module_text)
+        self.assertIn("historical pre-c4 c3-remote candidate", release_control["candidate_identity"]["intended_github_release"].lower())
+        self.assertIn("historical pre-c4 record", release_control["residual_risks"][-1].lower())
 
     def test_public_surface_is_generic_and_validator_has_no_network_or_write_executor(self) -> None:
         for relative in PUBLIC_FILES:
