@@ -33,7 +33,7 @@ from validate_voluntary_experience_package import (  # noqa: E402
 
 ROOT = SCRIPT_ROOT.parent
 SCHEMA_PATH = ROOT / "system" / "09_schemas_records_and_templates" / "synthetic_experience_exchange_pilot_receipt.schema.json"
-HASH_ALGORITHM = "sha256(posix_relative_path+nul+raw_bytes+nul; case_sensitive_ordinal_sort)"
+HASH_ALGORITHM = "sha256(posix_relative_path+nul+utf8_json_lf_bytes+nul; case_sensitive_ordinal_sort)"
 
 
 def _result(status: str, issues: list[ValidationIssue], checked_record_count: int, package_tree_sha256: str | None = None) -> dict[str, Any]:
@@ -78,11 +78,20 @@ def _package_paths(manifest_path: Path, manifest: dict[str, Any]) -> tuple[dict[
 
 
 def _package_tree_hash(paths: dict[str, Path]) -> str:
+    """Hash validated metadata JSON with portable LF line endings.
+
+    The package validator has already required UTF-8 JSON. Normalizing only
+    physical CRLF/CR line endings prevents a cross-platform Git checkout from
+    changing the declared package identity while leaving JSON content and its
+    escaped control characters intact.
+    """
     digest = hashlib.sha256()
     for relative_path in sorted(paths):
         digest.update(relative_path.encode("ascii"))
         digest.update(b"\0")
-        digest.update(paths[relative_path].read_bytes())
+        raw_bytes = paths[relative_path].read_bytes()
+        normalized_bytes = raw_bytes.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+        digest.update(normalized_bytes)
         digest.update(b"\0")
     return digest.hexdigest()
 

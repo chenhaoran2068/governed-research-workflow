@@ -33,7 +33,7 @@
     "package_manifest_path": {"$ref": "#/$defs/relative_json_path"},
     "package_id": {"$ref": "#/$defs/id"},
     "package_revision": {"type": "integer", "minimum": 1},
-    "package_tree_hash_algorithm": {"const": "sha256(posix_relative_path+nul+raw_bytes+nul; case_sensitive_ordinal_sort)"},
+    "package_tree_hash_algorithm": {"const": "sha256(posix_relative_path+nul+utf8_json_lf_bytes+nul; case_sensitive_ordinal_sort)"},
     "package_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
     "retrieval_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},

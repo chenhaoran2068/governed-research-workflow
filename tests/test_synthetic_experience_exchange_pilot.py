@@ -177,6 +177,16 @@ class SyntheticExperienceExchangePilotTests(TestCase):
         self.assertNotIn("iterdir", source)
         self.assertNotIn("rglob", source)
 
+    def test_crlf_checkout_does_not_change_the_declared_json_hash(self) -> None:
+        temporary_directory, root = self.copy_fixture()
+        self.addCleanup(temporary_directory.cleanup)
+        baseline = VALIDATOR.validate_exchange_pilot(self.receipt_path(root))
+        for path in root.rglob("*.json"):
+            path.write_bytes(path.read_bytes().replace(b"\n", b"\r\n"))
+        result = VALIDATOR.validate_exchange_pilot(self.receipt_path(root))
+        self.assert_result(result, "structurally_valid")
+        self.assertEqual(result["package_tree_sha256"], baseline["package_tree_sha256"])
+
     def test_dependency_failure_is_not_misreported_as_invalid(self) -> None:
         issue = VALIDATOR.ValidationIssue("not_assessed_dependency", "Synthetic dependency absence.")
         self.assertEqual(VALIDATOR._schema_issue_status([issue]), "not_assessed")

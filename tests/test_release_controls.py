@@ -57,6 +57,20 @@ class ReleaseControlTests(unittest.TestCase):
             "V0_9_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
             "V0_9_RELEASE_CONTROL_CANDIDATE.json",
             "RELEASE_NOTES_v0.9.0.md",
+            "V0_10_CAPABILITY_ADMISSION.md",
+            "V0_10_RELEASE_GATE.md",
+            "V0_10_RELEASE_EVIDENCE.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.0.md",
+            "V0_10_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V0_10_RELEASE_CONTROL_CANDIDATE.json",
+            "RELEASE_NOTES_v0.10.0.md",
+            "V0_10_1_CAPABILITY_ADMISSION.md",
+            "V0_10_1_RELEASE_GATE.md",
+            "V0_10_1_RELEASE_EVIDENCE.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.1.md",
+            "V0_10_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V0_10_1_RELEASE_CONTROL_CANDIDATE.json",
+            "RELEASE_NOTES_v0.10.1.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -118,6 +132,7 @@ class ReleaseControlTests(unittest.TestCase):
             RELEASE_ROOT / "MODULE.md",
             RELEASE_ROOT / "V0_6_1_RELEASE_STATE_MAINTENANCE.md",
             RELEASE_ROOT / "RELEASE_NOTES_v0.6.1.md",
+            RELEASE_ROOT / "RELEASE_NOTES_v0.10.1.md",
         )
         current_text = "\n".join(path.read_text(encoding="utf-8").lower() for path in current_paths)
         for prohibited in (
@@ -138,6 +153,19 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("release-blocking documentation defect", control)
         self.assertIn("Candidate Snapshot Completeness", control)
         self.assertIn("git ls-files", control)
+
+    def test_v101_candidate_records_are_time_neutral_and_boundary_limited(self) -> None:
+        notes = (RELEASE_ROOT / "RELEASE_NOTES_v0.10.1.md").read_text(encoding="utf-8").lower()
+        gate = (RELEASE_ROOT / "V0_10_1_RELEASE_GATE.md").read_text(encoding="utf-8").lower()
+        control = (RELEASE_ROOT / "V0_10_1_RELEASE_CONTROL_CANDIDATE.json").read_text(encoding="utf-8").lower()
+        evidence = (RELEASE_ROOT / "V0_10_1_RELEASE_EVIDENCE.md").read_text(encoding="utf-8").lower()
+        status = (RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md").read_text(encoding="utf-8").lower()
+        self.assertIn("public-installation rule always requires", notes)
+        self.assertNotIn("still required before", notes)
+        self.assertIn("no public intake", gate)
+        self.assertIn("all-zero exact_commit sentinel", control)
+        self.assertIn("pre-c3-remote preparation evidence", evidence)
+        self.assertIn("v0.10.1 synthetic exchange-pilot source scope", status)
 
     def test_current_records_cannot_describe_the_published_v050_baseline_as_unreleased(self) -> None:
         current_paths = (

@@ -38,7 +38,8 @@ Create the receipt from
 - one package manifest relative to the receipt;
 - package identity, revision, and deterministic package-tree SHA-256;
 - a source commit that identifies the package source revision and a retrieval
-  commit that identifies the exact later receipt revision;
+  commit that identifies the exact package revision a receiver must check; a
+  later receipt-control commit is retained as separate operational evidence;
 - the synthetic private transfer profile and pre-transfer approval reference;
 - a maintainer receipt state limited to structural review;
 - an isolated-clean-clone or hosted-clean-runner retrieval profile;
@@ -47,9 +48,11 @@ Create the receipt from
 
 The package-tree hash covers only `experience-package.json` and the five JSON
 records named by that manifest. It is calculated as lexicographically sorted
-portable relative path, NUL byte, raw file bytes, NUL byte. Unlisted files are
-outside the validator's view and do not become checked merely because they are
-near the package.
+portable relative path, NUL byte, UTF-8 JSON bytes with physical CRLF/CR line
+endings normalized to LF, NUL byte. The package validator already requires
+UTF-8 JSON; escaped JSON control characters are not altered. Unlisted files
+are outside the validator's view and do not become checked merely because they
+are near the package.
 
 ## Explicit Validation
 
@@ -78,9 +81,11 @@ separate physical computer. Do not call it Computer B evidence otherwise.
 1. On Computer A, commit only the reviewed synthetic package and preserve the
    exact package-source commit in the receipt.
 2. Commit the receipt as a later immutable Git commit without rewriting the
-   source package history.
+   source package history. Preserve both the package retrieval commit named by
+   the receipt and the later receipt-control commit in bounded pilot evidence.
 3. In a newly created isolated local directory, clone or fetch the exact
-   receipt commit. Do not reuse a folder containing prior copies.
+   receipt-control commit, then check the package retrieval commit named by its
+   receipt. Do not reuse a folder containing prior copies.
 4. Invoke the explicit validator on the named receipt and retain only a
    bounded local execution record: exact retrieval commit, command outcome,
    validator version, and the declared non-claims.

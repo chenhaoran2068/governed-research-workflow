@@ -5,7 +5,7 @@
   "package_manifest_path": "experience-package.json",
   "package_id": "SYNTHETIC_EXPERIENCE_PACKAGE",
   "package_revision": 1,
-  "package_tree_hash_algorithm": "sha256(posix_relative_path+nul+raw_bytes+nul; case_sensitive_ordinal_sort)",
+  "package_tree_hash_algorithm": "sha256(posix_relative_path+nul+utf8_json_lf_bytes+nul; case_sensitive_ordinal_sort)",
   "package_tree_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
   "source_commit": "0000000000000000000000000000000000000000",
   "retrieval_commit": "0000000000000000000000000000000000000000",

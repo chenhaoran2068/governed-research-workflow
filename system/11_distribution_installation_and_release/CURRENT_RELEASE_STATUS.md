@@ -54,6 +54,24 @@ verify the exact tag and matching Release at the time of installation.
   normal public installation rule above verifies its exact tag and matching
   GitHub Release.
 
+## v0.10.1 Synthetic Exchange-Pilot Source Scope
+
+- The v0.10.1 source adds one self-controlled, synthetic-only exchange-pilot
+  receipt contract and an explicit caller-named, read-only structural
+  validator. It checks declared package identity, revision, hash, retrieval
+  representation, correction linkage, and future-governed-use state.
+- It does not create public intake, external-contributor support, a network
+  transfer helper, a real-content route, identity/right verification,
+  physical-Computer-B evidence, automatic promotion, or correction,
+  withdrawal, deletion, recall, or stop execution.
+- The v0.10.1 candidate-admission, gate, material-review, dependency,
+  release-control, and evidence files are bounded pre-C4 records. They do not
+  establish a selected version's hosted availability, private-source identity,
+  or installed Codex runtime.
+- A selected v0.10.1 checkout is a normal installation target only when the
+  normal public installation rule above verifies its exact tag and matching
+  GitHub Release.
+
 ## Published v0.8.0 Historical Scope
 
 - `v0.8.0` is a bounded public release whose selected-version identity must be

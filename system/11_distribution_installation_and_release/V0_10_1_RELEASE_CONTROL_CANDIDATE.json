@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release_control_record",
+  "release_control_id": "GRW-V101-RCR-001",
+  "record_revision": 1,
+  "created_at": "2026-07-21T00:00:00Z",
+  "status": "candidate_reviewed",
+  "candidate_identity": {
+    "candidate_version": "0.10.1",
+    "exact_commit": "0000000000000000000000000000000000000000",
+    "branch_state": "local_candidate_only",
+    "intended_tag": "v0.10.1",
+    "intended_github_release": "Pre-C3 release-preparation source only. The all-zero exact_commit sentinel is unresolved and is not a Git commit, tag, GitHub Release, C4 authorization, or installed-runtime claim."
+  },
+  "capability_set": {
+    "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "candidate_outcome": "admitted_exact_release_scope",
+    "verified_candidate_capability_ids": [
+      "GRW-CAP-101-01"
+    ],
+    "excluded_capability_ids": [],
+    "admitted_capability_ids": [
+      "GRW-CAP-101-01"
+    ]
+  },
+  "material_reviews": {
+    "public_material_rights_review": "pass",
+    "private_material_secret_review": "pass",
+    "review_references": [
+      "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.1.md"
+    ]
+  },
+  "dependency_and_source_authority": {
+    "source_authority_review": "pass",
+    "framework_integrated_behavior_claimed": true,
+    "framework_tag": "v0.1.2",
+    "framework_commit": "97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8",
+    "review_reference": "system/11_distribution_installation_and_release/V0_10_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md"
+  },
+  "release_integrity_posture": {
+    "technical_immutable_release_status": "enabled",
+    "deferral_or_unavailability_reason": "No deferral is recorded. Immutable hosting must nevertheless be independently rechecked before the later C4 publication operation.",
+    "reevaluation_trigger": "Before C4, verify the exact remote candidate, protected-main commit, Windows/Ubuntu/macOS CI, current repository settings, final release notes, tag, matching GitHub Release, and generated source archives.",
+    "release_assets": [
+      "No additional asset is planned; GitHub-generated source archives for the exact immutable tag require post-release verification."
+    ],
+    "integrity_or_attestation_evidence_references": [
+      "system/11_distribution_installation_and_release/V0_10_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+      "system/11_distribution_installation_and_release/V0_10_1_RELEASE_EVIDENCE.md"
+    ],
+    "unverified_properties": [
+      "Exact remote candidate commit, hosted CI, protected-main commit, C4 authorization, immutable tag, matching GitHub Release, generated source archives, and installed-runtime identity are not established."
+    ]
+  },
+  "supported_scope": {
+    "profiles": [
+      "standalone",
+      "framework_integrated"
+    ],
+    "platforms": [
+      "Windows, Ubuntu, and macOS verification remains required for the future exact remote candidate."
+    ],
+    "approved_scope_statement": "Synthetic-only metadata receipt and explicit caller-named read-only structural validation. No public/external intake, real content, network transfer helper, independent-Computer-B claim, automatic promotion, correction/withdrawal execution, or runtime installation."
+  },
+  "residual_risks": [
+    "The all-zero exact_commit field is an explicit unresolved sentinel required by the unchanged schema; it must never be treated as a Git object or Release evidence.",
+    "The private maintainer-only pilot is useful transport and clean-clone evidence, but cannot prove an external contribution, physical Computer B, content rights, consent, or transfer safety.",
+    "Structural validation cannot establish truth, identity, authorization, rights, hosted state, data access, compliance, scientific validity, or a publication decision.",
+    "The exact candidate diff, remote CI, protected-main review, C4 authorization, tag/Release, and local adoption remain incomplete."
+  ],
+  "incident_and_repair_route": "Stop the affected release activity, preserve exact evidence, notify the accountable human, and prepare a corrective candidate. Never rewrite a published immutable tag or Release.",
+  "candidate_review_acceptance_reference": "Accountable-human accepted the v0.10.1 self-controlled synthetic-pilot scope and authorized bounded implementation on 2026-07-21; C3-remote evidence and C4 remain separate.",
+  "c4_release_authorization_reference": null,
+  "post_release_verification_reference": null,
+  "post_release_verification_plan_reference": "system/11_distribution_installation_and_release/RELEASE_CONTROL.md#post-release-route",
+  "record_hierarchy_references": {
+    "capability_truth_ledger": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "current_release_status": "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
+    "candidate_review_record": "system/11_distribution_installation_and_release/V0_10_1_RELEASE_CONTROL_CANDIDATE.json",
+    "c4_authorization_record": "not-yet-authorized",
+    "post_release_record": "not-yet-released"
+  }
+}

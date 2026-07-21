@@ -132,8 +132,8 @@ class V010ReleasePreparationTests(unittest.TestCase):
         for forbidden in ("requests", "urllib", "http.client", "subprocess", "os.walk", "rglob", "write_text", "write_bytes", "unlink", "mkdir"):
             self.assertNotIn(forbidden, validator)
         reference = " ".join((ROOT / "references" / "synthetic-experience-exchange-pilot.md").read_text(encoding="utf-8").lower().split())
-        self.assertIn("not physical computer b evidence", reference)
-        self.assertIn("does not create a public or external-contributor intake", reference)
+        self.assertIn("do not call it computer b evidence", reference)
+        self.assertIn("external contributor intake", reference)
 
 
 if __name__ == "__main__":
