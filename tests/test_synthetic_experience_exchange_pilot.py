@@ -59,7 +59,7 @@ class SyntheticExperienceExchangePilotTests(TestCase):
     def refresh_receipt_hash(self, root: Path) -> None:
         receipt_path = self.receipt_path(root)
         receipt = self.load_json(receipt_path)
-        manifest_path = root / receipt["package_manifest_path"]
+        manifest_path = (root / receipt["package_manifest_path"]).resolve(strict=True)
         manifest = self.load_json(manifest_path)
         paths, issue = VALIDATOR._package_paths(manifest_path, manifest)
         self.assertIsNone(issue)
