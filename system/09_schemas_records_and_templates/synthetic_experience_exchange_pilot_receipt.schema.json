@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/synthetic_experience_exchange_pilot_receipt.schema.json",
+  "title": "Synthetic Experience Exchange Pilot Receipt",
+  "description": "Metadata-only structural representation for a maintainer-controlled synthetic exchange pilot. It does not prove identity, transfer, consent, rights, review, deletion, promotion, or external-user readiness.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "pilot_id",
+    "package_manifest_path",
+    "package_id",
+    "package_revision",
+    "package_tree_hash_algorithm",
+    "package_tree_sha256",
+    "source_commit",
+    "retrieval_commit",
+    "transfer_profile",
+    "pre_transfer_approval_reference",
+    "maintainer_receipt_state",
+    "maintainer_reference",
+    "retrieval_profile",
+    "retrieval_state",
+    "declared_correction_or_withdrawal_state",
+    "future_governed_use_state",
+    "explicit_non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "synthetic_experience_exchange_pilot_receipt"},
+    "pilot_id": {"$ref": "#/$defs/id"},
+    "package_manifest_path": {"$ref": "#/$defs/relative_json_path"},
+    "package_id": {"$ref": "#/$defs/id"},
+    "package_revision": {"type": "integer", "minimum": 1},
+    "package_tree_hash_algorithm": {"const": "sha256(posix_relative_path+nul+utf8_json_lf_bytes+nul; case_sensitive_ordinal_sort)"},
+    "package_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "retrieval_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "transfer_profile": {"const": "self_controlled_private_synthetic_pilot"},
+    "pre_transfer_approval_reference": {"$ref": "#/$defs/reference"},
+    "maintainer_receipt_state": {"const": "received_for_structural_review_only"},
+    "maintainer_reference": {"$ref": "#/$defs/reference"},
+    "retrieval_profile": {"enum": ["isolated_clean_clone", "hosted_clean_runner"]},
+    "retrieval_state": {"const": "exact_commit_retrieved_and_structurally_validated"},
+    "declared_correction_or_withdrawal_state": {"enum": ["no_request", "human_disposition_recorded", "future_use_stopped"]},
+    "future_governed_use_state": {"enum": ["not_requested", "stopped_after_human_decision"]},
+    "explicit_non_claims": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "identity",
+          "consent_or_authority",
+          "rights_or_compliance",
+          "safe_content",
+          "network_delivery",
+          "independent_computer_b",
+          "acceptance_or_promotion",
+          "withdrawal_execution_or_recall",
+          "deletion_of_prior_copies",
+          "external_contributor_readiness"
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]{2,63}$"},
+    "reference": {"type": "string", "minLength": 1, "maxLength": 256},
+    "relative_json_path": {"type": "string", "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(^|/)\\.\\.(/|$))[A-Za-z0-9][A-Za-z0-9._/-]*\\.json$"}
+  }
+}

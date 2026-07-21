@@ -5,15 +5,16 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.10.0 voluntary-experience-package release source retaining v0.4-v0.9
-bounded controls and adding one finite metadata-only experience-package
-contract. It adds no intake, upload, network action, real-content handling,
-data access, coordinator, agent runtime, delegation, multi-agent orchestration,
-generic writer, recovery executor, or release decision. This source tree does not itself prove the
-release or installation identity of any selected version. A normal public
-installation target exists only when an exact annotated tag and matching
-GitHub Release resolve to the selected source commit. Never install a mutable
-branch.
+Status: v0.10.1 self-controlled synthetic experience-exchange pilot source.
+It retains the v0.4-v0.10 bounded controls and adds one caller-named, read-only
+receipt validator for a synthetic v0.10 package. It adds no public intake,
+external-contributor flow, upload/download helper, network action, real-content
+handling, data access, coordinator, agent runtime, delegation, multi-agent
+orchestration, generic writer, recovery executor, or release decision. This
+source tree does not itself prove the release or installation identity of any
+selected version. A normal public installation target exists only when an exact
+annotated tag and matching GitHub Release resolve to the selected source commit.
+Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -33,14 +34,14 @@ claim.
 
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-historical released capability facts through `v0.8.0`, including three v0.8
-release-scope-admitted records. It records each capability's interface,
+historical released capability facts through `v0.10.0`, including the v0.10
+experience-package contract. It records each capability's interface,
 evidence, version, and required human approval. The ledger is not an
 installed-runtime statement. Release-scope admission proves neither local
 installation, runtime identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as v0.10.0
-voluntary-experience-package release-source content.
+The package manifest identifies this source as v0.10.1 synthetic-exchange-pilot
+release-source content.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
 records remain verified and admitted for their named v0.8.0 scope. Neither
@@ -153,6 +154,14 @@ evidence of truth, safe content, rights, consent, human review, cross-device
 transfer, or recall of earlier copies. See
 [`references/voluntary-experience-package.md`](references/voluntary-experience-package.md).
 
+The v0.10.1 source adds one self-controlled synthetic exchange-pilot receipt
+contract and explicit read-only validator. It can structurally check a caller-
+named receipt, its named v0.10 manifest, and the five records named by that
+manifest. It does not create an intake, transfer material, verify a person or
+device, or execute correction/withdrawal. A same-host clean clone is a
+clean-environment simulation, not physical Computer B evidence. See
+[`references/synthetic-experience-exchange-pilot.md`](references/synthetic-experience-exchange-pilot.md).
+
 ## Use
 
 Ask the agent to use the skill when beginning or continuing a research task.
@@ -262,11 +271,16 @@ supersede a band through a reviewed revision.
   reassessment linkage, and operational-preflight records; no hosted-state
   verification, perfect-truthfulness claim, AI final academic approval,
   recovery executor, or data/project access.
-- `v0.10.0`: voluntary metadata-only experience-package release source;
-  no intake, upload, real contribution handling, Computer B validation,
-  automatic review/promotion, or withdrawal executor. `v0.10.1+` may consider
-  those deferred questions only under a new reviewed Charter.
-- `v0.11.x+`: pre-v1 scope closure and stabilization of every admitted module.
+- `v0.10.0`: voluntary metadata-only experience-package release source; no
+  intake, upload, real contribution handling, Computer B validation, automatic
+  review/promotion, or withdrawal executor.
+- `v0.10.1`: self-controlled private synthetic exchange-pilot protocol; no
+  external contributor, public intake, real material, or independent Computer
+  B claim.
+- `v0.10.2+`: separately reviewed external-contributor governance pilot, only
+  after an accountable maintainer has accepted v0.10.1 evidence.
+- `v0.11.x+`: manuscript, revision, declaration, and submission governance;
+  no automatic journal-policy claim or submission.
 - `v1.0.0`: stable bounded public-system contract, only after its interface,
   evidence, support, and release conditions are met.
 - `v1.1+`: separately reviewed post-v1 expansion; this roadmap grants no

@@ -20,25 +20,33 @@ PUBLIC_FILES = (
     "scripts/validate_voluntary_experience_package.py",
     "tests/fixtures/voluntary_experience_package/valid/experience-package.json",
 )
+V101_PUBLIC_FILES = (
+    "system/09_schemas_records_and_templates/synthetic_experience_exchange_pilot_receipt.schema.json",
+    "assets/synthetic-experience-exchange-pilot-receipt.template.json",
+    "references/synthetic-experience-exchange-pilot.md",
+    "scripts/validate_synthetic_experience_exchange_pilot.py",
+    "tests/fixtures/synthetic_experience_exchange_pilot/valid/exchange-pilot-receipt.json",
+)
 FORBIDDEN_MARKERS = ("E:" + chr(92) + "Chen" + "haoran", "C:" + chr(92) + "Us" + "ers", "99" + "sai", "gh" + "p_", "github" + "_pat_", "BEGIN" + " PRIVATE" + " KEY")
 
 
 class V010ReleasePreparationTests(unittest.TestCase):
-    def test_release_source_identity_and_historical_baseline_are_separate(self) -> None:
+    def test_v010_history_is_retained_while_v0101_becomes_current_source(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
         current_surface = "\n".join((manifest, readme, roadmap, index, json.dumps(ledger))).lower()
-        self.assertIn("system_version: 0.10.0", manifest)
-        self.assertIn("v0.10.0 voluntary-experience-package release source", readme)
+        self.assertIn("system_version: 0.10.1", manifest)
+        self.assertIn("v0.10.1 self-controlled synthetic experience-exchange pilot source", readme)
         self.assertIn("## v0.10.0 (voluntary metadata-only experience package)", roadmap)
-        self.assertIn("v0.10.0 voluntary-experience-package release source", index)
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.10.0")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.9.0")
+        self.assertIn("## v0.10.1 (self-controlled synthetic experience-exchange pilot)", roadmap)
+        self.assertIn("v0.10.1 self-controlled synthetic experience-exchange pilot source", index)
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.10.1")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.0")
         self.assertNotIn("voluntary-experience-package candidate", current_surface)
-        self.assertNotIn("v0.10.0 is published", current_surface)
+        self.assertNotIn("v0.10.1 is published", current_surface)
 
     def test_capability_admission_is_single_and_not_c4(self) -> None:
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
@@ -114,6 +122,18 @@ class V010ReleasePreparationTests(unittest.TestCase):
         schema_text = SCHEMA.read_text(encoding="utf-8")
         for forbidden in ('"email"', '"account"', '"attachment"', '"raw_transcript"', '"project_identifier"'):
             self.assertNotIn(forbidden, schema_text)
+
+    def test_v101_public_surface_is_synthetic_only_and_has_no_network_or_writer(self) -> None:
+        for relative in V101_PUBLIC_FILES:
+            content = (ROOT / relative).read_text(encoding="utf-8")
+            for marker in FORBIDDEN_MARKERS:
+                self.assertNotIn(marker, content, f"{relative} contains {marker!r}")
+        validator = (ROOT / "scripts" / "validate_synthetic_experience_exchange_pilot.py").read_text(encoding="utf-8")
+        for forbidden in ("requests", "urllib", "http.client", "subprocess", "os.walk", "rglob", "write_text", "write_bytes", "unlink", "mkdir"):
+            self.assertNotIn(forbidden, validator)
+        reference = " ".join((ROOT / "references" / "synthetic-experience-exchange-pilot.md").read_text(encoding="utf-8").lower().split())
+        self.assertIn("do not call it computer b evidence", reference)
+        self.assertIn("external contributor intake", reference)
 
 
 if __name__ == "__main__":

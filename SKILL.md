@@ -139,6 +139,18 @@ For consequential outputs, use a bounded loop:
 Do not treat self-review as final academic, clinical, compliance, or
 publication approval.
 
+## Synthetic Exchange-Pilot Route
+
+Use the v0.10.1 exchange-pilot route only after the user explicitly asks for a
+self-controlled **synthetic** private-pilot check, the selected exact public
+tag and matching GitHub Release exist, and the capability ledger admits
+`GRW-CAP-101-01` for that version. Read
+`references/synthetic-experience-exchange-pilot.md` before invoking the named
+read-only validator. Stop if a real package, external contributor, public
+intake, identity/rights claim, actual transfer, or Computer B claim is
+requested. Do not create a repository, upload material, or execute a
+correction/withdrawal merely because a receipt validates structurally.
+
 ## Mandatory Stops
 
 Stop and request accountable evidence or approval before:
@@ -179,6 +191,8 @@ Stop and request accountable evidence or approval before:
   references/role-contracts.md
 - Controlled bootstrap-helper admission, when admitted for the selected
   release: references/controlled-helper-admission.md
+- Self-controlled synthetic experience-exchange pilot, when admitted for the
+  selected release: references/synthetic-experience-exchange-pilot.md
 
 Use the blank assets only after explaining their role and obtaining any required
 user decision. Do not populate them with invented facts.

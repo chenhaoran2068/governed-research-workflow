@@ -28,3 +28,9 @@ checker, not a helper admission or intake tool. It reads one selected manifest
 and its five declared metadata records, reports to standard output, and never
 writes, discovers a directory, sends a request, or handles real contribution
 content.
+
+The v0.10.1 exchange-pilot validator is also explicit and read-only. It reads
+one receipt, one named package manifest, and the five records declared by that
+manifest. It has no clone, fetch, upload, download, credential, transfer, or
+writer capability. Any actual repository or transport action stays outside the
+validator and requires separately approved human-controlled operation.
