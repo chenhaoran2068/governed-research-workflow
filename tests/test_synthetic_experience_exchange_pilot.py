@@ -181,8 +181,10 @@ class SyntheticExperienceExchangePilotTests(TestCase):
         temporary_directory, root = self.copy_fixture()
         self.addCleanup(temporary_directory.cleanup)
         baseline = VALIDATOR.validate_exchange_pilot(self.receipt_path(root))
+        self.assert_result(baseline, "structurally_valid")
         for path in root.rglob("*.json"):
-            path.write_bytes(path.read_bytes().replace(b"\n", b"\r\n"))
+            lf_bytes = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+            path.write_bytes(lf_bytes.replace(b"\n", b"\r\n"))
         result = VALIDATOR.validate_exchange_pilot(self.receipt_path(root))
         self.assert_result(result, "structurally_valid")
         self.assertEqual(result["package_tree_sha256"], baseline["package_tree_sha256"])
