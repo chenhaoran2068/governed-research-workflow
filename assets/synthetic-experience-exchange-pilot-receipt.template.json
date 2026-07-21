@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "synthetic_experience_exchange_pilot_receipt",
+  "pilot_id": "SYNTHETIC_EXCHANGE_PILOT",
+  "package_manifest_path": "experience-package.json",
+  "package_id": "SYNTHETIC_EXPERIENCE_PACKAGE",
+  "package_revision": 1,
+  "package_tree_hash_algorithm": "sha256(posix_relative_path+nul+raw_bytes+nul; case_sensitive_ordinal_sort)",
+  "package_tree_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "retrieval_commit": "0000000000000000000000000000000000000000",
+  "transfer_profile": "self_controlled_private_synthetic_pilot",
+  "pre_transfer_approval_reference": "replace-with-accountable-human-approval-reference",
+  "maintainer_receipt_state": "received_for_structural_review_only",
+  "maintainer_reference": "replace-with-maintainer-reference",
+  "retrieval_profile": "isolated_clean_clone",
+  "retrieval_state": "exact_commit_retrieved_and_structurally_validated",
+  "declared_correction_or_withdrawal_state": "no_request",
+  "future_governed_use_state": "not_requested",
+  "explicit_non_claims": [
+    "identity",
+    "consent_or_authority",
+    "rights_or_compliance",
+    "safe_content",
+    "network_delivery",
+    "independent_computer_b",
+    "acceptance_or_promotion",
+    "withdrawal_execution_or_recall",
+    "deletion_of_prior_copies",
+    "external_contributor_readiness"
+  ]
+}

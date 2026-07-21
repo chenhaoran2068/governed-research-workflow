@@ -10,6 +10,12 @@ compliance, data access, manuscript claims, or a submission package.
 Future assurance additions require synthetic fixtures, explicit expected
 behavior, failure cases, and a statement of what the test does not establish.
 
+The v0.10.1 synthetic exchange-pilot tests prove only declared JSON structure,
+caller-named containment, hash/revision consistency, correction linkage,
+future-use representation, and refusal/no-write behavior. They do not prove a
+network transfer, a contributor, a physical Computer B, approval, rights, or
+actual deletion/withdrawal.
+
 The v0.4.0 release source adds a deterministic capability-ledger test and an
 evidence matrix for the `v0.4.0` target. They verify record completeness,
 refusal conditions, and safe references. They do not create a release or

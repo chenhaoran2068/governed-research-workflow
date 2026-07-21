@@ -27,3 +27,9 @@ It is not a collection endpoint, consent verifier, automatic promotion path,
 or deletion/recall system. A package can enter the v0.7 promotion route only
 after its separate accountable-human decision; a package validator cannot
 create that decision.
+
+The v0.10.1 source adds only a self-controlled synthetic exchange-pilot
+receipt. It can represent that a named synthetic package was structurally
+checked after an explicitly represented private-pilot step. It is not an intake
+channel, a contributor identity record, a consent/right verification, an
+acceptance decision, or a promotion route.

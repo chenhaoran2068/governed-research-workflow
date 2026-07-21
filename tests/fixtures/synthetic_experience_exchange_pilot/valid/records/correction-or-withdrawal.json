@@ -1,0 +1,10 @@
+{
+  "record_id": "SYNTHETIC_WITHDRAWAL",
+  "record_type": "experience_correction_or_withdrawal",
+  "request_state": "no_request",
+  "requested_action": "none",
+  "affected_record_ids": ["SYNTHETIC_OBSERVATION"],
+  "accountable_human_decision_reference": null,
+  "future_use_state": "not_requested",
+  "limitation": "does_not_delete_or_recall_prior_copies"
+}

@@ -3,11 +3,11 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v0.10.0",
-    "historical_public_baseline": "v0.9.0",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.10.0 release source retains historical released capability facts through v0.9.0 and records one accountable-human-admitted v0.10.0 capability scope. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v0.10.1",
+    "historical_public_baseline": "v0.10.0",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.10.1 release source retains historical released capability facts through v0.10.0 and records one accountable-human-admitted v0.10.1 capability scope. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.9.0 and one v0.10.0 capability scope admitted for this release source. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.10.0 and one v0.10.1 capability scope admitted for this release source. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -590,6 +590,46 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "references/voluntary-experience-package.md", "system/06_memory_and_learning/MODULE.md"],
       "contradiction_refusal": "Forbid the affected package claim when the explicit manifest, named-record containment, representation-only boundary, review state, withdrawal linkage, or required synthetic evidence is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.10.0 release-source scope. It does not by itself establish a hosted tag, matching GitHub Release, true multi-machine transfer, real contribution intake, installed runtime, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-101-01",
+      "public_name": "Self-Controlled Synthetic Experience-Exchange Pilot Protocol",
+      "capability_class": "assurance",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides one synthetic-only exchange-pilot receipt schema, blank template, caller-named read-only structural validator, synthetic test package, and protocol for declared package identity, revision, hash, retrieval representation, correction linkage, and future-governed-use state.",
+      "non_promise": "Does not create public or external-contributor intake, perform a network transfer, accept a package, verify a person, device, consent, rights, safety, or truth, prove an independent Computer B, or execute correction, withdrawal, deletion, recall, promotion, or future-use stop.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "system/09_schemas_records_and_templates/synthetic_experience_exchange_pilot_receipt.schema.json",
+          "assets/synthetic-experience-exchange-pilot-receipt.template.json",
+          "references/synthetic-experience-exchange-pilot.md",
+          "scripts/validate_synthetic_experience_exchange_pilot.py",
+          "tests/test_synthetic_experience_exchange_pilot.py"
+        ],
+        "identifiers": [
+          "synthetic_experience_exchange_pilot_receipt",
+          "validate_synthetic_experience_exchange_pilot"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_synthetic_experience_exchange_pilot.py", "identifier": "SyntheticExperienceExchangePilotTests"},
+          {"kind": "manual_review", "path": "system/11_distribution_installation_and_release/V0_10_1_CAPABILITY_ADMISSION.md", "identifier": "accountable-human v0.10.1 scope admission"}
+        ]
+      },
+      "version": {"introduced_version": "v0.10.1", "last_verified_release": null, "target_release": "v0.10.1"},
+      "prior_release_history": [],
+      "approval_reference": "Accountable-human accepted the v0.10.1 Charter scope and authorized bounded implementation on 2026-07-21; scope admission remains distinct from remote CI, C4, a hosted Release, and local adoption.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/synthetic-experience-exchange-pilot.md"],
+      "contradiction_refusal": "Forbid the affected pilot claim when the explicit receipt, package identity, declared hash, retrieval representation, correction/future-use relationship, synthetic-only boundary, or required evidence is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.10.1 release-source scope. It cannot establish a hosted tag, matching GitHub Release, actual private transfer, external-contributor readiness, installed runtime, or C4 authorization."
     }
   ]
 }

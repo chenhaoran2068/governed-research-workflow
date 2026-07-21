@@ -6,6 +6,21 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.10.1 (self-controlled synthetic experience-exchange pilot)
+
+This source adds one generic private-pilot receipt contract and one explicit
+read-only validator. It checks only one caller-named receipt, its named v0.10
+package manifest, and the five records declared by that manifest. The receipt
+represents a synthetic pre-transfer approval reference, structural maintainer
+receipt, exact retrieval revision, and correction/future-use relationship.
+
+It does not create a public or external-contributor intake, transfer real
+content, verify consent/rights/identity/device, prove a real Computer B,
+perform a network action, accept/promote a package, or execute correction,
+withdrawal, deletion, or recall. A same-host clean clone is only a
+clean-environment simulation. External-contributor governance remains a
+separately chartered v0.10.2-or-later task.
+
 ## v0.10.0 (voluntary metadata-only experience package)
 
 This release source adds one finite metadata-only experience-package contract.
@@ -183,9 +198,11 @@ guidance without modifying the historical tag.
   intake,
   upload, real-content handling, Computer B validation, automatic review/
   promotion, or withdrawal executor.
-- `v0.10.1+`: only separately chartered pilot expansion, such as a private
-  intake or true multi-machine validation; no hidden telemetry, automatic
-  upload, or automatic rule promotion.
+- `v0.10.1`: self-controlled private synthetic exchange-pilot protocol; no
+  public intake, external contributor, real content, or independent Computer B
+  claim.
+- `v0.10.2+`: only separately chartered external-contributor governance pilot;
+  no hidden telemetry, automatic upload, or automatic rule promotion.
 - `v0.11.x+`: pre-v1 scope closure and stabilization. `v1.0.0` is a later
   evidence-and-stability threshold, not an automatic feature deadline.
 

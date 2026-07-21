@@ -12,6 +12,12 @@ permitted values, compatibility expectation, ownership, and test fixture.
 Do not store live project state, patient-derived data, private identifiers, or
 facts that require study-specific approval in a public schema.
 
+`synthetic_experience_exchange_pilot_receipt.schema.json` defines a synthetic,
+metadata-only representation of named package identity, hash, receipt,
+retrieval, correction, and future-use state. It does not validate a network
+transfer, contributor identity, consent, rights, physical device, acceptance,
+promotion, deletion, or recall.
+
 `capability_truth_ledger.schema.json` defines the structure of the
 release-state-neutral capability truth source. It does not validate live project
 state, create a capability, or grant approval.
