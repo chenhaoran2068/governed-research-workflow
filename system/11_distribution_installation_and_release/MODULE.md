@@ -1,5 +1,8 @@
 # Distribution, Installation, And Release
 
+The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+module's support posture; this boundary record does not enlarge that scope.
+
 Status: active standalone package governance. Historical v0.3.0, v0.3.1,
 v0.4.0, and pre-C4 v0.5.0 records are retained. The v0.5.0
 provenance-register-set baseline and v0.5.1 maintenance patch are published;

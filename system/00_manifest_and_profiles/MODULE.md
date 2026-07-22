@@ -1,5 +1,8 @@
 # Manifest And Profiles
 
+The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+module's support posture; this boundary record does not enlarge that scope.
+
 Status: v0.12.0 synthetic integration-assurance maintenance source manifest;
 exact released-framework integration evidence remains available.
 

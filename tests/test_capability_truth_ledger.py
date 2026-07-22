@@ -47,6 +47,7 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-110-04",
     "GRW-CAP-110-05",
     "GRW-CAP-110-06",
+    "GRW-CAP-130-01",
 }
 RELEASED_OR_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {
     "GRW-CAP-040-03",
@@ -63,6 +64,7 @@ V011_SCOPE_IDS = {
     "GRW-CAP-110-05",
     "GRW-CAP-110-06",
 }
+V013_SCOPE_IDS = {"GRW-CAP-130-01"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -99,14 +101,15 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         cls.records = cls.ledger["capabilities"]
 
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
-        self.assertEqual(self.ledger["ledger_schema_version"], "1.4.0")
+        self.assertEqual(self.ledger["ledger_schema_version"], "1.5.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.12.0")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.11.0")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.13.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.12.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("C2-admitted v0.11.0 source scope", self.ledger["target_claim_scope"])
-        self.assertIn("v0.12.0 is no-new-interface synthetic integration assurance", self.ledger["target_claim_scope"])
+        self.assertIn("C2-admitted v0.13.0 V1 Support Scope Matrix source scope", self.ledger["target_claim_scope"])
+        self.assertIn("v0.12.0 remains historical no-new-interface synthetic integration assurance", self.ledger["target_claim_scope"])
         self.assertIn("Historical facts", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -146,7 +149,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-                "v0.11.0" if record["capability_id"] in V011_SCOPE_IDS
+                "v0.13.0" if record["capability_id"] in V013_SCOPE_IDS
+                else "v0.11.0" if record["capability_id"] in V011_SCOPE_IDS
                 else "v0.10.1" if record["capability_id"] in V101_SCOPE_IDS
                 else "v0.10.0" if record["capability_id"] in V10_SCOPE_IDS
                 else "v0.9.0" if record["capability_id"] in V09_SCOPE_IDS

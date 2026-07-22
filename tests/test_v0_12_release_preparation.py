@@ -65,12 +65,13 @@ class V012ReleasePreparationTests(unittest.TestCase):
         self.assertIsNone(record["c4_release_authorization_reference"])
         self.assertIsNone(record["post_release_verification_reference"])
 
-    def test_v012_rechecks_existing_capabilities_without_new_admission(self) -> None:
+    def test_v012_history_remains_distinct_from_later_v013_admission(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.12.0")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.11.0")
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.13.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.12.0")
         self.assertFalse(any(item["capability_id"].startswith("GRW-CAP-120-") for item in ledger["capabilities"]))
         self.assertFalse(any(item["version"]["target_release"] == "v0.12.0" for item in ledger["capabilities"]))
+        self.assertTrue(any(item["capability_id"] == "GRW-CAP-130-01" for item in ledger["capabilities"]))
 
     def test_v012_public_preparation_surface_has_no_local_or_project_marker(self) -> None:
         paths = (

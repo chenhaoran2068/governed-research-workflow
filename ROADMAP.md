@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.13.0 (pre-V1 support-scope closure source)
+
+This source adds one versioned machine-readable V1 Support Scope Matrix and
+its structural contract. The matrix covers all thirteen public modules, names
+their bounded supported surfaces, external boundaries, V1 exclusions,
+compatibility/migration state, evidence references, limitations, and refusal
+behavior. It makes support posture reviewable without treating directory
+presence or a historical record as a present operational capability.
+
+It does not add a data handler, source corpus, retrieval service, RAG system,
+agent runtime, coordinator, delegated authority, generic writer, installer,
+migration executor, recovery executor, project workflow executor, automatic
+release, or local-runtime replacement. The matrix does not prove external
+requirements, scientific truth, data access, compliance, human approval,
+hosted Release, or installed runtime identity.
+
 ## v0.12.0 (synthetic integration-assurance maintenance source)
 
 This source adds no new public capability interface. It adds a synthetic-only
@@ -252,8 +268,10 @@ guidance without modifying the historical tag.
   automatic review, automatic promotion, or hidden telemetry is provided.
 - `v0.12.0`: no-new-interface synthetic integration assurance across existing
   bounded modules; it does not establish a real installation or new capability.
-- `v0.13.x+`: pre-v1 scope closure. `v1.0.0` is a later evidence-and-stability
-  threshold, not an automatic feature deadline.
+- `v0.13.x+`: post-v0.13.0 stabilization only. Any correction requires current
+  evidence and review; new operational capability needs a separate scope.
+  `v1.0.0` remains a later evidence-and-stability threshold, not an automatic
+  feature deadline.
 
 ## v0.4.0 (published governance-and-records baseline)
 

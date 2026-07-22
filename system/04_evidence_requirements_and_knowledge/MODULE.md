@@ -1,5 +1,8 @@
 # Knowledge Module Boundary
 
+The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+module's support posture; this boundary record does not enlarge that scope.
+
 Status: active guidance; no curated knowledge corpus.
 
 The active baseline is the external-evidence and citation-control route

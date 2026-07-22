@@ -1,5 +1,8 @@
 # Project Workspace And Bootstrap
 
+The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+module's support posture; this boundary record does not enlarge that scope.
+
 Status: active empty-workspace bootstrap; framework integration validation
 only.
 

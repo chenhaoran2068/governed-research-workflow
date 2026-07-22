@@ -1,5 +1,8 @@
 # Examples Module Boundary
 
+The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+module's support posture; this boundary record does not enlarge that scope.
+
 Status: released cross-repository integration test, retained v0.4/v0.5
 synthetic-assurance history, and an admitted v0.6 release-source route; no
 distributable end-to-end public system example is admitted here yet.

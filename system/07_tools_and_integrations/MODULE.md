@@ -1,5 +1,8 @@
 # Tools And Integrations
 
+The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+module's support posture; this boundary record does not enlarge that scope.
+
 Status: v0.9.0 integrity-audit source retains the historical v0.8.0 controlled
 bootstrap helper and its release-scope helper-admission record. The v0.9
 validator is read-only and does not add a helper admission or write surface.

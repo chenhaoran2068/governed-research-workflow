@@ -1,13 +1,13 @@
 {
-  "ledger_schema_version": "1.4.0",
+  "ledger_schema_version": "1.5.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v0.12.0",
-    "historical_public_baseline": "v0.11.0",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.12.0 synthetic integration-assurance maintenance source retains released capability facts through the C2-admitted v0.11.0 source scope and adds no capability interface. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v0.13.0",
+    "historical_public_baseline": "v0.12.0",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.13.0 support-scope closure source adds only the versioned V1 Support Scope Matrix. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes through the C2-admitted v0.11.0 source scope. v0.12.0 is no-new-interface synthetic integration assurance, not a new capability admission. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes through the C2-admitted v0.11.0 source scope and the C2-admitted v0.13.0 V1 Support Scope Matrix source scope. v0.12.0 remains historical no-new-interface synthetic integration assurance. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -798,6 +798,34 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "references/knowledge-governance-experience-collection.md", "system/06_memory_and_learning/knowledge_governance_experience_collection/README.md"],
       "contradiction_refusal": "Forbid a public-experience claim when entry count, type, required boundary, redaction condition, local-material exclusion, or collection purpose is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, source access, currentness finding, public Knowledge package, retrieval capability, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-130-01",
+      "public_name": "Versioned V1 Support Scope Matrix",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides one versioned machine-readable matrix that covers all thirteen public modules and records their bounded surfaces, external boundaries, V1 exclusions, compatibility/migration state, evidence references, owner, limitations, and refusal behavior.",
+      "non_promise": "Does not add a research-operation interface, grant data access, prove external requirements, establish a project decision, certify compliance, install a runtime, execute a migration, or create a public Release.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": ["system/00_manifest_and_profiles/v1_support_scope_matrix.json", "system/09_schemas_records_and_templates/v1_support_scope_matrix.schema.json", "system/00_manifest_and_profiles/V1_SUPPORT_SCOPE.md", "tests/test_v1_support_scope_matrix.py"],
+        "identifiers": ["governed-research-workflow-v1-support-scope-matrix", "active_bounded", "external_boundary", "excluded_from_v1"]
+      },
+      "profile_scope": "not_profile_specific",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [{"kind": "test", "path": "tests/test_v1_support_scope_matrix.py", "identifier": "V1SupportScopeMatrixTests"}]
+      },
+      "version": {"introduced_version": "v0.13.0", "last_verified_release": null, "target_release": "v0.13.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted Charter R1 six-decision scope and C2 implementation scope on 2026-07-23; C3-local implementation is distinct from C3-remote, C4, hosted release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "system/INDEX.md", "system/00_manifest_and_profiles/V1_SUPPORT_SCOPE.md"],
+      "contradiction_refusal": "Forbid a module-support claim when the matrix, capability ledger, direct interface, evidence reference, current release identity, or stated boundary is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.13.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, module-wide compatibility guarantee, project authority, or C4 authorization."
     }
   ]
 }

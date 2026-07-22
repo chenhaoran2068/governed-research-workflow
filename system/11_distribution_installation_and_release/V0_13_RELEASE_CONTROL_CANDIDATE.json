@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release_control_record",
+  "release_control_id": "GRW-V130-RCR-001",
+  "record_revision": 1,
+  "created_at": "2026-07-23T00:00:00Z",
+  "status": "candidate_reviewed",
+  "candidate_identity": {
+    "candidate_version": "0.13.0",
+    "exact_commit": "0000000000000000000000000000000000000000",
+    "branch_state": "local_candidate_only",
+    "intended_tag": "v0.13.0",
+    "intended_github_release": "No exact C3-remote candidate has been authorized. This all-zero exact_commit sentinel records local preparation only; it is not a C4, tag, GitHub Release, or runtime-installation claim."
+  },
+  "capability_set": {
+    "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "candidate_outcome": "verified_candidate_or_explicitly_excluded_only",
+    "verified_candidate_capability_ids": [
+      "GRW-CAP-130-01"
+    ],
+    "excluded_capability_ids": [
+      "GRW-CAP-040-03"
+    ],
+    "admitted_capability_ids": []
+  },
+  "material_reviews": {
+    "public_material_rights_review": "pass",
+    "private_material_secret_review": "pass",
+    "review_references": [
+      "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.13.0.md"
+    ]
+  },
+  "dependency_and_source_authority": {
+    "source_authority_review": "pass",
+    "framework_integrated_behavior_claimed": true,
+    "framework_tag": "v0.1.2",
+    "framework_commit": "97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8",
+    "review_reference": "system/11_distribution_installation_and_release/V0_13_DEPENDENCY_AND_WORKFLOW_REVIEW.md"
+  },
+  "release_integrity_posture": {
+    "technical_immutable_release_status": "enabled",
+    "deferral_or_unavailability_reason": "GitHub technical immutable releases are expected to remain enabled, but the exact protected-main release candidate and settings must be independently rechecked before C4.",
+    "reevaluation_trigger": "Before C3-remote, identify and approve an exact candidate. Before C4, verify the final protected-main commit, CI, settings, notes, tag, Release, and source archives. Any later candidate-file change requires affected evidence to be refreshed.",
+    "release_assets": [
+      "No additional asset is planned; generated source archives require post-release verification."
+    ],
+    "integrity_or_attestation_evidence_references": [
+      "system/11_distribution_installation_and_release/V0_13_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+      "system/11_distribution_installation_and_release/V0_13_RELEASE_EVIDENCE.md"
+    ],
+    "unverified_properties": [
+      "Exact C3-remote candidate, hosted CI, protected-main commit, C4 authorization, immutable tag, matching GitHub Release, source archives, and installed runtime identity are not established."
+    ]
+  },
+  "supported_scope": {
+    "profiles": [
+      "standalone",
+      "framework_integrated"
+    ],
+    "platforms": [
+      "Local complete regression is required for the exact candidate; Windows, Ubuntu, and macOS CI remain required after separately authorized remote validation."
+    ],
+    "approved_scope_statement": "One versioned V1 Support Scope Matrix for the existing bounded public modules. It adds no research-operation interface, operational helper, data route, external action, runtime change, or Release action."
+  },
+  "residual_risks": [
+    "A structurally valid support matrix cannot prove task fitness, data access, scientific truth, current external requirements, rights, human authority, compliance, publication readiness, or submission authority.",
+    "Pattern scans and local review cannot establish all future contributor, institution, employment, copyright, confidentiality, or host-setting facts.",
+    "This pre-C3-remote record cannot establish an exact candidate, remote CI, protected-main commit, C4 authorization, tag, GitHub Release, or local adoption."
+  ],
+  "incident_and_repair_route": "Stop affected release work, preserve exact evidence, notify the accountable human, and prepare a corrective candidate. Never rewrite an immutable tag or Release.",
+  "candidate_review_acceptance_reference": "The accountable human authorized v0.13 local scope and implementation under separate C2/C3-local controls. This candidate-review record remains distinct from C3-remote evidence and C4.",
+  "c4_release_authorization_reference": null,
+  "post_release_verification_reference": null,
+  "post_release_verification_plan_reference": "system/11_distribution_installation_and_release/RELEASE_CONTROL.md#post-release-route",
+  "record_hierarchy_references": {
+    "capability_truth_ledger": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "current_release_status": "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
+    "candidate_review_record": "local pre-C3-remote snapshot: system/11_distribution_installation_and_release/V0_13_RELEASE_CONTROL_CANDIDATE.json",
+    "c4_authorization_record": "not-yet-authorized",
+    "post_release_record": "not-yet-released"
+  }
+}
