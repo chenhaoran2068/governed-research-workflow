@@ -1,6 +1,6 @@
 # Manifest And Profiles
 
-Status: v0.11.0 manuscript-governance and public-experience source manifest;
+Status: v0.12.0 synthetic integration-assurance maintenance source manifest;
 exact released-framework integration evidence remains available.
 
 `../../SYSTEM_MANIFEST.yaml` identifies this system, its entry point,
@@ -12,7 +12,7 @@ the advertised integrated profile.
 The system supports `standalone` and a `framework_integrated` profile. The
 published `v0.3.1` patch retains the `0.1.0` framework-contract version and
 validates that profile against the exact released framework `v0.1.1` tag. The
-current v0.11.0 source retains exactly those two public identifiers and does
+current v0.12.0 source retains exactly those two public identifiers and does
 not add a private profile, service discovery, or a private-path fallback.
 
 Do not infer framework support merely because a host contains familiar folder
@@ -29,6 +29,7 @@ ledger records three verified, release-scope-admitted records; that admission
 does not change the exact-tag-and-matching-Release rule or prove a real
 Framework installation.
 
-The v0.11 source extends the ledger's controlled capability identifier pattern
-for `GRW-CAP-110-01` through `GRW-CAP-110-06`. It adds no profile, framework
-contract, dependency, helper, runtime, or service-discovery behavior.
+The v0.11 source extended the ledger's controlled capability identifier pattern
+for `GRW-CAP-110-01` through `GRW-CAP-110-06`. v0.12 adds no identifier-pattern
+change, profile, framework contract, dependency, helper, runtime, or
+service-discovery behavior.

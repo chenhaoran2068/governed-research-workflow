@@ -1,9 +1,9 @@
 # Public System Module Index
 
-Status: v0.11.0 manuscript-governance and public-experience source retaining
-historical v0.4-v0.10.2 controls. It adds generic blank manuscript-governance
-templates and an adapted/redacted public experience collection, not an intake,
-exchange, data, retrieval, or execution capability. This index does not prove
+Status: v0.12.0 synthetic integration-assurance maintenance source retaining
+historical v0.4-v0.11.0 controls. It adds no capability interface; it adds a
+synthetic cross-module regression scenario, not an intake, exchange, data,
+retrieval, or execution capability. This index does not prove
 that a selected version is released:
 users must verify an exact annotated tag and matching GitHub Release rather
 than install `main` or another mutable branch.
@@ -34,7 +34,7 @@ framework `v0.1.2` tag.
 | `07` | tools and integrations | active bootstrap plus explicit read-only validators; no new writer, intake, transfer, or user-facing contribution helper | `scripts/`, admission records, and tests |
 | `08` | agent contracts | release-scope-admitted non-runnable role contracts; no role cards or agent runtime | two role-contract records and boundary guidance |
 | `09` | schemas, records, and templates | blank-record baseline plus v0.8/v0.9 controls, v0.10 experience package, v0.10.1 synthetic exchange receipt schema, and v0.11 Markdown templates; v0.11 adds no standalone schema or validator | `assets/` templates and schemas |
-| `10` | assurance, evaluation, and audit | regression baseline plus v0.10/v0.10.1 synthetic path/no-write/receipt controls, v0.10.2 wording controls, and v0.11 template/experience-boundary checks | `tests/` |
+| `10` | assurance, evaluation, and audit | regression baseline plus v0.10/v0.10.1 synthetic path/no-write/receipt controls, v0.10.2 wording controls, v0.11 template/experience-boundary checks, and v0.12 synthetic cross-module assurance | `tests/` |
 | `11` | distribution, installation, and release | active release controls, historical v0.7.1/v0.8 records, and v0.9 release-preparation records that separate candidate review, C4, and post-release verification | package governance files, release verification, historical and active preparation records |
 | `12` | synthetic examples | exact-tag integration test plus retained assurance, v0.8 synthetic-contract tests, and a v0.11 fictional manuscript-governance illustration | synthetic fixtures and assurance only; no end-to-end public research example |
 

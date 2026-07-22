@@ -133,3 +133,13 @@ human-mediated future direction for optional experience sharing, add no
 capability or runtime behavior, and do not establish an exact remote
 candidate, hosted CI, C4 authorization, tag, GitHub Release, installation
 target, or runtime identity.
+
+`V0_12_SYNTHETIC_INTEGRATION_ASSURANCE.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.12.0.md`,
+`V0_12_DEPENDENCY_AND_WORKFLOW_REVIEW.md`, `V0_12_RELEASE_GATE.md`,
+`V0_12_RELEASE_CONTROL_CANDIDATE.json`, `V0_12_RELEASE_EVIDENCE.md`, and
+`RELEASE_NOTES_v0.12.0.md` are bounded local pre-C3-remote assurance
+preparation records. They add no capability identifier or runtime interface;
+they describe only a synthetic composition test of already released bounded
+controls. They do not establish an exact remote candidate, hosted CI, C4
+authorization, tag, GitHub Release, installation target, or runtime identity.

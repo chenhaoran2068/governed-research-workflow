@@ -6,6 +6,20 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.12.0 (synthetic integration-assurance maintenance source)
+
+This source adds no new public capability interface. It adds a synthetic-only
+integration scenario and regression evidence that composes the existing empty
+bootstrap, metadata-only provenance, workflow/evidence, lesson-promotion, and
+blank manuscript-governance surfaces with a test-owned temporary
+update/rollback simulation.
+
+The scenario does not access real data, manuscripts, external sources, URLs,
+credentials, or projects. It does not prove truth, access, compliance, human
+authority, Release readiness, or a real local installation/update/rollback.
+It does not add a schema, validator, dependency, helper, agent, runtime, or
+new capability-ledger identifier.
+
 ## v0.11.0 (manuscript-governance and public-experience source)
 
 This source adds five generic blank templates for manuscript assembly and
@@ -236,8 +250,10 @@ guidance without modifying the historical tag.
   separate approval of any public-safe derivative. No user-facing intake,
   repository access, upload/download helper, automatic de-identification,
   automatic review, automatic promotion, or hidden telemetry is provided.
-- `v0.12.x+`: integration hardening and pre-v1 scope closure. `v1.0.0` is a
-  later evidence-and-stability threshold, not an automatic feature deadline.
+- `v0.12.0`: no-new-interface synthetic integration assurance across existing
+  bounded modules; it does not establish a real installation or new capability.
+- `v0.13.x+`: pre-v1 scope closure. `v1.0.0` is a later evidence-and-stability
+  threshold, not an automatic feature deadline.
 
 ## v0.4.0 (published governance-and-records baseline)
 
