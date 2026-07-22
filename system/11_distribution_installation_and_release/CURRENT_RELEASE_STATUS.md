@@ -84,6 +84,12 @@ verify the exact tag and matching Release at the time of installation.
   upload/download helper, automatic de-identification, automatic review,
   automatic promotion, real-content route, network transfer, or external-
   contributor service.
+- `V0_10_2_HUMAN_MEDIATED_EXPERIENCE_CURATION_MAINTENANCE.md`,
+  `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.2.md`,
+  `V0_10_2_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
+  `V0_10_2_RELEASE_EVIDENCE.md`, and `RELEASE_NOTES_v0.10.2.md` are bounded
+  local pre-C3-remote preparation records. They do not establish hosted
+  availability, a private-source identity, or an installed Codex runtime.
 - A selected v0.10.2 checkout becomes a normal installation target only after
   the normal public installation rule above verifies its exact tag and matching
   GitHub Release.

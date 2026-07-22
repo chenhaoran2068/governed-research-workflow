@@ -31,7 +31,7 @@ FORBIDDEN_MARKERS = ("E:" + chr(92) + "Chen" + "haoran", "C:" + chr(92) + "Us" +
 
 
 class V010ReleasePreparationTests(unittest.TestCase):
-    def test_v010_history_is_retained_while_v0101_becomes_current_source(self) -> None:
+    def test_v010_history_is_retained_while_v0102_becomes_current_source(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
@@ -50,6 +50,22 @@ class V010ReleasePreparationTests(unittest.TestCase):
         self.assertIn("no user-facing intake", roadmap.lower())
         self.assertNotIn("voluntary-experience-package candidate", current_surface)
         self.assertNotIn("v0.10.1 is published", current_surface)
+
+    def test_v0102_is_maintenance_only_with_no_new_capability_admission(self) -> None:
+        contract = (RELEASE / "V0_10_2_HUMAN_MEDIATED_EXPERIENCE_CURATION_MAINTENANCE.md").read_text(encoding="utf-8").lower()
+        rights = (RELEASE / "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.2.md").read_text(encoding="utf-8").lower()
+        dependency = (RELEASE / "V0_10_2_DEPENDENCY_AND_WORKFLOW_REVIEW.md").read_text(encoding="utf-8").lower()
+        evidence = (RELEASE / "V0_10_2_RELEASE_EVIDENCE.md").read_text(encoding="utf-8").lower()
+        notes = (RELEASE / "RELEASE_NOTES_v0.10.2.md").read_text(encoding="utf-8").lower()
+        ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
+
+        self.assertIn("zero-new-capability maintenance source", contract)
+        self.assertIn("no `grw-cap-*` item is", contract)
+        self.assertIn("no contributor submission", rights)
+        self.assertIn("new dependency or lockfile | none", dependency)
+        self.assertIn("new admitted capability identifiers | none", evidence)
+        self.assertIn("does not add external contributor support", notes)
+        self.assertFalse(any(item["version"]["target_release"] == "v0.10.2" for item in ledger["capabilities"]))
 
     def test_capability_admission_is_single_and_not_c4(self) -> None:
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))

@@ -71,6 +71,11 @@ class ReleaseControlTests(unittest.TestCase):
             "V0_10_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
             "V0_10_1_RELEASE_CONTROL_CANDIDATE.json",
             "RELEASE_NOTES_v0.10.1.md",
+            "V0_10_2_HUMAN_MEDIATED_EXPERIENCE_CURATION_MAINTENANCE.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.2.md",
+            "V0_10_2_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V0_10_2_RELEASE_EVIDENCE.md",
+            "RELEASE_NOTES_v0.10.2.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -133,6 +138,7 @@ class ReleaseControlTests(unittest.TestCase):
             RELEASE_ROOT / "V0_6_1_RELEASE_STATE_MAINTENANCE.md",
             RELEASE_ROOT / "RELEASE_NOTES_v0.6.1.md",
             RELEASE_ROOT / "RELEASE_NOTES_v0.10.1.md",
+            RELEASE_ROOT / "RELEASE_NOTES_v0.10.2.md",
         )
         current_text = "\n".join(path.read_text(encoding="utf-8").lower() for path in current_paths)
         for prohibited in (
@@ -166,6 +172,26 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("all-zero exact_commit sentinel", control)
         self.assertIn("pre-c3-remote preparation evidence", evidence)
         self.assertIn("v0.10.1 synthetic exchange-pilot source scope", status)
+
+    def test_v102_maintenance_records_do_not_invent_a_capability_or_intake_service(self) -> None:
+        contract = (RELEASE_ROOT / "V0_10_2_HUMAN_MEDIATED_EXPERIENCE_CURATION_MAINTENANCE.md").read_text(encoding="utf-8").lower()
+        rights = (RELEASE_ROOT / "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.2.md").read_text(encoding="utf-8").lower()
+        dependency = (RELEASE_ROOT / "V0_10_2_DEPENDENCY_AND_WORKFLOW_REVIEW.md").read_text(encoding="utf-8").lower()
+        evidence = (RELEASE_ROOT / "V0_10_2_RELEASE_EVIDENCE.md").read_text(encoding="utf-8").lower()
+        notes = (RELEASE_ROOT / "RELEASE_NOTES_v0.10.2.md").read_text(encoding="utf-8").lower()
+        status = (RELEASE_ROOT / "CURRENT_RELEASE_STATUS.md").read_text(encoding="utf-8").lower()
+        module = (RELEASE_ROOT / "MODULE.md").read_text(encoding="utf-8").lower()
+
+        self.assertIn("zero-new-capability maintenance source", contract)
+        self.assertIn("not used to invent a zero-capability admission", contract)
+        self.assertIn("no contributor submission", rights)
+        self.assertIn("new dependency or lockfile | none", dependency)
+        self.assertIn("new admitted capability identifiers | none", evidence)
+        self.assertIn("does not add external contributor support", notes)
+        self.assertIn("does not create a user-facing intake", status)
+        self.assertIn("bounded\nlocal pre-c3-remote maintenance-preparation records", module)
+        for text in (contract, rights, dependency, evidence, notes):
+            self.assertNotIn("hosted-release claim", text)
 
     def test_current_records_cannot_describe_the_published_v050_baseline_as_unreleased(self) -> None:
         current_paths = (
