@@ -22,3 +22,9 @@ The v0.9 integrity-audit source may record a supplied metadata reference as an
 audit observation or finding input. It cannot open that reference, determine
 whether it proves a source claim, independently verify a hosted Release, or
 replace accountable-human evidence review.
+
+The v0.11 public experience collection belongs to memory and learning, not to
+this module's Knowledge boundary. It contains generalized governance lessons,
+not a source corpus, current-source finding, registry, retrieval index, or RAG
+capability. Real source, journal, publisher, policy, and reporting requirement
+questions still require current task-specific authoritative input.

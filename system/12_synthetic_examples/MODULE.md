@@ -42,5 +42,10 @@ clean-environment receive simulation. It copies only the manifest-declared
 synthetic records. This is not a public intake, external contributor test,
 Computer B test, or evidence that unlisted files were checked.
 
+The v0.11 source adds one fictional manuscript-governance illustration. It
+shows record relationships and a pending human decision only. It contains no
+real manuscript, reviewer, editorial, declaration, submission, source, or
+project material and establishes no readiness or approval.
+
 Do not include real study data, manuscript text, reviewer correspondence,
 submission records, project memory, or identifiable case details.

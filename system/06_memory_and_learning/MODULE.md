@@ -33,3 +33,12 @@ receipt. It can represent that a named synthetic package was structurally
 checked after an explicitly represented private-pilot step. It is not an intake
 channel, a contributor identity record, a consent/right verification, an
 acceptance decision, or a promotion route.
+
+The v0.11 source adds an indexed public collection of generic
+knowledge-governance experiences under
+`knowledge_governance_experience_collection/`. It contains 38 adapted or
+redacted lessons with explicit scope, non-claim, and stop boundaries. It is
+not a public Knowledge package, source library, registry, index, retrieval
+service, RAG capability, source-currentness finding, or source-access grant.
+It contains no local records, project facts, source payloads, transformed
+content, hashes, receipts, traces, or approval history.

@@ -41,6 +41,12 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-090-03",
     "GRW-CAP-100-01",
     "GRW-CAP-101-01",
+    "GRW-CAP-110-01",
+    "GRW-CAP-110-02",
+    "GRW-CAP-110-03",
+    "GRW-CAP-110-04",
+    "GRW-CAP-110-05",
+    "GRW-CAP-110-06",
 }
 RELEASED_OR_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {
     "GRW-CAP-040-03",
@@ -49,6 +55,14 @@ V08_RELEASE_SCOPE_IDS = {"GRW-CAP-080-01", "GRW-CAP-080-02", "GRW-CAP-080-03"}
 V09_SCOPE_IDS = {"GRW-CAP-090-01", "GRW-CAP-090-02", "GRW-CAP-090-03"}
 V10_SCOPE_IDS = {"GRW-CAP-100-01"}
 V101_SCOPE_IDS = {"GRW-CAP-101-01"}
+V011_SCOPE_IDS = {
+    "GRW-CAP-110-01",
+    "GRW-CAP-110-02",
+    "GRW-CAP-110-03",
+    "GRW-CAP-110-04",
+    "GRW-CAP-110-05",
+    "GRW-CAP-110-06",
+}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -85,13 +99,13 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         cls.records = cls.ledger["capabilities"]
 
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
-        self.assertEqual(self.ledger["ledger_schema_version"], "1.3.0")
+        self.assertEqual(self.ledger["ledger_schema_version"], "1.4.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.10.2")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.10.1")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.11.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.10.2")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("adds no capability admission", self.ledger["target_claim_scope"])
+        self.assertIn("C2-admitted v0.11.0 source scope", self.ledger["target_claim_scope"])
         self.assertIn("Historical facts", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -131,7 +145,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-                "v0.10.1" if record["capability_id"] in V101_SCOPE_IDS
+                "v0.11.0" if record["capability_id"] in V011_SCOPE_IDS
+                else "v0.10.1" if record["capability_id"] in V101_SCOPE_IDS
                 else "v0.10.0" if record["capability_id"] in V10_SCOPE_IDS
                 else "v0.9.0" if record["capability_id"] in V09_SCOPE_IDS
                 else
@@ -349,7 +364,25 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         for text in (readme, roadmap, skill):
             self.assertIn("human-specified channel", text)
             self.assertIn("automatic promotion", text)
-        self.assertIn("adds no capability admission", self.ledger["target_claim_scope"])
+        self.assertIn("v0.11.0 source scope", self.ledger["target_claim_scope"])
+
+    def test_v011_scope_is_template_and_experience_only(self) -> None:
+        records = {record["capability_id"]: record for record in self.records}
+        self.assertEqual(set(records).intersection(V011_SCOPE_IDS), V011_SCOPE_IDS)
+        for capability_id in V011_SCOPE_IDS:
+            record = records[capability_id]
+            self.assertEqual(record["implementation_status"], "verified")
+            self.assertEqual(record["release_disposition"], "admitted")
+            self.assertEqual(record["public_claim_status"], "permitted")
+            self.assertEqual(record["version"]["target_release"], "v0.11.0")
+            self.assertIsNone(record["version"]["last_verified_release"])
+            self.assertIn("C2 accepted", record["approval_reference"])
+            self.assertIn("hosted tag", record["limitations_and_next_action"].lower())
+
+        experience = records["GRW-CAP-110-06"]
+        self.assertIn("38", experience["promise"])
+        self.assertIn("not provide a Knowledge package", experience["non_promise"])
+        self.assertIn("retrieval", experience["non_promise"])
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
         planned_records = [

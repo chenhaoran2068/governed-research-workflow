@@ -1,13 +1,13 @@
 {
-  "ledger_schema_version": "1.3.0",
+  "ledger_schema_version": "1.4.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v0.10.2",
-    "historical_public_baseline": "v0.10.1",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.10.2 maintenance source retains historical released capability facts through v0.10.1 and adds no capability admission. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v0.11.0",
+    "historical_public_baseline": "v0.10.2",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.11.0 manuscript-governance and public-experience source retains historical released capability facts through v0.10.2 and records six C2-admitted capability scopes. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.10.1. This v0.10.2 maintenance source adds no capability admission. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records released historical scopes through v0.10.2 and the C2-admitted v0.11.0 source scope. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -630,6 +630,174 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/synthetic-experience-exchange-pilot.md"],
       "contradiction_refusal": "Forbid the affected pilot claim when the explicit receipt, package identity, declared hash, retrieval representation, correction/future-use relationship, synthetic-only boundary, or required evidence is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.10.1 release-source scope. It cannot establish a hosted tag, matching GitHub Release, actual private transfer, external-contributor readiness, installed runtime, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-110-01",
+      "public_name": "Manuscript Assembly, Claim-Boundary, And Display-Review Templates",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides blank generic records for human review of manuscript assembly scope, stated claim boundaries, and display relationships.",
+      "non_promise": "Does not draft or validate a real manuscript, establish a scientific fact, assess display accuracy, determine a reporting requirement, or authorize submission.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": ["assets/manuscript-governance/manuscript-assembly-claim-display-review.template.md", "references/manuscript-governance-templates.md", "tests/test_v0_11_manuscript_governance_and_experience.py"],
+        "identifiers": ["Manuscript Assembly, Claim Boundary, And Display Review"]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [{"kind": "test", "path": "tests/test_v0_11_manuscript_governance_and_experience.py", "identifier": "V011ManuscriptGovernanceAndExperienceTests"}]
+      },
+      "version": {"introduced_version": "v0.11.0", "last_verified_release": null, "target_release": "v0.11.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human C2 accepted the exact six-capability v0.11 scope on 2026-07-22; C3-local implementation is distinct from C3-remote, C4, hosted release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "references/manuscript-governance-templates.md"],
+      "contradiction_refusal": "Forbid an assembly, claim, or display assertion when its named project evidence, current requirement, human review, or boundary is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, manuscript truth, reporting compliance, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-110-02",
+      "public_name": "Reviewer-Response And Revision-Trace Templates",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides a blank generic trace for a bounded reviewer-response or revision cycle, its artifact references, unresolved items, and human review.",
+      "non_promise": "Does not read confidential correspondence, decide whether a response is adequate, verify an editorial outcome, or authorize revision or submission.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": ["assets/manuscript-governance/reviewer-response-revision-trace.template.md", "references/manuscript-governance-templates.md", "tests/test_v0_11_manuscript_governance_and_experience.py"],
+        "identifiers": ["Reviewer Response And Revision Trace"]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [{"kind": "test", "path": "tests/test_v0_11_manuscript_governance_and_experience.py", "identifier": "V011ManuscriptGovernanceAndExperienceTests"}]
+      },
+      "version": {"introduced_version": "v0.11.0", "last_verified_release": null, "target_release": "v0.11.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human C2 accepted the exact six-capability v0.11 scope on 2026-07-22; C3-local implementation is distinct from C3-remote, C4, hosted release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "references/manuscript-governance-templates.md"],
+      "contradiction_refusal": "Forbid a response or revision-completeness claim when confidentiality, comment reference, artifact reference, current instruction, or human review is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, editorial approval, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-110-03",
+      "public_name": "Declaration And AI-Use Fact-Boundary Templates",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides a blank generic record for human review of declaration facts, AI-use representations, evidence references, unknowns, and current policy inputs.",
+      "non_promise": "Does not determine authorship, disclosure, consent, funding, conflict, data availability, policy compliance, or submission readiness.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": ["assets/manuscript-governance/declaration-ai-use-fact-boundary.template.md", "references/manuscript-governance-templates.md", "tests/test_v0_11_manuscript_governance_and_experience.py"],
+        "identifiers": ["Declaration And AI-Use Fact Boundary"]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [{"kind": "test", "path": "tests/test_v0_11_manuscript_governance_and_experience.py", "identifier": "V011ManuscriptGovernanceAndExperienceTests"}]
+      },
+      "version": {"introduced_version": "v0.11.0", "last_verified_release": null, "target_release": "v0.11.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human C2 accepted the exact six-capability v0.11 scope on 2026-07-22; C3-local implementation is distinct from C3-remote, C4, hosted release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "references/manuscript-governance-templates.md"],
+      "contradiction_refusal": "Forbid a declaration or AI-use fact claim when its evidence owner, factual basis, current policy reference, or accountable-human verification is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, policy compliance, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-110-04",
+      "public_name": "Submission-Route And Package-Provenance Templates",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides a blank generic record for a proposed submission route, package inventory, current-requirement references, unknowns, and requested human approval.",
+      "non_promise": "Does not contact a portal, verify current journal requirements, upload material, confirm submission, or authorize external action.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": ["assets/manuscript-governance/submission-route-package-provenance.template.md", "references/manuscript-governance-templates.md", "tests/test_v0_11_manuscript_governance_and_experience.py"],
+        "identifiers": ["Submission Route And Package Provenance"]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [{"kind": "test", "path": "tests/test_v0_11_manuscript_governance_and_experience.py", "identifier": "V011ManuscriptGovernanceAndExperienceTests"}]
+      },
+      "version": {"introduced_version": "v0.11.0", "last_verified_release": null, "target_release": "v0.11.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human C2 accepted the exact six-capability v0.11 scope on 2026-07-22; C3-local implementation is distinct from C3-remote, C4, hosted release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "references/manuscript-governance-templates.md"],
+      "contradiction_refusal": "Forbid a route, package, requirement, or submission-ready claim when route state, artifact identity, current requirement, approval, or external confirmation is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, portal action, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-110-05",
+      "public_name": "Decision-Ready Human-Review Packet Template",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides a blank generic packet for presenting bounded evidence references, unknowns, options, and a requested accountable-human decision.",
+      "non_promise": "Does not grant authority, choose an option, resolve contradictions, approve a project gate, or authorize release or submission.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": ["assets/manuscript-governance/decision-ready-human-review-packet.template.md", "references/manuscript-governance-templates.md", "tests/test_v0_11_manuscript_governance_and_experience.py"],
+        "identifiers": ["Decision-Ready Human Review Packet"]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [{"kind": "test", "path": "tests/test_v0_11_manuscript_governance_and_experience.py", "identifier": "V011ManuscriptGovernanceAndExperienceTests"}]
+      },
+      "version": {"introduced_version": "v0.11.0", "last_verified_release": null, "target_release": "v0.11.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human C2 accepted the exact six-capability v0.11 scope on 2026-07-22; C3-local implementation is distinct from C3-remote, C4, hosted release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "references/manuscript-governance-templates.md"],
+      "contradiction_refusal": "Forbid a decision-ready or approved claim when scope, evidence references, unknowns, decision owner, or decision reference is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, human decision, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-110-06",
+      "public_name": "Public Knowledge-Governance Experience Collection",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides exactly 38 generic public experience entries about source admission, freshness, transformation boundaries, bounded retrieval, maintenance, and controlled expansion.",
+      "non_promise": "Does not provide a Knowledge package, source library, registry, index, retrieval service, RAG system, source payload, current-source finding, access permission, or production-readiness proof.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": ["system/06_memory_and_learning/knowledge_governance_experience_collection/README.md", "references/knowledge-governance-experience-collection.md", "tests/test_v0_11_manuscript_governance_and_experience.py"],
+        "identifiers": ["KGE-001", "KGE-038", "adapted_public_experience_rule", "redacted_historical_experience_note"]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [{"kind": "test", "path": "tests/test_v0_11_manuscript_governance_and_experience.py", "identifier": "V011ManuscriptGovernanceAndExperienceTests"}]
+      },
+      "version": {"introduced_version": "v0.11.0", "last_verified_release": null, "target_release": "v0.11.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human C2 accepted the exact six-capability v0.11 scope and the 38-entry adapted/redacted public experience collection on 2026-07-22; C3-local implementation is distinct from C3-remote, C4, hosted release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "references/knowledge-governance-experience-collection.md", "system/06_memory_and_learning/knowledge_governance_experience_collection/README.md"],
+      "contradiction_refusal": "Forbid a public-experience claim when entry count, type, required boundary, redaction condition, local-material exclusion, or collection purpose is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, source access, currentness finding, public Knowledge package, retrieval capability, or C4 authorization."
     }
   ]
 }
