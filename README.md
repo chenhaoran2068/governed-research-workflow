@@ -5,16 +5,18 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.10.1 self-controlled synthetic experience-exchange pilot source.
-It retains the v0.4-v0.10 bounded controls and adds one caller-named, read-only
-receipt validator for a synthetic v0.10 package. It adds no public intake,
-external-contributor flow, upload/download helper, network action, real-content
-handling, data access, coordinator, agent runtime, delegation, multi-agent
-orchestration, generic writer, recovery executor, or release decision. This
-source tree does not itself prove the release or installation identity of any
-selected version. A normal public installation target exists only when an exact
-annotated tag and matching GitHub Release resolve to the selected source commit.
-Never install a mutable branch.
+Status: v0.10.2 human-mediated experience-curation maintenance source. It
+retains the v0.4-v0.10.1 bounded controls and corrects only the future
+experience-sharing direction: any future candidate must be sent through a
+human-specified channel, screened and curated by the maintainer, and separately
+approved before any public-safe derivative is published. It adds no public
+intake, direct external-contributor flow, upload/download helper, network
+action, real-content handling, data access, coordinator, agent runtime,
+delegation, multi-agent orchestration, generic writer, recovery executor, or
+release decision. This source tree does not itself prove the release or
+installation identity of any selected version. A normal public installation
+target exists only when an exact annotated tag and matching GitHub Release
+resolve to the selected source commit. Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -40,8 +42,8 @@ evidence, version, and required human approval. The ledger is not an
 installed-runtime statement. Release-scope admission proves neither local
 installation, runtime identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as v0.10.1 synthetic-exchange-pilot
-release-source content.
+The package manifest identifies this source as v0.10.2 human-mediated
+experience-curation maintenance content. It adds no new admitted capability.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
 records remain verified and admitted for their named v0.8.0 scope. Neither
@@ -277,8 +279,13 @@ supersede a band through a reviewed revision.
 - `v0.10.1`: self-controlled private synthetic exchange-pilot protocol; no
   external contributor, public intake, real material, or independent Computer
   B claim.
-- `v0.10.2+`: separately reviewed external-contributor governance pilot, only
-  after an accountable maintainer has accepted v0.10.1 evidence.
+- `v0.10.2`: maintenance-only clarification of the future experience-sharing
+  direction. A future user may send an explicitly consented, minimal candidate
+  through a human-specified channel to Chenhaoran; Chenhaoran must manually
+  screen rights and sensitivity, curate any derivative, and separately approve
+  any publication. This source does not create a user-facing intake, repository
+  access path, upload/download helper, automatic de-identification, automatic
+  review, or automatic promotion.
 - `v0.11.x+`: manuscript, revision, declaration, and submission governance;
   no automatic journal-policy claim or submission.
 - `v1.0.0`: stable bounded public-system contract, only after its interface,

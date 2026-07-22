@@ -97,7 +97,7 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.10.1", manifest)
+        self.assertIn("system_version: 0.10.2", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
@@ -230,7 +230,8 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("`v0.6.x`", security)
         self.assertIn("`v0.7.x`", security)
         self.assertIn("`v0.8.x`", security)
-        self.assertIn("v0.9 source becomes", security)
+        self.assertIn("`v0.9.x`", security)
+        self.assertIn("`v0.10.x`", security)
         self.assertIn("released bounded system baseline\nthrough `v0.4.0`", start_here)
         self.assertIn("`REL-008` was completed by the released `v0.3.0`", roadmap)
         self.assertNotIn("| REL-008 |", roadmap)

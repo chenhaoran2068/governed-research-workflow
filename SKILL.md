@@ -151,6 +151,13 @@ intake, identity/rights claim, actual transfer, or Computer B claim is
 requested. Do not create a repository, upload material, or execute a
 correction/withdrawal merely because a receipt validates structurally.
 
+No user-contribution intake route is implemented. A future, explicitly
+consented minimal candidate may be sent to Chenhaoran only through a
+human-specified channel, for manual rights/sensitivity screening, curation, and
+separate approval of any public-safe derivative. Do not create repository
+access, upload/download, automatic de-identification, automatic review, or
+automatic promotion from this statement.
+
 ## Mandatory Stops
 
 Stop and request accountable evidence or approval before:

@@ -72,6 +72,22 @@ verify the exact tag and matching Release at the time of installation.
   normal public installation rule above verifies its exact tag and matching
   GitHub Release.
 
+## v0.10.2 Human-Mediated Future-Direction Maintenance Source Scope
+
+- The v0.10.2 maintenance source adds no capability, schema, validator,
+  dependency, receiving endpoint, or automation. It clarifies only the future
+  experience-sharing direction: an explicitly consented minimal candidate may
+  later be sent through a human-specified channel to Chenhaoran, who must
+  manually screen rights and sensitivity, curate any derivative, and separately
+  approve any public-safe publication.
+- It does not create a user-facing intake, repository access route,
+  upload/download helper, automatic de-identification, automatic review,
+  automatic promotion, real-content route, network transfer, or external-
+  contributor service.
+- A selected v0.10.2 checkout becomes a normal installation target only after
+  the normal public installation rule above verifies its exact tag and matching
+  GitHub Release.
+
 ## Published v0.8.0 Historical Scope
 
 - `v0.8.0` is a bounded public release whose selected-version identity must be

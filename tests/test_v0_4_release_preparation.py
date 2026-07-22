@@ -36,7 +36,7 @@ class V04ReleasePreparationTests(unittest.TestCase):
     def test_ledger_preserves_historical_v04_option_a_and_later_scope_history(self) -> None:
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
         self.assertEqual(ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.1")
         capabilities = ledger["capabilities"]
         admitted_ids = {
             "GRW-CAP-031-01",

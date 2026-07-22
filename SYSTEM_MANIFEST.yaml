@@ -1,14 +1,14 @@
-# v0.10.1 release source retains the v0.4-v0.10 bounded control scopes and
-# adds one synthetic exchange-pilot receipt contract. It adds no public intake,
-# network action, data access, agent runtime, delegation, generic writer,
-# recovery executor, or release decision. This manifest never proves
+# v0.10.2 maintenance source retains the v0.4-v0.10.1 bounded control scopes
+# and clarifies only a future human-mediated experience-curation route. It adds
+# no public intake, network action, data access, agent runtime, delegation,
+# generic writer, recovery executor, or release decision. This manifest never proves
 # that a selected version is
 # installed or released:
 # verify an exact annotated tag and matching GitHub Release at installation
 # time. The workspace framework-contract version remains 0.1.0.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 0.10.1
+system_version: 0.10.2
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:
