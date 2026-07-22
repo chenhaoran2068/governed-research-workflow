@@ -83,6 +83,13 @@ class ReleaseControlTests(unittest.TestCase):
             "V0_11_RELEASE_EVIDENCE.md",
             "V0_11_RELEASE_GATE.md",
             "RELEASE_NOTES_v0.11.0.md",
+            "V0_12_SYNTHETIC_INTEGRATION_ASSURANCE.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.12.0.md",
+            "V0_12_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V0_12_RELEASE_GATE.md",
+            "V0_12_RELEASE_CONTROL_CANDIDATE.json",
+            "V0_12_RELEASE_EVIDENCE.md",
+            "RELEASE_NOTES_v0.12.0.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -109,7 +116,7 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.11.0", manifest)
+        self.assertIn("system_version: 0.12.0", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)

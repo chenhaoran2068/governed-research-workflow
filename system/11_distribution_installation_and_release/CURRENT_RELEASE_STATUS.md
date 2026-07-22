@@ -94,6 +94,25 @@ verify the exact tag and matching Release at the time of installation.
   the normal public installation rule above verifies its exact tag and matching
   GitHub Release.
 
+## v0.12 Synthetic Integration-Assurance Source Scope
+
+- The v0.12 source adds no capability identifier, schema, validator, helper,
+  dependency, profile, role, agent, network route, data route, or runtime
+  installation behavior. It adds a synthetic integration-assurance scenario
+  and regression coverage for already released bounded controls.
+- The scenario creates only a test-owned empty workspace, checks existing
+  synthetic provenance, workflow/evidence, and lesson-promotion fixtures,
+  reviews blank manuscript-governance templates, and simulates a temporary
+  test-owned staging/update/rollback lifecycle. It is not a real installation
+  or rollback operation.
+- The v0.12 preparation records preserve no-new-interface scope, material
+  review, dependency/workflow review, release gate, release control, evidence,
+  and release notes. They do not establish hosted availability, a private
+  source identity, installed Codex runtime, or an exact C4 release decision.
+- A selected v0.12 checkout becomes a normal installation target only after
+  the normal public installation rule above verifies its exact tag and matching
+  GitHub Release.
+
 ## Published v0.8.0 Historical Scope
 
 - `v0.8.0` is a bounded public release whose selected-version identity must be
