@@ -82,6 +82,9 @@ class V011ManuscriptGovernanceAndExperienceTests(unittest.TestCase):
         self.assertIn("not a `knowledge` content package", text)
         self.assertIn("not a `knowledge` content package, source library", text)
         self.assertIn("neither type authorizes access", text)
+        self.assertIn("private project, source, or person identifier", text)
+        self.assertIn("public `kge-001` through `kge-038` identifiers", text)
+        self.assertNotIn("project\nrecord, identifier, hash", text)
         self.assertIsNone(re.search(r"\bm(?:1[0-9]|[2-4][0-9])\b", entry_text))
         for marker in FORBIDDEN_COLLECTION_MARKERS:
             self.assertNotIn(marker, entry_text, marker)

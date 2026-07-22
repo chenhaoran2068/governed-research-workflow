@@ -7,7 +7,9 @@ knowledge work. It is not a `Knowledge` content package, source library,
 registry, index, retrieval service, RAG system, current-source checker, or
 production-readiness certificate. It contains no source payload, extracted
 text, transformed note, curated card, retrieval output, local path, project
-record, identifier, hash, receipt, trace, or approval history.
+record, private project, source, or person identifier, hash, receipt, trace,
+or approval history. The public `KGE-001` through `KGE-038` identifiers name
+only the entries in this collection.
 
 Each entry is either an `adapted_public_experience_rule` or a
 `redacted_historical_experience_note`. The rule type is reusable guidance only
