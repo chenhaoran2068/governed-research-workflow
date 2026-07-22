@@ -88,10 +88,10 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(self.ledger["ledger_schema_version"], "1.3.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.10.1")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.10.0")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.10.2")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.10.1")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("one v0.10.1 capability scope admitted", self.ledger["target_claim_scope"])
+        self.assertIn("adds no capability admission", self.ledger["target_claim_scope"])
         self.assertIn("Historical facts", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -341,6 +341,15 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("does not create public or external-contributor intake", record["non_promise"].lower())
         self.assertIn("independent computer b", record["non_promise"].lower())
         self.assertIn("cannot establish a hosted tag", record["limitations_and_next_action"].lower())
+
+    def test_v102_maintenance_direction_is_human_mediated_and_not_an_intake(self) -> None:
+        readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8").lower()
+        roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8").lower()
+        skill = (REPOSITORY_ROOT / "SKILL.md").read_text(encoding="utf-8").lower()
+        for text in (readme, roadmap, skill):
+            self.assertIn("human-specified channel", text)
+            self.assertIn("automatic promotion", text)
+        self.assertIn("adds no capability admission", self.ledger["target_claim_scope"])
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:
         planned_records = [

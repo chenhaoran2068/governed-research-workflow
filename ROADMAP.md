@@ -6,6 +6,17 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.10.2 (human-mediated experience-curation maintenance source)
+
+This maintenance source corrects the future experience-sharing direction only.
+It adds no capability, schema, validator, dependency, receiving endpoint, or
+automation. Any future user contribution must be explicitly consented and sent
+through a human-specified channel to Chenhaoran. Chenhaoran must manually
+screen rights and sensitivity, curate any derivative, and separately approve a
+public-safe publication. This source creates no user-facing intake, repository
+access path, upload/download helper, automatic de-identification, automatic
+review, automatic promotion, or external-contributor service.
+
 ## v0.10.1 (self-controlled synthetic experience-exchange pilot)
 
 This source adds one generic private-pilot receipt contract and one explicit
@@ -18,8 +29,8 @@ It does not create a public or external-contributor intake, transfer real
 content, verify consent/rights/identity/device, prove a real Computer B,
 perform a network action, accept/promote a package, or execute correction,
 withdrawal, deletion, or recall. A same-host clean clone is only a
-clean-environment simulation. External-contributor governance remains a
-separately chartered v0.10.2-or-later task.
+clean-environment simulation. At this historical v0.10.1 scope, further
+experience-sharing governance was deferred to a later charter.
 
 ## v0.10.0 (voluntary metadata-only experience package)
 
@@ -201,8 +212,12 @@ guidance without modifying the historical tag.
 - `v0.10.1`: self-controlled private synthetic exchange-pilot protocol; no
   public intake, external contributor, real content, or independent Computer B
   claim.
-- `v0.10.2+`: only separately chartered external-contributor governance pilot;
-  no hidden telemetry, automatic upload, or automatic rule promotion.
+- `v0.10.2`: maintenance-only clarification of a future human-mediated route:
+  explicitly consented minimal candidates may later be sent through a
+  human-specified channel to Chenhaoran for manual screening, curation, and
+  separate approval of any public-safe derivative. No user-facing intake,
+  repository access, upload/download helper, automatic de-identification,
+  automatic review, automatic promotion, or hidden telemetry is provided.
 - `v0.11.x+`: pre-v1 scope closure and stabilization. `v1.0.0` is a later
   evidence-and-stability threshold, not an automatic feature deadline.
 

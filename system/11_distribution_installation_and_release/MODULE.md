@@ -110,3 +110,26 @@ metadata-only integrity-audit, correction/reassessment, and operational-
 preflight scope. They do not establish an exact remote candidate, hosted CI,
 protected-main result, C4 authorization, tag, GitHub Release, installation
 target, or runtime identity.
+
+`V0_10_CAPABILITY_ADMISSION.md`, `V0_10_RELEASE_GATE.md`,
+`V0_10_RELEASE_EVIDENCE.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.0.md`,
+`V0_10_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
+`V0_10_RELEASE_CONTROL_CANDIDATE.json`, and `RELEASE_NOTES_v0.10.0.md` retain
+the historical v0.10.0 voluntary metadata-only experience-package release
+evidence and scope. `V0_10_1_CAPABILITY_ADMISSION.md`,
+`V0_10_1_RELEASE_GATE.md`, `V0_10_1_RELEASE_EVIDENCE.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.1.md`,
+`V0_10_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
+`V0_10_1_RELEASE_CONTROL_CANDIDATE.json`, and `RELEASE_NOTES_v0.10.1.md`
+retain the historical v0.10.1 synthetic exchange-pilot release evidence and
+scope. They do not create a current runtime or authorize another release.
+
+`V0_10_2_HUMAN_MEDIATED_EXPERIENCE_CURATION_MAINTENANCE.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.10.2.md`,
+`V0_10_2_DEPENDENCY_AND_WORKFLOW_REVIEW.md`,
+`V0_10_2_RELEASE_EVIDENCE.md`, and `RELEASE_NOTES_v0.10.2.md` are bounded
+local pre-C3-remote maintenance-preparation records. They describe only the
+human-mediated future direction for optional experience sharing, add no
+capability or runtime behavior, and do not establish an exact remote
+candidate, hosted CI, C4 authorization, tag, GitHub Release, installation
+target, or runtime identity.
