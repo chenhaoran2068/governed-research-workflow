@@ -1,9 +1,8 @@
 # Public System Module Index
 
-Status: v0.12.0 synthetic integration-assurance maintenance source retaining
-historical v0.4-v0.11.0 controls. It adds no capability interface; it adds a
-synthetic cross-module regression scenario, not an intake, exchange, data,
-retrieval, or execution capability. This index does not prove
+Status: v0.13.0 pre-V1 support-scope closure source retaining historical
+v0.4-v0.12.0 controls. It adds the V1 Support Scope Matrix, not an intake,
+exchange, data, retrieval, or execution capability. This index does not prove
 that a selected version is released:
 users must verify an exact annotated tag and matching GitHub Release rather
 than install `main` or another mutable branch.
@@ -21,6 +20,12 @@ contract is validated for this source against the exact released
 framework `v0.1.2` tag.
 
 ## Module Status
+
+The [V1 Support Scope Matrix](00_manifest_and_profiles/V1_SUPPORT_SCOPE.md)
+is the sole machine-readable authority for module-level support posture. This
+table remains a readable architecture map; it must not be used to override the
+matrix, capability ledger, release-verification, installation, or project
+authority records.
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |

@@ -1,5 +1,8 @@
 # Specialist Agent-Contract Boundary
 
+The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+module's support posture; this boundary record does not enlarge that scope.
+
 Status: v0.9.0 integrity-audit source. This directory retains two historical
 v0.8.0 release-scope-admitted, non-runnable role contract records.
 No runnable specialist agent is defined here.

@@ -101,16 +101,16 @@ class V011ManuscriptGovernanceAndExperienceTests(unittest.TestCase):
         self.assertIn("not a manuscript", synthetic_example)
         self.assertIn("pending", synthetic_example)
 
-    def test_v011_content_is_retained_by_the_later_v012_source(self) -> None:
+    def test_v011_content_is_retained_by_the_later_v013_source(self) -> None:
         manifest = (REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertIn("system_version: 0.12.0", manifest)
-        self.assertIn("v0.12.0 synthetic integration-assurance", readme)
+        self.assertIn("system_version: 0.13.0", manifest)
+        self.assertIn("Status: v0.13.0 pre-V1 support-scope closure source", readme)
         self.assertIn("## v0.11.0", roadmap)
-        self.assertEqual(ledger["ledger_schema_version"], "1.4.0")
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.12.0")
+        self.assertEqual(ledger["ledger_schema_version"], "1.5.0")
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.13.0")
         capability_ids = {record["capability_id"] for record in ledger["capabilities"]}
         self.assertEqual(
             {f"GRW-CAP-110-{number:02d}" for number in range(1, 7)}.intersection(capability_ids),

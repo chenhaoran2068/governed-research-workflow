@@ -20,10 +20,10 @@ class V09ReleasePreparationTests(unittest.TestCase):
         roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.12.0", manifest)
-        self.assertIn("Status: v0.12.0 synthetic integration-assurance maintenance source", readme)
+        self.assertIn("system_version: 0.13.0", manifest)
+        self.assertIn("Status: v0.13.0 pre-V1 support-scope closure source", readme)
         self.assertIn("## v0.9.0 (integrity-audit source)", roadmap)
-        self.assertIn("Status: v0.12.0 synthetic integration-assurance maintenance source", index)
+        self.assertIn("Status: v0.13.0 pre-V1 support-scope closure source", index)
         combined = "\n".join((manifest, readme, roadmap, index)).lower()
         self.assertNotIn("v0.9.0 is published", combined)
         self.assertNotIn("v0.9.0 is installed", combined)
