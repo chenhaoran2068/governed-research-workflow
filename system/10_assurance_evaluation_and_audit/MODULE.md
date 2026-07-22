@@ -58,3 +58,11 @@ no-write, non-substitution, and same-host clean-environment receipt tests.
 They do not test real content, a remote intake, an external user, or a second
 computer. They do not prove that a package is true, safe, consented, or ready
 for sharing.
+
+The v0.11 source adds regression checks for template presence and boundaries,
+the exact 38-entry public experience collection, 14 adapted-rule and 24
+redacted-note classifications, required scope/lesson/non-claim/stop fields,
+and absence of selected local-material markers. These tests prove only the
+declared public-package structure and screening assertions; they do not prove
+that every possible private detail has been removed, that an external source is
+current, or that a real manuscript or submission is ready.

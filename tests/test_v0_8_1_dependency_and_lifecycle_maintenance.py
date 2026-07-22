@@ -28,9 +28,9 @@ class V081DependencyAndLifecycleMaintenanceTests(unittest.TestCase):
     def test_ledger_preserves_v081_capabilities_while_adding_admitted_v09_scope(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
         self.assertEqual(ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.10.2")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.1")
-        self.assertIn("released historical scopes through v0.10.1", ledger["target_claim_scope"])
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.11.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.2")
+        self.assertIn("released historical scopes through v0.10.2", ledger["target_claim_scope"])
         records = {record["capability_id"]: record for record in ledger["capabilities"]}
         self.assertEqual(
             set(records).intersection({"GRW-CAP-080-01", "GRW-CAP-080-02", "GRW-CAP-080-03"}),

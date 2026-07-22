@@ -31,23 +31,24 @@ FORBIDDEN_MARKERS = ("E:" + chr(92) + "Chen" + "haoran", "C:" + chr(92) + "Us" +
 
 
 class V010ReleasePreparationTests(unittest.TestCase):
-    def test_v010_history_is_retained_while_v0102_becomes_current_source(self) -> None:
+    def test_v010_history_is_retained_while_later_source_moves_forward(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
         current_surface = "\n".join((manifest, readme, roadmap, index, json.dumps(ledger))).lower()
-        self.assertIn("system_version: 0.10.2", manifest)
-        self.assertIn("v0.10.2 human-mediated experience-curation maintenance source", readme)
+        self.assertIn("system_version: 0.11.0", manifest)
+        self.assertIn("v0.11.0 manuscript-governance and public-experience source", readme)
         self.assertIn("## v0.10.0 (voluntary metadata-only experience package)", roadmap)
         self.assertIn("## v0.10.1 (self-controlled synthetic experience-exchange pilot)", roadmap)
         self.assertIn("## v0.10.2 (human-mediated experience-curation maintenance source)", roadmap)
-        self.assertIn("v0.10.2 human-mediated experience-curation maintenance source", index)
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.10.2")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.1")
+        self.assertIn("Status: v0.11.0 manuscript-governance and public-experience source", index)
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.11.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.2")
         self.assertIn("human-specified channel", readme.lower())
         self.assertIn("no user-facing intake", roadmap.lower())
+        self.assertIn("## v0.11.0 (manuscript-governance and public-experience source)", roadmap)
         self.assertNotIn("voluntary-experience-package candidate", current_surface)
         self.assertNotIn("v0.10.1 is published", current_surface)
 

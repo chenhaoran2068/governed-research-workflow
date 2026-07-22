@@ -76,6 +76,13 @@ class ReleaseControlTests(unittest.TestCase):
             "V0_10_2_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
             "V0_10_2_RELEASE_EVIDENCE.md",
             "RELEASE_NOTES_v0.10.2.md",
+            "V0_11_CAPABILITY_ADMISSION.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.11.0.md",
+            "V0_11_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V0_11_RELEASE_CONTROL_CANDIDATE.json",
+            "V0_11_RELEASE_EVIDENCE.md",
+            "V0_11_RELEASE_GATE.md",
+            "RELEASE_NOTES_v0.11.0.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -102,7 +109,7 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 0.10.2", manifest)
+        self.assertIn("system_version: 0.11.0", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn("denotes the framework contract version", manifest)
@@ -192,6 +199,33 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("bounded\nlocal pre-c3-remote maintenance-preparation records", module)
         for text in (contract, rights, dependency, evidence, notes):
             self.assertNotIn("hosted-release claim", text)
+
+    def test_v011_release_preparation_records_preserve_scope_and_pending_gates(self) -> None:
+        admission = (RELEASE_ROOT / "V0_11_CAPABILITY_ADMISSION.md").read_text(encoding="utf-8").lower()
+        rights = (RELEASE_ROOT / "PUBLIC_MATERIAL_RIGHTS_REVIEW_v0.11.0.md").read_text(encoding="utf-8").lower()
+        dependency = (RELEASE_ROOT / "V0_11_DEPENDENCY_AND_WORKFLOW_REVIEW.md").read_text(encoding="utf-8").lower()
+        gate = (RELEASE_ROOT / "V0_11_RELEASE_GATE.md").read_text(encoding="utf-8").lower()
+        evidence = (RELEASE_ROOT / "V0_11_RELEASE_EVIDENCE.md").read_text(encoding="utf-8").lower()
+        notes = (RELEASE_ROOT / "RELEASE_NOTES_v0.11.0.md").read_text(encoding="utf-8").lower()
+        control = (RELEASE_ROOT / "V0_11_RELEASE_CONTROL_CANDIDATE.json").read_text(encoding="utf-8").lower()
+
+        self.assertIn("grw-cap-110-01", admission)
+        self.assertIn("grw-cap-110-06", admission)
+        self.assertIn("private project, source, or person identifier", admission)
+        self.assertIn("accountable-human public-rights confirmation", gate)
+        self.assertIn("remote ci pending", gate)
+        self.assertIn("jsonschema==4.26.0", dependency)
+        self.assertIn("backward-compatible ledger identifier-pattern extension", dependency)
+        self.assertIn("dbbaea0a4aa335265c6e199971e6134892ba52d9", rights)
+        self.assertIn("227 tests passed", evidence)
+        self.assertIn("exact c3-remote candidate", evidence)
+        self.assertIn("no exact c3-remote candidate has been authorized", control)
+        self.assertIn("all-zero exact_commit sentinel", control)
+        self.assertIn("no new schema artifact, validator, dependency, helper", notes)
+        for text in (admission, rights, dependency, gate, evidence, control):
+            self.assertIn("historical local pre-c3-remote snapshot", text)
+        for text in (admission, rights, dependency, gate, evidence, notes, control):
+            self.assertNotIn("v0.11.0 is released", text)
 
     def test_current_records_cannot_describe_the_published_v050_baseline_as_unreleased(self) -> None:
         current_paths = (

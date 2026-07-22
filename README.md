@@ -5,18 +5,17 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.10.2 human-mediated experience-curation maintenance source. It
-retains the v0.4-v0.10.1 bounded controls and corrects only the future
-experience-sharing direction: any future candidate must be sent through a
-human-specified channel, screened and curated by the maintainer, and separately
-approved before any public-safe derivative is published. It adds no public
-intake, direct external-contributor flow, upload/download helper, network
-action, real-content handling, data access, coordinator, agent runtime,
-delegation, multi-agent orchestration, generic writer, recovery executor, or
-release decision. This source tree does not itself prove the release or
-installation identity of any selected version. A normal public installation
-target exists only when an exact annotated tag and matching GitHub Release
-resolve to the selected source commit. Never install a mutable branch.
+Status: v0.11.0 manuscript-governance and public-experience source. It retains
+the v0.4-v0.10.2 bounded controls and adds only five generic blank
+manuscript-governance templates plus a redacted public experience collection.
+It adds no public intake, direct external-contributor flow, upload/download
+helper, network action, real-content handling, data access, source library,
+retrieval service, RAG capability, coordinator, agent runtime, delegation,
+multi-agent orchestration, generic writer, recovery executor, or release
+decision. This source tree does not itself prove the release or installation
+identity of any selected version. A normal public installation target exists
+only when an exact annotated tag and matching GitHub Release resolve to the
+selected source commit. Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -36,14 +35,16 @@ claim.
 
 This source tree contains a single machine-checkable capability ledger at
 `system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-historical released capability facts through `v0.10.0`, including the v0.10
-experience-package contract. It records each capability's interface,
-evidence, version, and required human approval. The ledger is not an
-installed-runtime statement. Release-scope admission proves neither local
-installation, runtime identity, hosted Release, nor C4 authorization.
+historical released capability facts through `v0.10.2` and the C2-admitted
+v0.11 source scope: five template capabilities and a 38-entry public
+experience collection. It records each capability's interface, evidence,
+version, and required human approval. The ledger is not an installed-runtime
+statement. Release-scope admission proves neither local installation, runtime
+identity, hosted Release, nor C4 authorization.
 
-The package manifest identifies this source as v0.10.2 human-mediated
-experience-curation maintenance content. It adds no new admitted capability.
+The package manifest identifies this source as v0.11.0 manuscript-governance
+and public-experience content. `GRW-CAP-110-01` through `GRW-CAP-110-06` are
+bounded C2-admitted source-scope records, not hosted-release or runtime claims.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
 records remain verified and admitted for their named v0.8.0 scope. Neither
@@ -163,6 +164,17 @@ manifest. It does not create an intake, transfer material, verify a person or
 device, or execute correction/withdrawal. A same-host clean clone is a
 clean-environment simulation, not physical Computer B evidence. See
 [`references/synthetic-experience-exchange-pilot.md`](references/synthetic-experience-exchange-pilot.md).
+
+The v0.11 source adds five optional blank templates for manuscript assembly and
+claim/display review, reviewer-response and revision trace, declaration and
+AI-use fact boundaries, submission-route/package provenance, and a
+decision-ready human-review packet. It also adds 38 generic public
+knowledge-governance experiences. These materials are human review aids only:
+they do not read or contain a real manuscript, reviewer correspondence,
+declaration, submission package, source payload, or project record. The
+experience collection is not a public Knowledge package, source library,
+registry, index, retrieval service, RAG capability, current-source finding, or
+access permission. Current external requirements remain task-specific inputs.
 
 ## Use
 
@@ -286,8 +298,12 @@ supersede a band through a reviewed revision.
   any publication. This source does not create a user-facing intake, repository
   access path, upload/download helper, automatic de-identification, automatic
   review, or automatic promotion.
-- `v0.11.x+`: manuscript, revision, declaration, and submission governance;
-  no automatic journal-policy claim or submission.
+- `v0.11.0`: generic manuscript/revision/declaration/submission templates and
+  a 38-entry adapted/redacted public experience collection; no real manuscript
+  handling, automatic journal-policy claim, submission, Knowledge package,
+  source library, retrieval, RAG, or source-content action.
+- `v0.12.x+`: integration hardening and pre-v1 scope closure; no automatic
+  feature expansion or public claim without a separately reviewed scope.
 - `v1.0.0`: stable bounded public-system contract, only after its interface,
   evidence, support, and release conditions are met.
 - `v1.1+`: separately reviewed post-v1 expansion; this roadmap grants no

@@ -6,6 +6,24 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v0.11.0 (manuscript-governance and public-experience source)
+
+This source adds five generic blank templates for manuscript assembly and
+claim/display review, reviewer-response and revision trace, declaration and
+AI-use fact boundaries, submission-route/package provenance, and a
+decision-ready human-review packet. It also adds exactly 38 generic public
+knowledge-governance experience entries: 14 adapted public experience rules
+and 24 redacted historical experience notes.
+
+It does not read, retain, or publish real manuscripts, reviewer or editorial
+correspondence, declarations, submission packages, project material, source
+payloads, extracted or transformed source content, local records, or private
+approval evidence. The experience collection is not a public Knowledge
+package, source library, registry, index, retrieval service, RAG capability,
+current-source checker, access grant, or production-readiness claim. Current
+external requirements and all consequential decisions remain human-controlled,
+task-specific inputs.
+
 ## v0.10.2 (human-mediated experience-curation maintenance source)
 
 This maintenance source corrects the future experience-sharing direction only.
@@ -198,7 +216,7 @@ The immutable v0.5.0 Release retains some pre-C4 static wording. This v0.5.1
 maintenance revision records that limitation and corrects the current-source
 guidance without modifying the historical tag.
 
-## Planned After v0.7 (not current capability)
+## Planned After v0.11 (not current capability)
 
 - `v0.5.x`: corrective or compatibility maintenance only for the released
   v0.5.0 contract.
@@ -218,8 +236,8 @@ guidance without modifying the historical tag.
   separate approval of any public-safe derivative. No user-facing intake,
   repository access, upload/download helper, automatic de-identification,
   automatic review, automatic promotion, or hidden telemetry is provided.
-- `v0.11.x+`: pre-v1 scope closure and stabilization. `v1.0.0` is a later
-  evidence-and-stability threshold, not an automatic feature deadline.
+- `v0.12.x+`: integration hardening and pre-v1 scope closure. `v1.0.0` is a
+  later evidence-and-stability threshold, not an automatic feature deadline.
 
 ## v0.4.0 (published governance-and-records baseline)
 

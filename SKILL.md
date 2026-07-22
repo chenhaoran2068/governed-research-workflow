@@ -183,6 +183,10 @@ Stop and request accountable evidence or approval before:
   references/evidence-and-citation-control.md
 - Manuscript, revision, declaration, and submission-route work:
   references/manuscript-and-submission-control.md
+- Optional blank manuscript-governance templates:
+  references/manuscript-governance-templates.md
+- Generic public knowledge-governance experiences, not a Knowledge or retrieval
+  route: references/knowledge-governance-experience-collection.md
 - Project retrospective learning and lesson promotion:
   references/retrospective-learning.md
 - Metadata-only lesson-promotion control records, when admitted for the

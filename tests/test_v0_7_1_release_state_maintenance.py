@@ -18,7 +18,7 @@ class V071HistoricalMaintenanceTests(unittest.TestCase):
         self.assertIn("## v0.8.0 (historical pre-C4 portability, role-contract, and helper-admission source)", roadmap)
         self.assertIn("## v0.7.1 (release-state and control-hardening maintenance source)", roadmap)
         self.assertIn("## v0.7.0 (historical human-reviewed lesson-promotion release source)", roadmap)
-        self.assertIn("## Planned After v0.7 (not current capability)", roadmap)
+        self.assertIn("## Planned After v0.11 (not current capability)", roadmap)
         self.assertNotIn("v0.7.x: candidate", roadmap.lower())
 
     def test_maintenance_keeps_the_v070_capability_identity_and_boundary(self) -> None:
@@ -26,9 +26,9 @@ class V071HistoricalMaintenanceTests(unittest.TestCase):
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
         record = next(item for item in ledger["capabilities"] if item["capability_id"] == "GRW-CAP-070-01")
 
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.10.2")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.1")
-        self.assertIn("released historical scopes through v0.10.1", ledger["target_claim_scope"])
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.11.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.10.2")
+        self.assertIn("released historical scopes through v0.10.2", ledger["target_claim_scope"])
         self.assertEqual(record["version"]["introduced_version"], "v0.7.0")
         self.assertEqual(record["version"]["target_release"], "v0.7.0")
         self.assertEqual(record["version"]["last_verified_release"], "v0.7.0")

@@ -61,3 +61,8 @@ blank generic record templates. They model only represented scope,
 redaction/rights, human review, and correction/withdrawal metadata. They do
 not verify identity, consent, rights, privacy, content safety, acceptance,
 cross-machine receipt, deletion, or recall.
+
+The v0.11 source adds five Markdown templates under
+`assets/manuscript-governance/`. They are blank human-review aids, not new data
+schemas or validators. They do not validate manuscript, reviewer, declaration,
+route, package, author, policy, or submission facts.

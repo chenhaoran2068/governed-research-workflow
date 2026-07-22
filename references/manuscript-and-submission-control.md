@@ -44,3 +44,12 @@ retrieved from an authoritative current source before package release.
 
 Do not release or submit a manuscript, response letter, declaration, or
 submission package without accountable human approval.
+
+## Optional Generic Governance Templates
+
+For a human-reviewed manuscript assembly, revision, declaration, route, or
+decision record, use the blank generic templates described in
+`references/manuscript-governance-templates.md`. They organize supplied
+references, unknowns, and requested human decisions. They do not replace the
+current external requirement check, confidentiality boundary, project evidence
+review, or accountable-human submission approval required for a real task.

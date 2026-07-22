@@ -21,3 +21,11 @@ The admitted v0.6 release scope adds a metadata-only record route for reviewing
 declared assertion, evidence, relation, verification, human-decision, and
 revision/downstream-impact states. It does not make a workflow decision,
 advance a Gate, rerun downstream work, or replace project authority.
+
+The v0.11 source adds blank generic manuscript-governance templates for
+assembly and claim/display review, reviewer-response and revision trace,
+declaration and AI-use fact boundaries, submission-route/package provenance,
+and decision-ready human review. They organize supplied references and
+unknowns only. They do not draft or validate a manuscript, determine current
+external requirements, make an author or policy decision, or authorize a
+submission.
