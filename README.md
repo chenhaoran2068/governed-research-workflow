@@ -5,18 +5,17 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v0.13.0 pre-V1 support-scope closure source. It retains the v0.4-v0.12
-bounded controls and adds one machine-readable V1 Support Scope Matrix. The
-matrix records the bounded supported surfaces, external boundaries, and V1
-exclusions of all thirteen public modules. It adds no research-operation
-interface, public intake, direct external-contributor flow, upload/download
-helper, network action, real-content handling, data access, source library,
-retrieval service, RAG capability, coordinator, agent runtime, delegation,
-multi-agent orchestration, generic writer, recovery executor, dependency, or
-release decision. This source tree does not itself prove the release or
-installation identity of any selected version. A normal public installation
-target exists only when an exact annotated tag and matching GitHub Release
-resolve to the selected source commit. Never install a mutable branch.
+Status: v1.0.0 frozen public-interface source. It freezes the bounded public
+contract established through v0.13.0 with a Support Scope Matrix, public
+interface manifest, and capability verification map. It adds no research-
+operation interface, public intake, direct external-contributor flow,
+upload/download helper, network action, real-content handling, data access,
+source library, retrieval service, RAG capability, coordinator, agent runtime,
+delegation, multi-agent orchestration, generic writer, recovery executor,
+dependency, or release decision. This source tree does not itself prove the
+release or installation identity of any selected version. A normal public
+installation target exists only when an exact annotated tag and matching GitHub
+Release resolve to the selected source commit. Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -35,20 +34,21 @@ claim.
 ## Capability Truth
 
 This source tree contains a single machine-checkable capability ledger at
-`system/00_manifest_and_profiles/capability_truth_ledger.json`. It records
-historical released capability facts through the C2-admitted v0.11 source
-scope and the C2-admitted `GRW-CAP-130-01` V1 Support Scope Matrix source
-scope. The ledger records each capability's interface, evidence, version, and
-required human approval. It is not an installed-runtime statement. Release-
-scope admission proves neither local installation, runtime identity, hosted
-Release, nor C4 authorization.
+`system/00_manifest_and_profiles/capability_truth_ledger.json`. It remains
+the authority for each capability's promise, non-promise, admission, and
+claim status. The V1 capability verification map separately names the
+full-regression evidence required for the frozen contract. Neither record is
+an installed-runtime statement. Admission and local candidate verification
+prove neither local installation, runtime identity, hosted Release, nor C4
+authorization.
 
-The package manifest identifies this source as v0.13.0. The V1 Support Scope
+The package manifest identifies this source as v1.0.0. The V1 Support Scope
 Matrix at `system/00_manifest_and_profiles/v1_support_scope_matrix.json` is
-the sole machine-readable authority for module-level posture. It complements,
-but does not replace, the capability ledger's individual-capability authority.
-The historical v0.12 scenario remains synthetic integration assurance and does
-not create a `GRW-CAP-120-*` record.
+the sole machine-readable authority for module-level posture. The companion
+`v1_public_interface_manifest.json` is the sole inventory of frozen public
+interfaces. They complement, but do not replace, the ledger's individual-
+capability authority. The historical v0.12 scenario remains synthetic
+integration assurance and does not create a `GRW-CAP-120-*` record.
 `GRW-CAP-060-01` remains verified for its named v0.6.0 public Release.
 `GRW-CAP-070-01` remains a historical admitted v0.7.0 scope. The three v0.8
 records remain verified and admitted for their named v0.8.0 scope. Neither

@@ -1,6 +1,6 @@
 # Specialist Agent-Contract Boundary
 
-The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+The V1 Support Scope Matrix is the machine-readable authority for this
 module's support posture; this boundary record does not enlarge that scope.
 
 Status: v0.9.0 integrity-audit source. This directory retains two historical

@@ -25,6 +25,17 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## V1 Frozen Interface Source Scope
+
+- The v1.0.0 source freezes a bounded public interface through a Support Scope
+  Matrix, Public Interface Manifest, and Capability Verification Map.
+- `interface_frozen` is contract maturity only. It does not assert an exact
+  v1 tag, matching GitHub Release, private canonical source, or installed
+  Codex runtime.
+- The V1 candidate release-control, evidence, material-review, and release
+  notes records are pre-C4 preparation material until exact tag-and-Release
+  verification occurs. They cannot substitute for C4 authorization.
+
 ## v0.9.0 Integrity-Audit Scope
 
 - `v0.9.0` adds three bounded metadata-only controls: a finite integrity-audit

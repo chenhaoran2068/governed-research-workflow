@@ -1,0 +1,260 @@
+{
+  "interface_manifest_schema_version": "1.0.0",
+  "manifest_id": "governed-research-workflow-v1-public-interface-manifest",
+  "contract_version": "1.0.0",
+  "contract_status": "interface_frozen",
+  "source_identity": {
+    "source_version": "1.0.0",
+    "historical_public_baseline": "v0.13.0",
+    "public_release_identity_rule": "A public v1.0.0 release exists only when an exact annotated v1.0.0 tag and matching GitHub Release resolve to the same reviewed source commit. This manifest describes a frozen contract and does not itself prove a hosted Release or installed runtime."
+  },
+  "public_profiles": [
+    "standalone",
+    "framework_integrated"
+  ],
+  "interfaces": [
+    {
+      "interface_id": "profile_contract",
+      "module_ids": [
+        "00"
+      ],
+      "interface_type": "metadata_contract",
+      "effect": "guidance_only",
+      "paths": [
+        "SYSTEM_MANIFEST.yaml",
+        "system/00_manifest_and_profiles/v1_support_scope_matrix.json"
+      ],
+      "capability_ids": [
+        "GRW-CAP-031-03",
+        "GRW-CAP-130-01"
+      ],
+      "promise": "Declares the two public profiles and their bounded support posture.",
+      "non_promise": "Does not prove a private workspace or runtime is compatible or installed."
+    },
+    {
+      "interface_id": "task_routing",
+      "module_ids": [
+        "01"
+      ],
+      "interface_type": "guidance",
+      "effect": "guidance_only",
+      "paths": [
+        "SKILL.md",
+        "references/startup-and-routing.md"
+      ],
+      "capability_ids": [
+        "GRW-CAP-031-01"
+      ],
+      "promise": "Routes named work classes and names accountable-human stops.",
+      "non_promise": "Does not decide scientific, ethics, compliance, or publication facts."
+    },
+    {
+      "interface_id": "empty_workspace_bootstrap",
+      "module_ids": [
+        "02"
+      ],
+      "interface_type": "command_line_helper",
+      "effect": "controlled_empty_write",
+      "paths": [
+        "scripts/bootstrap_empty_workspace.py",
+        "references/controlled-bootstrap.md"
+      ],
+      "capability_ids": [
+        "GRW-CAP-031-02",
+        "GRW-CAP-080-03"
+      ],
+      "promise": "Creates only an explicitly approved empty workspace scaffold with preview and confirmation.",
+      "non_promise": "Does not import, copy, or advance real project material or state."
+    },
+    {
+      "interface_id": "workflow_guidance",
+      "module_ids": [
+        "03"
+      ],
+      "interface_type": "guidance",
+      "effect": "guidance_only",
+      "paths": [
+        "references/governed-work-and-feasibility.md",
+        "references/manuscript-and-submission-control.md"
+      ],
+      "capability_ids": [
+        "GRW-CAP-060-01",
+        "GRW-CAP-110-01"
+      ],
+      "promise": "Supplies bounded workflow guidance and blank control records.",
+      "non_promise": "Does not execute a study, analysis, manuscript decision, or submission."
+    },
+    {
+      "interface_id": "evidence_guidance",
+      "module_ids": [
+        "04"
+      ],
+      "interface_type": "guidance",
+      "effect": "guidance_only",
+      "paths": [
+        "references/evidence-and-citation-control.md",
+        "system/04_evidence_requirements_and_knowledge/MODULE.md"
+      ],
+      "capability_ids": [
+        "GRW-CAP-060-01",
+        "GRW-CAP-110-06"
+      ],
+      "promise": "Supplies generic evidence and citation control guidance.",
+      "non_promise": "Does not bundle a source corpus, retrieve sources, or decide current requirements."
+    },
+    {
+      "interface_id": "provenance_records",
+      "module_ids": [
+        "05"
+      ],
+      "interface_type": "read_only_validator",
+      "effect": "read_only",
+      "paths": [
+        "references/data-provenance-register.md",
+        "references/data-provenance-register-set.md",
+        "scripts/validate_data_provenance_register_set.py"
+      ],
+      "capability_ids": [
+        "GRW-CAP-040-04",
+        "GRW-CAP-050-01"
+      ],
+      "promise": "Validates declared metadata-only provenance record structure.",
+      "non_promise": "Does not read data content, infer access, or establish data truth or permission."
+    },
+    {
+      "interface_id": "learning_records",
+      "module_ids": [
+        "06"
+      ],
+      "interface_type": "read_only_validator",
+      "effect": "read_only",
+      "paths": [
+        "references/retrospective-learning.md",
+        "references/lesson-promotion-control-records.md",
+        "references/voluntary-experience-package.md"
+      ],
+      "capability_ids": [
+        "GRW-CAP-031-04",
+        "GRW-CAP-070-01",
+        "GRW-CAP-100-01",
+        "GRW-CAP-101-01",
+        "GRW-CAP-110-06"
+      ],
+      "promise": "Supplies bounded retrospective, lesson, and experience record contracts.",
+      "non_promise": "Does not receive, promote, publish, or automatically integrate experience."
+    },
+    {
+      "interface_id": "helper_admission_boundary",
+      "module_ids": [
+        "07"
+      ],
+      "interface_type": "guidance",
+      "effect": "guidance_only",
+      "paths": [
+        "references/controlled-helper-admission.md",
+        "scripts/bootstrap_empty_workspace.py"
+      ],
+      "capability_ids": [
+        "GRW-CAP-031-02",
+        "GRW-CAP-080-03"
+      ],
+      "promise": "Defines the per-helper admission boundary for the existing bootstrap helper.",
+      "non_promise": "Does not create a generic writer, installer, transfer, or intake helper."
+    },
+    {
+      "interface_id": "role_contracts",
+      "module_ids": [
+        "08"
+      ],
+      "interface_type": "metadata_contract",
+      "effect": "guidance_only",
+      "paths": [
+        "references/role-contracts.md",
+        "assets/role_contract.template.json"
+      ],
+      "capability_ids": [
+        "GRW-CAP-080-01",
+        "GRW-CAP-080-02"
+      ],
+      "promise": "Provides two caller-selected, non-runnable review-contract records.",
+      "non_promise": "Does not provide agents, delegation, tool grants, or a multi-agent runtime."
+    },
+    {
+      "interface_id": "schemas_and_templates",
+      "module_ids": [
+        "09"
+      ],
+      "interface_type": "metadata_contract",
+      "effect": "guidance_only",
+      "paths": [
+        "system/09_schemas_records_and_templates/MODULE.md",
+        "assets/data-provenance-register.template.json"
+      ],
+      "capability_ids": [
+        "GRW-CAP-040-00",
+        "GRW-CAP-040-02",
+        "GRW-CAP-040-05"
+      ],
+      "promise": "Provides public schemas and blank or synthetic templates for bounded records.",
+      "non_promise": "Does not make structural validity proof of factual truth, approval, or compliance."
+    },
+    {
+      "interface_id": "assurance_and_audit",
+      "module_ids": [
+        "10"
+      ],
+      "interface_type": "read_only_validator",
+      "effect": "read_only",
+      "paths": [
+        "system/10_assurance_evaluation_and_audit/MODULE.md",
+        "scripts/validate_integrity_audit_bundle.py"
+      ],
+      "capability_ids": [
+        "GRW-CAP-040-06",
+        "GRW-CAP-090-01",
+        "GRW-CAP-090-02",
+        "GRW-CAP-090-03"
+      ],
+      "promise": "Provides synthetic assurance and finite metadata-only integrity-audit validation.",
+      "non_promise": "Does not prove an actor is honest, execute recovery, or inspect a host, repository, or runtime."
+    },
+    {
+      "interface_id": "distribution_and_release_controls",
+      "module_ids": [
+        "11"
+      ],
+      "interface_type": "guidance",
+      "effect": "guidance_only",
+      "paths": [
+        "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
+        "system/11_distribution_installation_and_release/INSTALL_UPDATE_ROLLBACK.md"
+      ],
+      "capability_ids": [
+        "GRW-CAP-040-01",
+        "GRW-CAP-040-05"
+      ],
+      "promise": "Defines release, installation, rollback, and identity-evidence boundaries.",
+      "non_promise": "Does not create a tag, GitHub Release, installation, or C4 authorization."
+    },
+    {
+      "interface_id": "synthetic_examples",
+      "module_ids": [
+        "12"
+      ],
+      "interface_type": "synthetic_assurance",
+      "effect": "guidance_only",
+      "paths": [
+        "system/12_synthetic_examples/MODULE.md",
+        "assets/integration-assurance/v0_12_synthetic_integration_scenario.md"
+      ],
+      "capability_ids": [],
+      "promise": "Provides synthetic examples and integration assurance scenarios.",
+      "non_promise": "Does not represent a real study, real data, manuscript, or deployment."
+    }
+  ],
+  "global_non_promises": [
+    "No clinical decision-making, real-data handling, ethics or compliance certification, scientific conclusion, automatic submission, or automatic publication.",
+    "No agent runtime, delegation, coordinator, external retrieval worker, multi-agent orchestration, generic writer, transfer helper, or user-contribution intake.",
+    "No public Release, installed-runtime, data-access, human-approval, or project-decision claim follows from this manifest alone."
+  ]
+}

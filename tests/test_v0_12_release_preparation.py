@@ -67,8 +67,8 @@ class V012ReleasePreparationTests(unittest.TestCase):
 
     def test_v012_history_remains_distinct_from_later_v013_admission(self) -> None:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.13.0")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.12.0")
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v1.0.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.13.0")
         self.assertFalse(any(item["capability_id"].startswith("GRW-CAP-120-") for item in ledger["capabilities"]))
         self.assertFalse(any(item["version"]["target_release"] == "v0.12.0" for item in ledger["capabilities"]))
         self.assertTrue(any(item["capability_id"] == "GRW-CAP-130-01" for item in ledger["capabilities"]))

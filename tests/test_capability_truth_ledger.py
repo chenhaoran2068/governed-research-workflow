@@ -101,15 +101,14 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         cls.records = cls.ledger["capabilities"]
 
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
-        self.assertEqual(self.ledger["ledger_schema_version"], "1.5.0")
+        self.assertEqual(self.ledger["ledger_schema_version"], "1.6.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v0.13.0")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.12.0")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.0.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v0.13.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
-        self.assertIn("C2-admitted v0.11.0 source scope", self.ledger["target_claim_scope"])
-        self.assertIn("C2-admitted v0.13.0 V1 Support Scope Matrix source scope", self.ledger["target_claim_scope"])
-        self.assertIn("v0.12.0 remains historical no-new-interface synthetic integration assurance", self.ledger["target_claim_scope"])
+        self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
+        self.assertIn("V1 capability verification map", self.ledger["target_claim_scope"])
         self.assertIn("Historical facts", self.ledger["target_claim_scope"])
         self.assertEqual(
             self.schema["$id"],
@@ -369,7 +368,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         for text in (readme, roadmap, skill):
             self.assertIn("human-specified channel", text)
             self.assertIn("automatic promotion", text)
-        self.assertIn("v0.11.0 source scope", self.ledger["target_claim_scope"])
+        self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
 
     def test_v011_scope_is_template_and_experience_only(self) -> None:
         records = {record["capability_id"]: record for record in self.records}

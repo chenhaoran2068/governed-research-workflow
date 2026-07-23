@@ -1,6 +1,6 @@
 # Schemas Module Boundary
 
-The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+The V1 Support Scope Matrix is the machine-readable authority for this
 module's support posture; this boundary record does not enlarge that scope.
 
 Status: active blank-record baseline; the v0.4.0 release source adds one

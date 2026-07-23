@@ -106,11 +106,11 @@ class V011ManuscriptGovernanceAndExperienceTests(unittest.TestCase):
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertIn("system_version: 0.13.0", manifest)
-        self.assertIn("Status: v0.13.0 pre-V1 support-scope closure source", readme)
+        self.assertIn("system_version: 1.0.0", manifest)
+        self.assertIn("Status: v1.0.0 frozen public-interface source", readme)
         self.assertIn("## v0.11.0", roadmap)
-        self.assertEqual(ledger["ledger_schema_version"], "1.5.0")
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.13.0")
+        self.assertEqual(ledger["ledger_schema_version"], "1.6.0")
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v1.0.0")
         capability_ids = {record["capability_id"] for record in ledger["capabilities"]}
         self.assertEqual(
             {f"GRW-CAP-110-{number:02d}" for number in range(1, 7)}.intersection(capability_ids),

@@ -15,13 +15,13 @@ Release. Use a controlled installation receipt to determine what a local
 runtime actually loads. Use project records and an accountable human for any
 project, data, Gate, manuscript, compliance, or submission decision.
 
-`matrix_status` describes the maturity of the prospective V1 support contract,
-not the public-release state of the source package that contains it. Therefore
-the v0.13 source may carry a `candidate` V1 matrix even when a later exact
-v0.13 tag and matching GitHub Release exist. Only the selected-version release
-verification records determine that public-release fact. A future V1 release
-may change the matrix status only through separately reviewed evidence and a
-new immutable Release.
+`matrix_status` describes frozen V1 contract maturity, not public-release
+state. Its `interface_frozen` value means this source declares the v1 public
+interface stable for review and release preparation. It does not state that a
+v1 tag or GitHub Release already exists. Only selected-version release
+verification records establish that public-release fact. A future modification
+to this frozen contract requires separately reviewed evidence and a later
+immutable release.
 
 ## Reading A Module Record
 
