@@ -1,13 +1,13 @@
 {
-  "ledger_schema_version": "1.5.0",
+  "ledger_schema_version": "1.6.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v0.13.0",
-    "historical_public_baseline": "v0.12.0",
-    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v0.13.0 support-scope closure source adds only the versioned V1 Support Scope Matrix. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.0.0",
+    "historical_public_baseline": "v0.13.0",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v1.0.0 source freezes the public interface and adds a V1 verification map. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records released historical scopes through the C2-admitted v0.11.0 source scope and the C2-admitted v0.13.0 V1 Support Scope Matrix source scope. v0.12.0 remains historical no-new-interface synthetic integration assurance. Admission is not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records admitted historical scopes and the frozen v1.0.0 public interface contract. The separate V1 capability verification map records complete candidate-regression requirements for every ledger capability. Admission and local candidate verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [

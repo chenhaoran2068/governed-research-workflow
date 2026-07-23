@@ -1,10 +1,10 @@
 {
-  "matrix_schema_version": "1.0.0",
+  "matrix_schema_version": "2.0.0",
   "matrix_id": "governed-research-workflow-v1-support-scope-matrix",
-  "matrix_status": "candidate",
+  "matrix_status": "interface_frozen",
   "package_contract": {
-    "source_version": "v0.13.0",
-    "historical_public_baseline": "v0.12.0",
+    "source_version": "v1.0.0",
+    "historical_public_baseline": "v0.13.0",
     "public_profiles": ["standalone", "framework_integrated"],
     "release_identity_rule": "A selected public version is available only when its exact annotated tag and matching GitHub Release resolve to the selected source commit. This matrix is not a hosted Release or installed-runtime claim."
   },
@@ -188,7 +188,7 @@
   ],
   "matrix_limitations": [
     "The matrix describes module-level scope only and does not replace individual capability records.",
-    "matrix_status describes prospective V1 contract maturity, not whether the source package or a selected v0.13 version has a hosted Release.",
+    "matrix_status describes frozen V1 contract maturity, not whether the source package has a hosted Release.",
     "A candidate or released matrix is not an installed-runtime, data-access, or project-decision record.",
     "The matrix cannot prove external requirements, scientific truth, compliance, human authorization, or real-study readiness.",
     "No top-level active_bounded posture authorizes a function listed under that module's external boundaries or v1 exclusions."

@@ -1,6 +1,6 @@
 # Distribution, Installation, And Release
 
-The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+The V1 Support Scope Matrix is the machine-readable authority for this
 module's support posture; this boundary record does not enlarge that scope.
 
 Status: active standalone package governance. Historical v0.3.0, v0.3.1,
@@ -13,6 +13,14 @@ source materials must not declare a latest or current public version.
 Released tags are immutable public contracts by policy. Candidate branches are
 not releases. A correction requires a new release version rather than
 rewriting a published tag.
+
+The local v1 interface-freeze candidate records are
+`V1_RELEASE_GATE.md`, `V1_RELEASE_CONTROL_CANDIDATE.json`,
+`V1_RELEASE_EVIDENCE.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.0.0.md`,
+`V1_DEPENDENCY_AND_WORKFLOW_REVIEW.md`, and `RELEASE_NOTES_v1.0.0.md`.
+They record local C3 preparation only. They do not establish an exact candidate
+commit, remote CI, protected-main merge, C4 authorization, tag, GitHub
+Release, private source, or runtime identity.
 
 The historical v0.3.0 release has evidence for a framework-integrated profile
 against the exact released Workspace Framework `v0.1.0` tag. The published

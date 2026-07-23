@@ -1,6 +1,6 @@
 # Memory And Learning
 
-The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+The V1 Support Scope Matrix is the machine-readable authority for this
 module's support posture; this boundary record does not enlarge that scope.
 
 Status: active retrospective-learning baseline retaining the historical v0.7.0

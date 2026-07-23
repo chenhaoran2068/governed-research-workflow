@@ -1,4 +1,4 @@
-"""Structural support-contract checks for the v0.13 V1 Support Scope Matrix."""
+"""Structural support-contract checks for the frozen V1 Support Scope Matrix."""
 
 from __future__ import annotations
 
@@ -42,13 +42,13 @@ class V1SupportScopeMatrixTests(unittest.TestCase):
     def test_matrix_validates_and_has_exact_public_identity(self) -> None:
         errors = list(Draft202012Validator(self.schema).iter_errors(self.matrix))
         self.assertEqual(errors, [], "\n".join(error.message for error in errors))
-        self.assertEqual(self.matrix["matrix_schema_version"], "1.0.0")
+        self.assertEqual(self.matrix["matrix_schema_version"], "2.0.0")
         self.assertEqual(self.matrix["matrix_id"], "governed-research-workflow-v1-support-scope-matrix")
-        self.assertEqual(self.matrix["matrix_status"], "candidate")
-        self.assertEqual(self.matrix["package_contract"]["source_version"], "v0.13.0")
-        self.assertEqual(self.matrix["package_contract"]["historical_public_baseline"], "v0.12.0")
+        self.assertEqual(self.matrix["matrix_status"], "interface_frozen")
+        self.assertEqual(self.matrix["package_contract"]["source_version"], "v1.0.0")
+        self.assertEqual(self.matrix["package_contract"]["historical_public_baseline"], "v0.13.0")
         self.assertEqual(set(self.matrix["package_contract"]["public_profiles"]), {"standalone", "framework_integrated"})
-        self.assertTrue(any("prospective V1 contract maturity" in limitation for limitation in self.matrix["matrix_limitations"]))
+        self.assertTrue(any("frozen V1 contract maturity" in limitation for limitation in self.matrix["matrix_limitations"]))
 
     def test_matrix_covers_each_module_once(self) -> None:
         module_ids = [module["module_id"] for module in self.matrix["modules"]]
@@ -120,7 +120,15 @@ class V1SupportScopeMatrixTests(unittest.TestCase):
         self.assertIn("installation receipt", authority["installation_identity_owner"])
         self.assertIn("accountable human", authority["project_decision_owner"])
         guidance = (ROOT / "system" / "00_manifest_and_profiles" / "V1_SUPPORT_SCOPE.md").read_text(encoding="utf-8")
-        self.assertIn("not the public-release state", guidance)
+        self.assertIn("not public-release", guidance)
+
+    def test_module_boundaries_do_not_retain_a_superseded_current_matrix_label(self) -> None:
+        for module_id in MODULE_IDS:
+            matches = list((ROOT / "system").glob(f"{module_id}_*/MODULE.md"))
+            self.assertEqual(len(matches), 1, module_id)
+            content = matches[0].read_text(encoding="utf-8")
+            self.assertIn("The V1 Support Scope Matrix", content)
+            self.assertNotIn("The v0.13 V1 Support Scope Matrix", content)
 
 
 if __name__ == "__main__":

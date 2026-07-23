@@ -1,13 +1,18 @@
 # Manifest And Profiles
 
-The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+The V1 Support Scope Matrix is the machine-readable authority for this
 module's support posture; this boundary record does not enlarge that scope.
 
-Status: v0.12.0 synthetic integration-assurance maintenance source manifest;
-exact released-framework integration evidence remains available.
+Status: v1.0.0 frozen public-interface source manifest. Historical synthetic
+integration assurance and exact framework-integration evidence remain retained
+as bounded evidence, not current release or runtime claims.
 
 `../../SYSTEM_MANIFEST.yaml` identifies this system, its entry point,
 supported profiles, project-ownership behavior, and data boundary.
+`v1_public_interface_manifest.json` is the sole machine-readable inventory
+of frozen public interfaces, while
+`../../system/10_assurance_evaluation_and_audit/v1_capability_verification_map.json`
+names their required v1 candidate-regression evidence.
 
 `FRAMEWORK_INTEGRATION_PLAN.md` records the cross-repository validation for
 the advertised integrated profile.
@@ -15,8 +20,8 @@ the advertised integrated profile.
 The system supports `standalone` and a `framework_integrated` profile. The
 published `v0.3.1` patch retains the `0.1.0` framework-contract version and
 validates that profile against the exact released framework `v0.1.1` tag. The
-current v0.12.0 source retains exactly those two public identifiers and does
-not add a private profile, service discovery, or a private-path fallback.
+frozen v1 source retains exactly those two public identifiers and does not add
+a private profile, service discovery, or a private-path fallback.
 
 Do not infer framework support merely because a host contains familiar folder
 names or a manifest-looking file.

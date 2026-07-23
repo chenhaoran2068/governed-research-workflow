@@ -1,6 +1,6 @@
 # Data And Provenance
 
-The v0.13 V1 Support Scope Matrix is the machine-readable authority for this
+The V1 Support Scope Matrix is the machine-readable authority for this
 module's support posture; this boundary record does not enlarge that scope.
 
 Status: v0.4.0 released metadata-only register plus a published v0.5.0

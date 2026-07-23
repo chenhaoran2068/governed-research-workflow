@@ -2,8 +2,10 @@
 
 ## Supported Versions
 
-The supported public release lines are `v0.1.x`, `v0.2.x`, `v0.3.x`,
-`v0.4.x`, `v0.5.x`, `v0.6.x`, `v0.7.x`, `v0.8.x`, `v0.9.x`, and `v0.10.x`.
+The historical public release lines are `v0.1.x`, `v0.2.x`, `v0.3.x`,
+`v0.4.x`, `v0.5.x`, `v0.6.x`, `v0.7.x`, `v0.8.x`, `v0.9.x`,
+`v0.10.x`, `v0.11.x`, `v0.12.x`, and `v0.13.x`. A selected `v1.x`
+line is subject to this policy after its exact tag and matching GitHub Release.
 Support applies only to a selected version that satisfies the
 exact-tag-and-matching-Release rule. Do not infer support, installation, or a
 current runtime from a mutable branch, candidate, or local worktree. For any

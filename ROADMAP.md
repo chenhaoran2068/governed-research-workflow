@@ -6,21 +6,25 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
-## v0.13.0 (pre-V1 support-scope closure source)
+## v1.0.0 (frozen public-interface source)
 
-This source adds one versioned machine-readable V1 Support Scope Matrix and
-its structural contract. The matrix covers all thirteen public modules, names
-their bounded supported surfaces, external boundaries, V1 exclusions,
-compatibility/migration state, evidence references, limitations, and refusal
-behavior. It makes support posture reviewable without treating directory
-presence or a historical record as a present operational capability.
+This source freezes the bounded public contract established through v0.13.0.
+It adds a machine-readable V1 Public Interface Manifest and V1 Capability
+Verification Map alongside the evolved Support Scope Matrix. Together they
+make public interfaces, effect boundaries, module posture, evidence
+requirements, exclusions, and refusal behavior reviewable without treating a
+directory, green test, or historical record as an operational authority.
 
-It does not add a data handler, source corpus, retrieval service, RAG system,
-agent runtime, coordinator, delegated authority, generic writer, installer,
-migration executor, recovery executor, project workflow executor, automatic
-release, or local-runtime replacement. The matrix does not prove external
-requirements, scientific truth, data access, compliance, human approval,
-hosted Release, or installed runtime identity.
+The frozen contract adds no research-operation interface, data handler, source
+corpus, retrieval service, RAG system, agent runtime, coordinator, delegated
+authority, generic writer, installer, migration executor, recovery executor,
+project workflow executor, automatic release, or local-runtime replacement.
+It does not prove external requirements, scientific truth, data access,
+compliance, human approval, hosted Release, or installed runtime identity.
+
+The released v0.13.0 tag remains the historical pre-V1 support-scope closure
+baseline. A selected v1.0.0 source becomes publicly available only when its
+exact annotated tag and matching GitHub Release resolve to the reviewed commit.
 
 ## v0.12.0 (synthetic integration-assurance maintenance source)
 

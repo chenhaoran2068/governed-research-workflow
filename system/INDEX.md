@@ -1,9 +1,10 @@
 # Public System Module Index
 
-Status: v0.13.0 pre-V1 support-scope closure source retaining historical
-v0.4-v0.12.0 controls. It adds the V1 Support Scope Matrix, not an intake,
-exchange, data, retrieval, or execution capability. This index does not prove
-that a selected version is released:
+Status: v1.0.0 frozen public-interface source retaining the bounded public
+contract established through v0.13.0. It adds the V1 Public Interface Manifest
+and Capability Verification Map alongside the V1 Support Scope Matrix, not an
+intake, exchange, data, retrieval, or execution capability. This index does
+not prove that a selected version is released:
 users must verify an exact annotated tag and matching GitHub Release rather
 than install `main` or another mutable branch.
 See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.

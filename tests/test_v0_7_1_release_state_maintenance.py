@@ -26,9 +26,9 @@ class V071HistoricalMaintenanceTests(unittest.TestCase):
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
         record = next(item for item in ledger["capabilities"] if item["capability_id"] == "GRW-CAP-070-01")
 
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v0.13.0")
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.12.0")
-        self.assertIn("C2-admitted v0.11.0 source scope", ledger["target_claim_scope"])
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v1.0.0")
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.13.0")
+        self.assertIn("frozen v1.0.0 public interface contract", ledger["target_claim_scope"])
         self.assertEqual(record["version"]["introduced_version"], "v0.7.0")
         self.assertEqual(record["version"]["target_release"], "v0.7.0")
         self.assertEqual(record["version"]["last_verified_release"], "v0.7.0")
