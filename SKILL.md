@@ -53,6 +53,12 @@ the matching plan ID and approval reference. Do not invoke the helper merely
 because this skill triggered. The helper creates an empty scaffold only and
 does not authorize consequential research work.
 
+For a selected released version that admits `GRW-CAP-111-01`, read
+`references/future-study-execution-and-reproducibility.md` before discussing a
+future Study's execution contract, formal run, result authority, or QA record.
+Those records are metadata-only controls; they do not authorize a run, data
+access, dependency change, result approval, or scientific claim.
+
 For existing-study, legacy-project, manuscript, or revision work, require an
 exact workspace path or project root before reading project-local records. A
 pasted excerpt may clarify the task after the root is identified; it does not
@@ -193,6 +199,8 @@ Stop and request accountable evidence or approval before:
   selected release: references/lesson-promotion-control-records.md
 - Explicit empty-workspace creation:
   references/controlled-bootstrap.md
+- Future-Study execution and reproducibility records, when admitted for the
+  selected release: references/future-study-execution-and-reproducibility.md
 - Public/private separation and legacy boundaries:
   references/portability-and-release-boundaries.md
 - Metadata-only workflow/evidence control records, when admitted for the

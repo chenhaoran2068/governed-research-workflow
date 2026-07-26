@@ -22,7 +22,7 @@ class V071HistoricalMaintenanceTests(unittest.TestCase):
         self.assertNotIn("v0.7.x: candidate", roadmap.lower())
 
     def test_maintenance_keeps_the_v070_capability_identity_and_boundary(self) -> None:
-        ledger_path = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+        ledger_path = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
         record = next(item for item in ledger["capabilities"] if item["capability_id"] == "GRW-CAP-070-01")
 

@@ -1,0 +1,17 @@
+{
+  "record_type": "formal_run_manifest",
+  "manifest_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "run_id": "RUN_ID_REQUIRED",
+  "run_status": "planned",
+  "execution_contract_reference": "07_analysis/00_contract/analysis_execution_contract.json",
+  "started_at": null,
+  "completed_at": null,
+  "environment_evidence_reference": null,
+  "configuration_reference": null,
+  "input_manifest_reference": null,
+  "notes": [
+    "Create one copy under 07_analysis/05_runs/<run_id>/.",
+    "A completed_candidate run is not an authoritative result."
+  ]
+}

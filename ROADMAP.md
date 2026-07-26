@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.1.0 (unpublished future-Study execution candidate)
+
+This local candidate is derived from the immutable v1.0.0 public source. It
+adds `GRW-CAP-111-01`: five generic metadata-only records and schemas for an
+execution contract, formal run, result manifest, result-authority pointer, and
+analysis-run QA record. It also extends the existing controlled empty-workspace
+bootstrap with reviewed empty child directories and two non-authoritative
+template records.
+
+It does not execute research, read or copy data, install or change
+dependencies, create a generic writer, infer approval, make a result
+authoritative, or replace project-specific controls. The current released
+public baseline remains v1.0.0. This candidate is not a tag, GitHub Release, or
+installed runtime, and must not be described as publicly available until the
+exact-tag-and-matching-Release rule is satisfied.
+
 ## v1.0.0 (frozen public-interface source)
 
 This source freezes the bounded public contract established through v0.13.0.

@@ -118,11 +118,22 @@ class BootstrapEmptyWorkspaceTests(unittest.TestCase):
         receipt_path = workspace / "00_state" / "bootstrap_receipt.json"
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         self.assertEqual(receipt["approval_reference"], "approval-001")
+        self.assertEqual(receipt["tool_version"], "0.3.0")
         self.assertTrue(receipt["scope"]["creates_empty_scaffold_only"])
         self.assertFalse(receipt["scope"]["copies_source_data"])
         state = json.loads((workspace / "00_state" / "workspace_state.json").read_text(encoding="utf-8"))
         self.assertEqual(state["authorization_status"], "not_authorized")
         self.assertEqual(state["state"], "scaffolded")
+        execution_contract = json.loads(
+            (workspace / "07_analysis" / "00_contract" / "analysis_execution_contract.json").read_text(encoding="utf-8")
+        )
+        result_authority = json.loads(
+            (workspace / "08_results" / "_manifests" / "current_result_authority.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(execution_contract["contract_status"], "draft")
+        self.assertEqual(execution_contract["formal_execution_path"]["kind"], "unselected")
+        self.assertEqual(result_authority["authority_status"], "no_authoritative_result")
+        self.assertIsNone(result_authority["human_authority_decision_reference"])
         for record in receipt["created_file_hashes"]:
             self.assertEqual(module.sha256_file(workspace / record["relative_path"]), record["sha256"])
 

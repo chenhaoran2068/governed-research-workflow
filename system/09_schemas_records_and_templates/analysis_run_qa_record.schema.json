@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/analysis_run_qa_record.schema.json",
+  "title": "Analysis Run QA Record",
+  "type": "object",
+  "required": ["record_type", "record_version", "project_id", "run_id", "qa_status", "formal_run_manifest_reference", "result_manifest_reference", "reviewed_at"],
+  "properties": {
+    "record_type": {"const": "analysis_run_qa_record"},
+    "record_version": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+    "qa_status": {"type": "string", "enum": ["not_started", "issues_open", "passed_for_human_decision", "failed"]},
+    "formal_run_manifest_reference": {"type": "string", "pattern": "^07_analysis/05_runs/[A-Za-z0-9._-]+/formal_run_manifest\\.json$"},
+    "result_manifest_reference": {"type": "string", "pattern": "^08_results/runs/[A-Za-z0-9._-]+/result_manifest\\.json$"},
+    "reviewed_at": {"type": ["string", "null"]},
+    "issues": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

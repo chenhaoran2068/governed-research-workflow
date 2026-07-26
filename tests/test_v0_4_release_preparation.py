@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "system" / "11_distribution_installation_and_release"
-LEDGER = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER = ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 
 
 class V04ReleasePreparationTests(unittest.TestCase):

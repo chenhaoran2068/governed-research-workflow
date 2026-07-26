@@ -1,0 +1,173 @@
+{
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "$id":  "https://github.com/chenhaoran2068/governed-research-workflow/schemas/v1_1_public_interface_manifest.schema.json",
+    "title":  "Governed Research Workflow V1.1 Public Interface Manifest",
+    "description":  "An unreleased v1.1 candidate public-contract manifest. It is not a hosted Release, installation receipt, permission grant, or project decision.",
+    "type":  "object",
+    "additionalProperties":  false,
+    "required":  [
+                     "interface_manifest_schema_version",
+                     "manifest_id",
+                     "contract_version",
+                     "contract_status",
+                     "source_identity",
+                     "public_profiles",
+                     "interfaces",
+                     "global_non_promises"
+                 ],
+    "properties":  {
+                       "interface_manifest_schema_version":  {
+                                                                 "const":  "1.1.0"
+                                                             },
+                       "manifest_id":  {
+                                           "const":  "governed-research-workflow-v1-1-public-interface-manifest"
+                                       },
+                       "contract_version":  {
+                                                "const":  "1.1.0"
+                                            },
+                       "contract_status":  {
+                                               "const":  "unreleased_candidate"
+                                           },
+                       "source_identity":  {
+                                               "$ref":  "#/$defs/source_identity"
+                                           },
+                       "public_profiles":  {
+                                               "type":  "array",
+                                               "minItems":  2,
+                                               "maxItems":  2,
+                                               "uniqueItems":  true,
+                                               "items":  {
+                                                             "enum":  [
+                                                                          "standalone",
+                                                                          "framework_integrated"
+                                                                      ]
+                                                         }
+                                           },
+                       "interfaces":  {
+                                          "type":  "array",
+                                          "minItems":  14,
+                                          "maxItems":  14,
+                                          "items":  {
+                                                        "$ref":  "#/$defs/interface"
+                                                    }
+                                      },
+                       "global_non_promises":  {
+                                                   "type":  "array",
+                                                   "minItems":  3,
+                                                   "uniqueItems":  true,
+                                                   "items":  {
+                                                                 "type":  "string",
+                                                                 "minLength":  1
+                                                             }
+                                               }
+                   },
+    "$defs":  {
+                  "safe_relative_path":  {
+                                             "type":  "string",
+                                             "pattern":  "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$)).+"
+                                         },
+                  "source_identity":  {
+                                          "type":  "object",
+                                          "additionalProperties":  false,
+                                          "required":  [
+                                                           "source_version",
+                                                           "historical_public_baseline",
+                                                           "public_release_identity_rule"
+                                                       ],
+                                          "properties":  {
+                                                             "source_version":  {
+                                                                                    "const":  "v1.1.0"
+                                                                                },
+                                                             "historical_public_baseline":  {
+                                                                                                "const":  "v1.0.0"
+                                                                                            },
+                                                             "public_release_identity_rule":  {
+                                                                                                  "type":  "string",
+                                                                                                  "minLength":  1
+                                                                                              }
+                                                         }
+                                      },
+                  "interface":  {
+                                    "type":  "object",
+                                    "additionalProperties":  false,
+                                    "required":  [
+                                                     "interface_id",
+                                                     "module_ids",
+                                                     "interface_type",
+                                                     "effect",
+                                                     "paths",
+                                                     "capability_ids",
+                                                     "promise",
+                                                     "non_promise"
+                                                 ],
+                                    "properties":  {
+                                                       "interface_id":  {
+                                                                            "type":  "string",
+                                                                            "pattern":  "^[a-z][a-z0-9_]{2,63}$"
+                                                                        },
+                                                       "module_ids":  {
+                                                                          "type":  "array",
+                                                                          "minItems":  1,
+                                                                          "uniqueItems":  true,
+                                                                          "items":  {
+                                                                                        "enum":  [
+                                                                                                     "00",
+                                                                                                     "01",
+                                                                                                     "02",
+                                                                                                     "03",
+                                                                                                     "04",
+                                                                                                     "05",
+                                                                                                     "06",
+                                                                                                     "07",
+                                                                                                     "08",
+                                                                                                     "09",
+                                                                                                     "10",
+                                                                                                     "11",
+                                                                                                     "12"
+                                                                                                 ]
+                                                                                    }
+                                                                      },
+                                                       "interface_type":  {
+                                                                              "enum":  [
+                                                                                           "guidance",
+                                                                                           "metadata_contract",
+                                                                                           "command_line_helper",
+                                                                                           "read_only_validator",
+                                                                                           "synthetic_assurance"
+                                                                                       ]
+                                                                          },
+                                                       "effect":  {
+                                                                      "enum":  [
+                                                                                   "guidance_only",
+                                                                                   "read_only",
+                                                                                   "controlled_empty_write"
+                                                                               ]
+                                                                  },
+                                                       "paths":  {
+                                                                     "type":  "array",
+                                                                     "minItems":  1,
+                                                                     "uniqueItems":  true,
+                                                                     "items":  {
+                                                                                   "$ref":  "#/$defs/safe_relative_path"
+                                                                               }
+                                                                 },
+                                                       "capability_ids":  {
+                                                                              "type":  "array",
+                                                                              "uniqueItems":  true,
+                                                                              "items":  {
+                                                                                            "type":  "string",
+                                                                                            "pattern":  "^GRW-CAP-[0-9]{3}-[0-9]{2}$"
+                                                                                        }
+                                                                          },
+                                                       "promise":  {
+                                                                       "type":  "string",
+                                                                       "minLength":  1
+                                                                   },
+                                                       "non_promise":  {
+                                                                           "type":  "string",
+                                                                           "minLength":  1
+                                                                       }
+                                                   }
+                                }
+              }
+}

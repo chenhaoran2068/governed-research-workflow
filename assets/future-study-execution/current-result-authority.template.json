@@ -1,0 +1,14 @@
+{
+  "record_type": "current_result_authority",
+  "record_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "authority_status": "no_authoritative_result",
+  "formal_run_manifest_reference": null,
+  "result_manifest_reference": null,
+  "qa_record_reference": null,
+  "human_authority_decision_reference": null,
+  "notes": [
+    "No current authoritative result is declared by this bootstrap template.",
+    "Authority requires a run manifest, result manifest, QA record, and accountable-human decision reference."
+  ]
+}

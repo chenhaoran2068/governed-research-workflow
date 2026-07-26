@@ -11,7 +11,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = ROOT / "system" / "11_distribution_installation_and_release"
-LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 
 
 class V013ReleasePreparationTests(unittest.TestCase):

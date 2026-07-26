@@ -1,0 +1,15 @@
+{
+  "record_type": "analysis_run_qa_record",
+  "record_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "run_id": "RUN_ID_REQUIRED",
+  "qa_status": "not_started",
+  "formal_run_manifest_reference": "07_analysis/05_runs/RUN_ID_REQUIRED/formal_run_manifest.json",
+  "result_manifest_reference": "08_results/runs/RUN_ID_REQUIRED/result_manifest.json",
+  "reviewed_at": null,
+  "issues": [],
+  "notes": [
+    "Create one copy under 11_qa/analysis_runs/<run_id>/.",
+    "Passed_for_human_decision is not a human authority decision."
+  ]
+}

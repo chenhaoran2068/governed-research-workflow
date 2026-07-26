@@ -1,13 +1,13 @@
 {
   "ledger_schema_version": "1.6.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
-  "ledger_status": "unreleased_candidate",
+  "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.1.0",
-    "historical_public_baseline": "v1.0.0",
-    "live_release_identity_rule": "This is an unreleased v1.1.0 candidate derived from the immutable v1.0.0 source. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this candidate does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.0.0",
+    "historical_public_baseline": "v0.13.0",
+    "live_release_identity_rule": "A selected public version is verified only from its exact annotated tag and matching GitHub Release. This v1.0.0 source freezes the public interface and adds a V1 verification map. It does not by itself prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and the separately tracked unreleased v1.1.0 candidate scope. The separate V1 and V1.1 capability verification maps record complete candidate-regression requirements for their respective ledgers. Admission and local candidate verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records admitted historical scopes and the frozen v1.0.0 public interface contract. The separate V1 capability verification map records complete candidate-regression requirements for every ledger capability. Admission and local candidate verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -798,39 +798,6 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "references/knowledge-governance-experience-collection.md", "system/06_memory_and_learning/knowledge_governance_experience_collection/README.md"],
       "contradiction_refusal": "Forbid a public-experience claim when entry count, type, required boundary, redaction condition, local-material exclusion, or collection purpose is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.11.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, source access, currentness finding, public Knowledge package, retrieval capability, or C4 authorization."
-    },
-    {
-      "capability_id": "GRW-CAP-111-01",
-      "public_name": "Future Study Execution And Reproducibility Contract",
-      "capability_class": "record",
-      "implementation_status": "verified",
-      "release_disposition": "admitted",
-      "public_claim_status": "permitted",
-      "promise": "Provides generic metadata-only execution, run, result-authority, and QA record templates and schemas, plus a reviewed empty-workspace bootstrap extension for future Studies.",
-      "non_promise": "Does not execute research, read or modify real data, install or alter dependencies, make results authoritative, prove a human decision, create a generic writer, or replace project-specific execution controls.",
-      "approval_owner": "accountable_human",
-      "interface": {
-        "status": "present",
-        "paths": ["references/future-study-execution-and-reproducibility.md", "assets/future-study-execution/analysis-execution-contract.template.json", "system/09_schemas_records_and_templates/analysis_execution_contract.schema.json", "tests/test_future_study_execution_contract.py"],
-        "identifiers": ["analysis_execution_contract", "formal_run_manifest", "result_manifest", "current_result_authority", "analysis_run_qa_record"]
-      },
-      "profile_scope": "both",
-      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
-      "evidence": {
-        "status": "verified",
-        "references": [
-          {"kind": "test", "path": "tests/test_future_study_execution_contract.py", "identifier": "future-study-execution-contract-positive-negative"},
-          {"kind": "test", "path": "tests/test_bootstrap_empty_workspace.py", "identifier": "future-study-bootstrap-draft-no-authority"},
-          {"kind": "test", "path": "tests/test_v1_1_capability_verification_map.py", "identifier": "v1-1-current-ledger-alignment"},
-          {"kind": "run_record", "path": "system/10_assurance_evaluation_and_audit/V1_1_FUTURE_STUDY_EXECUTION_EVIDENCE.md", "identifier": "v1-1-candidate-evidence-source-snapshot"}
-        ]
-      },
-      "version": {"introduced_version": "v1.1.0", "last_verified_release": null, "target_release": "v1.1.0"},
-      "prior_release_history": [],
-      "approval_reference": "accountable-human accepted the v1.1.0 Future Study Execution And Reproducibility Public Derivative Charter R1, Public C2 scope, local C3 implementation review, candidate capability admission, and public-material publication-rights confirmation in the active Codex conversation on 2026-07-26; an exact candidate commit, remote verification, C4, hosted release, and local adoption remain distinct",
-      "claim_surfaces": ["README.md", "ROADMAP.md", "references/future-study-execution-and-reproducibility.md", "system/00_manifest_and_profiles/v1_1_public_interface_manifest.json"],
-      "contradiction_refusal": "Forbid a formal execution, reproducibility, result-authority, or approval claim when the named contract, run manifest, result manifest, QA record, accountable-human decision reference, current release identity, or boundary is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "Admitted only for the proposed v1.1.0 release scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real Study approval, result authority, data access, dependency permission, remote CI evidence, or C4 authorization."
     },
     {
       "capability_id": "GRW-CAP-130-01",

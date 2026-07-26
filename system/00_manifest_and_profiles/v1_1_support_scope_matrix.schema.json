@@ -1,0 +1,399 @@
+{
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "$id":  "https://github.com/chenhaoran2068/governed-research-workflow/schemas/v1_1_support_scope_matrix.schema.json",
+    "title":  "Governed Research Workflow V1.1 Support Scope Matrix",
+    "description":  "A machine-readable v1.1 candidate module-level support contract. It does not grant operational authority or prove a hosted release, installed runtime, external truth, or project approval.",
+    "type":  "object",
+    "additionalProperties":  false,
+    "required":  [
+                     "matrix_schema_version",
+                     "matrix_id",
+                     "matrix_status",
+                     "package_contract",
+                     "authority_boundary",
+                     "modules",
+                     "matrix_limitations"
+                 ],
+    "properties":  {
+                       "matrix_schema_version":  {
+                                                     "const":  "1.1.0"
+                                                 },
+                       "matrix_id":  {
+                                         "const":  "governed-research-workflow-v1-1-support-scope-matrix"
+                                     },
+                       "matrix_status":  {
+                                             "const":  "unreleased_candidate"
+                                         },
+                       "package_contract":  {
+                                                "$ref":  "#/$defs/package_contract"
+                                            },
+                       "authority_boundary":  {
+                                                  "$ref":  "#/$defs/authority_boundary"
+                                              },
+                       "modules":  {
+                                       "type":  "array",
+                                       "minItems":  13,
+                                       "maxItems":  13,
+                                       "items":  {
+                                                     "$ref":  "#/$defs/module"
+                                                 }
+                                   },
+                       "matrix_limitations":  {
+                                                  "type":  "array",
+                                                  "minItems":  1,
+                                                  "uniqueItems":  true,
+                                                  "items":  {
+                                                                "type":  "string",
+                                                                "minLength":  1
+                                                            }
+                                              }
+                   },
+    "$defs":  {
+                  "safe_relative_path":  {
+                                             "type":  "string",
+                                             "pattern":  "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$)).+"
+                                         },
+                  "package_contract":  {
+                                           "type":  "object",
+                                           "additionalProperties":  false,
+                                           "required":  [
+                                                            "source_version",
+                                                            "historical_public_baseline",
+                                                            "public_profiles",
+                                                            "release_identity_rule"
+                                                        ],
+                                           "properties":  {
+                                                              "source_version":  {
+                                                                                     "const":  "v1.1.0"
+                                                                                 },
+                                                              "historical_public_baseline":  {
+                                                                                                 "const":  "v1.0.0"
+                                                                                             },
+                                                              "public_profiles":  {
+                                                                                      "type":  "array",
+                                                                                      "minItems":  2,
+                                                                                      "maxItems":  2,
+                                                                                      "uniqueItems":  true,
+                                                                                      "items":  {
+                                                                                                    "enum":  [
+                                                                                                                 "standalone",
+                                                                                                                 "framework_integrated"
+                                                                                                             ]
+                                                                                                }
+                                                                                  },
+                                                              "release_identity_rule":  {
+                                                                                            "type":  "string",
+                                                                                            "minLength":  1
+                                                                                        }
+                                                          }
+                                       },
+                  "authority_boundary":  {
+                                             "type":  "object",
+                                             "additionalProperties":  false,
+                                             "required":  [
+                                                              "module_support_owner",
+                                                              "capability_claim_owner",
+                                                              "release_identity_owner",
+                                                              "installation_identity_owner",
+                                                              "project_decision_owner"
+                                                          ],
+                                             "properties":  {
+                                                                "module_support_owner":  {
+                                                                                             "type":  "string",
+                                                                                             "minLength":  1
+                                                                                         },
+                                                                "capability_claim_owner":  {
+                                                                                               "type":  "string",
+                                                                                               "minLength":  1
+                                                                                           },
+                                                                "release_identity_owner":  {
+                                                                                               "type":  "string",
+                                                                                               "minLength":  1
+                                                                                           },
+                                                                "installation_identity_owner":  {
+                                                                                                    "type":  "string",
+                                                                                                    "minLength":  1
+                                                                                                },
+                                                                "project_decision_owner":  {
+                                                                                               "type":  "string",
+                                                                                               "minLength":  1
+                                                                                           }
+                                                            }
+                                         },
+                  "module":  {
+                                 "type":  "object",
+                                 "additionalProperties":  false,
+                                 "required":  [
+                                                  "module_id",
+                                                  "module_name",
+                                                  "posture",
+                                                  "bounded_surfaces",
+                                                  "external_boundaries",
+                                                  "v1_exclusions",
+                                                  "compatibility_and_migration",
+                                                  "maintenance_owner",
+                                                  "evidence_references",
+                                                  "known_limitations",
+                                                  "refusal_statement"
+                                              ],
+                                 "properties":  {
+                                                    "module_id":  {
+                                                                      "enum":  [
+                                                                                   "00",
+                                                                                   "01",
+                                                                                   "02",
+                                                                                   "03",
+                                                                                   "04",
+                                                                                   "05",
+                                                                                   "06",
+                                                                                   "07",
+                                                                                   "08",
+                                                                                   "09",
+                                                                                   "10",
+                                                                                   "11",
+                                                                                   "12"
+                                                                               ]
+                                                                  },
+                                                    "module_name":  {
+                                                                        "type":  "string",
+                                                                        "minLength":  1
+                                                                    },
+                                                    "posture":  {
+                                                                    "enum":  [
+                                                                                 "active_bounded",
+                                                                                 "external_boundary",
+                                                                                 "excluded_from_v1"
+                                                                             ]
+                                                                },
+                                                    "bounded_surfaces":  {
+                                                                             "type":  "array",
+                                                                             "items":  {
+                                                                                           "$ref":  "#/$defs/surface"
+                                                                                       }
+                                                                         },
+                                                    "external_boundaries":  {
+                                                                                "type":  "array",
+                                                                                "minItems":  1,
+                                                                                "items":  {
+                                                                                              "$ref":  "#/$defs/boundary"
+                                                                                          }
+                                                                            },
+                                                    "v1_exclusions":  {
+                                                                          "type":  "array",
+                                                                          "minItems":  1,
+                                                                          "items":  {
+                                                                                        "$ref":  "#/$defs/exclusion"
+                                                                                    }
+                                                                      },
+                                                    "compatibility_and_migration":  {
+                                                                                        "$ref":  "#/$defs/compatibility"
+                                                                                    },
+                                                    "maintenance_owner":  {
+                                                                              "const":  "accountable_maintainer"
+                                                                          },
+                                                    "evidence_references":  {
+                                                                                "type":  "array",
+                                                                                "minItems":  1,
+                                                                                "items":  {
+                                                                                              "$ref":  "#/$defs/evidence_reference"
+                                                                                          }
+                                                                            },
+                                                    "known_limitations":  {
+                                                                              "type":  "string",
+                                                                              "minLength":  1
+                                                                          },
+                                                    "refusal_statement":  {
+                                                                              "type":  "string",
+                                                                              "minLength":  1
+                                                                          }
+                                                },
+                                 "allOf":  [
+                                               {
+                                                   "if":  {
+                                                              "properties":  {
+                                                                                 "posture":  {
+                                                                                                 "const":  "active_bounded"
+                                                                                             }
+                                                                             },
+                                                              "required":  [
+                                                                               "posture"
+                                                                           ]
+                                                          },
+                                                   "then":  {
+                                                                "properties":  {
+                                                                                   "bounded_surfaces":  {
+                                                                                                            "minItems":  1
+                                                                                                        }
+                                                                               },
+                                                                "required":  [
+                                                                                 "bounded_surfaces"
+                                                                             ]
+                                                            }
+                                               },
+                                               {
+                                                   "if":  {
+                                                              "properties":  {
+                                                                                 "posture":  {
+                                                                                                 "enum":  [
+                                                                                                              "external_boundary",
+                                                                                                              "excluded_from_v1"
+                                                                                                          ]
+                                                                                             }
+                                                                             },
+                                                              "required":  [
+                                                                               "posture"
+                                                                           ]
+                                                          },
+                                                   "then":  {
+                                                                "properties":  {
+                                                                                   "bounded_surfaces":  {
+                                                                                                            "maxItems":  0
+                                                                                                        }
+                                                                               },
+                                                                "required":  [
+                                                                                 "bounded_surfaces"
+                                                                             ]
+                                                            }
+                                               }
+                                           ]
+                             },
+                  "surface":  {
+                                  "type":  "object",
+                                  "additionalProperties":  false,
+                                  "required":  [
+                                                   "surface_id",
+                                                   "summary",
+                                                   "interface_paths",
+                                                   "capability_ids",
+                                                   "profile_scope"
+                                               ],
+                                  "properties":  {
+                                                     "surface_id":  {
+                                                                        "type":  "string",
+                                                                        "pattern":  "^[a-z][a-z0-9_]{2,63}$"
+                                                                    },
+                                                     "summary":  {
+                                                                     "type":  "string",
+                                                                     "minLength":  1
+                                                                 },
+                                                     "interface_paths":  {
+                                                                             "type":  "array",
+                                                                             "minItems":  1,
+                                                                             "uniqueItems":  true,
+                                                                             "items":  {
+                                                                                           "$ref":  "#/$defs/safe_relative_path"
+                                                                                       }
+                                                                         },
+                                                     "capability_ids":  {
+                                                                            "type":  "array",
+                                                                            "uniqueItems":  true,
+                                                                            "items":  {
+                                                                                          "type":  "string",
+                                                                                          "pattern":  "^GRW-CAP-[0-9]{3}-[0-9]{2}$"
+                                                                                      }
+                                                                        },
+                                                     "profile_scope":  {
+                                                                           "enum":  [
+                                                                                        "standalone",
+                                                                                        "framework_integrated",
+                                                                                        "both",
+                                                                                        "not_profile_specific"
+                                                                                    ]
+                                                                       }
+                                                 }
+                              },
+                  "boundary":  {
+                                   "type":  "object",
+                                   "additionalProperties":  false,
+                                   "required":  [
+                                                    "boundary_id",
+                                                    "non_claim",
+                                                    "responsible_authority_type"
+                                                ],
+                                   "properties":  {
+                                                      "boundary_id":  {
+                                                                          "type":  "string",
+                                                                          "pattern":  "^[a-z][a-z0-9_]{2,63}$"
+                                                                      },
+                                                      "non_claim":  {
+                                                                        "type":  "string",
+                                                                        "minLength":  1
+                                                                    },
+                                                      "responsible_authority_type":  {
+                                                                                         "enum":  [
+                                                                                                      "accountable_human",
+                                                                                                      "project_specific_authority",
+                                                                                                      "external_current_source",
+                                                                                                      "separate_controlled_process"
+                                                                                                  ]
+                                                                                     }
+                                                  }
+                               },
+                  "exclusion":  {
+                                    "type":  "object",
+                                    "additionalProperties":  false,
+                                    "required":  [
+                                                     "exclusion_id",
+                                                     "non_claim"
+                                                 ],
+                                    "properties":  {
+                                                       "exclusion_id":  {
+                                                                            "type":  "string",
+                                                                            "pattern":  "^[a-z][a-z0-9_]{2,63}$"
+                                                                        },
+                                                       "non_claim":  {
+                                                                         "type":  "string",
+                                                                         "minLength":  1
+                                                                     }
+                                                   }
+                                },
+                  "compatibility":  {
+                                        "type":  "object",
+                                        "additionalProperties":  false,
+                                        "required":  [
+                                                         "v1_user_action",
+                                                         "migration_action",
+                                                         "compatibility_limit"
+                                                     ],
+                                        "properties":  {
+                                                           "migration_action":  {
+                                                                                    "const":  "none"
+                                                                                },
+                                                           "compatibility_limit":  {
+                                                                                       "type":  "string",
+                                                                                       "minLength":  1
+                                                                                   },
+                                                           "v1_user_action":  {
+                                                                                  "const":  "no_action_required"
+                                                                              }
+                                                       }
+                                    },
+                  "evidence_reference":  {
+                                             "type":  "object",
+                                             "additionalProperties":  false,
+                                             "required":  [
+                                                              "kind",
+                                                              "path",
+                                                              "identifier"
+                                                          ],
+                                             "properties":  {
+                                                                "kind":  {
+                                                                             "enum":  [
+                                                                                          "test",
+                                                                                          "module_record",
+                                                                                          "capability_ledger",
+                                                                                          "integration",
+                                                                                          "release_record"
+                                                                                      ]
+                                                                         },
+                                                                "path":  {
+                                                                             "$ref":  "#/$defs/safe_relative_path"
+                                                                         },
+                                                                "identifier":  {
+                                                                                   "type":  "string",
+                                                                                   "minLength":  1
+                                                                               }
+                                                            }
+                                         }
+              }
+}

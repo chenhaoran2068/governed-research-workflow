@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/current_result_authority.schema.json",
+  "title": "Current Result Authority",
+  "type": "object",
+  "required": ["record_type", "record_version", "project_id", "authority_status", "formal_run_manifest_reference", "result_manifest_reference", "qa_record_reference", "human_authority_decision_reference"],
+  "properties": {
+    "record_type": {"const": "current_result_authority"},
+    "record_version": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "authority_status": {"type": "string", "enum": ["no_authoritative_result", "candidate", "authoritative", "revoked"]},
+    "formal_run_manifest_reference": {"anyOf": [{"type": "string", "pattern": "^07_analysis/05_runs/[A-Za-z0-9._-]+/formal_run_manifest\\.json$"}, {"type": "null"}]},
+    "result_manifest_reference": {"anyOf": [{"type": "string", "pattern": "^08_results/runs/[A-Za-z0-9._-]+/result_manifest\\.json$"}, {"type": "null"}]},
+    "qa_record_reference": {"anyOf": [{"type": "string", "pattern": "^11_qa/analysis_runs/[A-Za-z0-9._-]+/analysis_run_qa_record\\.json$"}, {"type": "null"}]},
+    "human_authority_decision_reference": {"anyOf": [{"type": "string", "pattern": "^00_state/approval/[A-Za-z0-9._-]+\\.json$"}, {"type": "null"}]},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"authority_status": {"const": "authoritative"}}},
+      "then": {
+        "properties": {
+          "formal_run_manifest_reference": {"type": "string", "pattern": "^07_analysis/05_runs/[A-Za-z0-9._-]+/formal_run_manifest\\.json$"},
+          "result_manifest_reference": {"type": "string", "pattern": "^08_results/runs/[A-Za-z0-9._-]+/result_manifest\\.json$"},
+          "qa_record_reference": {"type": "string", "pattern": "^11_qa/analysis_runs/[A-Za-z0-9._-]+/analysis_run_qa_record\\.json$"},
+          "human_authority_decision_reference": {"type": "string", "pattern": "^00_state/approval/[A-Za-z0-9._-]+\\.json$"}
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

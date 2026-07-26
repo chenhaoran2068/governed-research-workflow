@@ -11,7 +11,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE = ROOT / "system" / "11_distribution_installation_and_release"
-LEDGER = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER = ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 SCHEMA = ROOT / "system" / "09_schemas_records_and_templates" / "voluntary_experience_package.schema.json"
 PUBLIC_FILES = (
     "system/09_schemas_records_and_templates/voluntary_experience_package.schema.json",
@@ -39,7 +39,8 @@ class V010ReleasePreparationTests(unittest.TestCase):
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
         current_surface = "\n".join((manifest, readme, roadmap, index, json.dumps(ledger))).lower()
         self.assertIn("system_version: 1.0.0", manifest)
-        self.assertIn("Status: v1.0.0 frozen public-interface source", readme)
+        self.assertIn("Status: v1.1.0 unpublished local candidate", readme)
+        self.assertIn("current released public baseline remains v1.0.0", readme)
         self.assertIn("## v0.10.0 (voluntary metadata-only experience package)", roadmap)
         self.assertIn("## v0.10.1 (self-controlled synthetic experience-exchange pilot)", roadmap)
         self.assertIn("## v0.10.2 (human-mediated experience-curation maintenance source)", roadmap)
