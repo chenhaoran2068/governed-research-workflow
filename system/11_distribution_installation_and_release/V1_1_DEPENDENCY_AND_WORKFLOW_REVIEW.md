@@ -1,8 +1,8 @@
 # V1.1.0 Dependency And Workflow Review
 
-Status: local review passed for the local candidate tree. This record does not
-certify dependency security, hosted CI, repository settings, C4, Release, or
-runtime installation.
+Status: commit-neutral pre-C4 dependency and workflow review snapshot. This
+record does not certify dependency security, current hosted CI, repository
+settings, C4, Release, or runtime installation.
 
 | Surface | v1.1 candidate finding |
 | --- | --- |
@@ -16,10 +16,11 @@ runtime installation.
 | Public profiles | unchanged: standalone and framework_integrated |
 | Framework change | none; the existing exact Framework v0.1.2 / 97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8 reference remains the framework-integrated test binding |
 
-The existing GitHub Actions workflow remains the later authoritative platform
+The existing GitHub Actions workflow is the separately controlled platform
 evidence path: Windows, Ubuntu, macOS, Python 3.11/3.14, reviewed action SHAs,
 minimal permissions, and exact Framework binding. Local regression cannot
-replace that later remote CI.
+replace remote CI, and this source snapshot does not state a current CI
+outcome.
 
 Before any C4 decision, inspect the exact protected-main commit, workflow and
 dependency files, branch protection, immutable-release posture, final notes,

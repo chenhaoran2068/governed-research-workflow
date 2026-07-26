@@ -28,11 +28,19 @@ class V11ReleasePreparationTests(unittest.TestCase):
             self.assertTrue((RELEASE / name).is_file(), name)
 
         combined = "\n".join((RELEASE / name).read_text(encoding="utf-8").lower() for name in required)
-        for marker in ("not an exact commit", "github release", "not authorized and not established"):
+        for marker in (
+            "an exact commit",
+            "github release",
+            "does not state a current",
+            "not asserted by this source record",
+        ):
             self.assertIn(marker, combined)
         self.assertIn("admitted for the proposed", combined)
         self.assertNotIn("v1.1.0 is released", combined)
         self.assertNotIn("v1.1.0 is installed", combined)
+        self.assertNotIn("not authorized and not established", combined)
+        self.assertNotRegex(combined, r"\b\d+\s+(?:tests?\s+)?passed\b")
+        self.assertNotRegex(combined, r"\b\d+\s+candidate files\b")
 
     def test_release_control_is_valid_and_keeps_exact_identity_and_c4_unresolved(self) -> None:
         schema = json.loads((RELEASE / "release_control_record.schema.json").read_text(encoding="utf-8"))
@@ -40,8 +48,9 @@ class V11ReleasePreparationTests(unittest.TestCase):
         errors = list(Draft202012Validator(schema).iter_errors(record))
         self.assertEqual(errors, [], "\n".join(error.message for error in errors))
         self.assertEqual(record["status"], "candidate_reviewed")
+        self.assertEqual(record["record_revision"], 3)
         self.assertEqual(record["candidate_identity"]["exact_commit"], "0" * 40)
-        self.assertEqual(record["candidate_identity"]["branch_state"], "local_candidate_only")
+        self.assertEqual(record["candidate_identity"]["branch_state"], "remote_candidate_branch")
         self.assertEqual(record["capability_set"]["verified_candidate_capability_ids"], ["GRW-CAP-111-01"])
         self.assertEqual(record["capability_set"]["admitted_capability_ids"], ["GRW-CAP-111-01"])
         self.assertEqual(record["material_reviews"]["public_material_rights_review"], "pass")

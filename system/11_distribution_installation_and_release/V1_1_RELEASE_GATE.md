@@ -1,7 +1,7 @@
 # V1.1.0 Release Gate
 
-Status: local release-preparation gate for the reviewed local candidate. It is
-not an exact commit, remote CI result, protected-main merge, C4 authorization,
+Status: commit-neutral pre-C4 release-preparation gate snapshot. It is not an
+exact commit, current remote-CI result, protected-main merge, C4 authorization,
 Git tag, GitHub Release, or installation statement.
 
 ## Intended Scope
@@ -33,9 +33,10 @@ change, or runtime update is part of this candidate.
 
 ## Local Progress
 
-Conditions 1, 2, and 4 are locally satisfied for the candidate described by
-this commit-neutral source record. Release-preparation tests passed 39 tests;
-the refreshed full regression passed 274 tests with 3 existing skips. Condition
-3 remains incomplete until a separate local C3 receipt binds an exact commit
-and refreshed evidence; conditions 5 and 6 remain incomplete because remote
-CI, protected-main identity, and C4 authorization do not yet exist.
+This source snapshot records the reviewed local gate design and the required
+conditions. Exact local-regression evidence, candidate identity, and any
+remote-CI outcome are maintained in separate controlled records. Before C4,
+the accountable human must independently verify the exact protected-main
+commit, release notes, repository integrity posture, annotated tag, and
+matching GitHub Release. This gate does not state a current completion status
+for any external or installed identity.

@@ -2,15 +2,15 @@
   "schema_version": "1.0.0",
   "record_type": "release_control_record",
   "release_control_id": "GRW-V110-RCR-001",
-  "record_revision": 2,
+  "record_revision": 3,
   "created_at": "2026-07-26T00:00:00Z",
   "status": "candidate_reviewed",
   "candidate_identity": {
     "candidate_version": "1.1.0",
     "exact_commit": "0000000000000000000000000000000000000000",
-    "branch_state": "local_candidate_only",
+    "branch_state": "remote_candidate_branch",
     "intended_tag": "v1.1.0",
-    "intended_github_release": "The all-zero sentinel records that this source remains commit-neutral. A separately controlled local C3 receipt must bind the exact candidate commit; remote CI, protected-main merge, C4 decision, annotated tag, and matching GitHub Release remain required."
+    "intended_github_release": "The all-zero sentinel records a commit-neutral pre-C4 source snapshot. Separately controlled evidence, rather than this source record, determines any exact candidate, remote CI, protected-main, C4, annotated-tag, or GitHub Release identity."
   },
   "capability_set": {
     "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
@@ -42,8 +42,8 @@
   },
   "release_integrity_posture": {
     "technical_immutable_release_status": "unknown",
-    "deferral_or_unavailability_reason": "Earlier release records describe immutable releases as enabled, but the exact repository setting, protected-main state, tag, Release, and source archives must be rechecked for a later exact candidate and before C4.",
-    "reevaluation_trigger": "After a separately authorized candidate commit, refresh local evidence. Before C4, verify remote CI, protected-main identity, repository settings, final notes, annotated tag, matching GitHub Release, and generated source archives.",
+    "deferral_or_unavailability_reason": "This pre-C4 source snapshot does not establish the repository immutable-release setting, protected-main state, tag, Release, or source archives. Those external facts require separately controlled exact evidence before C4.",
+    "reevaluation_trigger": "Before C4, separately verify the exact protected-main commit, repository settings, final notes, annotated tag, matching GitHub Release, and generated source archives; this source snapshot does not state their current outcome.",
     "release_assets": [
       "No additional asset is planned; generated source archives require post-release verification."
     ],
@@ -52,7 +52,7 @@
       "system/11_distribution_installation_and_release/V1_1_RELEASE_EVIDENCE.md"
     ],
     "unverified_properties": [
-      "Exact candidate commit, remote CI, protected-main merge, repository settings, C4 authorization, immutable tag, matching GitHub Release, source archives, and installed runtime identity are not established."
+      "This source record does not establish an exact candidate commit, remote CI, protected-main merge, repository settings, C4 authorization, immutable tag, matching GitHub Release, source archives, or installed-runtime identity."
     ]
   },
   "supported_scope": {
@@ -61,7 +61,7 @@
       "framework_integrated"
     ],
     "platforms": [
-      "Local full regression passed for the candidate described by this commit-neutral source record; Windows, Ubuntu, and macOS CI remain required after separately authorized remote validation."
+      "Platform support requires separately controlled exact local and remote evidence; this commit-neutral source record does not state a current regression count or CI outcome."
     ],
     "approved_scope_statement": "One locally verified and accountable-human-admitted metadata-only future-Study execution/reproducibility record contract for the proposed v1.1.0 release scope. It adds no data action, generic writer, dependency installer, agent runtime, Framework change, Release action, or runtime behavior."
   },
@@ -71,7 +71,7 @@
     "This commit-neutral local candidate-review record cannot by itself establish an exact candidate, remote CI, protected-main commit, C4 authorization, tag, GitHub Release, or local adoption."
   ],
   "incident_and_repair_route": "Stop affected release work, preserve exact evidence, notify the accountable human, and prepare a corrective candidate. Never rewrite an immutable tag or Release.",
-  "candidate_review_acceptance_reference": "Accountable-human accepted the completed local C3 candidate-content review and, on 2026-07-26, admitted GRW-CAP-111-01 for the proposed v1.1.0 scope and confirmed publication rights for the reviewed generic candidate tree. Exact commit review, remote CI, C4, hosted Release, and local adoption remain separate.",
+  "candidate_review_acceptance_reference": "Accountable-human accepted the candidate-content review and, on 2026-07-26, admitted GRW-CAP-111-01 for the proposed v1.1.0 scope and confirmed publication rights for the reviewed generic candidate tree. Exact candidate, CI, C4, hosted Release, and local-adoption identities are separately controlled.",
   "c4_release_authorization_reference": null,
   "post_release_verification_reference": null,
   "post_release_verification_plan_reference": "system/11_distribution_installation_and_release/RELEASE_CONTROL.md#post-release-route",
