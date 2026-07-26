@@ -63,7 +63,14 @@ and generic schemas under `system/09_schemas_records_and_templates/`.
   accountable-human decision reference. Even all four shaped references do not
   prove their targets or the decision; they only make the required evidence
   explicit for human review.
-- Keep references project-relative and inside the declared Study layout.
+- Treat `system_contract_reference` as a separately governed system-contract
+  identity, not as a Study artifact path. The blank template deliberately uses
+  `UNRESOLVED_SYSTEM_CONTRACT_REFERENCE`; an accountable human must replace it
+  before a contract can be selected for use. An empty bootstrap does not copy
+  this public guide into the Study.
+- Keep Study artifact references project-relative and inside the declared Study
+  layout. This applies to declared entrypoints, environment/configuration
+  evidence, run manifests, result manifests, QA records, and artifact paths.
   Absolute paths, parent-directory traversal, data locators, credentials,
   network targets, and unlisted external files are outside this contract.
 

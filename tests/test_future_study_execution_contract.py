@@ -52,6 +52,10 @@ class FutureStudyExecutionContractTests(unittest.TestCase):
         execution = self.templates["analysis_execution_contract"]
         self.assertEqual(execution["contract_status"], "draft")
         self.assertIsNone(execution["approval_reference"])
+        self.assertEqual(
+            execution["system_contract_reference"],
+            "UNRESOLVED_SYSTEM_CONTRACT_REFERENCE",
+        )
         self.assertEqual(execution["formal_execution_path"]["kind"], "unselected")
         authority = self.templates["current_result_authority"]
         self.assertEqual(authority["authority_status"], "no_authoritative_result")
@@ -117,6 +121,11 @@ class FutureStudyExecutionContractTests(unittest.TestCase):
             )
             self.assertEqual(execution["project_id"], "synthetic-study")
             self.assertEqual(execution["contract_status"], "draft")
+            self.assertEqual(
+                execution["system_contract_reference"],
+                "UNRESOLVED_SYSTEM_CONTRACT_REFERENCE",
+            )
+            self.assertFalse((workspace / "references").exists())
             self.assertEqual(authority["authority_status"], "no_authoritative_result")
             self.assertIsNone(authority["human_authority_decision_reference"])
 

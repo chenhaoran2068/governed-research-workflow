@@ -21,7 +21,11 @@
     "contract_version": {"type": "string", "minLength": 1},
     "project_id": {"type": "string", "minLength": 1},
     "primary_system": {"type": "string", "minLength": 1},
-    "system_contract_reference": {"type": "string", "minLength": 1},
+    "system_contract_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A separately governed system-contract identity or explicit unresolved placeholder; it is not a Study artifact path."
+    },
     "contract_status": {
       "type": "string",
       "enum": ["draft", "candidate", "approved_for_use", "retired"]

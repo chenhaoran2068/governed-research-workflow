@@ -822,7 +822,7 @@
           {"kind": "test", "path": "tests/test_future_study_execution_contract.py", "identifier": "future-study-execution-contract-positive-negative"},
           {"kind": "test", "path": "tests/test_bootstrap_empty_workspace.py", "identifier": "future-study-bootstrap-draft-no-authority"},
           {"kind": "test", "path": "tests/test_v1_1_capability_verification_map.py", "identifier": "v1-1-current-ledger-alignment"},
-          {"kind": "run_record", "path": "system/10_assurance_evaluation_and_audit/V1_1_FUTURE_STUDY_EXECUTION_EVIDENCE.md", "identifier": "local-full-regression-20260726-272-pass-3-skipped"}
+          {"kind": "run_record", "path": "system/10_assurance_evaluation_and_audit/V1_1_FUTURE_STUDY_EXECUTION_EVIDENCE.md", "identifier": "v1-1-candidate-evidence-source-snapshot"}
         ]
       },
       "version": {"introduced_version": "v1.1.0", "last_verified_release": null, "target_release": "v1.1.0"},
@@ -830,7 +830,7 @@
       "approval_reference": "accountable-human accepted the v1.1.0 Future Study Execution And Reproducibility Public Derivative Charter R1, Public C2 scope, local C3 implementation review, candidate capability admission, and public-material publication-rights confirmation in the active Codex conversation on 2026-07-26; an exact candidate commit, remote verification, C4, hosted release, and local adoption remain distinct",
       "claim_surfaces": ["README.md", "ROADMAP.md", "references/future-study-execution-and-reproducibility.md", "system/00_manifest_and_profiles/v1_1_public_interface_manifest.json"],
       "contradiction_refusal": "Forbid a formal execution, reproducibility, result-authority, or approval claim when the named contract, run manifest, result manifest, QA record, accountable-human decision reference, current release identity, or boundary is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "Admitted only for the proposed v1.1.0 release scope. This local candidate is not yet an exact commit, hosted tag, matching GitHub Release, or installed runtime, and it does not establish real Study approval, result authority, data access, dependency permission, remote CI evidence, or C4 authorization."
+      "limitations_and_next_action": "Admitted only for the proposed v1.1.0 release scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real Study approval, result authority, data access, dependency permission, remote CI evidence, or C4 authorization."
     },
     {
       "capability_id": "GRW-CAP-130-01",
