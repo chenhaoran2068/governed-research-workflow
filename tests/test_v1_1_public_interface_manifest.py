@@ -16,6 +16,7 @@ MANIFEST_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_1_public_inte
 SCHEMA_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_1_public_interface_manifest.schema.json"
 LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
 V1_LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
+WORKFLOW_PATH = ROOT / ".github" / "workflows" / "test-bootstrap.yml"
 
 
 def is_safe_relative_path(value: str) -> bool:
@@ -68,6 +69,20 @@ class V11PublicInterfaceManifestTests(unittest.TestCase):
         self.assertEqual(snapshot, expected.stdout.encode("utf-8"))
         self.assertNotIn("GRW-CAP-111-01", V1_LEDGER_PATH.read_text(encoding="utf-8"))
         self.assertIn("GRW-CAP-111-01", LEDGER_PATH.read_text(encoding="utf-8"))
+
+    def test_ci_checkout_fetches_immutable_tag_history_for_frozen_ledger_review(self) -> None:
+        workflow = WORKFLOW_PATH.read_text(encoding="utf-8")
+        primary_checkout = re.search(
+            r"(?m)^      - uses: actions/checkout@[^\r\n]+\r?\n"
+            r"        with:\r?\n"
+            r"          fetch-depth: 0\r?\n"
+            r"          fetch-tags: true\s*$",
+            workflow,
+        )
+        self.assertIsNotNone(
+            primary_checkout,
+            "CI must fetch tag history before the frozen v1 ledger comparison runs.",
+        )
 
 
 if __name__ == "__main__":
