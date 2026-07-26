@@ -91,8 +91,9 @@ advance a workflow Gate.
 
 ## Release And Installation Boundary
 
-This is an unpublished `v1.1.0` candidate reference until an exact annotated
-tag and matching GitHub Release identify the reviewed source commit. It does
-not establish an installed runtime. Public release identity, private source
-identity, installed runtime identity, project result authority, and
-accountable-human project decisions remain separate records.
+This is a versioned `v1.1.0` source reference. It does not establish a hosted
+Release or an installed runtime. Verify a selected public version only when its
+exact annotated tag and matching GitHub Release identify the reviewed source
+commit. Public release identity, private source identity, installed runtime
+identity, project result authority, and accountable-human project decisions
+remain separate records.

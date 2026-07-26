@@ -105,12 +105,12 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
         self.assertEqual(self.ledger["ledger_schema_version"], "1.6.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
-        self.assertEqual(self.ledger["ledger_status"], "unreleased_candidate")
+        self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
         self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.1.0")
         self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.0.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
-        self.assertIn("unreleased v1.1.0 candidate scope", self.ledger["target_claim_scope"])
+        self.assertIn("v1.1.0 versioned source scope", self.ledger["target_claim_scope"])
         self.assertIn("V1 and V1.1 capability verification maps", self.ledger["target_claim_scope"])
         self.assertIn("Historical facts", self.ledger["target_claim_scope"])
         self.assertEqual(

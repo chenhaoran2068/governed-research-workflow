@@ -21,8 +21,8 @@
                        "matrix_id":  {
                                          "const":  "governed-research-workflow-v1-1-support-scope-matrix"
                                      },
-                       "matrix_status":  {
-                                             "const":  "unreleased_candidate"
+                        "matrix_status":  {
+                                             "const":  "release_source_prepared"
                                          },
                        "package_contract":  {
                                                 "$ref":  "#/$defs/package_contract"

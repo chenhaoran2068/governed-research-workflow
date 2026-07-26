@@ -1,4 +1,4 @@
-"""Release-preparation controls for the v1.1 future-Study candidate."""
+"""Release-preparation controls for the versioned v1.1 future-Study source."""
 
 from __future__ import annotations
 
@@ -43,6 +43,24 @@ class V11ReleasePreparationTests(unittest.TestCase):
         self.assertNotIn("not authorized and not established", combined)
         self.assertNotRegex(combined, r"\b\d+\s+(?:tests?\s+)?passed\b")
         self.assertNotRegex(combined, r"\b\d+\s+candidate files\b")
+
+    def test_current_v11_source_surfaces_are_time_neutral(self) -> None:
+        current_paths = (
+            ROOT / "README.md",
+            ROOT / "ROADMAP.md",
+            ROOT / "references" / "future-study-execution-and-reproducibility.md",
+            ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json",
+            ROOT / "system" / "00_manifest_and_profiles" / "v1_1_public_interface_manifest.json",
+            ROOT / "system" / "00_manifest_and_profiles" / "v1_1_support_scope_matrix.json",
+            RELEASE / "RELEASE_NOTES_v1.1.0.md",
+        )
+        combined = "\n".join(path.read_text(encoding="utf-8").lower() for path in current_paths)
+        self.assertIn("exact annotated", combined)
+        self.assertIn("matching github release", combined)
+        self.assertNotIn("unreleased v1.1.0", combined)
+        self.assertNotIn("unpublished local candidate", combined)
+        self.assertNotIn("unreleased_candidate", combined)
+        self.assertNotIn("later github release", combined)
 
     def test_candidate_assurance_evidence_is_time_neutral_and_ledger_does_not_embed_run_counts(self) -> None:
         assurance = ASSURANCE.read_text(encoding="utf-8")

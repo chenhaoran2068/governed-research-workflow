@@ -1,10 +1,10 @@
-# V1.1.0 Candidate Release Notes
+# V1.1.0 Release Notes Source
 
-Status: local candidate release notes. They describe proposed scope only and
-do not prove a tag, GitHub Release, public availability, installation target,
-or runtime update.
+Status: version-neutral source text for the matching GitHub Release. It
+describes the v1.1.0 scope only and does not prove a tag, GitHub Release, public
+availability, installation target, or runtime update.
 
-## Proposed Addition
+## Addition
 
 - A generic, metadata-only Future Study Execution And Reproducibility Contract
   (GRW-CAP-111-01) comprising five blank record templates and matching schemas:
@@ -17,7 +17,7 @@ or runtime update.
   reviewed empty analysis/result/QA directories plus draft execution-contract
   and no-authoritative-result starters.
 - Frozen-v1 preservation and regression coverage separating historical v1.0
-  tests from the new v1.1 candidate ledger and manifests.
+  tests from the new v1.1 versioned ledger and manifests.
 
 ## Explicitly Not Added
 

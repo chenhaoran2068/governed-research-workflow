@@ -1,7 +1,7 @@
 {
     "matrix_schema_version":  "1.1.0",
     "matrix_id":  "governed-research-workflow-v1-1-support-scope-matrix",
-    "matrix_status":  "unreleased_candidate",
+    "matrix_status":  "release_source_prepared",
     "package_contract":  {
                              "source_version":  "v1.1.0",
                              "historical_public_baseline":  "v1.0.0",
@@ -9,10 +9,10 @@
                                                      "standalone",
                                                      "framework_integrated"
                                                  ],
-                             "release_identity_rule":  "This is an unreleased v1.1.0 candidate. A selected public v1.1.0 version is available only when its exact annotated tag and matching GitHub Release resolve to the selected source commit. This matrix is not a hosted Release or installed-runtime claim."
+                              "release_identity_rule":  "This v1.1.0 versioned source is available as a selected public version only when its exact annotated tag and matching GitHub Release resolve to the selected source commit. This matrix is not a hosted Release or installed-runtime claim."
                          },
     "authority_boundary":  {
-                               "module_support_owner":  "This matrix is the sole machine-readable authority for module-level v1.1 candidate support posture.",
+                                "module_support_owner":  "This matrix is the sole machine-readable authority for module-level v1.1 versioned source support posture.",
                                "capability_claim_owner":  "capability_truth_ledger.json remains the sole machine-readable authority for individual capability promise, non-promise, evidence, and admission fields.",
                                "release_identity_owner":  "An exact annotated Git tag and matching GitHub Release establish selected public-release identity.",
                                "installation_identity_owner":  "A separate controlled installation receipt and fresh-process validation establish installed runtime identity.",

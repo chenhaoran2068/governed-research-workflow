@@ -1,4 +1,4 @@
-"""Structural checks for the v1.1 future-Study candidate support matrix."""
+"""Structural checks for the versioned v1.1 future-Study support matrix."""
 
 from __future__ import annotations
 
@@ -28,11 +28,11 @@ class V11SupportScopeMatrixTests(unittest.TestCase):
         cls.schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         cls.ledger_ids = {item["capability_id"] for item in json.loads(LEDGER_PATH.read_text(encoding="utf-8"))["capabilities"]}
 
-    def test_candidate_matrix_validates_and_has_13_modules(self) -> None:
+    def test_versioned_matrix_validates_and_has_13_modules(self) -> None:
         errors = list(Draft202012Validator(self.schema).iter_errors(self.matrix))
         self.assertEqual(errors, [], "\n".join(error.message for error in errors))
         self.assertEqual(self.matrix["matrix_schema_version"], "1.1.0")
-        self.assertEqual(self.matrix["matrix_status"], "unreleased_candidate")
+        self.assertEqual(self.matrix["matrix_status"], "release_source_prepared")
         self.assertEqual(self.matrix["package_contract"]["historical_public_baseline"], "v1.0.0")
         self.assertEqual([module["module_id"] for module in self.matrix["modules"]], [f"{index:02d}" for index in range(13)])
 

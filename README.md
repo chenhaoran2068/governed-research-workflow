@@ -5,19 +5,17 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.1.0 unpublished local candidate, derived from the immutable public
-v1.0.0 baseline. The current released public baseline remains v1.0.0 until an
-exact annotated v1.1.0 tag and matching GitHub Release resolve to the reviewed
-source commit. This candidate preserves the frozen v1.0.0 contract and adds a
+Status: v1.1.0 versioned source scope, derived from the immutable public
+v1.0.0 baseline. This source preserves the frozen v1.0.0 contract and adds a
 generic future-Study execution and reproducibility record set. It adds no research-
 operation interface, public intake, direct external-contributor flow,
 upload/download helper, network action, real-content handling, data access,
 source library, retrieval service, RAG capability, coordinator, agent runtime,
 delegation, multi-agent orchestration, generic writer, recovery executor,
 dependency, or release decision. This source tree does not itself prove the
-release or installation identity of any selected version. A normal public
-installation target exists only when an exact annotated tag and matching GitHub
-Release resolve to the selected source commit. Never install a mutable branch.
+release or installation identity of any selected version. Verify a selected
+public version only when its exact annotated tag and matching GitHub Release
+resolve to the selected source commit. Never install a mutable branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read

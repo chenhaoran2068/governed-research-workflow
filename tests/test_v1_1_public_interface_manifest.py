@@ -1,4 +1,4 @@
-"""Structural checks for the v1.1 future-Study candidate interface manifest."""
+"""Structural checks for the versioned v1.1 future-Study interface manifest."""
 
 from __future__ import annotations
 
@@ -31,13 +31,14 @@ class V11PublicInterfaceManifestTests(unittest.TestCase):
         cls.schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         cls.ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
 
-    def test_candidate_manifest_validates_and_is_not_a_release_claim(self) -> None:
+    def test_versioned_manifest_validates_and_is_not_a_release_claim(self) -> None:
         errors = list(Draft202012Validator(self.schema).iter_errors(self.manifest))
         self.assertEqual(errors, [], "\n".join(error.message for error in errors))
         self.assertEqual(self.manifest["contract_version"], "1.1.0")
-        self.assertEqual(self.manifest["contract_status"], "unreleased_candidate")
+        self.assertEqual(self.manifest["contract_status"], "release_source_prepared")
         rule = self.manifest["source_identity"]["public_release_identity_rule"]
-        self.assertIn("unreleased", rule)
+        self.assertIn("versioned source", rule)
+        self.assertNotIn("unreleased", rule)
         self.assertIn("exact annotated", rule)
         self.assertIn("matching GitHub Release", rule)
 
