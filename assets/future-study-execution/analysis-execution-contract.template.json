@@ -1,0 +1,33 @@
+{
+  "record_type": "analysis_execution_contract",
+  "contract_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "primary_system": "UNASSIGNED",
+  "system_contract_reference": "references/future-study-execution-and-reproducibility.md",
+  "contract_status": "draft",
+  "approval_reference": null,
+  "formal_execution_path": {
+    "kind": "unselected",
+    "entrypoint_reference": null,
+    "declared_only": true
+  },
+  "environment_policy": {
+    "environment_spec_reference": null,
+    "dependency_lock_reference": null,
+    "automatic_dependency_change_forbidden": true
+  },
+  "run_policy": {
+    "unique_run_id_required": true,
+    "overwrite_forbidden": true,
+    "run_manifest_required": true
+  },
+  "result_authority_policy": {
+    "result_manifest_required": true,
+    "qa_record_required": true,
+    "human_decision_required": true
+  },
+  "notes": [
+    "This generic template declares required controls only.",
+    "Neither its status nor its approval_reference proves that a human approval exists."
+  ]
+}

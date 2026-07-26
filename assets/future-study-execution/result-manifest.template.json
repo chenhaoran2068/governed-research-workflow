@@ -1,0 +1,13 @@
+{
+  "record_type": "result_manifest",
+  "manifest_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "run_id": "RUN_ID_REQUIRED",
+  "result_status": "candidate",
+  "formal_run_manifest_reference": "07_analysis/05_runs/RUN_ID_REQUIRED/formal_run_manifest.json",
+  "artifacts": [],
+  "notes": [
+    "Create one copy under 08_results/runs/<run_id>/.",
+    "This record does not by itself make outputs authoritative."
+  ]
+}

@@ -14,7 +14,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_public_interface_manifest.json"
 SCHEMA_PATH = ROOT / "system" / "09_schemas_records_and_templates" / "v1_public_interface_manifest.schema.json"
-LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 
 EXPECTED_MODULE_IDS = {f"{index:02d}" for index in range(13)}
 EXPECTED_INTERFACES = {

@@ -14,7 +14,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_support_scope_matrix.json"
 SCHEMA_PATH = ROOT / "system" / "09_schemas_records_and_templates" / "v1_support_scope_matrix.schema.json"
-LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 MODULE_IDS = tuple(f"{index:02d}" for index in range(13))
 FORBIDDEN_SUPPORT_WORDS = (
     "data access",

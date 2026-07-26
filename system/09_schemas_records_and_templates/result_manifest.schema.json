@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/result_manifest.schema.json",
+  "title": "Result Manifest",
+  "type": "object",
+  "required": ["record_type", "manifest_version", "project_id", "run_id", "result_status", "formal_run_manifest_reference", "artifacts"],
+  "properties": {
+    "record_type": {"const": "result_manifest"},
+    "manifest_version": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+    "result_status": {"type": "string", "enum": ["candidate", "withdrawn", "superseded"]},
+    "formal_run_manifest_reference": {"type": "string", "pattern": "^07_analysis/05_runs/[A-Za-z0-9._-]+/formal_run_manifest\\.json$"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "relative_path", "role"],
+        "properties": {
+          "artifact_id": {"type": "string", "minLength": 1},
+          "relative_path": {"type": "string", "pattern": "^08_results/runs/[A-Za-z0-9._-]+/(?!.*\\.\\.).+$"},
+          "role": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": true
+      }
+    },
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

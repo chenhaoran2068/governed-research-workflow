@@ -1,0 +1,419 @@
+{
+    "verification_map_schema_version":  "1.1.0",
+    "map_id":  "governed-research-workflow-v1-1-capability-verification-map",
+    "source_contract_version":  "1.1.0",
+    "candidate_evidence_status":  "locally_verified_candidate",
+    "authority_boundary":  {
+                               "capability_claim_owner":  "capability_truth_ledger.json remains the sole authority for a capability promise, non-promise, admission, and public-claim status.",
+                               "verification_map_owner":  "This map defines v1.1 candidate verification requirements and evidence locations; it does not replace the ledger or establish a hosted Release.",
+                               "release_identity_owner":  "An exact annotated Git tag and matching GitHub Release establish public-release identity.",
+                               "installation_identity_owner":  "A controlled installation receipt and fresh-process validation establish installed runtime identity."
+                           },
+    "verification_requirements":  [
+                                      "Each ledger capability must appear exactly once.",
+                                      "Each named test path must exist and be included in the local full-regression run before a v1 candidate can be marked locally verified.",
+                                      "A structural pass cannot prove factual truth, data access, rights, human authority, hosted Release, or installed runtime.",
+                                      "GRW-CAP-040-03 remains forbidden and must never be converted to a permitted v1 claim by this map.",
+                                      "The added GRW-CAP-111-01 must not be described as released or installed until its positive, negative, bootstrap, and full-regression evidence is verified, its proposed release scope is separately admitted, and a later exact tag and matching GitHub Release exist."
+                                  ],
+    "capabilities":  [
+                         {
+                             "capability_id":  "GRW-CAP-031-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_system_foundation.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-031-02",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_bootstrap_empty_workspace.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-031-03",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_framework_candidate_integration.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-031-04",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_system_foundation.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-040-00",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_capability_truth_ledger.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-040-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_release_controls.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-040-02",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_bounded_autonomy_authorization.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-040-03",
+                             "expected_claim_status":  "forbidden",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_role_card_scope.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-040-04",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_data_provenance_register.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-040-05",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_release_control_record.py",
+                                                             "tests/test_release_controls.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-040-06",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_4_synthetic_assurance.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-050-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_data_provenance_register_set.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-060-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_workflow_evidence_control_bundle.py",
+                                                             "tests/test_v0_6_candidate_assurance.py",
+                                                             "tests/test_framework_candidate_integration.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-070-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_lesson_promotion_control_bundle.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-080-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_8_profile_contract.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-080-02",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_role_contracts.py",
+                                                             "tests/test_v0_8_synthetic_assurance.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-080-03",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_controlled_helper_admission.py",
+                                                             "tests/test_v0_8_synthetic_assurance.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-090-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_integrity_audit_bundle.py",
+                                                             "tests/test_v0_9_synthetic_assurance.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-090-02",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_integrity_audit_bundle.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-090-03",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_integrity_audit_bundle.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-100-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_voluntary_experience_package.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-101-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_synthetic_experience_exchange_pilot.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-110-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_11_manuscript_governance_and_experience.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-110-02",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_11_manuscript_governance_and_experience.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-110-03",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_11_manuscript_governance_and_experience.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-110-04",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_11_manuscript_governance_and_experience.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-110-05",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_11_manuscript_governance_and_experience.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-110-06",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v0_11_manuscript_governance_and_experience.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-130-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_v1_support_scope_matrix.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         },
+                         {
+                             "capability_id":  "GRW-CAP-111-01",
+                             "expected_claim_status":  "permitted",
+                             "candidate_verification_status":  "locally_verified_candidate",
+                             "verification_test_paths":  [
+                                                             "tests/test_future_study_execution_contract.py",
+                                                             "tests/test_bootstrap_empty_workspace.py",
+                                                             "tests/test_capability_truth_ledger.py"
+                                                         ],
+                             "required_review_types":  [
+                                                           "interface_scope",
+                                                           "negative_boundary",
+                                                           "full_regression"
+                                                       ]
+                         }
+                     ]
+}

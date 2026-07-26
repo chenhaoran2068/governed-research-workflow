@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Any
 
 
-TOOL_VERSION = "0.2.1"
+TOOL_VERSION = "0.3.0"
 PLAN_SCHEMA_VERSION = "1.1.0"
 STATE_SCHEMA_VERSION = "1.0.0"
 MIN_PYTHON = (3, 11)
@@ -34,6 +34,7 @@ SAFE_WORKSPACE_ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
 SCRIPT_PATH = Path(__file__).resolve()
 SKILL_ROOT = SCRIPT_PATH.parent.parent
 ASSET_ROOT = SKILL_ROOT / "assets" / "bootstrap"
+FUTURE_STUDY_ASSET_ROOT = SKILL_ROOT / "assets" / "future-study-execution"
 
 WORKSPACE_DIRS = [
     "00_state",
@@ -45,10 +46,20 @@ WORKSPACE_DIRS = [
     "05_memory/retrospective",
     "06_data",
     "07_analysis",
+    "07_analysis/00_contract",
+    "07_analysis/01_environment",
+    "07_analysis/02_configuration",
+    "07_analysis/03_implementation",
+    "07_analysis/04_tests",
+    "07_analysis/05_runs",
+    "07_analysis/06_development",
     "08_results",
+    "08_results/_manifests",
+    "08_results/runs",
     "09_manuscript",
     "10_submission",
     "11_qa",
+    "11_qa/analysis_runs",
     "12_archive",
 ]
 
@@ -56,6 +67,8 @@ PLANNED_FILES = [
     "README.md",
     "00_state/workspace_state.json",
     "00_state/bootstrap_receipt.json",
+    "07_analysis/00_contract/analysis_execution_contract.json",
+    "08_results/_manifests/current_result_authority.json",
 ]
 
 
@@ -218,6 +231,8 @@ def asset_inventory() -> list[dict[str, str]]:
         SCRIPT_PATH,
         ASSET_ROOT / "workspace-readme.template.md",
         ASSET_ROOT / "workspace-state.template.json",
+        FUTURE_STUDY_ASSET_ROOT / "analysis-execution-contract.template.json",
+        FUTURE_STUDY_ASSET_ROOT / "current-result-authority.template.json",
     ]
     for asset in assets:
         if not asset.is_file():
@@ -277,6 +292,15 @@ def render_workspace_state(plan: dict[str, Any], created_at: str) -> str:
     state["created_at"] = created_at
     state["workspace_root"] = plan["final_workspace_root"]
     return json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+
+
+def render_future_study_record(template_name: str, workspace_id: str) -> str:
+    """Render one empty generic record without asserting any approval or result."""
+    record = json.loads(
+        (FUTURE_STUDY_ASSET_ROOT / template_name).read_text(encoding="utf-8")
+    )
+    record["project_id"] = workspace_id
+    return json.dumps(record, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
 
 def write_text(path: Path, content: str) -> None:
@@ -346,6 +370,14 @@ def create_workspace(plan: dict[str, Any], approval_reference: str) -> dict[str,
         write_text(
             staging_root / "00_state" / "workspace_state.json",
             render_workspace_state(plan, created_at),
+        )
+        write_text(
+            staging_root / "07_analysis" / "00_contract" / "analysis_execution_contract.json",
+            render_future_study_record("analysis-execution-contract.template.json", plan["workspace_id"]),
+        )
+        write_text(
+            staging_root / "08_results" / "_manifests" / "current_result_authority.json",
+            render_future_study_record("current-result-authority.template.json", plan["workspace_id"]),
         )
 
         file_hashes = collect_hashed_files(

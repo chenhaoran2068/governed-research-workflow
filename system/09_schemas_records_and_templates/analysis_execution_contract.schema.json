@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/analysis_execution_contract.schema.json",
+  "title": "Future Study Analysis Execution Contract",
+  "type": "object",
+  "required": [
+    "record_type",
+    "contract_version",
+    "project_id",
+    "primary_system",
+    "system_contract_reference",
+    "contract_status",
+    "approval_reference",
+    "formal_execution_path",
+    "environment_policy",
+    "run_policy",
+    "result_authority_policy"
+  ],
+  "properties": {
+    "record_type": {"const": "analysis_execution_contract"},
+    "contract_version": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "primary_system": {"type": "string", "minLength": 1},
+    "system_contract_reference": {"type": "string", "minLength": 1},
+    "contract_status": {
+      "type": "string",
+      "enum": ["draft", "candidate", "approved_for_use", "retired"]
+    },
+    "approval_reference": {
+      "anyOf": [
+        {"type": "string", "minLength": 1},
+        {"type": "null"}
+      ]
+    },
+    "formal_execution_path": {
+      "type": "object",
+      "required": ["kind", "entrypoint_reference", "declared_only"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["unselected", "python", "r", "sql", "workflow_engine", "controlled_runbook", "other"]
+        },
+        "entrypoint_reference": {
+          "anyOf": [
+            {"type": "string", "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"},
+            {"type": "null"}
+          ]
+        },
+        "declared_only": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "environment_policy": {
+      "type": "object",
+      "required": ["environment_spec_reference", "dependency_lock_reference", "automatic_dependency_change_forbidden"],
+      "properties": {
+        "environment_spec_reference": {
+          "anyOf": [
+            {"type": "string", "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"},
+            {"type": "null"}
+          ]
+        },
+        "dependency_lock_reference": {
+          "anyOf": [
+            {"type": "string", "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"},
+            {"type": "null"}
+          ]
+        },
+        "automatic_dependency_change_forbidden": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "run_policy": {
+      "type": "object",
+      "required": ["unique_run_id_required", "overwrite_forbidden", "run_manifest_required"],
+      "properties": {
+        "unique_run_id_required": {"const": true},
+        "overwrite_forbidden": {"const": true},
+        "run_manifest_required": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "result_authority_policy": {
+      "type": "object",
+      "required": ["result_manifest_required", "qa_record_required", "human_decision_required"],
+      "properties": {
+        "result_manifest_required": {"const": true},
+        "qa_record_required": {"const": true},
+        "human_decision_required": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

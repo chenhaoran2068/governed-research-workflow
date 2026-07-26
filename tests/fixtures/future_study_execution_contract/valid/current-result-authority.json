@@ -1,0 +1,14 @@
+{
+  "record_type": "current_result_authority",
+  "record_version": "1.0.0",
+  "project_id": "synthetic-study",
+  "authority_status": "authoritative",
+  "formal_run_manifest_reference": "07_analysis/05_runs/run-001/formal_run_manifest.json",
+  "result_manifest_reference": "08_results/runs/run-001/result_manifest.json",
+  "qa_record_reference": "11_qa/analysis_runs/run-001/analysis_run_qa_record.json",
+  "human_authority_decision_reference": "00_state/approval/result-authority-001.json",
+  "notes": [
+    "Synthetic structural fixture only.",
+    "The shaped references do not prove that targets exist, are true, or were approved."
+  ]
+}

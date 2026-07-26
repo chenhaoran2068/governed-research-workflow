@@ -69,3 +69,11 @@ The v0.11 source adds five Markdown templates under
 `assets/manuscript-governance/`. They are blank human-review aids, not new data
 schemas or validators. They do not validate manuscript, reviewer, declaration,
 route, package, author, policy, or submission facts.
+
+The v1.1 candidate adds five generic future-Study record schemas and matching
+blank JSON templates: an execution contract, formal-run manifest, result
+manifest, result-authority pointer, and analysis-run QA record. They organize
+declared metadata and safe relative references only. They do not execute code,
+install dependencies, read data, validate scientific results, prove the
+existence or truth of referenced artifacts, or prove that a human approved a
+result.

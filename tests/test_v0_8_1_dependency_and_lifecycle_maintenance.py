@@ -12,7 +12,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = REPOSITORY_ROOT / "system" / "11_distribution_installation_and_release"
 MANIFEST_PATH = REPOSITORY_ROOT / "SYSTEM_MANIFEST.yaml"
-LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 RECORD_PATH = RELEASE_ROOT / "V0_8_1_RELEASE_CONTROL_CANDIDATE.json"
 SCHEMA_PATH = RELEASE_ROOT / "release_control_record.schema.json"
 

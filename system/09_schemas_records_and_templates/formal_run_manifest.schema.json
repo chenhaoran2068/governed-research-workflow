@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/formal_run_manifest.schema.json",
+  "title": "Formal Analysis Run Manifest",
+  "type": "object",
+  "required": ["record_type", "manifest_version", "project_id", "run_id", "run_status", "execution_contract_reference", "started_at"],
+  "properties": {
+    "record_type": {"const": "formal_run_manifest"},
+    "manifest_version": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+    "run_status": {"type": "string", "enum": ["planned", "running", "completed_candidate", "failed", "superseded"]},
+    "execution_contract_reference": {"type": "string", "pattern": "^07_analysis/00_contract/[A-Za-z0-9._-]+\\.json$"},
+    "started_at": {"type": ["string", "null"]},
+    "completed_at": {"type": ["string", "null"]},
+    "environment_evidence_reference": {"anyOf": [{"type": "string", "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"}, {"type": "null"}]},
+    "configuration_reference": {"anyOf": [{"type": "string", "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"}, {"type": "null"}]},
+    "input_manifest_reference": {"anyOf": [{"type": "string", "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"}, {"type": "null"}]},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

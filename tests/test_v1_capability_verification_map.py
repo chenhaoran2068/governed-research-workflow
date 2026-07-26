@@ -14,7 +14,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 MAP_PATH = ROOT / "system" / "10_assurance_evaluation_and_audit" / "v1_capability_verification_map.json"
 SCHEMA_PATH = ROOT / "system" / "09_schemas_records_and_templates" / "v1_capability_verification_map.schema.json"
-LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER_PATH = ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 
 
 def is_safe_relative_path(value: str) -> bool:

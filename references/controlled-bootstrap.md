@@ -70,21 +70,34 @@ The helper creates only this generic empty layout:
   05_memory/retrospective/
   06_data/
   07_analysis/
+    00_contract/
+    01_environment/
+    02_configuration/
+    03_implementation/
+    04_tests/
+    05_runs/
+    06_development/
   08_results/
+    _manifests/
+    runs/
   09_manuscript/
   10_submission/
   11_qa/
+    analysis_runs/
   12_archive/
 ```
 
-It also creates a root README, an initial `00_state/workspace_state.json`, and
-`00_state/bootstrap_receipt.json`. The receipt hashes the generated files other
-than itself.
+It also creates a root README, an initial `00_state/workspace_state.json`,
+`07_analysis/00_contract/analysis_execution_contract.json`,
+`08_results/_manifests/current_result_authority.json`, and
+`00_state/bootstrap_receipt.json`. The two analysis/result records are blank
+metadata templates: they declare no selected execution path and no
+authoritative result. The receipt hashes the generated files other than itself.
 
 It never copies or reads source data, imports papers, contacts a network
-service, discovers credentials, creates analysis or manuscript content, makes
-an ethics/compliance assertion, advances a workflow Gate, or creates a
-submission route.
+service, discovers credentials, creates analysis or manuscript content,
+installs or changes dependencies, makes an ethics/compliance assertion,
+advances a workflow Gate, or creates a submission route.
 
 ## Refusal And Failure Behavior
 

@@ -7,11 +7,14 @@ Status: active empty-workspace bootstrap; framework integration validation
 only.
 
 The explicit helper in `scripts/bootstrap_empty_workspace.py` creates a generic
-empty project scaffold only after preview and matching human approval. Its
-current contract is documented in `references/controlled-bootstrap.md`.
+empty project scaffold only after preview and matching human approval. The
+v1.1 candidate adds reviewed empty analysis, result, and QA child directories
+plus two non-authoritative metadata records; it does not add a project
+executor. Its current contract is documented in
+`references/controlled-bootstrap.md`.
 
-It does not create a protocol, copy data, import sources, infer compliance,
-advance a Gate, or authorize research execution. The framework
+It does not create a protocol, copy data, import sources, install dependencies,
+infer compliance, advance a Gate, or authorize research execution. The framework
 integration test begins only after the framework's separate bootstrap has
 created an empty workspace. It does not add an automatic system installer.
 Any future installation helper must use a reviewed workspace/system manifest

@@ -20,7 +20,7 @@ EXPERIENCE_COLLECTION = (
 EXPERIENCE_REFERENCE = REPOSITORY_ROOT / "references" / "knowledge-governance-experience-collection.md"
 MANUSCRIPT_REFERENCE = REPOSITORY_ROOT / "references" / "manuscript-governance-templates.md"
 SYNTHETIC_EXAMPLE = REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_11_SYNTHETIC_MANUSCRIPT_GOVERNANCE_EXAMPLE.md"
-LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json"
+LEDGER_PATH = REPOSITORY_ROOT / "system" / "00_manifest_and_profiles" / "v1_capability_truth_ledger.json"
 
 TEMPLATES = {
     "manuscript-assembly-claim-display-review.template.md": "does not establish a scientific fact",
@@ -107,7 +107,8 @@ class V011ManuscriptGovernanceAndExperienceTests(unittest.TestCase):
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
         self.assertIn("system_version: 1.0.0", manifest)
-        self.assertIn("Status: v1.0.0 frozen public-interface source", readme)
+        self.assertIn("Status: v1.1.0 unpublished local candidate", readme)
+        self.assertIn("current released public baseline remains v1.0.0", readme)
         self.assertIn("## v0.11.0", roadmap)
         self.assertEqual(ledger["ledger_schema_version"], "1.6.0")
         self.assertEqual(ledger["release_context"]["source_release_version"], "v1.0.0")

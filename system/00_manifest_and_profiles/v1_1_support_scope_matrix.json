@@ -1,0 +1,782 @@
+{
+    "matrix_schema_version":  "1.1.0",
+    "matrix_id":  "governed-research-workflow-v1-1-support-scope-matrix",
+    "matrix_status":  "unreleased_candidate",
+    "package_contract":  {
+                             "source_version":  "v1.1.0",
+                             "historical_public_baseline":  "v1.0.0",
+                             "public_profiles":  [
+                                                     "standalone",
+                                                     "framework_integrated"
+                                                 ],
+                             "release_identity_rule":  "This is an unreleased v1.1.0 candidate. A selected public v1.1.0 version is available only when its exact annotated tag and matching GitHub Release resolve to the selected source commit. This matrix is not a hosted Release or installed-runtime claim."
+                         },
+    "authority_boundary":  {
+                               "module_support_owner":  "This matrix is the sole machine-readable authority for module-level v1.1 candidate support posture.",
+                               "capability_claim_owner":  "capability_truth_ledger.json remains the sole machine-readable authority for individual capability promise, non-promise, evidence, and admission fields.",
+                               "release_identity_owner":  "An exact annotated Git tag and matching GitHub Release establish selected public-release identity.",
+                               "installation_identity_owner":  "A separate controlled installation receipt and fresh-process validation establish installed runtime identity.",
+                               "project_decision_owner":  "An accountable human and the relevant project record decide project, data, Gate, manuscript, compliance, and submission actions."
+                           },
+    "modules":  [
+                    {
+                        "module_id":  "00",
+                        "module_name":  "manifest and profiles",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "public_profile_declaration",
+                                                     "summary":  "Declares the standalone and framework_integrated public profiles and their framework contract.",
+                                                     "interface_paths":  [
+                                                                             "SYSTEM_MANIFEST.yaml",
+                                                                             "system/00_manifest_and_profiles/MODULE.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-031-03",
+                                                                            "GRW-CAP-130-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "exact_framework_validation",
+                                                        "non_claim":  "A familiar workspace tree or untagged checkout does not prove framework-integrated support.",
+                                                        "responsible_authority_type":  "separate_controlled_process"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "private_lab_extended_profile",
+                                                  "non_claim":  "Private Lab Extended is not a public profile or service-discovery fallback."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "The matrix adds a support description and does not alter profile behavior.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/00_manifest_and_profiles/MODULE.md",
+                                                        "identifier":  "Manifest And Profiles"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_framework_candidate_integration.py",
+                                                        "identifier":  "FrameworkCandidateIntegrationTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "Does not prove every framework release, private workspace, or runtime is compatible.",
+                        "refusal_statement":  "Refuse a profile-support claim when the required exact framework evidence or profile declaration is missing or conflicting."
+                    },
+                    {
+                        "module_id":  "01",
+                        "module_name":  "governance and authority",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "human_governed_routing",
+                                                     "summary":  "Routes named task classes and states consequential human stops.",
+                                                     "interface_paths":  [
+                                                                             "SKILL.md",
+                                                                             "references/startup-and-routing.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-031-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "substantive_decisions",
+                                                        "non_claim":  "Scientific, ethics, compliance, and publication decisions require accountable-human and task-specific authority.",
+                                                        "responsible_authority_type":  "accountable_human"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "autonomous_authority",
+                                                  "non_claim":  "The system does not grant autonomous project, compliance, or publication authority."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Routing remains an aid and never replaces a named project authority.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/01_governance_and_authority/MODULE.md",
+                                                        "identifier":  "Governance Module Boundary"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_system_foundation.py",
+                                                        "identifier":  "SystemFoundationTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "A route classification does not establish factual truth, permission, or approval.",
+                        "refusal_statement":  "Refuse to treat routing output as a research, compliance, Gate, Release, or submission decision."
+                    },
+                    {
+                        "module_id":  "02",
+                        "module_name":  "project workspace and bootstrap",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "controlled_empty_bootstrap",
+                                                     "summary":  "Provides an explicitly invoked empty-workspace bootstrap with preview and matching human confirmation.",
+                                                     "interface_paths":  [
+                                                                             "scripts/bootstrap_empty_workspace.py",
+                                                                             "references/controlled-bootstrap.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-031-02",
+                                                                            "GRW-CAP-080-03"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 },
+                                                 {
+                                                     "surface_id":  "future_study_empty_scaffold",
+                                                     "summary":  "Extends the existing reviewed empty bootstrap with empty analysis, results, and QA directories plus two non-authoritative metadata templates.",
+                                                     "interface_paths":  [
+                                                                             "scripts/bootstrap_empty_workspace.py",
+                                                                             "references/future-study-execution-and-reproducibility.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-111-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "project_state_and_material",
+                                                        "non_claim":  "A bootstrap does not import a project, data, protocol, or research state.",
+                                                        "responsible_authority_type":  "project_specific_authority"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "general_project_writer",
+                                                  "non_claim":  "No generic project writer, importer, or state-advancement helper is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Existing bootstrap preview and confirmation behavior remains unchanged.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/02_project_workspace_and_bootstrap/MODULE.md",
+                                                        "identifier":  "Project Workspace And Bootstrap"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_bootstrap_empty_workspace.py",
+                                                        "identifier":  "BootstrapEmptyWorkspaceTests"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_future_study_execution_contract.py",
+                                                        "identifier":  "FutureStudyExecutionContractTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "The helper creates only a generic empty scaffold and receipt; it does not select an execution method or establish authority.",
+                        "refusal_statement":  "Refuse a request to use bootstrap as permission to copy material, overwrite a project, or advance project state."
+                    },
+                    {
+                        "module_id":  "03",
+                        "module_name":  "workflows",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "bounded_route_guidance",
+                                                     "summary":  "Provides route guidance and blank records for named research and manuscript workflow classes.",
+                                                     "interface_paths":  [
+                                                                             "references/governed-work-and-feasibility.md",
+                                                                             "references/manuscript-and-submission-control.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-060-01",
+                                                                            "GRW-CAP-110-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 },
+                                                 {
+                                                     "surface_id":  "future_study_execution_metadata",
+                                                     "summary":  "Provides blank generic execution, run, result, QA, and authority-reference records for a future Study.",
+                                                     "interface_paths":  [
+                                                                             "references/future-study-execution-and-reproducibility.md",
+                                                                             "assets/future-study-execution/formal-run-manifest.template.json"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-111-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "real_study_execution",
+                                                        "non_claim":  "A workflow guide does not execute a real study, analysis, manuscript decision, or submission.",
+                                                        "responsible_authority_type":  "project_specific_authority"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "workflow_executor",
+                                                  "non_claim":  "No autonomous workflow executor or state-advancement service is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Existing routes remain bounded guidance and blank records.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/03_workflows/MODULE.md",
+                                                        "identifier":  "Workflows Module Boundary"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_v0_11_manuscript_governance_and_experience.py",
+                                                        "identifier":  "V011ManuscriptGovernanceAndExperienceTests"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_future_study_execution_contract.py",
+                                                        "identifier":  "FutureStudyExecutionContractTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "Record structure can be valid while execution, artifacts, facts, and human authority remain unknown.",
+                        "refusal_statement":  "Refuse to present a route or blank record as proof that a study, manuscript, Gate, or submission is approved."
+                    },
+                    {
+                        "module_id":  "04",
+                        "module_name":  "evidence, requirements, and knowledge",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "evidence_and_citation_guidance",
+                                                     "summary":  "Provides generic evidence, citation, and current-requirement guidance without bundled sources.",
+                                                     "interface_paths":  [
+                                                                             "references/evidence-and-citation-control.md",
+                                                                             "system/04_evidence_requirements_and_knowledge/MODULE.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-060-01",
+                                                                            "GRW-CAP-110-06"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "current_external_requirements",
+                                                        "non_claim":  "Current sources, journal rules, and external requirements must be obtained and assessed for the actual task.",
+                                                        "responsible_authority_type":  "external_current_source"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "knowledge_service",
+                                                  "non_claim":  "No source corpus, retrieval service, RAG system, or current-requirement determiner is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "The package continues to provide guidance rather than source content or access.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/04_evidence_requirements_and_knowledge/MODULE.md",
+                                                        "identifier":  "Knowledge Module Boundary"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_v0_11_manuscript_governance_and_experience.py",
+                                                        "identifier":  "V011ManuscriptGovernanceAndExperienceTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "It cannot establish that a source is current, supports a claim, or may be redistributed.",
+                        "refusal_statement":  "Refuse a source-support, currentness, or retrieval claim without a separately reviewed current external source."
+                    },
+                    {
+                        "module_id":  "05",
+                        "module_name":  "data and provenance",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "metadata_only_provenance_records",
+                                                     "summary":  "Provides metadata-only provenance records, register sets, and explicitly invoked read-only structural validation.",
+                                                     "interface_paths":  [
+                                                                             "references/data-provenance-register.md",
+                                                                             "references/data-provenance-register-set.md",
+                                                                             "scripts/validate_data_provenance_register_set.py"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-040-04",
+                                                                            "GRW-CAP-050-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "data_access_and_permissions",
+                                                        "non_claim":  "Data access, sharing, restriction, consent, DUA, compliance, and provenance truth remain external facts.",
+                                                        "responsible_authority_type":  "project_specific_authority"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "data_content_operations",
+                                                  "non_claim":  "No data-content read, copy, hash, cleaning, analysis, upload, or access helper is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Structural metadata validation does not imply data validity or permission.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/05_data_and_provenance/MODULE.md",
+                                                        "identifier":  "Data And Provenance"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_data_provenance_register_set.py",
+                                                        "identifier":  "DataProvenanceRegisterSetTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "A valid metadata record does not prove the identified data exists, is accessible, or is lawful to process.",
+                        "refusal_statement":  "Refuse to treat unknown access, restriction, sharing, or online-service status as approval for data action."
+                    },
+                    {
+                        "module_id":  "06",
+                        "module_name":  "memory and learning",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "human_reviewed_learning_records",
+                                                     "summary":  "Provides retrospective, lesson-promotion, voluntary-package, and synthetic-exchange structural records with explicit human boundaries.",
+                                                     "interface_paths":  [
+                                                                             "references/retrospective-learning.md",
+                                                                             "references/lesson-promotion-control-records.md",
+                                                                             "references/voluntary-experience-package.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-031-04",
+                                                                            "GRW-CAP-070-01",
+                                                                            "GRW-CAP-100-01",
+                                                                            "GRW-CAP-101-01",
+                                                                            "GRW-CAP-110-06"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "human_promotion_and_curation",
+                                                        "non_claim":  "A human must decide candidate promotion, rights/sensitivity screening, and any public-safe derivative.",
+                                                        "responsible_authority_type":  "accountable_human"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "private_memory_and_automatic_promotion",
+                                                  "non_claim":  "No private-memory store, project-history publication, automatic promotion, intake, or external contribution service is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Historical records and public experiences do not create a shared memory writer.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/06_memory_and_learning/MODULE.md",
+                                                        "identifier":  "Memory And Learning"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_lesson_promotion_control_bundle.py",
+                                                        "identifier":  "LessonPromotionControlBundleTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "Structural records do not prove consent, rights, identity, real transfer, or promotion eligibility.",
+                        "refusal_statement":  "Refuse to promote, receive, publish, or treat a lesson as shared authority without a separate human decision and evidence."
+                    },
+                    {
+                        "module_id":  "07",
+                        "module_name":  "tools and integrations",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "explicit_bounded_helpers",
+                                                     "summary":  "Provides the empty-workspace bootstrap and named read-only validators under their individual contracts.",
+                                                     "interface_paths":  [
+                                                                             "scripts/bootstrap_empty_workspace.py",
+                                                                             "references/controlled-helper-admission.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-031-02",
+                                                                            "GRW-CAP-080-03"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "per_helper_authorization",
+                                                        "non_claim":  "Each side-effecting helper requires its own admission, preview, confirmation, audit, and negative-test design.",
+                                                        "responsible_authority_type":  "accountable_human"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "generic_writer_and_intake",
+                                                  "non_claim":  "No generic writer, installer, transfer, intake, or user-contribution helper is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "No new helper, dependency, or tool grant is added by this matrix.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/07_tools_and_integrations/MODULE.md",
+                                                        "identifier":  "Tools And Integrations"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_controlled_helper_admission.py",
+                                                        "identifier":  "ControlledHelperAdmissionTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "A documented helper contract is not a runtime permission or a command execution result.",
+                        "refusal_statement":  "Refuse tool use outside an explicit helper contract and the current per-run approval boundary."
+                    },
+                    {
+                        "module_id":  "08",
+                        "module_name":  "agent contracts",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "non_runnable_review_contracts",
+                                                     "summary":  "Provides two caller-selected, non-runnable structural review contracts.",
+                                                     "interface_paths":  [
+                                                                             "references/role-contracts.md",
+                                                                             "assets/role_contract.template.json"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-080-01",
+                                                                            "GRW-CAP-080-02"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "human_authorization",
+                                                        "non_claim":  "Role contracts do not grant authority, select themselves, or replace bounded-autonomy or helper authorization.",
+                                                        "responsible_authority_type":  "accountable_human"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "agent_runtime_and_delegation",
+                                                  "non_claim":  "No agent runtime, role card runtime, coordinator, delegation, external retrieval worker, tool grant, or multi-agent orchestration is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "The matrix does not make role contracts runnable or add an agent runtime.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/08_agent_contracts/MODULE.md",
+                                                        "identifier":  "Specialist Agent-Contract Boundary"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_role_contracts.py",
+                                                        "identifier":  "RoleContractTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "A review perspective cannot prove truth, authority, data permission, or a final decision.",
+                        "refusal_statement":  "Refuse to describe a role contract as an agent, delegated authority, or tool permission."
+                    },
+                    {
+                        "module_id":  "09",
+                        "module_name":  "schemas, records, and templates",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "generic_metadata_contracts",
+                                                     "summary":  "Provides generic blank templates and metadata-only JSON schemas for named bounded records.",
+                                                     "interface_paths":  [
+                                                                             "assets/",
+                                                                             "system/09_schemas_records_and_templates/MODULE.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-040-00",
+                                                                            "GRW-CAP-060-01",
+                                                                            "GRW-CAP-090-01",
+                                                                            "GRW-CAP-130-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 },
+                                                 {
+                                                     "surface_id":  "future_study_execution_schemas",
+                                                     "summary":  "Provides five generic schemas and blank templates for future-Study execution and reproducibility records.",
+                                                     "interface_paths":  [
+                                                                             "system/09_schemas_records_and_templates/analysis_execution_contract.schema.json",
+                                                                             "assets/future-study-execution/current-result-authority.template.json"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-111-01"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "real_project_state",
+                                                        "non_claim":  "Templates and schemas do not establish live project state, truth, approval, or compliance.",
+                                                        "responsible_authority_type":  "project_specific_authority"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "live_project_registry",
+                                                  "non_claim":  "No live project-state system, universal record store, or generic record writer is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Existing schemas remain readable and no user record migration is required.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/09_schemas_records_and_templates/MODULE.md",
+                                                        "identifier":  "Schemas Module Boundary"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_capability_truth_ledger.py",
+                                                        "identifier":  "CapabilityTruthLedgerTests"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_future_study_execution_contract.py",
+                                                        "identifier":  "FutureStudyExecutionContractTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "Structural validation cannot establish a record\u0027s factual truth, human identity, authority, execution, or result quality.",
+                        "refusal_statement":  "Refuse to treat template presence or schema validity as a live-project, Gate, Release, or submission approval."
+                    },
+                    {
+                        "module_id":  "10",
+                        "module_name":  "assurance, evaluation, and audit",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "synthetic_regression_assurance",
+                                                     "summary":  "Provides regression, structural, integrity-audit, and synthetic integration checks for named public contracts.",
+                                                     "interface_paths":  [
+                                                                             "tests/",
+                                                                             "system/10_assurance_evaluation_and_audit/MODULE.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-090-01",
+                                                                            "GRW-CAP-090-02",
+                                                                            "GRW-CAP-090-03"
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "substantive_assurance",
+                                                        "non_claim":  "Technical tests cannot prove scientific quality, compliance, data access, human authority, hosted state, or release approval.",
+                                                        "responsible_authority_type":  "accountable_human"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "independent_supervisor",
+                                                  "non_claim":  "No independent supervisor, tamper-proof audit service, or automatic correction/recovery executor is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Synthetic test evidence remains limited to declared technical properties.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/10_assurance_evaluation_and_audit/MODULE.md",
+                                                        "identifier":  "Assurance, Evaluation, And Audit"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_v0_12_runtime_hardening_and_integrated_validation.py",
+                                                        "identifier":  "V012RuntimeHardeningAndIntegratedValidationTests"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_future_study_execution_contract.py",
+                                                        "identifier":  "FutureStudyExecutionContractTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "Passing tests do not prove a real study, external system, or AI behavior is trustworthy.",
+                        "refusal_statement":  "Refuse to convert a technical test pass into a substantive scientific, compliance, release, or submission claim."
+                    },
+                    {
+                        "module_id":  "11",
+                        "module_name":  "distribution, installation, and release",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "release_and_installation_controls",
+                                                     "summary":  "Provides release-control, selected-version verification, installation, update, and rollback guidance.",
+                                                     "interface_paths":  [
+                                                                             "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
+                                                                             "system/11_distribution_installation_and_release/INSTALL_UPDATE_ROLLBACK.md"
+                                                                         ],
+                                                     "capability_ids":  [
+                                                                            "GRW-CAP-040-01",
+                                                                            "GRW-CAP-040-05"
+                                                                        ],
+                                                     "profile_scope":  "not_profile_specific"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "human_release_and_installation_actions",
+                                                        "non_claim":  "A record or guide cannot create a tag, Release, local installation, rollback, or human approval.",
+                                                        "responsible_authority_type":  "accountable_human"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "automatic_distribution",
+                                                  "non_claim":  "No automatic push, merge, tag, or automatic release, installer, migration executor, or recovery executor is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "A v0.13 public source does not automatically replace a private source or runtime.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/11_distribution_installation_and_release/MODULE.md",
+                                                        "identifier":  "Distribution, Installation, And Release"
+                                                    },
+                                                    {
+                                                        "kind":  "test",
+                                                        "path":  "tests/test_release_controls.py",
+                                                        "identifier":  "ReleaseControlTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "Current source records cannot establish hosted release identity or an installed runtime.",
+                        "refusal_statement":  "Refuse Release, installation, rollback, or current-version claims without the separate exact evidence and human authorization required for that action."
+                    },
+                    {
+                        "module_id":  "12",
+                        "module_name":  "synthetic examples",
+                        "posture":  "active_bounded",
+                        "bounded_surfaces":  [
+                                                 {
+                                                     "surface_id":  "synthetic_assurance_examples",
+                                                     "summary":  "Provides synthetic fixtures and integration scenarios for bounded public-contract assurance.",
+                                                     "interface_paths":  [
+                                                                             "assets/integration-assurance/v0_12_synthetic_integration_scenario.md",
+                                                                             "system/12_synthetic_examples/MODULE.md"
+                                                                         ],
+                                                     "capability_ids":  [
+
+                                                                        ],
+                                                     "profile_scope":  "both"
+                                                 }
+                                             ],
+                        "external_boundaries":  [
+                                                    {
+                                                        "boundary_id":  "real_study_examples",
+                                                        "non_claim":  "Real studies, data, manuscripts, reviewer material, and restricted project examples remain outside the public package.",
+                                                        "responsible_authority_type":  "project_specific_authority"
+                                                    }
+                                                ],
+                        "v1_exclusions":  [
+                                              {
+                                                  "exclusion_id":  "real_end_to_end_example",
+                                                  "non_claim":  "No distributable real-study end-to-end example or proof of real deployment is provided."
+                                              }
+                                          ],
+                        "compatibility_and_migration":  {
+                                                            "migration_action":  "none",
+                                                            "compatibility_limit":  "Synthetic examples do not demonstrate access to or correctness of real material.",
+                                                            "v1_user_action":  "no_action_required"
+                                                        },
+                        "maintenance_owner":  "accountable_maintainer",
+                        "evidence_references":  [
+                                                    {
+                                                        "kind":  "module_record",
+                                                        "path":  "system/12_synthetic_examples/MODULE.md",
+                                                        "identifier":  "Examples Module Boundary"
+                                                    },
+                                                    {
+                                                        "kind":  "integration",
+                                                        "path":  "tests/test_v0_12_runtime_hardening_and_integrated_validation.py",
+                                                        "identifier":  "V012RuntimeHardeningAndIntegratedValidationTests"
+                                                    }
+                                                ],
+                        "known_limitations":  "Synthetic fixtures cannot establish real-world scientific, operational, access, or deployment validity.",
+                        "refusal_statement":  "Refuse to treat a synthetic example as a real-study, real-data, or production-readiness demonstration."
+                    }
+                ],
+    "matrix_limitations":  [
+                               "The matrix describes module-level scope only and does not replace individual capability records.",
+                               "matrix_status describes an unreleased v1.1 candidate support contract, not whether the source package has a hosted Release.",
+                               "A candidate or released matrix is not an installed-runtime, data-access, or project-decision record.",
+                               "The matrix cannot prove external requirements, scientific truth, compliance, human authorization, or real-study readiness.",
+                               "No top-level active_bounded posture authorizes a function listed under that module\u0027s external boundaries or v1 exclusions.",
+                               "The future-Study execution records are generic metadata controls and do not create a project executor, dependency manager, or authoritative result."
+                           ]
+}

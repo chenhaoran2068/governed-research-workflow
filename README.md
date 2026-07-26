@@ -5,9 +5,11 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.0.0 frozen public-interface source. It freezes the bounded public
-contract established through v0.13.0 with a Support Scope Matrix, public
-interface manifest, and capability verification map. It adds no research-
+Status: v1.1.0 unpublished local candidate, derived from the immutable public
+v1.0.0 baseline. The current released public baseline remains v1.0.0 until an
+exact annotated v1.1.0 tag and matching GitHub Release resolve to the reviewed
+source commit. This candidate preserves the frozen v1.0.0 contract and adds a
+generic future-Study execution and reproducibility record set. It adds no research-
 operation interface, public intake, direct external-contributor flow,
 upload/download helper, network action, real-content handling, data access,
 source library, retrieval service, RAG capability, coordinator, agent runtime,
@@ -42,7 +44,7 @@ an installed-runtime statement. Admission and local candidate verification
 prove neither local installation, runtime identity, hosted Release, nor C4
 authorization.
 
-The package manifest identifies this source as v1.0.0. The V1 Support Scope
+The package manifest identifies the historical frozen contract as v1.0.0. The V1 Support Scope
 Matrix at `system/00_manifest_and_profiles/v1_support_scope_matrix.json` is
 the sole machine-readable authority for module-level posture. The companion
 `v1_public_interface_manifest.json` is the sole inventory of frozen public
@@ -65,6 +67,13 @@ read-only validator. Exact-final-commit evidence, C4 authorization, tagging,
 and hosted-release verification remain separate for every future release; the
 live release-verification rule, rather than this paragraph, decides whether a
 selected version is released or installed.
+
+The v1.1 candidate preserves a byte-identical `v1_capability_truth_ledger.json`
+for frozen v1 tests. Its current ledger additionally records
+`GRW-CAP-111-01`: generic future-Study execution, run, result-authority, and
+QA records with a bounded empty-bootstrap extension. Those templates describe
+controls; they do not execute research, authorize dependency changes, make a
+result authoritative, or prove a human decision.
 
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.
@@ -96,6 +105,11 @@ The skill supports process routing for:
 - declarations and AI-use documentation;
 - source and citation control;
 - retrospective learning.
+
+For a selected released version that admits `GRW-CAP-111-01`, it may also
+provide generic future-Study execution and reproducibility record guidance.
+The local v1.1 candidate does not itself establish that selected released
+version or an installed runtime.
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or
