@@ -18,6 +18,7 @@ SCHEMA_ROOT = ROOT / "system" / "09_schemas_records_and_templates"
 ASSET_ROOT = ROOT / "assets" / "future-study-execution"
 FIXTURE_ROOT = ROOT / "tests" / "fixtures" / "future_study_execution_contract"
 BOOTSTRAP = ROOT / "scripts" / "bootstrap_empty_workspace.py"
+GUIDANCE = ROOT / "references" / "future-study-execution-and-reproducibility.md"
 
 RECORDS = {
     "analysis_execution_contract": "analysis-execution-contract",
@@ -60,6 +61,13 @@ class FutureStudyExecutionContractTests(unittest.TestCase):
         authority = self.templates["current_result_authority"]
         self.assertEqual(authority["authority_status"], "no_authoritative_result")
         self.assertIsNone(authority["human_authority_decision_reference"])
+
+        guidance = " ".join(GUIDANCE.read_text(encoding="utf-8").split())
+        self.assertIn(
+            "system-contract identity, not as a Study artifact path",
+            guidance,
+        )
+        self.assertIn("Keep Study artifact references project-relative", guidance)
 
     def test_authoritative_status_requires_all_four_shaped_references(self) -> None:
         valid = json.loads(
