@@ -21,8 +21,8 @@ class V09ReleasePreparationTests(unittest.TestCase):
         index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
 
         self.assertIn("system_version: 1.0.0", manifest)
-        self.assertIn("Status: v1.1.0 unpublished local candidate", readme)
-        self.assertIn("current released public baseline remains v1.0.0", readme)
+        self.assertIn("Status: v1.1.0 versioned source scope", readme)
+        self.assertIn("does not itself prove the\nrelease or installation identity", readme)
         self.assertIn("## v0.9.0 (integrity-audit source)", roadmap)
         self.assertIn("Status: v1.0.0 frozen public-interface source", index)
         combined = "\n".join((manifest, readme, roadmap, index)).lower()

@@ -25,8 +25,8 @@
                        "contract_version":  {
                                                 "const":  "1.1.0"
                                             },
-                       "contract_status":  {
-                                               "const":  "unreleased_candidate"
+                        "contract_status":  {
+                                               "const":  "release_source_prepared"
                                            },
                        "source_identity":  {
                                                "$ref":  "#/$defs/source_identity"

@@ -2,11 +2,11 @@
     "interface_manifest_schema_version":  "1.1.0",
     "manifest_id":  "governed-research-workflow-v1-1-public-interface-manifest",
     "contract_version":  "1.1.0",
-    "contract_status":  "unreleased_candidate",
+    "contract_status":  "release_source_prepared",
     "source_identity":  {
                             "source_version":  "v1.1.0",
                             "historical_public_baseline":  "v1.0.0",
-                            "public_release_identity_rule":  "This is an unreleased v1.1.0 local candidate derived from immutable v1.0.0. A public v1.1.0 release exists only when an exact annotated v1.1.0 tag and matching GitHub Release resolve to the same reviewed source commit. This manifest does not itself prove a hosted Release or installed runtime."
+                             "public_release_identity_rule":  "This v1.1.0 versioned source is derived from immutable v1.0.0. A public v1.1.0 release exists only when an exact annotated v1.1.0 tag and matching GitHub Release resolve to the same reviewed source commit. This manifest does not itself prove a hosted Release or installed runtime."
                         },
     "public_profiles":  [
                             "standalone",
