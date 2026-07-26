@@ -41,6 +41,6 @@ availability.
 ## Remaining Boundary
 
 The candidate still must not be described as released, installed, or usable
-for a real Study. A separately controlled exact local candidate commit, remote
+for a real Study. A separately controlled exact local candidate receipt, remote
 CI, protected-main merge, C4 decision, immutable tag, matching GitHub Release,
 and controlled local adoption remain required.

@@ -10,7 +10,7 @@
     "exact_commit": "0000000000000000000000000000000000000000",
     "branch_state": "local_candidate_only",
     "intended_tag": "v1.1.0",
-    "intended_github_release": "The all-zero sentinel records that this release-preparation source remains commit-neutral. A later separately authorized exact candidate commit, remote CI, protected-main merge, C4 decision, annotated tag, and matching GitHub Release remain required."
+    "intended_github_release": "The all-zero sentinel records that this source remains commit-neutral. A separately controlled local C3 receipt must bind the exact candidate commit; remote CI, protected-main merge, C4 decision, annotated tag, and matching GitHub Release remain required."
   },
   "capability_set": {
     "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
@@ -61,14 +61,14 @@
       "framework_integrated"
     ],
     "platforms": [
-      "Local full regression passed for the uncommitted candidate; Windows, Ubuntu, and macOS CI remain required after separately authorized remote validation."
+      "Local full regression passed for the candidate described by this commit-neutral source record; Windows, Ubuntu, and macOS CI remain required after separately authorized remote validation."
     ],
     "approved_scope_statement": "One locally verified and accountable-human-admitted metadata-only future-Study execution/reproducibility record contract for the proposed v1.1.0 release scope. It adds no data action, generic writer, dependency installer, agent runtime, Framework change, Release action, or runtime behavior."
   },
   "residual_risks": [
     "A structural record contract cannot prove task fitness, data access, scientific truth, current external requirements, rights, human authority, compliance, publication readiness, or submission authority.",
     "The accountable-human publication-rights confirmation is limited to the reviewed generic tree and must be revisited if later candidate content changes.",
-    "This uncommitted local candidate-review record cannot establish an exact candidate, remote CI, protected-main commit, C4 authorization, tag, GitHub Release, or local adoption."
+    "This commit-neutral local candidate-review record cannot by itself establish an exact candidate, remote CI, protected-main commit, C4 authorization, tag, GitHub Release, or local adoption."
   ],
   "incident_and_repair_route": "Stop affected release work, preserve exact evidence, notify the accountable human, and prepare a corrective candidate. Never rewrite an immutable tag or Release.",
   "candidate_review_acceptance_reference": "Accountable-human accepted the completed local C3 candidate-content review and, on 2026-07-26, admitted GRW-CAP-111-01 for the proposed v1.1.0 scope and confirmed publication rights for the reviewed generic candidate tree. Exact commit review, remote CI, C4, hosted Release, and local adoption remain separate.",

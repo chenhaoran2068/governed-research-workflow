@@ -33,8 +33,9 @@ change, or runtime update is part of this candidate.
 
 ## Local Progress
 
-Conditions 1, 2, and 4 are locally satisfied for the uncommitted candidate.
-Release-preparation tests passed 39 tests; the refreshed full regression passed
-274 tests with 3 existing skips. Conditions 3, 5, and 6 remain incomplete
-because no exact candidate commit, remote CI, protected-main identity, or C4
-authorization exists.
+Conditions 1, 2, and 4 are locally satisfied for the candidate described by
+this commit-neutral source record. Release-preparation tests passed 39 tests;
+the refreshed full regression passed 274 tests with 3 existing skips. Condition
+3 remains incomplete until a separate local C3 receipt binds an exact commit
+and refreshed evidence; conditions 5 and 6 remain incomplete because remote
+CI, protected-main identity, and C4 authorization do not yet exist.
