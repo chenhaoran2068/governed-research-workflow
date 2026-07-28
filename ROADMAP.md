@@ -6,9 +6,9 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
-## v1.2.0 (controlled experience-vocabulary and reference-index candidate source)
+## v1.2.0 (controlled experience-vocabulary and reference-index versioned source scope)
 
-This candidate source is derived from the immutable v1.1.0 public source. It
+This versioned source scope is derived from the immutable v1.1.0 public source. It
 adds `GRW-CAP-120-01`: generic schemas and blank templates for a controlled
 experience vocabulary, bounded source inventory, represented accountable-human
 mapping decision, and reference index. It also adds explicit caller-named,
