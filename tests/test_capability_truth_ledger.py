@@ -48,6 +48,7 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-110-05",
     "GRW-CAP-110-06",
     "GRW-CAP-111-01",
+    "GRW-CAP-120-01",
     "GRW-CAP-130-01",
 }
 RELEASED_OR_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {
@@ -67,6 +68,7 @@ V011_SCOPE_IDS = {
 }
 V013_SCOPE_IDS = {"GRW-CAP-130-01"}
 V111_SCOPE_IDS = {"GRW-CAP-111-01"}
+V120_SCOPE_IDS = {"GRW-CAP-120-01"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -151,7 +153,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-                "v1.1.0" if record["capability_id"] in V111_SCOPE_IDS
+                "v1.2.0" if record["capability_id"] in V120_SCOPE_IDS
+                else "v1.1.0" if record["capability_id"] in V111_SCOPE_IDS
                 else "v0.13.0" if record["capability_id"] in V013_SCOPE_IDS
                 else "v0.11.0" if record["capability_id"] in V011_SCOPE_IDS
                 else "v0.10.1" if record["capability_id"] in V101_SCOPE_IDS

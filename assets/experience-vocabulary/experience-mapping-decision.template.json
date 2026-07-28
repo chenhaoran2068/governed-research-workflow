@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_mapping_decision",
+  "decision_id": "XMD-000000",
+  "metadata_only": true,
+  "source_id": "SRC-TEMPLATE-000",
+  "term_ids": ["XVT-000000"],
+  "decision_state": "needs_review",
+  "scope_note": "Template only. A supplied record represents a decision reference and does not prove authority or source content.",
+  "basis_reference_ids": [],
+  "accountable_human_reference": "human-reference-required"
+}

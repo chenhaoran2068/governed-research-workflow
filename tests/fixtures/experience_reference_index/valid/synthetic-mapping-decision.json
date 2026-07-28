@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_mapping_decision",
+  "decision_id": "XMD-900001",
+  "metadata_only": true,
+  "source_id": "SRC-SYN-001",
+  "term_ids": ["XVT-900001"],
+  "decision_state": "map",
+  "scope_note": "Synthetic mapping fixture only; no source body was inspected.",
+  "basis_reference_ids": ["SYNTHETIC-BASIS-001"],
+  "accountable_human_reference": "synthetic-human-reference"
+}

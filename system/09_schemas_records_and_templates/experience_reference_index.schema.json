@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://governed-research-workflow.example/schemas/experience-reference-index.schema.json",
+  "title": "Experience Reference Index",
+  "description": "A metadata-only retrieval index. Its entries require separately supplied mapping-decision records and never establish source truth, permission, maturity, promotion, or authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "index_id", "metadata_only", "index_state", "registry_id", "inventory_id", "entries"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "experience_reference_index"},
+    "index_id": {"type": "string", "pattern": "^XRI-[0-9]{6}$"},
+    "metadata_only": {"const": true},
+    "index_state": {"enum": ["active_empty", "active"]},
+    "registry_id": {"type": "string", "pattern": "^XVR-[0-9]{6}$"},
+    "inventory_id": {"type": "string", "pattern": "^XSI-[0-9]{6}$"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "term_ids", "mapping_decision_id"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]{3,64}$"},
+          "term_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^XVT-[0-9]{6}$"}},
+          "mapping_decision_id": {"type": "string", "pattern": "^XMD-[0-9]{6}$"}
+        }
+      }
+    }
+  }
+}

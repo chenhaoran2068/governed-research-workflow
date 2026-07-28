@@ -859,6 +859,56 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "system/INDEX.md", "system/00_manifest_and_profiles/V1_SUPPORT_SCOPE.md"],
       "contradiction_refusal": "Forbid a module-support claim when the matrix, capability ledger, direct interface, evidence reference, current release identity, or stated boundary is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the named v0.13.0 source scope. It does not establish a hosted tag, matching GitHub Release, installed runtime, module-wide compatibility guarantee, project authority, or C4 authorization."
+    },
+    {
+      "capability_id": "GRW-CAP-120-01",
+      "public_name": "Controlled Experience Vocabulary And Reference-Index Contracts",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides generic schemas, blank templates, caller-named read-only structural validators, synthetic fixtures, and explanatory guidance for controlled experience terms, bounded source identities, represented human mapping decisions, and reference-index links.",
+      "non_promise": "Does not publish a real vocabulary or source inventory; read source bodies or pointers; discover, hash, classify, tag, map, promote, or integrate an experience; verify a person or authority; grant source access; provide intake, upload, retrieval, RAG, external action, runtime installation, or a Release decision.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "references/controlled-experience-vocabulary.md",
+          "assets/experience-vocabulary/controlled-experience-vocabulary.template.json",
+          "system/09_schemas_records_and_templates/controlled_experience_vocabulary.schema.json",
+          "scripts/validate_controlled_experience_vocabulary.py",
+          "scripts/validate_experience_reference_index.py",
+          "tests/test_v1_2_controlled_experience_vocabulary_contract.py"
+        ],
+        "identifiers": [
+          "controlled_experience_vocabulary_registry",
+          "experience_source_inventory",
+          "experience_mapping_decision",
+          "experience_reference_index",
+          "experience_vocabulary_control_review"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": [
+        "metadata_only",
+        "synthetic_only",
+        "no_data_access",
+        "no_external_service_action"
+      ],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_controlled_experience_vocabulary.py", "identifier": "ControlledExperienceVocabularyTests"},
+          {"kind": "test", "path": "tests/test_experience_reference_index.py", "identifier": "ExperienceReferenceIndexTests"},
+          {"kind": "test", "path": "tests/test_v1_2_controlled_experience_vocabulary_contract.py", "identifier": "V12ControlledExperienceVocabularyContractTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.2.0", "last_verified_release": null, "target_release": "v1.2.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the v1.2 public derivative Charter and C2 scope in the active Codex conversation on 2026-07-28; local C3 candidate implementation is distinct from remote CI, pull request, merge, C4, hosted Release, and local adoption",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-vocabulary.md", "system/06_memory_and_learning/MODULE.md"],
+      "contradiction_refusal": "Forbid a vocabulary, source, mapping, promotion, reuse, authority, access, Release, or installation claim when the named record, structural boundary, accountable-human decision, selected release identity, or required evidence is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the v1.2.0 candidate source scope. It does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real vocabulary, source inventory, source access, source truth, human authority, mapping decision, promotion, rule integration, or C4 authorization."
     }
   ]
 }

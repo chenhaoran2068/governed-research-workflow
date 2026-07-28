@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_reference_index",
+  "index_id": "XRI-900010",
+  "metadata_only": true,
+  "index_state": "active",
+  "registry_id": "XVR-900001",
+  "inventory_id": "XSI-900001",
+  "entries": [
+    {
+      "source_id": "SRC-SYN-001",
+      "term_ids": ["XVT-900001"],
+      "mapping_decision_id": "XMD-999999"
+    }
+  ]
+}
