@@ -903,12 +903,12 @@
           {"kind": "test", "path": "tests/test_v1_2_controlled_experience_vocabulary_contract.py", "identifier": "V12ControlledExperienceVocabularyContractTests"}
         ]
       },
-      "version": {"introduced_version": "v1.2.0", "last_verified_release": null, "target_release": "v1.2.0"},
-      "prior_release_history": [],
-      "approval_reference": "accountable-human accepted the v1.2 public derivative Charter and C2 scope in the active Codex conversation on 2026-07-28; local C3 candidate implementation is distinct from remote CI, pull request, merge, C4, hosted Release, and local adoption",
+    "version": {"introduced_version": "v1.2.0", "last_verified_release": "v1.2.0", "target_release": "v1.2.0"},
+    "prior_release_history": [{"release_version": "v1.2.0", "public_claim_status": "permitted"}],
+    "approval_reference": "accountable-human accepted the v1.2 public derivative Charter and C2 scope on 2026-07-28; v1.2.0 subsequently completed exact-tag, matching-Release, and post-release verification. This v1.2.1 maintenance source retains the capability boundary and remains distinct from its own exact candidate, CI, protected-main, C4, hosted Release, and local adoption identities.",
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-vocabulary.md", "system/06_memory_and_learning/MODULE.md"],
       "contradiction_refusal": "Forbid a vocabulary, source, mapping, promotion, reuse, authority, access, Release, or installation claim when the named record, structural boundary, accountable-human decision, selected release identity, or required evidence is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "Admitted for the v1.2.0 versioned source scope. It does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real vocabulary, source inventory, source access, source truth, human authority, mapping decision, promotion, rule integration, or C4 authorization. Public availability still requires an exact annotated tag and matching GitHub Release."
+    "limitations_and_next_action": "The capability was last fully verified for published v1.2.0. This v1.2.1 maintenance source does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real vocabulary, source inventory, source access, source truth, human authority, mapping decision, promotion, rule integration, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

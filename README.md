@@ -5,11 +5,12 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.2.0 versioned source scope, derived from the immutable public
-v1.1.0 baseline. This source preserves the frozen v1.0.0 contract and adds
-`GRW-CAP-120-01`: generic controlled-experience-vocabulary, source-inventory,
-mapping-decision, and reference-index metadata contracts with caller-named,
-read-only structural validators. It adds no research-operation interface,
+Status: v1.2.1 release-narrative maintenance source, derived from the immutable
+public v1.2.0 versioned source scope baseline. It preserves the frozen v1.0.0 contract and the
+`GRW-CAP-120-01` controlled-experience-vocabulary, source-inventory,
+mapping-decision, and reference-index metadata contract. It changes no
+capability, interface, schema, validator, dependency, Framework behavior, or
+runtime behavior. It adds no research-operation interface,
 public intake, direct external-contributor flow, upload/download helper,
 network action, real-content handling, data access, source-body read, source
 discovery, source library, retrieval service, RAG capability, automatic
@@ -84,13 +85,18 @@ release or installation identity. A current candidate or later release must be
 established by its own exact commit, tag, hosted Release, and controlled
 installation evidence.
 
-The v1.2 versioned source scope adds `GRW-CAP-120-01`: generic metadata-only contracts for
+The published v1.2.0 capability baseline adds `GRW-CAP-120-01`: generic metadata-only contracts for
 controlled experience terms, bounded source identities, represented human
 mapping decisions, and retrieval links. A vocabulary term, source identifier,
 decision representation, or valid index entry never proves a source, verifies
 a person, grants source access, decides maturity or reuse, promotes an
 experience, or changes a rule. The validators read only JSON files named by the
 caller and never resolve a source pointer or discover a workspace.
+
+The v1.2.1 maintenance source retains that capability boundary unchanged and
+only corrects current-facing release narration. A selected v1.2.1 checkout
+still requires exact tag-and-matching-Release verification before it can be
+treated as a public installation target.
 
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.

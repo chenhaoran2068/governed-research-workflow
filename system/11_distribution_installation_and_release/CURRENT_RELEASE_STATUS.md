@@ -36,6 +36,23 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.2 Published Vocabulary Scope And Maintenance Boundary
+
+- `v1.2.0` is the published capability baseline for `GRW-CAP-120-01`, with
+  annotated tag `v1.2.0` resolving to
+  `784dd9df85b5ff522d9d78f7c3d9ad2b3b1d1cf6` and a matching immutable GitHub
+  Release. It provides generic metadata-only controlled experience-vocabulary
+  and reference-index contracts only.
+- The immutable v1.2.0 Release body retains pre-C4 source wording. That text is
+  historical evidence, not a current release-state authority or an installed
+  runtime claim.
+- The v1.2.1 maintenance source corrects current-facing release narration only.
+  It adds no capability, schema, validator, dependency, Framework behavior,
+  source action, mapping, promotion, runtime behavior, or public intake. A
+  selected v1.2.1 checkout becomes an installation target only when the normal
+  public installation rule above verifies its own exact tag and matching GitHub
+  Release.
+
 ## v0.9.0 Integrity-Audit Scope
 
 - `v0.9.0` adds three bounded metadata-only controls: a finite integrity-audit

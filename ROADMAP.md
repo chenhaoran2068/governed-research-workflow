@@ -6,6 +6,16 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.2.1 (release-narrative maintenance source)
+
+This maintenance source corrects current-facing release narration after the
+published v1.2.0 controlled experience-vocabulary baseline. It adds no
+capability, schema, validator, dependency, helper, Framework behavior, data
+action, source action, mapping, promotion, runtime behavior, or public intake.
+The v1.2.0 Release body is retained as immutable historical evidence and is not
+rewritten. A selected v1.2.1 public checkout must still be verified through its
+own exact annotated tag and matching GitHub Release.
+
 ## v1.2.0 (controlled experience-vocabulary and reference-index versioned source scope)
 
 This versioned source scope is derived from the immutable v1.1.0 public source. It
