@@ -908,7 +908,7 @@
       "approval_reference": "accountable-human accepted the v1.2 public derivative Charter and C2 scope in the active Codex conversation on 2026-07-28; local C3 candidate implementation is distinct from remote CI, pull request, merge, C4, hosted Release, and local adoption",
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-vocabulary.md", "system/06_memory_and_learning/MODULE.md"],
       "contradiction_refusal": "Forbid a vocabulary, source, mapping, promotion, reuse, authority, access, Release, or installation claim when the named record, structural boundary, accountable-human decision, selected release identity, or required evidence is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "Admitted only for the v1.2.0 candidate source scope. It does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real vocabulary, source inventory, source access, source truth, human authority, mapping decision, promotion, rule integration, or C4 authorization."
+      "limitations_and_next_action": "Admitted for the v1.2.0 versioned source scope. It does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real vocabulary, source inventory, source access, source truth, human authority, mapping decision, promotion, rule integration, or C4 authorization. Public availability still requires an exact annotated tag and matching GitHub Release."
     }
   ]
 }

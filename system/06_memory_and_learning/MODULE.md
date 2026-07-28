@@ -46,7 +46,7 @@ service, RAG capability, source-currentness finding, or source-access grant.
 It contains no local records, project facts, source payloads, transformed
 content, hashes, receipts, traces, or approval history.
 
-The v1.2 candidate source adds generic controlled-experience-vocabulary and
+The v1.2 versioned source scope adds generic controlled-experience-vocabulary and
 reference-index contracts. They distinguish a controlled term, a bounded source
 identity, a represented accountable-human mapping decision, and a retrieval
 link. These contracts are metadata-only and caller-named: their validators do
