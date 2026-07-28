@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "controlled_experience_vocabulary_registry",
+  "registry_id": "XVR-900020",
+  "metadata_only": true,
+  "tag_catalog": [{"tag": "surface:synthetic-governance", "status": "accepted"}],
+  "terms": [
+    {
+      "canonical_term_id": "XVT-900020",
+      "lifecycle_status": "accepted",
+      "preferred_labels": [{"language": "en", "value": "synthetic-unknown-tag"}],
+      "aliases": [],
+      "disallowed_or_confused_expressions": [],
+      "definition": "Synthetic invalid-tag term.",
+      "scope_note": "Synthetic fixture only.",
+      "exclusions": [],
+      "tag_refs": ["surface:not-in-catalog"],
+      "relationships": {"broader_term_ids": [], "narrower_term_ids": [], "related_term_ids": []},
+      "successor_term_id": null,
+      "modified_reason": "Synthetic fixture.",
+      "maintainer_reference": "synthetic-maintainer-reference",
+      "related_record_references": []
+    }
+  ]
+}

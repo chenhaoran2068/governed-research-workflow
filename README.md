@@ -5,17 +5,21 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.1.0 versioned source scope, derived from the immutable public
-v1.0.0 baseline. This source preserves the frozen v1.0.0 contract and adds a
-generic future-Study execution and reproducibility record set. It adds no research-
-operation interface, public intake, direct external-contributor flow,
-upload/download helper, network action, real-content handling, data access,
-source library, retrieval service, RAG capability, coordinator, agent runtime,
-delegation, multi-agent orchestration, generic writer, recovery executor,
-dependency, or release decision. This source tree does not itself prove the
-release or installation identity of any selected version. Verify a selected
-public version only when its exact annotated tag and matching GitHub Release
-resolve to the selected source commit. Never install a mutable branch.
+Status: v1.2.0 candidate source scope, derived from the immutable public
+v1.1.0 baseline. This source preserves the frozen v1.0.0 contract and adds
+`GRW-CAP-120-01`: generic controlled-experience-vocabulary, source-inventory,
+mapping-decision, and reference-index metadata contracts with caller-named,
+read-only structural validators. It adds no research-operation interface,
+public intake, direct external-contributor flow, upload/download helper,
+network action, real-content handling, data access, source-body read, source
+discovery, source library, retrieval service, RAG capability, automatic
+tagging, mapping decision, promotion, rule integration, coordinator, agent
+runtime, delegation, multi-agent orchestration, generic writer, recovery
+executor, dependency, or release decision. This candidate source tree does not
+itself prove the release or installation identity of any selected version.
+Verify a selected public version only when its exact annotated tag and matching
+GitHub Release resolve to the selected source commit. Never install a mutable
+branch.
 
 For the live release-verification procedure and retained historical snapshots,
 read
@@ -73,6 +77,21 @@ QA records with a bounded empty-bootstrap extension. Those templates describe
 controls; they do not execute research, authorize dependency changes, make a
 result authoritative, or prove a human decision.
 
+### Historical v1.1 Source-Scope Note
+
+Status: v1.1.0 versioned source scope. This historical source-scope note does not itself prove the
+release or installation identity. A current candidate or later release must be
+established by its own exact commit, tag, hosted Release, and controlled
+installation evidence.
+
+The v1.2 candidate adds `GRW-CAP-120-01`: generic metadata-only contracts for
+controlled experience terms, bounded source identities, represented human
+mapping decisions, and retrieval links. A vocabulary term, source identifier,
+decision representation, or valid index entry never proves a source, verifies
+a person, grants source access, decides maturity or reuse, promotes an
+experience, or changes a rule. The validators read only JSON files named by the
+caller and never resolve a source pointer or discover a workspace.
+
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.
 
@@ -108,6 +127,14 @@ For a selected released version that admits `GRW-CAP-111-01`, it may also
 provide generic future-Study execution and reproducibility record guidance.
 The local v1.1 candidate does not itself establish that selected released
 version or an installed runtime.
+
+For a selected released version that admits `GRW-CAP-120-01`, it may provide
+generic controlled-experience-vocabulary and reference-index structural review
+only when the caller names every metadata JSON file that may be read. It stops
+before source content, pointers, discovery, real mapping, vocabulary
+administration, promotion, rule change, or an unknown boundary. The local v1.2
+candidate does not itself establish that selected released version or an
+installed runtime.
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or
@@ -325,6 +352,10 @@ supersede a band through a reviewed revision.
   claim without a separately reviewed scope.
 - `v1.0.0`: stable bounded public-system contract, only after its interface,
   evidence, support, and release conditions are met.
+- `v1.2.0`: controlled experience-vocabulary and reference-index candidate
+  source; generic metadata-only structure only, with no source-body action,
+  automatic mapping, promotion, rule integration, public intake, or release
+  identity claim.
 - `v1.1+`: separately reviewed post-v1 expansion; this roadmap grants no
   future capability automatically.
 

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "controlled_experience_vocabulary_registry",
+  "registry_id": "XVR-900001",
+  "metadata_only": true,
+  "tag_catalog": [
+    {"tag": "surface:synthetic-governance", "status": "accepted"},
+    {"tag": "artifact:synthetic-record", "status": "accepted"}
+  ],
+  "terms": [
+    {
+      "canonical_term_id": "XVT-900001",
+      "lifecycle_status": "accepted",
+      "preferred_labels": [
+        {"language": "en", "value": "synthetic-review-boundary"},
+        {"language": "zh", "value": "合成审查边界"}
+      ],
+      "aliases": [
+        {"language": "en", "value": "SRB", "alias_status": "accepted"}
+      ],
+      "disallowed_or_confused_expressions": ["automatic approval"],
+      "definition": "A synthetic fixture term used only to test controlled-vocabulary structure.",
+      "scope_note": "Applies only to the synthetic test fixture and grants no authority.",
+      "exclusions": ["It does not grant source access or make a mapping decision."],
+      "tag_refs": ["surface:synthetic-governance", "artifact:synthetic-record"],
+      "relationships": {"broader_term_ids": [], "narrower_term_ids": [], "related_term_ids": []},
+      "successor_term_id": null,
+      "modified_reason": "Created as a generic synthetic validator fixture.",
+      "maintainer_reference": "synthetic-maintainer-reference",
+      "related_record_references": []
+    },
+    {
+      "canonical_term_id": "XVT-900002",
+      "lifecycle_status": "deprecated",
+      "preferred_labels": [],
+      "aliases": [
+        {"language": "en", "value": "legacy-synthetic-review-boundary", "alias_status": "historical"}
+      ],
+      "disallowed_or_confused_expressions": ["legacy canonical label"],
+      "definition": "A synthetic historical term retained only for lookup testing.",
+      "scope_note": "Historical lookup only; the successor is the current synthetic term.",
+      "exclusions": ["It is not a current canonical term."],
+      "tag_refs": ["surface:synthetic-governance"],
+      "relationships": {"broader_term_ids": [], "narrower_term_ids": [], "related_term_ids": ["XVT-900001"]},
+      "successor_term_id": "XVT-900001",
+      "modified_reason": "Synthetic lifecycle fixture for deprecated terminology.",
+      "maintainer_reference": "synthetic-maintainer-reference",
+      "related_record_references": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_source_inventory",
+  "inventory_id": "XSI-000000",
+  "metadata_only": true,
+  "source_records": []
+}

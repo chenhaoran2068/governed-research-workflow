@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://governed-research-workflow.example/schemas/experience-source-inventory.schema.json",
+  "title": "Experience Source Inventory",
+  "description": "A metadata-only declaration of source identities. It does not contain or authorize reading source content, resolving a pointer, checking presence, or hashing material.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "inventory_id", "metadata_only", "source_records"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "experience_source_inventory"},
+    "inventory_id": {"type": "string", "pattern": "^XSI-[0-9]{6}$"},
+    "metadata_only": {"const": true},
+    "source_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "source_kind", "owner_scope", "review_state", "descriptor"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]{3,64}$"},
+          "source_kind": {"enum": ["project_memory", "candidate_experience", "shared_candidate", "accepted_rule", "other_metadata_record"]},
+          "owner_scope": {"enum": ["project_local", "cross_project_shared", "accepted_global"]},
+          "review_state": {"enum": ["not_reviewed", "metadata_reviewed", "held", "excluded"]},
+          "descriptor": {"type": "string", "minLength": 1, "maxLength": 240}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://governed-research-workflow.example/schemas/controlled-experience-vocabulary.schema.json",
+  "title": "Controlled Experience Vocabulary Registry",
+  "description": "A metadata-only registry of controlled terms. It classifies terminology and does not establish evidence, approval, maturity, reuse, access, or authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "registry_id",
+    "metadata_only",
+    "tag_catalog",
+    "terms"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "controlled_experience_vocabulary_registry"},
+    "registry_id": {"type": "string", "pattern": "^XVR-[0-9]{6}$"},
+    "metadata_only": {"const": true},
+    "tag_catalog": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/tag"}
+    },
+    "terms": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/term"}
+    }
+  },
+  "$defs": {
+    "tag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tag", "status"],
+      "properties": {
+        "tag": {"type": "string", "pattern": "^[a-z][a-z0-9-]*:[a-z][a-z0-9-]*$"},
+        "status": {"enum": ["accepted", "deprecated"]}
+      }
+    },
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "value"],
+      "properties": {
+        "language": {"enum": ["en", "zh", "other"]},
+        "value": {"type": "string", "minLength": 1, "maxLength": 160}
+      }
+    },
+    "alias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "value", "alias_status"],
+      "properties": {
+        "language": {"enum": ["en", "zh", "other"]},
+        "value": {"type": "string", "minLength": 1, "maxLength": 160},
+        "alias_status": {"enum": ["accepted", "historical", "deprecated", "confused"]}
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["broader_term_ids", "narrower_term_ids", "related_term_ids"],
+      "properties": {
+        "broader_term_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^XVT-[0-9]{6}$"}},
+        "narrower_term_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^XVT-[0-9]{6}$"}},
+        "related_term_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^XVT-[0-9]{6}$"}}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_term_id",
+        "lifecycle_status",
+        "preferred_labels",
+        "aliases",
+        "disallowed_or_confused_expressions",
+        "definition",
+        "scope_note",
+        "exclusions",
+        "tag_refs",
+        "relationships",
+        "successor_term_id",
+        "modified_reason",
+        "maintainer_reference",
+        "related_record_references"
+      ],
+      "properties": {
+        "canonical_term_id": {"type": "string", "pattern": "^XVT-[0-9]{6}$"},
+        "lifecycle_status": {"enum": ["candidate", "accepted", "deprecated", "merged", "renamed"]},
+        "preferred_labels": {"type": "array", "items": {"$ref": "#/$defs/label"}},
+        "aliases": {"type": "array", "items": {"$ref": "#/$defs/alias"}},
+        "disallowed_or_confused_expressions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 160}},
+        "definition": {"type": "string", "minLength": 1},
+        "scope_note": {"type": "string", "minLength": 1},
+        "exclusions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "tag_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]*:[a-z][a-z0-9-]*$"}},
+        "relationships": {"$ref": "#/$defs/relationships"},
+        "successor_term_id": {"type": ["string", "null"], "pattern": "^XVT-[0-9]{6}$"},
+        "modified_reason": {"type": "string", "minLength": 1},
+        "maintainer_reference": {"type": "string", "minLength": 1},
+        "related_record_references": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

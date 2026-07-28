@@ -45,3 +45,13 @@ not a public Knowledge package, source library, registry, index, retrieval
 service, RAG capability, source-currentness finding, or source-access grant.
 It contains no local records, project facts, source payloads, transformed
 content, hashes, receipts, traces, or approval history.
+
+The v1.2 candidate source adds generic controlled-experience-vocabulary and
+reference-index contracts. They distinguish a controlled term, a bounded source
+identity, a represented accountable-human mapping decision, and a retrieval
+link. These contracts are metadata-only and caller-named: their validators do
+not read source bodies or pointers, discover records, infer tags, create a
+mapping, verify a human identity or authority, decide maturity or reuse,
+promote an experience, or integrate a rule. A structurally valid record is not
+evidence that an experience is true, approved, reusable, or publicly
+appropriate.

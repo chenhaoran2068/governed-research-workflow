@@ -59,6 +59,19 @@ future Study's execution contract, formal run, result authority, or QA record.
 Those records are metadata-only controls; they do not authorize a run, data
 access, dependency change, result approval, or scientific claim.
 
+For an explicitly requested `experience_vocabulary_control_review`, first
+resolve the selected version to its exact public tag and matching GitHub
+Release, then check the capability ledger for an admitted `GRW-CAP-120-01`
+record. Only if both conditions hold, read
+`references/controlled-experience-vocabulary.md`. Require the caller to name
+each vocabulary registry, source inventory, reference index, and mapping-
+decision JSON file permitted for structural review, and to state the requested
+structural outcome. Do not discover files from a directory, resolve a source
+pointer, read source content, infer a term, create a real mapping, administer
+the vocabulary, promote an experience, modify a rule, or continue across an
+unknown boundary. This route is read-only request routing, not a helper,
+writer, agent, delegated authority, or human-decision mechanism.
+
 For existing-study, legacy-project, manuscript, or revision work, require an
 exact workspace path or project root before reading project-local records. A
 pasted excerpt may clarify the task after the root is identified; it does not
@@ -201,6 +214,8 @@ Stop and request accountable evidence or approval before:
   references/controlled-bootstrap.md
 - Future-Study execution and reproducibility records, when admitted for the
   selected release: references/future-study-execution-and-reproducibility.md
+- Controlled experience-vocabulary and reference-index review, when admitted
+  for the selected release: references/controlled-experience-vocabulary.md
 - Public/private separation and legacy boundaries:
   references/portability-and-release-boundaries.md
 - Metadata-only workflow/evidence control records, when admitted for the

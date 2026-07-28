@@ -6,6 +6,24 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.2.0 (controlled experience-vocabulary and reference-index candidate source)
+
+This candidate source is derived from the immutable v1.1.0 public source. It
+adds `GRW-CAP-120-01`: generic schemas and blank templates for a controlled
+experience vocabulary, bounded source inventory, represented accountable-human
+mapping decision, and reference index. It also adds explicit caller-named,
+read-only structural validators and synthetic positive and negative tests.
+
+The structures keep terminology, source identity, human decision
+representation, and retrieval links separate. A valid term, source descriptor,
+decision record, or index entry does not establish source truth, human identity
+or authority, access, maturity, reuse, promotion, rule integration, a Release,
+or an installed runtime. The validators do not open source pointers, discover
+files, infer terms, create mappings, write records, or contact external
+services. This source is not a tag, GitHub Release, or installed runtime;
+verify a selected public version only through the exact-tag-and-matching-Release
+rule.
+
 ## v1.1.0 (future-Study execution and reproducibility source scope)
 
 This versioned source is derived from the immutable v1.0.0 public source. It
