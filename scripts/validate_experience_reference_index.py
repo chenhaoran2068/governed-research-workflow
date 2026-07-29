@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import stat
 import sys
@@ -137,11 +138,51 @@ def _schema_issues(instance: dict[str, Any], schema_path: Path) -> list[Validati
     ]
 
 
+def _canonical_sha256(value: dict[str, Any]) -> str:
+    """Return a stable digest of decision metadata, never of a source body."""
+    encoded = json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _load_review_decisions(
+    register: dict[str, Any],
+    registry: dict[str, Any],
+    issues: list[ValidationIssue],
+) -> dict[str, dict[str, Any]]:
+    """Validate L1 metadata-only decision relationships without opening sources."""
+    decisions = register["decisions"]
+    known_terms = {term["canonical_term_id"] for term in registry["terms"]}
+    decision_by_id: dict[str, dict[str, Any]] = {}
+    source_ids: set[str] = set()
+    batch_sizes: dict[str, int] = {}
+    for decision in decisions:
+        decision_id = decision["decision_id"]
+        source_id = decision["source_id"]
+        if decision_id in decision_by_id:
+            issues.append(ValidationIssue("duplicate_review_decision_id", "Review decision IDs must be unique.", decision_id))
+        else:
+            decision_by_id[decision_id] = decision
+        if source_id in source_ids:
+            issues.append(ValidationIssue("duplicate_review_source", "A register version must have one final decision per source.", source_id))
+        source_ids.add(source_id)
+        batch_id = decision["review_batch_id"]
+        batch_sizes[batch_id] = batch_sizes.get(batch_id, 0) + 1
+        for term_id in decision["term_ids"]:
+            if term_id not in known_terms:
+                issues.append(ValidationIssue("unknown_review_term_id", "Review decision terms must exist in the supplied registry.", term_id))
+    for batch_id, count in batch_sizes.items():
+        if count > 20:
+            issues.append(ValidationIssue("l1_batch_over_twenty", "An L1 review batch may contain no more than twenty decisions.", batch_id))
+    return decision_by_id
+
+
 def validate(
     registry_path: str,
     inventory_path: str,
     index_path: str,
     decision_paths: list[str],
+    review_decision_register_path: str | None = None,
+    review_decision_register_schema_path: str | None = None,
 ) -> dict[str, Any]:
     issues: list[ValidationIssue] = []
     checked_paths: list[tuple[str, Path | None, ValidationIssue | None]] = [
@@ -153,6 +194,18 @@ def validate(
         ("--decision-record", *_safe_direct_json_path(raw_path, "--decision-record"))
         for raw_path in decision_paths
     )
+    review_register_schema: Path | None = None
+    if (review_decision_register_path is None) != (review_decision_register_schema_path is None):
+        issues.append(ValidationIssue("incomplete_review_register_input", "Review decision register and schema must be supplied together."))
+    elif review_decision_register_path is not None and review_decision_register_schema_path is not None:
+        register_safe, register_issue = _safe_direct_json_path(review_decision_register_path, "--review-decision-register")
+        review_register_schema, schema_issue = _safe_direct_json_path(review_decision_register_schema_path, "--review-decision-register-schema")
+        if register_issue is not None:
+            issues.append(register_issue)
+        if schema_issue is not None:
+            issues.append(schema_issue)
+        if register_safe is not None:
+            checked_paths.append(("--review-decision-register", register_safe, None))
     issues.extend(issue for _, _, issue in checked_paths if issue is not None)
     if issues:
         return {"status": "not_assessed", "issues": [issue.as_dict() for issue in issues]}
@@ -167,12 +220,18 @@ def validate(
     if issues:
         return {"status": "invalid", "issues": [issue.as_dict() for issue in issues]}
 
-    registry, inventory, index, *decisions = loaded
+    registry, inventory, index, *remaining = loaded
+    review_register: dict[str, Any] | None = None
+    if review_decision_register_path is not None and review_decision_register_schema_path is not None:
+        review_register = remaining.pop()
+    decisions = remaining
     issues.extend(_schema_issues(registry, VOCABULARY_SCHEMA))
     issues.extend(_schema_issues(inventory, INVENTORY_SCHEMA))
     issues.extend(_schema_issues(index, INDEX_SCHEMA))
     for decision in decisions:
         issues.extend(_schema_issues(decision, DECISION_SCHEMA))
+    if review_register is not None and review_register_schema is not None:
+        issues.extend(_schema_issues(review_register, review_register_schema))
     if issues:
         return {"status": "invalid", "issues": [issue.as_dict() for issue in issues]}
 
@@ -182,6 +241,7 @@ def validate(
         issues.append(ValidationIssue("inventory_identity_mismatch", "The index must name the supplied inventory."))
     source_ids = {source["source_id"] for source in inventory["source_records"]}
     term_ids = {term["canonical_term_id"] for term in registry["terms"]}
+    review_decision_by_id = _load_review_decisions(review_register, registry, issues) if review_register is not None else {}
     decision_by_id: dict[str, dict[str, Any]] = {}
     for decision in decisions:
         decision_id = decision["decision_id"]
@@ -202,21 +262,41 @@ def validate(
     seen_links: set[tuple[str, str]] = set()
     for entry in entries:
         source_id = entry["source_id"]
-        decision_id = entry["mapping_decision_id"]
+        decision_id = entry.get("mapping_decision_id")
         if source_id not in source_ids:
             issues.append(ValidationIssue("unknown_source_id", "Index entries must name a source in the supplied inventory.", source_id))
-        decision = decision_by_id.get(decision_id)
-        if decision is None:
-            issues.append(ValidationIssue("missing_decision_reference", "Every mapping requires a separately supplied decision record.", decision_id))
+        if decision_id is not None:
+            decision = decision_by_id.get(decision_id)
+            if decision is None:
+                issues.append(ValidationIssue("missing_decision_reference", "Every legacy mapping requires a separately supplied decision record.", decision_id))
+            else:
+                if decision["decision_state"] != "map":
+                    issues.append(ValidationIssue("non_mapping_decision", "Only a map decision may support an index entry.", decision_id))
+                if not decision["basis_reference_ids"]:
+                    issues.append(ValidationIssue("missing_decision_basis", "A map decision requires at least one basis reference.", decision_id))
+                if decision["source_id"] != source_id:
+                    issues.append(ValidationIssue("decision_source_mismatch", "Decision and index entry must name the same source.", decision_id))
+                if set(decision["term_ids"]) != set(entry["term_ids"]):
+                    issues.append(ValidationIssue("decision_term_mismatch", "Decision and index entry must name the same term set.", decision_id))
         else:
-            if decision["decision_state"] != "map":
-                issues.append(ValidationIssue("non_mapping_decision", "Only a map decision may support an index entry.", decision_id))
-            if not decision["basis_reference_ids"]:
-                issues.append(ValidationIssue("missing_decision_basis", "A map decision requires at least one basis reference.", decision_id))
-            if decision["source_id"] != source_id:
-                issues.append(ValidationIssue("decision_source_mismatch", "Decision and index entry must name the same source.", decision_id))
-            if set(decision["term_ids"]) != set(entry["term_ids"]):
-                issues.append(ValidationIssue("decision_term_mismatch", "Decision and index entry must name the same term set.", decision_id))
+            if review_register is None:
+                issues.append(ValidationIssue("missing_review_register", "A proportionate L1 mapping requires an explicitly supplied review decision register."))
+            else:
+                reference = entry["review_decision_register_reference"]
+                if reference["register_id"] != review_register["register_id"]:
+                    issues.append(ValidationIssue("review_register_identity_mismatch", "L1 mapping must name the supplied review register."))
+                decision = review_decision_by_id.get(reference["decision_id"])
+                if decision is None:
+                    issues.append(ValidationIssue("missing_review_decision", "L1 mapping must name a decision in the supplied register.", reference["decision_id"]))
+                else:
+                    if decision["final_disposition"] != "mapped":
+                        issues.append(ValidationIssue("non_mapped_review_decision", "Only a mapped L1 decision may support an index entry.", reference["decision_id"]))
+                    if decision["source_id"] != source_id:
+                        issues.append(ValidationIssue("review_source_mismatch", "L1 decision and index entry must name the same source.", reference["decision_id"]))
+                    if set(decision["term_ids"]) != set(entry["term_ids"]):
+                        issues.append(ValidationIssue("review_term_mismatch", "L1 decision and index entry must name the same term set.", reference["decision_id"]))
+                    if reference["decision_sha256"] != _canonical_sha256(decision):
+                        issues.append(ValidationIssue("review_decision_digest_mismatch", "L1 decision digest must match the supplied decision metadata.", reference["decision_id"]))
         for term_id in entry["term_ids"]:
             if term_id not in term_ids:
                 issues.append(ValidationIssue("unknown_term_id", "Index entries must name a term in the supplied registry.", term_id))
@@ -233,6 +313,7 @@ def validate(
         "index_id": index.get("index_id"),
         "checked_entry_count": len(entries),
         "checked_decision_count": len(decisions),
+        "checked_review_decision_count": len(review_decision_by_id),
         "issues": [issue.as_dict() for issue in issues],
     }
 
@@ -243,8 +324,17 @@ def main() -> int:
     parser.add_argument("--inventory", required=True, help="Absolute path to one caller-named source-inventory JSON file.")
     parser.add_argument("--index", required=True, help="Absolute path to one caller-named reference-index JSON file.")
     parser.add_argument("--decision-record", action="append", default=[], help="Absolute path to one caller-named mapping-decision JSON file.")
+    parser.add_argument("--review-decision-register", help="Absolute path to one caller-named L1 review decision-register JSON file.")
+    parser.add_argument("--review-decision-register-schema", help="Absolute path to one caller-named L1 review decision-register schema JSON file.")
     args = parser.parse_args()
-    result = validate(args.registry, args.inventory, args.index, args.decision_record)
+    result = validate(
+        args.registry,
+        args.inventory,
+        args.index,
+        args.decision_record,
+        args.review_decision_register,
+        args.review_decision_register_schema,
+    )
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0 if result["status"] == "structurally_valid" else 1
 

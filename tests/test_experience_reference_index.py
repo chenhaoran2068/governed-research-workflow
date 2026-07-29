@@ -116,6 +116,56 @@ class ExperienceReferenceIndexTests(unittest.TestCase):
             self.assertEqual(result["status"], "structurally_valid", result)
             self.assertEqual(sentinel.read_text(encoding="utf-8"), "validator must not open or change this")
 
+    def test_v2_l1_mapping_requires_matching_mapped_register_decision(self) -> None:
+        register = json.loads((ROOT / "tests" / "fixtures" / "experience_review_decision_register" / "valid-mapped-decision.json").read_text(encoding="utf-8"))
+        decision = register["decisions"][0]
+        index = {
+            "schema_version": "2.0.0",
+            "record_type": "experience_reference_index",
+            "index_id": "XRI-900002",
+            "metadata_only": True,
+            "index_state": "active",
+            "registry_id": "XVR-900001",
+            "inventory_id": "XSI-900001",
+            "entries": [{
+                "entry_mode": "proportionate_l1_mapping",
+                "source_id": decision["source_id"],
+                "term_ids": decision["term_ids"],
+                "review_decision_register_reference": {
+                    "register_id": register["register_id"],
+                    "register_schema_version": "1.0.0",
+                    "decision_id": decision["decision_id"],
+                    "decision_sha256": VALIDATOR._canonical_sha256(decision),
+                },
+            }],
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            inventory = self._write_json(directory, "inventory.json", _inventory_payload(index["inventory_id"]))
+            index_path = self._write_json(directory, "index.json", index)
+            register_path = self._write_json(directory, "register.json", register)
+            register_schema = ROOT / "system" / "09_schemas_records_and_templates" / "experience_review_decision_register.schema.json"
+            result = VALIDATOR.validate(
+                str(VOCABULARY.resolve()),
+                str(inventory.resolve()),
+                str(index_path.resolve()),
+                [],
+                str(register_path.resolve()),
+                str(register_schema.resolve()),
+            )
+            self.assertEqual("structurally_valid", result["status"], result)
+            index["entries"][0]["review_decision_register_reference"]["decision_sha256"] = "0" * 64
+            index_path.write_text(json.dumps(index), encoding="utf-8")
+            invalid = VALIDATOR.validate(
+                str(VOCABULARY.resolve()),
+                str(inventory.resolve()),
+                str(index_path.resolve()),
+                [],
+                str(register_path.resolve()),
+                str(register_schema.resolve()),
+            )
+        self.assertIn("review_decision_digest_mismatch", {issue["code"] for issue in invalid["issues"]})
+
 
 if __name__ == "__main__":
     unittest.main()

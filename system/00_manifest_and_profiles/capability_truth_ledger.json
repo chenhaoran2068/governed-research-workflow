@@ -3,11 +3,11 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.1.0",
-    "historical_public_baseline": "v1.0.0",
-    "live_release_identity_rule": "This v1.1.0 versioned source is derived from the immutable v1.0.0 source. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.3.0",
+    "historical_public_baseline": "v1.2.1",
+    "live_release_identity_rule": "This v1.3.0 versioned source is derived from immutable public v1.2.1. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
   },
-  "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and the separately tracked v1.1.0 versioned source scope. The separate V1 and V1.1 capability verification maps record complete source-regression requirements for their respective ledgers. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
+  "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
   "contradiction_refusal_rule": "When records conflict or a critical fact is unknown, forbid the affected public claim, stop the affected consequential action, and request accountable-human review.",
   "contradiction_decision_brief_requirements": [
@@ -909,6 +909,52 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-vocabulary.md", "system/06_memory_and_learning/MODULE.md"],
       "contradiction_refusal": "Forbid a vocabulary, source, mapping, promotion, reuse, authority, access, Release, or installation claim when the named record, structural boundary, accountable-human decision, selected release identity, or required evidence is missing, conflicting, or unknown.",
     "limitations_and_next_action": "The capability was last fully verified for published v1.2.0. This v1.2.1 maintenance source does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real vocabulary, source inventory, source access, source truth, human authority, mapping decision, promotion, rule integration, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-140-01",
+      "public_name": "Proportionate Historical-Experience Review And Retrieval-Index Contract",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides generic schemas, a blank decision-register template, caller-named read-only structural validation, synthetic fixtures, and guidance for accountable-human L1 retrieval dispositions and optional retrieval-index links.",
+      "non_promise": "Does not read or resolve a source body, pointer, locator, path, hash, or hidden inventory; infer a term; decide a mapping; authenticate a person; establish authority, evidence, maturity, permission, reuse, promotion, or rule integration; provide intake, upload, RAG, network action, a writer, agent runtime, runtime installation, or a Release decision.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "references/controlled-experience-vocabulary.md",
+          "assets/experience-vocabulary/experience-review-decision-register.template.json",
+          "system/09_schemas_records_and_templates/experience_review_decision_register.schema.json",
+          "system/09_schemas_records_and_templates/experience_reference_index.schema.json",
+          "scripts/validate_experience_review_decision_register.py",
+          "scripts/validate_experience_reference_index.py",
+          "tests/test_experience_review_decision_register.py",
+          "tests/test_v1_3_proportionate_historical_experience_review.py"
+        ],
+        "identifiers": [
+          "experience_review_decision_register",
+          "L1_ordinary_historical",
+          "proportionate_l1_mapping",
+          "experience_vocabulary_control_review"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["metadata_only", "synthetic_only", "no_data_access", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_experience_review_decision_register.py", "identifier": "ExperienceReviewDecisionRegisterTests"},
+          {"kind": "test", "path": "tests/test_experience_reference_index.py", "identifier": "ExperienceReferenceIndexTests"},
+          {"kind": "test", "path": "tests/test_v1_3_proportionate_historical_experience_review.py", "identifier": "V13ProportionateHistoricalExperienceReviewTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.3.0", "last_verified_release": null, "target_release": "v1.3.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the v1.3 public derivative Charter and C2 scope under continuous authorization on 2026-07-29; exact candidate, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-vocabulary.md", "system/06_memory_and_learning/MODULE.md"],
+      "contradiction_refusal": "Forbid an L1 review, mapping, source-access, authority, promotion, reuse, Release, or installation claim when the named record, explicit input, human final decision, release identity, or required evidence is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.3.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real source review, source currentness, human authority, real mapping, promotion, rule integration, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

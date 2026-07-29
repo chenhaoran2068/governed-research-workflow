@@ -5,15 +5,14 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.2.1 release-narrative maintenance source, derived from the immutable
-public v1.2.0 versioned source scope baseline. It preserves the frozen v1.0.0 contract and the
-`GRW-CAP-120-01` controlled-experience-vocabulary, source-inventory,
-mapping-decision, and reference-index metadata contract. It changes no
-capability, interface, schema, validator, dependency, Framework behavior, or
-runtime behavior. It adds no research-operation interface,
-public intake, direct external-contributor flow, upload/download helper,
-network action, real-content handling, data access, source-body read, source
-discovery, source library, retrieval service, RAG capability, automatic
+Status: v1.3.0 proportionate historical-experience-review versioned source,
+derived from immutable public v1.2.1. It preserves the frozen v1.0.0 contract,
+the v1.2 controlled-experience-vocabulary baseline, and adds
+`GRW-CAP-140-01`: generic L1 final-disposition records and an optional
+retrieval-index link to a named mapped decision. It adds no research-operation
+interface, public intake, direct external-contributor flow, upload/download
+helper, network action, real-content handling, data access, source-body read,
+source discovery, source library, retrieval service, RAG capability, automatic
 tagging, mapping decision, promotion, rule integration, coordinator, agent
 runtime, delegation, multi-agent orchestration, generic writer, recovery
 executor, dependency, or release decision. This versioned source tree does not
@@ -98,6 +97,14 @@ only corrects current-facing release narration. A selected v1.2.1 checkout
 still requires exact tag-and-matching-Release verification before it can be
 treated as a public installation target.
 
+The v1.3.0 versioned source adds only a generic, metadata-only proportionate
+historical-experience review contract. A named L1 batch can contain at most
+twenty final accountable-human decisions, but every source retains its own
+decision. The four recordable outcomes are `mapped`, `not_mapped`, `deferred`,
+and `blocked`; only `mapped` may support an optional retrieval-index link. This
+does not establish truth, currentness, authority, permission, maturity, reuse,
+promotion, or any change to a rule, template, checklist, or skill.
+
 README, SKILL, and module documentation explain routes and boundaries. The
 ledger is the single capability truth source when those summaries conflict.
 
@@ -141,6 +148,13 @@ before source content, pointers, discovery, real mapping, vocabulary
 administration, promotion, rule change, or an unknown boundary. The local v1.2
 candidate does not itself establish that selected released version or an
 installed runtime.
+
+For a selected released version that admits `GRW-CAP-140-01`, it may provide
+generic L1 historical-experience review structure only when the caller names
+each metadata JSON input and asks for structural validation. It stops before
+source content, pointers, discovery, term inference, an actual human decision,
+mapping, promotion, rule change, or an unknown boundary. A valid register or
+index link is a retrieval aid only, not an approval or evidence claim.
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or

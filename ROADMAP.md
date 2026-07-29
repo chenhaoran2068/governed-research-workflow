@@ -6,6 +6,21 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.3.0 (proportionate historical-experience-review versioned source scope)
+
+This versioned source is derived from immutable public v1.2.1. It adds
+`GRW-CAP-140-01`: a generic metadata-only L1 decision register, blank template,
+caller-named read-only validation, synthetic positive and negative fixtures,
+and an optional v2 reference-index link to a named final `mapped` decision.
+
+The register represents `mapped`, `not_mapped`, `deferred`, or `blocked` for
+one source at a time. A named L1 batch has a maximum of twenty decisions, but
+this is not bulk approval: each source still requires its own accountable-human
+decision. The contract never opens source bodies, pointers, locators, paths,
+hashes, or hidden inventory; it cannot infer terms, create a real mapping,
+prove currentness or authority, promote/integrate an experience, accept an
+external contribution, or make a Release or runtime claim.
+
 ## v1.2.1 (release-narrative maintenance source)
 
 This maintenance source corrects current-facing release narration after the

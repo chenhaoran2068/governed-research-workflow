@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://governed-research-workflow.example/schemas/experience-review-decision-register.schema.json",
+  "title": "Experience Review Decision Register",
+  "description": "Metadata-only representation of accountable-human final retrieval dispositions. It does not prove source truth, source access, human identity, authority, maturity, promotion, integration, or permission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "register_id", "metadata_only", "register_state", "decisions"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "experience_review_decision_register"},
+    "register_id": {"type": "string", "pattern": "^XRR-[0-9]{6}$"},
+    "metadata_only": {"const": true},
+    "register_state": {"enum": ["active_empty", "active"]},
+    "decisions": {"type": "array", "items": {"$ref": "#/$defs/decision"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"register_state": {"const": "active_empty"}}}, "then": {"properties": {"decisions": {"maxItems": 0}}}},
+    {"if": {"properties": {"register_state": {"const": "active"}}}, "then": {"properties": {"decisions": {"minItems": 1}}}}
+  ],
+  "$defs": {
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision_id", "source_id", "review_level", "final_disposition", "term_ids", "concise_reason", "reviewed_on", "accountable_human_reference", "source_state_at_review", "limitations_and_reconsideration_trigger", "review_batch_id"],
+      "properties": {
+        "decision_id": {"type": "string", "pattern": "^XRD-[0-9]{6}$"},
+        "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]{3,64}$"},
+        "review_level": {"const": "L1_ordinary_historical"},
+        "final_disposition": {"enum": ["mapped", "not_mapped", "deferred", "blocked"]},
+        "term_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^XVT-[0-9]{6}$"}},
+        "concise_reason": {"type": "string", "minLength": 1},
+        "reviewed_on": {"type": "string", "format": "date"},
+        "accountable_human_reference": {"type": "string", "minLength": 1},
+        "source_state_at_review": {"enum": ["reviewed_under_authorized_scope", "not_reconfirmed", "blocked_before_review"]},
+        "limitations_and_reconsideration_trigger": {"type": "string", "minLength": 1},
+        "review_batch_id": {"type": "string", "pattern": "^XRB-[0-9]{6}$"}
+      },
+      "allOf": [
+        {"if": {"properties": {"final_disposition": {"const": "mapped"}}}, "then": {"properties": {"term_ids": {"minItems": 1}}}, "else": {"properties": {"term_ids": {"maxItems": 0}}}}
+      ]
+    }
+  }
+}

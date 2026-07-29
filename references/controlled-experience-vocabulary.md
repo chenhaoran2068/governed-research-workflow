@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This route provides generic, metadata-only contracts for four separate
+This route provides generic, metadata-only contracts for five separate
 objects: a controlled vocabulary, a bounded source inventory, a recorded human
 mapping decision, and a reference index. They help a caller state which
 controlled terms may be relevant to a named record without turning a label into
@@ -26,11 +26,17 @@ human identity, decision, or source claim is real.
    verification or authority verification.
 4. A reference index links a source identifier and controlled term identifiers
    only when the caller separately supplies a matching `map` decision record.
+5. A proportionate historical-review decision register represents one final
+   accountable-human L1 retrieval disposition per source: `mapped`,
+   `not_mapped`, `deferred`, or `blocked`. A named L1 batch can include no more
+   than twenty decisions. An index link can refer only to `mapped`.
 
 Each record answers a different question. A term can be accepted while an
 experience remains unreviewed. A source identifier does not authorize source
 access. A valid index entry does not prove a source supports a rule or that the
-experience is reusable.
+experience is reusable. The register does not replace the existing promotion
+route: only a proposed change to a rule, template, checklist, or skill invokes
+promotion and M48 re-review.
 
 ## Explicit Read-Only Review
 
@@ -40,6 +46,13 @@ inventory. Use `validate_experience_reference_index.py` with one registry, one
 index, and zero or more explicitly named mapping-decision records. Both tools
 read UTF-8 JSON only, reject duplicate keys and unsafe or indirect paths, and
 write nothing.
+
+Use `validate_experience_review_decision_register.py` with one caller-named
+register, schema, and vocabulary registry to check only decision-record
+structure, controlled term IDs, and the per-batch limit. The optional v2
+reference-index link is checked only when the caller explicitly names the
+decision register and its schema. Neither validator opens a source body,
+pointer, locator, path, hash, or hidden inventory.
 
 Stop rather than continue when a request asks to read a source body, resolve a
 pointer, discover files in a workspace, create or edit a real mapping, choose a
