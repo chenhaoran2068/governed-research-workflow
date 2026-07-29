@@ -47,7 +47,8 @@ class V12ReleasePreparationTests(unittest.TestCase):
         )
         text = "\n".join(path.read_text(encoding="utf-8") for path in paths)
         lowered = text.lower()
-        self.assertIn("v1.2.0 versioned source scope", lowered)
+        self.assertIn("v1.2.0", lowered)
+        self.assertIn("grw-cap-120-01", lowered)
         self.assertNotIn("v1.2.0 candidate source", lowered)
         for forbidden in (
             "v1.2.0 is released",

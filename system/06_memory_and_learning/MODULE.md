@@ -55,3 +55,12 @@ mapping, verify a human identity or authority, decide maturity or reuse,
 promote an experience, or integrate a rule. A structurally valid record is not
 evidence that an experience is true, approved, reusable, or publicly
 appropriate.
+
+The v1.3 versioned source scope adds a generic L1 proportionate historical-
+experience decision-register contract. It represents one accountable-human
+final retrieval disposition per source, with `mapped`, `not_mapped`,
+`deferred`, or `blocked` outcomes and no more than twenty decisions in one
+named batch. Only a `mapped` decision can support an optional retrieval-index
+link. The contract cannot read a source or pointer, decide a disposition,
+establish currentness, authority, or reuse, promote a lesson, or integrate a
+rule. A batch is administrative grouping, never collective approval.

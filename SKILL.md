@@ -62,15 +62,18 @@ access, dependency change, result approval, or scientific claim.
 For an explicitly requested `experience_vocabulary_control_review`, first
 resolve the selected version to its exact public tag and matching GitHub
 Release, then check the capability ledger for an admitted `GRW-CAP-120-01`
-record. Only if both conditions hold, read
+or `GRW-CAP-140-01` record. Only if both conditions hold, read
 `references/controlled-experience-vocabulary.md`. Require the caller to name
-each vocabulary registry, source inventory, reference index, and mapping-
-decision JSON file permitted for structural review, and to state the requested
-structural outcome. Do not discover files from a directory, resolve a source
-pointer, read source content, infer a term, create a real mapping, administer
-the vocabulary, promote an experience, modify a rule, or continue across an
-unknown boundary. This route is read-only request routing, not a helper,
-writer, agent, delegated authority, or human-decision mechanism.
+each vocabulary registry, source inventory, reference index, mapping-decision,
+and (when used) L1 decision-register JSON file permitted for structural review,
+and to state the requested structural outcome. The L1 register can represent a
+final human `mapped`, `not_mapped`, `deferred`, or `blocked` disposition; it
+does not make that decision or turn it into promotion. Do not discover files
+from a directory, resolve a source pointer, read source content, infer a term,
+create a real mapping, administer the vocabulary, promote an experience,
+modify a rule, or continue across an unknown boundary. This route is read-only
+request routing, not a helper, writer, agent, delegated authority, or
+human-decision mechanism.
 
 For existing-study, legacy-project, manuscript, or revision work, require an
 exact workspace path or project root before reading project-local records. A

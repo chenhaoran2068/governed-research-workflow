@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_review_decision_register",
+  "register_id": "XRR-900003",
+  "metadata_only": true,
+  "register_state": "active",
+  "decisions": [{
+    "decision_id": "XRD-900003",
+    "source_id": "SRC-SYN-003",
+    "review_level": "L1_ordinary_historical",
+    "final_disposition": "deferred",
+    "term_ids": [],
+    "concise_reason": "Synthetic deferred outcome.",
+    "reviewed_on": "2026-07-29",
+    "accountable_human_reference": "synthetic-human",
+    "source_state_at_review": "not_reconfirmed",
+    "limitations_and_reconsideration_trigger": "Synthetic fixture only.",
+    "review_batch_id": "XRB-900001"
+  }]
+}
