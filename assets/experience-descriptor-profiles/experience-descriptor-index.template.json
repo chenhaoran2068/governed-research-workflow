@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_descriptor_index",
+  "index_id": "XDI-000000",
+  "metadata_only": true,
+  "index_state": "active_empty",
+  "catalogue_id": "XDC-000000",
+  "decision_register_reference": {
+    "register_id": "XDR-000000",
+    "schema_version": "1.0.0"
+  },
+  "entries": []
+}

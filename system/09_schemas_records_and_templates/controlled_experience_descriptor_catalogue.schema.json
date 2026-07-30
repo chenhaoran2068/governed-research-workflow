@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://governed-research-workflow.example/schemas/controlled-experience-descriptor-catalogue.schema.json",
+  "title": "Controlled Experience Descriptor Catalogue",
+  "description": "A metadata-only catalogue of controlled descriptor values. It classifies retrieval context and does not establish evidence, currentness, approval, maturity, reuse, promotion, ownership, access, or authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "catalogue_id", "metadata_only", "catalogue_state", "dimensions"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "controlled_experience_descriptor_catalogue"},
+    "catalogue_id": {"type": "string", "pattern": "^XDC-[0-9]{6}$"},
+    "metadata_only": {"const": true},
+    "catalogue_state": {"enum": ["active_empty", "active"]},
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "record_kind", "task_trigger", "target_object", "scope"],
+      "properties": {
+        "domain": {"$ref": "#/$defs/dimension"},
+        "record_kind": {"$ref": "#/$defs/dimension"},
+        "task_trigger": {"$ref": "#/$defs/dimension"},
+        "target_object": {"$ref": "#/$defs/dimension"},
+        "scope": {"$ref": "#/$defs/dimension"}
+      }
+    }
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_count", "maximum_count", "values"],
+      "properties": {
+        "minimum_count": {"type": "integer", "minimum": 0, "maximum": 10},
+        "maximum_count": {"type": "integer", "minimum": 0, "maximum": 10},
+        "values": {"type": "array", "items": {"$ref": "#/$defs/value"}}
+      }
+    },
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "value"],
+      "properties": {
+        "language": {"enum": ["en", "zh", "other"]},
+        "value": {"type": "string", "minLength": 1, "maxLength": 160}
+      }
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["descriptor_value_id", "lifecycle_status", "preferred_labels", "definition", "scope_note", "exclusions", "modified_reason"],
+      "properties": {
+        "descriptor_value_id": {"type": "string", "pattern": "^XDV-[A-Z]{3}-[0-9]{6}$"},
+        "lifecycle_status": {"enum": ["candidate", "accepted", "deprecated", "merged", "renamed"]},
+        "preferred_labels": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/label"}},
+        "definition": {"type": "string", "minLength": 1},
+        "scope_note": {"type": "string", "minLength": 1},
+        "exclusions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "modified_reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

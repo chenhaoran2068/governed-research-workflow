@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_descriptor_decision_register",
+  "register_id": "XDR-000000",
+  "metadata_only": true,
+  "register_state": "active_empty",
+  "catalogue_id": "XDC-000000",
+  "decisions": []
+}

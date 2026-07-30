@@ -51,6 +51,7 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-120-01",
     "GRW-CAP-130-01",
     "GRW-CAP-140-01",
+    "GRW-CAP-140-02",
 }
 RELEASED_OR_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {
     "GRW-CAP-040-03",
@@ -70,7 +71,8 @@ V011_SCOPE_IDS = {
 V013_SCOPE_IDS = {"GRW-CAP-130-01"}
 V111_SCOPE_IDS = {"GRW-CAP-111-01"}
 V120_SCOPE_IDS = {"GRW-CAP-120-01"}
-V140_SCOPE_IDS = {"GRW-CAP-140-01"}
+V1401_SCOPE_IDS = {"GRW-CAP-140-01"}
+V1402_SCOPE_IDS = {"GRW-CAP-140-02"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -107,11 +109,11 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         cls.records = cls.ledger["capabilities"]
 
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
-        self.assertEqual(self.ledger["ledger_schema_version"], "1.6.0")
+        self.assertEqual(self.ledger["ledger_schema_version"], "1.7.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.3.0")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.2.1")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.4.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.3.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
         self.assertIn("separately tracked versioned source scopes", self.ledger["target_claim_scope"])
@@ -154,7 +156,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-            "v1.3.0" if record["capability_id"] in V140_SCOPE_IDS
+            "v1.4.0" if record["capability_id"] in V1402_SCOPE_IDS
+            else "v1.3.0" if record["capability_id"] in V1401_SCOPE_IDS
             else "v1.2.0" if record["capability_id"] in V120_SCOPE_IDS
                 else "v1.1.0" if record["capability_id"] in V111_SCOPE_IDS
                 else "v0.13.0" if record["capability_id"] in V013_SCOPE_IDS

@@ -71,3 +71,11 @@ New vocabulary terms, aliases, and mappings must be reviewed as semantic
 changes. Under M48, any correction requires a new review of affected tests,
 documentation, and claims. Under M54, prior valid records and review evidence
 remain preserved rather than overwritten.
+
+## Descriptor Profiles
+
+For a separate five-facet retrieval-context layer, see
+references/controlled-experience-descriptor-profiles.md. A descriptor
+catalogue and its derived index do not replace controlled exact terms, final
+human review dispositions, source-currentness assessment, evidence, approval,
+promotion, or M48/M54 requirements.

@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "controlled_experience_descriptor_catalogue",
+  "catalogue_id": "XDC-900001",
+  "metadata_only": true,
+  "catalogue_state": "active",
+  "dimensions": {
+    "domain": {
+      "minimum_count": 1,
+      "maximum_count": 3,
+      "values": [{
+        "descriptor_value_id": "XDV-DOM-900001",
+        "lifecycle_status": "accepted",
+        "preferred_labels": [{"language": "en", "value": "synthetic-governance"}],
+        "definition": "Synthetic descriptor value for a test domain.",
+        "scope_note": "Synthetic fixtures only.",
+        "exclusions": ["Not an approval or evidence class."],
+        "modified_reason": "Created for public structural tests."
+      }]
+    },
+    "record_kind": {
+      "minimum_count": 1,
+      "maximum_count": 1,
+      "values": [{
+        "descriptor_value_id": "XDV-KND-900001",
+        "lifecycle_status": "accepted",
+        "preferred_labels": [{"language": "en", "value": "synthetic-record"}],
+        "definition": "Synthetic descriptor value for a test record kind.",
+        "scope_note": "Synthetic fixtures only.",
+        "exclusions": ["Not a maturity state."],
+        "modified_reason": "Created for public structural tests."
+      }]
+    },
+    "task_trigger": {
+      "minimum_count": 0,
+      "maximum_count": 5,
+      "values": [{
+        "descriptor_value_id": "XDV-TRG-900001",
+        "lifecycle_status": "accepted",
+        "preferred_labels": [{"language": "en", "value": "synthetic-review"}],
+        "definition": "Synthetic descriptor value for a test trigger.",
+        "scope_note": "Synthetic fixtures only.",
+        "exclusions": ["Not a permission."],
+        "modified_reason": "Created for public structural tests."
+      }]
+    },
+    "target_object": {
+      "minimum_count": 0,
+      "maximum_count": 5,
+      "values": [{
+        "descriptor_value_id": "XDV-OBJ-900001",
+        "lifecycle_status": "accepted",
+        "preferred_labels": [{"language": "en", "value": "synthetic-experience"}],
+        "definition": "Synthetic descriptor value for a test target object.",
+        "scope_note": "Synthetic fixtures only.",
+        "exclusions": ["Not a source locator."],
+        "modified_reason": "Created for public structural tests."
+      }]
+    },
+    "scope": {
+      "minimum_count": 1,
+      "maximum_count": 1,
+      "values": [{
+        "descriptor_value_id": "XDV-SCP-900001",
+        "lifecycle_status": "accepted",
+        "preferred_labels": [{"language": "en", "value": "synthetic-scope"}],
+        "definition": "Synthetic descriptor value for a test scope.",
+        "scope_note": "Synthetic fixtures only.",
+        "exclusions": ["Not an ownership assertion."],
+        "modified_reason": "Created for public structural tests."
+      }]
+    }
+  }
+}

@@ -5,11 +5,13 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.3.0 proportionate historical-experience-review versioned source,
-derived from immutable public v1.2.1. It preserves the frozen v1.0.0 contract,
-the v1.2 controlled-experience-vocabulary baseline, and adds
+Status: v1.4.0 controlled-experience-descriptor-profiles versioned source,
+derived from immutable public v1.3.0. It preserves the frozen v1.0.0 contract,
+the v1.2 controlled-experience-vocabulary baseline, and retains
 `GRW-CAP-140-01`: generic L1 final-disposition records and an optional
-retrieval-index link to a named mapped decision. It adds no research-operation
+retrieval-index link to a named mapped decision. It adds `GRW-CAP-140-02`:
+generic controlled descriptor-catalogue, represented descriptor-decision, and
+derived descriptor-index structures. It adds no research-operation
 interface, public intake, direct external-contributor flow, upload/download
 helper, network action, real-content handling, data access, source-body read,
 source discovery, source library, retrieval service, RAG capability, automatic
@@ -155,6 +157,15 @@ each metadata JSON input and asks for structural validation. It stops before
 source content, pointers, discovery, term inference, an actual human decision,
 mapping, promotion, rule change, or an unknown boundary. A valid register or
 index link is a retrieval aid only, not an approval or evidence claim.
+
+For a selected released version that admits `GRW-CAP-140-02`, it may
+provide generic controlled descriptor-profile structural review only when the
+caller names one vocabulary registry, descriptor catalogue,
+descriptor-decision register, and descriptor index. It stops before source
+inventory or body access, pointer resolution, discovery, label inference,
+human-decision creation, promotion, rule change, or an unknown boundary. A
+descriptor profile is retrieval context only; it is not evidence, currentness,
+approval, maturity, reuse, ownership, access, or authority.
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or

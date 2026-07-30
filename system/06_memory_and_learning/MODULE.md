@@ -64,3 +64,12 @@ named batch. Only a `mapped` decision can support an optional retrieval-index
 link. The contract cannot read a source or pointer, decide a disposition,
 establish currentness, authority, or reuse, promote a lesson, or integrate a
 rule. A batch is administrative grouping, never collective approval.
+
+The v1.4 versioned source scope adds a separate controlled
+experience-descriptor profile contract. It provides a caller-named catalogue
+of five retrieval facets, represented accountable-human descriptor decisions,
+and a derived index. It does not publish a real catalogue, source inventory,
+decision, or index entry. It cannot read a source body or pointer, infer a
+label, establish evidence/currentness/approval/maturity/reuse/promotion, or
+modify a shared rule. The descriptor route complements rather than replaces
+the v1.3 final-disposition and exact-topic-link routes.

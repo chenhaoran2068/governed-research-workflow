@@ -1,11 +1,11 @@
 {
-  "ledger_schema_version": "1.6.0",
+  "ledger_schema_version": "1.7.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.3.0",
-    "historical_public_baseline": "v1.2.1",
-    "live_release_identity_rule": "This v1.3.0 versioned source is derived from immutable public v1.2.1. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.4.0",
+    "historical_public_baseline": "v1.3.0",
+    "live_release_identity_rule": "This v1.4.0 versioned source is derived from immutable public v1.3.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -955,6 +955,53 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-vocabulary.md", "system/06_memory_and_learning/MODULE.md"],
       "contradiction_refusal": "Forbid an L1 review, mapping, source-access, authority, promotion, reuse, Release, or installation claim when the named record, explicit input, human final decision, release identity, or required evidence is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the proposed v1.3.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real source review, source currentness, human authority, real mapping, promotion, rule integration, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-140-02",
+      "public_name": "Controlled Experience Descriptor Profiles And Faceted Retrieval Metadata",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides generic metadata-only schemas, blank templates, a caller-named read-only validator, synthetic fixtures, and guidance for controlled descriptor catalogues, represented accountable-human descriptor decisions, and derived descriptor indexes using domain, record-kind, task-trigger, target-object, and scope facets.",
+      "non_promise": "Does not publish a real descriptor catalogue, source, source inventory, human decision, mapping, or index entry; read a source body or pointer; infer a descriptor; establish truth, currentness, evidence, authority, maturity, reuse, promotion, rule integration, ownership, access, or permission; provide intake, upload, RAG, network action, a writer, agent runtime, runtime installation, or a Release decision.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "references/controlled-experience-descriptor-profiles.md",
+          "assets/experience-descriptor-profiles/controlled-experience-descriptor-catalogue.template.json",
+          "assets/experience-descriptor-profiles/experience-descriptor-decision-register.template.json",
+          "assets/experience-descriptor-profiles/experience-descriptor-index.template.json",
+          "system/09_schemas_records_and_templates/controlled_experience_descriptor_catalogue.schema.json",
+          "system/09_schemas_records_and_templates/experience_descriptor_decision_register.schema.json",
+          "system/09_schemas_records_and_templates/experience_descriptor_index.schema.json",
+          "scripts/validate_experience_descriptor_profiles.py",
+          "tests/test_experience_descriptor_profiles.py",
+          "tests/test_v1_4_controlled_experience_descriptor_profiles.py"
+        ],
+        "identifiers": [
+          "controlled_experience_descriptor_catalogue",
+          "experience_descriptor_decision_register",
+          "experience_descriptor_index",
+          "experience_descriptor_profile_review"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["metadata_only", "synthetic_only", "no_data_access", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_experience_descriptor_profiles.py", "identifier": "ExperienceDescriptorProfilesTests"},
+          {"kind": "test", "path": "tests/test_v1_4_controlled_experience_descriptor_profiles.py", "identifier": "V14ControlledExperienceDescriptorProfilesTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.4.0", "last_verified_release": null, "target_release": "v1.4.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human authorized the v1.4 generic descriptor-profile public derivative after local C3 infrastructure verification on 2026-07-30; exact candidate, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-descriptor-profiles.md", "system/06_memory_and_learning/MODULE.md"],
+      "contradiction_refusal": "Forbid a descriptor, source-access, currentness, evidence, approval, promotion, reuse, authority, Release, or installation claim when the named metadata record, explicit input, human final decision, selected release identity, or required evidence is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.4.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real descriptor catalogue, real source review, source currentness, human authority, real decision or mapping, promotion, rule integration, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }
