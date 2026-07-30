@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.4.0 (controlled experience-descriptor profiles versioned source scope)
+
+This versioned source is derived from immutable public v1.3.0. It adds
+`GRW-CAP-140-02`: a generic controlled descriptor-catalogue schema, blank
+catalogue/decision/index templates, a caller-named read-only validator,
+synthetic positive and negative fixtures, and guidance for five retrieval
+facets: domain, record kind, task trigger, target object, and scope.
+
+It keeps this retrieval-context layer separate from `GRW-CAP-140-01` final
+historical-review dispositions and optional exact topic links. It does not
+publish any real descriptor values, source identifiers, inventory, decisions,
+index entries, mappings, paths, hashes, or local history. It cannot read a
+source body or pointer, infer labels, create a human decision, establish
+currentness, evidence, approval, maturity, reuse, promotion, ownership,
+access, authority, a Release, or an installed runtime.
+
 ## v1.3.0 (proportionate historical-experience-review versioned source scope)
 
 This versioned source is derived from immutable public v1.2.1. It adds

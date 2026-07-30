@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://governed-research-workflow.example/schemas/experience-descriptor-index.schema.json",
+  "title": "Experience Descriptor Index",
+  "description": "A metadata-only retrieval index derived from represented human descriptor decisions. It does not establish source truth, currentness, approval, maturity, reuse, promotion, ownership, access, or authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "index_id", "metadata_only", "index_state", "catalogue_id", "decision_register_reference", "entries"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "experience_descriptor_index"},
+    "index_id": {"type": "string", "pattern": "^XDI-[0-9]{6}$"},
+    "metadata_only": {"const": true},
+    "index_state": {"enum": ["active_empty", "active"]},
+    "catalogue_id": {"type": "string", "pattern": "^XDC-[0-9]{6}$"},
+    "decision_register_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["register_id", "schema_version"],
+      "properties": {
+        "register_id": {"type": "string", "pattern": "^XDR-[0-9]{6}$"},
+        "schema_version": {"const": "1.0.0"}
+      }
+    },
+    "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"index_state": {"const": "active_empty"}}}, "then": {"properties": {"entries": {"maxItems": 0}}}},
+    {"if": {"properties": {"index_state": {"const": "active"}}}, "then": {"properties": {"entries": {"minItems": 1}}}}
+  ],
+  "$defs": {
+    "descriptor_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain_ids", "record_kind_id", "task_trigger_ids", "target_object_ids", "scope_id"],
+      "properties": {
+        "domain_ids": {"type": "array", "minItems": 1, "maxItems": 3, "uniqueItems": true, "items": {"type": "string", "pattern": "^XDV-[A-Z]{3}-[0-9]{6}$"}},
+        "record_kind_id": {"type": "string", "pattern": "^XDV-[A-Z]{3}-[0-9]{6}$"},
+        "task_trigger_ids": {"type": "array", "maxItems": 5, "uniqueItems": true, "items": {"type": "string", "pattern": "^XDV-[A-Z]{3}-[0-9]{6}$"}},
+        "target_object_ids": {"type": "array", "maxItems": 5, "uniqueItems": true, "items": {"type": "string", "pattern": "^XDV-[A-Z]{3}-[0-9]{6}$"}},
+        "scope_id": {"type": "string", "pattern": "^XDV-[A-Z]{3}-[0-9]{6}$"}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "decision_id", "decision_sha256", "descriptor_profile", "topic_term_ids"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]{3,64}$"},
+        "decision_id": {"type": "string", "pattern": "^XDD-[0-9]{6}$"},
+        "decision_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "descriptor_profile": {"$ref": "#/$defs/descriptor_profile"},
+        "topic_term_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^XVT-[0-9]{6}$"}}
+      }
+    }
+  }
+}

@@ -75,6 +75,17 @@ modify a rule, or continue across an unknown boundary. This route is read-only
 request routing, not a helper, writer, agent, delegated authority, or
 human-decision mechanism.
 
+For an explicitly requested `experience_descriptor_profile_review`, first
+resolve the selected version to its exact public tag and matching GitHub
+Release, then check the capability ledger for an admitted
+`GRW-CAP-140-02` record. Require the caller to name one vocabulary
+registry, one descriptor catalogue, one descriptor-decision register, and one
+descriptor index JSON input. Read
+`references/controlled-experience-descriptor-profiles.md` before
+invoking the validator. Do not discover files, read a source inventory or
+source body, infer descriptors, create a decision or index entry, promote an
+experience, modify a rule, or continue across an unknown boundary.
+
 For existing-study, legacy-project, manuscript, or revision work, require an
 exact workspace path or project root before reading project-local records. A
 pasted excerpt may clarify the task after the root is identified; it does not
@@ -219,6 +230,8 @@ Stop and request accountable evidence or approval before:
   selected release: references/future-study-execution-and-reproducibility.md
 - Controlled experience-vocabulary and reference-index review, when admitted
   for the selected release: references/controlled-experience-vocabulary.md
+- Controlled experience-descriptor profile review, when admitted for the
+  selected release: references/controlled-experience-descriptor-profiles.md
 - Public/private separation and legacy boundaries:
   references/portability-and-release-boundaries.md
 - Metadata-only workflow/evidence control records, when admitted for the

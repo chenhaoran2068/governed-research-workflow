@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experience_descriptor_index",
+  "index_id": "XDI-900001",
+  "metadata_only": true,
+  "index_state": "active",
+  "catalogue_id": "XDC-900001",
+  "decision_register_reference": {
+    "register_id": "XDR-900001",
+    "schema_version": "1.0.0"
+  },
+  "entries": [{
+    "source_id": "SRC-SYN-001",
+    "decision_id": "XDD-900001",
+    "decision_sha256": "e56417b0a01a72e72ff0f77eb97765b11e8571571260dad8b33d38f0cc954e12",
+    "descriptor_profile": {
+      "domain_ids": ["XDV-DOM-900001"],
+      "record_kind_id": "XDV-KND-900001",
+      "task_trigger_ids": ["XDV-TRG-900001"],
+      "target_object_ids": ["XDV-OBJ-900001"],
+      "scope_id": "XDV-SCP-900001"
+    },
+    "topic_term_ids": ["XVT-900001"]
+  }]
+}
