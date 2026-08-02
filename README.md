@@ -5,20 +5,20 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.5.0 generic manuscript-operation and research-program-boundary
-guidance versioned source, derived from immutable public v1.4.0. It preserves
-the frozen v1.0.0 contract, the v1.2 controlled-experience-vocabulary
-baseline, and the v1.4 descriptor-profile scope. It adds `GRW-CAP-150-01`:
-two generic, optional, human-review-only guidance documents for manuscript
-operations and explicitly bounded research-program relationships. It adds no
-research-operation executor, public intake, direct external-contributor flow,
-upload/download helper, network action, real-content handling, data access,
-source-body read, source discovery, source library, retrieval service, RAG
-capability, automatic tagging, mapping decision, promotion, rule integration,
-coordinator, agent runtime, delegation, multi-agent orchestration, generic
-writer, recovery executor, dependency, or release decision. This versioned
-source tree does not itself prove the release or installation identity of any
-selected version.
+Status: v1.5.1 compatibility-maintenance source, derived from immutable public
+v1.5.0. It preserves the frozen v1.0.0 contract and `GRW-CAP-150-01` without
+changing either of the two generic manuscript-operation and research-program-
+boundary guidance documents. Its only maintained framework-integrated claim is
+the exact Workspace Framework `v0.2.0` contract, validated only against commit
+`69c76f84a5b0913b26c17ea48f152dbc50b4bec6` under separately controlled
+candidate and release evidence. It adds no research-operation executor, public
+intake, direct external-contributor flow, upload/download helper, network
+action, real-content handling, data access, source-body read, source discovery,
+source library, retrieval service, RAG capability, automatic tagging, mapping
+decision, promotion, rule integration, coordinator, agent runtime, delegation,
+multi-agent orchestration, generic writer, recovery executor, dependency, or
+release decision. This versioned source tree does not itself prove the release
+or installation identity of any selected version.
 Verify a selected public version only when its exact annotated tag and matching
 GitHub Release resolve to the selected source commit. Never install a mutable
 branch.

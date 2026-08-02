@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.5.1 (exact Framework v0.2.0 compatibility-maintenance source scope)
+
+This maintenance source is derived from immutable public v1.5.0. It retains
+`GRW-CAP-150-01` unchanged and updates only the framework-integrated contract
+to the exact released Workspace Framework `v0.2.0` tag and commit
+`69c76f84a5b0913b26c17ea48f152dbc50b4bec6`. Its integration test must prove
+that an empty `framework_integrated` workspace can register this System without
+creating a `Papers/` root. It adds no new capability, interface, helper,
+schema, validator, dependency, material access, sharing mechanism, external
+action, publication action, or installed-runtime claim.
+
+The exact source tree, candidate commit, three-platform CI, protected-main
+merge, annotated tag, matching GitHub Release, and local adoption remain
+separate evidence classes. This roadmap does not state that v1.5.1 is released
+or installed.
+
 ## v1.5.0 (manuscript-operation and research-program-boundary guidance source scope)
 
 This versioned source is derived from immutable public v1.4.0. It adds

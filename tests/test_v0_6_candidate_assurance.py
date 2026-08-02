@@ -78,13 +78,14 @@ class V06CandidateAssuranceTests(unittest.TestCase):
         self.assertIn("not authorize", source_text)
         self.assertIn("runtime-installation", source_text)
 
-    def test_current_framework_validation_target_is_v012_and_historical_v04_evidence_is_not_rewritten(self) -> None:
+    def test_current_framework_validation_target_is_v020_and_historical_evidence_is_retained(self) -> None:
         workflow = WORKFLOW_PATH.read_text(encoding="utf-8")
         plan = FRAMEWORK_PLAN_PATH.read_text(encoding="utf-8")
         historical_v04 = (REPOSITORY_ROOT / "system" / "12_synthetic_examples" / "V0_4_SYNTHETIC_ASSURANCE.md").read_text(encoding="utf-8")
-        self.assertIn("FRAMEWORK_RELEASE_TAG: v0.1.2", workflow)
-        self.assertIn("FRAMEWORK_EXPECTED_COMMIT: 97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8", workflow)
+        self.assertIn("FRAMEWORK_RELEASE_TAG: v0.2.0", workflow)
+        self.assertIn("FRAMEWORK_EXPECTED_COMMIT: 69c76f84a5b0913b26c17ea48f152dbc50b4bec6", workflow)
         self.assertIn("Workspace Framework `v0.1.2`", plan)
+        self.assertIn("97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8", plan)
         self.assertIn("framework tag: `v0.1.1`", historical_v04)
 
     def test_v06_release_source_assurance_remains_a_frozen_historical_snapshot(self) -> None:

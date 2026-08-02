@@ -220,6 +220,9 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
         validate_candidate_records(workspace, system, binding)
         registration = workspace["registered_systems"][0]
         self.assertEqual(workspace_root / validate_workspace_relative_path(registration["path"]), system_root)
+        self.assertEqual(workspace["framework_version"], "0.2.0")
+        self.assertNotIn("papers", workspace.get("roots", {}))
+        self.assertFalse((workspace_root / "Papers").exists())
         self.assertNotIn("E:\\", workspace_manifest_path.read_text(encoding="utf-8"))
         self.assertNotIn("C:\\Users", workspace_manifest_path.read_text(encoding="utf-8"))
 
@@ -232,7 +235,7 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
             "contributing_systems": [],
         }
         standalone_workspace = {
-            "framework_version": "0.1.0",
+            "framework_version": "0.2.0",
             "workspace_profile": "standalone",
             "registered_systems": [],
         }
@@ -240,7 +243,7 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
             validate_candidate_records(standalone_workspace, system, binding)
 
         unsafe_registration_workspace = {
-            "framework_version": "0.1.0",
+            "framework_version": "0.2.0",
             "workspace_profile": "framework_integrated",
             "registered_systems": [
                 {
@@ -256,7 +259,7 @@ class FrameworkCandidateIntegrationTests(unittest.TestCase):
     def test_rejects_binding_to_an_unregistered_primary_system(self) -> None:
         system = self.load_yaml(SYSTEM_MANIFEST_PATH)
         workspace = {
-            "framework_version": "0.1.0",
+            "framework_version": "0.2.0",
             "workspace_profile": "framework_integrated",
             "registered_systems": [
                 {
