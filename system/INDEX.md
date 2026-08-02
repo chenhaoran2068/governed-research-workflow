@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: v1.5.1 compatibility-maintenance source retaining the frozen public-
+Status: v1.5.2 compatibility-maintenance source retaining the frozen public-
 interface contract and `GRW-CAP-150-01` guidance introduced by v1.5.0. It
 declares only the exact Workspace Framework `v0.2.0` contract and preserves the
 V1 Public Interface Manifest, Capability Verification Map, and V1 Support
@@ -33,7 +33,7 @@ authority records.
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | v1.5.1 retains the two public profiles and declares only exact Framework v0.2.0 compatibility | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | v1.5.2 retains the two public profiles and declares only exact Framework v0.2.0 compatibility | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, and v1.5 optional human-review-only guidance | route references, blank assets, and generic guidance |
@@ -76,7 +76,7 @@ does not create capability.
 
 The system is designed to remain path-independent and standalone. Its
 framework-integrated profile declares only the exact `0.2.0` framework contract
-for this source. The v1.5.1 compatibility route validates the exact released
+for this source. The v1.5.2 compatibility route validates the exact released
 Workspace Framework `v0.2.0` tag and commit
 `69c76f84a5b0913b26c17ea48f152dbc50b4bec6`; it must never require a private
 checkout, private credential, or real project workspace.

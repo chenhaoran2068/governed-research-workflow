@@ -43,8 +43,17 @@ def tracked_paths(root: Path) -> list[str]:
     )
     if completed.returncode != 0:
         raise RuntimeError(completed.stderr.decode("utf-8", errors="replace"))
+    deleted = subprocess.run(
+        ["git", "-C", str(root), "ls-files", "--deleted", "-z"],
+        text=False,
+        capture_output=True,
+        check=False,
+    )
+    if deleted.returncode != 0:
+        raise RuntimeError(deleted.stderr.decode("utf-8", errors="replace"))
+    deleted_paths = {item.decode("utf-8") for item in deleted.stdout.split(b"\0") if item}
     paths = [item.decode("utf-8") for item in completed.stdout.split(b"\0") if item]
-    return sorted(paths, key=lambda item: item.encode("utf-8"))
+    return sorted((path for path in paths if path not in deleted_paths), key=lambda item: item.encode("utf-8"))
 
 
 def snapshot_digest(root: Path, relative_paths: list[str]) -> str:

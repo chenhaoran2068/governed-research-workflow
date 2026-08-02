@@ -6,7 +6,7 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
-## v1.5.1 (exact Framework v0.2.0 compatibility-maintenance source scope)
+## v1.5.2 (exact Framework v0.2.0 compatibility-maintenance source scope)
 
 This maintenance source is derived from immutable public v1.5.0. It retains
 `GRW-CAP-150-01` unchanged and updates only the framework-integrated contract
@@ -19,7 +19,7 @@ action, publication action, or installed-runtime claim.
 
 The exact source tree, candidate commit, three-platform CI, protected-main
 merge, annotated tag, matching GitHub Release, and local adoption remain
-separate evidence classes. This roadmap does not state that v1.5.1 is released
+separate evidence classes. This roadmap does not state that v1.5.2 is released
 or installed.
 
 ## v1.5.0 (manuscript-operation and research-program-boundary guidance source scope)

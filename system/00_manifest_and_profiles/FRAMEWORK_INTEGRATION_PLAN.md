@@ -1,7 +1,7 @@
 # Framework Integration Plan
 
 Status: historical v0.3.0 through v1.5.0 integration evidence remains retained
-under M54 and is not reused as v1.5.1 evidence. The v1.5.1 compatibility-
+under M54 and is not reused as v1.5.2 evidence. The v1.5.2 compatibility-
 maintenance source declares only the exact released Workspace Framework
 `v0.2.0` tag at commit `69c76f84a5b0913b26c17ea48f152dbc50b4bec6`.
 Candidate and Release verification for this System remain separate from this
@@ -12,7 +12,7 @@ its exact annotated tag and matching GitHub Release.
 
 `../../SYSTEM_MANIFEST.yaml` uses the public Workspace Framework's generic
 system-manifest contract and declares both `standalone` and
-`framework_integrated`. For this v1.5.1 source, the latter declares only
+`framework_integrated`. For this v1.5.2 source, the latter declares only
 Framework contract `0.2.0`; it does not imply a compatibility range. Explicitly invoked
 structural validators require only the direct package dependency
 `jsonschema==4.26.0`; they do not require the Workspace Framework, an optional
@@ -41,15 +41,15 @@ own exact source revision.
 
 The v0.6 release source retains integration evidence against released Workspace Framework `v0.1.2` at commit
 `97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`. That historical evidence remains
-retained but is not reused as v1.5.1 evidence.
+retained but is not reused as v1.5.2 evidence.
 
-These historical tests do not establish v1.5.1 compatibility. They do not
+These historical tests do not establish v1.5.2 compatibility. They do not
 approve scientific quality, compliance, source access, project creation, or a
 workflow release.
 
-## v1.5.1 Compatibility Evidence Requirements
+## v1.5.2 Compatibility Evidence Requirements
 
-The v1.5.1 candidate must rerun the cross-repository integration test against
+The v1.5.2 candidate must rerun the cross-repository integration test against
 only Framework `v0.2.0` at commit
 `69c76f84a5b0913b26c17ea48f152dbc50b4bec6`, with no Framework skip. It must
 prove the exact workspace and System contract match, safe workspace-relative
@@ -64,7 +64,7 @@ Before a later stable release advertises framework integration, maintainers
 must:
 
 1. retain historical cross-repository validation as historical evidence only,
-   and create separate v1.5.1 evidence against `v0.2.0` at
+   and create separate v1.5.2 evidence against `v0.2.0` at
    `69c76f84a5b0913b26c17ea48f152dbc50b4bec6`;
 2. retain exact `0.2.0` in `framework_compatibility`, while identifying the
    exact tested Framework release tag and commit in compatibility evidence and

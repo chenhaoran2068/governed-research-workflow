@@ -30,6 +30,17 @@ def canonical_snapshot_bytes(source_bytes: bytes) -> bytes:
     return source_bytes.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
 
 
+def deleted_tracked_paths() -> set[bytes]:
+    """Return paths Git reports as deleted from this candidate worktree."""
+    result = subprocess.run(
+        ["git", "ls-files", "--deleted", "-z"],
+        cwd=REPOSITORY_ROOT,
+        check=True,
+        capture_output=True,
+    )
+    return {path for path in result.stdout.split(b"\0") if path}
+
+
 def source_snapshot_sha256(excluded_relative_path: bytes) -> str:
     """Hash tracked source while excluding one self-referential evidence file."""
     result = subprocess.run(
@@ -38,9 +49,10 @@ def source_snapshot_sha256(excluded_relative_path: bytes) -> str:
         check=True,
         capture_output=True,
     )
+    deleted_paths = deleted_tracked_paths()
     digest = hashlib.sha256()
     for relative_path in sorted(path for path in result.stdout.split(b"\0") if path):
-        if relative_path == excluded_relative_path:
+        if relative_path == excluded_relative_path or relative_path in deleted_paths:
             continue
         digest.update(relative_path)
         digest.update(b"\0")
