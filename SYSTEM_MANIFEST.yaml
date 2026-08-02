@@ -1,4 +1,4 @@
-# v1.5.1 retains the frozen v1.0.0 public contract and GRW-CAP-150-01. It
+# v1.5.2 retains the frozen v1.0.0 public contract and GRW-CAP-150-01. It
 # only maintains the exact framework-integrated compatibility declaration.
 # It adds no research-operation interface, data access, public intake, network
 # action, agent runtime, delegation, generic writer, recovery executor, or
@@ -9,7 +9,7 @@
 # 0.2.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.5.1
+system_version: 1.5.2
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

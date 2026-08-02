@@ -5,7 +5,7 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.5.1 compatibility-maintenance source, derived from immutable public
+Status: v1.5.2 compatibility-maintenance source, derived from immutable public
 v1.5.0. It preserves the frozen v1.0.0 contract and `GRW-CAP-150-01` without
 changing either of the two generic manuscript-operation and research-program-
 boundary guidance documents. Its only maintained framework-integrated claim is

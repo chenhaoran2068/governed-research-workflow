@@ -3,9 +3,9 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.5.1",
+    "source_release_version": "v1.5.2",
     "historical_public_baseline": "v1.5.0",
-    "live_release_identity_rule": "This v1.5.1 compatibility-maintenance source is derived from immutable public v1.5.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "live_release_identity_rule": "This v1.5.2 compatibility-maintenance source is derived from immutable public v1.5.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1035,12 +1035,12 @@
           {"kind": "test", "path": "tests/test_system_foundation.py", "identifier": "SystemFoundationTests"}
         ]
       },
-      "version": {"introduced_version": "v1.5.0", "last_verified_release": "v1.5.0", "target_release": "v1.5.1"},
+      "version": {"introduced_version": "v1.5.0", "last_verified_release": "v1.5.0", "target_release": "v1.5.2"},
       "prior_release_history": [{"release_version": "v1.5.0", "public_claim_status": "permitted"}],
-      "approval_reference": "accountable-human accepted the v1.5.1 exact-Framework-v0.2.0 compatibility-maintenance Charter and C2 scope on 2026-08-02; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "approval_reference": "accountable-human accepted the v1.5.2 immutable-release correction Charter and C2 scope on 2026-08-02; exact candidate commit, remote verification, protected-main merge, C4-Draft, C4-Publish, hosted Release, and local adoption remain separate evidence classes.",
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "system/INDEX.md", "system/03_workflows/MODULE.md", "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md", "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md"],
       "contradiction_refusal": "Forbid a material-access, sharing, relationship, authorship, external-requirement, authority, submission, Release, or installation claim when the caller-named task, current human review, required evidence, or selected release identity is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "The capability was last fully verified for published v1.5.0. This v1.5.1 compatibility-maintenance source does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, project relationship, material permission, current external requirement, human authority, scientific validity, submission readiness, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+      "limitations_and_next_action": "The capability was last fully verified for published v1.5.0. This v1.5.2 compatibility-maintenance source does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, project relationship, material permission, current external requirement, human authority, scientific validity, submission readiness, remote CI evidence, C4-Draft, or C4-Publish authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }
