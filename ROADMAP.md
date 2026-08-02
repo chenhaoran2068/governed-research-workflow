@@ -6,6 +6,28 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.5.0 (manuscript-operation and research-program-boundary guidance source scope)
+
+This versioned source is derived from immutable public v1.4.0. It adds
+`GRW-CAP-150-01`: two generic, optional, human-review-only guidance documents
+for manuscript operations and explicitly bounded relationships among research
+work units.
+
+The manuscript guidance makes requirement uncertainty, section/display/
+paragraph boundaries, claim/evidence/citation visibility, revision traceability,
+declaration and AI-use fact limits, and required human review visible. The
+boundary guidance keeps research work units isolated by default, requires human
+review before grouping or sharing stable material, and permits only narrow,
+explicit references. Neither document accesses material, grants permission,
+determines authorship, verifies external requirements, makes a result
+authoritative, or authorizes submission.
+
+This source adds no schema, validator, helper, agent, dependency, data action,
+external service action, sharing mechanism, writer, submission service, public
+intake, Release, or installed-runtime claim. A selected public version remains
+available only when its exact annotated tag and matching GitHub Release resolve
+to the selected source commit.
+
 ## v1.4.0 (controlled experience-descriptor profiles versioned source scope)
 
 This versioned source is derived from immutable public v1.3.0. It adds

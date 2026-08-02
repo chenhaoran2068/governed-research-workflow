@@ -32,3 +32,11 @@ and decision-ready human review. They organize supplied references and
 unknowns only. They do not draft or validate a manuscript, determine current
 external requirements, make an author or policy decision, or authorize a
 submission.
+
+The v1.5 source adds two optional, generic, human-review-only guidance
+documents: `MANUSCRIPT_OPERATIONAL_CHECKLISTS.md` and
+`RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md`. They make
+requirement uncertainty, artifact boundaries, traceability, default isolation,
+and narrow explicit references visible. They do not access material, grant a
+sharing permission, infer a project relationship, determine authorship or
+compliance, make a result authoritative, or authorize submission.
