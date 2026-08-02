@@ -114,8 +114,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(self.ledger["ledger_schema_version"], "1.7.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.5.0")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.4.0")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.5.1")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.5.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
         self.assertIn("separately tracked versioned source scopes", self.ledger["target_claim_scope"])
@@ -158,7 +158,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-            "v1.5.0" if record["capability_id"] in V150_SCOPE_IDS
+            "v1.5.1" if record["capability_id"] in V150_SCOPE_IDS
             else "v1.4.0" if record["capability_id"] in V1402_SCOPE_IDS
             else "v1.3.0" if record["capability_id"] in V1401_SCOPE_IDS
             else "v1.2.0" if record["capability_id"] in V120_SCOPE_IDS
@@ -419,7 +419,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(record["implementation_status"], "verified")
         self.assertEqual(record["release_disposition"], "admitted")
         self.assertEqual(record["public_claim_status"], "permitted")
-        self.assertEqual(record["version"]["target_release"], "v1.5.0")
+        self.assertEqual(record["version"]["target_release"], "v1.5.1")
+        self.assertEqual(record["version"]["last_verified_release"], "v1.5.0")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(
             set(record["interface"]["paths"]),
