@@ -5,20 +5,20 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.4.0 controlled-experience-descriptor-profiles versioned source,
-derived from immutable public v1.3.0. It preserves the frozen v1.0.0 contract,
-the v1.2 controlled-experience-vocabulary baseline, and retains
-`GRW-CAP-140-01`: generic L1 final-disposition records and an optional
-retrieval-index link to a named mapped decision. It adds `GRW-CAP-140-02`:
-generic controlled descriptor-catalogue, represented descriptor-decision, and
-derived descriptor-index structures. It adds no research-operation
-interface, public intake, direct external-contributor flow, upload/download
-helper, network action, real-content handling, data access, source-body read,
-source discovery, source library, retrieval service, RAG capability, automatic
-tagging, mapping decision, promotion, rule integration, coordinator, agent
-runtime, delegation, multi-agent orchestration, generic writer, recovery
-executor, dependency, or release decision. This versioned source tree does not
-itself prove the release or installation identity of any selected version.
+Status: v1.5.0 generic manuscript-operation and research-program-boundary
+guidance versioned source, derived from immutable public v1.4.0. It preserves
+the frozen v1.0.0 contract, the v1.2 controlled-experience-vocabulary
+baseline, and the v1.4 descriptor-profile scope. It adds `GRW-CAP-150-01`:
+two generic, optional, human-review-only guidance documents for manuscript
+operations and explicitly bounded research-program relationships. It adds no
+research-operation executor, public intake, direct external-contributor flow,
+upload/download helper, network action, real-content handling, data access,
+source-body read, source discovery, source library, retrieval service, RAG
+capability, automatic tagging, mapping decision, promotion, rule integration,
+coordinator, agent runtime, delegation, multi-agent orchestration, generic
+writer, recovery executor, dependency, or release decision. This versioned
+source tree does not itself prove the release or installation identity of any
+selected version.
 Verify a selected public version only when its exact annotated tag and matching
 GitHub Release resolve to the selected source commit. Never install a mutable
 branch.
@@ -166,6 +166,14 @@ inventory or body access, pointer resolution, discovery, label inference,
 human-decision creation, promotion, rule change, or an unknown boundary. A
 descriptor profile is retrieval context only; it is not evidence, currentness,
 approval, maturity, reuse, ownership, access, or authority.
+
+For a selected released version that admits `GRW-CAP-150-01`, it may provide
+the optional [manuscript operational checklists](system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md)
+or [research-program boundary guidance](system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md)
+only after the caller explicitly asks within an existing manuscript, revision,
+declaration, submission, or bounded relationship-review task. The guidance
+does not establish project facts, current external requirements, permissions,
+authorship, compliance, result authority, access, or submission readiness.
 
 It does not perform clinical decision-making, process patient data, certify
 ethics or compliance, validate scientific results, make final conclusions, or

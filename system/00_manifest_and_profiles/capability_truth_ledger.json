@@ -3,9 +3,9 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.4.0",
-    "historical_public_baseline": "v1.3.0",
-    "live_release_identity_rule": "This v1.4.0 versioned source is derived from immutable public v1.3.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.5.0",
+    "historical_public_baseline": "v1.4.0",
+    "live_release_identity_rule": "This v1.5.0 versioned source is derived from immutable public v1.4.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1002,6 +1002,45 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "references/controlled-experience-descriptor-profiles.md", "system/06_memory_and_learning/MODULE.md"],
       "contradiction_refusal": "Forbid a descriptor, source-access, currentness, evidence, approval, promotion, reuse, authority, Release, or installation claim when the named metadata record, explicit input, human final decision, selected release identity, or required evidence is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the proposed v1.4.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real descriptor catalogue, real source review, source currentness, human authority, real decision or mapping, promotion, rule integration, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-150-01",
+      "public_name": "Generic Manuscript Operations And Research-Program Boundary Guidance",
+      "capability_class": "routing",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides two generic, optional, human-review-only guidance documents for requirement uncertainty, manuscript artifact boundaries, claim/evidence/citation visibility, revision traceability, declaration and AI-use fact limits, default research-work-unit isolation, and narrow explicit references.",
+      "non_promise": "Does not execute research, read or access project material, grant cross-work-unit access or sharing permission, determine authorship, verify an external requirement, establish a fact, make a result authoritative, create a submission package, submit material, provide a helper, schema, validator, agent, dependency, writer, intake, network action, or Release decision.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md",
+          "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md",
+          "tests/test_v1_5_manuscript_and_program_boundary_guidance.py"
+        ],
+        "identifiers": [
+          "manuscript_operational_checklists",
+          "research_program_boundary_and_shared_materials_control",
+          "GRW-CAP-150-01"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_v1_5_manuscript_and_program_boundary_guidance.py", "identifier": "V15ManuscriptAndProgramBoundaryGuidanceTests"},
+          {"kind": "test", "path": "tests/test_system_foundation.py", "identifier": "SystemFoundationTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.5.0", "last_verified_release": null, "target_release": "v1.5.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the v1.5 generic guidance Charter and C2 scope on 2026-08-01; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "system/INDEX.md", "system/03_workflows/MODULE.md", "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md", "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md"],
+      "contradiction_refusal": "Forbid a material-access, sharing, relationship, authorship, external-requirement, authority, submission, Release, or installation claim when the caller-named task, current human review, required evidence, or selected release identity is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.5.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, project relationship, material permission, current external requirement, human authority, scientific validity, submission readiness, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

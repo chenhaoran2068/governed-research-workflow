@@ -1,10 +1,11 @@
 # Public System Module Index
 
-Status: v1.0.0 frozen public-interface source retaining the bounded public
-contract established through v0.13.0. It adds the V1 Public Interface Manifest
-and Capability Verification Map alongside the V1 Support Scope Matrix, not an
-intake, exchange, data, retrieval, or execution capability. This index does
-not prove that a selected version is released:
+Status: v1.5.0 generic-guidance source retaining the frozen public-interface
+contract established through v0.13.0. It adds generic manuscript-operation and
+research-program-boundary guidance alongside the V1 Public Interface Manifest,
+Capability Verification Map, and V1 Support Scope Matrix. It adds no intake,
+exchange, data, retrieval, execution, sharing, or submission capability. This
+index does not prove that a selected version is released:
 users must verify an exact annotated tag and matching GitHub Release rather
 than install `main` or another mutable branch.
 See `11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md`.
@@ -33,7 +34,7 @@ authority records.
 | `00` | manifest and profiles | v0.9.0 integrity-audit source retains the two public profiles and exact released framework validation | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
-| `03` | workflows | active baseline plus v0.6 record-control scope and v0.11 blank manuscript-governance templates | route references and blank assets |
+| `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, and v1.5 optional human-review-only guidance | route references, blank assets, and generic guidance |
 | `04` | evidence, requirements, and knowledge | active guidance plus v0.6 pointer/relation-record scope; no knowledge corpus or v0.11 source service | evidence/citation references |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline plus historical v0.7 promotion, v0.10 package-review, v0.10.1 synthetic exchange boundaries, v0.10.2 human-mediated future-direction boundary, and v0.11 generic public experiences | retrospective/promotion, experience-pilot, and public-experience references |
@@ -53,6 +54,14 @@ authority records.
 | `scripts/` | Explicitly invoked deterministic helper code. | Modules `02`, `05`, and `07`. |
 | `tests/` | Regression and safety checks. | Modules `05`, `10`, and `12`. |
 | `agents/openai.yaml` | Codex-facing skill metadata. | Runtime metadata, not a specialist-agent contract. |
+
+## v1.5 Optional Guidance
+
+The [manuscript operational checklists](03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md)
+and [research-program boundary and shared-materials control](03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md)
+are generic guidance for caller-named work. They do not create a project,
+access material, grant cross-work-unit access, establish a fact or authority,
+or authorize submission.
 
 ## Admission Rule
 

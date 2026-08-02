@@ -1,14 +1,14 @@
-# v1.0.0 freezes the v0.4-v0.13 bounded public contract through a machine-readable
-# V1 support matrix, interface manifest, and verification map. It adds no
-# research-operation interface, data access, public intake, network action,
-# agent runtime, delegation, generic writer, recovery executor, or release
-# decision. This manifest never proves that a selected version is installed or
-# released:
+# v1.5.0 retains the frozen v1.0.0 public contract and adds only generic,
+# human-review-only manuscript-operation and research-program-boundary guidance.
+# It adds no research-operation interface, data access, public intake, network
+# action, agent runtime, delegation, generic writer, recovery executor, or
+# release decision. This manifest never proves that a selected version is
+# installed or released:
 # verify an exact annotated tag and matching GitHub Release at installation
 # time. The workspace framework-contract version remains 0.1.0.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.0.0
+system_version: 1.5.0
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

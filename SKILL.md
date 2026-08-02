@@ -91,6 +91,17 @@ exact workspace path or project root before reading project-local records. A
 pasted excerpt may clarify the task after the root is identified; it does not
 replace the project location.
 
+For a selected released version that admits `GRW-CAP-150-01`, read
+`system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md` only when the caller
+explicitly asks for generic operational guidance within an existing manuscript,
+revision, declaration, or submission task. Read
+`system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md`
+only when the caller explicitly asks to review a stated boundary or proposed
+relationship among named research work units. These are optional guidance
+documents, not a new request class or an automatic read. They do not establish
+facts, permissions, authorship, compliance, source access, result authority,
+or submission readiness.
+
 ## Collaboration Modes
 
 Use human-governed interactive work unless the user provides an explicit,

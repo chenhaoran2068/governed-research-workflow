@@ -33,6 +33,20 @@ class SystemFoundationTests(unittest.TestCase):
         self.assertIn("  - standalone", manifest)
         self.assertIn("  - framework_integrated", manifest)
         self.assertIn("framework_compatibility:", manifest)
+        self.assertIn("system_version: 1.5.0", manifest)
+
+    def test_v15_guidance_documents_are_present_and_route_only_to_human_review(self) -> None:
+        workflow_root = SYSTEM_ROOT / "03_workflows"
+        manuscript = workflow_root / "MANUSCRIPT_OPERATIONAL_CHECKLISTS.md"
+        boundary = workflow_root / "RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md"
+        for path in (manuscript, boundary):
+            self.assertTrue(path.is_file(), path)
+            text = path.read_text(encoding="utf-8").lower()
+            self.assertIn("human", text)
+            self.assertIn("does not", text)
+
+        self.assertIn("optional", manuscript.read_text(encoding="utf-8").lower())
+        self.assertIn("isolated by default", boundary.read_text(encoding="utf-8").lower())
 
     def test_system_tree_has_no_private_workspace_markers(self) -> None:
         public_files = [
