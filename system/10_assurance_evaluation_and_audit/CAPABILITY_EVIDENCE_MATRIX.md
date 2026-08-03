@@ -1,7 +1,7 @@
 # Capability Evidence Matrix
 
 Status: historical `v0.4.0` release-source assurance plus later bounded
-evidence maps, including the v0.11 template and public-experience checks. It
+evidence maps, including the v0.11 and v1.6 public-experience checks. It
 is not by itself a public Release record.
 Capability admission is decided only by the canonical ledger and does not make
 this branch an installation target or grant C4 authority.
@@ -31,6 +31,7 @@ those records to expected evidence; it is not a competing capability ledger.
 | `GRW-CAP-110-04` | C2-admitted v0.11 source scope | Blank-template presence and route/package boundary regression tests | Does not contact a portal, verify current requirements, or submit material. |
 | `GRW-CAP-110-05` | C2-admitted v0.11 source scope | Blank-template presence and human-decision boundary regression tests | Does not make or authorize a decision. |
 | `GRW-CAP-110-06` | C2-admitted v0.11 source scope | Exact-count, type-count, required-field, and selected local-marker absence checks | Does not prove complete redaction, source currentness, access, or a public Knowledge/retrieval capability. |
+| `GRW-CAP-160-01` | C2-admitted v1.6 source scope | Public vocabulary, catalogue, 38-card, public-boundary, validator, and synthetic negative tests | Does not expose private material, prove an external requirement, grant access, approve an action, promote an experience, or automatically load or update guidance. |
 
 A passing test only verifies the named technical property. It does not approve
 science, clinical work, compliance, rights, a project state, a release, or a

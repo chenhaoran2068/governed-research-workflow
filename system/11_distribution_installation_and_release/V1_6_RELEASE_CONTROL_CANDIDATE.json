@@ -1,0 +1,28 @@
+{
+  "release_control_schema_version": "1.0.0",
+  "candidate_release_version": "v1.6.0",
+  "status": "local_candidate_only",
+  "capability_ids": ["GRW-CAP-160-01"],
+  "public_baseline": {
+    "annotated_tag": "v1.5.2",
+    "commit": "4f73a2fca5b998c9e37d811827f13d83418f6cba"
+  },
+  "required_gates": [
+    "public content review for every card",
+    "public vocabulary and catalogue validation",
+    "synthetic negative validation",
+    "complete local public test suite",
+    "two M48 review rounds",
+    "separate candidate commit authorization",
+    "separate remote CI authorization",
+    "separate protected-main review and merge authorization",
+    "separate exact-main C4 authorization"
+  ],
+  "prohibited_claims": [
+    "hosted release",
+    "installed runtime",
+    "private source provenance",
+    "automatic loading or synchronization",
+    "access or approval authority"
+  ]
+}

@@ -53,6 +53,7 @@ EXPECTED_CAPABILITY_IDS = {
     "GRW-CAP-140-01",
     "GRW-CAP-140-02",
     "GRW-CAP-150-01",
+    "GRW-CAP-160-01",
 }
 RELEASED_OR_ADMITTED_IDS = EXPECTED_CAPABILITY_IDS - {
     "GRW-CAP-040-03",
@@ -75,6 +76,7 @@ V120_SCOPE_IDS = {"GRW-CAP-120-01"}
 V1401_SCOPE_IDS = {"GRW-CAP-140-01"}
 V1402_SCOPE_IDS = {"GRW-CAP-140-02"}
 V150_SCOPE_IDS = {"GRW-CAP-150-01"}
+V160_SCOPE_IDS = {"GRW-CAP-160-01"}
 REQUIRED_RECORD_FIELDS = {
     "capability_id",
     "public_name",
@@ -111,11 +113,11 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         cls.records = cls.ledger["capabilities"]
 
     def test_canonical_ledger_and_schema_have_expected_identity(self) -> None:
-        self.assertEqual(self.ledger["ledger_schema_version"], "1.7.0")
+        self.assertEqual(self.ledger["ledger_schema_version"], "1.8.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.5.2")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.5.0")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.6.0")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.5.2")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
         self.assertIn("separately tracked versioned source scopes", self.ledger["target_claim_scope"])
@@ -158,7 +160,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-            "v1.5.2" if record["capability_id"] in V150_SCOPE_IDS
+            "v1.6.0" if record["capability_id"] in V160_SCOPE_IDS
+            else "v1.5.2" if record["capability_id"] in V150_SCOPE_IDS
             else "v1.4.0" if record["capability_id"] in V1402_SCOPE_IDS
             else "v1.3.0" if record["capability_id"] in V1401_SCOPE_IDS
             else "v1.2.0" if record["capability_id"] in V120_SCOPE_IDS
@@ -433,6 +436,18 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertIn("does not execute research", record["non_promise"].lower())
         self.assertIn("sharing permission", record["non_promise"].lower())
         self.assertIn("submit material", record["non_promise"].lower())
+        self.assertIn("hosted tag", record["limitations_and_next_action"].lower())
+
+    def test_v160_is_public_guidance_without_private_provenance_or_authority(self) -> None:
+        record = next(record for record in self.records if record["capability_id"] == "GRW-CAP-160-01")
+        self.assertEqual(record["implementation_status"], "verified")
+        self.assertEqual(record["release_disposition"], "admitted")
+        self.assertEqual(record["public_claim_status"], "permitted")
+        self.assertEqual(record["version"]["target_release"], "v1.6.0")
+        self.assertIsNone(record["version"]["last_verified_release"])
+        self.assertIn("38", record["promise"])
+        self.assertIn("private source", record["non_promise"].lower())
+        self.assertIn("automatic loading", record["non_promise"].lower())
         self.assertIn("hosted tag", record["limitations_and_next_action"].lower())
 
     def test_planned_r40_records_cannot_be_misrepresented_as_admitted(self) -> None:

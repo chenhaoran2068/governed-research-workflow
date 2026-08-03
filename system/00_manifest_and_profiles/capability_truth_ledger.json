@@ -1,11 +1,11 @@
 {
-  "ledger_schema_version": "1.7.0",
+  "ledger_schema_version": "1.8.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.5.2",
-    "historical_public_baseline": "v1.5.0",
-    "live_release_identity_rule": "This v1.5.2 compatibility-maintenance source is derived from immutable public v1.5.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.6.0",
+    "historical_public_baseline": "v1.5.2",
+    "live_release_identity_rule": "This v1.6.0 public-safe shared-experience derivative source is derived from immutable public v1.5.2. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1040,7 +1040,55 @@
       "approval_reference": "accountable-human accepted the v1.5.2 immutable-release correction Charter and C2 scope on 2026-08-02; exact candidate commit, remote verification, protected-main merge, C4-Draft, C4-Publish, hosted Release, and local adoption remain separate evidence classes.",
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "system/INDEX.md", "system/03_workflows/MODULE.md", "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md", "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md"],
       "contradiction_refusal": "Forbid a material-access, sharing, relationship, authorship, external-requirement, authority, submission, Release, or installation claim when the caller-named task, current human review, required evidence, or selected release identity is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "The capability was last fully verified for published v1.5.0. This v1.5.2 compatibility-maintenance source does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, project relationship, material permission, current external requirement, human authority, scientific validity, submission readiness, remote CI evidence, C4-Draft, or C4-Publish authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+      "limitations_and_next_action": "The capability was last fully verified for published v1.5.0. This later source retains the v1.5.2 compatibility-maintenance history but does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, project relationship, material permission, current external requirement, human authority, scientific validity, submission readiness, remote CI evidence, C4-Draft, or C4-Publish authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-160-01",
+      "public_name": "Public-Safe Shared-Experience Derivative Library",
+      "capability_class": "routing",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides a versioned public vocabulary, catalogue, and exactly 38 generic public guidance cards re-expressed only from the already-public KGE collection. The files may be selectively read through an explicit relevant task route after installation of a selected System version.",
+      "non_promise": "Does not publish or resolve a private source, private identifier, local path, hash, receipt, decision, mapping, project fact, or Study-local material; provide a source library, RAG corpus, current-requirement checker, approval, promotion, automatic recommendation, automatic loading, synchronization, update, data access, external action, helper, agent runtime, or Release decision.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "PUBLIC_BOUNDARY.md",
+          "references/public-safe-shared-experience-derivatives.md",
+          "assets/public-experience-derivatives/public_experience_vocabulary.json",
+          "assets/public-experience-derivatives/public_experience_catalogue.json",
+          "assets/public-experience-derivatives/README.md",
+          "assets/public-experience-derivatives/schemas/public_experience_vocabulary.schema.json",
+          "assets/public-experience-derivatives/schemas/public_experience_catalogue.schema.json",
+          "assets/public-experience-derivatives/schemas/public_experience_card.schema.json",
+          "scripts/validate_public_experience_derivatives.py",
+          "tests/test_v1_6_public_safe_shared_experience_derivatives.py",
+          "tests/test_v1_6_release_preparation.py"
+        ],
+        "identifiers": [
+          "GRW-CAP-160-01",
+          "public_safe_experience_guidance",
+          "GRW-TOP-001..015",
+          "GRW-EXP-001..038"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_v1_6_public_safe_shared_experience_derivatives.py", "identifier": "V16PublicSafeSharedExperienceDerivativesTests"},
+          {"kind": "test", "path": "tests/test_v1_6_release_preparation.py", "identifier": "V16ReleasePreparationTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.6.0", "last_verified_release": null, "target_release": "v1.6.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the v1.6 Charter, C2 scope, C2 Revision A, and C3 Revision A on 2026-08-03; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/public-safe-shared-experience-derivatives.md", "assets/public-experience-derivatives/README.md"],
+      "contradiction_refusal": "Forbid a private-provenance, source-access, current-external-requirement, approval, promotion, automatic-loading, synchronization, Release, or installation claim when the selected release identity, card boundary, current task, accountable-human review, or required evidence is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.6.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, private experience derivative, source currentness, human authority, real mapping, promotion, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

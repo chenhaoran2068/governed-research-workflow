@@ -6,6 +6,32 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.6.0 (public-safe shared-experience derivative source scope)
+
+This versioned source is derived from immutable public v1.5.2. It adds
+`GRW-CAP-160-01`: one read-only public vocabulary, catalogue, and exactly 38
+generic experience cards. Each card has one public primary topic, optional
+public secondary topics, a public KGE backward reference, generic experience,
+recommended behavior, and a stop boundary. The new library supersedes the
+public KGE entrypoint while retaining the older Releases as historical source
+scope.
+
+The public package uses only already-public KGE text. It does not read or
+publish private Shared sources, Study-local material, private vocabulary terms,
+source identifiers, local paths, hashes, receipts, mapping decisions, or human
+decision records. It is not a private archive, source library, RAG capability,
+current-source checker, approval mechanism, promotion mechanism, or automatic
+recommendation service. Cards are installed only with an explicit selected
+System version and are not automatically loaded in full, synchronized, or
+updated.
+
+This source adds a read-only structural validator and synthetic positive and
+negative fixtures. It adds no data action, external service action, public
+intake, automatic tagging, real mapping, promotion, helper, agent runtime,
+release, or installed-runtime claim. Exact candidate, CI, protected-main,
+annotated tag, matching GitHub Release, and local adoption remain separate
+evidence classes.
+
 ## v1.5.2 (exact Framework v0.2.0 compatibility-maintenance source scope)
 
 This maintenance source is derived from immutable public v1.5.0. It retains

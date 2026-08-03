@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/assets/public-experience-derivatives/schemas/public_experience_catalogue.schema.json",
+  "title": "Public Experience Catalogue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "catalogue_version", "status", "cards"],
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "catalogue_version": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"const": "current_public"},
+    "cards": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/card"}}
+  },
+  "$defs": {
+    "card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_experience_id",
+        "legacy_public_identifier",
+        "card_path",
+        "primary_public_topic",
+        "optional_secondary_topics",
+        "status"
+      ],
+      "properties": {
+        "public_experience_id": {"type": "string", "pattern": "^GRW-EXP-[0-9]{3}$"},
+        "legacy_public_identifier": {"type": "string", "pattern": "^KGE-[0-9]{3}$"},
+        "card_path": {"type": "string", "pattern": "^assets/public-experience-derivatives/cards/GRW-EXP-[0-9]{3}\\.md$"},
+        "primary_public_topic": {"type": "string", "pattern": "^GRW-TOP-[0-9]{3}$"},
+        "optional_secondary_topics": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^GRW-TOP-[0-9]{3}$"}
+        },
+        "status": {"const": "current_public_guidance"}
+      }
+    }
+  }
+}
