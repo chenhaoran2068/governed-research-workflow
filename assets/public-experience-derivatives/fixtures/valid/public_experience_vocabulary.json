@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "vocabulary_version": "v1.6.0",
+  "status": "current_public",
+  "terms": [
+    {
+      "public_topic_id": "GRW-TOP-001",
+      "canonical_term": "knowledge-governance",
+      "chinese_explanation": "Synthetic explanation",
+      "definition": "Synthetic definition.",
+      "scope_note": "Synthetic scope.",
+      "exclusions": "Synthetic exclusion.",
+      "permitted_aliases": [],
+      "broader_topic_id": null,
+      "term_status": "accepted",
+      "introduced_in": "v1.6.0",
+      "deprecated_by": null
+    }
+  ]
+}

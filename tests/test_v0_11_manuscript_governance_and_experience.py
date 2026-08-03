@@ -61,40 +61,26 @@ class V011ManuscriptGovernanceAndExperienceTests(unittest.TestCase):
             self.assertIn(refusal, text)
             self.assertIn("unknown", text)
 
-    def test_experience_collection_has_exact_count_types_and_required_fields(self) -> None:
+    def test_experience_collection_is_a_legacy_entrypoint_after_v16_supersession(self) -> None:
         text = EXPERIENCE_COLLECTION.read_text(encoding="utf-8")
-        rows = [line for line in text.splitlines() if line.startswith("| KGE-")]
-        self.assertEqual(len(rows), 38)
-        identifiers = [row.split("|")[1].strip() for row in rows]
-        self.assertEqual(identifiers, [f"KGE-{number:03d}" for number in range(1, 39)])
-        self.assertEqual(sum("adapted_public_experience_rule" in row for row in rows), 14)
-        self.assertEqual(sum("redacted_historical_experience_note" in row for row in rows), 24)
-        for row in rows:
-            cells = [cell.strip() for cell in row.split("|")]
-            self.assertEqual(len(cells), 8, row)
-            self.assertTrue(all(cells[index] for index in range(1, 7)), row)
+        self.assertIn("Historical KGE Public Collection Entry Point", text)
+        self.assertIn("KGE-001` through `KGE-038", text)
+        self.assertIn("public-safe-shared-experience-derivatives.md", text)
+        self.assertNotIn("| KGE-001", text)
 
-    def test_collection_is_not_a_knowledge_or_retrieval_surface_and_excludes_selected_local_markers(self) -> None:
+    def test_legacy_entrypoint_preserves_non_authority_boundary(self) -> None:
         text = EXPERIENCE_COLLECTION.read_text(encoding="utf-8").lower()
-        entry_text = "\n".join(
-            line for line in text.splitlines() if line.startswith("| kge-")
-        )
-        self.assertIn("not a `knowledge` content package", text)
-        self.assertIn("not a `knowledge` content package, source library", text)
-        self.assertIn("neither type authorizes access", text)
-        self.assertIn("private project, source, or person identifier", text)
-        self.assertIn("public `kge-001` through `kge-038` identifiers", text)
-        self.assertNotIn("project\nrecord, identifier, hash", text)
-        self.assertIsNone(re.search(r"\bm(?:1[0-9]|[2-4][0-9])\b", entry_text))
-        for marker in FORBIDDEN_COLLECTION_MARKERS:
-            self.assertNotIn(marker, entry_text, marker)
+        self.assertIn("not a\nknowledge content package", text)
+        self.assertIn("not a\nknowledge content package, source library", text)
+        self.assertIn("current-source\nchecker, approval, promotion mechanism", text)
+        self.assertIn("older immutable\nreleases", text)
 
     def test_references_and_synthetic_example_preserve_the_non_authority_boundary(self) -> None:
         experience_reference = EXPERIENCE_REFERENCE.read_text(encoding="utf-8").lower()
         manuscript_reference = MANUSCRIPT_REFERENCE.read_text(encoding="utf-8").lower()
         synthetic_example = SYNTHETIC_EXAMPLE.read_text(encoding="utf-8").lower()
-        self.assertIn("not a `knowledge` content package", experience_reference)
-        self.assertIn("do not add source payloads", experience_reference)
+        self.assertIn("historical public identifiers", experience_reference)
+        self.assertIn("public-safe-shared-experience-derivatives.md", experience_reference)
         self.assertIn("current official sources", manuscript_reference)
         self.assertIn("not a scientific conclusion", manuscript_reference)
         self.assertIn("synthetic-only illustration", synthetic_example)
@@ -106,7 +92,7 @@ class V011ManuscriptGovernanceAndExperienceTests(unittest.TestCase):
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertIn("system_version: 1.5.2", manifest)
+        self.assertIn("system_version: 1.6.0", manifest)
         self.assertIn("Status: v1.1.0 versioned source scope", readme)
         self.assertIn("does not itself prove the\nrelease or installation identity", readme)
         self.assertIn("## v0.11.0", roadmap)

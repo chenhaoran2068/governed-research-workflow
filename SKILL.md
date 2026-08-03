@@ -86,6 +86,19 @@ invoking the validator. Do not discover files, read a source inventory or
 source body, infer descriptors, create a decision or index entry, promote an
 experience, modify a rule, or continue across an unknown boundary.
 
+For an explicitly requested `public_safe_experience_guidance` task, first
+resolve the selected version to its exact public tag and matching GitHub
+Release, then check the capability ledger for an admitted `GRW-CAP-160-01`
+record. Read `references/public-safe-shared-experience-derivatives.md`, then
+read `assets/public-experience-derivatives/public_experience_catalogue.json`
+only to locate a potentially relevant public card. Read a selected card only
+when the caller's stated task makes that card relevant. Do not load all cards,
+infer relevance from an undisclosed source, resolve a private source, treat a
+card as current external guidance or approval, create a mapping, promote an
+experience, modify a rule, or continue across an unknown boundary. This route
+is selective public guidance, not a retrieval service, recommendation engine,
+or authority mechanism.
+
 For existing-study, legacy-project, manuscript, or revision work, require an
 exact workspace path or project root before reading project-local records. A
 pasted excerpt may clarify the task after the root is identified; it does not
@@ -229,8 +242,8 @@ Stop and request accountable evidence or approval before:
   references/manuscript-and-submission-control.md
 - Optional blank manuscript-governance templates:
   references/manuscript-governance-templates.md
-- Generic public knowledge-governance experiences, not a Knowledge or retrieval
-  route: references/knowledge-governance-experience-collection.md
+- Public-safe shared-experience derivative guidance, when admitted for the
+  selected release: references/public-safe-shared-experience-derivatives.md
 - Project retrospective learning and lesson promotion:
   references/retrospective-learning.md
 - Metadata-only lesson-promotion control records, when admitted for the
