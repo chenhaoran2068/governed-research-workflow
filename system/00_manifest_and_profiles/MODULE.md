@@ -41,3 +41,8 @@ The v0.11 source extended the ledger's controlled capability identifier pattern
 for `GRW-CAP-110-01` through `GRW-CAP-110-06`. v0.12 adds no identifier-pattern
 change, profile, framework contract, dependency, helper, runtime, or
 service-discovery behavior.
+
+The v1.7 source extends the current ledger identifier pattern only for
+`GRW-CAP-170-01`, Public Collaboration Guidance Derivatives. It does not alter
+the frozen v1 public-interface inventory, profile, Framework contract,
+dependency, helper, runtime, or service-discovery behavior.

@@ -20,7 +20,7 @@ class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         workflow = (ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.6.0", manifest)
+        self.assertIn("system_version: 1.7.0", manifest)
         self.assertIn('supported_framework_versions: "0.2.0"', manifest)
         self.assertNotIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn(f"FRAMEWORK_RELEASE_TAG: {FRAMEWORK_TAG}", workflow)

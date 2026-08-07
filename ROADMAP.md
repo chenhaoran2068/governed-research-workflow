@@ -6,6 +6,24 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.7.0 (public collaboration-guidance derivative source scope)
+
+This versioned source is derived from immutable public v1.6.0. It adds
+`GRW-CAP-170-01`: two generic System-owned collaboration-guidance documents,
+three public navigation topics, and three selectively readable public
+experience cards. The new cards have no KGE predecessor; the original
+38-card KGE-derived library remains intact under `GRW-CAP-160-01`.
+
+The guidance covers substantive reader-facing delivery before a supporting
+material reference, visible plan state and controlled plan changes, and
+governed task initiation. It is generic guidance only. It does not disclose
+private sources, decisions, mappings, paths, receipts, projects, Studies, or
+unpublished material; establish current external requirements or approval;
+grant access; automatically load or recommend material; execute a task; or
+create delegation, agent-runtime, Framework, release, or runtime-installation
+capabilities. Exact candidate, CI, protected-main, annotated tag, matching
+GitHub Release, and local adoption remain separate evidence classes.
+
 ## v1.6.0 (public-safe shared-experience derivative source scope)
 
 This versioned source is derived from immutable public v1.5.2. It adds

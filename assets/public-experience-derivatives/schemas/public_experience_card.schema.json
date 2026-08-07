@@ -22,7 +22,7 @@
   ],
   "properties": {
     "public_experience_id": {"type": "string", "pattern": "^GRW-EXP-[0-9]{3}$"},
-    "legacy_public_identifier": {"type": "string", "pattern": "^KGE-[0-9]{3}$"},
+    "legacy_public_identifier": {"type": ["string", "null"], "pattern": "^KGE-[0-9]{3}$"},
     "content_kind": {"enum": ["adapted_public_experience_rule", "redacted_historical_experience_note"]},
     "title": {"type": "string", "minLength": 1},
     "primary_public_topic": {"type": "string", "pattern": "^GRW-TOP-[0-9]{3}$"},

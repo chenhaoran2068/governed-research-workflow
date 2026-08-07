@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "vocabulary_version": "v1.6.0",
+  "vocabulary_version": "v1.7.0",
   "status": "current_public",
   "terms": [
     {
@@ -196,6 +196,45 @@
       "broader_topic_id": "GRW-TOP-001",
       "term_status": "accepted",
       "introduced_in": "v1.6.0",
+      "deprecated_by": null
+    },
+    {
+      "public_topic_id": "GRW-TOP-016",
+      "canonical_term": "substantive-reader-facing-delivery",
+      "chinese_explanation": "面向读者的实质性内容交付",
+      "definition": "Giving the reader the task-relevant finding, change, conclusion, or impact before referring to supporting material.",
+      "scope_note": "Use for reports, reviews, handoffs, and manuscripts that cite a supporting artifact.",
+      "exclusions": "Does not establish truth, evidence sufficiency, permission to disclose material, or result authority.",
+      "permitted_aliases": ["content-before-reference"],
+      "broader_topic_id": "GRW-TOP-001",
+      "term_status": "accepted",
+      "introduced_in": "v1.7.0",
+      "deprecated_by": null
+    },
+    {
+      "public_topic_id": "GRW-TOP-017",
+      "canonical_term": "plan-state-visibility-and-change-control",
+      "chinese_explanation": "计划状态可见性与受控变更",
+      "definition": "Showing the current plan for a declared multi-step task and distinguishing progress updates from material plan changes.",
+      "scope_note": "Use for planned work with meaningful scope, order, decision, or stop boundaries.",
+      "exclusions": "Does not grant authority, require a fixed interface, or make a task outcome correct.",
+      "permitted_aliases": ["plan-state-control"],
+      "broader_topic_id": "GRW-TOP-001",
+      "term_status": "accepted",
+      "introduced_in": "v1.7.0",
+      "deprecated_by": null
+    },
+    {
+      "public_topic_id": "GRW-TOP-018",
+      "canonical_term": "governed-task-initiation",
+      "chinese_explanation": "受治理的任务启动",
+      "definition": "Starting a task with an explicit purpose, basis, expected output, caution, stop condition, and accountable-human decision boundary.",
+      "scope_note": "Use for consequential or multi-step work where unknowns and authority boundaries must remain visible.",
+      "exclusions": "Does not create an authorization, executor, delegation, or standing permission.",
+      "permitted_aliases": ["human-gated-task-initiation"],
+      "broader_topic_id": "GRW-TOP-001",
+      "term_status": "accepted",
+      "introduced_in": "v1.7.0",
       "deprecated_by": null
     }
   ]

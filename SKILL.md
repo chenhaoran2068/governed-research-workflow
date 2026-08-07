@@ -89,15 +89,17 @@ experience, modify a rule, or continue across an unknown boundary.
 For an explicitly requested `public_safe_experience_guidance` task, first
 resolve the selected version to its exact public tag and matching GitHub
 Release, then check the capability ledger for an admitted `GRW-CAP-160-01`
-record. Read `references/public-safe-shared-experience-derivatives.md`, then
-read `assets/public-experience-derivatives/public_experience_catalogue.json`
-only to locate a potentially relevant public card. Read a selected card only
-when the caller's stated task makes that card relevant. Do not load all cards,
-infer relevance from an undisclosed source, resolve a private source, treat a
-card as current external guidance or approval, create a mapping, promote an
-experience, modify a rule, or continue across an unknown boundary. This route
-is selective public guidance, not a retrieval service, recommendation engine,
-or authority mechanism.
+or `GRW-CAP-170-01` record. Read
+`references/public-safe-shared-experience-derivatives.md`, then read
+`assets/public-experience-derivatives/public_experience_catalogue.json` only
+to locate a potentially relevant public card. Read a selected card or named
+public collaboration-guidance document only when the caller's stated task
+makes it relevant. Do not load all cards, infer relevance from an undisclosed
+source, resolve a private source, treat a card or guidance document as current
+external guidance or approval, create a mapping, promote an experience, modify
+a rule, or continue across an unknown boundary. This route is selective public
+guidance, not a retrieval service, recommendation engine, task executor, or
+authority mechanism.
 
 For existing-study, legacy-project, manuscript, or revision work, require an
 exact workspace path or project root before reading project-local records. A
