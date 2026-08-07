@@ -1,11 +1,11 @@
 {
-  "ledger_schema_version": "1.8.0",
+  "ledger_schema_version": "1.9.0",
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.6.0",
-    "historical_public_baseline": "v1.5.2",
-    "live_release_identity_rule": "This v1.6.0 public-safe shared-experience derivative source is derived from immutable public v1.5.2. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.7.0",
+    "historical_public_baseline": "v1.6.0",
+    "live_release_identity_rule": "This v1.7.0 public collaboration-guidance derivative source is derived from immutable public v1.6.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1089,6 +1089,51 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/public-safe-shared-experience-derivatives.md", "assets/public-experience-derivatives/README.md"],
       "contradiction_refusal": "Forbid a private-provenance, source-access, current-external-requirement, approval, promotion, automatic-loading, synchronization, Release, or installation claim when the selected release identity, card boundary, current task, accountable-human review, or required evidence is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the proposed v1.6.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, private experience derivative, source currentness, human authority, real mapping, promotion, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-170-01",
+      "public_name": "Public Collaboration Guidance Derivatives",
+      "capability_class": "routing",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides two generic System-owned collaboration guidance documents, three public navigation topics, and three public-safe experience cards that may be selectively read for an explicitly relevant task.",
+      "non_promise": "Does not publish or resolve a private source, private identifier, local path, hash, receipt, decision, mapping, project fact, Study-local material, or unpublished material; provide a source library, RAG corpus, current-requirement checker, approval, promotion, automatic recommendation, automatic loading, synchronization, update, task executor, delegation, agent runtime, data access, external action, helper, or Release decision.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "system/03_workflows/SUBSTANTIVE_CONTENT_BEFORE_SUPPORTING_MATERIAL_REFERENCE.md",
+          "system/03_workflows/PLAN_STATE_VISIBILITY_AND_CONTROLLED_CHANGE.md",
+          "assets/public-experience-derivatives/public_experience_vocabulary.json",
+          "assets/public-experience-derivatives/public_experience_catalogue.json",
+          "assets/public-experience-derivatives/cards/GRW-EXP-039.md",
+          "assets/public-experience-derivatives/cards/GRW-EXP-040.md",
+          "assets/public-experience-derivatives/cards/GRW-EXP-041.md",
+          "tests/test_v1_7_collaboration_guidance_derivatives.py"
+        ],
+        "identifiers": [
+          "GRW-CAP-170-01",
+          "GRW-TOP-016..018",
+          "GRW-EXP-039..041"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_v1_7_collaboration_guidance_derivatives.py", "identifier": "V17CollaborationGuidanceDerivativesTests"},
+          {"kind": "test", "path": "tests/test_v1_6_public_safe_shared_experience_derivatives.py", "identifier": "V16PublicSafeSharedExperienceDerivativesTests"},
+          {"kind": "test", "path": "tests/test_capability_truth_ledger.py", "identifier": "CapabilityTruthLedgerTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.7.0", "last_verified_release": null, "target_release": "v1.7.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the v1.7 collaboration-guidance Charter and C2 scope in the active Codex conversation on 2026-08-07; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/public-safe-shared-experience-derivatives.md", "assets/public-experience-derivatives/README.md"],
+      "contradiction_refusal": "Forbid a private-provenance, source-access, current-external-requirement, approval, promotion, automatic-loading, task-execution, delegation, Release, or installation claim when the selected release identity, guidance boundary, current task, accountable-human review, or required evidence is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.7.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, private experience derivative, source currentness, human authority, real mapping, promotion, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

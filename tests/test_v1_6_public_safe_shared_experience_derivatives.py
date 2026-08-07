@@ -1,4 +1,4 @@
-"""Regression checks for the v1.6 public-safe shared-experience library."""
+"""Regression checks for the retained v1.6 public-safe card contract."""
 
 from __future__ import annotations
 
@@ -39,30 +39,35 @@ class V16PublicSafeSharedExperienceDerivativesTests(unittest.TestCase):
         vocabulary = json.loads(VOCABULARY_PATH.read_text(encoding="utf-8"))
         catalogue = json.loads(CATALOGUE_PATH.read_text(encoding="utf-8"))
         self.assertEqual(vocabulary["schema_version"], "1.0.0")
-        self.assertEqual(vocabulary["vocabulary_version"], "v1.6.0")
+        self.assertEqual(vocabulary["vocabulary_version"], "v1.7.0")
         self.assertEqual(vocabulary["status"], "current_public")
-        self.assertEqual(len(vocabulary["terms"]), 15)
+        self.assertEqual(len(vocabulary["terms"]), 18)
         self.assertEqual(
             {term["public_topic_id"] for term in vocabulary["terms"]},
-            {f"GRW-TOP-{number:03d}" for number in range(1, 16)},
+            {f"GRW-TOP-{number:03d}" for number in range(1, 19)},
         )
-        self.assertEqual(len(catalogue["cards"]), 38)
+        self.assertEqual(len(catalogue["cards"]), 41)
         self.assertEqual(
             {card["public_experience_id"] for card in catalogue["cards"]},
-            {f"GRW-EXP-{number:03d}" for number in range(1, 39)},
+            {f"GRW-EXP-{number:03d}" for number in range(1, 42)},
         )
         self.assertEqual(
-            {card["legacy_public_identifier"] for card in catalogue["cards"]},
+            {
+                card["legacy_public_identifier"]
+                for card in catalogue["cards"]
+                if card["legacy_public_identifier"] is not None
+            },
             {f"KGE-{number:03d}" for number in range(1, 39)},
         )
 
     def test_public_cards_preserve_public_kind_and_boundary(self) -> None:
         cards = [VALIDATOR.parse_card(path)[0] for path in sorted(CARDS_ROOT.glob("GRW-EXP-*.md"))]
-        self.assertEqual(len(cards), 38)
-        self.assertEqual(sum(card["content_kind"] == "adapted_public_experience_rule" for card in cards), 14)
+        self.assertEqual(len(cards), 41)
+        self.assertEqual(sum(card["content_kind"] == "adapted_public_experience_rule" for card in cards), 17)
         self.assertEqual(sum(card["content_kind"] == "redacted_historical_experience_note" for card in cards), 24)
         for card in cards:
-            self.assertEqual(card["public_package_version"], "v1.6.0")
+            expected_version = "v1.6.0" if int(card["public_experience_id"].removeprefix("GRW-EXP-")) <= 38 else "v1.7.0"
+            self.assertEqual(card["public_package_version"], expected_version)
             self.assertEqual(card["status"], "current_public_guidance")
             self.assertTrue(card["exclusions_and_stop_conditions"])
             self.assertEqual(VALIDATOR.validate_card_file(CARDS_ROOT / f"{card['public_experience_id']}.md"), [])
@@ -84,6 +89,7 @@ class V16PublicSafeSharedExperienceDerivativesTests(unittest.TestCase):
             "private_identifier_in_card.md",
             "private_path_in_card.md",
             "legacy_identifier_mismatch_card.md",
+            "non_kge_legacy_identifier_card.md",
             "missing_stop_boundary_card.md",
         ):
             self.assertTrue(VALIDATOR.validate_card_file(INVALID_ROOT / name), name)

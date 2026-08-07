@@ -39,7 +39,13 @@ EXPECTED_TOPICS = {
     "GRW-TOP-013": "lifecycle-maintenance",
     "GRW-TOP-014": "capability-stabilization",
     "GRW-TOP-015": "public-material-boundary",
+    "GRW-TOP-016": "substantive-reader-facing-delivery",
+    "GRW-TOP-017": "plan-state-visibility-and-change-control",
+    "GRW-TOP-018": "governed-task-initiation",
 }
+LEGACY_EXPERIENCE_IDS = {f"GRW-EXP-{number:03d}" for number in range(1, 39)}
+NEW_DERIVATIVE_EXPERIENCE_IDS = {f"GRW-EXP-{number:03d}" for number in range(39, 42)}
+EXPECTED_EXPERIENCE_IDS = LEGACY_EXPERIENCE_IDS | NEW_DERIVATIVE_EXPERIENCE_IDS
 PRIVATE_MARKERS = (
     re.compile(r"\b(?:SRC|EDR|XVT|XVD)-[A-Za-z0-9-]+\b"),
     re.compile(r"(?:[A-Za-z]:[\\/]|\\\\|/Users/|/home/)", re.IGNORECASE),
@@ -66,7 +72,7 @@ def _schema_errors(schema_path: Path, value: Any) -> list[str]:
 
 def _parse_scalar(value: str) -> Any:
     value = value.strip()
-    if value.startswith("[") or value.startswith("{") or value.startswith('"'):
+    if value in {"null", "true", "false"} or value.startswith("[") or value.startswith("{") or value.startswith('"'):
         return json.loads(value)
     return value
 
@@ -109,9 +115,13 @@ def _validate_card_content(card: dict[str, Any], text: str) -> list[str]:
             errors.append(f"card contains prohibited automation or authority claim: {claim}")
     public_id = card.get("public_experience_id")
     legacy_id = card.get("legacy_public_identifier")
-    if isinstance(public_id, str) and isinstance(legacy_id, str):
-        if public_id.removeprefix("GRW-EXP-") != legacy_id.removeprefix("KGE-"):
-            errors.append("public and legacy identifiers must have equal numeric suffixes")
+    if public_id in LEGACY_EXPERIENCE_IDS:
+        expected_legacy_id = f"KGE-{public_id.removeprefix('GRW-EXP-')}"
+        if legacy_id != expected_legacy_id:
+            errors.append("legacy card must retain its matching KGE identifier")
+    elif public_id in NEW_DERIVATIVE_EXPERIENCE_IDS:
+        if legacy_id is not None:
+            errors.append("new public derivative must not claim a KGE identifier")
     return errors
 
 
@@ -176,22 +186,27 @@ def validate_package(vocabulary_path: Path, catalogue_path: Path, cards_root: Pa
 
     cards = catalogue["cards"]
     experience_ids = [card["public_experience_id"] for card in cards]
-    legacy_ids = [card["legacy_public_identifier"] for card in cards]
+    legacy_ids = [card["legacy_public_identifier"] for card in cards if card["legacy_public_identifier"] is not None]
     if len(experience_ids) != len(set(experience_ids)):
         errors.append("catalogue contains duplicate public experience identifiers")
     if len(legacy_ids) != len(set(legacy_ids)):
         errors.append("catalogue contains duplicate legacy public identifiers")
-    expected_experience_ids = {f"GRW-EXP-{number:03d}" for number in range(1, 39)}
+    expected_experience_ids = EXPECTED_EXPERIENCE_IDS
     expected_legacy_ids = {f"KGE-{number:03d}" for number in range(1, 39)}
     if set(experience_ids) != expected_experience_ids:
-        errors.append("catalogue must contain exactly GRW-EXP-001 through GRW-EXP-038")
+        errors.append("catalogue must contain exactly GRW-EXP-001 through GRW-EXP-041")
     if set(legacy_ids) != expected_legacy_ids:
         errors.append("catalogue must contain exactly KGE-001 through KGE-038")
 
     catalogue_by_id = {card["public_experience_id"]: card for card in cards}
     for public_id, entry in catalogue_by_id.items():
-        if public_id.removeprefix("GRW-EXP-") != entry["legacy_public_identifier"].removeprefix("KGE-"):
-            errors.append(f"catalogue legacy identifier mismatch for {public_id}")
+        legacy_id = entry["legacy_public_identifier"]
+        if public_id in LEGACY_EXPERIENCE_IDS:
+            expected_legacy_id = f"KGE-{public_id.removeprefix('GRW-EXP-')}"
+            if legacy_id != expected_legacy_id:
+                errors.append(f"catalogue legacy identifier mismatch for {public_id}")
+        elif public_id in NEW_DERIVATIVE_EXPERIENCE_IDS and legacy_id is not None:
+            errors.append(f"catalogue new derivative must not claim a legacy identifier for {public_id}")
         if entry["primary_public_topic"] not in term_map:
             errors.append(f"catalogue primary topic is unresolved for {public_id}")
         if entry["primary_public_topic"] in entry["optional_secondary_topics"]:
@@ -220,7 +235,8 @@ def validate_package(vocabulary_path: Path, catalogue_path: Path, cards_root: Pa
         for key in ("public_experience_id", "legacy_public_identifier", "primary_public_topic", "optional_secondary_topics", "status"):
             if card[key] != entry[key]:
                 errors.append(f"{public_id}: card and catalogue differ for {key}")
-        if card["public_package_version"] != "v1.6.0":
+        expected_package_version = "v1.6.0" if public_id in LEGACY_EXPERIENCE_IDS else "v1.7.0"
+        if card["public_package_version"] != expected_package_version:
             errors.append(f"{public_id}: unexpected public package version")
     return errors
 

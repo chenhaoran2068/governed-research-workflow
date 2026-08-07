@@ -1,0 +1,27 @@
+{
+  "release_control_schema_version": "1.0.0",
+  "candidate_release_version": "v1.7.0",
+  "status": "local_candidate_only",
+  "capability_ids": ["GRW-CAP-170-01"],
+  "public_baseline": {
+    "annotated_tag": "v1.6.0",
+    "commit": "7153b2732e55a4f8b21abd535678e48674d5a6ca"
+  },
+  "required_gates": [
+    "public material, rights, privacy, and claim review for both guidance documents and all three cards",
+    "public vocabulary, catalogue, card, schema, and synthetic-negative validation",
+    "complete local public test suite",
+    "two affected-scope review rounds",
+    "separate candidate commit evidence",
+    "separate remote CI evidence",
+    "separate protected-main merge evidence",
+    "separate exact-main C4 authorization"
+  ],
+  "prohibited_claims": [
+    "hosted release",
+    "installed runtime",
+    "private source provenance",
+    "automatic loading or synchronization",
+    "access or approval authority"
+  ]
+}

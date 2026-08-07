@@ -36,6 +36,21 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.7 Public Collaboration-Guidance Source Scope
+
+- The v1.7 source adds `GRW-CAP-170-01`: two generic collaboration-guidance
+  documents, three public navigation topics, and three public-safe cards.
+- The original 38 KGE-derived cards retain their historical identifiers. The
+  three new cards have null legacy identifiers rather than fabricated KGE
+  origin claims.
+- The source contains no private source, path, decision, mapping, receipt,
+  project, Study, or unpublished material and adds no authority, access,
+  automatic loading, execution, delegation, agent runtime, Framework change,
+  or installation claim.
+- A selected v1.7 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact tag and matching GitHub
+  Release.
+
 ## v1.2 Published Vocabulary Scope And Maintenance Boundary
 
 - `v1.2.0` is the published capability baseline for `GRW-CAP-120-01`, with

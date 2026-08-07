@@ -5,17 +5,19 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.6.0 public-safe shared-experience derivative source, derived from
-immutable public v1.5.2. It preserves the frozen v1.0.0 contract and
-`GRW-CAP-150-01`, and adds `GRW-CAP-160-01`: a public-only vocabulary,
-catalogue, and 38 generic experience cards re-expressed from the already-public
-KGE collection. The cards are guidance and retrieval navigation only; they are
-not a private archive, source library, RAG corpus, current-requirement checker,
-approval mechanism, promotion mechanism, or automatic recommendation service.
-They contain no private source, identifier, path, hash, receipt, decision, or
-mapping. The package does not automatically load all cards, synchronize them,
-or update them. Its only maintained framework-integrated claim remains the
-exact Workspace Framework `v0.2.0` contract, validated only against commit
+Status: v1.7.0 public collaboration-guidance derivative source, derived from
+immutable public v1.6.0. It preserves the frozen v1.0.0 contract,
+`GRW-CAP-150-01`, and the 38 historical KGE-derived cards under
+`GRW-CAP-160-01`. It adds `GRW-CAP-170-01`: two generic collaboration-guidance
+documents, three public topics, and three new public-safe experience cards
+without fabricated KGE origins. The cards and guidance are selective retrieval
+navigation only; they are not a private archive, source library, RAG corpus,
+current-requirement checker, approval mechanism, promotion mechanism, or
+automatic recommendation service. They contain no private source, identifier,
+path, hash, receipt, decision, or mapping. The package does not automatically
+load all cards, synchronize them, or update them. Its only maintained
+framework-integrated claim remains the exact Workspace Framework `v0.2.0`
+contract, validated only against commit
 `69c76f84a5b0913b26c17ea48f152dbc50b4bec6` under separately controlled
 candidate and release evidence. It adds no research-operation executor, public
 intake, direct external-contributor flow, upload/download helper, network

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "catalogue_version": "v1.6.0",
+  "catalogue_version": "v1.7.0",
   "status": "current_public",
   "cards": [
     {"public_experience_id": "GRW-EXP-001", "legacy_public_identifier": "KGE-001", "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-001.md", "primary_public_topic": "GRW-TOP-002", "optional_secondary_topics": ["GRW-TOP-004", "GRW-TOP-007"], "status": "current_public_guidance"},
@@ -40,6 +40,9 @@
     {"public_experience_id": "GRW-EXP-035", "legacy_public_identifier": "KGE-035", "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-035.md", "primary_public_topic": "GRW-TOP-002", "optional_secondary_topics": ["GRW-TOP-004"], "status": "current_public_guidance"},
     {"public_experience_id": "GRW-EXP-036", "legacy_public_identifier": "KGE-036", "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-036.md", "primary_public_topic": "GRW-TOP-014", "optional_secondary_topics": [], "status": "current_public_guidance"},
     {"public_experience_id": "GRW-EXP-037", "legacy_public_identifier": "KGE-037", "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-037.md", "primary_public_topic": "GRW-TOP-006", "optional_secondary_topics": ["GRW-TOP-010"], "status": "current_public_guidance"},
-    {"public_experience_id": "GRW-EXP-038", "legacy_public_identifier": "KGE-038", "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-038.md", "primary_public_topic": "GRW-TOP-013", "optional_secondary_topics": ["GRW-TOP-007"], "status": "current_public_guidance"}
+    {"public_experience_id": "GRW-EXP-038", "legacy_public_identifier": "KGE-038", "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-038.md", "primary_public_topic": "GRW-TOP-013", "optional_secondary_topics": ["GRW-TOP-007"], "status": "current_public_guidance"},
+    {"public_experience_id": "GRW-EXP-039", "legacy_public_identifier": null, "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-039.md", "primary_public_topic": "GRW-TOP-016", "optional_secondary_topics": ["GRW-TOP-007"], "status": "current_public_guidance"},
+    {"public_experience_id": "GRW-EXP-040", "legacy_public_identifier": null, "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-040.md", "primary_public_topic": "GRW-TOP-017", "optional_secondary_topics": ["GRW-TOP-007", "GRW-TOP-012"], "status": "current_public_guidance"},
+    {"public_experience_id": "GRW-EXP-041", "legacy_public_identifier": null, "card_path": "assets/public-experience-derivatives/cards/GRW-EXP-041.md", "primary_public_topic": "GRW-TOP-018", "optional_secondary_topics": ["GRW-TOP-017", "GRW-TOP-007"], "status": "current_public_guidance"}
   ]
 }

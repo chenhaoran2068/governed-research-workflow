@@ -1,10 +1,11 @@
 # Public Boundary
 
-## v1.6 Public-Safe Shared-Experience Derivative Library
+## Public-Safe Experience And Collaboration Guidance
 
-`GRW-CAP-160-01` provides a public vocabulary, catalogue, and read-only
-experience-card library. The material is generic guidance and retrieval
-navigation only.
+`GRW-CAP-160-01` retains a public vocabulary, catalogue, and 38 historical
+KGE-derived experience cards. `GRW-CAP-170-01` adds two generic collaboration
+guidance documents and three new public-safe cards with no KGE predecessor.
+All material is generic guidance and retrieval navigation only.
 
 The library does not contain or resolve private sources, local records, source
 identifiers, private vocabulary identifiers, paths, hashes, receipts, decision
@@ -17,6 +18,8 @@ update them, or treat them as task authority. A task may selectively read a
 relevant public card only after the user's request and the applicable System
 route have established its relevance.
 
-The current public card library supersedes the old public KGE entrypoint while
-preserving historical Releases. A public card's legacy KGE identifier is only a
-backward reference; it is not provenance for a private source.
+The public card library supersedes the old public KGE entrypoint while
+preserving historical Releases. A legacy KGE identifier is only a backward
+reference, not provenance for a private source. A null legacy identifier means
+the card is a newly authored public-safe derivative, not that it has hidden
+private provenance.
