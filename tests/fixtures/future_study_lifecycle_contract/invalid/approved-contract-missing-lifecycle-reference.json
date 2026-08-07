@@ -1,0 +1,3 @@
+{
+  "fixture": "Copy valid/in-scope-observational-record-set.json, set execution_contract.contract_status to approved_for_use and approval_reference to a safe relative reference, then set execution_contract.design_and_classification_record_reference to null. The execution-contract schema must reject it."
+}

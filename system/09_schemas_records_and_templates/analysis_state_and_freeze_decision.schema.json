@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/analysis_state_and_freeze_decision.schema.json",
+  "title": "Future Study Analysis State And Freeze Decision",
+  "type": "object",
+  "required": ["record_type", "schema_version", "project_id", "record_status", "analysis_state", "freeze_status", "freeze_id", "human_decision_reference", "change_class", "claim_limitations"],
+  "$defs": {
+    "project_relative_reference": {"type": "string", "minLength": 1, "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"}
+  },
+  "properties": {
+    "record_type": {"const": "analysis_state_and_freeze_decision"},
+    "schema_version": {"const": "1.0.0"},
+    "project_id": {"type": "string", "minLength": 1},
+    "record_status": {"enum": ["draft", "candidate", "current", "superseded"]},
+    "analysis_state": {"enum": ["not_declared", "exploratory_hypothesis_generation", "predictive_model_development_with_internal_validation", "independent_validation", "confirmatory_estimation", "mixed_primary_and_exploratory"]},
+    "freeze_status": {"enum": ["absent", "candidate", "current", "superseded"]},
+    "freeze_id": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]},
+    "human_decision_reference": {"anyOf": [{"$ref": "#/$defs/project_relative_reference"}, {"type": "null"}]},
+    "change_class": {"enum": ["not_declared", "implementation_error_fix", "prespecified_robustness_analysis", "new_exploratory_branch", "new_validation_plan", "other"]},
+    "claim_limitations": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"freeze_status": {"const": "current"}}, "required": ["freeze_status"]},
+      "then": {"properties": {"freeze_id": {"type": "string", "minLength": 1}, "human_decision_reference": {"$ref": "#/$defs/project_relative_reference"}}}
+    }
+  ],
+  "additionalProperties": false
+}

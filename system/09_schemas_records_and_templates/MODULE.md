@@ -77,3 +77,9 @@ declared metadata and safe relative references only. They do not execute code,
 install dependencies, read data, validate scientific results, prove the
 existence or truth of referenced artifacts, or prove that a human approved a
 result.
+
+The v1.8 source adds three generic future-Study declared-metadata schemas for
+design/classification, governance readiness, and analysis state/freeze. Their
+matching templates and explicit validator organize only caller-supplied
+records. They do not determine a design, prove governance, authorize access,
+approve a freeze, execute analysis, or make a result authoritative.

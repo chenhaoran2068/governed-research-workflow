@@ -1,0 +1,50 @@
+{
+  "design": {
+    "record_type": "study_design_and_classification_record",
+    "schema_version": "1.0.0",
+    "project_id": "SYNTHETIC-STUDY",
+    "record_status": "current",
+    "classification": {"intervention_allocation": "observational", "object_selection_design": "cohort", "temporal_orientation": "retrospective", "data_origin": "routinely_collected_data", "primary_research_purpose": "prognostic"},
+    "scope_route": "in_scope_observational_existing_individual_records",
+    "design_details": {"population": "Synthetic population", "eligibility": "Synthetic criteria", "time_zero": "Synthetic index", "measurement_windows": "Declared synthetic window", "follow_up": "Synthetic follow-up", "administrative_censoring": "Synthetic censoring", "major_bias_notes": ["Synthetic bias note"], "design_version": "design-v1", "supersedes_reference": null},
+    "notes": []
+  },
+  "governance": {
+    "record_type": "governance_readiness_record",
+    "schema_version": "1.0.0",
+    "project_id": "SYNTHETIC-STUDY",
+    "record_status": "current",
+    "governance_domains": [{"domain": "data_access", "status": "recorded", "compliance_index_reference": "02_registry/compliance/data_access.json", "source_evidence_references": ["02_registry/compliance/evidence/data_access_reference.md"]}],
+    "notes": ["Synthetic metadata only."]
+  },
+  "analysis_state": {
+    "record_type": "analysis_state_and_freeze_decision",
+    "schema_version": "1.0.0",
+    "project_id": "SYNTHETIC-STUDY",
+    "record_status": "current",
+    "analysis_state": "predictive_model_development_with_internal_validation",
+    "freeze_status": "current",
+    "freeze_id": "analysis-v1",
+    "human_decision_reference": "00_state/lifecycle/decision-analysis-v1.md",
+    "change_class": "not_declared",
+    "claim_limitations": ["Synthetic internal-validation example only."],
+    "notes": []
+  },
+  "execution_contract": {
+    "record_type": "analysis_execution_contract",
+    "contract_version": "2.0.0",
+    "project_id": "SYNTHETIC-STUDY",
+    "primary_system": "governed-research-workflow",
+    "system_contract_reference": "GRW-CAP-180-01",
+    "contract_status": "draft",
+    "approval_reference": null,
+    "design_and_classification_record_reference": "03_protocol/study_design_and_classification_record.json",
+    "governance_readiness_record_reference": "02_registry/compliance/governance_readiness_record.json",
+    "analysis_state_and_freeze_decision_reference": "00_state/lifecycle/analysis_state_and_freeze_decision.json",
+    "formal_execution_path": {"kind": "unselected", "entrypoint_reference": null, "declared_only": true},
+    "environment_policy": {"environment_spec_reference": null, "dependency_lock_reference": null, "automatic_dependency_change_forbidden": true},
+    "run_policy": {"unique_run_id_required": true, "overwrite_forbidden": true, "run_manifest_required": true},
+    "result_authority_policy": {"result_manifest_required": true, "qa_record_required": true, "human_decision_required": true},
+    "notes": []
+  }
+}

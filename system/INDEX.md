@@ -1,10 +1,12 @@
 # Public System Module Index
 
-Status: v1.7.0 public collaboration-guidance derivative source retaining the
+Status: v1.8.0 public future-Study lifecycle guidance source retaining the
 frozen public-interface contract, `GRW-CAP-150-01`, and the historical
 `GRW-CAP-160-01` public card library. It adds `GRW-CAP-170-01` as two generic
 System-owned guidance documents, three public topics, and three selectively
-read public cards. It declares only the exact Workspace Framework `v0.2.0`
+read public cards, and `GRW-CAP-180-01` as generic future-Study lifecycle
+guidance, blank metadata records, a read-only validator, and synthetic tests.
+It declares only the exact Workspace Framework `v0.2.0`
 contract and preserves the V1 Public Interface Manifest, Capability
 Verification Map, and V1 Support Scope Matrix. It adds no intake, exchange,
 data, retrieval service, execution, sharing, submission, automatic loading,
@@ -36,7 +38,7 @@ authority records.
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | v1.7.0 retains the two public profiles, declares only exact Framework v0.2.0 compatibility, and adds public collaboration-guidance derivative routing | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | v1.8.0 retains the two public profiles, declares only exact Framework v0.2.0 compatibility, and adds generic future-Study lifecycle guidance routing | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, and v1.7 collaboration guidance | route references, blank assets, and generic guidance |

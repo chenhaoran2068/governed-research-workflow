@@ -32,6 +32,7 @@ those records to expected evidence; it is not a competing capability ledger.
 | `GRW-CAP-110-05` | C2-admitted v0.11 source scope | Blank-template presence and human-decision boundary regression tests | Does not make or authorize a decision. |
 | `GRW-CAP-110-06` | C2-admitted v0.11 source scope | Exact-count, type-count, required-field, and selected local-marker absence checks | Does not prove complete redaction, source currentness, access, or a public Knowledge/retrieval capability. |
 | `GRW-CAP-160-01` | C2-admitted v1.6 source scope | Public vocabulary, catalogue, 38-card, public-boundary, validator, and synthetic negative tests | Does not expose private material, prove an external requirement, grant access, approve an action, promote an experience, or automatically load or update guidance. |
+| `GRW-CAP-180-01` | C2-admitted v1.8 source scope | Generic lifecycle route, three blank declared-metadata templates, four explicit-input validator paths, and synthetic positive/refusal tests | Does not determine a real Study type, ethics/access/registration status, causal validity, approval, execution, result authority, submission, or installation. |
 
 A passing test only verifies the named technical property. It does not approve
 science, clinical work, compliance, rights, a project state, a release, or a

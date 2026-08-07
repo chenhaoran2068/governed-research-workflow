@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/study_design_and_classification_record.schema.json",
+  "title": "Future Study Design And Classification Record",
+  "type": "object",
+  "required": ["record_type", "schema_version", "project_id", "record_status", "classification", "scope_route", "design_details"],
+  "$defs": {
+    "project_relative_reference": {"type": "string", "minLength": 1, "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"},
+    "nullable_text": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]}
+  },
+  "properties": {
+    "record_type": {"const": "study_design_and_classification_record"},
+    "schema_version": {"const": "1.0.0"},
+    "project_id": {"type": "string", "minLength": 1},
+    "record_status": {"enum": ["draft", "candidate", "current", "superseded"]},
+    "classification": {
+      "type": "object",
+      "required": ["intervention_allocation", "object_selection_design", "temporal_orientation", "data_origin", "primary_research_purpose"],
+      "properties": {
+        "intervention_allocation": {"enum": ["not_declared", "observational", "researcher_assigned_intervention", "other"]},
+        "object_selection_design": {"enum": ["not_declared", "cohort", "case_control", "cross_sectional", "other"]},
+        "temporal_orientation": {"enum": ["not_declared", "retrospective", "prospective", "ambispective", "other"]},
+        "data_origin": {"enum": ["not_declared", "routinely_collected_data", "secondary_analysis", "new_primary_collection", "other"]},
+        "primary_research_purpose": {"enum": ["not_declared", "descriptive", "association", "prognostic", "clinical_prediction", "diagnostic", "causal", "treatment_effect", "other"]}
+      },
+      "additionalProperties": false
+    },
+    "scope_route": {"enum": ["not_declared", "in_scope_observational_existing_individual_records", "additional_charter_required"]},
+    "design_details": {
+      "type": "object",
+      "required": ["population", "eligibility", "time_zero", "measurement_windows", "follow_up", "administrative_censoring", "major_bias_notes", "design_version", "supersedes_reference"],
+      "properties": {
+        "population": {"$ref": "#/$defs/nullable_text"}, "eligibility": {"$ref": "#/$defs/nullable_text"},
+        "time_zero": {"$ref": "#/$defs/nullable_text"}, "measurement_windows": {"$ref": "#/$defs/nullable_text"},
+        "follow_up": {"$ref": "#/$defs/nullable_text"}, "administrative_censoring": {"$ref": "#/$defs/nullable_text"},
+        "major_bias_notes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "design_version": {"$ref": "#/$defs/nullable_text"},
+        "supersedes_reference": {"anyOf": [{"$ref": "#/$defs/project_relative_reference"}, {"type": "null"}]}
+      },
+      "additionalProperties": false
+    },
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"scope_route": {"const": "in_scope_observational_existing_individual_records"}}, "required": ["scope_route"]},
+      "then": {"properties": {"classification": {"properties": {"intervention_allocation": {"const": "observational"}, "object_selection_design": {"enum": ["cohort", "case_control", "cross_sectional"]}, "temporal_orientation": {"const": "retrospective"}, "data_origin": {"enum": ["routinely_collected_data", "secondary_analysis"]}, "primary_research_purpose": {"enum": ["descriptive", "association", "prognostic", "clinical_prediction", "diagnostic"]}}}}}
+    },
+    {
+      "if": {"properties": {"classification": {"properties": {"intervention_allocation": {"const": "researcher_assigned_intervention"}}, "required": ["intervention_allocation"]}}, "required": ["classification"]},
+      "then": {"properties": {"scope_route": {"const": "additional_charter_required"}}}
+    },
+    {
+      "if": {"properties": {"classification": {"properties": {"primary_research_purpose": {"enum": ["causal", "treatment_effect"]}}, "required": ["primary_research_purpose"]}}, "required": ["classification"]},
+      "then": {"properties": {"scope_route": {"const": "additional_charter_required"}}}
+    }
+  ],
+  "additionalProperties": false
+}

@@ -23,3 +23,17 @@ preserving historical Releases. A legacy KGE identifier is only a backward
 reference, not provenance for a private source. A null legacy identifier means
 the card is a newly authored public-safe derivative, not that it has hidden
 private provenance.
+
+## Future-Study Lifecycle Material
+
+`GRW-CAP-180-01` adds generic lifecycle guidance, blank declared-metadata
+templates, schemas, a caller-supplied structural validator, and synthetic
+fixtures. It contains no real Study, project-local path, data, protocol,
+ethics/access/registration material, human decision, run, result, manuscript,
+submission package, private receipt, or local installation record.
+
+The validator checks only the shape of four caller-supplied JSON records. It
+does not discover files, resolve references, inspect source targets, establish
+truth/currentness/approval, execute research, or authorize an action. The
+templates and any structural `valid` result are not evidence that a Study is
+in scope, compliant, ready, frozen, approved, run, or publishable.

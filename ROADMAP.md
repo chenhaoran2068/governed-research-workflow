@@ -6,6 +6,25 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.8.0 (future-Study lifecycle source scope)
+
+This versioned source is derived from immutable public v1.7.0. It adds
+`GRW-CAP-180-01`: a generic eleven-stage future-Study lifecycle guide, three
+blank metadata record contracts, a v2 execution-contract reference profile, an
+explicit caller-supplied read-only validator, and synthetic tests. It keeps
+design/classification, governance readiness, analysis-state/freeze, and
+execution-contract metadata separate.
+
+The generic guide is initially scoped to existing individual-level
+observational research, especially retrospective cohort work, addressing
+descriptive, association, prognostic, clinical-prediction, or diagnostic
+questions. Causal/treatment-effect questions require a separate design or
+target-trial-emulation route. The materials do not validate any real Study,
+ethics/access/registration fact, scientific design, analysis, result,
+submission, or publication decision. They add no bootstrap executor, data
+action, network action, agent runtime, Framework change, or installed-runtime
+claim.
+
 ## v1.7.0 (public collaboration-guidance derivative source scope)
 
 This versioned source is derived from immutable public v1.6.0. It adds

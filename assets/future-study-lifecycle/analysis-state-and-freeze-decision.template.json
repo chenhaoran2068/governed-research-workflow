@@ -1,0 +1,13 @@
+{
+  "record_type": "analysis_state_and_freeze_decision",
+  "schema_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "record_status": "draft",
+  "analysis_state": "not_declared",
+  "freeze_status": "absent",
+  "freeze_id": null,
+  "change_class": "not_declared",
+  "claim_limitations": [],
+  "human_decision_reference": null,
+  "notes": ["This blank record does not make an analysis approved, a freeze current, or a result authoritative."]
+}

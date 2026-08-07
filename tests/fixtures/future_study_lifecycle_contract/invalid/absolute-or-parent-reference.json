@@ -1,0 +1,3 @@
+{
+  "fixture": "Copy valid/in-scope-observational-record-set.json and set execution_contract.governance_readiness_record_reference to ../outside.json or C:\\outside.json. The execution-contract schema must reject it."
+}

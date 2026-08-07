@@ -1,0 +1,3 @@
+{
+  "fixture": "Copy valid/in-scope-observational-record-set.json and set analysis_state.human_decision_reference to null while freeze_status remains current. The analysis-state schema must reject it."
+}

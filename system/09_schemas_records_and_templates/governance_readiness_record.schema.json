@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/governance_readiness_record.schema.json",
+  "title": "Future Study Governance Readiness Record",
+  "type": "object",
+  "required": ["record_type", "schema_version", "project_id", "record_status", "governance_domains"],
+  "$defs": {
+    "project_relative_reference": {"type": "string", "minLength": 1, "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"},
+    "domain": {
+      "type": "object",
+      "required": ["domain", "status", "compliance_index_reference", "source_evidence_references"],
+      "properties": {
+        "domain": {"enum": ["ethics", "consent", "data_access", "privacy", "registration", "jurisdiction", "institution", "responsible_human"]},
+        "status": {"enum": ["not_reviewed", "incomplete", "awaiting_human_decision", "recorded", "blocked", "not_applicable"]},
+        "compliance_index_reference": {"anyOf": [{"$ref": "#/$defs/project_relative_reference"}, {"type": "null"}]},
+        "source_evidence_references": {"type": "array", "items": {"$ref": "#/$defs/project_relative_reference"}}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "recorded"}}, "required": ["status"]},
+          "then": {
+            "properties": {
+              "compliance_index_reference": {"$ref": "#/$defs/project_relative_reference"},
+              "source_evidence_references": {"minItems": 1}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "record_type": {"const": "governance_readiness_record"},
+    "schema_version": {"const": "1.0.0"},
+    "project_id": {"type": "string", "minLength": 1},
+    "record_status": {"enum": ["draft", "candidate", "current", "superseded"]},
+    "governance_domains": {"type": "array", "items": {"$ref": "#/$defs/domain"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

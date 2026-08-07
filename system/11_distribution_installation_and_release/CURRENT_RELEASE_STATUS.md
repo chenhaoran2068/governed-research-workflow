@@ -36,6 +36,18 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.8 Future-Study Lifecycle Guidance Source Scope
+
+- The v1.8 source adds `GRW-CAP-180-01`: generic eleven-stage future-Study
+  lifecycle guidance, three blank declared-metadata templates, a v2 execution
+  contract reference profile, and an explicit read-only four-input validator.
+- It contains no real Study, data, ethics/access/registration material,
+  private path, runtime receipt, Framework change, research executor, or human
+  approval claim.
+- A selected v1.8 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact tag and matching GitHub
+  Release.
+
 ## v1.7 Public Collaboration-Guidance Source Scope
 
 - The v1.7 source adds `GRW-CAP-170-01`: two generic collaboration-guidance

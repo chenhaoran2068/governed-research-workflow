@@ -1,0 +1,8 @@
+{
+  "record_type": "governance_readiness_record",
+  "schema_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "record_status": "draft",
+  "governance_domains": [],
+  "notes": ["This blank record does not establish ethics, consent, access, privacy, registration, jurisdiction, institutional approval, or human authorization."]
+}

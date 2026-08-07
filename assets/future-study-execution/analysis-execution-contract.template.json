@@ -1,11 +1,14 @@
 {
   "record_type": "analysis_execution_contract",
-  "contract_version": "1.0.0",
+  "contract_version": "2.0.0",
   "project_id": "STUDY_ID_REQUIRED",
   "primary_system": "UNASSIGNED",
   "system_contract_reference": "UNRESOLVED_SYSTEM_CONTRACT_REFERENCE",
   "contract_status": "draft",
   "approval_reference": null,
+  "design_and_classification_record_reference": "03_protocol/study_design_and_classification_record.json",
+  "governance_readiness_record_reference": "02_registry/compliance/governance_readiness_record.json",
+  "analysis_state_and_freeze_decision_reference": "00_state/lifecycle/analysis_state_and_freeze_decision.json",
   "formal_execution_path": {
     "kind": "unselected",
     "entrypoint_reference": null,
