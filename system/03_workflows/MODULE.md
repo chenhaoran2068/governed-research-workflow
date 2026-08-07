@@ -40,3 +40,8 @@ requirement uncertainty, artifact boundaries, traceability, default isolation,
 and narrow explicit references visible. They do not access material, grant a
 sharing permission, infer a project relationship, determine authorship or
 compliance, make a result authoritative, or authorize submission.
+
+The v1.8 source adds a generic eleven-stage future-Study lifecycle route. It
+connects design, governance, analysis-state, execution, manuscript, revision,
+submission, and closure boundaries without determining any real Study fact or
+duplicating the existing submission lifecycle control.

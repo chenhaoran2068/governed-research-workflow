@@ -16,6 +16,13 @@
     "run_policy",
     "result_authority_policy"
   ],
+  "$defs": {
+    "project_relative_reference": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!\\\\)(?!.*\\.\\.).+$"
+    }
+  },
   "properties": {
     "record_type": {"const": "analysis_execution_contract"},
     "contract_version": {"type": "string", "minLength": 1},
@@ -35,6 +42,15 @@
         {"type": "string", "minLength": 1},
         {"type": "null"}
       ]
+    },
+    "design_and_classification_record_reference": {
+      "anyOf": [{"$ref": "#/$defs/project_relative_reference"}, {"type": "null"}]
+    },
+    "governance_readiness_record_reference": {
+      "anyOf": [{"$ref": "#/$defs/project_relative_reference"}, {"type": "null"}]
+    },
+    "analysis_state_and_freeze_decision_reference": {
+      "anyOf": [{"$ref": "#/$defs/project_relative_reference"}, {"type": "null"}]
     },
     "formal_execution_path": {
       "type": "object",
@@ -96,5 +112,22 @@
     },
     "notes": {"type": "array", "items": {"type": "string"}}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"contract_version": {"const": "2.0.0"}}, "required": ["contract_version"]},
+      "then": {"required": ["design_and_classification_record_reference", "governance_readiness_record_reference", "analysis_state_and_freeze_decision_reference"]}
+    },
+    {
+      "if": {"properties": {"contract_version": {"const": "2.0.0"}, "contract_status": {"const": "approved_for_use"}}, "required": ["contract_version", "contract_status"]},
+      "then": {
+        "properties": {
+          "approval_reference": {"$ref": "#/$defs/project_relative_reference"},
+          "design_and_classification_record_reference": {"$ref": "#/$defs/project_relative_reference"},
+          "governance_readiness_record_reference": {"$ref": "#/$defs/project_relative_reference"},
+          "analysis_state_and_freeze_decision_reference": {"$ref": "#/$defs/project_relative_reference"}
+        }
+      }
+    }
+  ],
   "additionalProperties": true
 }

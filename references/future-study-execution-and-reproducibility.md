@@ -48,6 +48,20 @@ scientific method. It does not migrate an existing Study.
 The package supplies blank templates under `assets/future-study-execution/`
 and generic schemas under `system/09_schemas_records_and_templates/`.
 
+## Lifecycle Reference Profile
+
+For a new future Study using execution-contract `2.0.0`, keep these separate
+declared references project-relative:
+
+- `03_protocol/study_design_and_classification_record.json`;
+- `02_registry/compliance/governance_readiness_record.json`; and
+- `00_state/lifecycle/analysis_state_and_freeze_decision.json`.
+
+The v2 profile makes the three record relationships explicit. It does not read
+their targets, prove their content, establish a human decision, authorize a
+run, or make any result authoritative. The generic lifecycle guide is in
+`references/future-study-lifecycle-design-governance-and-analysis-state.md`.
+
 ## Required Boundaries
 
 - Select exactly one formal execution path for the Study, but do not infer one

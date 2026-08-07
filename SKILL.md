@@ -59,6 +59,16 @@ future Study's execution contract, formal run, result authority, or QA record.
 Those records are metadata-only controls; they do not authorize a run, data
 access, dependency change, result approval, or scientific claim.
 
+For a selected released version that admits `GRW-CAP-180-01`, read
+`references/future-study-lifecycle-design-governance-and-analysis-state.md`
+only when the caller explicitly asks for future-Study lifecycle, design
+classification, governance readiness, or analysis-state/freeze guidance. Read
+only the blank record relevant to the named task. Do not infer a study type,
+ethics/access/registration status, freeze, human decision, or execution
+approval from a template or structural validation result. This is optional
+generic guidance, not automatic project discovery, persistent memory, a
+bootstrap executor, a research executor, or an authority route.
+
 For an explicitly requested `experience_vocabulary_control_review`, first
 resolve the selected version to its exact public tag and matching GitHub
 Release, then check the capability ledger for an admitted `GRW-CAP-120-01`

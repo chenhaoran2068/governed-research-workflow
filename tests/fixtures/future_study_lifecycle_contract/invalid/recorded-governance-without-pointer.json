@@ -1,0 +1,3 @@
+{
+  "fixture": "Copy valid/in-scope-observational-record-set.json and set the recorded governance domain compliance_index_reference to null. The governance schema must reject it."
+}

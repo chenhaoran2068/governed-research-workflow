@@ -1,0 +1,3 @@
+{
+  "fixture": "Copy valid/in-scope-observational-record-set.json and set design.classification.primary_research_purpose to causal while retaining design.scope_route as in_scope_observational_existing_individual_records. The design schema must reject it."
+}

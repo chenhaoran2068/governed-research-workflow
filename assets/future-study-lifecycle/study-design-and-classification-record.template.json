@@ -1,0 +1,26 @@
+{
+  "record_type": "study_design_and_classification_record",
+  "schema_version": "1.0.0",
+  "project_id": "STUDY_ID_REQUIRED",
+  "record_status": "draft",
+  "classification": {
+    "intervention_allocation": "not_declared",
+    "object_selection_design": "not_declared",
+    "temporal_orientation": "not_declared",
+    "data_origin": "not_declared",
+    "primary_research_purpose": "not_declared"
+  },
+  "scope_route": "not_declared",
+  "design_details": {
+    "population": null,
+    "eligibility": null,
+    "time_zero": null,
+    "measurement_windows": null,
+    "follow_up": null,
+    "administrative_censoring": null,
+    "major_bias_notes": [],
+    "design_version": null,
+    "supersedes_reference": null
+  },
+  "notes": ["This blank record is not a protocol lock, feasibility conclusion, ethics decision, or causal-validity determination."]
+}
