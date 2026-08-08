@@ -1,12 +1,13 @@
 # Governed Research Workflow
 
-Governed Research Workflow is a thin, human-governed skill for starting and
-routing research and manuscript work. It helps an AI agent identify the task,
+Governed Research Workflow is a thin, human-governed Research System for
+starting and routing research and manuscript work. Its `SKILL.md` is the Codex
+entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.9.1 new-Study navigation stop-boundary maintenance source, derived
-from immutable public v1.9.0. It preserves the frozen v1.0.0 contract,
+Status: v1.9.2 System-entry and route-code maintenance source, derived from
+immutable public v1.9.1. It preserves the frozen v1.0.0 contract,
 `GRW-CAP-150-01`, and the 38 historical KGE-derived cards under
 `GRW-CAP-160-01`. It adds `GRW-CAP-170-01`: two generic collaboration-guidance
 documents, three public topics, and three new public-safe experience cards
@@ -31,11 +32,12 @@ a v2 execution-contract reference profile, a caller-supplied read-only
 validator, and synthetic tests. These controls do not prove a design,
 governance condition, freeze, approval, execution, result, or publication
 state. `GRW-CAP-190-01` adds generic natural-language new-Study navigation and
-a human-confirmable route recommendation. v1.9.1 clarifies that this route is
-the first substantive response, before methods, lifecycle guidance, external
-sources, citations, links, data-access suggestions, or project creation. It
-does not create a Study, decide a scientific design, infer governance, access
-material, execute research, or replace human confirmation. This versioned source tree does not itself prove the release
+a human-confirmable route recommendation. v1.9.2 strengthens the System-entry
+metadata for ordinary-language possible-new-Study requests and requires the
+first substantive route response to begin `Route: <recommendation-code>`.
+It does not create a Study, decide a scientific design, infer governance,
+access material, execute research, replace human confirmation, or guarantee
+host-level automatic System selection. This versioned source tree does not itself prove the release
 or installation identity of any selected version.
 Verify a selected public version only when its exact annotated tag and matching
 GitHub Release resolve to the selected source commit. Never install a mutable

@@ -1,13 +1,13 @@
 ---
 name: governed-research-workflow
-description: Start or continue governed research and manuscript work. Use for new or existing studies, manuscript drafting, reviewer revisions, declaration or AI-use work, citation control, feasibility planning, and research retrospectives. Classify the request, use the relevant local records and templates, keep humans in control of consequential decisions, and stop before unsupported scientific, clinical, compliance, or submission actions.
+description: Mandatory first-response System for any ordinary-language request to start, plan, explore, or propose a possible new research Study. Use it before giving research methods, design, sources, citations, links, data-access suggestions, or project-creation instructions. It also routes governed existing-study, manuscript, reviewer-revision, declaration, citation, feasibility, and retrospective work; humans retain consequential decisions.
 ---
 
 # Governed Research Workflow
 
-Use this skill to route and structure research work. It is a process layer, not
-a scientific execution engine, clinical decision tool, compliance authority, or
-submission service.
+Use this Research System to route and structure research work. Its `SKILL.md`
+is a Codex entry adapter, not a scientific execution engine, clinical decision
+tool, compliance authority, or submission service.
 
 Do not infer missing study facts, create a final scientific conclusion, certify
 compliance, or release or submit material.
@@ -41,13 +41,16 @@ post-release verification.
    action.
 4. Read only the reference and blank asset needed for the selected route.
 
-When ordinary language indicates a possible new Study, the navigator is the
-first substantive response. Before giving a method, design recommendation,
+When ordinary language indicates a possible new Study, including an incomplete
+idea, unknown topic, unknown data, or an ordinary-language request to start or
+plan research, the navigator is the mandatory first substantive response.
+Before giving a method, design recommendation,
 lifecycle plan, external source, citation, link, data-access suggestion, or
 project-creation instruction, read
 `references/new-study-navigator-and-route-recommendation.md` and return only
 its human-confirmable recommendation. The first response must state one route,
-visible facts, material unknowns, route-limiting risks, why the result is
+begin with the literal form `Route: <recommendation-code>`, and state visible
+facts, material unknowns, route-limiting risks, why the result is
 non-decisional, and the user's four choices: accept, revise, defer, or reject.
 It does not create a Study, select a design, infer governance, or authorize
 work. Do not enter detailed lifecycle routing until the user makes one of those

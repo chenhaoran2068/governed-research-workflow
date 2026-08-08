@@ -14,7 +14,9 @@ class V191NavigationStopBoundaryTests(unittest.TestCase):
         guidance = (ROOT / "references" / "new-study-navigator-and-route-recommendation.md").read_text(encoding="utf-8")
         for expected in (
             "Return exactly one of:",
-            "The first substantive response must contain exactly these six parts:",
+            "The first substantive response must begin with the literal form",
+            "`Route: <recommendation-code>`",
+            "It must then contain exactly these six parts:",
             "the user's choices to accept, revise, defer, or reject.",
             "For `insufficient_information`, ask\nno more than two focused questions",
         ):
@@ -47,6 +49,13 @@ class V191NavigationStopBoundaryTests(unittest.TestCase):
         self.assertIn("before methods", text)
         self.assertIn("project creation", text)
         self.assertNotIn("E:" + "\\Chenhaoran", text)
+
+    def test_entry_metadata_names_possible_new_study_as_the_first_response(self) -> None:
+        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        metadata = (ROOT / "agents" / "openai.yaml").read_text(encoding="utf-8")
+        self.assertIn("Mandatory first-response System", skill)
+        self.assertIn("mandatory first substantive response", skill)
+        self.assertIn("Mandatory first-response routing for possible new research Studies", metadata)
 
 
 if __name__ == "__main__":

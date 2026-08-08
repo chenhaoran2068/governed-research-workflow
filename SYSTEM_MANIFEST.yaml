@@ -1,8 +1,9 @@
-# v1.9.1 retains the frozen v1.0.0 public contract and previously admitted
-# scopes. It maintains GRW-CAP-190-01 by making its human-confirmable route
-# recommendation the first substantive response to a possible new Study. It
-# adds no research execution, data access, public intake, network action, agent
-# runtime, delegation, generic writer, recovery executor, or release decision.
+# v1.9.2 retains the frozen v1.0.0 public contract and previously admitted
+# scopes. It maintains GRW-CAP-190-01 by strengthening the System-entry
+# metadata for a possible new Study and requiring its human-confirmable route
+# recommendation to begin with a literal route code. It adds no research
+# execution, data access, public intake, network action, agent runtime,
+# delegation, generic writer, recovery executor, or release decision.
 # This manifest never proves that a selected version is
 # installed or released:
 # verify an exact annotated tag and matching GitHub Release at installation
@@ -10,7 +11,7 @@
 # 0.2.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.9.1
+system_version: 1.9.2
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

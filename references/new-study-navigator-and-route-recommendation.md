@@ -34,7 +34,10 @@ Return exactly one of:
 | `specialist_module_required` | A prospective, researcher-assigned, randomized, systematic-review, qualitative, laboratory, or other specialist route must lead. |
 | `insufficient_information` | The available facts do not support a responsible route recommendation. |
 
-The first substantive response must contain exactly these six parts:
+The first substantive response must begin with the literal form
+`Route: <recommendation-code>`, where the code is exactly one value from the
+table. A descriptive label, translated paraphrase, or heading cannot replace
+the code. It must then contain exactly these six parts:
 
 1. one recommendation code from the table;
 2. visible facts;

@@ -34,6 +34,12 @@ class V19NewStudyNavigationTests(unittest.TestCase):
             "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.9.1.md",
             "system/11_distribution_installation_and_release/RELEASE_NOTES_v1.9.1.md",
             "system/11_distribution_installation_and_release/V1_9_1_RELEASE_CONTROL_CANDIDATE.json",
+            "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.9.2.md",
+            "system/11_distribution_installation_and_release/RELEASE_NOTES_v1.9.2.md",
+            "system/11_distribution_installation_and_release/V1_9_2_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "system/11_distribution_installation_and_release/V1_9_2_RELEASE_CONTROL_CANDIDATE.json",
+            "system/11_distribution_installation_and_release/V1_9_2_RELEASE_EVIDENCE.md",
+            "system/11_distribution_installation_and_release/V1_9_2_RELEASE_GATE.md",
         )
         for relative in required:
             self.assertTrue((ROOT / relative).is_file(), relative)
@@ -41,15 +47,18 @@ class V19NewStudyNavigationTests(unittest.TestCase):
         boundary = (ROOT / "PUBLIC_BOUNDARY.md").read_text(encoding="utf-8")
         self.assertIn("New-Study Navigation Material", boundary)
         self.assertIn("does not read material", boundary)
+        self.assertIn("does not include, create, or configure a user's global", boundary)
 
     def test_skill_automatically_navigates_only_possible_new_study_intent(self) -> None:
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
         normalized = " ".join(skill.split())
         self.assertIn("When ordinary language indicates a possible new Study", normalized)
-        self.assertIn("the navigator is the first substantive response", normalized)
+        self.assertIn("the navigator is the mandatory first substantive response", normalized)
         self.assertIn("does not create a Study", normalized)
         self.assertIn("user confirms the navigator's lifecycle route", normalized)
-        self.assertIn("the navigator is the first substantive response", normalized)
+        self.assertIn("the navigator is the mandatory first substantive response", normalized)
+        self.assertIn("including an incomplete idea, unknown topic, unknown data", normalized)
+        self.assertIn("Route: <recommendation-code>", skill)
 
 
 if __name__ == "__main__":
