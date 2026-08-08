@@ -37,3 +37,16 @@ does not discover files, resolve references, inspect source targets, establish
 truth/currentness/approval, execute research, or authorize an action. The
 templates and any structural `valid` result are not evidence that a Study is
 in scope, compliant, ready, frozen, approved, run, or publishable.
+
+## New-Study Navigation Material
+
+`GRW-CAP-190-01` adds generic text that recognizes a possible new-Study request
+and recommends one route for human confirmation. It contains no private path,
+project, Study, protocol, data, ethics/access/registration evidence, human
+decision, run, result, manuscript, submission package, receipt, or local
+installation record.
+
+The recommendation is not a research classification, feasibility finding,
+causal determination, governance approval, data-access grant, project-creation
+instruction, or authority to act. It does not read material, create a record,
+select a reporting standard, invoke a helper, or execute analysis.

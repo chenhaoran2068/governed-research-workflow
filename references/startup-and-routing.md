@@ -16,7 +16,8 @@ Classify the request before drafting, analysis, or project mutation.
 
 | Request | First action | Read or use |
 | --- | --- | --- |
-| New study | Identify question, source/access status, unknowns, and mode selection. If an empty workspace is explicitly requested, preview its bootstrap plan before any creation. | assets/study-intake.template.md, assets/feasibility-brief.template.md, and references/controlled-bootstrap.md when requested |
+| Possible new study in ordinary language | Make a lightweight non-authoritative route recommendation from visible facts and material unknowns. Ask the user to confirm, revise, defer, or reject it before detailed routing. | references/new-study-navigator-and-route-recommendation.md |
+| Confirmed new study | Identify question, source/access status, unknowns, and mode selection. If an empty workspace is explicitly requested, preview its bootstrap plan before any creation. | assets/study-intake.template.md, assets/feasibility-brief.template.md, and references/controlled-bootstrap.md when requested |
 | Future-Study lifecycle/design/freeze request | Confirm an exact project scope and accountable-human decision boundary before selecting generic lifecycle guidance. | references/future-study-lifecycle-design-governance-and-analysis-state.md and only the blank asset needed for the stated record |
 | Existing study | Identify the exact project root and current authoritative records. | Project-local records supplied by the user; do not infer readiness. |
 | Legacy project | Inventory before migration or normalization. | references/portability-and-release-boundaries.md |

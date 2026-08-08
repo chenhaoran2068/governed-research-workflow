@@ -3,9 +3,9 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.8.0",
-    "historical_public_baseline": "v1.7.0",
-    "live_release_identity_rule": "This v1.8.0 public future-Study lifecycle source is derived from immutable public v1.7.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
+    "source_release_version": "v1.9.0",
+    "historical_public_baseline": "v1.8.0",
+    "live_release_identity_rule": "This v1.9.0 public new-Study navigation source is derived from immutable public v1.8.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1174,6 +1174,41 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/future-study-lifecycle-design-governance-and-analysis-state.md"],
       "contradiction_refusal": "Forbid a real-study, scientific, causal, compliance, access, approval, execution, result-authority, publication, Framework, Release, or installation claim when a template, structural result, selected version identity, or accountable-human decision is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the proposed v1.8.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real Study record, source currentness, human authority, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-190-01",
+      "public_name": "Human-Confirmable New-Study Navigation And Route Recommendation",
+      "capability_class": "routing",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides generic navigation from natural-language possible-new-Study intent to one visible, human-confirmable route recommendation with stated facts, unknowns, and risks.",
+      "non_promise": "Does not create a Study, determine a research type or design, infer ethics, access, registration, reporting compliance, or human approval; read real material; execute research; or establish a Release or installed runtime.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "references/new-study-navigator-and-route-recommendation.md",
+          "system/03_workflows/NEW_STUDY_NAVIGATOR_AND_ROUTE_RECOMMENDATION.md",
+          "tests/test_v1_9_new_study_navigation.py"
+        ],
+        "identifiers": ["GRW-CAP-190-01", "new-study-navigator", "human-confirmable-route-recommendation"]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_v1_9_new_study_navigation.py", "identifier": "V19NewStudyNavigationTests"},
+          {"kind": "test", "path": "tests/test_capability_truth_ledger.py", "identifier": "CapabilityTruthLedgerTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.9.0", "last_verified_release": null, "target_release": "v1.9.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the v1.9 new-Study navigation Charter and C2 scope in the active Codex conversation on 2026-08-08; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/new-study-navigator-and-route-recommendation.md"],
+      "contradiction_refusal": "Forbid a real-Study, scientific, design, causal, compliance, access, approval, execution, result-authority, publication, Framework, Release, or installation claim when the request classification, material facts, user confirmation, selected-version identity, or required evidence is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.9.0 source scope. This source record does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, real Study record, scientific design, governance fact, source currentness, human authority, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

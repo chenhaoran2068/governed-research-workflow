@@ -45,3 +45,8 @@ The v1.8 source adds a generic eleven-stage future-Study lifecycle route. It
 connects design, governance, analysis-state, execution, manuscript, revision,
 submission, and closure boundaries without determining any real Study fact or
 duplicating the existing submission lifecycle control.
+
+The v1.9 source adds a lightweight new-Study navigator. It may react to natural
+language indicating a possible new Study and return one human-confirmable route
+recommendation. It does not create a Study, decide a design, infer governance,
+execute a feasibility check, or replace accountable-human decisions.

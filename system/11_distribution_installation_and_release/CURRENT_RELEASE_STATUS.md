@@ -36,6 +36,18 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.9 New-Study Navigation Source Scope
+
+- The v1.9 source adds `GRW-CAP-190-01`: generic lightweight navigation from
+  natural-language possible-new-Study intent to one human-confirmable route
+  recommendation.
+- It contains no real Study, project path, data, protocol, ethics/access/
+  registration material, private record, runtime receipt, Framework change,
+  research executor, or human approval claim.
+- A selected v1.9 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact tag and matching GitHub
+  Release.
+
 ## v1.8 Future-Study Lifecycle Guidance Source Scope
 
 - The v1.8 source adds `GRW-CAP-180-01`: generic eleven-stage future-Study

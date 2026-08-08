@@ -5,6 +5,16 @@ protocol, an ethics or registration decision, an access grant, a study-design
 validator, an analysis executor, a result-authority mechanism, or evidence
 that a real Study is ready to proceed.
 
+## Navigator Relationship
+
+Natural-language intent to begin a possible new Study may first use
+`references/new-study-navigator-and-route-recommendation.md`. The navigator
+may recommend this lifecycle as a candidate route, identify visible facts and
+unknowns, and request human confirmation. It does not select this lifecycle,
+create a Study, write a record, classify a design as fact, infer governance, or
+authorize a feasibility probe. Only after the user confirms the route does this
+guidance become relevant to detailed future-Study planning.
+
 ## Scope
 
 The initial route supports existing individual-level observational research,

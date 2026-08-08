@@ -41,6 +41,13 @@ post-release verification.
    action.
 4. Read only the reference and blank asset needed for the selected route.
 
+When ordinary language indicates a possible new Study, automatically read
+`references/new-study-navigator-and-route-recommendation.md` before choosing
+the detailed route. The navigator returns a short recommendation, visible
+facts, material unknowns, and route-limiting risks. It does not create a Study,
+select a design, infer governance, or authorize work. The user must confirm,
+revise, defer, or reject the recommendation before detailed lifecycle routing.
+
 For a new study or other consequential research work, ask the user to confirm
 the collaboration mode before analysis, project creation, or substantial
 generation. Human-governed interactive work is the default, but must still be
@@ -61,13 +68,14 @@ access, dependency change, result approval, or scientific claim.
 
 For a selected released version that admits `GRW-CAP-180-01`, read
 `references/future-study-lifecycle-design-governance-and-analysis-state.md`
-only when the caller explicitly asks for future-Study lifecycle, design
-classification, governance readiness, or analysis-state/freeze guidance. Read
-only the blank record relevant to the named task. Do not infer a study type,
-ethics/access/registration status, freeze, human decision, or execution
-approval from a template or structural validation result. This is optional
-generic guidance, not automatic project discovery, persistent memory, a
-bootstrap executor, a research executor, or an authority route.
+after the user confirms the navigator's lifecycle route, or when the caller
+explicitly asks for future-Study lifecycle, design classification, governance
+readiness, or analysis-state/freeze guidance. Read only the blank record
+relevant to the named task. Do not infer a study type, ethics/access/registration
+status, freeze, human decision, or execution approval from a template or
+structural validation result. This is optional generic guidance, not automatic
+project discovery, persistent memory, a bootstrap executor, a research executor,
+or an authority route.
 
 For an explicitly requested `experience_vocabulary_control_review`, first
 resolve the selected version to its exact public tag and matching GitHub

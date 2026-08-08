@@ -5,8 +5,8 @@ routing research and manuscript work. It helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.8.0 future-Study lifecycle source, derived from immutable public
-v1.7.0. It preserves the frozen v1.0.0 contract,
+Status: v1.9.0 new-Study navigation source, derived from immutable public
+v1.8.0. It preserves the frozen v1.0.0 contract,
 `GRW-CAP-150-01`, and the 38 historical KGE-derived cards under
 `GRW-CAP-160-01`. It adds `GRW-CAP-170-01`: two generic collaboration-guidance
 documents, three public topics, and three new public-safe experience cards
@@ -30,7 +30,10 @@ design/classification, governance-readiness, and analysis-state/freeze records,
 a v2 execution-contract reference profile, a caller-supplied read-only
 validator, and synthetic tests. These controls do not prove a design,
 governance condition, freeze, approval, execution, result, or publication
-state. This versioned source tree does not itself prove the release
+state. `GRW-CAP-190-01` adds generic natural-language new-Study navigation and
+a human-confirmable route recommendation. It does not create a Study, decide a
+scientific design, infer governance, access material, execute research, or
+replace human confirmation. This versioned source tree does not itself prove the release
 or installation identity of any selected version.
 Verify a selected public version only when its exact annotated tag and matching
 GitHub Release resolve to the selected source commit. Never install a mutable

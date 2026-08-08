@@ -6,6 +6,21 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.9.0 (new-Study navigation source scope)
+
+This versioned source is derived from immutable public v1.8.0. It adds
+`GRW-CAP-190-01`: generic navigation for natural-language possible-new-Study
+intent and a visible, human-confirmable route recommendation. The four outcomes
+are a primary v1.8 lifecycle candidate, lifecycle with specialist review,
+specialist module required, or insufficient information.
+
+The navigator identifies visible facts, material unknowns, and route-limiting
+risks. It does not create a Study, determine a scientific design or governance
+fact, read real material, access data, run a feasibility probe or analysis,
+select a reporting standard, or replace accountable-human confirmation. It
+adds no schema, validator, dependency, bootstrap behavior, Framework change,
+agent runtime, network action, or installed-runtime claim.
+
 ## v1.8.0 (future-Study lifecycle source scope)
 
 This versioned source is derived from immutable public v1.7.0. It adds
