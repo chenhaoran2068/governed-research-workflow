@@ -36,6 +36,20 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.9.1 New-Study Navigation Stop-Boundary Maintenance Source Scope
+
+- The v1.9.1 maintenance source retains `GRW-CAP-190-01` without a new
+  capability identifier.
+- It requires the possible-new-Study navigator to return a human-confirmable
+  route before methods, lifecycle guidance, external sources, citations, links,
+  data-access suggestions, or project creation.
+- It contains no real Study, project path, data, protocol, ethics/access/
+  registration material, private record, runtime receipt, Framework change,
+  research executor, or human approval claim.
+- A selected v1.9.1 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact tag and matching GitHub
+  Release.
+
 ## v1.9 New-Study Navigation Source Scope
 
 - The v1.9 source adds `GRW-CAP-190-01`: generic lightweight navigation from

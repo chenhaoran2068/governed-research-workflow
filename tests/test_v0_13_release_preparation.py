@@ -70,7 +70,7 @@ class V013ReleasePreparationTests(unittest.TestCase):
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
         notes = (RELEASE_ROOT / "RELEASE_NOTES_v0.13.0.md").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.9.0", manifest)
+        self.assertIn("system_version: 1.9.1", manifest)
         self.assertEqual(ledger["release_context"]["source_release_version"], "v1.0.0")
         self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v0.13.0")
         self.assertTrue(any(record["capability_id"] == "GRW-CAP-130-01" for record in ledger["capabilities"]))

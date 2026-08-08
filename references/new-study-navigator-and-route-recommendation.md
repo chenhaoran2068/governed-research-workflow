@@ -34,18 +34,36 @@ Return exactly one of:
 | `specialist_module_required` | A prospective, researcher-assigned, randomized, systematic-review, qualitative, laboratory, or other specialist route must lead. |
 | `insufficient_information` | The available facts do not support a responsible route recommendation. |
 
-Show the visible facts, material unknowns, route-limiting risks, and the reason
-the output is only a recommendation. Do not use a numerical confidence score.
-The user may accept, revise, defer, or reject the recommendation. Only then may
-the System enter detailed lifecycle routing.
+The first substantive response must contain exactly these six parts:
+
+1. one recommendation code from the table;
+2. visible facts;
+3. material unknowns;
+4. route-limiting risks;
+5. why the output is a non-decisional recommendation; and
+6. the user's choices to accept, revise, defer, or reject.
+
+Do not use a numerical confidence score. For `insufficient_information`, ask
+no more than two focused questions that would distinguish the route. Only after
+the user accepts, revises, defers, or rejects the recommendation may the System
+enter detailed lifecycle routing.
+
+For a causal or treatment-effect request, return
+`v1_8_with_specialist_review`, name the need for a separate causal-design or
+target-trial-emulation review, and stop. For a prospective,
+researcher-assigned, or randomized study, return `specialist_module_required`,
+name the specialist trial route, and stop.
 
 ## Boundaries
 
 The navigator does not create a Study, decide a design, infer ethics, access,
 registration, or reporting compliance, select a method, read data, run a
 feasibility probe, execute analysis, establish result authority, or grant
-approval. It does not replace the controlled bootstrap, lifecycle guidance,
-feasibility workflow, compliance controls, or accountable-human decisions.
+approval. Before a human route decision, it also does not provide an estimator,
+model, weighting method, target-trial specification, analysis procedure,
+external source, citation, link, or data-access suggestion. It does not replace
+the controlled bootstrap, lifecycle guidance, feasibility workflow, compliance
+controls, or accountable-human decisions.
 
 For a confirmed future-Study lifecycle route, read
 `references/future-study-lifecycle-design-governance-and-analysis-state.md`.

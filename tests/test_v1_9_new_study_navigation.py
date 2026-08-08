@@ -17,7 +17,7 @@ class V19NewStudyNavigationTests(unittest.TestCase):
             "v1_8_with_specialist_review",
             "specialist_module_required",
             "insufficient_information",
-            "The user may accept, revise, defer, or reject",
+            "the user's choices to accept, revise, defer, or reject.",
             "does not create a Study",
         ):
             self.assertIn(expected, guidance)
@@ -31,6 +31,9 @@ class V19NewStudyNavigationTests(unittest.TestCase):
             "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.9.0.md",
             "system/11_distribution_installation_and_release/RELEASE_NOTES_v1.9.0.md",
             "system/11_distribution_installation_and_release/V1_9_RELEASE_CONTROL_CANDIDATE.json",
+            "system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.9.1.md",
+            "system/11_distribution_installation_and_release/RELEASE_NOTES_v1.9.1.md",
+            "system/11_distribution_installation_and_release/V1_9_1_RELEASE_CONTROL_CANDIDATE.json",
         )
         for relative in required:
             self.assertTrue((ROOT / relative).is_file(), relative)
@@ -43,9 +46,10 @@ class V19NewStudyNavigationTests(unittest.TestCase):
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
         normalized = " ".join(skill.split())
         self.assertIn("When ordinary language indicates a possible new Study", normalized)
-        self.assertIn("before choosing the detailed route", normalized)
+        self.assertIn("the navigator is the first substantive response", normalized)
         self.assertIn("does not create a Study", normalized)
         self.assertIn("user confirms the navigator's lifecycle route", normalized)
+        self.assertIn("the navigator is the first substantive response", normalized)
 
 
 if __name__ == "__main__":

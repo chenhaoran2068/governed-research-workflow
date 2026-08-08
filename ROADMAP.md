@@ -6,6 +6,21 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.9.1 (new-Study navigation stop-boundary maintenance source)
+
+This maintenance source is derived from immutable public v1.9.0 and retains
+`GRW-CAP-190-01` without adding a capability. It makes the possible-new-Study
+navigator the first substantive response and requires a fixed,
+human-confirmable recommendation before methods, lifecycle guidance, external
+sources, citations, links, data-access suggestions, or project creation.
+
+For causal or treatment-effect wording, the navigator names the separate
+causal-design or target-trial-emulation review and stops. For prospective,
+researcher-assigned, or randomized wording, it names the specialist trial route
+and stops. It adds no schema, validator, dependency, bootstrap behavior,
+Framework change, data access, network action, agent runtime, or
+installed-runtime claim.
+
 ## v1.9.0 (new-Study navigation source scope)
 
 This versioned source is derived from immutable public v1.8.0. It adds
