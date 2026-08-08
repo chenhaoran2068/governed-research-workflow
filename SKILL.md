@@ -41,12 +41,25 @@ post-release verification.
    action.
 4. Read only the reference and blank asset needed for the selected route.
 
-When ordinary language indicates a possible new Study, automatically read
-`references/new-study-navigator-and-route-recommendation.md` before choosing
-the detailed route. The navigator returns a short recommendation, visible
-facts, material unknowns, and route-limiting risks. It does not create a Study,
-select a design, infer governance, or authorize work. The user must confirm,
-revise, defer, or reject the recommendation before detailed lifecycle routing.
+When ordinary language indicates a possible new Study, the navigator is the
+first substantive response. Before giving a method, design recommendation,
+lifecycle plan, external source, citation, link, data-access suggestion, or
+project-creation instruction, read
+`references/new-study-navigator-and-route-recommendation.md` and return only
+its human-confirmable recommendation. The first response must state one route,
+visible facts, material unknowns, route-limiting risks, why the result is
+non-decisional, and the user's four choices: accept, revise, defer, or reject.
+It does not create a Study, select a design, infer governance, or authorize
+work. Do not enter detailed lifecycle routing until the user makes one of those
+choices.
+
+For a stated causal or treatment-effect question, return only
+`v1_8_with_specialist_review`, name the need for a separate causal-design or
+target-trial-emulation review, and stop for the user's decision. Do not give
+estimators, models, weighting methods, eligibility rules, or external sources
+at this stage. For a prospective researcher-assigned or randomized study,
+return only `specialist_module_required`, name the specialist trial route, and
+stop for the user's decision.
 
 For a new study or other consequential research work, ask the user to confirm
 the collaboration mode before analysis, project creation, or substantial

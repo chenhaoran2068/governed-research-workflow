@@ -41,10 +41,11 @@ in scope, compliant, ready, frozen, approved, run, or publishable.
 ## New-Study Navigation Material
 
 `GRW-CAP-190-01` adds generic text that recognizes a possible new-Study request
-and recommends one route for human confirmation. It contains no private path,
-project, Study, protocol, data, ethics/access/registration evidence, human
-decision, run, result, manuscript, submission package, receipt, or local
-installation record.
+and recommends one route for human confirmation before methods, lifecycle
+guidance, external sources, citations, links, data-access suggestions, or
+project creation. It contains no private path, project, Study, protocol, data,
+ethics/access/registration evidence, human decision, run, result, manuscript,
+submission package, receipt, or local installation record.
 
 The recommendation is not a research classification, feasibility finding,
 causal determination, governance approval, data-access grant, project-creation
