@@ -1,0 +1,18 @@
+module_manifest_version: 1.0.0
+module_id: research-ethics
+module_version: 1.1.0
+bridge_interface_version: 1.0.0
+governed_system_compatibility:
+  system_id: governed-research-workflow
+  required_capability_id: GRW-CAP-200-01
+supported_scope:
+  jurisdictions:
+    - china-mainland
+  research_routes:
+    - researcher-initiated-observational
+governed_study_requirements:
+  explicit_user_request: required
+  exact_study_root: required
+  explicit_input_allowlist: required
+  source_discovery: forbidden
+  automatic_invocation: forbidden

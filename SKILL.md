@@ -93,6 +93,22 @@ structural validation result. This is optional generic guidance, not automatic
 project discovery, persistent memory, a bootstrap executor, a research executor,
 or an authority route.
 
+For a selected released version that admits `GRW-CAP-200-01`, only after the
+user confirms a future-Study lifecycle route and explicitly requests China
+Mainland ethics or medical-research-registration material preparation, read
+`references/research-ethics-preparation-bridge.md`. The caller must name one
+compatible module, one exact Study root, one material mode, and the specific
+protocol/compliance inputs permitted for the preparation task. Do not discover
+a module or Study, scan a workspace, follow a reference, invoke a Skill
+automatically, infer a governance fact, create an application, submit/upload,
+or advance a lifecycle state. A module manifest, generated draft, blank
+template, structural validation, or preparation request does not prove ethics
+approval, registration, access, institutional compliance, human authorization,
+or readiness to process real material. Causal/treatment-effect and prospective,
+researcher-assigned, randomized, interventional, product, device, IVD, and
+non-China routes remain outside this bridge and require their existing
+specialist or future Charter routes.
+
 For an explicitly requested `experience_vocabulary_control_review`, first
 resolve the selected version to its exact public tag and matching GitHub
 Release, then check the capability ledger for an admitted `GRW-CAP-120-01`

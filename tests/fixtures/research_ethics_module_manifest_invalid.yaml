@@ -1,0 +1,13 @@
+module_manifest_version: 1.0.0
+module_id: research-ethics
+module_version: 1.1.0
+bridge_interface_version: 2.0.0
+governed_system_compatibility:
+  system_id: governed-research-workflow
+  required_capability_id: GRW-CAP-200-01
+governed_study_requirements:
+  explicit_user_request: optional
+  exact_study_root: optional
+  explicit_input_allowlist: optional
+  source_discovery: allowed
+  automatic_invocation: allowed

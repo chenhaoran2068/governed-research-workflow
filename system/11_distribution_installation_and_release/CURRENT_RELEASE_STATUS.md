@@ -36,6 +36,25 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.10.0 Research-Ethics Preparation Bridge Source Scope
+
+- The v1.10.0 source adds `GRW-CAP-200-01`: explicit, metadata-only routing
+  from a human-confirmed future-Study lifecycle route to a user-named compatible
+  ethics-preparation module.
+- It requires a caller-named module, exact Study root, material mode, and
+  permitted protocol/compliance inputs. It does not discover a module or Study,
+  invoke a Skill automatically, read project material, infer governance facts,
+  create an application, submit/upload, or advance a lifecycle gate.
+- The first compatible module is limited to China Mainland,
+  researcher-initiated observational research. Causal/treatment-effect,
+  prospective, researcher-assigned, randomized, interventional, product,
+  device, IVD, and non-China routes remain outside the bridge.
+- This source contains no real Study, protocol, ethics/access/registration
+  evidence, institutional form, credential, approval, generated application,
+  or installation receipt. A selected v1.10.0 checkout becomes an installation
+  target only after the normal public installation rule verifies its exact tag
+  and matching GitHub Release.
+
 ## v1.9.2 System-Entry And Route-Code Maintenance Source Scope
 
 - The v1.9.2 maintenance source retains `GRW-CAP-190-01` without a new

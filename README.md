@@ -6,8 +6,8 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.9.2 System-entry and route-code maintenance source, derived from
-immutable public v1.9.1. It preserves the frozen v1.0.0 contract,
+Status: v1.10.0 explicit research-ethics-preparation bridge source, derived
+from immutable public v1.9.2. It preserves the frozen v1.0.0 contract,
 `GRW-CAP-150-01`, and the 38 historical KGE-derived cards under
 `GRW-CAP-160-01`. It adds `GRW-CAP-170-01`: two generic collaboration-guidance
 documents, three public topics, and three new public-safe experience cards
@@ -35,6 +35,15 @@ state. `GRW-CAP-190-01` adds generic natural-language new-Study navigation and
 a human-confirmable route recommendation. v1.9.2 strengthens the System-entry
 metadata for ordinary-language possible-new-Study requests and requires the
 first substantive route response to begin `Route: <recommendation-code>`.
+`GRW-CAP-200-01` adds one optional, explicit, metadata-only bridge from a
+human-confirmed future-Study lifecycle route to a user-named compatible
+China-Mainland ethics-preparation module. The user must name the module, exact
+Study root, material mode, and permitted protocol/compliance inputs. The bridge
+does not discover a module or project, invoke a Skill automatically, infer a
+governance fact, create an application, submit/upload, or advance a lifecycle
+gate. A module manifest, generated draft, template, or structural check never
+proves ethics approval, registration, access, institutional compliance, or
+human authorization.
 It does not create a Study, decide a scientific design, infer governance,
 access material, execute research, replace human confirmation, or guarantee
 host-level automatic System selection. This versioned source tree does not itself prove the release
