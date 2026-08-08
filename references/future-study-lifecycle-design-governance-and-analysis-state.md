@@ -67,6 +67,31 @@ requirements are governance conditions. Exploratory/validation state and
 freeze identity are analysis/claim-strength controls. Do not collapse these
 categories into a study-type label.
 
+## Optional Ethics-Preparation Bridge
+
+At Stage 5, a human may explicitly ask to prepare China Mainland ethics or
+medical-research-registration materials for a compatible researcher-initiated
+observational Study. The System may then classify the request only as
+`eligible_for_research_ethics_v1_preparation`,
+`eligible_with_institutional_or_specialist_conditions`, or
+`outside_research_ethics_v1_scope`. These are navigation states, not design,
+ethics, registration, access, or institutional decisions.
+
+For the first state, the human must explicitly name a compatible module, exact
+Study root, material mode, and permitted protocol/compliance inputs. The module
+may prepare derived drafts under
+`03_protocol/derived/ethics_preparation/<package_id>/`; it must not overwrite
+the current `03_protocol/` authority. Actual applications, submitted snapshots,
+approvals, waivers, consent evidence, amendments, and related evidence remain
+under `02_registry/compliance/01_ethics_and_consent/`. A generated draft,
+template, module manifest, or structural check never advances the governance
+gate or proves an external fact.
+
+The bridge is not automatically invoked. Causal/treatment-effect questions
+remain subject to separate causal-design or target-trial-emulation review, and
+prospective, researcher-assigned, randomized, interventional, product, device,
+IVD, or non-China routes require an applicable specialist or future module.
+
 ## Analysis State And Change
 
 The blank analysis-state record supports: exploratory hypothesis generation;

@@ -6,6 +6,26 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.10.0 (explicit research-ethics-preparation bridge source)
+
+This source is derived from immutable public v1.9.2. It adds
+`GRW-CAP-200-01`: a generic, explicit, metadata-only route from a
+human-confirmed future-Study lifecycle to a user-named compatible
+ethics-preparation module.
+
+The route requires an exact Study root, material mode, and caller-permitted
+protocol/compliance inputs. It does not discover a module or Study, invoke a
+Skill automatically, read a real project, infer ethics/access/registration,
+create an application, submit/upload, or advance a governance gate. The first
+compatible module is limited to China Mainland, researcher-initiated
+observational research. Causal/treatment-effect, prospective,
+researcher-assigned, randomized, interventional, product, device, IVD, and
+non-China routes remain outside this bridge and require their existing
+specialist or future Charter routes.
+
+It adds no Framework behavior, data access, execution, credential handling,
+network action, public intake, agent runtime, or installed-runtime claim.
+
 ## v1.9.2 (System-entry and route-code maintenance source)
 
 This maintenance source is derived from immutable public v1.9.1 and retains

@@ -59,3 +59,21 @@ The public package does not include, create, or configure a user's global
 Codex `AGENTS.md` startup-registration rule. Any local startup registration is
 separate private configuration and requires its own controlled review and
 activation.
+
+## Research-Ethics Preparation Bridge Material
+
+`GRW-CAP-200-01` adds generic bridge guidance and synthetic module-manifest
+fixtures. It may route only after a human-confirmed future-Study lifecycle
+route and an explicit user request for China Mainland ethics or
+medical-research-registration preparation. The caller must name a compatible
+module, exact Study root, material mode, and permitted protocol/compliance
+inputs.
+
+The public package contains no real Study, project path, protocol, ethics
+submission, registration, access evidence, institutional form, credential,
+approval, human decision, generated application, or module installation
+receipt. It does not discover modules or projects, automatically invoke a
+module, read project material, infer governance facts, create an application,
+submit/upload, or advance a lifecycle gate. A bridge manifest, blank template,
+generated draft, or structural check is never ethics, registration, access,
+institutional-compliance, or human-authorization evidence.

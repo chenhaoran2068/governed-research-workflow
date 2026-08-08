@@ -54,3 +54,10 @@ recommendation before methods, lifecycle guidance, external sources, or project
 creation. It does not create a Study, decide a design, infer governance,
 execute a feasibility check, replace accountable-human decisions, or guarantee
 host-level System selection.
+
+The v1.10 source adds an optional, explicit route to a user-named compatible
+China-Mainland ethics-preparation module after a human-confirmed future-Study
+lifecycle route. The caller must name the module, exact Study root, material
+mode, and permitted protocol/compliance inputs. The route does not discover a
+module or project, invoke a Skill automatically, read real material, infer a
+governance fact, create an application, submit/upload, or advance a gate.
