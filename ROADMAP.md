@@ -6,6 +6,21 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.9.2 (System-entry and route-code maintenance source)
+
+This maintenance source is derived from immutable public v1.9.1 and retains
+`GRW-CAP-190-01` without adding a capability. It strengthens the public
+System-entry metadata for ordinary-language possible-new-Study requests and
+requires the first substantive navigator response to begin with the literal
+form `Route: <recommendation-code>`.
+
+It preserves the human-confirmable route, including its stop before methods,
+lifecycle guidance, external sources, citations, links, data-access
+suggestions, or project creation. It does not guarantee host-level System
+selection, add a schema, validator, dependency, bootstrap behavior, Framework
+change, data access, network action, agent runtime, or installed-runtime
+claim.
+
 ## v1.9.1 (new-Study navigation stop-boundary maintenance source)
 
 This maintenance source is derived from immutable public v1.9.0 and retains

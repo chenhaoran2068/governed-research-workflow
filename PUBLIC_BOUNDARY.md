@@ -43,7 +43,10 @@ in scope, compliant, ready, frozen, approved, run, or publishable.
 `GRW-CAP-190-01` adds generic text that recognizes a possible new-Study request
 and recommends one route for human confirmation before methods, lifecycle
 guidance, external sources, citations, links, data-access suggestions, or
-project creation. It contains no private path, project, Study, protocol, data,
+project creation. The route response begins
+`Route: <recommendation-code>`. The public System may strengthen its own entry
+metadata but cannot guarantee host-level automatic System selection. It contains
+no private path, project, Study, protocol, data,
 ethics/access/registration evidence, human decision, run, result, manuscript,
 submission package, receipt, or local installation record.
 
@@ -51,3 +54,8 @@ The recommendation is not a research classification, feasibility finding,
 causal determination, governance approval, data-access grant, project-creation
 instruction, or authority to act. It does not read material, create a record,
 select a reporting standard, invoke a helper, or execute analysis.
+
+The public package does not include, create, or configure a user's global
+Codex `AGENTS.md` startup-registration rule. Any local startup registration is
+separate private configuration and requires its own controlled review and
+activation.

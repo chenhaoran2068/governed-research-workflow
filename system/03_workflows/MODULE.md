@@ -46,9 +46,11 @@ connects design, governance, analysis-state, execution, manuscript, revision,
 submission, and closure boundaries without determining any real Study fact or
 duplicating the existing submission lifecycle control.
 
-The v1.9.1 source retains the lightweight new-Study navigator and hardens its
-first-response stop boundary. For natural language indicating a possible new
-Study, it returns one human-confirmable route recommendation before methods,
-lifecycle guidance, external sources, or project creation. It does not create a
-Study, decide a design, infer governance, execute a feasibility check, or
-replace accountable-human decisions.
+The v1.9.2 source retains the lightweight new-Study navigator and strengthens
+its System-entry metadata and first-response format. For natural language
+indicating a possible new Study, the navigator begins with
+`Route: <recommendation-code>` and returns one human-confirmable route
+recommendation before methods, lifecycle guidance, external sources, or project
+creation. It does not create a Study, decide a design, infer governance,
+execute a feasibility check, replace accountable-human decisions, or guarantee
+host-level System selection.

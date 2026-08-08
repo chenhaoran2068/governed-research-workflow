@@ -122,8 +122,8 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(self.ledger["ledger_schema_version"], "2.0.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.9.1")
-        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.8.0")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.9.2")
+        self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.9.1")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
         self.assertIn("separately tracked versioned source scopes", self.ledger["target_claim_scope"])
@@ -166,7 +166,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             self.assertIn(record["evidence"]["status"], evidence_statuses)
             self.assertEqual(record["approval_owner"], "accountable_human")
             expected_target = (
-            "v1.9.1" if record["capability_id"] in V190_SCOPE_IDS
+            "v1.9.2" if record["capability_id"] in V190_SCOPE_IDS
             else "v1.8.0" if record["capability_id"] in V180_SCOPE_IDS
             else "v1.7.0" if record["capability_id"] in V170_SCOPE_IDS
             else "v1.6.0" if record["capability_id"] in V160_SCOPE_IDS

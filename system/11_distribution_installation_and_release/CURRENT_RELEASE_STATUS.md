@@ -36,6 +36,25 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.9.2 System-Entry And Route-Code Maintenance Source Scope
+
+- The v1.9.2 maintenance source retains `GRW-CAP-190-01` without a new
+  capability identifier.
+- It strengthens public System-entry metadata for ordinary-language
+  possible-new-Study requests and requires the first substantive route response
+  to begin `Route: <recommendation-code>`.
+- It preserves the human-confirmable stop boundary before methods, lifecycle
+  guidance, external sources, citations, links, data-access suggestions, or
+  project creation. It does not guarantee host-level automatic System
+  selection.
+- It contains no local global `AGENTS.md` configuration, real Study, project
+  path, data, protocol, ethics/access/registration material, private record,
+  runtime receipt, Framework change, research executor, or human approval
+  claim.
+- A selected v1.9.2 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact tag and matching GitHub
+  Release.
+
 ## v1.9.1 New-Study Navigation Stop-Boundary Maintenance Source Scope
 
 - The v1.9.1 maintenance source retains `GRW-CAP-190-01` without a new

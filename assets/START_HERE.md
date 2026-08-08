@@ -8,7 +8,9 @@ Governed Research Workflow skill.
    manuscript work, reviewer revision, declaration work, citation work, or a
    retrospective. For a possible new study, first use the lightweight
    new-Study navigator before methods, sources, lifecycle guidance, or project
-   creation; it recommends a route but does not decide one.
+   creation. Its first substantive response begins
+   `Route: <recommendation-code>`; it recommends a route but does not decide
+   one.
 3. For consequential new-study work, confirm the collaboration mode.
 4. Use only the blank templates needed for the route.
 5. Keep restricted data, credentials, unpublished work, and private records
