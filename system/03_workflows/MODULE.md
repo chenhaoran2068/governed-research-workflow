@@ -61,3 +61,10 @@ lifecycle route. The caller must name the module, exact Study root, material
 mode, and permitted protocol/compliance inputs. The route does not discover a
 module or project, invoke a Skill automatically, read real material, infer a
 governance fact, create an application, submit/upload, or advance a gate.
+
+The v1.11 source adds a narrow boundary for user-requested reading of a
+specified scholarly paper. It prevents that request from being treated as a
+possible new Study unless the same request also asks to start, plan, explore,
+or create one. It can identify a separately maintained reading Skill but cannot
+discover or invoke it, read or retain a source, configure a manager or
+knowledge service, or create a record.

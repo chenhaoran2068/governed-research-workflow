@@ -1,6 +1,6 @@
 ---
 name: governed-research-workflow
-description: Mandatory first-response System for any ordinary-language request to start, plan, explore, or propose a possible new research Study. Use it before giving research methods, design, sources, citations, links, data-access suggestions, or project-creation instructions. It also routes governed existing-study, manuscript, reviewer-revision, declaration, citation, feasibility, and retrospective work; humans retain consequential decisions.
+description: Mandatory first-response System for any ordinary-language request to start, plan, explore, or propose a possible new research Study. Use it before giving research methods, design, sources, citations, links, data-access suggestions, or project-creation instructions. Do not use it for an explicit request to read, understand, or appraise a specific scholarly paper unless the user also asks to start, plan, or create a new Study. It also routes governed existing-study, manuscript, reviewer-revision, declaration, citation, feasibility, and retrospective work; humans retain consequential decisions.
 ---
 
 # Governed Research Workflow
@@ -56,6 +56,15 @@ It does not create a Study, select a design, infer governance, or authorize
 work. Do not enter detailed lifecycle routing until the user makes one of those
 choices.
 
+An explicit request to read, understand, annotate, discuss, or critically
+appraise a specific scholarly paper is not a possible new Study merely because
+it uses research language. Unless the same request clearly asks to start, plan,
+explore, or create a Study, do not begin with `Route:`. Do not read a paper or
+invoke another Skill automatically. For an explicitly requested paper-reading
+task, use `references/research-paper-reading-bridge.md` only to state the
+optional handoff boundary; the reading Skill's own source, retention, and
+configuration checks remain separate.
+
 For a stated causal or treatment-effect question, return only
 `v1_8_with_specialist_review`, name the need for a separate causal-design or
 target-trial-emulation review, and stop for the user's decision. Do not give
@@ -108,6 +117,15 @@ or readiness to process real material. Causal/treatment-effect and prospective,
 researcher-assigned, randomized, interventional, product, device, IVD, and
 non-China routes remain outside this bridge and require their existing
 specialist or future Charter routes.
+
+For a selected released version that admits `GRW-CAP-210-01`, use
+`references/research-paper-reading-bridge.md` only when the user explicitly
+requests help with one specified scholarly paper. It may identify
+`research-paper-reading` as an optional compatible Skill, but it must not
+discover or invoke that Skill, read a source, download or copy a PDF, inspect a
+reference manager, create a reading record, configure a Framework knowledge
+service, infer a retention choice, or treat reading as a new Study. The user
+must separately choose and activate the reading route.
 
 For an explicitly requested `experience_vocabulary_control_review`, first
 resolve the selected version to its exact public tag and matching GitHub

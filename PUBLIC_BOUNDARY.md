@@ -77,3 +77,18 @@ module, read project material, infer governance facts, create an application,
 submit/upload, or advance a lifecycle gate. A bridge manifest, blank template,
 generated draft, or structural check is never ethics, registration, access,
 institutional-compliance, or human-authorization evidence.
+
+## Research-Paper Reading Bridge Material
+
+`GRW-CAP-210-01` adds generic text that distinguishes an explicit request to
+read, understand, annotate, discuss, or critically appraise one specified
+scholarly paper from a possible new-Study request. It may identify
+`research-paper-reading` as an optional compatible Skill, but only after the
+user explicitly chooses that reading route.
+
+The public package contains no paper, PDF, citation, bibliography, source
+identifier, local path, Study material, reading dossier, knowledge card,
+experience record, manager configuration, or Framework knowledge-service
+configuration. It does not discover or invoke a Skill, read or download a
+source, copy a PDF, synchronize a reference manager, create a reading record,
+infer a retention choice, or convert knowledge into an experience or rule.

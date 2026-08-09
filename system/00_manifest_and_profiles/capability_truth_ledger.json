@@ -3,9 +3,9 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.10.0",
+    "source_release_version": "v1.11.0",
     "historical_public_baseline": "v1.9.2",
-    "live_release_identity_rule": "This v1.10.0 public ethics-preparation bridge source is derived from immutable public v1.9.2. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, module compatibility, ethics/registration fact, or C4 authorization."
+    "live_release_identity_rule": "This v1.11.0 public paper-reading boundary source is derived from immutable public v1.10.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, Skill compatibility, source fact, retention choice, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1251,6 +1251,47 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/research-ethics-preparation-bridge.md"],
       "contradiction_refusal": "Forbid module discovery, real Study reading, governance inference, automatic invocation, gate advance, submission/upload, or a public/currentness/installation claim when the human request, selected module manifest, exact Study root, allowed inputs, route boundary, selected version identity, or required evidence is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the proposed v1.10.0 source scope. It does not establish a compatible installed module, a real Study record, module source currentness, ethics/registration/access/institutional fact, human authority, exact candidate commit, hosted tag, matching GitHub Release, installed runtime, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-210-01",
+      "public_name": "Explicit Research-Paper Reading Boundary And Optional-Skill Bridge",
+      "capability_class": "routing",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides an explicit, metadata-only boundary that classifies a user-requested reading of a specified scholarly paper as paper-reading rather than a possible new Study, and may identify a separately maintained reading Skill as optional.",
+      "non_promise": "Does not discover, invoke, install, configure, or verify a Skill; read, download, copy, parse, quote, summarize, index, classify, or retain a paper; inspect a reference manager, workspace, or Framework service; create a reading, knowledge, experience, mapping, rule, promotion, Study, or governance record; or establish an authority, hosted Release, or installed runtime.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "references/research-paper-reading-bridge.md",
+          "references/new-study-navigator-and-route-recommendation.md",
+          "tests/test_research_paper_reading_bridge.py"
+        ],
+        "identifiers": [
+          "GRW-CAP-210-01",
+          "research-paper-reading-bridge",
+          "explicit-paper-reading-request",
+          "not-a-possible-new-study"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_research_paper_reading_bridge.py", "identifier": "ResearchPaperReadingBridgeTests"},
+          {"kind": "test", "path": "tests/test_v1_9_new_study_navigation.py", "identifier": "V19NewStudyNavigationTests"},
+          {"kind": "test", "path": "tests/test_capability_truth_ledger.py", "identifier": "CapabilityTruthLedgerTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.11.0", "last_verified_release": null, "target_release": "v1.11.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the research-paper-reading Skill and System bridge direction and authorized continuous implementation in the active Codex conversation on 2026-08-09; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/research-paper-reading-bridge.md"],
+      "contradiction_refusal": "Forbid a paper-reading handoff, source, retention, manager, Framework, knowledge, experience, rule, Study, authority, Release, or installation claim when explicit user intent, selected version identity, required Skill boundary, or accountable-human decision is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.11.0 source scope. It does not establish a compatible installed Skill, a paper source, source currentness, retention authorization, manager or Framework configuration, human authority, exact candidate commit, hosted tag, matching GitHub Release, installed runtime, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }
