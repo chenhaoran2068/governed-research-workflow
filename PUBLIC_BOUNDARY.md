@@ -92,3 +92,21 @@ experience record, manager configuration, or Framework knowledge-service
 configuration. It does not discover or invoke a Skill, read or download a
 source, copy a PDF, synchronize a reference manager, create a reading record,
 infer a retention choice, or convert knowledge into an experience or rule.
+
+## Managed Reading Knowledge-Service Consumer Material
+
+`GRW-CAP-220-01` adds a generic, optional consumer boundary for a managed
+reading knowledge service selected and configured by the reading Skill. It
+allows only a separately human-approved, metadata-only handoff to a named
+existing Study. The public material contains a blank schema and template; it
+contains no configured service, reference-manager data, paper, PDF, citation
+library, dossier, knowledge card, Study, source path, private identifier, or
+human decision.
+
+The System neither discovers nor configures a service, reads a manager or
+source artifact, transfers source content, synchronizes a manager, creates a
+handoff, infers a Study need, or treats metadata as evidence, source support,
+governance approval, design authority, or result authority. The Framework only
+provides the optional service boundary, and the reading Skill remains the
+service owner. A structural schema pass does not establish any real service,
+handoff, human approval, or installed runtime.

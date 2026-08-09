@@ -11,8 +11,10 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = ROOT / "system" / "11_distribution_installation_and_release"
-FRAMEWORK_TAG = "v0.2.0"
-FRAMEWORK_COMMIT = "69c76f84a5b0913b26c17ea48f152dbc50b4bec6"
+HISTORICAL_FRAMEWORK_TAG = "v0.2.0"
+HISTORICAL_FRAMEWORK_COMMIT = "69c76f84a5b0913b26c17ea48f152dbc50b4bec6"
+CURRENT_FRAMEWORK_TAG = "v0.4.0"
+CURRENT_FRAMEWORK_COMMIT = "30ba0f4032a90723612b6d213bd54faa7cce5aee"
 
 
 class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
@@ -20,12 +22,12 @@ class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         workflow = (ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.11.0", manifest)
-        self.assertIn('supported_framework_versions: "0.2.0"', manifest)
+        self.assertIn("system_version: 1.12.0", manifest)
+        self.assertIn('supported_framework_versions: "0.4.0"', manifest)
         self.assertNotIn('supported_framework_versions: "0.1.0"', manifest)
-        self.assertIn(f"FRAMEWORK_RELEASE_TAG: {FRAMEWORK_TAG}", workflow)
-        self.assertIn(f"FRAMEWORK_EXPECTED_COMMIT: {FRAMEWORK_COMMIT}", workflow)
-        self.assertIn(f"ref: {FRAMEWORK_COMMIT}", workflow)
+        self.assertIn(f"FRAMEWORK_RELEASE_TAG: {CURRENT_FRAMEWORK_TAG}", workflow)
+        self.assertIn(f"FRAMEWORK_EXPECTED_COMMIT: {CURRENT_FRAMEWORK_COMMIT}", workflow)
+        self.assertIn(f"ref: {CURRENT_FRAMEWORK_COMMIT}", workflow)
 
     def test_public_materials_preserve_the_compatibility_only_boundary(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
@@ -40,7 +42,7 @@ class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
         ).lower()
 
         self.assertIn("## v1.5.2", roadmap)
-        self.assertIn(FRAMEWORK_COMMIT, current_material)
+        self.assertIn(CURRENT_FRAMEWORK_COMMIT, current_material)
         self.assertIn("does not create a `papers/` root", current_material)
         self.assertIn("no new capability", current_material)
         self.assertIn("this roadmap does not state that v1.5.2 is released", current_material)
@@ -69,8 +71,8 @@ class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
         self.assertEqual(record["candidate_identity"]["candidate_version"], "1.5.2")
         self.assertEqual(record["candidate_identity"]["exact_commit"], "0" * 40)
         self.assertEqual(record["candidate_identity"]["branch_state"], "local_candidate_only")
-        self.assertEqual(record["dependency_and_source_authority"]["framework_tag"], FRAMEWORK_TAG)
-        self.assertEqual(record["dependency_and_source_authority"]["framework_commit"], FRAMEWORK_COMMIT)
+        self.assertEqual(record["dependency_and_source_authority"]["framework_tag"], HISTORICAL_FRAMEWORK_TAG)
+        self.assertEqual(record["dependency_and_source_authority"]["framework_commit"], HISTORICAL_FRAMEWORK_COMMIT)
         self.assertIsNone(record["c4_release_authorization_reference"])
         self.assertIsNone(record["post_release_verification_reference"])
 

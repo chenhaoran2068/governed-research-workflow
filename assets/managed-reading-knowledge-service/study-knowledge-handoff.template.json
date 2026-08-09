@@ -1,0 +1,18 @@
+{
+  "handoff_schema_version": 1,
+  "handoff_id": "SKH-0000-000",
+  "knowledge_service_id": "scholarly-reading-knowledge",
+  "target_study_id": "StudyIdentifier",
+  "handoff_purpose": "background_reference",
+  "approved_metadata": {
+    "citation_key": "example-2026",
+    "persistent_identifier": "doi:10.0000/example",
+    "title": "Example Title",
+    "publication_year": 2026,
+    "knowledge_record_references": ["KNC-000001"]
+  },
+  "source_content_transferred": false,
+  "source_reading_authorized": false,
+  "authority_status": "non_authoritative",
+  "human_handoff_decision_reference": "human-approved-reference"
+}
