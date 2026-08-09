@@ -108,6 +108,13 @@ class ReleaseControlTests(unittest.TestCase):
             "V1_5_2_RELEASE_EVIDENCE.md",
             "PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.5.2.md",
             "V1_5_2_RELEASE_CONTROL_CANDIDATE.json",
+            "GRW_CAP_220_01_PUBLIC_CAPABILITY_ADMISSION.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.12.0.md",
+            "V1_12_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V1_12_RELEASE_GATE.md",
+            "V1_12_RELEASE_CONTROL_CANDIDATE.json",
+            "V1_12_RELEASE_EVIDENCE.md",
+            "RELEASE_NOTES_v1.12.0.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -134,10 +141,10 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.11.0", manifest)
+        self.assertIn("system_version: 1.12.0", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
-        self.assertIn('supported_framework_versions: "0.2.0"', manifest)
-        self.assertIn("exact Framework v0.2.0 contract", manifest)
+        self.assertIn('supported_framework_versions: "0.4.0"', manifest)
+        self.assertIn("exact Framework v0.4.0 contract", manifest)
         self.assertIn("Status: v1.1.0 versioned source scope", readme)
         self.assertIn("does not itself prove the\nrelease or installation identity", readme)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)
@@ -150,9 +157,9 @@ class ReleaseControlTests(unittest.TestCase):
         self.assertIn("Published v0.5.0 Baseline", current_status)
         self.assertIn("matching GitHub Release", current_status)
         self.assertIn("GitHub technical immutable releases are enabled", integrity_policy)
-        self.assertIn("ref: 69c76f84a5b0913b26c17ea48f152dbc50b4bec6", workflow)
-        self.assertIn("FRAMEWORK_RELEASE_TAG: v0.2.0", workflow)
-        self.assertIn("FRAMEWORK_EXPECTED_COMMIT: 69c76f84a5b0913b26c17ea48f152dbc50b4bec6", workflow)
+        self.assertIn("ref: 30ba0f4032a90723612b6d213bd54faa7cce5aee", workflow)
+        self.assertIn("FRAMEWORK_RELEASE_TAG: v0.4.0", workflow)
+        self.assertIn("FRAMEWORK_EXPECTED_COMMIT: 30ba0f4032a90723612b6d213bd54faa7cce5aee", workflow)
         self.assertNotIn("unreleased governance-and-records candidate version", readme)
         self.assertNotIn("current public baseline is `v0.3.1`", readme)
         self.assertNotIn("v0.3.1 (release-gated compatibility-maintenance source)", roadmap)

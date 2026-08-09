@@ -3,9 +3,9 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.11.0",
-    "historical_public_baseline": "v1.9.2",
-    "live_release_identity_rule": "This v1.11.0 public paper-reading boundary source is derived from immutable public v1.10.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, Skill compatibility, source fact, retention choice, or C4 authorization."
+    "source_release_version": "v1.12.0",
+    "historical_public_baseline": "v1.11.0",
+    "live_release_identity_rule": "This v1.12.0 managed reading knowledge-service consumer source is derived from immutable public v1.11.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, Framework/Skill/service compatibility, source fact, retention choice, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1292,6 +1292,48 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/research-paper-reading-bridge.md"],
       "contradiction_refusal": "Forbid a paper-reading handoff, source, retention, manager, Framework, knowledge, experience, rule, Study, authority, Release, or installation claim when explicit user intent, selected version identity, required Skill boundary, or accountable-human decision is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the proposed v1.11.0 source scope. It does not establish a compatible installed Skill, a paper source, source currentness, retention authorization, manager or Framework configuration, human authority, exact candidate commit, hosted tag, matching GitHub Release, installed runtime, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-220-01",
+      "public_name": "Optional Managed Reading Knowledge-Service Consumer Boundary",
+      "capability_class": "routing",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides an explicit, metadata-only consumer boundary by which one named existing Study may receive a separately accountable-human-approved handoff from the optional scholarly-reading-knowledge service owned by a separately maintained reading Skill.",
+      "non_promise": "Does not discover, invoke, install, configure, or verify a service, Skill, Framework, manager, Study, paper, PDF, dossier, knowledge card, or source; read, download, copy, parse, quote, summarize, index, synchronize, transfer, or retain source content; create a real handoff; infer relevance, source support, access, governance, design, result authority, or promotion; or establish an authority, hosted Release, or installed runtime.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "references/managed-reading-knowledge-service-bridge.md",
+          "assets/managed-reading-knowledge-service/study-knowledge-handoff.template.json",
+          "system/09_schemas_records_and_templates/study_knowledge_handoff.schema.json",
+          "tests/test_managed_reading_knowledge_service_bridge.py"
+        ],
+        "identifiers": [
+          "GRW-CAP-220-01",
+          "managed-reading-knowledge-service-bridge",
+          "scholarly-reading-knowledge",
+          "metadata-only-study-handoff"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_managed_reading_knowledge_service_bridge.py", "identifier": "ManagedReadingKnowledgeServiceBridgeTests"},
+          {"kind": "test", "path": "tests/test_framework_candidate_integration.py", "identifier": "FrameworkCandidateIntegrationTests"},
+          {"kind": "test", "path": "tests/test_capability_truth_ledger.py", "identifier": "CapabilityTruthLedgerTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.12.0", "last_verified_release": null, "target_release": "v1.12.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the managed reading knowledge-service architecture and authorized Framework, reading Skill, Research System, public portal, local adoption, and verification work in the active Codex conversation on 2026-08-09; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/managed-reading-knowledge-service-bridge.md"],
+      "contradiction_refusal": "Forbid a service consumer, source, manager, paper, PDF, dossier, knowledge-card, Study handoff, access, governance, source-support, relevance, authority, Release, or installation claim when the caller has not explicitly named the Study, service, approved metadata, purpose, accountable-human decision reference, selected version identity, or any required fact is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.12.0 source scope. It does not establish a compatible installed Framework, Skill, manager, or service; a real Study/source/metadata handoff; source currentness or support; retention or access authorization; human authority; exact candidate commit; hosted tag; matching GitHub Release; installed runtime; remote CI evidence; or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

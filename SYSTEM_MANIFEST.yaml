@@ -1,6 +1,6 @@
-# v1.11.0 retains the frozen v1.0.0 public contract and previously admitted
-# scopes. It adds GRW-CAP-210-01: an explicit, metadata-only referral boundary
-# for a user-requested reading of a specific scholarly paper. It adds no
+# v1.12.0 retains the frozen v1.0.0 public contract and previously admitted
+# scopes. It adds GRW-CAP-220-01: an explicit, metadata-only consumer boundary
+# for a user-selected managed reading knowledge service. It adds no
 # research execution, data access, public intake, network action, agent
 # runtime, delegation, generic writer, recovery executor, submission, approval,
 # or release decision.
@@ -8,10 +8,10 @@
 # installed or released:
 # verify an exact annotated tag and matching GitHub Release at installation
 # time. The workspace framework-contract version for this source is exactly
-# 0.2.0 and is not a compatibility range.
+# 0.4.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.11.0
+system_version: 1.12.0
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:
@@ -19,10 +19,11 @@ supported_profiles:
   - framework_integrated
 required_dependencies:
   - jsonschema==4.26.0
-optional_shared_services: []
+optional_shared_services:
+  - scholarly-reading-knowledge
 framework_compatibility:
-  # This source revision declares only the exact Framework v0.2.0 contract.
+  # This source revision declares only the exact Framework v0.4.0 contract.
   # Candidate and released identities remain separately verified.
-  supported_framework_versions: "0.2.0"
+  supported_framework_versions: "0.4.0"
 project_ownership_behavior: primary_system
 data_access_boundary: no-data-access-is-granted-by-this-system-manifest

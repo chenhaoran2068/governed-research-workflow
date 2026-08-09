@@ -127,6 +127,18 @@ reference manager, create a reading record, configure a Framework knowledge
 service, infer a retention choice, or treat reading as a new Study. The user
 must separately choose and activate the reading route.
 
+For a selected released version that admits `GRW-CAP-220-01`, use
+`references/managed-reading-knowledge-service-bridge.md` only when the user
+explicitly asks an existing Study to receive a metadata-only handoff from one
+named managed reading knowledge service. The caller must name the exact Study,
+service, permitted metadata fields, handoff purpose, and accountable-human
+decision reference. Do not discover a service or Study, inspect a manager,
+open a paper, dossier, knowledge card, or PDF, synchronize a reference
+manager, create a handoff, infer relevance, or make a design, governance,
+source-support, or result-authority claim. The reading Skill owns any service
+configuration and source/retention decision; this System can only consume a
+caller-supplied metadata handoff after separate human approval.
+
 For an explicitly requested `experience_vocabulary_control_review`, first
 resolve the selected version to its exact public tag and matching GitHub
 Release, then check the capability ledger for an admitted `GRW-CAP-120-01`

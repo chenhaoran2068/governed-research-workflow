@@ -10,7 +10,10 @@ explore, or create a Study.
 
 The bridge may identify `research-paper-reading` as an optional separately
 maintained Skill. It does not discover, invoke, install, configure, or verify
-that Skill.
+that Skill. A separately admitted managed-reading knowledge-service handoff,
+when configured by the reading Skill and explicitly requested for a named
+existing Study, is governed only by
+`managed-reading-knowledge-service-bridge.md`.
 
 ## Explicit Handoff Boundary
 
@@ -23,8 +26,8 @@ boundary, and optional Framework knowledge-service prerequisites.
 Do not read, download, copy, parse, quote, summarize, index, classify, or
 retain a paper through this bridge. Do not inspect a reference manager,
 workspace, or Framework configuration. Do not create a reading dossier,
-knowledge card, vocabulary record, experience record, mapping, rule, or
-promotion proposal.
+knowledge card, vocabulary record, experience record, mapping, rule,
+promotion proposal, or Study handoff.
 
 ## Scope Stops
 

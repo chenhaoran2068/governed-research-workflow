@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/study_knowledge_handoff.schema.json",
+  "title": "Study Knowledge Metadata Handoff",
+  "type": "object",
+  "required": [
+    "handoff_schema_version",
+    "handoff_id",
+    "knowledge_service_id",
+    "target_study_id",
+    "handoff_purpose",
+    "approved_metadata",
+    "source_content_transferred",
+    "source_reading_authorized",
+    "authority_status",
+    "human_handoff_decision_reference"
+  ],
+  "properties": {
+    "handoff_schema_version": {"type": "integer", "const": 1},
+    "handoff_id": {"type": "string", "pattern": "^SKH-[0-9]{4}-[0-9]{3}$"},
+    "knowledge_service_id": {"type": "string", "const": "scholarly-reading-knowledge"},
+    "target_study_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"},
+    "handoff_purpose": {
+      "type": "string",
+      "enum": ["background_reference", "method_context", "candidate_comparison", "reading_follow_up"]
+    },
+    "approved_metadata": {
+      "type": "object",
+      "required": ["citation_key", "persistent_identifier", "title", "publication_year", "knowledge_record_references"],
+      "properties": {
+        "citation_key": {"type": "string", "minLength": 1, "maxLength": 200},
+        "persistent_identifier": {"type": "string", "minLength": 1, "maxLength": 500},
+        "title": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "publication_year": {"type": "integer", "minimum": 1600, "maximum": 3000},
+        "knowledge_record_references": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"},
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_content_transferred": {"type": "boolean", "const": false},
+    "source_reading_authorized": {"type": "boolean", "const": false},
+    "authority_status": {"type": "string", "const": "non_authoritative"},
+    "human_handoff_decision_reference": {"type": "string", "minLength": 1, "maxLength": 500}
+  },
+  "additionalProperties": false
+}

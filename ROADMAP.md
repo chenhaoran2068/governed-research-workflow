@@ -6,6 +6,23 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.12.0 (managed reading knowledge-service consumer source)
+
+This source is derived from immutable public v1.11.0. It adds
+`GRW-CAP-220-01`: generic routing, an empty metadata-handoff template, and
+source-free validation for an optional `scholarly-reading-knowledge` service.
+The Framework provides the generic opt-in service boundary and the separate
+reading Skill owns configuration, source authorization, retention, and any
+manager interaction. This System only consumes a caller-supplied,
+accountable-human-approved metadata handoff for one named existing Study.
+
+The consumer does not discover a service or Study, inspect a manager, open or
+transfer a paper/PDF/dossier/card, synchronize a manager, create a handoff,
+infer relevance, or make a source-support, governance, design, result, or
+release claim. It adds no data access, research execution, RAG, automatic
+loading, network action, manager action, agent runtime, or installed-runtime
+claim.
+
 ## v1.11.0 (explicit paper-reading boundary and optional-Skill bridge source)
 
 This source is derived from immutable public v1.10.0. It adds

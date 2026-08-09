@@ -6,8 +6,8 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.11.0 explicit paper-reading boundary and optional-Skill bridge
-source, derived from immutable public v1.10.0. It preserves the frozen v1.0.0
+Status: v1.12.0 managed reading knowledge-service consumer source, derived
+from immutable public v1.11.0. It preserves the frozen v1.0.0
 contract,
 `GRW-CAP-150-01`, and the 38 historical KGE-derived cards under
 `GRW-CAP-160-01`. It adds `GRW-CAP-170-01`: two generic collaboration-guidance
@@ -18,9 +18,9 @@ current-requirement checker, approval mechanism, promotion mechanism, or
 automatic recommendation service. They contain no private source, identifier,
 path, hash, receipt, decision, or mapping. The package does not automatically
 load all cards, synchronize them, or update them. Its only maintained
-framework-integrated claim remains the exact Workspace Framework `v0.2.0`
+framework-integrated claim is the exact Workspace Framework `v0.4.0`
 contract, validated only against commit
-`69c76f84a5b0913b26c17ea48f152dbc50b4bec6` under separately controlled
+`30ba0f4032a90723612b6d213bd54faa7cce5aee` under separately controlled
 candidate and release evidence. It adds no research-operation executor, public
 intake, direct external-contributor flow, upload/download helper, network
 action, real-content handling, data access, source-body read, source discovery,
@@ -53,6 +53,14 @@ discover or invoke that Skill, read a paper, download or copy a PDF, inspect a
 reference manager, create a reading record, configure a knowledge service, or
 infer a retention choice. The separate reading Skill remains responsible for
 its own source, retention, and configuration boundaries.
+`GRW-CAP-220-01` adds an optional consumer boundary for the user-selected,
+reading-Skill-owned `scholarly-reading-knowledge` service. A named existing
+Study may receive only separately human-approved metadata such as a citation
+key, persistent identifier, title, year, and opaque knowledge-record reference.
+It cannot receive a PDF, source excerpt, local path, manager database, dossier
+content, knowledge-card content, or an inferred scientific conclusion. The
+System cannot discover or configure the service, create a handoff, or treat a
+metadata handoff as authority or evidence.
 It does not create a Study, decide a scientific design, infer governance,
 access material, execute research, replace human confirmation, or guarantee
 host-level automatic System selection. This versioned source tree does not itself prove the release

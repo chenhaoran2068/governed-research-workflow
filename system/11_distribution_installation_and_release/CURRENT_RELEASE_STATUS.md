@@ -36,6 +36,22 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.12.0 Managed Reading Knowledge-Service Consumer Source Scope
+
+- The v1.12.0 source adds `GRW-CAP-220-01`: an optional, metadata-only
+  consumer boundary for a separately configured `scholarly-reading-knowledge`
+  service owned by the reading Skill.
+- It requires a caller-named existing Study, service, handoff purpose,
+  permitted metadata, and accountable-human decision reference. It does not
+  discover or configure a service/Study, inspect a manager, source, PDF,
+  dossier, or card, create a real handoff, transfer source content, or infer
+  relevance, source support, access, governance, design, result, or approval.
+- This source contains no configured service, manager data, paper, PDF,
+  citation library, local path, Study material, human decision, or real
+  handoff. A selected v1.12.0 checkout becomes an installation target only
+  after the normal public installation rule verifies its exact tag and matching
+  GitHub Release.
+
 ## v1.11.0 Research-Paper Reading Boundary Source Scope
 
 - The v1.11.0 source adds `GRW-CAP-210-01`: an explicit boundary that treats a

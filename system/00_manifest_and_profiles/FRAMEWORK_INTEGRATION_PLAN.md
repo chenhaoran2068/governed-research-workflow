@@ -1,9 +1,9 @@
 # Framework Integration Plan
 
-Status: historical v0.3.0 through v1.5.0 integration evidence remains retained
-under M54 and is not reused as v1.5.2 evidence. The v1.5.2 compatibility-
-maintenance source declares only the exact released Workspace Framework
-`v0.2.0` tag at commit `69c76f84a5b0913b26c17ea48f152dbc50b4bec6`.
+Status: historical v0.3.0 through v1.5.2 integration evidence remains retained
+under M54 and is not reused as v1.12.0 evidence. The v1.12.0 source declares
+only the exact released Workspace Framework `v0.4.0` tag at commit
+`30ba0f4032a90723612b6d213bd54faa7cce5aee`.
 Candidate and Release verification for this System remain separate from this
 source declaration. A selected public version remains verifiable only through
 its exact annotated tag and matching GitHub Release.
@@ -12,13 +12,13 @@ its exact annotated tag and matching GitHub Release.
 
 `../../SYSTEM_MANIFEST.yaml` uses the public Workspace Framework's generic
 system-manifest contract and declares both `standalone` and
-`framework_integrated`. For this v1.5.2 source, the latter declares only
-Framework contract `0.2.0`; it does not imply a compatibility range. Explicitly invoked
+`framework_integrated`. For this v1.12.0 source, the latter declares only
+Framework contract `0.4.0`; it does not imply a compatibility range. Explicitly invoked
 structural validators require only the direct package dependency
 `jsonschema==4.26.0`; they do not require the Workspace Framework, an optional
 shared service, an absolute workspace path, or a private-runtime assumption.
 
-The cross-repository integration test bootstraps an empty v0.2.0 framework
+The cross-repository integration test bootstraps an empty v0.4.0 framework
 workspace, proves that it does not create a `Papers/` root, places this concrete
 system package at `Systems/governed-research-workflow/`, records a workspace-
 relative registration, and adds one synthetic project-system binding. It
@@ -41,17 +41,17 @@ own exact source revision.
 
 The v0.6 release source retains integration evidence against released Workspace Framework `v0.1.2` at commit
 `97fbd1f4f3cbaabb2cdbb3e106c91a6c9fd8b3a8`. That historical evidence remains
-retained but is not reused as v1.5.2 evidence.
+retained but is not reused as v1.12.0 evidence.
 
-These historical tests do not establish v1.5.2 compatibility. They do not
+These historical tests do not establish v1.12.0 compatibility. They do not
 approve scientific quality, compliance, source access, project creation, or a
 workflow release.
 
-## v1.5.2 Compatibility Evidence Requirements
+## v1.12.0 Compatibility Evidence Requirements
 
-The v1.5.2 candidate must rerun the cross-repository integration test against
-only Framework `v0.2.0` at commit
-`69c76f84a5b0913b26c17ea48f152dbc50b4bec6`, with no Framework skip. It must
+The v1.12.0 candidate must rerun the cross-repository integration test against
+only Framework `v0.4.0` at commit
+`30ba0f4032a90723612b6d213bd54faa7cce5aee`, with no Framework skip. It must
 prove the exact workspace and System contract match, safe workspace-relative
 registration, schema validation, and the absence of a generated `Papers/`
 root. This remains bounded technical evidence only; it does not establish an
@@ -64,9 +64,9 @@ Before a later stable release advertises framework integration, maintainers
 must:
 
 1. retain historical cross-repository validation as historical evidence only,
-   and create separate v1.5.2 evidence against `v0.2.0` at
-   `69c76f84a5b0913b26c17ea48f152dbc50b4bec6`;
-2. retain exact `0.2.0` in `framework_compatibility`, while identifying the
+   and create separate v1.12.0 evidence against `v0.4.0` at
+   `30ba0f4032a90723612b6d213bd54faa7cce5aee`;
+2. retain exact `0.4.0` in `framework_compatibility`, while identifying the
    exact tested Framework release tag and commit in compatibility evidence and
    release notes;
 3. define how this primary project-owning system behaves when optional shared
