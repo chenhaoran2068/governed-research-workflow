@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: v1.10.0 public explicit research-ethics-preparation bridge source
+Status: v1.11.0 public explicit paper-reading boundary and optional-Skill bridge source
 retaining the
 frozen public-interface contract, `GRW-CAP-150-01`, and the historical
 `GRW-CAP-160-01` public card library. It adds `GRW-CAP-170-01` as two generic
@@ -15,6 +15,11 @@ It adds `GRW-CAP-200-01` as an optional explicit route to a user-named
 compatible China-Mainland ethics-preparation module after a human-confirmed
 lifecycle route. It requires caller-named root, material mode, and allowed
 inputs; it does not discover, invoke, infer, submit, or advance a gate.
+It adds `GRW-CAP-210-01` as a narrow exclusion: an explicit request to read a
+specified scholarly paper is not a possible new Study unless it also clearly
+asks to begin one. It may identify a separately maintained reading Skill, but
+does not discover or invoke it, read or retain a paper, or configure a manager
+or knowledge service.
 It declares only the exact Workspace Framework `v0.2.0`
 contract and preserves the V1 Public Interface Manifest, Capability
 Verification Map, and V1 Support Scope Matrix. It adds no intake, exchange,
@@ -47,10 +52,10 @@ authority records.
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | v1.10.0 retains the two public profiles, declares only exact Framework v0.2.0 compatibility, preserves generic new-Study entry, and adds the explicit ethics-preparation bridge route | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | v1.11.0 retains the two public profiles, declares only exact Framework v0.2.0 compatibility, preserves generic new-Study entry, and adds the explicit paper-reading boundary and optional-Skill bridge | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
-| `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, v1.7 collaboration guidance, and v1.10 explicit ethics-preparation bridge routing | route references, blank assets, and generic guidance |
+| `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, v1.7 collaboration guidance, v1.10 ethics-preparation bridge routing, and v1.11 paper-reading boundary routing | route references, blank assets, and generic guidance |
 | `04` | evidence, requirements, and knowledge | active guidance plus v0.6 pointer/relation-record scope; no knowledge corpus or v0.11 source service | evidence/citation references |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline plus historical v0.7 promotion, v0.10 package-review, v0.10.1 synthetic exchange boundaries, v0.10.2 human-mediated future-direction boundary, v0.11 generic public experiences, v1.6 public-safe cards, and v1.7 public collaboration cards | retrospective/promotion, experience-pilot, and public-experience references |

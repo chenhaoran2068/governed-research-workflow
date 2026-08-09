@@ -36,6 +36,21 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.11.0 Research-Paper Reading Boundary Source Scope
+
+- The v1.11.0 source adds `GRW-CAP-210-01`: an explicit boundary that treats a
+  user-requested reading of a specified scholarly paper as paper reading rather
+  than a possible new Study, unless the same request clearly asks to begin one.
+- It may identify a separately maintained reading Skill, but does not discover,
+  invoke, install, configure, or verify that Skill; read, download, copy, or
+  retain a source; inspect a manager or workspace; or create a reading,
+  knowledge, experience, Study, governance, or installation record.
+- This source contains no paper, PDF, citation, source identifier, local path,
+  reading dossier, knowledge card, manager configuration, Framework
+  configuration, or real Study material. A selected v1.11.0 checkout becomes
+  an installation target only after the normal public installation rule verifies
+  its exact tag and matching GitHub Release.
+
 ## v1.10.0 Research-Ethics Preparation Bridge Source Scope
 
 - The v1.10.0 source adds `GRW-CAP-200-01`: explicit, metadata-only routing

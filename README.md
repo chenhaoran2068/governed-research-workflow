@@ -6,8 +6,9 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.10.0 explicit research-ethics-preparation bridge source, derived
-from immutable public v1.9.2. It preserves the frozen v1.0.0 contract,
+Status: v1.11.0 explicit paper-reading boundary and optional-Skill bridge
+source, derived from immutable public v1.10.0. It preserves the frozen v1.0.0
+contract,
 `GRW-CAP-150-01`, and the 38 historical KGE-derived cards under
 `GRW-CAP-160-01`. It adds `GRW-CAP-170-01`: two generic collaboration-guidance
 documents, three public topics, and three new public-safe experience cards
@@ -44,6 +45,14 @@ governance fact, create an application, submit/upload, or advance a lifecycle
 gate. A module manifest, generated draft, template, or structural check never
 proves ethics approval, registration, access, institutional compliance, or
 human authorization.
+`GRW-CAP-210-01` adds a narrow public boundary: an explicit request to read or
+understand a specified scholarly paper is not a possible new Study unless the
+same request also clearly asks to start, plan, explore, or create one. It may
+name `research-paper-reading` as an optional compatible Skill, but it does not
+discover or invoke that Skill, read a paper, download or copy a PDF, inspect a
+reference manager, create a reading record, configure a knowledge service, or
+infer a retention choice. The separate reading Skill remains responsible for
+its own source, retention, and configuration boundaries.
 It does not create a Study, decide a scientific design, infer governance,
 access material, execute research, replace human confirmation, or guarantee
 host-level automatic System selection. This versioned source tree does not itself prove the release

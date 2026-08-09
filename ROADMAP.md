@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.11.0 (explicit paper-reading boundary and optional-Skill bridge source)
+
+This source is derived from immutable public v1.10.0. It adds
+`GRW-CAP-210-01`: generic text that prevents an explicit request to read,
+understand, annotate, discuss, or critically appraise a specified scholarly
+paper from being misclassified as a possible new Study. It may identify the
+separately maintained `research-paper-reading` Skill as an optional route only
+after the user explicitly chooses paper reading.
+
+The bridge does not discover or invoke a Skill, read, download, copy, or retain
+a source; inspect a manager or a workspace; create a dossier, knowledge card,
+experience record, or Framework knowledge service; infer a retention choice;
+or make a research, governance, or release decision. It adds no Framework
+behavior, data access, execution, credential handling, network action, agent
+runtime, or installed-runtime claim.
+
 ## v1.10.0 (explicit research-ethics-preparation bridge source)
 
 This source is derived from immutable public v1.9.2. It adds

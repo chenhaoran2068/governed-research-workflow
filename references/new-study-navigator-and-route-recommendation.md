@@ -16,6 +16,11 @@ manuscript-only task, reviewer revision, local code task, or casual discussion
 with no intent to begin research. Ask the smallest focused question when that
 distinction is unclear.
 
+An explicit request to read, understand, annotate, discuss, or critically
+appraise a specific scholarly paper is a paper-reading request, not a possible
+new Study request. Do not return `Route: <recommendation-code>` unless the
+same request clearly asks to start, plan, explore, or create a Study.
+
 At the early screen, summarize only visible facts and material unknowns. Do not
 require a complete protocol, create a project or record, read real material,
 or call the request approved, feasible, compliant, or publishable.
