@@ -24,6 +24,21 @@ reference, not provenance for a private source. A null legacy identifier means
 the card is a newly authored public-safe derivative, not that it has hidden
 private provenance.
 
+## Manuscript Work-Sequence Guidance
+
+`GRW-CAP-150-01` includes generic, optional, human-review-only guidance for a
+Results-first manuscript work sequence. It describes how a caller may finish
+and review a Results evidence surface before working through Methods,
+Discussion/Conclusion, Introduction, Abstract/Summary, and submission-facing
+material. This is a drafting and review aid, not a required published article
+layout or an instruction to use one fixed sequence for every article type.
+
+The public material contains no manuscript, figure, table, result, protocol,
+Study path, author decision, reviewer correspondence, journal account, or
+submission package. It does not write a manuscript, establish a claim, make a
+result authoritative, verify a journal requirement, approve material, or
+submit anything.
+
 ## Future-Study Lifecycle Material
 
 `GRW-CAP-180-01` adds generic lifecycle guidance, blank declared-metadata

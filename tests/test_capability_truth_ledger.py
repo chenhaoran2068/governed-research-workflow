@@ -179,7 +179,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             else "v1.8.0" if record["capability_id"] in V180_SCOPE_IDS
             else "v1.7.0" if record["capability_id"] in V170_SCOPE_IDS
             else "v1.6.0" if record["capability_id"] in V160_SCOPE_IDS
-            else "v1.5.2" if record["capability_id"] in V150_SCOPE_IDS
+            else "v1.14.0" if record["capability_id"] in V150_SCOPE_IDS
             else "v1.4.0" if record["capability_id"] in V1402_SCOPE_IDS
             else "v1.3.0" if record["capability_id"] in V1401_SCOPE_IDS
             else "v1.2.0" if record["capability_id"] in V120_SCOPE_IDS
@@ -440,7 +440,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(record["implementation_status"], "verified")
         self.assertEqual(record["release_disposition"], "admitted")
         self.assertEqual(record["public_claim_status"], "permitted")
-        self.assertEqual(record["version"]["target_release"], "v1.5.2")
+        self.assertEqual(record["version"]["target_release"], "v1.14.0")
         self.assertEqual(record["version"]["last_verified_release"], "v1.5.0")
         self.assertEqual(record["interface"]["status"], "present")
         self.assertEqual(
@@ -448,7 +448,9 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
             {
                 "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md",
                 "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md",
+                "references/manuscript-and-submission-control.md",
                 "tests/test_v1_5_manuscript_and_program_boundary_guidance.py",
+                "tests/test_v1_14_manuscript_work_sequence.py",
             },
         )
         self.assertIn("does not execute research", record["non_promise"].lower())

@@ -36,6 +36,20 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.14.0 Manuscript Work-Sequence Guidance Source Scope
+
+- The v1.14.0 source extends the existing `GRW-CAP-150-01` guidance without a
+  new capability, schema, template, validator, dependency, Framework contract,
+  Skill bridge, or execution route.
+- It provides a generic Results-first drafting and review sequence, including
+  the nested Results review cycle and documented exceptions for a different
+  article type or journal format.
+- It contains no real Study, manuscript, figure, table, result, project path,
+  reviewer correspondence, journal account, submission package, runtime
+  receipt, Framework change, automatic action, or human decision. A selected
+  v1.14.0 checkout becomes an installation target only after the normal public
+  installation rule verifies its exact tag and matching GitHub Release.
+
 ## v1.13.0 Future-Study Lifecycle-Decision Clarification Source Scope
 
 - The v1.13.0 source retains `GRW-CAP-180-01` without a new capability,

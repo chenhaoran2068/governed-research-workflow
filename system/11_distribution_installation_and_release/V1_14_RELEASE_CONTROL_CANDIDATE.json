@@ -1,0 +1,20 @@
+{
+  "record_type": "release_control_candidate",
+  "release_version": "v1.14.0",
+  "status": "source_prepared_not_released",
+  "capability_ids": ["GRW-CAP-150-01"],
+  "change_class": "Results-first manuscript work-sequence guidance extension without a new capability identifier",
+  "required_before_release": [
+    "exact_candidate_commit",
+    "local_validation",
+    "remote_ci",
+    "protected_main_review",
+    "annotated_tag",
+    "matching_github_release"
+  ],
+  "non_claims": [
+    "No hosted release",
+    "No installed runtime",
+    "No real Study, manuscript, result, governance decision, analysis, or submission authority"
+  ]
+}

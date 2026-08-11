@@ -121,6 +121,12 @@ class ReleaseControlTests(unittest.TestCase):
             "V1_13_RELEASE_CONTROL_CANDIDATE.json",
             "V1_13_RELEASE_EVIDENCE.md",
             "RELEASE_NOTES_v1.13.0.md",
+            "PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.14.0.md",
+            "V1_14_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            "V1_14_RELEASE_GATE.md",
+            "V1_14_RELEASE_CONTROL_CANDIDATE.json",
+            "V1_14_RELEASE_EVIDENCE.md",
+            "RELEASE_NOTES_v1.14.0.md",
         )
         for record in required_records:
             self.assertTrue((RELEASE_ROOT / record).is_file(), f"Missing release record: {record}")
@@ -147,7 +153,7 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.13.0", manifest)
+        self.assertIn("system_version: 1.14.0", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
         self.assertIn('supported_framework_versions: "0.4.0"', manifest)
         self.assertIn("exact Framework v0.4.0 contract", manifest)

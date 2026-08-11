@@ -7,6 +7,11 @@ evidence, uncertainty, and decision points visible. It is optional guidance
 for a caller-named task; it does not write a manuscript, determine its content,
 or make it ready for submission.
 
+For a caller who asks how to organize a Results-first drafting and review
+sequence, use `../../references/manuscript-and-submission-control.md` together
+with this checklist. That reference explains a work order; it does not replace
+this checklist, write content, or establish any manuscript fact.
+
 ## Requirement Uncertainty
 
 Before treating a manuscript-facing artifact as ready for review, identify the
