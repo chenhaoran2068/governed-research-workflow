@@ -6,8 +6,12 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.12.0 managed reading knowledge-service consumer source, derived
-from immutable public v1.11.0. It preserves the frozen v1.0.0
+Status: v1.13.0 lifecycle-decision clarification source, derived from
+immutable public v1.12.0. It clarifies the existing `GRW-CAP-180-01` order:
+candidate protocol and governance readiness, bounded decision-critical check,
+accountable-human `go` / `go_with_conditions` / `reframe` / `stop`, then only
+a continuing decision may lock a protocol and enter formal analysis. It
+preserves the frozen v1.0.0
 contract,
 `GRW-CAP-150-01`, and the 38 historical KGE-derived cards under
 `GRW-CAP-160-01`. It adds `GRW-CAP-170-01`: two generic collaboration-guidance

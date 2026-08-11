@@ -23,10 +23,19 @@ Before committing to a full study, identify:
 - the highest-risk analytic or data-construction step;
 - the smallest critical-path test that can show whether the study is viable;
 - the skills, approvals, compute, and time required;
-- foreseeable stop, reframe, or escalation conditions.
+- declared thresholds for `go`, `go_with_conditions`, `reframe`, and `stop`.
 
 Use assets/feasibility-brief.template.md. A feasibility result is evidence for
 the next decision, not proof that a study is publishable.
+
+For the future-Study lifecycle, this is the bounded decision-critical part of
+Stage 6. It follows a candidate protocol and governance-readiness preparation
+in Stage 5, but completes before protocol lock or formal full analysis. An
+accountable human chooses the recorded outcome. `go_with_conditions` requires
+named conditions to be resolved before its specified later gate; `reframe`
+returns to the affected design work; `stop` preserves the reasoning without
+turning the result into a continuation claim. A continuing outcome alone does
+not make a protocol locked or a result authoritative.
 
 ## Authority And Data Boundaries
 

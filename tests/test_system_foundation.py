@@ -33,7 +33,7 @@ class SystemFoundationTests(unittest.TestCase):
         self.assertIn("  - standalone", manifest)
         self.assertIn("  - framework_integrated", manifest)
         self.assertIn("framework_compatibility:", manifest)
-        self.assertIn("system_version: 1.12.0", manifest)
+        self.assertIn("system_version: 1.13.0", manifest)
 
     def test_v15_guidance_documents_are_present_and_route_only_to_human_review(self) -> None:
         workflow_root = SYSTEM_ROOT / "03_workflows"
