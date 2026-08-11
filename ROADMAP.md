@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.13.0 (future-Study lifecycle-decision clarification source)
+
+This source is derived from immutable public v1.12.0. It retains
+`GRW-CAP-180-01` without a new capability identifier, schema, template,
+validator, dependency, Framework contract, or Skill bridge. It clarifies that
+Stage 5 forms a candidate protocol and governance readiness, while Stage 6
+begins with a bounded decision-critical check. The accountable human then
+chooses `go`, `go_with_conditions`, `reframe`, or `stop`; only a continuing
+decision permits protocol lock, analysis-state declaration, an appropriate
+freeze, and formal analysis.
+
+The clarification does not authorize a real-material probe, protocol, ethics
+or access decision, analysis, result, submission, release, or installation.
+`go_with_conditions` requires its named conditions to be resolved before its
+specified later gate, and no outcome makes a result authoritative by itself.
+
 ## v1.12.0 (managed reading knowledge-service consumer source)
 
 This source is derived from immutable public v1.11.0. It adds

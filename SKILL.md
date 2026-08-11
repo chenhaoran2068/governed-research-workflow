@@ -102,6 +102,14 @@ structural validation result. This is optional generic guidance, not automatic
 project discovery, persistent memory, a bootstrap executor, a research executor,
 or an authority route.
 
+Within that route, Stage 5 forms a candidate, not-yet-locked protocol and
+checks governance readiness before any real-material probe. Stage 6 first
+performs a bounded decision-critical check; the accountable human then chooses
+`go`, `go_with_conditions`, `reframe`, or `stop`. Only a continuing decision
+permits protocol lock, an analysis-state declaration, an appropriate freeze,
+and formal analysis. Conditions are resolved before their named later gate;
+neither continuing outcome makes a result authoritative.
+
 For a selected released version that admits `GRW-CAP-200-01`, only after the
 user confirms a future-Study lifecycle route and explicitly requests China
 Mainland ethics or medical-research-registration material preparation, read

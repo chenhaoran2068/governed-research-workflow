@@ -1,6 +1,9 @@
-# v1.12.0 retains the frozen v1.0.0 public contract and previously admitted
-# scopes. It adds GRW-CAP-220-01: an explicit, metadata-only consumer boundary
-# for a user-selected managed reading knowledge service. It adds no
+# v1.13.0 derives from immutable v1.12.0 and clarifies the existing
+# GRW-CAP-180-01 lifecycle decision order without adding a capability, schema,
+# validator, dependency, Framework contract, Skill bridge, or execution route.
+# It retains the frozen v1.0.0 public contract and previously admitted scopes,
+# including GRW-CAP-220-01's metadata-only managed reading knowledge-service
+# consumer boundary. It adds no
 # research execution, data access, public intake, network action, agent
 # runtime, delegation, generic writer, recovery executor, submission, approval,
 # or release decision.
@@ -11,7 +14,7 @@
 # 0.4.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.12.0
+system_version: 1.13.0
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

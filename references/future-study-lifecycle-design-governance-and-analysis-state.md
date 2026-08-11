@@ -35,10 +35,14 @@ laboratory research, and specialist designs need separate modules.
    known unknowns.
 4. Define design and feasibility: classification, population, time zero,
    measurement windows, follow-up, censoring, bias, and data/reporting fit.
-5. Separate non-real-material feasibility work from the governance conditions
-   required before real material can be read or processed.
-6. Declare analysis state and freeze a current executable/reporting version
-   before a formal result is claimed.
+5. Form a candidate, not-yet-locked protocol and separate non-real-material
+   feasibility work from the governance conditions required before real
+   material can be read or processed.
+6. First complete a bounded decision-critical check against declared
+   uncertainties and thresholds. The accountable human then decides `go`,
+   `go_with_conditions`, `reframe`, or `stop`. Only a continuing decision
+   permits protocol lock, analysis-state declaration, an appropriate freeze,
+   and formal analysis.
 7. Build a controlled result package before deriving manuscript claims.
 8. Review design, governance, execution, results, claims, declarations, and
    submission material together for consistency.
@@ -51,6 +55,14 @@ laboratory research, and specialist designs need separate modules.
 
 The route can pause, return, reframe, or stop. It never uses statistical
 significance or apparent publishability as an automatic continuation rule.
+
+`go_with_conditions` means that the work may continue only while named
+conditions are resolved before their specified later gate. `reframe` returns
+to the affected question, design, source, endpoint, population, timing, or
+method. `stop` preserves the current reasoning and evidence without treating a
+result as a reason to continue the current paper candidate. Neither `go` nor
+`go_with_conditions` locks a protocol or makes a result authoritative by
+itself.
 
 ## Separate Record Surfaces
 

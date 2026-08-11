@@ -13,6 +13,9 @@ class V18FutureStudyLifecycleTests(unittest.TestCase):
     def test_public_material_is_generic_and_bounded(self) -> None:
         guidance = (ROOT / "references" / "future-study-lifecycle-design-governance-and-analysis-state.md").read_text(encoding="utf-8")
         self.assertIn("eleven stages", guidance.lower())
+        self.assertIn("candidate, not-yet-locked protocol", guidance)
+        self.assertIn("`go_with_conditions`", guidance)
+        self.assertIn("Only a continuing decision", guidance)
         self.assertIn("does not discover", guidance)
         self.assertIn("separately governed", guidance)
         self.assertNotIn("E:" + "\\Chenhaoran", guidance)
