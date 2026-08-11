@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.14.0 (manuscript work-sequence guidance source)
+
+This source is derived from immutable public v1.13.0. It extends the existing
+`GRW-CAP-150-01` guidance without a new capability identifier, schema,
+template, validator, dependency, Framework contract, or Skill bridge. It
+states a generic Results-first drafting and review order: complete the Results
+evidence surface and its nested review cycle, then work through Methods,
+Discussion/Conclusion, Introduction, Abstract/Summary, and submission-facing
+material.
+
+The source does not write a manuscript, read a project, make a result
+authoritative, decide a scientific claim, verify an external requirement,
+create a package, submit material, or install itself. The work sequence may be
+adapted for an explicitly documented article-type or journal-format exception;
+the evidence and human-decision boundaries remain unchanged.
+
 ## v1.13.0 (future-Study lifecycle-decision clarification source)
 
 This source is derived from immutable public v1.12.0. It retains

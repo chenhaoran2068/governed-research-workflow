@@ -198,6 +198,9 @@ For a selected released version that admits `GRW-CAP-150-01`, read
 `system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md` only when the caller
 explicitly asks for generic operational guidance within an existing manuscript,
 revision, declaration, or submission task. Read
+`references/manuscript-and-submission-control.md` in addition only when the
+caller specifically asks how to assemble or review a Results-first manuscript
+work sequence. Read
 `system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md`
 only when the caller explicitly asks to review a stated boundary or proposed
 relationship among named research work units. These are optional guidance

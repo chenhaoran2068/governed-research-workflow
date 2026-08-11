@@ -1010,7 +1010,7 @@
       "implementation_status": "verified",
       "release_disposition": "admitted",
       "public_claim_status": "permitted",
-      "promise": "Provides two generic, optional, human-review-only guidance documents for requirement uncertainty, manuscript artifact boundaries, claim/evidence/citation visibility, revision traceability, declaration and AI-use fact limits, default research-work-unit isolation, and narrow explicit references.",
+      "promise": "Provides generic, optional, human-review-only guidance for requirement uncertainty, Results-first manuscript work sequence, manuscript artifact boundaries, claim/evidence/citation visibility, revision traceability, declaration and AI-use fact limits, default research-work-unit isolation, and narrow explicit references.",
       "non_promise": "Does not execute research, read or access project material, grant cross-work-unit access or sharing permission, determine authorship, verify an external requirement, establish a fact, make a result authoritative, create a submission package, submit material, provide a helper, schema, validator, agent, dependency, writer, intake, network action, or Release decision.",
       "approval_owner": "accountable_human",
       "interface": {
@@ -1018,7 +1018,9 @@
         "paths": [
           "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md",
           "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md",
-          "tests/test_v1_5_manuscript_and_program_boundary_guidance.py"
+          "references/manuscript-and-submission-control.md",
+          "tests/test_v1_5_manuscript_and_program_boundary_guidance.py",
+          "tests/test_v1_14_manuscript_work_sequence.py"
         ],
         "identifiers": [
           "manuscript_operational_checklists",
@@ -1032,15 +1034,16 @@
         "status": "verified",
         "references": [
           {"kind": "test", "path": "tests/test_v1_5_manuscript_and_program_boundary_guidance.py", "identifier": "V15ManuscriptAndProgramBoundaryGuidanceTests"},
+          {"kind": "test", "path": "tests/test_v1_14_manuscript_work_sequence.py", "identifier": "V114ManuscriptWorkSequenceTests"},
           {"kind": "test", "path": "tests/test_system_foundation.py", "identifier": "SystemFoundationTests"}
         ]
       },
-      "version": {"introduced_version": "v1.5.0", "last_verified_release": "v1.5.0", "target_release": "v1.5.2"},
+      "version": {"introduced_version": "v1.5.0", "last_verified_release": "v1.5.0", "target_release": "v1.14.0"},
       "prior_release_history": [{"release_version": "v1.5.0", "public_claim_status": "permitted"}],
       "approval_reference": "accountable-human accepted the v1.5.2 immutable-release correction Charter and C2 scope on 2026-08-02; exact candidate commit, remote verification, protected-main merge, C4-Draft, C4-Publish, hosted Release, and local adoption remain separate evidence classes.",
-      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "system/INDEX.md", "system/03_workflows/MODULE.md", "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md", "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md"],
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "system/INDEX.md", "system/03_workflows/MODULE.md", "system/03_workflows/MANUSCRIPT_OPERATIONAL_CHECKLISTS.md", "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md", "references/manuscript-and-submission-control.md"],
       "contradiction_refusal": "Forbid a material-access, sharing, relationship, authorship, external-requirement, authority, submission, Release, or installation claim when the caller-named task, current human review, required evidence, or selected release identity is missing, conflicting, or unknown.",
-      "limitations_and_next_action": "The capability was last fully verified for published v1.5.0. This later source retains the v1.5.2 compatibility-maintenance history but does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, project relationship, material permission, current external requirement, human authority, scientific validity, submission readiness, remote CI evidence, C4-Draft, or C4-Publish authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+      "limitations_and_next_action": "The capability was last fully verified for published v1.5.0. The proposed v1.14.0 source extends its generic manuscript work-sequence guidance but does not establish an exact candidate commit, hosted tag, matching GitHub Release, installed runtime, project relationship, material permission, current external requirement, human authority, scientific validity, submission readiness, remote CI evidence, C4-Draft, or C4-Publish authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     },
     {
       "capability_id": "GRW-CAP-160-01",
