@@ -68,3 +68,11 @@ possible new Study unless the same request also asks to start, plan, explore,
 or create one. It can identify a separately maintained reading Skill but cannot
 discover or invoke it, read or retain a source, configure a manager or
 knowledge service, or create a record.
+
+The v1.15 source adds one optional generic joint-review profile and dependency
+order. It supplies a blank declared-metadata plan, structural schema, and an
+explicit one-plan read-only validator. The default profile is not imposed on
+specialist study/reporting types. It does not choose a profile, discover or
+read a Study, resolve plan references, determine whether a review is adequate,
+accept a package, reopen work, rerun analysis, or make a scientific,
+governance, submission, or release decision.

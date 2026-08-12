@@ -12,6 +12,12 @@ sequence, use `../../references/manuscript-and-submission-control.md` together
 with this checklist. That reference explains a work order; it does not replace
 this checklist, write content, or establish any manuscript fact.
 
+For an explicitly selected default joint-review profile, the Results-first
+sequence can be recorded as R4 through R10 in
+`../../references/joint-review-profiles-and-dependency-order.md`. That record
+tracks declared package order and reopen metadata only; it does not replace
+the section, display, claim, citation, or human-review checks below.
+
 ## Requirement Uncertainty
 
 Before treating a manuscript-facing artifact as ready for review, identify the

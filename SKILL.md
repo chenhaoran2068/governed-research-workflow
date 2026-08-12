@@ -208,6 +208,18 @@ documents, not a new request class or an automatic read. They do not establish
 facts, permissions, authorship, compliance, source access, result authority,
 or submission readiness.
 
+For a selected released version that admits `GRW-CAP-230-01`, read
+`references/joint-review-profiles-and-dependency-order.md` only when the caller
+explicitly asks to plan or structurally review a joint human-AI review order
+for a named research/reporting profile. Require the caller to select or defer
+the profile and supply one explicit plan path before invoking
+`scripts/validate_joint_review_plan.py`. Do not discover a Study, choose a
+profile, follow a reference, read project material, validate a result,
+interpret a structural pass as human acceptance, or alter a review state. The
+default observational profile is generic guidance only; trial, causal,
+prediction, diagnostic, systematic-review, qualitative, methods, and other
+specialist profiles require their own separately reviewed route.
+
 ## Collaboration Modes
 
 Use human-governed interactive work unless the user provides an explicit,

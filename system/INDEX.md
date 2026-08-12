@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: v1.14.0 manuscript work-sequence guidance source retaining the
+Status: v1.15.0 joint-review-profile source retaining the
 frozen public-interface contract, `GRW-CAP-150-01`, and the historical
 `GRW-CAP-160-01` public card library. It adds `GRW-CAP-170-01` as two generic
 System-owned guidance documents, three public topics, and three selectively
@@ -24,7 +24,9 @@ knowledge service may hand only explicitly approved metadata to a named
 existing Study. It does not discover/configure a service, read or transfer
 source content, or establish authority. It retains `GRW-CAP-180-01` and
 extends `GRW-CAP-150-01` with a Results-first work sequence and nested Results
-review guidance. It declares only the exact Workspace Framework `v0.4.0`
+review guidance. It adds `GRW-CAP-230-01`: one generic default joint-review
+profile, a specialist placeholder, blank plan templates, a structural schema,
+and an explicit one-plan read-only validator. It declares only the exact Workspace Framework `v0.4.0`
 contract and preserves the V1 Public Interface Manifest, Capability
 Verification Map, and V1 Support Scope Matrix. It adds no intake, exchange,
 data, retrieval service, execution, sharing, submission, automatic loading,
@@ -59,13 +61,13 @@ authority records.
 | `00` | manifest and profiles | v1.14.0 retains the two public profiles, exact Framework v0.4.0 compatibility, and the optional managed reading knowledge service; it remains non-automatic and source-free | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
-| `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, v1.7 collaboration guidance, v1.10 ethics-preparation bridge routing, v1.11 paper-reading boundary routing, v1.12 metadata-only consumer routing, v1.13 lifecycle-decision clarification, and v1.14 Results-first manuscript work-sequence guidance | route references, blank assets, and generic guidance |
+| `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, v1.7 collaboration guidance, v1.10 ethics-preparation bridge routing, v1.11 paper-reading boundary routing, v1.12 metadata-only consumer routing, v1.13 lifecycle-decision clarification, v1.14 Results-first manuscript guidance, and v1.15 generic joint-review profile guidance | route references, blank assets, and generic guidance |
 | `04` | evidence, requirements, and knowledge | active guidance plus v0.6 pointer/relation-record scope and a v1.12 optional metadata-only service-consumer boundary; no knowledge corpus, source service, or source-content access | evidence/citation references and blank handoff assets |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline plus historical v0.7 promotion, v0.10 package-review, v0.10.1 synthetic exchange boundaries, v0.10.2 human-mediated future-direction boundary, v0.11 generic public experiences, v1.6 public-safe cards, and v1.7 public collaboration cards | retrospective/promotion, experience-pilot, and public-experience references |
 | `07` | tools and integrations | active bootstrap plus explicit read-only validators; no new writer, intake, transfer, or user-facing contribution helper | `scripts/`, admission records, and tests |
 | `08` | agent contracts | release-scope-admitted non-runnable role contracts; no role cards or agent runtime | two role-contract records and boundary guidance |
-| `09` | schemas, records, and templates | blank-record baseline plus v0.8/v0.9 controls, v0.10 experience package, v0.10.1 synthetic exchange receipt schema, and v0.11 Markdown templates; v0.11 adds no standalone schema or validator | `assets/` templates and schemas |
+| `09` | schemas, records, and templates | blank-record baseline plus v0.8/v0.9 controls, v0.10 experience package, v0.10.1 synthetic exchange receipt schema, v0.11 Markdown templates, and v1.15 joint-review-plan schema/templates | `assets/` templates and schemas |
 | `10` | assurance, evaluation, and audit | regression baseline plus v0.10/v0.10.1 synthetic path/no-write/receipt controls, v0.10.2 wording controls, v0.11 template/experience-boundary checks, and v0.12 synthetic cross-module assurance | `tests/` |
 | `11` | distribution, installation, and release | active release controls, historical v0.7.1/v0.8 records, and v0.9 release-preparation records that separate candidate review, C4, and post-release verification | package governance files, release verification, historical and active preparation records |
 | `12` | synthetic examples | exact-tag integration test plus retained assurance, v0.8 synthetic-contract tests, and a v0.11 fictional manuscript-governance illustration | synthetic fixtures and assurance only; no end-to-end public research example |

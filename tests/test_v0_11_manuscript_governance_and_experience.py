@@ -92,7 +92,7 @@ class V011ManuscriptGovernanceAndExperienceTests(unittest.TestCase):
         readme = (REPOSITORY_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPOSITORY_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-        self.assertIn("system_version: 1.14.0", manifest)
+        self.assertIn("system_version: 1.15.0", manifest)
         self.assertIn("Status: v1.1.0 versioned source scope", readme)
         self.assertIn("does not itself prove the\nrelease or installation identity", readme)
         self.assertIn("## v0.11.0", roadmap)

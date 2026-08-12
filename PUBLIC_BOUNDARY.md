@@ -39,6 +39,24 @@ submission package. It does not write a manuscript, establish a claim, make a
 result authoritative, verify a journal requirement, approve material, or
 submit anything.
 
+## Joint Review Profile And Dependency-Order Material
+
+`GRW-CAP-230-01` adds one generic default review profile for observational
+empirical original research, a specialist-profile placeholder, a blank plan
+template, a structural schema, and a caller-named read-only validator. The
+default package order records design/governance, execution, result authority,
+Results, the remaining manuscript surface, submission-facing materials, and
+whole-package reconciliation. It can record a later reopen event, but does not
+reopen, rerun, or decide anything.
+
+The public material contains no Study, project path, protocol, data, code,
+result, manuscript, figure, table, citation library, ethics/access/registration
+evidence, journal requirement, human decision, or release/install receipt. The
+validator reads only one named JSON plan and its package-owned schema. It never
+follows references, discovers a workspace, evaluates a review, determines a
+profile, establishes a result or approval, or makes a scientific, governance,
+submission, or release decision.
+
 ## Future-Study Lifecycle Material
 
 `GRW-CAP-180-01` adds generic lifecycle guidance, blank declared-metadata

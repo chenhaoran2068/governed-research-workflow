@@ -36,6 +36,24 @@ verify the exact tag and matching Release at the time of installation.
   notes records are pre-C4 preparation material until exact tag-and-Release
   verification occurs. They cannot substitute for C4 authorization.
 
+## v1.15.0 Joint Review Profile Source Scope
+
+- The v1.15.0 source adds `GRW-CAP-230-01`: one generic default
+  observational empirical original-research review profile, a specialist-route
+  placeholder, blank plan templates, a structural schema, and an explicit
+  caller-named read-only validator.
+- It records only declared package order, Results work-unit assembly state, and
+  reopen metadata. It does not select a profile, discover a Study, follow a
+  reference, read data/code/results/manuscripts, accept a review package,
+  rerun work, verify a human decision, or establish scientific, governance,
+  submission, or release readiness.
+- This source contains no real Study, project path, protocol, data, code,
+  result, manuscript, figure, table, citation library, ethics/access/
+  registration evidence, human decision, runtime receipt, Framework change, or
+  automatic action. A selected v1.15.0 checkout becomes an installation target
+  only after the normal public installation rule verifies its exact tag and
+  matching GitHub Release.
+
 ## v1.14.0 Manuscript Work-Sequence Guidance Source Scope
 
 - The v1.14.0 source extends the existing `GRW-CAP-150-01` guidance without a

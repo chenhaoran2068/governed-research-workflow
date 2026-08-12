@@ -1,0 +1,21 @@
+{
+  "record_type": "joint_review_plan",
+  "schema_version": "1.0.0",
+  "plan_id": "invalid-results-assembly-mode",
+  "plan_status": "draft",
+  "profile": {
+    "route_status": "selected",
+    "route": "additional_review_profile_required",
+    "profile_selection_human_decision_reference": "00_state/lifecycle/route-decision.json#specialist-route",
+    "reporting_guidance": {"identifier": "pending-specialist-profile", "status": "specialist_required"},
+    "specialist_profile_need": "A separately reviewed specialist profile is required."
+  },
+  "review_packages": [
+    {"package_id": "R4", "status": "not_started", "purpose": "invalid Results unit", "action": "do not use", "human_decision_reference": null, "authority_references": [], "results_work_units": [
+      {"unit_id": "missing-mode", "status": "not_started", "display_reconciliation_status": "pending", "authority_references": [], "display_references": [], "claim_references": []}
+    ]}
+  ],
+  "reopen_events": [],
+  "scope_exclusions": [],
+  "uncertainties": []
+}

@@ -1,0 +1,20 @@
+{
+  "record_type": "joint_review_plan",
+  "schema_version": "1.0.0",
+  "plan_id": "replace-with-plan-id",
+  "plan_status": "draft",
+  "profile": {
+    "route_status": "not_declared",
+    "route": null,
+    "profile_selection_human_decision_reference": null,
+    "reporting_guidance": {
+      "identifier": "not-declared",
+      "status": "pending"
+    },
+    "specialist_profile_need": null
+  },
+  "review_packages": [],
+  "reopen_events": [],
+  "scope_exclusions": [],
+  "uncertainties": []
+}

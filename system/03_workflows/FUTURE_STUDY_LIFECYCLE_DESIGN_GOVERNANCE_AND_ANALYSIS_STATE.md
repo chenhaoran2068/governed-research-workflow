@@ -14,3 +14,9 @@ decision permits protocol lock and formal analysis.
 It does not create a Study, infer design or governance facts, execute analysis,
 or duplicate submission-route authority. Project-specific editorial/revision
 control remains separately governed by the applicable submission lifecycle.
+
+When an explicit joint-review-plan task is requested, the lifecycle route may
+be paired with `references/joint-review-profiles-and-dependency-order.md` only
+after the human selects or defers the review profile. The separate joint-plan
+record does not replace lifecycle, execution, result-authority, manuscript,
+submission, or accountable-human decision records.
