@@ -6,8 +6,11 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.14.0 manuscript work-sequence guidance source, derived from
-immutable public v1.13.0. It extends the existing `GRW-CAP-150-01` guidance:
+Status: v1.15.0 joint-review-profile source, derived from immutable public
+v1.14.0. It adds `GRW-CAP-230-01`: one generic default review profile for
+observational empirical original research, a specialist-profile placeholder,
+blank plan templates, a structural schema, and a caller-named read-only
+validator. It retains the existing `GRW-CAP-150-01` guidance to
 complete and review the Results evidence surface first, then work through
 Methods, Discussion/Conclusion, Introduction, Abstract/Summary, and
 submission-facing material. This is a drafting and review order, not a
@@ -64,6 +67,11 @@ It cannot receive a PDF, source excerpt, local path, manager database, dossier
 content, knowledge-card content, or an inferred scientific conclusion. The
 System cannot discover or configure the service, create a handoff, or treat a
 metadata handoff as authority or evidence.
+`GRW-CAP-230-01` records only a human-selected review profile, declared review
+package order, Results work-unit assembly state, and later reopen metadata. It
+does not select a profile, discover or read a Study, follow a reference,
+inspect a result or manuscript, assess review quality, accept a package, rerun
+work, or establish a scientific, governance, submission, or release decision.
 It does not create a Study, decide a scientific design, infer governance,
 access material, execute research, replace human confirmation, or guarantee
 host-level automatic System selection. This versioned source tree does not itself prove the release
@@ -446,6 +454,10 @@ supersede a band through a reviewed revision.
   identity claim.
 - `v1.1+`: separately reviewed post-v1 expansion; this roadmap grants no
   future capability automatically.
+- `v1.15.0`: generic joint-review profile, dependency-order plan, structural
+  validation, and synthetic fixtures; no Study discovery, project-material
+  access, review acceptance, result assessment, rerun, submission, or release
+  decision.
 
 The detailed private planning baseline is not part of this public package.
 The public package will add only generic, rights-cleared, reviewed material

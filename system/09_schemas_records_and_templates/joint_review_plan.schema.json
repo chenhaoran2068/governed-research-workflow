@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/joint_review_plan.schema.json",
+  "title": "Joint Review Plan",
+  "description": "A generic declared-metadata plan for human-AI review order. It validates record structure only and never resolves references or evaluates a Study.",
+  "type": "object",
+  "required": [
+    "record_type",
+    "schema_version",
+    "plan_id",
+    "plan_status",
+    "profile",
+    "review_packages",
+    "reopen_events",
+    "scope_exclusions",
+    "uncertainties"
+  ],
+  "$defs": {
+    "project_relative_reference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "description": "A supplied project-relative reference. Safety is enforced by the explicit validator; the schema never resolves it."
+    },
+    "reporting_guidance": {
+      "type": "object",
+      "required": ["identifier", "status"],
+      "properties": {
+        "identifier": {"type": "string", "minLength": 1},
+        "status": {"enum": ["candidate", "applicable", "not_applicable", "pending", "specialist_required"]}
+      },
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "object",
+      "required": [
+        "route_status",
+        "route",
+        "profile_selection_human_decision_reference",
+        "reporting_guidance",
+        "specialist_profile_need"
+      ],
+      "properties": {
+        "route_status": {"enum": ["not_declared", "selected"]},
+        "route": {
+          "anyOf": [
+            {"enum": ["observational_empirical_original_research_v1", "additional_review_profile_required"]},
+            {"type": "null"}
+          ]
+        },
+        "profile_selection_human_decision_reference": {
+          "anyOf": [
+            {"$ref": "#/$defs/project_relative_reference"},
+            {"type": "null"}
+          ]
+        },
+        "reporting_guidance": {"$ref": "#/$defs/reporting_guidance"},
+        "specialist_profile_need": {
+          "anyOf": [
+            {"type": "string", "minLength": 1},
+            {"type": "null"}
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "results_work_unit": {
+      "type": "object",
+      "required": [
+        "unit_id",
+        "assembly_mode",
+        "status",
+        "display_reconciliation_status",
+        "authority_references",
+        "display_references",
+        "claim_references"
+      ],
+      "properties": {
+        "unit_id": {"type": "string", "minLength": 1},
+        "assembly_mode": {"enum": ["display_first", "parallel", "text_provisional"]},
+        "status": {"enum": ["not_started", "in_review", "accepted", "accepted_with_conditions", "revise", "reopened", "deferred", "stop"]},
+        "display_reconciliation_status": {"enum": ["not_required", "pending", "completed"]},
+        "authority_references": {"type": "array", "items": {"$ref": "#/$defs/project_relative_reference"}},
+        "display_references": {"type": "array", "items": {"$ref": "#/$defs/project_relative_reference"}},
+        "claim_references": {"type": "array", "items": {"$ref": "#/$defs/project_relative_reference"}},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "review_package": {
+      "type": "object",
+      "required": [
+        "package_id",
+        "status",
+        "purpose",
+        "action",
+        "human_decision_reference",
+        "authority_references"
+      ],
+      "properties": {
+        "package_id": {"enum": ["R0", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10"]},
+        "status": {"enum": ["not_started", "in_review", "accepted", "accepted_with_conditions", "revise", "reopened", "deferred", "stop"]},
+        "purpose": {"type": "string", "minLength": 1},
+        "action": {"type": "string", "minLength": 1},
+        "human_decision_reference": {
+          "anyOf": [
+            {"$ref": "#/$defs/project_relative_reference"},
+            {"type": "null"}
+          ]
+        },
+        "authority_references": {"type": "array", "items": {"$ref": "#/$defs/project_relative_reference"}},
+        "results_work_units": {"type": "array", "items": {"$ref": "#/$defs/results_work_unit"}},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "reopen_event": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "trigger_class",
+        "affected_package_ids",
+        "downstream_effect",
+        "qa_or_rerun_status",
+        "replacement_reference",
+        "human_decision_reference"
+      ],
+      "properties": {
+        "event_id": {"type": "string", "minLength": 1},
+        "trigger_class": {"enum": ["design_or_governance_change", "data_or_definition_error", "implementation_or_qa_failure", "result_authority_change", "citation_or_declaration_conflict", "external_requirement_change", "new_analysis_or_claim"]},
+        "affected_package_ids": {"type": "array", "minItems": 1, "items": {"enum": ["R0", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10"]}},
+        "downstream_effect": {"type": "string", "minLength": 1},
+        "qa_or_rerun_status": {"enum": ["not_assessed", "not_required", "required"]},
+        "replacement_reference": {
+          "anyOf": [
+            {"$ref": "#/$defs/project_relative_reference"},
+            {"type": "null"}
+          ]
+        },
+        "human_decision_reference": {"$ref": "#/$defs/project_relative_reference"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "record_type": {"const": "joint_review_plan"},
+    "schema_version": {"const": "1.0.0"},
+    "plan_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{2,127}$"},
+    "plan_status": {"enum": ["draft", "current", "superseded"]},
+    "profile": {"$ref": "#/$defs/profile"},
+    "review_packages": {"type": "array", "items": {"$ref": "#/$defs/review_package"}},
+    "reopen_events": {"type": "array", "items": {"$ref": "#/$defs/reopen_event"}},
+    "scope_exclusions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "uncertainties": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

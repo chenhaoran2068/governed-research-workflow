@@ -6,6 +6,20 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.15.0 (joint-review-profile and dependency-order source)
+
+This source is derived from immutable public v1.14.0. It adds
+`GRW-CAP-230-01`: one generic default review profile for observational
+empirical original research, a specialist-profile placeholder, blank plan
+templates, a structural schema, an explicit caller-named read-only validator,
+and source-free synthetic fixtures.
+
+The plan records declared package order, Results work-unit assembly state, and
+reopen metadata only. It does not select a profile, discover or read a Study,
+follow references, assess review completeness, accept or reopen a package,
+rerun work, verify a human decision, or make a scientific, governance,
+submission, release, or installation decision.
+
 ## v1.14.0 (manuscript work-sequence guidance source)
 
 This source is derived from immutable public v1.13.0. It extends the existing

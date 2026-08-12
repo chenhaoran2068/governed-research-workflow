@@ -1,0 +1,17 @@
+{
+  "record_type": "joint_review_plan",
+  "schema_version": "1.0.0",
+  "plan_id": "invalid-unsafe-reference",
+  "plan_status": "draft",
+  "profile": {
+    "route_status": "selected",
+    "route": "additional_review_profile_required",
+    "profile_selection_human_decision_reference": "C:\\private\\decision.json",
+    "reporting_guidance": {"identifier": "pending-specialist-profile", "status": "specialist_required"},
+    "specialist_profile_need": "A separately reviewed specialist profile is required."
+  },
+  "review_packages": [],
+  "reopen_events": [],
+  "scope_exclusions": ["../outside-workspace"],
+  "uncertainties": []
+}

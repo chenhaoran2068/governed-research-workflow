@@ -83,3 +83,10 @@ design/classification, governance readiness, and analysis state/freeze. Their
 matching templates and explicit validator organize only caller-supplied
 records. They do not determine a design, prove governance, authorize access,
 approve a freeze, execute analysis, or make a result authoritative.
+
+The v1.15 source adds `joint_review_plan.schema.json` and matching blank JSON
+and Markdown templates. They represent only a human-selected review-profile
+placeholder, package order, Results work-unit assembly state, and reopen
+metadata. They do not select a profile, follow references, inspect a Study or
+result, verify a review or decision, rerun work, or make a scientific,
+governance, submission, or release determination.

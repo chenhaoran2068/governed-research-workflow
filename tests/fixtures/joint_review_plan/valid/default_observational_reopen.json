@@ -1,0 +1,35 @@
+{
+  "record_type": "joint_review_plan",
+  "schema_version": "1.0.0",
+  "plan_id": "synthetic-observational-reopen",
+  "plan_status": "current",
+  "profile": {
+    "route_status": "selected",
+    "route": "observational_empirical_original_research_v1",
+    "profile_selection_human_decision_reference": "00_state/lifecycle/route-decision.json#default-route",
+    "reporting_guidance": {"identifier": "generic-observational-guidance", "status": "applicable"},
+    "specialist_profile_need": null
+  },
+  "review_packages": [
+    {"package_id": "R0", "status": "accepted", "purpose": "profile and reporting context", "action": "record profile", "human_decision_reference": "00_state/lifecycle/review-decisions.json#r0", "authority_references": ["03_protocol/review-profile.json"]},
+    {"package_id": "R1", "status": "accepted", "purpose": "design and governance facts", "action": "review declared facts", "human_decision_reference": "00_state/lifecycle/review-decisions.json#r1", "authority_references": ["03_protocol/current-protocol.json"]},
+    {"package_id": "R2", "status": "accepted", "purpose": "data definition and reproducible execution", "action": "review execution boundary", "human_decision_reference": "00_state/lifecycle/review-decisions.json#r2", "authority_references": ["07_analysis/00_contract/execution.json"]},
+    {"package_id": "R3", "status": "accepted", "purpose": "result authority", "action": "review result authority", "human_decision_reference": "00_state/lifecycle/review-decisions.json#r3", "authority_references": ["08_results/_manifests/current_result_authority.json"]},
+    {"package_id": "R4", "status": "reopened", "purpose": "Results work units", "action": "re-review Results", "human_decision_reference": "00_state/lifecycle/review-decisions.json#r4-reopen", "authority_references": ["08_results/runs/synthetic/result_manifest.json"], "results_work_units": [
+      {"unit_id": "primary-display", "assembly_mode": "display_first", "status": "accepted", "display_reconciliation_status": "completed", "authority_references": ["08_results/runs/synthetic/result_manifest.json"], "display_references": ["09_manuscript/figures/primary.png"], "claim_references": ["09_manuscript/claims.json#primary"]},
+      {"unit_id": "secondary-parallel", "assembly_mode": "parallel", "status": "accepted", "display_reconciliation_status": "completed", "authority_references": ["08_results/runs/synthetic/result_manifest.json"], "display_references": ["09_manuscript/tables/secondary.csv"], "claim_references": ["09_manuscript/claims.json#secondary"]},
+      {"unit_id": "sensitivity-provisional", "assembly_mode": "text_provisional", "status": "accepted", "display_reconciliation_status": "completed", "authority_references": ["08_results/runs/synthetic/result_manifest.json"], "display_references": ["09_manuscript/figures/sensitivity.png"], "claim_references": ["09_manuscript/claims.json#sensitivity"]}
+    ]},
+    {"package_id": "R5", "status": "not_started", "purpose": "Methods", "action": "review methods", "human_decision_reference": null, "authority_references": []},
+    {"package_id": "R6", "status": "not_started", "purpose": "Discussion and Conclusion", "action": "review interpretation", "human_decision_reference": null, "authority_references": []},
+    {"package_id": "R7", "status": "not_started", "purpose": "Introduction", "action": "review rationale", "human_decision_reference": null, "authority_references": []},
+    {"package_id": "R8", "status": "not_started", "purpose": "Title Abstract Keywords", "action": "review compressed claims", "human_decision_reference": null, "authority_references": []},
+    {"package_id": "R9", "status": "not_started", "purpose": "cross-cutting materials", "action": "review citations and declarations", "human_decision_reference": null, "authority_references": []},
+    {"package_id": "R10", "status": "not_started", "purpose": "reconciliation revision archive", "action": "review package coherence", "human_decision_reference": null, "authority_references": []}
+  ],
+  "reopen_events": [
+    {"event_id": "result-definition-correction", "trigger_class": "data_or_definition_error", "affected_package_ids": ["R4", "R5", "R6", "R8", "R9", "R10"], "downstream_effect": "Results and dependent manuscript packages require re-review.", "qa_or_rerun_status": "required", "replacement_reference": "08_results/runs/synthetic/result_manifest-v2.json", "human_decision_reference": "00_state/lifecycle/review-decisions.json#reopen-1"}
+  ],
+  "scope_exclusions": ["synthetic fixture only"],
+  "uncertainties": ["No real Study or result is represented."]
+}
