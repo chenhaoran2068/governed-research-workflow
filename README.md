@@ -6,8 +6,14 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.15.0 joint-review-profile source, derived from immutable public
-v1.14.0. It adds `GRW-CAP-230-01`: one generic default review profile for
+Status: v1.16.0 manuscript-style-profile source, derived from immutable public
+v1.15.0. It adds `GRW-CAP-240-01`: a generic manuscript-style-profile record,
+blank template, structural schema, explicit caller-named read-only validator,
+and source-free synthetic fixtures. The record keeps a declared discipline
+profile, reporting-guidance status, target-journal requirement status,
+precedence, conflicts, and source-boundary limits visible. It contains no AMA
+or other style-manual content and cannot select, retrieve, or verify a profile.
+It retains `GRW-CAP-230-01`: one generic default review profile for
 observational empirical original research, a specialist-profile placeholder,
 blank plan templates, a structural schema, and a caller-named read-only
 validator. It retains the existing `GRW-CAP-150-01` guidance to
@@ -72,6 +78,9 @@ package order, Results work-unit assembly state, and later reopen metadata. It
 does not select a profile, discover or read a Study, follow a reference,
 inspect a result or manuscript, assess review quality, accept a package, rerun
 work, or establish a scientific, governance, submission, or release decision.
+It retains `GRW-CAP-240-01` as an inspectable style-requirement boundary
+only. A private implementation may identify an AMA-derived default, but the
+public package neither provides nor verifies that material.
 It does not create a Study, decide a scientific design, infer governance,
 access material, execute research, replace human confirmation, or guarantee
 host-level automatic System selection. This versioned source tree does not itself prove the release

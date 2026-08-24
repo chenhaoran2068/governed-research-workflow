@@ -1,0 +1,29 @@
+{
+  "record_type": "manuscript_style_profile",
+  "schema_version": "1.0.0",
+  "profile_record_id": "synthetic-medical-style-profile",
+  "record_status": "current",
+  "discipline_scope": "medical_health",
+  "active_profile": {
+    "selection_status": "selected",
+    "profile_id": "ama_11_default",
+    "application_mode": "local_default",
+    "profile_reference": "09_manuscript/drafting_requirement_stack.yaml#active_style_profile",
+    "source_boundary_status": "manual_verification_required",
+    "human_decision_reference": null
+  },
+  "reporting_guidance": {
+    "status": "applicable",
+    "guidance_references": ["09_manuscript/drafting_requirement_stack.yaml#reporting-guidance"]
+  },
+  "target_journal": {
+    "selection_status": "target_selected",
+    "journal_name": "Synthetic Medical Journal",
+    "requirement_status": "current_snapshot_available",
+    "requirement_reference": "10_submission/01_synthetic/00_journal_requirements/requirement_snapshot.md",
+    "precedence_rule": "journal_overrides_style_profile"
+  },
+  "conflicts": [],
+  "scope_exclusions": ["No source content is present in this synthetic record."],
+  "uncertainties": ["Fine-grained manual rules require the source boundary recorded by the profile."]
+}

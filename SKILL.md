@@ -220,6 +220,20 @@ default observational profile is generic guidance only; trial, causal,
 prediction, diagnostic, systematic-review, qualitative, methods, and other
 specialist profiles require their own separately reviewed route.
 
+For a selected released version that admits `GRW-CAP-240-01`, an existing-Study
+manuscript, table, figure, reference, revision, or submission-preparation task
+may use the named Study-local drafting requirement stack only after the caller
+has supplied the exact Study root. The default local location is
+`09_manuscript/drafting_requirement_stack.yaml`. Read
+`references/manuscript-style-profile-contract.md` only when the task needs to
+plan, inspect, or apply the stack's declared style-profile boundary. Do not
+discover a profile, obtain a manual or journal instruction, follow a source,
+or infer that an AMA-derived or other profile applies. A selected current
+journal requirement overrides the declared style profile; an apparent journal
+and reporting-guideline conflict remains a stop for accountable-human
+resolution. The bundled validator accepts one caller-named JSON interchange
+record only and never opens references or writes output.
+
 ## Collaboration Modes
 
 Use human-governed interactive work unless the user provides an explicit,

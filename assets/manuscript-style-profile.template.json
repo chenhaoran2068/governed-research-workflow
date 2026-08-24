@@ -1,0 +1,29 @@
+{
+  "record_type": "manuscript_style_profile",
+  "schema_version": "1.0.0",
+  "profile_record_id": "replace-with-profile-record-id",
+  "record_status": "draft",
+  "discipline_scope": "not_declared",
+  "active_profile": {
+    "selection_status": "not_declared",
+    "profile_id": null,
+    "application_mode": "not_declared",
+    "profile_reference": null,
+    "source_boundary_status": "not_declared",
+    "human_decision_reference": null
+  },
+  "reporting_guidance": {
+    "status": "not_declared",
+    "guidance_references": []
+  },
+  "target_journal": {
+    "selection_status": "no_target_selected",
+    "journal_name": null,
+    "requirement_status": "not_required",
+    "requirement_reference": null,
+    "precedence_rule": "journal_overrides_style_profile"
+  },
+  "conflicts": [],
+  "scope_exclusions": [],
+  "uncertainties": []
+}

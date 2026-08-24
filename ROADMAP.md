@@ -6,6 +6,22 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.16.0 (manuscript-style-profile source)
+
+This source is derived from immutable public v1.15.0. It adds
+`GRW-CAP-240-01`: a generic record for a named manuscript style profile,
+reporting-guidance status, target-journal requirement status, declared
+precedence, conflicts, and source-boundary limits. It provides a blank JSON
+interchange template, a Draft 2020-12 schema, an explicit caller-named
+read-only validator, and source-free synthetic fixtures.
+
+It does not include an AMA Manual or another proprietary source, select or
+retrieve a profile, discover or read a Study, follow references, determine a
+reporting guideline, verify journal currentness, rewrite manuscript facts,
+resolve a conflict, or make a scientific, governance, submission, release, or
+installation decision. A private implementation may supply an AMA-derived
+profile only under its separate source-access and currentness controls.
+
 ## v1.15.0 (joint-review-profile and dependency-order source)
 
 This source is derived from immutable public v1.14.0. It adds

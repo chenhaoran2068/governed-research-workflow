@@ -1,0 +1,20 @@
+{
+  "record_type": "manuscript_style_profile",
+  "schema_version": "1.0.0",
+  "profile_record_id": "synthetic-invalid-journal-profile",
+  "record_status": "draft",
+  "discipline_scope": "other",
+  "active_profile": {
+    "selection_status": "selected",
+    "profile_id": "synthetic_style_default",
+    "application_mode": "human_selected",
+    "profile_reference": "09_manuscript/style-profile.yaml",
+    "source_boundary_status": "public_principles_only",
+    "human_decision_reference": "00_state/decision.json"
+  },
+  "reporting_guidance": {"status": "not_applicable", "guidance_references": []},
+  "target_journal": {"selection_status": "target_selected", "journal_name": "Synthetic Journal", "requirement_status": "current_snapshot_available", "requirement_reference": null, "precedence_rule": "journal_overrides_style_profile"},
+  "conflicts": [],
+  "scope_exclusions": [],
+  "uncertainties": []
+}

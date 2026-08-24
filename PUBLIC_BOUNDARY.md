@@ -39,6 +39,24 @@ submission package. It does not write a manuscript, establish a claim, make a
 result authoritative, verify a journal requirement, approve material, or
 submit anything.
 
+## Manuscript Style Profile Material
+
+`GRW-CAP-240-01` adds generic metadata for a caller-named manuscript style
+profile, reporting-guidance status, target-journal requirement status,
+precedence, conflicts, and source-boundary limits. It includes no AMA Manual,
+other style manual, journal instruction, source snapshot, Study, manuscript,
+table, figure, citation library, decision, receipt, or local path.
+
+The public contract does not select or retrieve a profile, determine that an
+AMA-derived profile applies, verify a reporting guideline or journal
+instruction, resolve a requirement conflict, rewrite a result or protocol fact,
+or establish manuscript compliance. Its validator reads one explicitly named
+JSON interchange record and its package-owned schema only; it does not follow
+references, discover a Study, open a stack, make a network request, or write
+output. A target journal may override a declared style profile, while an
+apparent journal and reporting-guideline conflict remains for accountable-human
+resolution.
+
 ## Joint Review Profile And Dependency-Order Material
 
 `GRW-CAP-230-01` adds one generic default review profile for observational
