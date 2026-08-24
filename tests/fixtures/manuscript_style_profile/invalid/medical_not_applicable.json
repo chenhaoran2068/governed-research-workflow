@@ -1,0 +1,20 @@
+{
+  "record_type": "manuscript_style_profile",
+  "schema_version": "1.0.0",
+  "profile_record_id": "synthetic-invalid-medical-profile",
+  "record_status": "draft",
+  "discipline_scope": "medical_health",
+  "active_profile": {
+    "selection_status": "not_applicable",
+    "profile_id": null,
+    "application_mode": "not_applicable",
+    "profile_reference": null,
+    "source_boundary_status": "not_applicable",
+    "human_decision_reference": null
+  },
+  "reporting_guidance": {"status": "not_declared", "guidance_references": []},
+  "target_journal": {"selection_status": "no_target_selected", "journal_name": null, "requirement_status": "not_required", "requirement_reference": null, "precedence_rule": "journal_overrides_style_profile"},
+  "conflicts": [],
+  "scope_exclusions": [],
+  "uncertainties": []
+}

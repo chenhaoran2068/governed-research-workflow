@@ -90,3 +90,11 @@ placeholder, package order, Results work-unit assembly state, and reopen
 metadata. They do not select a profile, follow references, inspect a Study or
 result, verify a review or decision, rerun work, or make a scientific,
 governance, submission, or release determination.
+
+The v1.16 source adds `manuscript_style_profile.schema.json` and a matching
+blank JSON interchange template. They represent only a caller-declared
+discipline style profile, reporting-guidance status, target-journal requirement
+status, precedence, conflicts, and source-boundary limit. They do not contain
+or validate a style manual, identify a journal requirement, select an AMA
+profile, open a Study, establish applicability/currentness, resolve a conflict,
+or make a manuscript, scientific, compliance, submission, or release decision.

@@ -3,9 +3,9 @@
   "ledger_id": "governed-research-workflow-capability-truth-ledger",
   "ledger_status": "release_source_prepared",
   "release_context": {
-    "source_release_version": "v1.15.0",
-    "historical_public_baseline": "v1.14.0",
-    "live_release_identity_rule": "This v1.15.0 joint-review-profile source is derived from immutable public v1.14.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, profile applicability, human acceptance, Study fact, result, governance condition, or C4 authorization."
+    "source_release_version": "v1.16.0",
+    "historical_public_baseline": "v1.15.0",
+    "live_release_identity_rule": "This v1.16.0 manuscript-style-profile source is derived from immutable public v1.15.0. A selected public version is verified only from its exact annotated tag and matching GitHub Release; this source does not itself prove a hosted release, installed runtime, profile applicability, human acceptance, Study fact, result, governance condition, or C4 authorization."
   },
   "target_claim_scope": "The public_claim_status field records admitted historical scopes, the frozen v1.0.0 public interface contract, and separately tracked versioned source scopes. Admission and source verification are not public availability, a hosted Release, or installed runtime identity; selected-version availability requires a matching immutable tag and GitHub Release. Historical facts are not automatic admissions for later capabilities.",
   "claim_admission_rule": "A capability may be described as admitted for a named release scope only when its record is verified, admitted for that scope, and has an accountable-human approval reference. Admission alone does not prove a local installation, runtime identity, hosted Release, or authorize a future C4 decision.",
@@ -1383,6 +1383,50 @@
       "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/joint-review-profiles-and-dependency-order.md"],
       "contradiction_refusal": "Forbid profile selection, project discovery, reference following, Study/material reading, review acceptance, reopen execution, rerun, scientific/guidance/submission decision, Release, or installation claim when the explicit task, selected profile, plan path, accountable-human decision reference, selected version identity, or required evidence is missing, conflicting, or unknown.",
       "limitations_and_next_action": "Admitted only for the proposed v1.15.0 source scope. It does not establish a selected profile, real Study plan, human decision, completed review, result authority, reporting-guidance applicability, scientific sufficiency, exact candidate commit, hosted tag, matching GitHub Release, installed runtime, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
+    },
+    {
+      "capability_id": "GRW-CAP-240-01",
+      "public_name": "Generic Manuscript Style Profile Requirement Record",
+      "capability_class": "record",
+      "implementation_status": "verified",
+      "release_disposition": "admitted",
+      "public_claim_status": "permitted",
+      "promise": "Provides generic guidance, a blank metadata template, a structural schema, and a caller-named read-only validator for declaring one manuscript style profile, reporting-guidance status, target-journal requirement status, precedence, conflicts, and source-boundary limits.",
+      "non_promise": "Does not contain, quote, retrieve, license, or verify an AMA Manual or other style source; select a profile, discover or read a Study, follow a reference, determine reporting-guideline applicability, verify journal currentness, resolve a conflict, rewrite a protocol/result/declaration fact, modify a manuscript, or establish a scientific, compliance, submission, Release, or installed-runtime fact.",
+      "approval_owner": "accountable_human",
+      "interface": {
+        "status": "present",
+        "paths": [
+          "references/manuscript-style-profile-contract.md",
+          "assets/manuscript-style-profile.template.json",
+          "system/09_schemas_records_and_templates/manuscript_style_profile.schema.json",
+          "scripts/validate_manuscript_style_profile.py",
+          "tests/test_manuscript_style_profile.py",
+          "tests/test_v1_16_manuscript_style_profile.py"
+        ],
+        "identifiers": [
+          "GRW-CAP-240-01",
+          "manuscript-style-profile",
+          "journal_overrides_style_profile",
+          "manual_verification_required"
+        ]
+      },
+      "profile_scope": "both",
+      "data_and_external_boundary": ["no_data_access", "metadata_only", "synthetic_only", "no_external_service_action"],
+      "evidence": {
+        "status": "verified",
+        "references": [
+          {"kind": "test", "path": "tests/test_manuscript_style_profile.py", "identifier": "ManuscriptStyleProfileTests"},
+          {"kind": "test", "path": "tests/test_v1_16_manuscript_style_profile.py", "identifier": "V116ManuscriptStyleProfileTests"},
+          {"kind": "test", "path": "tests/test_capability_truth_ledger.py", "identifier": "CapabilityTruthLedgerTests"}
+        ]
+      },
+      "version": {"introduced_version": "v1.16.0", "last_verified_release": null, "target_release": "v1.16.0"},
+      "prior_release_history": [],
+      "approval_reference": "accountable-human accepted the AMA-derived default profile direction, public-source-only first implementation, target-journal precedence, manual-verification boundary, and current v1.16.0 candidate implementation in the active Codex conversation on 2026-08-24; exact candidate commit, remote verification, protected-main merge, C4, hosted Release, and local adoption remain separate evidence classes.",
+      "claim_surfaces": ["README.md", "ROADMAP.md", "SKILL.md", "PUBLIC_BOUNDARY.md", "references/manuscript-style-profile-contract.md"],
+      "contradiction_refusal": "Forbid a style-profile, AMA, reporting-guideline, journal-currentness, conflict-resolution, Study, manuscript, compliance, submission, Release, or installation claim when the named Study/task, profile record, source boundary, current requirement snapshot, accountable-human decision reference, selected version identity, or a required fact is missing, conflicting, or unknown.",
+      "limitations_and_next_action": "Admitted only for the proposed v1.16.0 source scope. It does not establish a real AMA profile, manual access, source currentness, guideline applicability, target-journal requirement, conflict resolution, human decision, manuscript correctness, exact candidate commit, hosted tag, matching GitHub Release, installed runtime, remote CI evidence, or C4 authorization. Public availability for any selected version still requires its exact annotated tag and matching GitHub Release."
     }
   ]
 }

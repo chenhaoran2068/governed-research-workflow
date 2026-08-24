@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/manuscript_style_profile.schema.json",
+  "title": "Manuscript Style Profile Record",
+  "description": "A generic declared-metadata record for one named manuscript style profile and its requirement boundary. It validates record structure only and never resolves references or evaluates a Study.",
+  "type": "object",
+  "required": [
+    "record_type",
+    "schema_version",
+    "profile_record_id",
+    "record_status",
+    "discipline_scope",
+    "active_profile",
+    "reporting_guidance",
+    "target_journal",
+    "conflicts",
+    "scope_exclusions",
+    "uncertainties"
+  ],
+  "$defs": {
+    "project_relative_reference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "description": "A supplied project-relative reference. Safety is enforced by the explicit validator; the schema never resolves it."
+    },
+    "active_profile": {
+      "type": "object",
+      "required": [
+        "selection_status",
+        "profile_id",
+        "application_mode",
+        "profile_reference",
+        "source_boundary_status",
+        "human_decision_reference"
+      ],
+      "properties": {
+        "selection_status": {"enum": ["not_declared", "selected", "not_applicable"]},
+        "profile_id": {
+          "anyOf": [
+            {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-z][a-z0-9_-]{1,127}$"},
+            {"type": "null"}
+          ]
+        },
+        "application_mode": {"enum": ["not_declared", "local_default", "human_selected", "not_applicable"]},
+        "profile_reference": {
+          "anyOf": [
+            {"$ref": "#/$defs/project_relative_reference"},
+            {"type": "null"}
+          ]
+        },
+        "source_boundary_status": {"enum": ["not_declared", "public_principles_only", "manual_verification_required", "current_source_confirmed", "not_applicable", "conflict"]},
+        "human_decision_reference": {
+          "anyOf": [
+            {"$ref": "#/$defs/project_relative_reference"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "reporting_guidance": {
+      "type": "object",
+      "required": ["status", "guidance_references"],
+      "properties": {
+        "status": {"enum": ["not_declared", "pending", "candidate", "applicable", "not_applicable", "specialist_review_required", "conflict"]},
+        "guidance_references": {"type": "array", "items": {"$ref": "#/$defs/project_relative_reference"}}
+      },
+      "additionalProperties": false
+    },
+    "target_journal": {
+      "type": "object",
+      "required": ["selection_status", "journal_name", "requirement_status", "requirement_reference", "precedence_rule"],
+      "properties": {
+        "selection_status": {"enum": ["no_target_selected", "target_selected"]},
+        "journal_name": {
+          "anyOf": [
+            {"type": "string", "minLength": 1, "maxLength": 256},
+            {"type": "null"}
+          ]
+        },
+        "requirement_status": {"enum": ["not_required", "pending", "current_snapshot_available", "stale_or_unknown", "conflict"]},
+        "requirement_reference": {
+          "anyOf": [
+            {"$ref": "#/$defs/project_relative_reference"},
+            {"type": "null"}
+          ]
+        },
+        "precedence_rule": {"const": "journal_overrides_style_profile"}
+      },
+      "additionalProperties": false
+    },
+    "conflict": {
+      "type": "object",
+      "required": ["conflict_id", "status", "affected_surface", "human_decision_reference"],
+      "properties": {
+        "conflict_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "status": {"enum": ["open", "resolved", "deferred"]},
+        "affected_surface": {"type": "string", "minLength": 1},
+        "human_decision_reference": {
+          "anyOf": [
+            {"$ref": "#/$defs/project_relative_reference"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "record_type": {"const": "manuscript_style_profile"},
+    "schema_version": {"const": "1.0.0"},
+    "profile_record_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{2,127}$"},
+    "record_status": {"enum": ["draft", "current", "superseded"]},
+    "discipline_scope": {"enum": ["not_declared", "medical_health", "other"]},
+    "active_profile": {"$ref": "#/$defs/active_profile"},
+    "reporting_guidance": {"$ref": "#/$defs/reporting_guidance"},
+    "target_journal": {"$ref": "#/$defs/target_journal"},
+    "conflicts": {"type": "array", "items": {"$ref": "#/$defs/conflict"}},
+    "scope_exclusions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "uncertainties": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

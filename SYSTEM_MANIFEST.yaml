@@ -1,7 +1,7 @@
-# v1.15.0 derives from immutable public v1.14.0 and adds GRW-CAP-230-01:
-# generic joint-review profiles, a blank metadata template, a structural
-# schema, and an explicit read-only validator. It retains the existing
-# GRW-CAP-150-01 Results-first manuscript guidance.
+# v1.16.0 derives from immutable public v1.15.0 and adds GRW-CAP-240-01:
+# a generic manuscript-style-profile contract, blank metadata template,
+# structural schema, and explicit read-only validator. It retains the existing
+# GRW-CAP-150-01 Results-first guidance and GRW-CAP-230-01 joint-review record.
 # It retains the frozen v1.0.0 public contract and previously admitted scopes,
 # including GRW-CAP-220-01's metadata-only managed reading knowledge-service
 # consumer boundary. It adds no
@@ -15,7 +15,7 @@
 # 0.4.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.15.0
+system_version: 1.16.0
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:
