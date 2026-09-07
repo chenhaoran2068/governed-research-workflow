@@ -1,0 +1,64 @@
+{
+  "record_type": "paper_repository_release_manifest",
+  "schema_version": "0.1.0",
+  "study_id": "<study-id>",
+  "research_output_id": "<paper-or-output-id>",
+  "release_status": "private_preparation",
+  "release_profile": "<release-profile>",
+  "repository": {
+    "owner": null,
+    "name": null,
+    "visibility": null,
+    "url": null
+  },
+  "candidate": {
+    "candidate_id": "<candidate-id>",
+    "source_scope_reference": "public_export_scope.json",
+    "destination_reference": "<safe-relative-candidate-path>",
+    "inventory_reference": null,
+    "built_at": null
+  },
+  "content": {
+    "readme_reference": "README.md",
+    "citation_reference": "CITATION.cff",
+    "data_access_reference": "DATA_ACCESS.md",
+    "paper_output_map_reference": "README.md#paper-output-map",
+    "shortest_run_command": null,
+    "expected_output_reference": null
+  },
+  "rights": {
+    "code_license": null,
+    "data_license_or_restriction": null,
+    "text_and_figure_license_or_restriction": null,
+    "third_party_review_status": "pending"
+  },
+  "validation": {
+    "scope_and_rights": "pending",
+    "clean_candidate": "pending",
+    "reproducibility": "pending",
+    "independent_review": "pending",
+    "release_and_citation": "pending",
+    "tested_platforms": [],
+    "validation_evidence_references": []
+  },
+  "release_identity": {
+    "commit": null,
+    "tag": null,
+    "github_release_url": null,
+    "persistent_identifier": null
+  },
+  "human_decisions": {
+    "scope_approved_by": null,
+    "rights_approved_by": null,
+    "citation_approved_by": null,
+    "release_approved_by": null,
+    "approval_record_reference": null
+  },
+  "maintenance": {
+    "owner": null,
+    "support_boundary": null,
+    "correction_route": null,
+    "retirement_condition": null
+  },
+  "updated_at": "<RFC3339 timestamp>"
+}

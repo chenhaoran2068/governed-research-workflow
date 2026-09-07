@@ -1,0 +1,31 @@
+# Credentials and local configuration
+.env
+.env.*
+*.key
+*.pem
+credentials*
+secrets*
+
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.Rhistory
+.RData
+renv/library/
+renv/staging/
+
+# Local outputs and logs
+logs/
+tmp/
+temp/
+*.log
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Add project-specific restricted-data and generated-output paths here before
+# the first commit. A .gitignore rule is not a release boundary or proof that a
+# file never entered Git history.

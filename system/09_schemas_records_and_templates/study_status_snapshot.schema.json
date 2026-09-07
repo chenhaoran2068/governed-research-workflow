@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chenhaoran2068/governed-research-workflow/schemas/study_status_snapshot.schema.json",
+  "title": "Study Status Snapshot",
+  "description": "A declared current Study-status view. Structural validity never proves scientific, governance, Gate, authority, or submission facts.",
+  "type": "object",
+  "required": [
+    "record_type", "schema_version", "study_id", "study_title", "study_profile",
+    "operating_status", "current_stage", "state_record_revision", "recorded_at",
+    "recorded_by", "current_focus", "next_action_summary", "next_human_decision",
+    "conditions", "last_transition", "last_transition_reference",
+    "project_manifest_reference", "related_record_references", "status_note"
+  ],
+  "$defs": {
+    "nullable_text": {
+      "anyOf": [
+        {"type": "string", "minLength": 1, "maxLength": 2000},
+        {"type": "null"}
+      ]
+    },
+    "project_relative_reference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "description": "A declared project-relative reference. The schema does not resolve it."
+    },
+    "nullable_reference": {
+      "anyOf": [
+        {"$ref": "#/$defs/project_relative_reference"},
+        {"type": "null"}
+      ]
+    },
+    "condition": {
+      "type": "object",
+      "required": [
+        "type", "status", "last_condition_transition_time", "reason_code",
+        "message", "observed_project_control_revision", "state_model_version",
+        "gate_definition_version", "basis_domains", "evidence_references"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "StateRecordCurrent", "ReadyForNextTransition", "GateEvidenceCurrent",
+            "AuthorityResolved", "RequirementsCurrent", "ReconciliationComplete"
+          ]
+        },
+        "status": {"enum": [true, false, "unknown"]},
+        "last_condition_transition_time": {"type": "string", "format": "date-time"},
+        "reason_code": {
+          "anyOf": [
+            {"enum": [
+              "MilestoneUnrecorded", "MissingGateEvidence", "GateEvidenceStale",
+              "AuthorityUnresolved", "AuthorityConflict",
+              "RequirementUnknownOrChanged", "LegacyReconciliationRequired",
+              "MissingHumanDecision", "TechnicalStateWriteFailure"
+            ]},
+            {"type": "null"}
+          ]
+        },
+        "message": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "observed_project_control_revision": {"type": "integer", "minimum": 0},
+        "state_model_version": {"type": "string", "minLength": 1, "maxLength": 64},
+        "gate_definition_version": {
+          "anyOf": [
+            {"type": "string", "minLength": 1, "maxLength": 64},
+            {"type": "null"}
+          ]
+        },
+        "basis_domains": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "protocol", "results", "authority", "requirements",
+              "submission_route", "state_record"
+            ]
+          }
+        },
+        "evidence_references": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/project_relative_reference"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "stage": {
+      "type": "object",
+      "required": ["id", "code"],
+      "properties": {
+        "id": {"enum": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"]},
+        "code": {
+          "enum": [
+            "research_request", "collaboration_and_workspace", "research_question",
+            "research_design", "protocol_and_governance_preparation",
+            "decision_critical_check", "results_and_manuscript_work",
+            "joint_review", "submission_package", "editorial_decision_and_revision",
+            "acceptance_archive_and_retrospective"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "transition": {
+      "type": "object",
+      "required": [
+        "transition_id", "recorded_at", "actor", "from_operating_status",
+        "to_operating_status", "from_stage_id", "to_stage_id", "reason",
+        "human_decision_reference"
+      ],
+      "properties": {
+        "transition_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,127}$"},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "actor": {"type": "string", "minLength": 1, "maxLength": 128},
+        "from_operating_status": {"anyOf": [{"enum": ["queued", "active", "paused", "stopped", "archived"]}, {"type": "null"}]},
+        "to_operating_status": {"enum": ["queued", "active", "paused", "stopped", "archived"]},
+        "from_stage_id": {"anyOf": [{"enum": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"]}, {"type": "null"}]},
+        "to_stage_id": {"anyOf": [{"enum": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"]}, {"type": "null"}]},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "human_decision_reference": {"$ref": "#/$defs/nullable_reference"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "record_type": {"const": "study_status_snapshot"},
+    "schema_version": {"const": "1.0.0"},
+    "study_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "study_title": {"type": "string", "minLength": 1, "maxLength": 512},
+    "study_profile": {"enum": ["current", "legacy_unreconciled"]},
+    "operating_status": {"enum": ["queued", "active", "paused", "stopped", "archived"]},
+    "current_stage": {"anyOf": [{"$ref": "#/$defs/stage"}, {"type": "null"}]},
+    "state_record_revision": {"type": "integer", "minimum": 0},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "recorded_by": {"type": "string", "minLength": 1, "maxLength": 128},
+    "current_focus": {"$ref": "#/$defs/nullable_text"},
+    "next_action_summary": {"$ref": "#/$defs/nullable_text"},
+    "next_human_decision": {"$ref": "#/$defs/nullable_text"},
+    "conditions": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/condition"}},
+    "last_transition": {"anyOf": [{"$ref": "#/$defs/transition"}, {"type": "null"}]},
+    "last_transition_reference": {"$ref": "#/$defs/nullable_reference"},
+    "project_manifest_reference": {"$ref": "#/$defs/project_relative_reference"},
+    "related_record_references": {"type": "array", "items": {"$ref": "#/$defs/project_relative_reference"}},
+    "status_note": {"$ref": "#/$defs/nullable_text"}
+  },
+  "additionalProperties": false
+}

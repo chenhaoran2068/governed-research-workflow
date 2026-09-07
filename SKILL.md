@@ -234,6 +234,24 @@ and reporting-guideline conflict remains a stop for accountable-human
 resolution. The bundled validator accepts one caller-named JSON interchange
 record only and never opens references or writes output.
 
+For a selected released version that admits `GRW-CAP-250-01`, read
+`references/study-status-snapshot-contract.md` only when the caller explicitly
+asks to create, inspect, or validate one named Study-status snapshot. Require
+the caller to supply the exact snapshot path before invoking
+`scripts/validate_study_status_snapshot.py`. Do not discover a Study, infer or
+write status, make a transition, verify a gate, or treat structural validity as
+permission to continue.
+
+For a selected released version that admits `GRW-CAP-260-01`, read
+`references/paper-repository-standard.md` only when a named existing Study or
+research output needs a repository plan, local candidate, validation, release
+review, correction, or retirement decision. Require an exact Study root and a
+separately approved export scope before building a candidate. The builder may
+copy only explicitly listed regular files into a new destination and must not
+create Git metadata or publish. Do not infer rights, privacy, authorship,
+licensing, scientific correctness, or release approval from a template,
+inventory, scanner result, or successful run.
+
 ## Collaboration Modes
 
 Use human-governed interactive work unless the user provides an explicit,
@@ -386,6 +404,10 @@ Stop and request accountable evidence or approval before:
   release: references/controlled-helper-admission.md
 - Self-controlled synthetic experience-exchange pilot, when admitted for the
   selected release: references/synthetic-experience-exchange-pilot.md
+- Study-status snapshot contract, when admitted for the selected release:
+  references/study-status-snapshot-contract.md
+- Paper repository preparation and release governance, when admitted for the
+  selected release: references/paper-repository-standard.md
 
 Use the blank assets only after explaining their role and obtaining any required
 user decision. Do not populate them with invented facts.

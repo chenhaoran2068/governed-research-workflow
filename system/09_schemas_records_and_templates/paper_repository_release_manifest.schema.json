@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "workflow-research-orchestration/paper_repository_release_manifest.schema.json",
+  "title": "Paper Repository Release Manifest",
+  "description": "A Study-owned release record. Structural validity does not authorize external release.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_type", "schema_version", "study_id", "research_output_id", "release_status", "release_profile", "repository", "candidate", "content", "rights", "validation", "release_identity", "human_decisions", "maintenance", "updated_at"],
+  "$defs": {
+    "nullableText": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]},
+    "reference": {"type": "string", "minLength": 1, "maxLength": 512},
+    "nullableReference": {"anyOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]},
+    "gateStatus": {"enum": ["pending", "passed", "failed", "not_applicable"]}
+  },
+  "properties": {
+    "record_type": {"const": "paper_repository_release_manifest"},
+    "schema_version": {"const": "0.1.0"},
+    "study_id": {"type": "string", "minLength": 1, "maxLength": 160},
+    "research_output_id": {"type": "string", "minLength": 1, "maxLength": 160},
+    "release_status": {"enum": ["not_planned", "not_applicable", "blocked_by_restriction", "private_preparation", "release_candidate", "released", "retired"]},
+    "release_profile": {"enum": ["code_with_synthetic_demo", "code_with_redistributable_data", "code_with_access_instructions", "materials_only"]},
+    "repository": {
+      "type": "object", "additionalProperties": false,
+      "required": ["owner", "name", "visibility", "url"],
+      "properties": {
+        "owner": {"$ref": "#/$defs/nullableText"},
+        "name": {"$ref": "#/$defs/nullableText"},
+        "visibility": {"anyOf": [{"enum": ["private", "internal", "public"]}, {"type": "null"}]},
+        "url": {"$ref": "#/$defs/nullableText"}
+      }
+    },
+    "candidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "source_scope_reference", "destination_reference", "inventory_reference", "built_at"],
+      "properties": {
+        "candidate_id": {"type": "string", "minLength": 1},
+        "source_scope_reference": {"$ref": "#/$defs/reference"},
+        "destination_reference": {"$ref": "#/$defs/reference"},
+        "inventory_reference": {"$ref": "#/$defs/nullableReference"},
+        "built_at": {"$ref": "#/$defs/nullableText"}
+      }
+    },
+    "content": {
+      "type": "object", "additionalProperties": false,
+      "required": ["readme_reference", "citation_reference", "data_access_reference", "paper_output_map_reference", "shortest_run_command", "expected_output_reference"],
+      "properties": {
+        "readme_reference": {"$ref": "#/$defs/reference"},
+        "citation_reference": {"$ref": "#/$defs/reference"},
+        "data_access_reference": {"$ref": "#/$defs/reference"},
+        "paper_output_map_reference": {"$ref": "#/$defs/reference"},
+        "shortest_run_command": {"$ref": "#/$defs/nullableText"},
+        "expected_output_reference": {"$ref": "#/$defs/nullableReference"}
+      }
+    },
+    "rights": {
+      "type": "object", "additionalProperties": false,
+      "required": ["code_license", "data_license_or_restriction", "text_and_figure_license_or_restriction", "third_party_review_status"],
+      "properties": {
+        "code_license": {"$ref": "#/$defs/nullableText"},
+        "data_license_or_restriction": {"$ref": "#/$defs/nullableText"},
+        "text_and_figure_license_or_restriction": {"$ref": "#/$defs/nullableText"},
+        "third_party_review_status": {"enum": ["pending", "passed", "failed", "not_applicable"]}
+      }
+    },
+    "validation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope_and_rights", "clean_candidate", "reproducibility", "independent_review", "release_and_citation", "tested_platforms", "validation_evidence_references"],
+      "properties": {
+        "scope_and_rights": {"$ref": "#/$defs/gateStatus"},
+        "clean_candidate": {"$ref": "#/$defs/gateStatus"},
+        "reproducibility": {"$ref": "#/$defs/gateStatus"},
+        "independent_review": {"$ref": "#/$defs/gateStatus"},
+        "release_and_citation": {"$ref": "#/$defs/gateStatus"},
+        "tested_platforms": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "validation_evidence_references": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/reference"}}
+      }
+    },
+    "release_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["commit", "tag", "github_release_url", "persistent_identifier"],
+      "properties": {
+        "commit": {"$ref": "#/$defs/nullableText"}, "tag": {"$ref": "#/$defs/nullableText"},
+        "github_release_url": {"$ref": "#/$defs/nullableText"}, "persistent_identifier": {"$ref": "#/$defs/nullableText"}
+      }
+    },
+    "human_decisions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope_approved_by", "rights_approved_by", "citation_approved_by", "release_approved_by", "approval_record_reference"],
+      "properties": {
+        "scope_approved_by": {"$ref": "#/$defs/nullableText"}, "rights_approved_by": {"$ref": "#/$defs/nullableText"},
+        "citation_approved_by": {"$ref": "#/$defs/nullableText"}, "release_approved_by": {"$ref": "#/$defs/nullableText"},
+        "approval_record_reference": {"$ref": "#/$defs/nullableReference"}
+      }
+    },
+    "maintenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["owner", "support_boundary", "correction_route", "retirement_condition"],
+      "properties": {
+        "owner": {"$ref": "#/$defs/nullableText"}, "support_boundary": {"$ref": "#/$defs/nullableText"},
+        "correction_route": {"$ref": "#/$defs/nullableText"}, "retirement_condition": {"$ref": "#/$defs/nullableText"}
+      }
+    },
+    "updated_at": {"type": "string", "minLength": 1}
+  }
+}

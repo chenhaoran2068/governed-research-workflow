@@ -6,6 +6,21 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.18.0 (Study status and paper repository governance source)
+
+This source is derived from immutable public v1.16.0. It absorbs the accepted
+but unpublished v1.17 Study-status candidate as `GRW-CAP-250-01`: a blank
+status snapshot, 11-stage catalogue, structural schema, explicit caller-named
+read-only validator, and synthetic fixtures.
+
+It adds `GRW-CAP-260-01`: a generic paper repository standard, four release
+profiles, blank reader-facing and release-governance templates, two structural
+schemas, a collision-refusing file-only allowlist builder, a read-only
+candidate validator, and synthetic tests. The package does not discover a
+Study, determine status, read restricted data, decide scope or rights, create
+a repository, run Git/GitHub actions, publish, archive, or grant release
+authority. The unpublished v1.17 candidate has no separate public identity.
+
 ## v1.16.0 (manuscript-style-profile source)
 
 This source is derived from immutable public v1.15.0. It adds

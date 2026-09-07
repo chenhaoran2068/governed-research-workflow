@@ -71,7 +71,7 @@
         "limitations_and_next_action"
       ],
       "properties": {
-        "capability_id": {"type": "string", "pattern": "^GRW-CAP-(031|040|050|060|070|080|090|100|101|110|111|120|130|140|150|160|170|180|190|200|210|220|230|240)-[0-9]{2}$"},
+        "capability_id": {"type": "string", "pattern": "^GRW-CAP-(031|040|050|060|070|080|090|100|101|110|111|120|130|140|150|160|170|180|190|200|210|220|230|240|250|260)-[0-9]{2}$"},
         "public_name": {"type": "string", "minLength": 1},
         "capability_class": {"enum": ["routing", "helper", "record", "profile", "role_card", "assurance", "release_control"]},
         "implementation_status": {"enum": ["planned", "implemented", "verified", "deferred", "retired"]},

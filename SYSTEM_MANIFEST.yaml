@@ -1,13 +1,11 @@
-# v1.16.0 derives from immutable public v1.15.0 and adds GRW-CAP-240-01:
-# a generic manuscript-style-profile contract, blank metadata template,
-# structural schema, and explicit read-only validator. It retains the existing
-# GRW-CAP-150-01 Results-first guidance and GRW-CAP-230-01 joint-review record.
-# It retains the frozen v1.0.0 public contract and previously admitted scopes,
-# including GRW-CAP-220-01's metadata-only managed reading knowledge-service
-# consumer boundary. It adds no
-# research execution, data access, public intake, network action, agent
-# runtime, delegation, generic writer, recovery executor, submission, approval,
-# or release decision.
+# v1.18.0 derives from immutable public v1.16.0. It absorbs the accepted but
+# unpublished v1.17 Study-status candidate as GRW-CAP-250-01 and adds
+# GRW-CAP-260-01: a generic paper-repository standard, blank release records,
+# explicit file-only clean-export builder, structural schemas, and a read-only
+# candidate validator. It retains the frozen v1.0.0 public contract and all
+# previously admitted scopes. It adds no Study discovery, status decision,
+# research execution, data access, repository creation, Git/GitHub action,
+# publication, submission, approval, or release decision.
 # This manifest never proves that a selected version is
 # installed or released:
 # verify an exact annotated tag and matching GitHub Release at installation
@@ -15,7 +13,7 @@
 # 0.4.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.16.0
+system_version: 1.18.0
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

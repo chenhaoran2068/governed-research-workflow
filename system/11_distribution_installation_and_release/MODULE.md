@@ -14,6 +14,16 @@ Released tags are immutable public contracts by policy. Candidate branches are
 not releases. A correction requires a new release version rather than
 rewriting a published tag.
 
+`GRW_CAP_250_01_PUBLIC_CAPABILITY_ADMISSION.md`,
+`GRW_CAP_260_01_PUBLIC_CAPABILITY_ADMISSION.md`,
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.18.0.md`,
+`V1_18_DEPENDENCY_AND_WORKFLOW_REVIEW.md`, `V1_18_RELEASE_GATE.md`,
+`V1_18_RELEASE_CONTROL_CANDIDATE.json`, `V1_18_RELEASE_EVIDENCE.md`, and
+`RELEASE_NOTES_v1.18.0.md` define the bounded v1.18 Study-status and paper-
+repository-governance source. They do not establish a hosted release, an
+installed runtime, a real Study status, a real repository candidate, or an
+external action authority.
+
 The local v1 interface-freeze candidate records are
 `V1_RELEASE_GATE.md`, `V1_RELEASE_CONTROL_CANDIDATE.json`,
 `V1_RELEASE_EVIDENCE.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.0.0.md`,
