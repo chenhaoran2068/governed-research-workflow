@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: v1.18.0 Study-status and paper-repository-governance source retaining the
+Status: v1.18.1 paper-repository naming and promotion maintenance source retaining the
 frozen public-interface contract, `GRW-CAP-150-01`, and the historical
 `GRW-CAP-160-01` public card library. It adds `GRW-CAP-170-01` as two generic
 System-owned guidance documents, three public topics, and three selectively

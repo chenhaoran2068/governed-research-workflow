@@ -57,6 +57,13 @@ def validate(candidate: Path) -> dict:
                 issues.append(issue(code, rel, message))
 
     if isinstance(manifest, dict):
+        repository = manifest.get("repository", {})
+        naming = repository.get("naming")
+        if isinstance(naming, dict) and repository.get("name"):
+            components = [naming.get("subject_or_domain"), naming.get("core_focus"), naming.get("output_type")]
+            expected_name = "-".join(component for component in components if component)
+            if repository["name"] != expected_name:
+                issues.append(issue("repository_name_mismatch", "repository.name", "name must equal the recorded subject/domain, optional core focus, and output type"))
         for key in ("readme_reference", "citation_reference", "data_access_reference", "expected_output_reference"):
             value = manifest.get("content", {}).get(key)
             if value is None:
@@ -67,6 +74,18 @@ def validate(candidate: Path) -> dict:
             elif not (candidate / Path(clean)).exists():
                 issues.append(issue("missing_reference", f"content.{key}", f"referenced path does not exist: {clean}"))
         if manifest.get("release_status") in {"release_candidate", "released"}:
+            if not repository.get("name"):
+                issues.append(issue("repository_name_missing", "repository.name", "candidate or release requires a stable repository name"))
+            if not isinstance(naming, dict):
+                issues.append(issue("repository_naming_missing", "repository.naming", "candidate or release requires a naming record"))
+            else:
+                for key in ("subject_or_domain", "output_type", "rationale"):
+                    if not naming.get(key):
+                        issues.append(issue("repository_naming_incomplete", f"repository.naming.{key}", "candidate or release requires this naming field"))
+                if len(naming.get("selected_dimensions", [])) < 2:
+                    issues.append(issue("repository_naming_incomplete", "repository.naming.selected_dimensions", "record at least two research dimensions used to choose the name"))
+                if naming.get("human_confirmed") is not True:
+                    issues.append(issue("repository_name_unconfirmed", "repository.naming.human_confirmed", "candidate or release requires human confirmation of the repository name"))
             required_gates = ("scope_and_rights", "clean_candidate", "reproducibility", "independent_review")
             for gate in required_gates:
                 if manifest.get("validation", {}).get(gate) != "passed":

@@ -25,6 +25,20 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## v1.18.1 Paper-Repository Naming And Promotion Maintenance Source Scope
+
+- The v1.18.1 source derives from immutable public v1.18.0 and adds no new
+  capability, dependency, Framework location, or automatic action.
+- It refines `GRW-CAP-260-01` with a research-type-aware short-name contract,
+  separate full research-identity fields, human naming confirmation, and the
+  boundary for promoting one accepted clean candidate into
+  `Github/<repository-name>/`.
+- The Study-owned release record remains authoritative. The complete Study is
+  never copied to `Github/`, and no bidirectional synchronization is implied.
+- A selected v1.18.1 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact annotated tag and
+  matching GitHub Release.
+
 ## v1.18.0 Study-Status And Paper-Repository Source Scope
 
 - The v1.18.0 source derives from immutable public v1.16.0 and absorbs the

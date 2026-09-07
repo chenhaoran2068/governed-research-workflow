@@ -1,3 +1,8 @@
+# v1.18.1 is a maintenance patch derived from immutable public v1.18.0. It
+# clarifies the repository naming contract, records the fuller research
+# identity outside the short repository name, and defines controlled promotion
+# of an accepted clean candidate into the Framework-owned Github/ worktree.
+# It adds no capability, dependency, Framework location, or automatic action.
 # v1.18.0 derives from immutable public v1.16.0. It absorbs the accepted but
 # unpublished v1.17 Study-status candidate as GRW-CAP-250-01 and adds
 # GRW-CAP-260-01: a generic paper-repository standard, blank release records,
@@ -13,7 +18,7 @@
 # 0.4.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.18.0
+system_version: 1.18.1
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

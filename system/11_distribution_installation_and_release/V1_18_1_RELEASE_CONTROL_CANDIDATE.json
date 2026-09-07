@@ -1,0 +1,22 @@
+{
+  "record_type": "release_control_candidate",
+  "release_version": "v1.18.1",
+  "status": "source_prepared_not_released",
+  "capability_ids": ["GRW-CAP-260-01"],
+  "change_class": "zero-new-capability repository naming and clean-candidate worktree-promotion maintenance",
+  "required_before_release": [
+    "exact_candidate_commit",
+    "local_validation",
+    "affected_scope_review",
+    "remote_ci",
+    "protected_main_review",
+    "annotated_tag",
+    "matching_github_release"
+  ],
+  "non_claims": [
+    "No new capability, dependency, or Framework location",
+    "No real Study inspection or repository candidate",
+    "No privacy, rights, scientific, naming, or release decision for a real Study",
+    "No repository creation, file promotion, synchronization, Git/GitHub action, publication, or archive"
+  ]
+}

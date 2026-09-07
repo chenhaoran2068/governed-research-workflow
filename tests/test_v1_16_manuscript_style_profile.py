@@ -42,7 +42,7 @@ class V116ManuscriptStyleProfileTests(unittest.TestCase):
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         ledger = json.loads((ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json").read_text(encoding="utf-8"))
         record = next(item for item in ledger["capabilities"] if item["capability_id"] == "GRW-CAP-240-01")
-        self.assertIn("system_version: 1.18.0", manifest)
+        self.assertIn("system_version: 1.18.1", manifest)
         self.assertEqual(record["implementation_status"], "verified")
         self.assertEqual(record["release_disposition"], "admitted")
         self.assertEqual(record["version"]["target_release"], "v1.16.0")

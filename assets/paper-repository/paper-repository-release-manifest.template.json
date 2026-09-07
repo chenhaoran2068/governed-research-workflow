@@ -1,6 +1,6 @@
 {
   "record_type": "paper_repository_release_manifest",
-  "schema_version": "0.1.0",
+  "schema_version": "0.1.1",
   "study_id": "<study-id>",
   "research_output_id": "<paper-or-output-id>",
   "release_status": "private_preparation",
@@ -8,6 +8,15 @@
   "repository": {
     "owner": null,
     "name": null,
+    "naming": {
+      "strategy": "subject-focus-output-type",
+      "subject_or_domain": null,
+      "core_focus": null,
+      "output_type": null,
+      "selected_dimensions": [],
+      "rationale": null,
+      "human_confirmed": false
+    },
     "visibility": null,
     "url": null
   },

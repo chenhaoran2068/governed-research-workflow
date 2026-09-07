@@ -39,6 +39,17 @@ def valid_manifest() -> dict:
     )
     manifest["content"]["shortest_run_command"] = "python code/run.py"
     manifest["content"]["expected_output_reference"] = "expected/contract.md"
+    manifest["repository"]["name"] = "critical-care-paco2-analysis"
+    manifest["repository"]["naming"].update(
+        {
+            "subject_or_domain": "critical-care",
+            "core_focus": "paco2",
+            "output_type": "analysis",
+            "selected_dimensions": ["domain", "exposure", "intended_use"],
+            "rationale": "Stable public terms identifying the domain, focus, and output.",
+            "human_confirmed": True,
+        }
+    )
     return manifest
 
 
@@ -134,6 +145,26 @@ class PaperRepositoryReleaseTests(unittest.TestCase):
         codes = [item["code"] for item in result["errors"]]
         self.assertIn("release_gate_not_passed", codes)
         self.assertIn("human_decision_missing", codes)
+
+    def test_candidate_rejects_name_that_does_not_match_recorded_components(self) -> None:
+        candidate = self.make_candidate()
+        manifest = valid_manifest()
+        manifest["repository"]["name"] = "unrelated-name"
+        (candidate / "RELEASE_MANIFEST.json").write_text(json.dumps(manifest), encoding="utf-8")
+        result = validator.validate(candidate)
+        self.assertIn("repository_name_mismatch", {item["code"] for item in result["errors"]})
+
+    def test_release_candidate_requires_complete_confirmed_naming_record(self) -> None:
+        candidate = self.make_candidate()
+        manifest = valid_manifest()
+        manifest["release_status"] = "release_candidate"
+        manifest["repository"]["naming"]["human_confirmed"] = False
+        manifest["repository"]["naming"]["selected_dimensions"] = []
+        (candidate / "RELEASE_MANIFEST.json").write_text(json.dumps(manifest), encoding="utf-8")
+        result = validator.validate(candidate)
+        codes = {item["code"] for item in result["errors"]}
+        self.assertIn("repository_name_unconfirmed", codes)
+        self.assertIn("repository_naming_incomplete", codes)
 
     def test_unresolved_required_template_placeholder_is_rejected(self) -> None:
         candidate = self.make_candidate()
