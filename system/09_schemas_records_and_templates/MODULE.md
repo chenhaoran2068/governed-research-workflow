@@ -98,3 +98,16 @@ status, precedence, conflicts, and source-boundary limit. They do not contain
 or validate a style manual, identify a journal requirement, select an AMA
 profile, open a Study, establish applicability/currentness, resolve a conflict,
 or make a manuscript, scientific, compliance, submission, or release decision.
+
+The v1.18 source absorbs the unpublished Study-status candidate through
+`study_status_snapshot.schema.json`, its blank template, 11-stage catalogue,
+and caller-named read-only validator. These records declare status metadata
+only; they do not discover a Study, write status, perform a transition, verify
+a gate, or authorize work.
+
+The v1.18 source also adds `paper_repository_release_manifest.schema.json` and
+`paper_repository_public_export_scope.schema.json` with matching blank assets.
+They organize a declared release profile, clean-candidate scope, rights and
+review statuses, exact release identity, and maintenance boundary. Structural
+validity does not prove privacy, rights, scientific correctness, authorship,
+repository existence, Git history, release, publication, or human approval.

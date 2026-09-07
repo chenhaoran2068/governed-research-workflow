@@ -1,0 +1,17 @@
+{
+  "record_type": "study_lifecycle_stage_catalog",
+  "catalog_version": "1.0.0",
+  "stages": [
+    {"id": "01", "code": "research_request", "display_label": "Research request"},
+    {"id": "02", "code": "collaboration_and_workspace", "display_label": "Collaboration and workspace"},
+    {"id": "03", "code": "research_question", "display_label": "Research question"},
+    {"id": "04", "code": "research_design", "display_label": "Research design"},
+    {"id": "05", "code": "protocol_and_governance_preparation", "display_label": "Protocol and governance preparation"},
+    {"id": "06", "code": "decision_critical_check", "display_label": "Decision-critical check"},
+    {"id": "07", "code": "results_and_manuscript_work", "display_label": "Results and manuscript work"},
+    {"id": "08", "code": "joint_review", "display_label": "Joint review"},
+    {"id": "09", "code": "submission_package", "display_label": "Submission package"},
+    {"id": "10", "code": "editorial_decision_and_revision", "display_label": "Editorial decision and revision"},
+    {"id": "11", "code": "acceptance_archive_and_retrospective", "display_label": "Acceptance, archive, and retrospective"}
+  ]
+}

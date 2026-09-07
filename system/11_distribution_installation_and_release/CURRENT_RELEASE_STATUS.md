@@ -25,6 +25,21 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## v1.18.0 Study-Status And Paper-Repository Source Scope
+
+- The v1.18.0 source derives from immutable public v1.16.0 and absorbs the
+  accepted but unpublished v1.17 Study-status candidate; v1.17 has no separate
+  public tag or Release identity.
+- `GRW-CAP-250-01` is declared status metadata only. It does not discover a
+  Study, write status, make a transition, prove a gate, or authorize work.
+- `GRW-CAP-260-01` provides generic repository-preparation guidance, blank
+  records, a file-only local builder, and a read-only validator. It does not
+  create Git metadata, access GitHub, decide privacy/rights/science, or approve
+  a release.
+- A selected v1.18.0 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact annotated tag and
+  matching GitHub Release.
+
 ## V1 Frozen Interface Source Scope
 
 - The v1.0.0 source freezes a bounded public interface through a Support Scope

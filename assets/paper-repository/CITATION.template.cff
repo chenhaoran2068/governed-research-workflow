@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite the exact released version."
+title: "<repository title>"
+type: software
+version: "<release version after approval>"
+date-released: "<YYYY-MM-DD after release>"
+authors:
+  - family-names: "<family name>"
+    given-names: "<given names>"
+repository-code: "<approved repository URL after creation>"
+license: "<approved SPDX identifier>"
+preferred-citation:
+  type: article
+  title: "<paper title after confirmation>"
+  authors:
+    - family-names: "<family name>"
+      given-names: "<given names>"
+  journal: "<journal after confirmation>"
+  year: "<year after confirmation>"
+  doi: "<paper DOI when available>"

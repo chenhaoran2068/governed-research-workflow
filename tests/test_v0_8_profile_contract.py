@@ -20,7 +20,7 @@ PRIVATE_PATH_PATTERN = r"(?i)(?:[a-z]:\\|/(?:home|users)/)"
 class V08ProfileContractTests(unittest.TestCase):
     def test_manifest_retains_exactly_two_public_profiles_and_one_optional_service(self) -> None:
         manifest = MANIFEST_PATH.read_text(encoding="utf-8")
-        self.assertIn("system_version: 1.16.0", manifest)
+        self.assertIn("system_version: 1.18.0", manifest)
         self.assertEqual(re.findall(r"^  - ([a-z_]+)$", manifest, flags=re.MULTILINE), ["standalone", "framework_integrated"])
         self.assertIn("optional_shared_services:\n  - scholarly-reading-knowledge", manifest)
         self.assertNotIn("private_lab_extended", manifest.lower())

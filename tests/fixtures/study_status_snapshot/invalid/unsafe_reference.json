@@ -1,0 +1,56 @@
+{
+  "record_type": "study_status_snapshot",
+  "schema_version": "1.0.0",
+  "study_id": "sample-study-001",
+  "study_title": "Sample unsafe Study",
+  "study_profile": "current",
+  "operating_status": "active",
+  "current_stage": {"id": "03", "code": "research_question"},
+  "state_record_revision": 1,
+  "recorded_at": "2026-08-26T12:00:00+00:00",
+  "recorded_by": "synthetic-test",
+  "current_focus": "Clarify the candidate research question.",
+  "next_action_summary": null,
+  "next_human_decision": null,
+  "conditions": [
+    {
+      "type": "StateRecordCurrent",
+      "status": true,
+      "last_condition_transition_time": "2026-08-26T12:00:00+00:00",
+      "reason_code": null,
+      "message": "Synthetic current status record.",
+      "observed_project_control_revision": 1,
+      "state_model_version": "study_status_snapshot_v1",
+      "gate_definition_version": null,
+      "basis_domains": ["state_record"],
+      "evidence_references": ["../outside.json"]
+    },
+    {
+      "type": "ReadyForNextTransition",
+      "status": false,
+      "last_condition_transition_time": "2026-08-26T12:00:00+00:00",
+      "reason_code": "MissingHumanDecision",
+      "message": "A human decision is still needed before the next transition.",
+      "observed_project_control_revision": 1,
+      "state_model_version": "study_status_snapshot_v1",
+      "gate_definition_version": null,
+      "basis_domains": ["state_record"],
+      "evidence_references": []
+    }
+  ],
+  "last_transition": {
+    "transition_id": "sample-status-0001",
+    "recorded_at": "2026-08-26T12:00:00+00:00",
+    "actor": "synthetic-test",
+    "from_operating_status": "queued",
+    "to_operating_status": "active",
+    "from_stage_id": null,
+    "to_stage_id": "03",
+    "reason": "Synthetic test transition.",
+    "human_decision_reference": "decisions/decision-0001.json"
+  },
+  "last_transition_reference": "status/study_status_transitions.jsonl#sample-status-0001",
+  "project_manifest_reference": "state/project_manifest.json",
+  "related_record_references": [],
+  "status_note": null
+}

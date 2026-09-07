@@ -1,5 +1,29 @@
 # Public Boundary
 
+## Study-Status Snapshot Material
+
+`GRW-CAP-250-01` adds a blank Study-status snapshot, an 11-stage catalogue, a
+structural schema, a caller-named read-only validator, and synthetic fixtures.
+It contains no real Study, status, path, decision, gate evidence, result,
+manuscript, or installed-runtime fact. It does not discover a Study, write a
+record, make a transition, or authorize work.
+
+## Paper Repository Governance Material
+
+`GRW-CAP-260-01` adds generic guidance, blank release templates, two structural
+schemas, an explicit file-only clean-export builder, a read-only candidate
+validator, and synthetic tests. It contains no real paper package, Study data,
+result, manuscript, author decision, credential, repository identity, Git
+history, or release receipt.
+
+The builder reads only caller-named regular files and writes only to a new
+destination. It refuses overwrite, parent traversal, linked sources, duplicate
+destinations, and undeclared generated derivatives. The validator checks only
+the named candidate's structure and selected local risk markers. Neither tool
+decides privacy, rights, scientific correctness, authorship, licensing,
+publication timing, repository creation, or release approval. No Git, GitHub,
+archive, upload, publication, or network action is implemented.
+
 ## Public-Safe Experience And Collaboration Guidance
 
 `GRW-CAP-160-01` retains a public vocabulary, catalogue, and 38 historical

@@ -1,0 +1,23 @@
+{
+  "record_type": "release_control_candidate",
+  "release_version": "v1.18.0",
+  "status": "source_prepared_not_released",
+  "capability_ids": ["GRW-CAP-250-01", "GRW-CAP-260-01"],
+  "change_class": "Study-status declared-metadata contract plus paper-repository preparation and release-governance toolkit",
+  "required_before_release": [
+    "exact_candidate_commit",
+    "local_validation",
+    "affected_scope_review",
+    "remote_ci",
+    "protected_main_review",
+    "annotated_tag",
+    "matching_github_release"
+  ],
+  "non_claims": [
+    "No hosted release or installed runtime",
+    "No real Study status, transition, or gate decision",
+    "No real paper repository candidate or project release",
+    "No privacy, rights, scientific, authorship, license, or release approval",
+    "No repository creation, Git/GitHub action, publication, archive, or network action"
+  ]
+}

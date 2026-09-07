@@ -1,0 +1,46 @@
+{
+  "record_type": "study_status_snapshot",
+  "schema_version": "1.0.0",
+  "study_id": "sample-study-001",
+  "study_title": "Sample Study",
+  "study_profile": "current",
+  "operating_status": "queued",
+  "current_stage": null,
+  "state_record_revision": 0,
+  "recorded_at": "1970-01-01T00:00:00+00:00",
+  "recorded_by": "system_bootstrap",
+  "current_focus": null,
+  "next_action_summary": null,
+  "next_human_decision": null,
+  "conditions": [
+    {
+      "type": "StateRecordCurrent",
+      "status": true,
+      "last_condition_transition_time": "1970-01-01T00:00:00+00:00",
+      "reason_code": null,
+      "message": "Initial queued status record; no later milestone is declared.",
+      "observed_project_control_revision": 0,
+      "state_model_version": "study_status_snapshot_v1",
+      "gate_definition_version": null,
+      "basis_domains": ["state_record"],
+      "evidence_references": []
+    },
+    {
+      "type": "ReadyForNextTransition",
+      "status": false,
+      "last_condition_transition_time": "1970-01-01T00:00:00+00:00",
+      "reason_code": "MissingHumanDecision",
+      "message": "No next-transition review or accountable-human decision is declared.",
+      "observed_project_control_revision": 0,
+      "state_model_version": "study_status_snapshot_v1",
+      "gate_definition_version": null,
+      "basis_domains": ["state_record"],
+      "evidence_references": []
+    }
+  ],
+  "last_transition": null,
+  "last_transition_reference": null,
+  "project_manifest_reference": "state/project_manifest.json",
+  "related_record_references": [],
+  "status_note": "Blank metadata template. It does not establish a Gate, approval, data access, result authority, or scientific conclusion."
+}

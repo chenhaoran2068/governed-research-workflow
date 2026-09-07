@@ -1,0 +1,41 @@
+{
+  "record_type": "paper_repository_public_export_scope",
+  "schema_version": "0.1.0",
+  "study_id": "<study-id>",
+  "candidate_id": "<candidate-id>",
+  "source_root_reference": "<safe-relative-study-reference>",
+  "destination_reference": "<safe-relative-new-candidate-directory>",
+  "include": [
+    {
+      "source_reference": "<safe-relative-source>",
+      "destination_reference": "<safe-relative-destination>",
+      "mode": "copy",
+      "reason": "<why this item is public or controlled-release eligible>"
+    }
+  ],
+  "exclude_categories": [
+    {
+      "category": "restricted_or_patient_level_data",
+      "reason": "Not authorized for repository release"
+    },
+    {
+      "category": "credentials_and_private_keys",
+      "reason": "Secrets never belong in the candidate"
+    },
+    {
+      "category": "private_paths_logs_and_local_audit_evidence",
+      "reason": "Internal context and audit material are not reader-facing release content"
+    },
+    {
+      "category": "local_environments_caches_and_generated_bulk_outputs",
+      "reason": "Restore or regenerate these from documented dependencies and code"
+    }
+  ],
+  "allowed_generated_derivatives": [],
+  "review": {
+    "owner": "<accountable-owner>",
+    "rights_status": "pending",
+    "privacy_status": "pending",
+    "coauthor_status": "pending"
+  }
+}

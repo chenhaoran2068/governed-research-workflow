@@ -6,8 +6,10 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.16.0 manuscript-style-profile source, derived from immutable public
-v1.15.0. It adds `GRW-CAP-240-01`: a generic manuscript-style-profile record,
+Status: v1.18.0 Study-status and paper-repository-governance source, derived
+from immutable public v1.16.0. It absorbs the accepted but unpublished v1.17
+Study-status candidate as `GRW-CAP-250-01` and adds `GRW-CAP-260-01` for paper
+repository preparation. It retains `GRW-CAP-240-01`: a generic manuscript-style-profile record,
 blank template, structural schema, explicit caller-named read-only validator,
 and source-free synthetic fixtures. The record keeps a declared discipline
 profile, reporting-guidance status, target-journal requirement status,
@@ -81,6 +83,19 @@ work, or establish a scientific, governance, submission, or release decision.
 It retains `GRW-CAP-240-01` as an inspectable style-requirement boundary
 only. A private implementation may identify an AMA-derived default, but the
 public package neither provides nor verifies that material.
+`GRW-CAP-250-01` provides a blank Study-status snapshot, an 11-stage catalogue,
+a structural schema, and a caller-named read-only validator. It records only a
+declared operating status, current stage, focus, next action or human decision,
+and status conditions. It does not discover a Study, write status, make a
+transition, prove a gate, or decide that work may proceed.
+`GRW-CAP-260-01` provides a generic standard and blank templates for one
+paper-associated repository, an explicit file-only allowlist builder that
+refuses overwrite, and a read-only candidate validator. It separates the
+private Study authority, local release record, clean candidate, repository
+worktree, and frozen release. It does not inspect a private Study automatically,
+decide rights or privacy, create a repository, commit, push, tag, publish,
+archive, or approve a release. Automated validation is supporting evidence,
+not proof of scientific correctness, privacy, rights, or human authorization.
 It does not create a Study, decide a scientific design, infer governance,
 access material, execute research, replace human confirmation, or guarantee
 host-level automatic System selection. This versioned source tree does not itself prove the release
