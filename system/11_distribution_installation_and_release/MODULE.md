@@ -24,6 +24,14 @@ repository-governance source. They do not establish a hosted release, an
 installed runtime, a real Study status, a real repository candidate, or an
 external action authority.
 
+`PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.18.1.md`,
+`V1_18_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md`, `V1_18_1_RELEASE_GATE.md`,
+`V1_18_1_RELEASE_CONTROL_CANDIDATE.json`, `V1_18_1_RELEASE_EVIDENCE.md`, and
+`RELEASE_NOTES_v1.18.1.md` define the zero-new-capability v1.18.1 naming and
+worktree-promotion maintenance source. They do not promote a real candidate,
+create a repository, perform Git/GitHub actions, or establish a release or
+installed-runtime identity.
+
 The local v1 interface-freeze candidate records are
 `V1_RELEASE_GATE.md`, `V1_RELEASE_CONTROL_CANDIDATE.json`,
 `V1_RELEASE_EVIDENCE.md`, `PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.0.0.md`,

@@ -7,6 +7,24 @@ Release profile: `<code_with_synthetic_demo|code_with_redistributable_data|code_
 This repository supports `<paper or research output identity>`. It is a
 reviewed derivative and is not the authority for the private Study workspace.
 
+## Research Identity And Repository Name
+
+Repository name: `<subject-or-domain>-<core-focus>-<output-type>`
+
+| Item | Declared value |
+| --- | --- |
+| Research type | <observational, diagnostic, prediction, qualitative, methods, review, or other> |
+| Subject, population, condition, or domain | <value> |
+| Context or setting | <value or not applicable> |
+| Intervention, exposure, phenomenon, method, or other core focus | <value or not applicable> |
+| Comparator | <value or not applicable> |
+| Outcome, endpoint, objective, or intended use | <value> |
+| Time structure | <value or not applicable> |
+| Naming rationale | <why these two or three stable elements identify this output> |
+
+The repository name is a short stable identifier, not a compressed research
+question. Full research details remain in `protocol/study-summary.md`.
+
 ## What Is Included
 
 - <included material>

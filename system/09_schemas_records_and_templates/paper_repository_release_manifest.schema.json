@@ -10,11 +10,12 @@
     "nullableText": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]},
     "reference": {"type": "string", "minLength": 1, "maxLength": 512},
     "nullableReference": {"anyOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]},
-    "gateStatus": {"enum": ["pending", "passed", "failed", "not_applicable"]}
+    "gateStatus": {"enum": ["pending", "passed", "failed", "not_applicable"]},
+    "slugOrNull": {"anyOf": [{"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 40}, {"type": "null"}]}
   },
   "properties": {
     "record_type": {"const": "paper_repository_release_manifest"},
-    "schema_version": {"const": "0.1.0"},
+    "schema_version": {"enum": ["0.1.0", "0.1.1"]},
     "study_id": {"type": "string", "minLength": 1, "maxLength": 160},
     "research_output_id": {"type": "string", "minLength": 1, "maxLength": 160},
     "release_status": {"enum": ["not_planned", "not_applicable", "blocked_by_restriction", "private_preparation", "release_candidate", "released", "retired"]},
@@ -24,7 +25,23 @@
       "required": ["owner", "name", "visibility", "url"],
       "properties": {
         "owner": {"$ref": "#/$defs/nullableText"},
-        "name": {"$ref": "#/$defs/nullableText"},
+        "name": {"anyOf": [{"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 100}, {"type": "null"}]},
+        "naming": {
+          "type": "object", "additionalProperties": false,
+          "required": ["strategy", "subject_or_domain", "core_focus", "output_type", "selected_dimensions", "rationale", "human_confirmed"],
+          "properties": {
+            "strategy": {"const": "subject-focus-output-type"},
+            "subject_or_domain": {"$ref": "#/$defs/slugOrNull"},
+            "core_focus": {"$ref": "#/$defs/slugOrNull"},
+            "output_type": {"$ref": "#/$defs/slugOrNull"},
+            "selected_dimensions": {
+              "type": "array", "uniqueItems": true,
+              "items": {"enum": ["population", "condition", "domain", "context", "exposure", "intervention", "comparator", "outcome", "phenomenon", "method", "resource", "intended_use", "other"]}
+            },
+            "rationale": {"$ref": "#/$defs/nullableText"},
+            "human_confirmed": {"type": "boolean"}
+          }
+        },
         "visibility": {"anyOf": [{"enum": ["private", "internal", "public"]}, {"type": "null"}]},
         "url": {"$ref": "#/$defs/nullableText"}
       }
@@ -101,5 +118,11 @@
       }
     },
     "updated_at": {"type": "string", "minLength": 1}
-  }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"schema_version": {"const": "0.1.1"}}, "required": ["schema_version"]},
+      "then": {"properties": {"repository": {"required": ["naming"]}}}
+    }
+  ]
 }

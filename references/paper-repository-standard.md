@@ -47,9 +47,39 @@ software product or one inseparable data resource. The release record must name
 the reason, ownership, versioning model, and how each paper maps to exact files
 and releases.
 
-Repository names should be stable, short, and topic based. Do not put a target
-journal, acceptance claim, confidential Study identifier, or mutable version
-number in the repository name. Put versions in tags and releases.
+Repository names use the form
+`<subject-or-domain>-<core-focus>-<output-type>`. The core-focus component may
+be omitted when the remaining two components identify the output clearly. Use
+lowercase ASCII letters, numbers, and hyphens. Select two or three stable,
+discriminating elements; do not compress the complete research question into
+the name.
+
+Choose the elements according to the research type rather than forcing every
+output into PICOS:
+
+| Research type | Candidate naming elements |
+| --- | --- |
+| Observational | population or condition; exposure or factor; outcome or purpose |
+| Causal or interventional | population or condition; intervention or exposure; outcome |
+| Diagnostic | condition or use context; index test; diagnostic-accuracy output |
+| Prognostic or prediction | target population or condition; predicted outcome; model output |
+| Systematic review | topic, intervention, or exposure; main question; review output |
+| Qualitative | population or context; phenomenon; qualitative output |
+| Methods | method; problem or intended use; method or software output |
+| Data or tool | domain or resource; principal function; dataset, software, or workflow output |
+
+The release manifest records the selected components, which research
+dimensions they represent, and the human rationale. The README and
+`protocol/study-summary.md` retain the fuller identity: research type,
+population or subject, context, intervention/exposure/focus, comparator when
+applicable, outcome or objective, and time structure. Use `not applicable`
+rather than inventing a PICOS element for a design that does not use it.
+
+Do not put a target journal, acceptance or publication claim, confidential
+Study identifier, or mutable version number in the repository name. Put
+versions in tags and releases. Put additional discovery terms in the GitHub
+description, repository topics, README, citation metadata, or an applicable
+machine-readable metadata file instead of lengthening the repository name.
 
 ## 4. Choose A Release Profile
 
@@ -228,6 +258,26 @@ The export operation must:
 5. fail on missing required files, unexpected files, unsafe paths, or links;
 6. produce a deterministic inventory for review;
 7. never publish, commit, push, tag, or create a release automatically.
+
+### 8.1 Promote The Reviewed Candidate To A Repository Worktree
+
+Keep the release record, allowlist, denylist, review evidence, candidate
+inventory, checksums, and human decisions under the Study's
+`07_analysis/public_release/` area. These records remain the project authority.
+
+Only after the exact clean candidate passes the declared pre-release checks
+and a human confirms its name and public scope may it be promoted to a Git
+worktree. In a Framework-integrated workspace, the normal worktree is
+`Github/<repository-name>/`; a standalone installation must declare its
+equivalent location. Copy only the files represented by the accepted candidate
+inventory and verify their hashes after promotion. Do not copy the complete
+Study, initialize Git in the Study root, or maintain an automatic bidirectional
+sync between the Study and the repository worktree.
+
+After commit, tag, and Release, write the exact commit, tag, release URL, and
+any persistent identifier back to the Study-owned release manifest. The Git
+worktree is the external delivery surface; it does not replace the Study's
+authority records.
 
 ## 9. Validation Gates
 

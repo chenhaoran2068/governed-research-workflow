@@ -21,8 +21,8 @@ class V118StudyStatusAndPaperRepositoryTests(unittest.TestCase):
         )
         records = {item["capability_id"]: item for item in ledger["capabilities"]}
 
-        self.assertIn("system_version: 1.18.0", manifest)
-        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v1.16.0")
+        self.assertIn("system_version: 1.18.1", manifest)
+        self.assertEqual(ledger["release_context"]["historical_public_baseline"], "v1.18.0")
         for capability_id in ("GRW-CAP-250-01", "GRW-CAP-260-01"):
             self.assertEqual(records[capability_id]["release_disposition"], "admitted")
             self.assertEqual(records[capability_id]["version"]["target_release"], "v1.18.0")

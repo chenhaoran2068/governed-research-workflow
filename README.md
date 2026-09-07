@@ -6,8 +6,12 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.18.0 Study-status and paper-repository-governance source, derived
-from immutable public v1.16.0. It absorbs the accepted but unpublished v1.17
+Status: v1.18.1 paper-repository naming and promotion maintenance source,
+derived from immutable public v1.18.0. It clarifies how a short repository
+name is selected, where the full research identity remains recorded, and when
+an accepted clean candidate may be promoted to the Framework-owned `Github/`
+worktree. It adds no capability or automatic action. v1.18.0 absorbed the
+accepted but unpublished v1.17
 Study-status candidate as `GRW-CAP-250-01` and adds `GRW-CAP-260-01` for paper
 repository preparation. It retains `GRW-CAP-240-01`: a generic manuscript-style-profile record,
 blank template, structural schema, explicit caller-named read-only validator,

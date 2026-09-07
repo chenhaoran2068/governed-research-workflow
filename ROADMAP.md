@@ -6,6 +6,17 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.18.1 (paper repository naming and worktree-promotion maintenance source)
+
+This maintenance source derives from immutable public v1.18.0. It adds no new
+capability. It refines `GRW-CAP-260-01` with a research-type-aware repository
+naming contract, fuller research-identity fields in the reader-facing
+template, machine-checkable human naming confirmation, and the controlled
+promotion boundary from a Study-owned clean candidate to the Framework-owned
+`Github/<repository-name>/` worktree. The Study remains authoritative; there
+is no whole-Study copy, bidirectional sync, repository creation, or GitHub
+action.
+
 ## v1.18.0 (Study status and paper repository governance source)
 
 This source is derived from immutable public v1.16.0. It absorbs the accepted
