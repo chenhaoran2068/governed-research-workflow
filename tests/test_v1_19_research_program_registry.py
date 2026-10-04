@@ -39,6 +39,9 @@ class V119ResearchProgramRegistryTests(unittest.TestCase):
     def test_candidate_release_records_are_present_and_generic(self) -> None:
         paths = (
             RELEASE / "V1_19_RELEASE_GATE.md",
+            RELEASE / "V1_19_DEPENDENCY_AND_WORKFLOW_REVIEW.md",
+            RELEASE / "V1_19_RELEASE_CONTROL_CANDIDATE.json",
+            RELEASE / "V1_19_RELEASE_EVIDENCE.md",
             RELEASE / "RELEASE_NOTES_v1.19.0.md",
             RELEASE / "PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.19.0.md",
         )
@@ -47,6 +50,10 @@ class V119ResearchProgramRegistryTests(unittest.TestCase):
             self.assertTrue(path.is_file(), path.name)
             self.assertNotIn("E:\\", text)
             self.assertNotIn("Research15", text)
+
+        control = (RELEASE / "V1_19_RELEASE_CONTROL_CANDIDATE.json").read_text(encoding="utf-8")
+        self.assertIn('"tag": "v0.5.0"', control)
+        self.assertIn("matching_github_release", control)
 
 
 if __name__ == "__main__":
