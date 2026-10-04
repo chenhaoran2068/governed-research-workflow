@@ -13,8 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = ROOT / "system" / "11_distribution_installation_and_release"
 HISTORICAL_FRAMEWORK_TAG = "v0.2.0"
 HISTORICAL_FRAMEWORK_COMMIT = "69c76f84a5b0913b26c17ea48f152dbc50b4bec6"
-CURRENT_FRAMEWORK_TAG = "v0.4.0"
-CURRENT_FRAMEWORK_COMMIT = "30ba0f4032a90723612b6d213bd54faa7cce5aee"
+CURRENT_FRAMEWORK_TAG = "v0.5.0"
+CURRENT_FRAMEWORK_COMMIT = "0dcc913a29781f889b71bdba306934bfa5de15fd"
 
 
 class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
@@ -22,8 +22,8 @@ class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
         workflow = (ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.18.1", manifest)
-        self.assertIn('supported_framework_versions: "0.4.0"', manifest)
+        self.assertIn("system_version: 1.19.0", manifest)
+        self.assertIn('supported_framework_versions: "0.5.0"', manifest)
         self.assertNotIn('supported_framework_versions: "0.1.0"', manifest)
         self.assertIn(f"FRAMEWORK_RELEASE_TAG: {CURRENT_FRAMEWORK_TAG}", workflow)
         self.assertIn(f"FRAMEWORK_EXPECTED_COMMIT: {CURRENT_FRAMEWORK_COMMIT}", workflow)

@@ -27,6 +27,52 @@ author group, schedule, or similar title alone is insufficient.
 Grouping does not merge work units, change their authority, or grant access to
 their materials.
 
+## Research Program Index
+
+For a Framework v0.5.0-compatible instance that already declares an internal
+registry, a human-reviewed grouping may be recorded in the optional
+instance-local location:
+
+```text
+<instance-root>/Registry/Research_Programs/<research-program-id>/
+  research_program_index.json
+```
+
+The index is a metadata record of named Study membership. It is not a parent
+directory for member Studies, a migration mechanism, or a replacement for
+their individual lifecycle records. It must use instance-relative references;
+it must not contain absolute local paths, copied Study content, data,
+credentials, or a claim that membership grants material access.
+
+The Framework's `project_id` and older local `project_manifest` vocabulary
+remain Study-level compatibility terms. In this guidance, **Research Program**
+is the distinct upper-level grouping of independent Studies.
+
+## Preparing Or Revising An Index
+
+The caller supplies the exact candidate registry location and the exact Study
+roots to be considered. This guidance does not scan a workspace or discover
+related Studies. Before recording a proposed or confirmed membership, state:
+
+1. the Program's upper-level purpose;
+2. the bounded question family, stable shared backbone, or documented lineage;
+3. how each named Study relates to the Program; and
+4. whether any specific stable material is proposed for narrow reference.
+
+Every index declares that membership does not merge Studies, does not transfer
+ethics, governance, data, result, manuscript, submission, release, or other
+authority, and does not grant access. By default `shared_material_references`
+is empty. Any later
+reference names its exact source artifact, owner, reference mode, receiving
+scope, source version or date, sharing state, and human-review reference; it
+does not authorize reading a full sibling workspace or inheriting a prior
+decision.
+
+The accountable human reviews the membership basis and record scope before a
+Program is marked `confirmed`. The record is a grouping statement, not proof
+of scientific relatedness, data permission, a common protocol, or permission
+to advance a member Study.
+
 ## Limited Stable Shared Material
 
 Material can be considered for a shared role only when it is stable, compact,

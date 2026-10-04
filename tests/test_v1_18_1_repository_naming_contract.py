@@ -13,8 +13,8 @@ class V1181RepositoryNamingContractTests(unittest.TestCase):
         ledger = json.loads(
             (ROOT / "system" / "00_manifest_and_profiles" / "capability_truth_ledger.json").read_text(encoding="utf-8")
         )
-        self.assertIn("system_version: 1.18.1", manifest)
-        self.assertEqual(ledger["release_context"]["source_release_version"], "v1.18.1")
+        self.assertIn("system_version: 1.19.0", manifest)
+        self.assertEqual(ledger["release_context"]["source_release_version"], "v1.19.0")
         for name in (
             "RELEASE_NOTES_v1.18.1.md",
             "V1_18_1_RELEASE_CONTROL_CANDIDATE.json",

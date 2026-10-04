@@ -1,5 +1,11 @@
 # Framework Integration Plan
 
+> Historical v1.12-era plan only. The current v1.19.0 Framework integration
+> contract is the exact released Framework v0.5.0 tag at commit
+> `0dcc913a29781f889b71bdba306934bfa5de15fd`; see
+> `system/11_distribution_installation_and_release/V1_19_DEPENDENCY_AND_WORKFLOW_REVIEW.md`.
+> Nothing below changes the current v1.19.0 declaration.
+
 Status: historical v0.3.0 through v1.5.2 integration evidence remains retained
 under M54 and is not reused as v1.12.0 evidence. The v1.12.0 source declares
 only the exact released Workspace Framework `v0.4.0` tag at commit

@@ -1,0 +1,24 @@
+{
+  "record_type": "release_control_candidate",
+  "release_version": "v1.19.0",
+  "status": "source_prepared_not_released",
+  "historical_public_baseline": "v1.18.1",
+  "framework_dependency": {
+    "tag": "v0.5.0",
+    "target_commit": "0dcc913a29781f889b71bdba306934bfa5de15fd"
+  },
+  "local_validation": {
+    "system_test_command": "python -m unittest discover -s tests -p test_*.py",
+    "system_test_result": "433 passed, 0 skipped when the Framework integration environment is supplied",
+    "framework_integration_test_command": "python -m unittest tests.test_framework_candidate_integration",
+    "framework_integration_result": "3 passed against Framework v0.5.0"
+  },
+  "required_before_release": [
+    "protected_main_review",
+    "remote_ci_pass",
+    "public_boundary_review",
+    "annotated_tag",
+    "matching_github_release"
+  ],
+  "scope_boundary": "No real Program or Study content, local path, data, credential, manuscript, result, private decision, adoption receipt, scanner, writer, migration, access grant, or authority transfer."
+}
