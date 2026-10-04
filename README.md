@@ -6,11 +6,14 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.19.0 Research Program registry candidate source, derived from
-immutable public v1.18.1. It aligns the existing human-reviewed Research
-Program boundary with the optional Framework v0.5.0 instance-local Program
-index. It does not move Study roots, rename Study-level `project_id` records,
-discover Studies, transfer authority, or add automation. v1.18.1 clarified
+Status: v1.19.1 runtime-packaging correction source, derived from immutable
+public v1.19.0. It places the existing Research Program guidance in the
+runtime-installed `references/` surface and points `SKILL.md` to it. It adds
+no capability, data access, or authority transfer. v1.19.0 aligned the
+existing human-reviewed Research Program boundary with the optional Framework
+v0.5.0 instance-local Program index. It does not move Study roots, rename
+Study-level `project_id` records, discover Studies, transfer authority, or add
+automation. v1.18.1 clarified
 how a short repository name is selected, where the full research identity
 remains recorded, and when an accepted clean candidate may be promoted to the
 Framework-owned `Github/` worktree. It adds no capability or automatic action.

@@ -1,4 +1,8 @@
-# v1.19.0 is a candidate derived from immutable public v1.18.1. It aligns the
+# v1.19.1 is a runtime-packaging correction derived from immutable public
+# v1.19.0. It places the existing Research Program guidance in the runtime
+# reference surface and points SKILL.md to that surface. It adds no capability,
+# data access, or authority transfer.
+# v1.19.0 aligned the
 # existing human-reviewed Research Program boundary with the optional Framework
 # v0.5.0 instance-local Research Program index. It neither moves Study roots
 # nor changes the Study-level meaning of existing project_id records. It adds
@@ -18,7 +22,7 @@
 # exactly 0.5.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.19.0
+system_version: 1.19.1
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:

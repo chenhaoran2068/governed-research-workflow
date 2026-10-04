@@ -20,7 +20,7 @@ class V09ReleasePreparationTests(unittest.TestCase):
         roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.19.0", manifest)
+        self.assertIn("system_version: 1.19.1", manifest)
         self.assertIn("Status: v1.1.0 versioned source scope", readme)
         self.assertIn("does not itself prove the\nrelease or installation identity", readme)
         self.assertIn("## v0.9.0 (integrity-audit source)", roadmap)
