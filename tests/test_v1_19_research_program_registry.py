@@ -8,13 +8,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BOUNDARY = ROOT / "system" / "03_workflows" / "RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md"
+RUNTIME_BOUNDARY = ROOT / "references" / "research-program-boundary-and-shared-materials-control.md"
 RELEASE = ROOT / "system" / "11_distribution_installation_and_release"
 
 
 class V119ResearchProgramRegistryTests(unittest.TestCase):
     def test_candidate_declares_exact_framework_contract_without_new_automation(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
-        self.assertIn("system_version: 1.19.0", manifest)
+        self.assertIn("system_version: 1.19.1", manifest)
         self.assertIn('supported_framework_versions: "0.5.0"', manifest)
         self.assertIn("neither moves Study roots", manifest)
         self.assertIn("no automation, data access, or authority transfer", manifest)
@@ -54,6 +55,13 @@ class V119ResearchProgramRegistryTests(unittest.TestCase):
         control = (RELEASE / "V1_19_RELEASE_CONTROL_CANDIDATE.json").read_text(encoding="utf-8")
         self.assertIn('"tag": "v0.5.0"', control)
         self.assertIn("matching_github_release", control)
+
+    def test_runtime_reference_is_present_and_selected_by_skill(self) -> None:
+        runtime_text = RUNTIME_BOUNDARY.read_text(encoding="utf-8")
+        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("Research Program Index", runtime_text)
+        self.assertIn("does not scan a workspace", runtime_text)
+        self.assertIn("references/research-program-boundary-and-shared-materials-control.md", skill)
 
 
 if __name__ == "__main__":
