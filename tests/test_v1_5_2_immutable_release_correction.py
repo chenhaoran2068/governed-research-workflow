@@ -13,8 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = ROOT / "system" / "11_distribution_installation_and_release"
 HISTORICAL_FRAMEWORK_TAG = "v0.2.0"
 HISTORICAL_FRAMEWORK_COMMIT = "69c76f84a5b0913b26c17ea48f152dbc50b4bec6"
-CURRENT_FRAMEWORK_TAG = "v0.4.0"
-CURRENT_FRAMEWORK_COMMIT = "30ba0f4032a90723612b6d213bd54faa7cce5aee"
+CURRENT_FRAMEWORK_TAG = "v0.5.0"
+CURRENT_FRAMEWORK_COMMIT = "0dcc913a29781f889b71bdba306934bfa5de15fd"
 
 
 class V152ImmutableReleaseCorrectionTests(unittest.TestCase):
