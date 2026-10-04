@@ -6,11 +6,15 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.18.1 paper-repository naming and promotion maintenance source,
-derived from immutable public v1.18.0. It clarifies how a short repository
-name is selected, where the full research identity remains recorded, and when
-an accepted clean candidate may be promoted to the Framework-owned `Github/`
-worktree. It adds no capability or automatic action. v1.18.0 absorbed the
+Status: v1.19.0 Research Program registry candidate source, derived from
+immutable public v1.18.1. It aligns the existing human-reviewed Research
+Program boundary with the optional Framework v0.5.0 instance-local Program
+index. It does not move Study roots, rename Study-level `project_id` records,
+discover Studies, transfer authority, or add automation. v1.18.1 clarified
+how a short repository name is selected, where the full research identity
+remains recorded, and when an accepted clean candidate may be promoted to the
+Framework-owned `Github/` worktree. It adds no capability or automatic action.
+v1.18.0 absorbed the
 accepted but unpublished v1.17
 Study-status candidate as `GRW-CAP-250-01` and adds `GRW-CAP-260-01` for paper
 repository preparation. It retains `GRW-CAP-240-01`: a generic manuscript-style-profile record,
@@ -36,7 +40,7 @@ current-requirement checker, approval mechanism, promotion mechanism, or
 automatic recommendation service. They contain no private source, identifier,
 path, hash, receipt, decision, or mapping. The package does not automatically
 load all cards, synchronize them, or update them. Its only maintained
-framework-integrated claim is the exact Workspace Framework `v0.4.0`
+framework-integrated claim is the exact Workspace Framework `v0.5.0`
 contract, validated only against commit
 `30ba0f4032a90723612b6d213bd54faa7cce5aee` under separately controlled
 candidate and release evidence. It adds no research-operation executor, public

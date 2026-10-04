@@ -179,10 +179,10 @@ class ReleaseControlTests(unittest.TestCase):
         integrity_policy = (RELEASE_ROOT / "RELEASE_INTEGRITY_POLICY_v1.md").read_text(encoding="utf-8")
         workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "test-bootstrap.yml").read_text(encoding="utf-8")
 
-        self.assertIn("system_version: 1.18.1", manifest)
+        self.assertIn("system_version: 1.19.0", manifest)
         self.assertIn("jsonschema==4.26.0", manifest)
-        self.assertIn('supported_framework_versions: "0.4.0"', manifest)
-        self.assertIn("exact Framework v0.4.0 contract", manifest)
+        self.assertIn('supported_framework_versions: "0.5.0"', manifest)
+        self.assertIn("exact Framework v0.5.0 contract", manifest)
         self.assertIn("Status: v1.1.0 versioned source scope", readme)
         self.assertIn("does not itself prove the\nrelease or installation identity", readme)
         self.assertIn("## v0.5.1 (published release-state maintenance)", roadmap)

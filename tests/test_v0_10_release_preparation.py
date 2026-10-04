@@ -38,7 +38,7 @@ class V010ReleasePreparationTests(unittest.TestCase):
         index = (ROOT / "system" / "INDEX.md").read_text(encoding="utf-8")
         ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
         current_surface = "\n".join((manifest, readme, roadmap, index, json.dumps(ledger))).lower()
-        self.assertIn("system_version: 1.18.1", manifest)
+        self.assertIn("system_version: 1.19.0", manifest)
         self.assertIn("Status: v1.1.0 versioned source scope", readme)
         self.assertIn("does not itself prove the\nrelease or installation identity", readme)
         self.assertIn("## v0.10.0 (voluntary metadata-only experience package)", roadmap)
