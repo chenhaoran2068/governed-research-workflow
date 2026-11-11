@@ -1,6 +1,6 @@
 # Public System Module Index
 
-Status: v1.18.1 paper-repository naming and promotion maintenance source retaining the
+Status: v1.21.0 source retaining the
 frozen public-interface contract, `GRW-CAP-150-01`, and the historical
 `GRW-CAP-160-01` public card library. It adds `GRW-CAP-170-01` as two generic
 System-owned guidance documents, three public topics, and three selectively
@@ -67,7 +67,7 @@ authority records.
 | `00` | manifest and profiles | v1.14.0 retains the two public profiles, exact Framework v0.4.0 compatibility, and the optional managed reading knowledge service; it remains non-automatic and source-free | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
-| `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, v1.7 collaboration guidance, v1.10 ethics-preparation bridge routing, v1.11 paper-reading boundary routing, v1.12 metadata-only consumer routing, v1.13 lifecycle-decision clarification, v1.14 Results-first manuscript guidance, v1.15 generic joint-review profile guidance, v1.16 manuscript-style-profile guidance, v1.18 Study-status and paper-repository guidance, and a local v1.21 manuscript-writing candidate | route references, blank assets, and generic guidance |
+| `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, v1.7 collaboration guidance, v1.10 ethics-preparation bridge routing, v1.11 paper-reading boundary routing, v1.12 metadata-only consumer routing, v1.13 lifecycle-decision clarification, v1.14 Results-first manuscript guidance, v1.15 generic joint-review profile guidance, v1.16 manuscript-style-profile guidance, v1.18 Study-status and paper-repository guidance, v1.20 read-only status reconciliation, and v1.21 manuscript-writing guidance | route references, blank assets, and generic guidance |
 | `04` | evidence, requirements, and knowledge | active guidance plus v0.6 pointer/relation-record scope and a v1.12 optional metadata-only service-consumer boundary; no knowledge corpus, source service, or source-content access | evidence/citation references and blank handoff assets |
 | `05` | data and provenance | v0.4 metadata-only register plus published v0.5 register set; no data handling | public data boundary, provenance routes, and read-only validator |
 | `06` | memory and learning | active retrospective baseline plus historical v0.7 promotion, v0.10 package-review, v0.10.1 synthetic exchange boundaries, v0.10.2 human-mediated future-direction boundary, v0.11 generic public experiences, v1.6 public-safe cards, and v1.7 public collaboration cards | retrospective/promotion, experience-pilot, and public-experience references |

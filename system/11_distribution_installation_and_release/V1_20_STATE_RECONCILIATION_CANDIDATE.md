@@ -1,5 +1,9 @@
 # v1.20.0 State Reconciliation Candidate Control
 
+Status: retained historical candidate record. Its bounded read-only preview is
+included in the v1.21.0 release source; this record remains evidence of the
+earlier candidate boundary and is not a separate release identity.
+
 ## Scope
 
 This candidate proposes a narrow System evolution from `v1.19.1`:

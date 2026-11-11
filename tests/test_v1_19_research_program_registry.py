@@ -15,7 +15,7 @@ RELEASE = ROOT / "system" / "11_distribution_installation_and_release"
 class V119ResearchProgramRegistryTests(unittest.TestCase):
     def test_candidate_declares_exact_framework_contract_without_new_automation(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
-        self.assertIn("system_version: 1.19.1", manifest)
+        self.assertIn("system_version: 1.21.0", manifest)
         self.assertIn('supported_framework_versions: "0.5.0"', manifest)
         self.assertIn("neither moves Study roots", manifest)
         self.assertIn("no automation, data access, or authority transfer", manifest)

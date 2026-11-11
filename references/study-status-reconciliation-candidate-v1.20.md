@@ -2,7 +2,10 @@
 
 ## Candidate Status
 
-This is a design-only candidate derived from the public `v1.19.1` tag. It
+This retained design record was derived from the public `v1.19.1` tag. Its
+read-only preview implementation is incorporated into the v1.21.0 source;
+this document preserves the original candidate boundary and does not itself
+establish a released or installed version. It
 does not change an installed runtime, discover Studies, create or modify a
 Study record, infer a scientific state, advance a Gate, grant access, or
 publish material.
@@ -25,7 +28,7 @@ not express a useful detailed work state without becoming structurally
 invalid. The correction must preserve a small common contract while allowing
 explicitly scoped detail.
 
-## v1.20 Candidate Objective
+## Original v1.20 Candidate Objective
 
 Provide a read-only way to classify a caller-named Study-status record as one
 of the following, without changing the Study:
