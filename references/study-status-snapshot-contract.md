@@ -22,6 +22,10 @@ decision record.
 - `conditions` always include `StateRecordCurrent` and
   `ReadyForNextTransition`. Other condition types are added only when their
   stated scope applies.
+- In schema `1.1.0`, `work_state` may provide bounded local detail beneath a
+  formal 01--11 stage. `declared_conditions` may record scoped readiness or
+  reconciliation detail; neither field replaces a Gate, authority record, or
+  human decision.
 - `study_profile: legacy_unreconciled` retains a visible unresolved
   reconciliation condition. Existing Studies are not automatically migrated.
 
@@ -33,10 +37,13 @@ accountable human approved any action.
 ## Public Boundary
 
 `scripts/validate_study_status_snapshot.py` reads exactly one caller-named
-JSON snapshot plus its package-owned schema and stage catalogue. It does not
-discover a Study, enumerate folders, follow or open a reference, read data,
-write a record, update a status, create a Workbench index, decide a lifecycle
-transition, or grant access.
+JSON snapshot plus its package-owned schema and stage catalogue.
+`scripts/preview_study_status_reconciliation.py` reads exactly one
+caller-named Study root and checks only its fixed
+`00_state/study_status_snapshot.json` location. Neither tool discovers a
+Study, enumerates folders, follows or opens a reference, reads data, writes a
+record, updates a status, creates a Workbench index, decides a lifecycle
+transition, or grants access.
 
 This public candidate contains no Study, project-local path, data, result,
 protocol, governance material, human-decision record, event log, Program-root

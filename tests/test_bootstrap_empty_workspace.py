@@ -118,7 +118,11 @@ class BootstrapEmptyWorkspaceTests(unittest.TestCase):
         receipt_path = workspace / "00_state" / "bootstrap_receipt.json"
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         self.assertEqual(receipt["approval_reference"], "approval-001")
-        self.assertEqual(receipt["tool_version"], "0.3.0")
+        self.assertEqual(receipt["tool_version"], "0.4.0")
+        self.assertEqual(
+            receipt["plan"]["status_snapshot_strategy"]["mode"],
+            "deferred_to_status_capable_initializer",
+        )
         self.assertTrue(receipt["scope"]["creates_empty_scaffold_only"])
         self.assertFalse(receipt["scope"]["copies_source_data"])
         state = json.loads((workspace / "00_state" / "workspace_state.json").read_text(encoding="utf-8"))

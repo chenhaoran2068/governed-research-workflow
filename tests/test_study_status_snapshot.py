@@ -50,6 +50,23 @@ class StudyStatusSnapshotTests(unittest.TestCase):
         self.assertEqual(len(pairs), 11)
         self.assertIn(("03", "research_question"), pairs)
 
+    def test_v1_1_fixture_accepts_detailed_state_without_changing_v1_0_support(self) -> None:
+        v1_0_result = VALIDATOR.validate_snapshot(FIXTURES / "valid" / "active.json")
+        v1_1_result = VALIDATOR.validate_snapshot(FIXTURES / "valid" / "active-v1_1.json")
+        self.assertEqual(v1_0_result["result"], "valid")
+        self.assertEqual(v1_1_result["result"], "valid")
+
+    def test_v1_0_snapshot_cannot_declare_v1_1_extensions(self) -> None:
+        payload = json.loads((FIXTURES / "valid" / "active.json").read_text(encoding="utf-8"))
+        payload["work_state"] = {
+            "code": "local_detail",
+            "label": "Local detail",
+            "scope": "study_local",
+            "description": "Synthetic extension."
+        }
+        schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+        self.assertNotEqual(list(Draft202012Validator(schema).iter_errors(payload)), [])
+
     def test_invalid_fixture_reports_active_and_reference_boundaries(self) -> None:
         result = VALIDATOR.validate_snapshot(FIXTURES / "invalid" / "unsafe_reference.json")
         codes = {issue["code"] for issue in result["issues"]}
@@ -73,8 +90,8 @@ class StudyStatusSnapshotTests(unittest.TestCase):
         self.assertIsNone(re.search(r"(?i)[a-z]:\\", content))
         self.assertNotIn("study_status_index", normalized)
         self.assertNotIn("record_study_status", normalized)
-        self.assertIn("does not discover", normalized)
-        self.assertIn("write a record", normalized)
+        self.assertIn("neither tool discovers", normalized)
+        self.assertIn("writes a record", normalized)
 
 
 if __name__ == "__main__":

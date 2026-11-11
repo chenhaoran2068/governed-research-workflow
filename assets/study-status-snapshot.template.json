@@ -1,6 +1,6 @@
 {
   "record_type": "study_status_snapshot",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "study_id": "sample-study-001",
   "study_title": "Sample Study",
   "study_profile": "current",
@@ -38,6 +38,9 @@
       "evidence_references": []
     }
   ],
+  "work_state": null,
+  "declared_conditions": [],
+  "last_reconciliation": null,
   "last_transition": null,
   "last_transition_reference": null,
   "project_manifest_reference": "state/project_manifest.json",

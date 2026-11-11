@@ -69,9 +69,15 @@ def _references(payload: dict[str, Any]) -> Iterable[tuple[str, Any]]:
     for index, condition in enumerate(payload.get("conditions", [])):
         for reference_index, value in enumerate(condition.get("evidence_references", [])):
             yield f"conditions[{index}].evidence_references[{reference_index}]", value
+    for index, condition in enumerate(payload.get("declared_conditions", [])):
+        for reference_index, value in enumerate(condition.get("evidence_references", [])):
+            yield f"declared_conditions[{index}].evidence_references[{reference_index}]", value
     transition = payload.get("last_transition")
     if isinstance(transition, dict):
         yield "last_transition.human_decision_reference", transition.get("human_decision_reference")
+    reconciliation = payload.get("last_reconciliation")
+    if isinstance(reconciliation, dict):
+        yield "last_reconciliation.human_decision_reference", reconciliation.get("human_decision_reference")
 
 
 def validate_snapshot(snapshot_path: Path) -> dict[str, Any]:
@@ -101,6 +107,13 @@ def validate_snapshot(snapshot_path: Path) -> dict[str, Any]:
     for required in REQUIRED_CONDITIONS:
         if required not in conditions:
             issues.append(_issue("missing_required_condition", "conditions", f"{required} is required"))
+
+    declared_conditions: dict[str, dict[str, Any]] = {}
+    for index, condition in enumerate(payload.get("declared_conditions", [])):
+        condition_id = condition["condition_id"]
+        if condition_id in declared_conditions:
+            issues.append(_issue("duplicate_declared_condition_id", f"declared_conditions[{index}].condition_id", "declared condition identifiers must be unique"))
+        declared_conditions[condition_id] = condition
 
     if payload["study_profile"] == "legacy_unreconciled":
         reconciliation = conditions.get("ReconciliationComplete")
