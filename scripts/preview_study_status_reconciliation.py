@@ -40,6 +40,11 @@ def has_link_or_reparse_ancestor(path: Path) -> bool:
     current = path.absolute()
     while True:
         if is_link_or_reparse_point(current):
+            # macOS commonly exposes /var and /tmp as root-level aliases. They
+            # are OS-owned prefixes, not caller-controlled path components.
+            if current.parent == Path(current.anchor):
+                current = current.parent
+                continue
             return True
         parent = current.parent
         if parent == current:

@@ -4,9 +4,9 @@ Status: source-prepared local evidence before remote CI and release identity.
 
 ## Local Evidence
 
-- The v1.21 targeted writing-and-route suite passed 6 tests.
-- The full package suite passed 449 tests with 3 expected skips before the
-  release-source identity update.
+- The v1.21 targeted release, writing-route, and status-preview suites passed.
+- The full package suite passed 454 tests against the exact Framework v0.5.0
+  environment with no skipped framework-integration tests.
 - The Shared candidate register passed structural validation and its local
   regression suite passed 4 tests; those private local records are not part of
   the public package.
