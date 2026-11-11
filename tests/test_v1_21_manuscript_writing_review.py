@@ -22,6 +22,7 @@ ASSEMBLY_TEMPLATE = (
     / "manuscript-assembly-claim-display-review.template.md"
 )
 CONTROL = ROOT / "system" / "11_distribution_installation_and_release" / "V1_21_MANUSCRIPT_WRITING_REVIEW_CANDIDATE.md"
+AUDIT = ROOT / "system" / "11_distribution_installation_and_release" / "V1_21_MANUSCRIPT_WRITING_REVIEW_AUDIT.md"
 PRIVATE_MARKERS = (
     r"(?i)[a-z]:\\",
     r"(?i)research[0-9]+",
@@ -90,6 +91,17 @@ class V121ManuscriptWritingReviewTests(unittest.TestCase):
             with self.subTest(pattern=pattern):
                 self.assertIsNone(re.search(pattern, content), pattern)
         self.assertIn("candidate_local_not_released_not_adopted", CONTROL.read_text(encoding="utf-8"))
+
+    def test_audit_records_verification_and_retains_owner_gates(self) -> None:
+        text = self.normalized(AUDIT)
+        for expected in (
+            "full regression suite: 447 tests passed; 3 tests skipped.",
+            "no blocking implementation finding",
+            "release and runtime adoption remain pending",
+            "does not authorise a tag, remote push, github release, publication, installation",
+        ):
+            with self.subTest(expected=expected):
+                self.assertIn(expected, text)
 
 
 if __name__ == "__main__":
