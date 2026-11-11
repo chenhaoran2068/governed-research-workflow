@@ -70,3 +70,36 @@ project evidence, and decide whether a candidate is acceptable.
 Release and runtime adoption remain pending. This audit does not authorise a
 tag, remote push, GitHub Release, publication, installation, or use by an
 active local System.
+
+## RR-2 Promotion And Route Re-Review
+
+The preceding audit applied to `37d110d34cb9b7dd392bd8621ea134f8c30bc011`.
+It does not close the later cross-artifact integration revision. The new
+revision is `b1892cee94b8653da6f8a04ce104bed9a2c315ff` and is classified
+`RR-2` because it affects a local Shared candidate register, local promotion
+record, candidate Skill route, candidate control record, and regression tests.
+
+The local Shared owner now records eight human-accepted deidentified candidates
+as pending semantic curation and one bounded L3 promotion record. The public
+candidate contains no pointer to the local paths, source identities, or private
+review material. The route does not create a new capability identifier: it
+extends the existing manuscript route only for a selected released version that
+contains the new generic reference.
+
+Re-review evidence for this revision:
+
+- Shared candidate register structural validation: passed.
+- Shared candidate-register regression suite: 4 tests passed.
+- v1.21 targeted suite after the route change: 6 tests passed.
+- Full v1.21 regression suite after the route change: 449 tests passed; 3
+  tests skipped.
+- Candidate whitespace validation: passed.
+- Candidate boundary scan: no private path, named Study, credential, secret,
+  result, or manuscript content; test-only forbidden-marker patterns were the
+  only expected scan matches.
+- The Shared owner is not an independent Git checkout, so its local controlled
+  records were updated in place and remain outside the public candidate tree.
+
+No blocking implementation finding was identified in this re-review. The
+remaining gate is a fresh human review of this latest audit identity before any
+release or runtime-adoption decision.

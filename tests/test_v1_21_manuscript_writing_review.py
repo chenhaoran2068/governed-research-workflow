@@ -109,6 +109,8 @@ class V121ManuscriptWritingReviewTests(unittest.TestCase):
         text = self.normalized(AUDIT)
         for expected in (
             "no blocking implementation finding",
+            "rr-2 promotion and route re-review",
+            "full v1.21 regression suite after the route change: 449 tests passed; 3 tests skipped.",
             "release and runtime adoption remain pending",
             "does not authorise a tag, remote push, github release, publication, installation",
         ):
