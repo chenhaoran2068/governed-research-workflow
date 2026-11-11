@@ -68,6 +68,10 @@ early Methods outline or local drafting. A later package cannot silently
 invalidate an accepted earlier package: record a reopen event and re-review
 the affected and downstream packages.
 
+Across all packages, weight prose by the scientific task and evidence rather
+than a fixed paragraph shape. Use the generic writing guidance for information
+placement, limitations, eligibility and flow, and claim/display linkage.
+
 ## Results Work Units
 
 R4 can contain individual Results work units. Each unit declares one assembly
@@ -84,6 +88,12 @@ mode:
 fact. It cannot support an accepted Results work unit until the planned display
 reconciliation is complete. The generic control does not decide which display,
 claim, or text is scientifically adequate.
+
+Within R4, identify the result role of each work unit: main, secondary,
+sensitivity, subgroup, exploratory, or another caller-declared role. The
+review plan does not choose that role, but a reviewer should be able to see
+whether the organisation gives the main result priority and preserves all
+required outcomes.
 
 ## Citation And Cross-Cutting Review
 

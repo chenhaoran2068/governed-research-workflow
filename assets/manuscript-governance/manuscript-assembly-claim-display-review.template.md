@@ -21,6 +21,27 @@ reporting requirement, permission, authorship decision, or submission approval.
 - Current external requirement reference, if applicable:
 - Requirement status: known / unknown / not applicable:
 
+## Narrative And Information Placement
+
+- Central question, main result, and principal interpretation reference:
+- Result role: main / secondary / sensitivity / subgroup / exploratory / other:
+- Paragraph or subsection task:
+- Method detail located in:
+- Realised counts, denominators, and estimates located in:
+- Display-local labels, units, denominator, and note checked:
+- Study-wide limitation location:
+- Result-specific qualification needed here: yes / no / unknown:
+
+## Eligibility And Flow, If Applicable
+
+- Selection unit:
+- Inclusion and exclusion logic reference:
+- Implementation detail reference:
+- Flow-display reference:
+- Code or result-count reference:
+- Editable display reference:
+- Rendered display reference:
+
 ## Claim Boundary
 
 | Claim or statement reference | Supported by named project evidence reference | Scope or qualifier | Unsupported or unresolved part | Human reviewer disposition |

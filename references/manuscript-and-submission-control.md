@@ -4,6 +4,10 @@ This is generic guidance for a human-reviewed manuscript task. It does not
 write a manuscript, read project material, establish a result or claim, verify
 a journal requirement, approve a package, or submit material.
 
+For generic writing practices that apply across sections, Results roles,
+limitations, information placement, cohort-flow displays, and linked candidate
+review, also use `references/manuscript-writing-and-linked-review.md`.
+
 ## Results-First Work Sequence
 
 After a study is feasible and has an appropriately reviewed result package,
@@ -26,6 +30,11 @@ First define what the Results section must show: the result hierarchy, the
 role of each table or figure, the factual point of each subsection, and the
 boundary between a result and an interpretation. Then reconcile factual prose,
 displays, and their traceable result inputs.
+
+Give the main result the clearest place. Arrange secondary, sensitivity,
+subgroup, and exploratory findings by how they qualify, test, or extend it.
+Do not vary emphasis by statistical significance alone, and do not omit a
+prespecified outcome because it is null or inconvenient.
 
 Use one assembly mode for each Results work unit, such as a subsection or a
 linked table/figure group:
@@ -72,6 +81,10 @@ Write **Discussion and Conclusion** only after the Results surface is settled.
 Interpret the established result surface, state meaningful limitations, and do
 not introduce new numerical findings or extend the conclusion beyond what the
 results support.
+
+Keep study-wide limitations together where readers can find them. Keep a
+qualification beside a specific result only when it changes the meaning of
+that result. Do not repeat generic defensive caveats after every paragraph.
 
 Write **Introduction** after the contribution and limits are clear. Align the
 research gap, objective, and stated contribution with the completed Results
