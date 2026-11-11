@@ -51,10 +51,9 @@ class ControlledHelperAdmissionTests(unittest.TestCase):
         self.assert_valid(self.template)
         self.assert_valid(self.record)
         self.assertEqual(self.record["helper_id"], "bootstrap_empty_workspace")
-        self.assertEqual(self.record["admission_status"], "admitted")
-        self.assertEqual(self.record["accountable_human_admission"]["status"], "granted")
-        self.assertIn("GRW-CAP-080-03", self.record["accountable_human_admission"]["reference"])
-        self.assertIn("not C4", self.record["accountable_human_admission"]["reference"])
+        self.assertEqual(self.record["admission_status"], "candidate")
+        self.assertEqual(self.record["accountable_human_admission"]["status"], "not_granted")
+        self.assertIn("pending", self.record["accountable_human_admission"]["reference"])
 
     def test_source_identity_matches_canonical_bootstrap_source_text(self) -> None:
         digest = source_identity_digest(SCRIPT_PATH.read_bytes())
@@ -107,7 +106,7 @@ class ControlledHelperAdmissionTests(unittest.TestCase):
 
     def test_admission_is_not_per_run_or_runtime_authority(self) -> None:
         combined = re.sub(r"\s+", " ", " ".join(self.record["explicit_non_claims"]).lower() + " " + REFERENCE_PATH.read_text(encoding="utf-8").lower())
-        for required in ("not a per-run", "not m53", "no generic writer", "not a public release", "not a per-run approval"):
+        for required in ("not a per-run", "not m53", "not a release-scope helper admission", "not a public release", "not a per-run preview confirmation"):
             self.assertIn(required, combined)
 
 

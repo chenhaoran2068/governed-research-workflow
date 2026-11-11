@@ -1,0 +1,74 @@
+{
+  "record_type": "study_status_snapshot",
+  "schema_version": "1.1.0",
+  "study_id": "sample-study-002",
+  "study_title": "Sample v1.1 active Study",
+  "study_profile": "current",
+  "operating_status": "active",
+  "current_stage": {"id": "07", "code": "results_and_manuscript_work"},
+  "state_record_revision": 2,
+  "recorded_at": "2026-11-10T12:00:00+00:00",
+  "recorded_by": "synthetic-test",
+  "current_focus": "Reconcile a candidate results package with the manuscript.",
+  "next_action_summary": "Complete a joint review after the candidate package is checked.",
+  "next_human_decision": null,
+  "conditions": [
+    {
+      "type": "StateRecordCurrent",
+      "status": true,
+      "last_condition_transition_time": "2026-11-10T12:00:00+00:00",
+      "reason_code": null,
+      "message": "Synthetic current status record.",
+      "observed_project_control_revision": 2,
+      "state_model_version": "study_status_snapshot_v1_1",
+      "gate_definition_version": null,
+      "basis_domains": ["state_record"],
+      "evidence_references": []
+    },
+    {
+      "type": "ReadyForNextTransition",
+      "status": false,
+      "last_condition_transition_time": "2026-11-10T12:00:00+00:00",
+      "reason_code": "MissingHumanDecision",
+      "message": "A human decision is still needed before the next transition.",
+      "observed_project_control_revision": 2,
+      "state_model_version": "study_status_snapshot_v1_1",
+      "gate_definition_version": null,
+      "basis_domains": ["state_record"],
+      "evidence_references": []
+    }
+  ],
+  "work_state": {
+    "code": "manuscript_completion_and_governance_reconciliation",
+    "label": "Manuscript completion and governance reconciliation",
+    "scope": "study_local",
+    "description": "Synthetic detailed work state beneath stage 07."
+  },
+  "declared_conditions": [
+    {
+      "condition_id": "candidate_analysis_complete",
+      "category": "analysis_readiness",
+      "status": true,
+      "recorded_at": "2026-11-10T12:00:00+00:00",
+      "message": "A synthetic candidate analysis package and QA record are present.",
+      "evidence_references": ["07_analysis/05_runs/sample/formal_run_manifest.json"],
+      "scope": "study_local"
+    }
+  ],
+  "last_reconciliation": null,
+  "last_transition": {
+    "transition_id": "sample-status-0002",
+    "recorded_at": "2026-11-10T12:00:00+00:00",
+    "actor": "synthetic-test",
+    "from_operating_status": "queued",
+    "to_operating_status": "active",
+    "from_stage_id": null,
+    "to_stage_id": "07",
+    "reason": "Synthetic test transition.",
+    "human_decision_reference": "decisions/decision-0002.json"
+  },
+  "last_transition_reference": "status/study_status_transitions.jsonl#sample-status-0002",
+  "project_manifest_reference": "00_state/project_manifest.json",
+  "related_record_references": [],
+  "status_note": null
+}

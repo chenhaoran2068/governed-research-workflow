@@ -25,8 +25,8 @@ from pathlib import Path
 from typing import Any
 
 
-TOOL_VERSION = "0.3.0"
-PLAN_SCHEMA_VERSION = "1.1.0"
+TOOL_VERSION = "0.4.0"
+PLAN_SCHEMA_VERSION = "1.2.0"
 STATE_SCHEMA_VERSION = "1.0.0"
 MIN_PYTHON = (3, 11)
 SAFE_WORKSPACE_ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
@@ -233,6 +233,7 @@ def asset_inventory() -> list[dict[str, str]]:
         ASSET_ROOT / "workspace-state.template.json",
         FUTURE_STUDY_ASSET_ROOT / "analysis-execution-contract.template.json",
         FUTURE_STUDY_ASSET_ROOT / "current-result-authority.template.json",
+        SKILL_ROOT / "assets" / "study-status-snapshot.template.json",
     ]
     for asset in assets:
         if not asset.is_file():
@@ -262,6 +263,11 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
         "planned_directories": WORKSPACE_DIRS,
         "planned_files": PLANNED_FILES,
         "asset_inventory": asset_inventory(),
+        "status_snapshot_strategy": {
+            "mode": "deferred_to_status_capable_initializer",
+            "record_created_by_this_helper": False,
+            "reason": "The empty scaffold has no project-state manifest or human-confirmed lifecycle facts from which to create a truthful status snapshot.",
+        },
         "scope": {
             "creates_empty_scaffold_only": True,
             "copies_source_data": False,

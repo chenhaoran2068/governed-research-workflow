@@ -6,6 +6,18 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.21.0 (Study-status reconciliation and manuscript-writing guidance source)
+
+This source incorporates the local v1.20 Study-status reconciliation candidate
+as a read-only preview route for a caller-named Study-status snapshot. It also
+extends the existing `GRW-CAP-150-01` manuscript route with generic guidance
+on narrative weight, Results roles, information placement, limitations,
+eligibility and flow displays, claim/display linkage, and candidate-package
+reconciliation. The guidance is a controlled enhancement of the existing
+route, not a new capability identifier or automatic writing, study discovery,
+data access, external action, scientific decision, submission, or release
+authority.
+
 ## v1.18.1 (paper repository naming and worktree-promotion maintenance source)
 
 This maintenance source derives from immutable public v1.18.0. It adds no new

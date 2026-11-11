@@ -4,6 +4,12 @@ Use `scripts/bootstrap_empty_workspace.py` only when the user explicitly asks
 to create a new empty workspace and has selected an existing destination
 directory outside the skill package.
 
+The v1.20 candidate plan declares `status_snapshot_strategy` as
+`deferred_to_status_capable_initializer`. This generic helper creates no
+Study-status snapshot because an empty scaffold has no accountable lifecycle
+facts or project-state manifest from which to create one truthfully. It does
+not migrate, infer, or update legacy status records.
+
 The helper requires Python 3.11 or later and uses only the Python standard
 library. It is designed to avoid platform-specific behavior. Public support is
 claimed only for platforms that have passed the repository test matrix.

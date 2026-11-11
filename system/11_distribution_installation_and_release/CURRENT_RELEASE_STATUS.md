@@ -25,6 +25,21 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## v1.21.0 Study-Status Reconciliation And Manuscript-Writing Source Scope
+
+- This source incorporates the bounded v1.20 status reconciliation preview and
+  extends the existing `GRW-CAP-150-01` manuscript route with generic writing
+  and linked-review guidance.
+- The status preview reads only one caller-named Study root and its named
+  snapshot path. It does not discover a Study, write status, make a transition,
+  or determine that work may proceed.
+- The manuscript guidance remains generic and human-review-only. It does not
+  read a Study automatically, write a manuscript, choose a research profile or
+  journal, establish a result, or authorize submission.
+- A selected v1.21.0 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact annotated tag and matching
+  GitHub Release.
+
 ## v1.18.1 Paper-Repository Naming And Promotion Maintenance Source Scope
 
 - The v1.18.1 source derives from immutable public v1.18.0 and adds no new

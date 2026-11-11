@@ -12,6 +12,7 @@ They are optional records. A completed template is not a scientific conclusion, 
 | `declaration-ai-use-fact-boundary.template.md` | Separate known declaration or AI-use facts from unknowns and policy inputs. | Human verifies facts and current policy requirements. |
 | `submission-route-package-provenance.template.md` | Record a proposed route and package inventory. | Human verifies current requirements and approves any external action. |
 | `decision-ready-human-review-packet.template.md` | Present options, evidence references, and unresolved items for a decision. | The accountable human makes and records the decision. |
+| `../manuscript-writing-review/manuscript-writing-linked-review-checklist.template.md` | Check narrative weight, Results roles, information placement, limitations, flow, linked claims, and candidate reconciliation. | Human verifies the project evidence, current requirements, and any decision. |
 
 ## Required Boundary
 

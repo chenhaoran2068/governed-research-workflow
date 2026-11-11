@@ -136,7 +136,7 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
         self.assertEqual(self.ledger["ledger_schema_version"], "2.0.0")
         self.assertEqual(self.ledger["ledger_id"], "governed-research-workflow-capability-truth-ledger")
         self.assertEqual(self.ledger["ledger_status"], "release_source_prepared")
-        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.19.1")
+        self.assertEqual(self.ledger["release_context"]["source_release_version"], "v1.21.0")
         self.assertEqual(self.ledger["release_context"]["historical_public_baseline"], "v1.19.0")
         self.assertIn("exact annotated tag", self.ledger["release_context"]["live_release_identity_rule"])
         self.assertIn("frozen v1.0.0 public interface contract", self.ledger["target_claim_scope"])
@@ -462,8 +462,11 @@ class CapabilityTruthLedgerTests(unittest.TestCase):
                 "system/03_workflows/RESEARCH_PROGRAM_BOUNDARY_AND_SHARED_MATERIALS_CONTROL.md",
                 "references/research-program-boundary-and-shared-materials-control.md",
                 "references/manuscript-and-submission-control.md",
+                "references/manuscript-writing-and-linked-review.md",
+                "assets/manuscript-writing-review/manuscript-writing-linked-review-checklist.template.md",
                 "tests/test_v1_5_manuscript_and_program_boundary_guidance.py",
                 "tests/test_v1_14_manuscript_work_sequence.py",
+                "tests/test_v1_21_manuscript_writing_review.py",
             },
         )
         self.assertIn("does not execute research", record["non_promise"].lower())
