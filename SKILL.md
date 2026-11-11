@@ -201,6 +201,15 @@ revision, declaration, or submission task. Read
 `references/manuscript-and-submission-control.md` in addition only when the
 caller specifically asks how to assemble or review a Results-first manuscript
 work sequence. Read
+`references/manuscript-writing-and-linked-review.md` only when the selected
+released version contains that file and the named task needs generic guidance
+on narrative weight, Results roles, information placement, limitations,
+eligibility or flow displays, claim/display linkage, or candidate-package QA.
+It is a controlled enhancement of this existing manuscript route, not a new
+task class or separate authority. Require the exact Study root before reading
+project-local material. Do not select a research/reporting profile, infer a
+journal requirement, read a Study automatically, make a scientific decision,
+or treat the guidance or blank checklist as manuscript approval. Read
 `references/research-program-boundary-and-shared-materials-control.md`
 only when the caller explicitly asks to review a stated boundary or proposed
 relationship among named research work units. These are optional guidance

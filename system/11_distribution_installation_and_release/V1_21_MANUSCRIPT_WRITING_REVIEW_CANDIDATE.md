@@ -18,6 +18,20 @@ The candidate expresses eight reusable practices without project material:
 7. candidate manuscripts require linked final QA; and
 8. Results are structured by result role, not significance alone.
 
+## Local Promotion Provenance
+
+This candidate is the target of one separately controlled local L3 promotion
+record. That record maps eight human-accepted, deidentified Shared candidates
+to the exact generic rules, templates, checklist items, and regression tests
+in this source tree. It remains outside this public candidate so private
+workspace paths, source identities, and local review details do not enter the
+public package.
+
+The candidate does not create a new standalone capability. It is a controlled
+enhancement of the existing generic manuscript route. A selected released
+version may load the new writing guidance only when that version contains the
+named reference and the caller's task matches its declared trigger.
+
 ## Public And Authority Boundary
 
 The source contains no Study path, patient-level data, result, manuscript,
@@ -35,8 +49,10 @@ separate requirements.
 
 Before any release or adoption decision, run the full regression suite,
 targeted v1.21 checks, whitespace validation, private-marker scan, and a
-review of the changed generic public surfaces. A passing check is not a
-publication, release, installation, or runtime-adoption decision.
+review of the changed generic public surfaces and the local promotion mapping.
+Apply the local revision re-review rule to every changed Shared record, Skill
+route, candidate control, template, reference, and test. A passing check is
+not a publication, release, installation, or runtime-adoption decision.
 
 ## Status
 
