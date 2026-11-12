@@ -1,6 +1,10 @@
 # Public System Module Index
 
-Status: v1.21.0 source retaining the
+Status: v1.21.1 source adds an optional documentation-only convention for a
+new local Study root, `Research<number>-<lowercase-hyphenated-slug>`, without
+selecting a number, discovering, creating, renaming, moving, or migrating any
+Study. It does not change separately recorded Study IDs/titles or Framework
+Research Program identifiers. It retains the
 frozen public-interface contract, `GRW-CAP-150-01`, and the historical
 `GRW-CAP-160-01` public card library. It adds `GRW-CAP-170-01` as two generic
 System-owned guidance documents, three public topics, and three selectively

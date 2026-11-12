@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release_control_record",
+  "release_control_id": "GRW-V1211-RCR-001",
+  "record_revision": 1,
+  "created_at": "2026-11-12T00:00:00Z",
+  "status": "candidate_reviewed",
+  "candidate_identity": {
+    "candidate_version": "1.21.1",
+    "exact_commit": "0000000000000000000000000000000000000000",
+    "branch_state": "local_candidate_only",
+    "intended_tag": "v1.21.1",
+    "intended_github_release": "The all-zero sentinel keeps this source control record commit-neutral. The final reviewed main commit, CI evidence, C4 authorization, annotated tag, matching GitHub Release, and runtime receipt are separate evidence classes."
+  },
+  "capability_set": {
+    "capability_ledger_reference": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "candidate_outcome": "verified_candidate_or_explicitly_excluded_only",
+    "verified_candidate_capability_ids": ["GRW-CAP-190-01"],
+    "excluded_capability_ids": [],
+    "admitted_capability_ids": []
+  },
+  "material_reviews": {
+    "public_material_rights_review": "pass",
+    "private_material_secret_review": "pass",
+    "review_references": ["system/11_distribution_installation_and_release/PUBLIC_MATERIAL_RIGHTS_REVIEW_v1.21.1.md"]
+  },
+  "dependency_and_source_authority": {
+    "source_authority_review": "pass",
+    "framework_integrated_behavior_claimed": true,
+    "framework_tag": "v0.5.0",
+    "framework_commit": "0dcc913a29781f889b71bdba306934bfa5de15fd",
+    "review_reference": "system/11_distribution_installation_and_release/V1_21_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md"
+  },
+  "release_integrity_posture": {
+    "technical_immutable_release_status": "enabled",
+    "deferral_or_unavailability_reason": "The repository setting, protected-main state, final commit, CI, tag, Release, and generated source archive must be rechecked before C4.",
+    "reevaluation_trigger": "Any candidate revision, changed dependency, failed validation, main-branch divergence, or material-review finding requires M48 re-review before C4.",
+    "release_assets": ["No additional asset is planned; generated source archives require post-release verification."],
+    "integrity_or_attestation_evidence_references": ["system/11_distribution_installation_and_release/V1_21_1_DEPENDENCY_AND_WORKFLOW_REVIEW.md", "system/11_distribution_installation_and_release/V1_21_1_RELEASE_EVIDENCE.md"],
+    "unverified_properties": ["Remote CI, protected-main commit, C4 authorization, annotated tag, matching GitHub Release, source archive, and installed runtime identity are not established by this local record."]
+  },
+  "supported_scope": {
+    "profiles": ["standalone", "framework_integrated"],
+    "platforms": ["Local Windows validation plus required GitHub Actions Windows, Ubuntu, and macOS matrix on the final main commit."],
+    "approved_scope_statement": "Optional documentation-only naming convention for a new local Study root under existing GRW-CAP-190-01. No new capability identifier, data operation, external service action, research executor, writer, or authority transfer."
+  },
+  "residual_risks": [
+    "Generic naming guidance cannot establish a Study identity, suitability, scientific design, governance, or publication status.",
+    "Local scanning and tests cannot establish every future rights, confidentiality, contributor, institutional, or GitHub setting fact.",
+    "This source record does not establish the final main commit, remote CI, C4 authorization, tag, GitHub Release, or installed runtime."
+  ],
+  "incident_and_repair_route": "Stop affected release work, preserve exact evidence, notify the accountable human, and prepare a corrective candidate. Never rewrite an immutable tag or Release.",
+  "candidate_review_acceptance_reference": "Accountable human accepted uppercase Research Study-root naming as a local and public System maintenance change in the active Codex conversation on 2026-11-12.",
+  "c4_release_authorization_reference": null,
+  "post_release_verification_reference": null,
+  "post_release_verification_plan_reference": "system/11_distribution_installation_and_release/RELEASE_CONTROL.md#post-release-route",
+  "record_hierarchy_references": {
+    "capability_truth_ledger": "system/00_manifest_and_profiles/capability_truth_ledger.json",
+    "current_release_status": "system/11_distribution_installation_and_release/CURRENT_RELEASE_STATUS.md",
+    "candidate_review_record": "system/11_distribution_installation_and_release/V1_21_1_RELEASE_CONTROL_CANDIDATE.json",
+    "c4_authorization_record": "not-yet-authorized",
+    "post_release_record": "not-yet-released"
+  }
+}

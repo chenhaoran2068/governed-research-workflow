@@ -6,6 +6,15 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.21.1 (new Study-root naming maintenance source)
+
+This maintenance source adds an optional documentation-only convention for a
+new local Study root: `Research<number>-<lowercase-hyphenated-slug>`. It does
+not select a number, discover, create, rename, move, or migrate a Study root.
+It also does not change any separate `study_id`, `study_title`, or Framework
+Research Program identifier. Existing roots remain caller-supplied historical
+locations.
+
 ## v1.21.0 (Study-status reconciliation and manuscript-writing guidance source)
 
 This source incorporates the local v1.20 Study-status reconciliation candidate

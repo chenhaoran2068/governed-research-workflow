@@ -78,6 +78,16 @@ the collaboration mode before analysis, project creation, or substantial
 generation. Human-governed interactive work is the default, but must still be
 confirmed for the current study.
 
+For a selected released version that retains `GRW-CAP-190-01`, read
+`references/study-root-naming.md` only when the caller explicitly asks to
+choose or check the name of a new local Study root. It gives an optional
+human-readable convention only: `Research<number>-<lowercase-hyphenated-slug>`.
+The Study root, any separate `study_id`, and any separate `study_title` remain
+distinct. Do not choose a number, inspect folders to find one, create or rename
+a root, migrate an existing Study, or infer that a Framework Research Program
+identifier follows this convention. Existing roots are located only through a
+caller-supplied reference.
+
 For an explicitly requested new empty workspace, use the controlled bootstrap
 route in `references/controlled-bootstrap.md`. First run the no-write preview;
 then wait for human approval of that exact plan before invoking the helper with

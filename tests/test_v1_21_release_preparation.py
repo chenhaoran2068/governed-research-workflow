@@ -27,7 +27,7 @@ PRIVATE_MARKERS = (r"(?i)[a-z]:\\", r"(?i)paco2", r"(?i)research[0-9]+", r"(?i)c
 class V121ReleasePreparationTests(unittest.TestCase):
     def test_source_identity_and_release_records_are_present(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
-        self.assertIn("system_version: 1.21.0", manifest)
+        self.assertIn("system_version: 1.21.1", manifest)
         for name in REQUIRED:
             self.assertTrue((RELEASE / name).is_file(), name)
 
