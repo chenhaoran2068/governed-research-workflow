@@ -25,6 +25,19 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## v1.21.1 New Study-Root Naming Maintenance Source Scope
+
+- This source adds an optional documentation-only convention for a new local
+  Study root: `Research<number>-<lowercase-hyphenated-slug>`.
+- It does not select a number, discover a Study, inspect folders, create,
+  rename, move, or migrate any root. Existing roots remain caller-supplied
+  historical locations.
+- A Study root remains distinct from any separate `study_id`, `study_title`,
+  and Framework Research Program identifier.
+- A selected v1.21.1 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact annotated tag and matching
+  GitHub Release.
+
 ## v1.21.0 Study-Status Reconciliation And Manuscript-Writing Source Scope
 
 - This source incorporates the bounded v1.20 status reconciliation preview and

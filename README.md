@@ -6,7 +6,11 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.21.0 source incorporates the v1.20 Study-status reconciliation
+Status: v1.21.1 source adds an optional documentation-only convention for a
+new local Study root: `Research<number>-<lowercase-hyphenated-slug>`. It does
+not choose a number, discover, create, rename, move, or migrate a Study root;
+it does not change a separately recorded `study_id`, `study_title`, or
+Framework Research Program identifier. The source also incorporates the v1.20 Study-status reconciliation
 candidate and extends the existing generic manuscript route with writing and
 linked-review guidance. It adds no new capability identifier, data access,
 external action, writer, research executor, or authority transfer. It retains
