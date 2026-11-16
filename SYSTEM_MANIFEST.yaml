@@ -1,3 +1,6 @@
+# v1.21.2 updates only the exact compatible Framework release from v0.5.0 to
+# v0.6.0. It does not add a capability, invoke the Framework audit, scan a
+# workspace, or create, rename, discover, move, or repair a Study root.
 # v1.21.1 adds an optional documentation-only convention for a newly named
 # local Study root. It does not select a number, create, rename, discover, or
 # move a Study root. v1.21.0 incorporates the local v1.20 Study-status reconciliation candidate
@@ -21,10 +24,10 @@
 # installed or released:
 # verify an exact annotated tag and matching GitHub Release at installation
 # time. The workspace framework-contract version for this candidate source is
-# exactly 0.5.0 and is not a compatibility range.
+# exactly 0.6.0 and is not a compatibility range.
 manifest_schema_version: 1
 system_id: governed-research-workflow
-system_version: 1.21.1
+system_version: 1.21.2
 system_role: governed-research-and-manuscript-orchestration
 entry_point: SKILL.md
 supported_profiles:
@@ -35,8 +38,8 @@ required_dependencies:
 optional_shared_services:
   - scholarly-reading-knowledge
 framework_compatibility:
-  # This source revision declares only the exact Framework v0.5.0 contract.
+  # This source revision declares only the exact Framework v0.6.0 contract.
   # Candidate and released identities remain separately verified.
-  supported_framework_versions: "0.5.0"
+  supported_framework_versions: "0.6.0"
 project_ownership_behavior: primary_system
 data_access_boundary: no-data-access-is-granted-by-this-system-manifest

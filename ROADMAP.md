@@ -6,6 +6,15 @@ context only; it does not declare a current published version. Verify any
 selected public version through its exact annotated tag and matching GitHub
 Release.
 
+## v1.21.2 (Framework v0.6.0 compatibility maintenance source)
+
+This maintenance source updates the System's exact compatible Workspace
+Framework contract to published v0.6.0. The Framework's optional
+placement-integrity auditor remains explicitly caller-invoked and owns its own
+scope, report, and execution boundaries. This source adds no System
+capability, automatic audit, workspace scan, report write, cleanup, move,
+archive, deletion, or repair.
+
 ## v1.21.1 (new Study-root naming maintenance source)
 
 This maintenance source adds an optional documentation-only convention for a

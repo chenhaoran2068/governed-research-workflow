@@ -1,4 +1,4 @@
-"""Release-preparation checks for the v1.21.1 naming-maintenance source."""
+"""Release-preparation checks for the historical v1.21.1 naming-maintenance source."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ PRIVATE_MARKERS = (r"(?i)[a-z]:\\", r"(?i)paco2", r"(?i)research[0-9]+", r"(?i)c
 class V1211ReleasePreparationTests(unittest.TestCase):
     def test_source_identity_and_release_records_are_present(self) -> None:
         manifest = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
-        self.assertIn("system_version: 1.21.1", manifest)
+        self.assertIn("system_version: 1.21.2", manifest)
         for name in REQUIRED:
             self.assertTrue((RELEASE / name).is_file(), name)
 

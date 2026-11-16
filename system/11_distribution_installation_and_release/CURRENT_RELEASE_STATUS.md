@@ -25,6 +25,17 @@ worktree, a capability ledger, a green CI run, a historical gate/evidence
 document, or an AI statement. Use Git and the GitHub Releases page/API to
 verify the exact tag and matching Release at the time of installation.
 
+## v1.21.2 Framework v0.6.0 Compatibility Maintenance Source Scope
+
+- This source updates the System's exact compatible Workspace Framework
+  release to v0.6.0.
+- It does not invoke the Framework placement audit, discover a workspace,
+  read material, write a report, clean up, move, archive, delete, rename, or
+  repair any path.
+- A selected v1.21.2 checkout becomes an installation target only after the
+  normal public installation rule verifies its exact annotated tag and matching
+  GitHub Release.
+
 ## v1.21.1 New Study-Root Naming Maintenance Source Scope
 
 - This source adds an optional documentation-only convention for a new local
