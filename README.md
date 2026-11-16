@@ -6,11 +6,15 @@ entry adapter to the System. The System helps an AI agent identify the task,
 load only relevant workflow guidance, record unknowns, and stop before
 consequential decisions.
 
-Status: v1.21.1 source adds an optional documentation-only convention for a
-new local Study root: `Research<number>-<lowercase-hyphenated-slug>`. It does
-not choose a number, discover, create, rename, move, or migrate a Study root;
-it does not change a separately recorded `study_id`, `study_title`, or
-Framework Research Program identifier. The source also incorporates the v1.20 Study-status reconciliation
+Status: v1.21.2 source updates the exact compatible Workspace Framework
+contract to released v0.6.0 at commit
+`9793445a00764c4465a6292a928f50d29a71731b`. It adds no capability and does not invoke the
+Framework placement audit, scan a workspace, read material, create a report,
+or move, archive, delete, rename, or repair a Study root. It retains the
+v1.21.1 convention for a new local Study root:
+`Research<number>-<lowercase-hyphenated-slug>`. The root, `study_id`,
+`study_title`, and Framework Research Program identifier remain distinct. The
+source also incorporates the v1.20 Study-status reconciliation
 candidate and extends the existing generic manuscript route with writing and
 linked-review guidance. It adds no new capability identifier, data access,
 external action, writer, research executor, or authority transfer. It retains

@@ -1,10 +1,11 @@
 # Public System Module Index
 
-Status: v1.21.1 source adds an optional documentation-only convention for a
-new local Study root, `Research<number>-<lowercase-hyphenated-slug>`, without
-selecting a number, discovering, creating, renaming, moving, or migrating any
-Study. It does not change separately recorded Study IDs/titles or Framework
-Research Program identifiers. It retains the
+Status: v1.21.2 source updates only the exact compatible Workspace Framework
+release to v0.6.0. It does not invoke the optional Framework placement audit,
+scan a workspace, write an operational report, or create, move, archive,
+delete, rename, or repair a Study. It retains the v1.21.1 convention for a new
+local Study root and the distinction among the root, Study IDs/titles, and
+Framework Research Program identifiers. It retains the
 frozen public-interface contract, `GRW-CAP-150-01`, and the historical
 `GRW-CAP-160-01` public card library. It adds `GRW-CAP-170-01` as two generic
 System-owned guidance documents, three public topics, and three selectively
@@ -36,7 +37,7 @@ structural schema, and an explicit one-record read-only validator. It adds
 `GRW-CAP-250-01`, a blank Study-status snapshot, stage catalogue, schema, and
 read-only validator, and `GRW-CAP-260-01`, a paper repository standard, blank
 release templates, clean-export builder, candidate validator, and synthetic
-tests. It declares only the exact Workspace Framework `v0.4.0`
+tests. It declares only the exact Workspace Framework `v0.6.0`
 contract and preserves the V1 Public Interface Manifest, Capability
 Verification Map, and V1 Support Scope Matrix. It adds no intake, exchange,
 data, retrieval service, execution, sharing, submission, automatic loading,
@@ -53,10 +54,10 @@ root `SKILL.md` remains the thin AI entry and routing layer. It must load only
 the route and module needed for the current task.
 
 The system has a [system manifest](../SYSTEM_MANIFEST.yaml). It supports
-`standalone` and a `framework_integrated` profile whose exact `0.4.0` framework
+`standalone` and a `framework_integrated` profile whose exact `0.6.0` framework
 contract is validated for this source only against the released Workspace
-Framework `v0.4.0` tag and commit
-`30ba0f4032a90723612b6d213bd54faa7cce5aee`.
+Framework `v0.6.0` tag and commit
+`9793445a00764c4465a6292a928f50d29a71731b`.
 
 ## Module Status
 
@@ -68,7 +69,7 @@ authority records.
 
 | ID | Module | Release status | Current public surface |
 | --- | --- | --- | --- |
-| `00` | manifest and profiles | v1.14.0 retains the two public profiles, exact Framework v0.4.0 compatibility, and the optional managed reading knowledge service; it remains non-automatic and source-free | root `SYSTEM_MANIFEST.yaml`, module records |
+| `00` | manifest and profiles | v1.21.2 retains the two public profiles, exact Framework v0.6.0 compatibility, and the optional managed reading knowledge service; it remains non-automatic and source-free | root `SYSTEM_MANIFEST.yaml`, module records |
 | `01` | governance and authority | active baseline | `SKILL.md`, route references |
 | `02` | project workspace and bootstrap | active empty bootstrap; no automatic system installation | bootstrap script and assets |
 | `03` | workflows | active baseline plus v0.6 record-control scope, v0.11 blank manuscript-governance templates, v1.5 optional guidance, v1.7 collaboration guidance, v1.10 ethics-preparation bridge routing, v1.11 paper-reading boundary routing, v1.12 metadata-only consumer routing, v1.13 lifecycle-decision clarification, v1.14 Results-first manuscript guidance, v1.15 generic joint-review profile guidance, v1.16 manuscript-style-profile guidance, v1.18 Study-status and paper-repository guidance, v1.20 read-only status reconciliation, and v1.21 manuscript-writing guidance | route references, blank assets, and generic guidance |
